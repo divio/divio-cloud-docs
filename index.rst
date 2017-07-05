@@ -40,7 +40,7 @@ Contents
 :ref:`Tutorial <introduction>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get started with a complete hands-on introduction to the Divio Cloud for
+Get started with a hands-on introduction to the Divio Cloud for
 developers.
 
 .. rst-class:: column column2
@@ -95,19 +95,22 @@ that supports Docker.
 About this handbook
 -------------------
 
-The handbook is aimed at developers, who are already familiar with command-line
-tools and either know some basic Python or are experienced programmers. For
-those with less experience, we recommend `our tutorial for non-developers
-<http://support.divio.com/academy/basic-how-to-build-a-website-and-blog-with-django-cms-60-minutes/introduction>`_,
-while if you'd like an overview of what the
+**The handbook is aimed at developers**, who are already familiar with
+command-line tools and either know some basic Python or are experienced
+programmers.
+
+For those with less experience, we recommend `our tutorial for non-developers
+<http://support.divio.com/academy/basic-how-to-build-a-website-and-blog-with-dja
+ngo-cms-60-minutes/introduction>`_, while if you'd like an overview of what the
 Divio Cloud can offer as a business tool, please visit `the Divio website
 <https://divio.com>`_.
 
-Detailed contents
------------------
+
+Detailed table of contents
+--------------------------
 
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 2
 
     introduction/index
     how-to/index

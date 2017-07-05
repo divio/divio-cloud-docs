@@ -9,7 +9,7 @@ Panel is the option to configure the settings associated with addons via a form.
 The form is a fairly standard Django ``Form`` class. It needs to be built into
 the addon, so that it will be exposed on the Control Panel.
 
-This form also has special method called ``to_settings()``, which is used to
+This form also has a special method called ``to_settings()``, which is used to
 manipulate the project's settings for the addon.
 
 The form needs to be in a file called ``aldryn-config.py``, placed alongside
@@ -135,8 +135,9 @@ And if you refresh the admin, the Toolbar should be back.
 Configure ``urls.py``
 ---------------------
 
-The next step is to move the URLs configuration to the addon too. Remove all
-the configuration related to Django Debug Toolbar from the project's
+The next step is to move the URLs configuration to the addon too.
+
+Remove all the configuration related to Django Debug Toolbar from the project's
 ``urls.py``.
 
 Check the admin - it should now raise a ``NoReverseMatch`` error, because it's
@@ -145,24 +146,25 @@ looking for ``djdt`` URLs that don't exist.
 In ``tutorial_django_debug_toolbar`` (alongside the ``__init__.py``) add a
 ``urls.py``::
 
-    from django.conf import settings
     from django.conf.urls import url, include
 
-    if settings.DEBUG:
+    import debug_toolbar
 
-        import debug_toolbar
+    urlpatterns = [url(r'^__debug__/', include(debug_toolbar.urls))]
 
-        urlpatterns = [url(r'^__debug__/', include(debug_toolbar.urls))]
-
-
-And in ``aldryn_config.py``, add a line to the ``to_settings()`` method:
+Notice that this time we don't check for ``settings["DEBUG"]`` in the
+``urls.py``. We can do it in the existing check, in the ``to_settings()`` method of ``aldryn_config.py``:
 
 ..  code-block:: python
-    :emphasize-lines: 3
+    :emphasize-lines: 7
 
     def to_settings(self, data, settings):
-        [...]
-        settings['ADDON_URLS'].append('tutorial_django_debug_toolbar.urls')
+
+        if settings["DEBUG"]:
+
+            [...]
+
+            settings['ADDON_URLS'].append('tutorial_django_debug_toolbar.urls')
 
         return settings
 

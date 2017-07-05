@@ -21,10 +21,12 @@ ngo-cms-60-minutes/introduction>`_ will be a better starting point.
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
+
 
     00-installation
     01-set-up
-    02-add-applications
+    Add new applications <02-add-applications>
     03-addon-configuration
     04-package-addon
     05-package-addon-configuration
