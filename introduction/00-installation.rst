@@ -24,6 +24,13 @@ If you already have it installed, check that it is up-to-date::
 
 You can install this in a virtualenv if you prefer not to install it globally.
 
+..  important::
+
+    You will also need to install the Aldryn Client package (a future update
+    will make this unnecessary)::
+
+        pip install aldryn-client
+
 
 Log in
 ------
