@@ -31,7 +31,14 @@ clean:
 	-rm -rf _build/*
 
 run:
-	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) . _build/html --host 0.0.0.0 --port $(PORT)
+	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) . -a _build/html --host 0.0.0.0 --port $(PORT)
+
+
+spelling:
+	. $(VENV); $(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . _build/spelling
+	@echo
+	@echo "Check finished. Wrong words can be found in " \
+		"_build/spelling/output.txt."
 
 
 .PHONY: help install clean run Makefile

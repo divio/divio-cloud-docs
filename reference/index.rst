@@ -14,4 +14,16 @@ Technical reference
     project-anatomy
     special-settings
     addon-anatomy
-    file-storage
+
+
+..  todo::
+
+    ::
+
+        .. _file-storage:
+
+        File storage and management in Divio Cloud projects
+        ===================================================
+
+        Interacting directly with Amazon S3 storage
+        -------------------------------------------

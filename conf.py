@@ -17,7 +17,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -78,7 +78,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'env']
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = True
+todo_include_todos = False
 todo_link_only = True
 todo_emit_warnings = True
 
@@ -162,7 +162,20 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
+# -- Options for spelling -------------------------------------------
 
+# Spelling check needs an additional module that is not installed by default.
+# Add it only if spelling check is requested so docs can be generated without it.
+if 'spelling' in sys.argv:
+    extensions.append("sphinxcontrib.spelling")
+
+# Spelling language.
+spelling_lang = 'en_GB'
+
+# Location of word list.
+spelling_word_list_filename = 'spelling_wordlist'
+
+spelling_ignore_pypi_package_names = True
 
 
 # Example configuration for intersphinx: refer to the Python standard library.

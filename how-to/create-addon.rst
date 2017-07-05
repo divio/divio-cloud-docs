@@ -243,5 +243,5 @@ you visit the its *Versions* page, you'll be able to change the release channel.
 Your addon is now available for installation into projects via the control
 panel. If you make it public, other users will be able to install it too.
 
-You can continue uoloading new versions of it, as long as each has its own
+You can continue uploading new versions of it, as long as each has its own
 unique version number.

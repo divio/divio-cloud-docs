@@ -97,8 +97,8 @@ Check what Docker processes are running::
     d6007edbaf32  demoproject_web  "/tini -g -- pytho..."  17 minutes ago  Up 8 seconds  0.0.0.0:8000->80/tcp  demoproject_web_
     27ff3e661027  postgres:9.4     "docker-entrypoint..."  6 days ago      Up 8 seconds  5432/tcp              demoproject_db_
 
-Shut it down with ``divio project stop``, the opposite of divio
-project up::
+Shut it down with ``divio project stop``, the opposite of ``divio
+project up``::
 
     ➜ divio project stop
     Stopping demoproject_web_1 ... done
@@ -132,9 +132,15 @@ This is a good thing to do while developing, because it gives you the console
 output in your terminal, so you can see what's going on.
 
 When you stop it with ``CONTROL-C``, the ``web`` service will stop, but the
-``db`` service will remain running.
+``db`` service will remain running. On the other hand, if you start the
+project with ``docker-compose up``, then when you stop it with ``CONTROL-C``,
+*both* containers will stop.
 
-..  todo:: But sometimes, it doesn't stop - why?
+..  note::
+
+    To make matters more complicated, under certain circumstances, the ``web``
+    container may continue running after exiting from the ``docker-compose up
+    web`` command. Invoking and exiting it again will usually stop it.
 
 Now you can also run a command in a specific container, such as::
 
@@ -142,7 +148,7 @@ Now you can also run a command in a specific container, such as::
 
 which will open ``bash`` right in the ``web`` container. (``--rm`` means remove
 the container when exiting; ``--service-ports`` tells it to expose the ports
-descibed in the ``docker-compose.yml``.) And you can run::
+listed in the ``docker-compose.yml``.) And you can run::
 
     python manage.py runserver 0.0.0.0:80
 
