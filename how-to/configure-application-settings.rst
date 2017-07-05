@@ -61,8 +61,8 @@ configurations via settings.
 
 We can define them in the ``to_settings()`` method of an application to do this.
 
-Here’s an example of ``aldryn_config.py`` that inserts URL confs into a
-project:
+Here’s an example of ``aldryn_config.py`` that inserts URL configurations into
+a project:
 
 ..  code-block:: python
     :emphasize-lines: 6

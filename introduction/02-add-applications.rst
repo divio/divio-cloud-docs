@@ -123,8 +123,8 @@ And push to the Divio Cloud Git server:
 
 ..  note::
 
-    The Control Panel will display your undeployed commits, and even a diff for
-    each one.
+    The Control Panel will display your undeployed commits, and even a diff
+    for each one.
 
 
 Deploy the Test server
@@ -153,7 +153,7 @@ some polls), you can push the database to the local server too, with:
 Add a package via pip
 ---------------------
 
-Often, you want to add a resuable, pip-installable application. For this
+Often, you want to add a reusable, pip-installable application. For this
 example, we'll use `Django Axes <https://github.com/aldryn/aldryn-sso>`_,
 a simple package that keeps access logs (and failed login attempts) for a site.
 

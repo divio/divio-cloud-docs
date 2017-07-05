@@ -19,7 +19,7 @@ We'll add a checkbox field, to control whether the user wants the Debug Toolbar
 to be active or not. The value of the new ``enable_debug_toolbar`` field will
 be passed to the ``to_settings()`` method, in the ``data`` dictionary. Then
 we'll also test for ``data['enable_debug_toolbar']`` before enabling the
-toolbar:
+Toolbar:
 
 ..  code-block:: python
     :emphasize-lines: 3-7, 13
@@ -65,8 +65,6 @@ though we don't use any of those in this addon.
 
 ``addon.json``
 ^^^^^^^^^^^^^^
-
-..  todo:: what exactly does this do?
 
 The final packaging file is specific to the Divio Cloud, ``addon.json``, which
 provides some additional metadata::

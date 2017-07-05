@@ -45,4 +45,7 @@ details of the settings it takes and how they are applied.
 
 ..  todo::
 
-    Add other addons?
+    Other addons:
+
+    * dev-sync - allows desktop client to sync changes
+    * aldryn-sites - domain settings

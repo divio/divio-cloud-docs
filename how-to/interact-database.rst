@@ -3,12 +3,12 @@
 How to interact with your project's database
 ============================================
 
-The Postrgres database for your Cloud-deployed sites runs on a dedicated
+The Postgres database for your Cloud-deployed sites runs on a dedicated
 database service.
 
 For local projects, it runs in a Docker container.
 
-Mostly, you will only need to interact with the databse via Django. If you need
+Mostly, you will only need to interact with the database via Django. If you need
 to interact with it directly, the option exists.
 
 ..  warning::
@@ -69,6 +69,21 @@ To connect to the locally-running database, you will need the following details:
 Connecting from the host environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+..  important::
+
+    You will need to ensure that your locally-installed Postgres client is
+    up-to-date and compatible with the version of Postgres running in our
+    database container.
+
+    Once set-up, working from your own local environment using your preferred
+    tools will probably suit you best, but some of the configuration will be
+    up to you.
+
+    If you have any issues, you can always use our provided method, which is
+    guaranteed to work - see :ref:`connecting to the database from within the
+    database container <connect-db-within-container>` below.
+
+
 In order to the connect to the database from a tool running directly on your
 own machine, you will need to expose its port (5432).
 
@@ -111,6 +126,8 @@ Or you can issue a general command, for example::
 
     psql -h 127.0.0.1 -U postgres --list
 
+
+.. _connect-db-within-container:
 
 From within the database container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -163,4 +180,23 @@ Restore from a dumped database file
     ``cat <file name> | docker exec -i <container name> psql -U postgres db``
 
 
-..  todo:: Add working example of how to reset and recreate a local database.
+..  todo::
+
+    Add working example of how to reset and recreate a local database.
+
+    docker-compose down destroys
+
+    inspect
+
+    docker-compose up -d db && docker-compose logs -f db
+
+    "db ready to accept connections"
+
+    in dc.yml::
+
+        environment:
+            POSTGRES_DB: db
+
+    then migrate in container
+
+    Check with Stefan when done

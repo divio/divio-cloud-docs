@@ -66,7 +66,7 @@ The ``backup`` command manages project backups.
 It take one command as an argument:
 
 ``decrypt``
-    Decrypts an encypted backup file.
+    Decrypts an encrypted backup file.
 
     ``decrypt`` takes three arguments: ``KEY`` ``BACKUP`` ``DESTINATION``.
 

@@ -24,9 +24,8 @@ Add the addon to settings
     This step will be performed automatically in a forthcoming update to the
     *Divio CLI* application when ``divio project develop`` is invoked.
 
-Add the addon to the ``INSTALLED_ADDONS``:
-
-..  todo:: inside the tags?
+Add the addon to the ``INSTALLED_ADDONS``, *inside* the ``<INSTALLED_ADDONS>``
+tags:
 
 ..  code-block:: python
     :emphasize-lines: 7
@@ -42,6 +41,13 @@ Add the addon to the ``INSTALLED_ADDONS``:
     ]
 
 This adds the addon to the list of addons that the project will "watch".
+
+..  note::
+
+    The presence of the addon in this list is temporary, while you are
+    developing locally. Remove it once you're done, and don't push it to the
+    Cloud. It won't cause any harm, but it will be removed and could produce
+    a Git conflict next time you pull.
 
 
 Create an ``aldryn-config.py`` file
@@ -135,9 +141,6 @@ the configuration related to Django Debug Toolbar from the project's
 
 Check the admin - it should now raise a ``NoReverseMatch`` error, because it's
 looking for ``djdt`` URLs that don't exist.
-
-..  todo:: Should the test for DEBUG in the urls config be in the settings or the urls?
-
 
 In ``tutorial_django_debug_toolbar`` (alongside the ``__init__.py``) add a
 ``urls.py``::

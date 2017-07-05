@@ -93,8 +93,6 @@ left corner of the Divio app.
 The Divio app creates the shell by running a sequence of commands, expanded
 here for clarification:
 
-..  todo:: Explain what this means.
-
 ..  code-block:: bash
 
     # clear the terminal window

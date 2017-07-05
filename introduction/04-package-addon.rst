@@ -65,8 +65,18 @@ The other fields:
    :width: 720
 
 
-When you hit **Create addon**, the addon ``tutorial-django-debug-toolbar``
-will be registered on the system.
+When you hit **Create addon**, the addon ``tutorial-django-debug-toolbar`` will
+be registered on the system. On the next page, supply a *Description* for the
+addon::
+
+    Tutorial Django Debug Toolbar
+    =============================
+
+    A Divio Cloud addon to install and configure Django Debug Toolbar into
+    Divio Cloud projects. Created as part of the Divio Cloud developer
+    tutorial.
+
+and hit **Save** once more.
 
 
 Add the packaging files
@@ -127,10 +137,14 @@ Instead, move the ``setup.py`` file you downloaded to
     )
 
 
-.. todo:
+..  note:
 
-    * Ascertain whether this should refer to itself or to the installed package.
-    * Check ``description=open('README.rst').read()``
+    *You* are the author of this addon, and the licence should be the licence
+    under which *you* wish to release your addon.
+
+    Your addon is *not* Django Debug Toolbar itself - that is just a dependency
+    of your addon. By all means link to Django Debug Toolbar and mention its
+    authors in the
 
 
 Add ``__init__.py``
@@ -168,9 +182,6 @@ tracking the version number of the application that it installs (in this case,
 Add ``README.rst``
 ^^^^^^^^^^^^^^^^^^
 
-..  todo:: what exactly does this do?
-
-
 The ``setup()`` of ``setup.py`` expects to find a README file:
 
 ..  code-block:: python
@@ -184,18 +195,8 @@ The ``setup()`` of ``setup.py`` expects to find a README file:
 
 
 Download and add the ``README.rst`` file. If you haven't already provided a
-description via the Control Panel, it will be empty, so you could add something
-like:
-
-::
-
-    Tutorial Django Debug Toolbar
-    =============================
-
-    A Divio Cloud addon to install and configure Django Debug Toolbar into
-    Divio Cloud projects. Created as part of the Divio Cloud developer
-    tutorial.
-
+*Description* via the Control Panel, it will be empty, otherwise, it will
+contain the description.
 
 
 Build the project with the new addon

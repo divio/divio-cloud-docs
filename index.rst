@@ -29,6 +29,47 @@ Divio Cloud developer handbook
    :alt: 'Divio Cloud'
 
 
+Contents
+--------
+
+.. rst-class:: clearfix row
+
+.. rst-class:: column column2
+
+
+:ref:`Tutorial <introduction>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get started with a complete hands-on introduction to the Divio Cloud for
+developers.
+
+.. rst-class:: column column2
+
+
+:ref:`How-to guides <how-to>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Step-by-step guides for the developer covering key operations and procedures
+
+
+.. rst-class:: column column2
+
+:ref:`Reference <reference>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Technical reference - tools, components and commands
+
+
+.. rst-class:: column column2
+
+:ref:`Background <background>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Explanation and discussion of key topics
+
+
+.. rst-class:: clearfix row
+
 About the Divio Cloud
 ---------------------
 
@@ -50,46 +91,6 @@ projects guarantees portability and means freedom from lock-in to a single
 provider. A Divio Cloud project can be easily deployed on another platform
 that supports Docker.
 
-Contents
---------
-
-.. rst-class:: clearfix row
-
-.. rst-class:: column column2
-
-
-:ref:`Tutorials <introduction>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Get started with a complete hands-on introduction to the Divio Cloud for
-developers.
-
-.. rst-class:: column column2
-
-
-:ref:`How-to guides <how-to>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Step-by-step guides for the developer covering key operations and procedures.
-
-
-.. rst-class:: column column2
-
-:ref:`Reference <reference>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Technical reference
-
-
-.. rst-class:: column column2
-
-:ref:`Background <background>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Explanation and discussion of key topics.
-
-
-.. rst-class:: clearfix row
 
 About this handbook
 -------------------
@@ -106,10 +107,9 @@ Detailed contents
 -----------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 0
 
     introduction/index
     how-to/index
     reference/index
     background/index
-    to-do

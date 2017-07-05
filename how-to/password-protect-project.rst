@@ -3,6 +3,9 @@
 How to set up project-wide password protection
 ==============================================
 
+Your Test server is always protected by our :ref:`SSO <divio-cloud-sso>`, but
+you may occasionally require other forms of site-wide password protection.
+
 `.htaccess <https://en.wikipedia.org/wiki/.htaccess>`_ is a familiar way of
 adding password protection to a web server at directory level. It can be useful
 in the development process, for example, when you need to restrict access.
@@ -25,5 +28,3 @@ These variables are handled in the :ref:`divio-cloud-sso` module.
 You can see exactly what it does with them - and others - in
 https://github.com/aldryn/aldryn-sso/blob/master/aldryn_config.py
 
-
-.. todo:: Are there any other kinds of password protections we should mention?
