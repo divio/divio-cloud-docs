@@ -87,8 +87,16 @@ easier for us to assist users who have it installed.
 Set up Docker by hand
 ---------------------
 
-Download and install `Docker for Mac <https://www.docker.com/docker-mac>`_ or
-`Docker for Windows <https://www.docker.com/docker-windows>`_.
+..  important::
+
+    We recommend that you allow the Divio app to manage installation and configuration.
+
+    Consider a manual installation only if you already know what you are doing!
+
+* Download and install `Docker for Mac <https://www.docker.com/docker-mac>`_ or `Docker for Windows
+  <https://www.docker.com/docker-windows>`_.
+
+* Check that it runs correctly and that the Divio app is able to communicate with it.
 
 ..  note::
 
