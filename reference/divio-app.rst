@@ -86,9 +86,18 @@ The Divio Shell
    :alt: 'Divio Shell'
    :width: 108
 
-The Divio Shell is a pre-configured shell environment for interacting with
-local Divio projects. It's launched with the |divio-shell| button in the bottom
-left corner of the Divio app.
+The Divio Shell is a pre-configured shell environment for interacting with local Divio projects.
+It's launched with the |divio-shell| button in the bottom left corner of the Divio app, and drops
+you in a bash prompt, in your Divio Cloud workspace directory.
+
+
+The Divio Shell is configured with the SSH keys required to give you access to our Cloud servers.
+You don't have to use the Divio Shell (you can use an ordinary session in your terminal) but in
+that case you will need to :ref:`set up keys yourself <add-public-key>`.
+
+
+Creating the shell
+------------------
 
 The Divio app creates the shell by running a sequence of commands, expanded
 here for clarification:
@@ -115,4 +124,3 @@ here for clarification:
         divio doctor
         bash
 
-The shell drops you in a bash prompt, in your Divio Cloud workspace directory.

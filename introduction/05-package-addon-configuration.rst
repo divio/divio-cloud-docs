@@ -176,6 +176,10 @@ left in the project configuration itself.
 The remaining steps are concerned with completing the configuration and
 packaging of the addon for the Divio Cloud.
 
+..  note::
 
-
-
+    This configuration example in ``aldryn_config.py`` is somewhat simplified. For example,
+    although ``GZipMiddleware`` is *probably* installed, that's not guaranteed. Our version will
+    raise a ``ValueError`` if it's not. For a fuller, more robust version, see `the
+    aldryn_config.py in the official Divio version of the addon
+    <https://github.com/aldryn/aldryn-django-debug-toolbar/blob/master/aldryn_config.py>`_.

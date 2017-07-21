@@ -13,3 +13,4 @@ How-to guides
     Package an application as an addon <create-addon>
     Set up password protection <password-protect-project>
     Interact with your project’s database <interact-database>
+    Use Git to manage your project <use-git>

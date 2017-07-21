@@ -50,6 +50,8 @@ an access token to paste into the prompt::
     Welcome to Divio Cloud. You are now logged in.
 
 
+.. _add-public-key:
+
 Add your public SSH key to the Control Panel
 --------------------------------------------
 
