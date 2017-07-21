@@ -56,5 +56,5 @@ Note that a number of directories and files are excluded (using the ``.gitgignor
 * ``.env`` - the project's virtualenv, for software installed using  pip
 * ``data`` - temporary file storage
 * ``static_collected`` - processed static files
-* `node_modules` - for frontend frameworks
+* ``node_modules`` - for frontend frameworks
 * ``.env-local``
