@@ -7,7 +7,10 @@ Your Divio Cloud project is a Git repository, offering several advantages to the
 fine-grained revision control, excellent collaboration options, easy export and replication.
 
 The :ref:`Divio app <divio-app>`, our desktop application for project management, also uses
-Git behind the scenes for its operations.
+Git behind the scenes for its *Upload* and *Download* operations.
+
+.. image:: /images/upload-download.png
+   :alt: 'Upload and download buttons in the Divio app'
 
 If you are familiar with Git, then all you need to know is that your project is a completely
 standard Git repository, and:
