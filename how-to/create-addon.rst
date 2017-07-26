@@ -3,14 +3,9 @@
 How to package a Django application as an addon
 ===============================================
 
-..  note::
-
-    This article assumes you are already familiar with the steps involved. For
-    a full walk-through, see the :ref:`tutorial-add-applications` section of
-    the :ref:`developer tutorial <introduction>`.
-
-    If you don't need to package an application as an addon, but simply need to
-    add it to a project, see :ref:`add-application` instead.
+* For a full walk-through of the process, see the :ref:`tutorial-add-applications`.
+* If you simply want to add an application to a project and don't need to package it as an addon,
+  see :ref:`add-application` instead.
 
 
 Register the addon
@@ -18,27 +13,22 @@ Register the addon
 
 Before your addon can be uploaded, the Divio Cloud must be ready to receive it.
 
-Go to `your addons in the Divio Control Panel
-<https://control.divio.com/account/my-addons/>`_ and **Add custom addon**.
+Select **Add custom addon** from `Personal Addons in the Divio Control Panel
+<https://control.divio.com/account/my-addons/>`_, or simply go straight to `Add custom addon
+<https://control.divio.com/account/my-addons/new/>`_.
 
-The *Package Name* field must be unique on the system. We recommend prefixing
-it with your own name, for example ``susan-example-application``.
-
-The other fields:
-
-*Name*
-    ``<your name> Django Debug Toolbar``
-*License*
-    Select a predefined license for your addon (or leave it blank and add your
-    own later.)
-*Organisation*
-    Select an organisation if appropriate.
-
-.. image:: /images/add-custom-addon.png
-   :alt: 'Add custom addon'
-   :width: 720
+* *Package Name*: must be unique on the system. We recommend prefixing it with your own name, for
+  example ``susan-example-application``.
+* *Name*: e.g. ``Susan's Django Debug Toolbar``
+* *License*: select a predefined license for your addon (or leave it blank and add your own later.)
+* *Organisation*: select an organisation if appropriate.
 
 When you hit **Create addon**, the addon will be registered on the system.
+
+..  important::
+
+    The package name must not contain underscores. See the note in :ref:`the addon packaging
+    tutorial <tutorial-package-addon>` for more information.
 
 
 Add the packaging files
@@ -63,8 +53,8 @@ files, and add them to the addon. It should look something like this::
 Now let's go through the files one by one.
 
 
-Check ``setup.py``
-^^^^^^^^^^^^^^^^^^
+The ``setup.py`` file
+^^^^^^^^^^^^^^^^^^^^^
 
 All the lines you need in the :ref:`setup-py` will be provided automatically in
 the downloaded version, with the exception of the ``install_requires``
@@ -106,8 +96,8 @@ The addon will then contain some additional files:
 Add any dependencies of the application to ``install_requires`` of ``setup.py``.
 
 
-``__init__.py``
-^^^^^^^^^^^^^^^^^^^^^
+The ``__init__.py`` file
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``setup.py`` expects to find a version number in the addon, at
 ``tutorial_django_debug_toolbar.__version__``:
@@ -127,37 +117,20 @@ For an addon that *includes* a package
 We recommend some form of semantic versioning.
 
 
-Check ``README.rst``
-^^^^^^^^^^^^^^^^^^^^
+The other packaging files
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you haven't already provided a description via the Control Panel, it will be
-empty. If you plan to share your addon with other users, it's important to
-provide a useful README.
+The other packaging files are simpler:
 
-
-Check ``MANIFEST.in``
-^^^^^^^^^^^^^^^^^^^^^
-
-The default ``MANIFEST.in`` takes care of most non-Python files that an addon
-is likely to need the setup tools to take care of: ``LICENSE``, plus
-directories for LICENSE, plus directories for ``boilerplates``, ``templates``,
-``static`` and ``locale`` files.
-
-Add any others that your addon includes.
-
-
-Check ``LICENSE``
-^^^^^^^^^^^^^^^^^
-
-Make sure the license terms are appropriate.
-
-
-Check ``addon.json``
-^^^^^^^^^^^^^^^^^^^^
-
-We recommend leaving ``addon.json`` as it is. Although you can use it to add
-multiple packages to ``INSTALLED_APPS``, it's better to do this in
-``aldryn_config.py`` (see the following section).
+* ``README.rst``: If you haven't already provided a description via the Control Panel, this will be
+  empty. If you plan to share your addon with other users, it's important to provide a useful
+  README.
+* ``MANIFEST.in``: The default ``MANIFEST.in`` takes care of most non-Python files that an addon is
+  likely to need the setup tools to take care of: ``LICENSE``, plus directories for LICENSE, plus
+  directories for ``boilerplates``, ``templates``, ``static`` and ``locale`` files.
+* ``LICENSE``: Make sure the license terms are appropriate.
+* ``addon.json``: We recommend leaving this as it is. Although you can use it to add multiple
+  packages to ``INSTALLED_APPS``, it's better to do this in ``aldryn_config.py`` (see below).
 
 
 Add configuration

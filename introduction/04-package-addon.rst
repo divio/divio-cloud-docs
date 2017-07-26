@@ -30,6 +30,15 @@ a Divio Cloud addon, so that it can install itself into a project.
     In the examples below, pay particular attention to the use of dashes ``-``
     and underscores ``_`` in the names of files and directories.
 
+    In Python naming conventions, a *package* name will use *dashes*, as in
+    ``tutorial-django-debug-toolbar``. The *application* name within the package will use
+    *underscores*: ``tutorial_django_debug_toolbar``.
+
+    This is significant, because although underscores are theoretically allowed in package names,
+    various tools, including ``pip``, will silently convert them to dashes, with predicatbly
+    confusing results.
+
+
 Register the addon
 ------------------
 
