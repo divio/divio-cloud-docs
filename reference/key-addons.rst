@@ -29,9 +29,9 @@ for the settings it takes and how they are applied.
 ``aldryn-sso`` (Divio Cloud single-sign-on)
 -------------------------------------------
 
-The Divio Cloud SSO (single-sign-on) system provides a convenient way to
-authenticate users for Divio Cloud projects without needing to log in again, as
-long as they have logged into the Divio Cloud Control Panel.
+The Divio Cloud SSO (single-sign-on) system provides a convenient way to authenticate users for
+Divio Cloud projects (whether locally, or on the Test or Live servers) without needing to log in
+again, as long as they have logged into the Divio Cloud Control Panel.
 
 This includes making it possible for users working on projects locally to
 log in locally with a single click, as they have already been authenticated.
