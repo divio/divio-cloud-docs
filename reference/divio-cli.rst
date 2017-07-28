@@ -138,6 +138,18 @@ directory.
     ``deploy`` takes ``test`` or ``live`` as an argument, for example::
 
         divio project deploy test
+ 
+    Options: 
+
+    --backup
+        Take a backup before deploying
+
+``deploy-log``
+    Returns the latest deployment log for the project's Test or Live servers.
+
+    ``deploy-log`` takes ``test`` or ``live`` as an argument, for example::
+
+        divio project deploy-log test
 
 .. _divio-project-develop:
 
