@@ -18,6 +18,7 @@ frontend
 i
 loadbalancer
 macOS
+offline
 online
 Postgres
 runserver

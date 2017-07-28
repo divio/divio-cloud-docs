@@ -16,7 +16,7 @@ If you are familiar with Git, then all you need to know is that your project is 
 standard Git repository, and:
 
 * our Git server is ``git.divio.com``
-* by default, we use the branch ``develop`` (optionally, diferent Git branches can be linked to
+* by default, we use the branch ``develop`` (optionally, different Git branches can be linked to
   your Test and Live servers)
 
 If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys will be set up for you;

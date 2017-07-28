@@ -35,7 +35,7 @@ a Divio Cloud addon, so that it can install itself into a project.
     *underscores*: ``tutorial_django_debug_toolbar``.
 
     This is significant, because although underscores are theoretically allowed in package names,
-    various tools, including ``pip``, will silently convert them to dashes, with predicatbly
+    various tools, including ``pip``, will silently convert them to dashes, with predictably
     confusing results.
 
 

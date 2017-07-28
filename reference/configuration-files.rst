@@ -1,5 +1,5 @@
-Key configuration files
-=======================
+Project configuration files
+===========================
 
 There are two key configuration files in Docker:
 

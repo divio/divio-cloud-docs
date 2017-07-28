@@ -43,9 +43,13 @@ templates.
 
 It's also where you can place templates to override addon applications'
 templates. Templates at the project level will override templates at the
-application level if they are on similar paths. This standard Django behaviour,
+application level if they are on similar paths. This is standard Django behaviour,
 allowing application developers to provide templates that can easily be
 customised.
+
+
+On initial project creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For your convenience, when you first create a project, any templates in addons
 are copied to the project level so you have them right at hand.

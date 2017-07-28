@@ -87,6 +87,7 @@ It take one of two commands as an argument:
 ``validate``
     Validates basic aspects of an boilerplates's configuration
 
+..  _divio-doctor:
 
 doctor
 ......

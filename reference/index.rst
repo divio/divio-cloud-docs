@@ -14,6 +14,7 @@ Technical reference
     project-anatomy
     special-settings
     addon-anatomy
+    environment-configuration
 
 
 ..  todo::
