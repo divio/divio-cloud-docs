@@ -8,3 +8,4 @@ Background information
 
     docker-basics
     divio-cloud-architecture
+    redirects
