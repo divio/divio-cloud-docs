@@ -15,6 +15,7 @@ Technical reference
     special-settings
     addon-anatomy
     environment-configuration
+    uwsgi-configuration
 
 
 ..  todo::

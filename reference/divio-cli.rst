@@ -38,7 +38,7 @@ Options are:
 -d, --debug
     Drop into the debugger if the command execution raises an exception.
 --help
-    Show a help message
+    Show a help message (most commands also include help messages of their own)
 
 
 Commands
@@ -139,8 +139,8 @@ directory.
     ``deploy`` takes ``test`` or ``live`` as an argument, for example::
 
         divio project deploy test
- 
-    Options: 
+
+    Options:
 
     --backup
         Take a backup before deploying
@@ -175,6 +175,27 @@ directory.
         * adds any dependencies
         * runs ``docker-compose build web``.
 
+``env-vars``
+    Get and set environment variables.
+
+    Usage: ``divio project env-vars [OPTIONS]``
+
+    Options:
+
+    -s, --stage TEXT
+        Get data from sever (``test`` or ``live``)
+    --all, --custom
+        Show all or only custom (the default) variables
+    --json
+        Use JSON output
+    --get
+        Get a specific environment variable (``get VARIABLE``)
+    --set
+        Set a specific custom environment variable (``set VARIABLE VALUE``)
+    --unset
+        Unset an environment variable (``unset VARIABLE``)
+    --help
+        Show a help message
 
 ``export``
     Exports the local database to ``local_db.sql``.
