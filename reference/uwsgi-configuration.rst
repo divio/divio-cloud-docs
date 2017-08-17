@@ -20,4 +20,4 @@ Some that you are more likely to need to adjust include:
     invalid request block size`` error in your project's logs.
 
     In this case, you can increase the buffer size to allow larger request headers. (You may also want to find out
-    why your site is running into such large request headers.)
+    why your site is running into such large request headers - for example, its cookies may be excessively large.)
