@@ -9,3 +9,6 @@ Background information
     docker-basics
     divio-cloud-architecture
     redirects
+    application-configuration-overview
+    environment-variables
+    configure-application-settings

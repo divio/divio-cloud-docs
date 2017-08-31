@@ -45,6 +45,10 @@ The same goes for middleware, and other settings.
 ``aldryn_config.py`` is loaded into the Django project at run-time, so any
 changes are picked up when and reloaded automatically when developing.
 
+``aldryn_config.py`` is an ideal place to check for environment variables that
+should be :ref:`converted into Django settings
+<environment-variables-settings>`.
+
 
 ``addon.json``
 --------------

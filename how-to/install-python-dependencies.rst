@@ -15,19 +15,28 @@ Place your dependencies in the file, making sure that they are *outside* the::
 
     # </INSTALLED_ADDONS>
 
-tags, since that part of the file is maintained automatically and is overwritten automatically with the requirements from the Addons system.
+tags, since that part of the file is maintained automatically and is overwritten automatically with the requirements
+from the Addons system.
+
+Installing from PyPI
+--------------------
 
 Use the package name, with an optional (but recommended) version number, for
 example::
 
     markdown=2.6.8
 
+
+Installing from version control
+-------------------------------
+
 You can use a version control system URL, such as::
 
     https://github.com/some_account/some_repository/archive/master.tar.gz
 
-In this case you need to use the *tarball URL*, as in the example, rather than
-the URL you'd use for cloning.
+..  note::
+
+    In this case you need to use the *tarball URL*, as in the example, rather than the URL you'd use for cloning.
 
 
 Rebuild the Docker container
