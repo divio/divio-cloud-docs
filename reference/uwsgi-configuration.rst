@@ -5,7 +5,7 @@ uWSGI configuration
 
 uWSGI offers `a vast number of configuration variables <http://uwsgi-docs.readthedocs.io/en/latest/Options.html>`_.
 
-Any one of them can be set using an enviroment variable starting ``UWSGI_``, followed by the name of the
+Any one of them can be set using an environment variable starting ``UWSGI_``, followed by the name of the
 variable in uppercase.
 
 For example, the ``processes`` variable can be set by setting ``UWSGI_PROCESSES``.

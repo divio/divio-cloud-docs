@@ -171,15 +171,18 @@ directory.
 
         * checks ``addons-dev`` for the named addon
         * puts the addon on the Python path
-        * adds the addon to ``requirements.in``, as ``-e /app/addons-dev/tutorial-django-debug-toolbar``
+        * adds the addon to ``requirements.in``, as ``-e
+          /app/addons-dev/tutorial-django-debug-toolbar``
         * adds any dependencies
         * runs ``docker-compose build web``.
+
 
 .. _divio-project-env-vars:
 
 ``env-vars``
-    Get and set :ref:`environment variables <environment-variables>`. By default, these operations work on
-    the *Test* server (e.g. ``divio project env-vars --set SOMEKEY somevalue`` will be applied to the *Test* server,
+    Get and set :ref:`environment variables <environment-variables>`. By
+    default, these operations work on the *Test* server (e.g. ``divio project
+    env-vars --set SOMEKEY somevalue`` will be applied to the *Test* server,
     and will appear there).
 
     Note that this command applies only to the *Live* and *Test* servers, not the local server. See :ref:`Local

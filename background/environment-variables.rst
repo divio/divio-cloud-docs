@@ -52,7 +52,8 @@ If any exist, they will be displayed thus::
     -------------------  -------
     SECURE_SSL_REDIRECT  True
 
-See the :ref:`divio-project-env-vars` reference for more.
+See the :ref:`divio project env-vars <divio-project-env-vars>` reference for
+more.
 
 
 Via the Control Panel
@@ -81,7 +82,7 @@ By default these are::
 
 
 Formatting
-^^^^^^^^^^
+~~~~~~~~~~
 
 Lines should not contain spaces or quotation marks (see `Docker's documentation
 <https://docs.docker.com/compose/env-file/>`_).
@@ -92,7 +93,7 @@ Lines should not contain spaces or quotation marks (see `Docker's documentation
 Environment variables and Django settings
 -----------------------------------------
 
-As you can see from the local enviroment examples above, environment variables
+As you can see from the local environment examples above, environment variables
 can also be used to apply Django settings, such as ``DEBUG``.
 
 To access the environment variable in your own Python code, you could use
