@@ -1,7 +1,7 @@
 .. _configure-application-settings:
 
-How to configure addon application settings
-===========================================
+Application configuration with ``aldryn_config.py``
+===================================================
 
 A Django application may require some configuration when it is deployed in a
 project. Typically this will include settings in ``settings.py``, but it can
@@ -12,7 +12,20 @@ Divio Cloud provides for such configuration through an addon's
 Addon.
 
 Through this mechanism you can also allow the user to provide configuration in
-a simple web-form that will be available in the Control Panel.
+a simple web form that will be available in the Control Panel.
+
+When the user saves the web form, the data will be stored in the addon's ``settings.json`` file in
+the project repository.
+
+An example from a django CMS addon instance::
+
+    {
+        "boilerplate_name": "html5",
+        "cms_content_cache_duration": 60,
+        "cms_menus_cache_duration": 3600,
+        "cms_templates": "[[\"content.html\", \"Content\"], [\"sales.html\", \"Sales\"]]",
+        "permissions_enabled": true
+    }
 
 
 .. _aldryn-config-how-to:
@@ -102,7 +115,9 @@ Available fields are:
 All fields must provide a label as first argument and take a keyword argument
 named ``required`` to indicate whether this field is required or not.
 
-Here's an example::
+Here's an example:
+
+..  code-block:: python
 
     class Form(forms.BaseForm):
         # get the company name
@@ -119,6 +134,7 @@ Here's an example::
                 settings_dict['EMAIL_BACKEND'] = 'django.core.mail.backends.console.EmailBackend'
 
             return settings_dict
+
 
 Custom field validation
 -----------------------

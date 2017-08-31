@@ -8,7 +8,6 @@ How-to guides
 
     Add Python dependencies <install-python-dependencies>
     Add system packages <install-system-packages>
-    Configure addon application settings <configure-application-settings>
     Add a Django application to a project <add-application>
     Package an application as an addon <create-addon>
     Update an existing addon <update-existing-addon>

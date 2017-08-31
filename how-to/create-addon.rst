@@ -3,9 +3,10 @@
 How to package a Django application as an addon
 ===============================================
 
-* For a full walk-through of the process, see the :ref:`tutorial-add-applications`.
-* If you simply want to add an application to a project and don't need to package it as an addon,
-  see :ref:`add-application` instead.
+* For a full walk-through of the process, see the
+  :ref:`tutorial-add-applications`.
+* If you simply want to add an application to a project and don't need to
+  package it as an addon, see :ref:`add-application` instead.
 
 
 Register the addon
