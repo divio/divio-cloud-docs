@@ -100,9 +100,9 @@ then be installed.
 
 It does this by checking:
 
-* The ``boilerplate.json`` file (required in all Boilerplates). If templates are
-specified here, they will be applied to the django CMS configuration as
-available templates.
+* The ``boilerplate.json`` file (required in all Boilerplates). If templates
+  are specified here, they will be applied to the django CMS configuration as
+  available templates.
 
 * The Boilerplate's ``Dockerfile``. Sections in the ``Dockerfile`` will be
   copied to the project's ``Dockerfile`` appropriately; for example::

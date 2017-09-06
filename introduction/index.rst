@@ -24,11 +24,11 @@ ngo-cms-60-minutes/introduction>`_ will be a better starting point.
     :numbered:
 
 
-    00-installation
-    01-set-up
-    Add new applications <02-add-applications>
-    03-addon-configuration
-    04-package-addon
-    05-package-addon-configuration
-    06-package-addon-cloud
+    01-installation
+    02-set-up
+    Add new applications <03-add-applications>
+    04-addon-configuration
+    05-package-addon
+    06-package-addon-configuration
+    07-package-addon-cloud
 
