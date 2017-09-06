@@ -20,6 +20,7 @@ fallback
 frontend
 i
 isn
+jQuery
 loadbalancer
 macOS
 offline
@@ -38,4 +39,5 @@ uppercase
 username
 virtualisation
 virtualised
+Webpack
 yml

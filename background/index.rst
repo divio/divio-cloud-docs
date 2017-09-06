@@ -12,3 +12,4 @@ Background information
     application-configuration-overview
     environment-variables
     configure-application-settings
+    about-boilerplates
