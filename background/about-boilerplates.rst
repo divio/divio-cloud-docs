@@ -133,8 +133,8 @@ excluded in the the ``boilerplate.json`` file's ``excluded`` list.
 ..  important:
 
     As you can see in the example above, the Dockerfile expects to find and use
-    files in ``/stack/boilerplate``. These will need to be provided by the
-    Boilerplate.
+    files in ``build``, that it adds to ``/stack/boilerplate``. The ``build``
+    directory will need to be provided by the Boilerplate.
 
 The Control Panel will also detect and respond automatically to the presence of
 various other files in the Boilerplate. These files are:
