@@ -9,11 +9,14 @@ JavaScript - that are set up each time the project is built.
 
 Every Divio Cloud project includes a Boilerplate, whether it's one of our
 standard Boilerplates or a custom Boilerplate of your own, which will be
-selected when the project is created.
+selected when the project is created. At minimum, it will use our
+:ref:`blank-boilerplate`.
 
 
 Our built-in Boilerplates
 -------------------------
+
+.. _blank-boilerplate:
 
 Blank Boilerplate
 ~~~~~~~~~~~~~~~~~
@@ -32,7 +35,7 @@ HTML5 Boilerplate
 Our `HTML5 Boilerplate <https://github.com/divio/djangocms-boilerplate-html5>`_
 implements the `HTML5 Boilerplate package <https://html5boilerplate.com>`_. The
 HTML5 Boilerplate package is a popular starter set of starter files, which
-inclues a generic HTML template, CSS to normalise and set some standard
+includes a generic HTML template, CSS to normalise and set some standard
 classes, and some JavaScript including jQuery.
 
 Our implementation of it is very standard, and simply adapts it for use in
@@ -61,8 +64,11 @@ above, which is to say that it compiles its own materials at runtime (the
 with).
 
 The Sass Boilerplate uses the `HTML5 Boilerplate package
-<https://html5boilerplate.com>`_ as its basis. It uses *Gulp* to run the
-compilation, *Bower* as a package manager, and *Node* as a run-time environment.
+<https://html5boilerplate.com>`_ as its basis. It uses:
+
+* `Gulp <http://gulpjs.com>`_ to run the compilation
+* `npm <https://www.npmjs.com>`_ as a package manager
+* `Node <https://nodejs.org/en/>`_ as a run-time environment.
 
 The advantage of using a dynamic Boilerplate with compiled components is that
 it permits you to build a customised frontend, shorn of items your project does
@@ -75,9 +81,12 @@ Webpack Boilerplate
 
 The `Webpack Boilerplate
 <https://github.com/divio/djangocms-boilerplate-webpack>`_ implements the
-Bootstrap framework as a fully-compiled frontend set-up. It uses *Gulp* to run
-the compilation, *Webpack* as a package manager, and *Node* as a run-time
-environment.
+Bootstrap framework as a fully-compiled frontend set-up. It uses:
+
+* `Gulp <http://gulpjs.com>`_ to run the compilation
+* `Webpack <https://webpack.js.org>`_ to bundle all the modules
+* `npm <https://www.npmjs.com>`_ as a package manager
+* `Node <https://nodejs.org/en/>`_ as a run-time environment.
 
 
 How Boilerplates work
@@ -121,13 +130,20 @@ The Control Panel will then copy all files (other than the two mentioned above)
 and directories in the Boilerplate into the project, unless they are explicitly
 excluded in the the ``boilerplate.json`` file's ``excluded`` list.
 
+..  important:
+
+    As you can see in the example above, the Dockerfile expects to find and use
+    files in ``/stack/boilerplate``. These will need to be provided by the
+    Boilerplate.
+
 The Control Panel will also detect and respond automatically to the presence of
 various other files in the Boilerplate. These files are:
 
 * ``package.json`` - will be used by ``npm`` to install node packages
-* ``bower.json`` - will be used by Bower to install frontend components
+* ``bower.json`` and ``.bowerrc`` - will be used by Bower to install frontend
+  components. Note that this is provided as legacy support. We no longer
+  recommend Bower (use npm instead)
 * ``gulpfile.js`` - used by Gulp execute specified compilation tasks
-
 
 The Control Panel will write appropriate commands into the Dockerfile, so that
 when the project is next deployed, the appropriate components will be installed
@@ -148,4 +164,3 @@ the Dockerfile, and so on.
     * push your changes to the Cloud, where they will be processed into the
       Dockerfile
     * pull down the project again
-
