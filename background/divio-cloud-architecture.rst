@@ -75,8 +75,8 @@ Boilerplates
 Divio Cloud projects represent web projects. Each project requires a frontend,
 however minimal - at the very least, a basic ``base.html`` template. In order
 to make Divio Cloud projects immediately useful, they each come with frontend
-files included. These are defined by the site's *Boilerplate*, a set of default
-templates and static file.
+files included. These are defined by the site's :ref:`Boilerplate
+<about-boilerplates>`, a set of default templates and static file.
 
 Typically, a Boilerplate will define how the Django templates are structured and
 make opinionated choices about what JavaScript frameworks and CSS tools are
@@ -101,3 +101,30 @@ However, on request different branches can be set for the *Test* and *Live* serv
 
 In this workflow you would work on ``develop`` before manually merging into
 ``master``, and then deploying *Live*.
+
+
+Deployment
+^^^^^^^^^^
+
+A number of optimisations have been built into our Cloud deployment process to
+make deployments faster and more reliable.
+
+Python packaging
+~~~~~~~~~~~~~~~~
+
+We maintain our own Python Package Index, with which has pre-built
+platform-specific `wheels <http://pythonwheels.com>`_ for all Python packages.
+
+Docker layer caching
+~~~~~~~~~~~~~~~~~~~~
+
+We *don't* use Docker-level layer caching, as certain cases can produce
+unexpected results:
+
+* Unpinned installation commands might install cached versions of software,
+  even where the user expects a newer version.
+* Commands such as ``apt-get upgrade`` in a Dockerfile could similarly
+  fail to pick up new changes.
+* Our clustered setup means that builds take place on different hosts. As
+  Docker layer caching is local to each host, this could mean that subsequent
+  builds use different versions, depending on what is in each host's cache.

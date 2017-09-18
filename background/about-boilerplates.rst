@@ -1,3 +1,5 @@
+.. _about-boilerplates:
+
 About Boilerplates
 ==================
 
