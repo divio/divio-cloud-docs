@@ -31,4 +31,4 @@ ngo-cms-60-minutes/introduction>`_ will be a better starting point.
     05-package-addon
     06-package-addon-configuration
     07-package-addon-cloud
-
+    08-create-custom-boilerplate
