@@ -4,10 +4,10 @@ Create a custom Boilerplate
 ===========================
 
 Each Divio Cloud site has a frontend *Boilerplate*, a set of default templates
-and static file.
+and static files.
 
-Typically, a Boilerplate will define how the Django templates are structured and
-make opinionated choices about what JavaScript frameworks and CSS tools are
+Typically, a Boilerplate will define how the Django templates are structured
+and make opinionated choices about what frontend frameworks and tools are
 used.
 
 We provide :ref:`a number of default Boilerplates <about-boilerplates>`, suited
@@ -237,7 +237,7 @@ The polls application knows nothing of the new templates we have created.
 
 If you look at the polls application, you will see that each of its view
 templates (the index view, the detail view and so on) extend its own, minimal
-``polls/templates/pollls/base.html`` file, which contains nothing but:
+``polls/templates/polls/base.html`` file, which contains nothing but:
 
 ..  code-block:: HTML
 
@@ -279,23 +279,23 @@ This might seem like an overly-complex series of ``{% extend %}`` template tags,
 but the template structure sets a good standard and will help us later on
 when we need to reuse it.
 
-+-----------------------------+----------------------------------------+------------------------+
-| Level                       | Location                               | Notes                  |
-+=============================+========================================+========================+
-|                             | ``polls/templates/polls/index.html``   |                        |
-+                             +----------------------------------------+                        +
-| application view templates  | ``polls/templates/polls/detail.html``  | extend ↓               |
-+                             +----------------------------------------+                        +
-|                             | ``polls/templates/polls/results.html`` |                        |
-+-----------------------------+----------------------------------------+------------------------+
-| application base template   | ``polls/templates/polls/base.html``    | overridden by ↓        |
-+-----------------------------+----------------------------------------+------------------------+
-| application base template   | ``templates/polls/base.html``          | overrides ↑, extends ↓ |
-+-----------------------------+----------------------------------------+------------------------+
-| project-specific template   |``templates/main.html``                 | extends ↓              |
-+-----------------------------+----------------------------------------+------------------------+
-| generic Foundation template | ``templates/base.html``                |                        |
-+-----------------------------+----------------------------------------+------------------------+
++-----------------------------+----------------------------------------+---------------------------+
+| Level                       | Location                               | Notes                     |
++=============================+========================================+===========================+
+|                             | ``polls/templates/polls/index.html``   |                           |
++                             +----------------------------------------+                           +
+| application view templates  | ``polls/templates/polls/detail.html``  | extend ↓                  |
++                             +----------------------------------------+                           +
+|                             | ``polls/templates/polls/results.html`` |                           |
++-----------------------------+----------------------------------------+---------------------------+
+| application base template   | ``polls/templates/polls/base.html``    | not used, overridden by ↓ |
++-----------------------------+----------------------------------------+---------------------------+
+| application base template   | ``templates/polls/base.html``          | overrides ↑, extends ↓    |
++-----------------------------+----------------------------------------+---------------------------+
+| project-specific template   |``templates/main.html``                 | extends ↓                 |
++-----------------------------+----------------------------------------+---------------------------+
+| generic Foundation template | ``templates/base.html``                |                           |
++-----------------------------+----------------------------------------+---------------------------+
 
 
 You don't have to remember all this, or even understand it fully right now -
@@ -358,7 +358,7 @@ Create a ``boilerplate.json`` in ``tutorial-boilerplate``:
   <https://github.com/aldryn/aldryn-newsblog/tree/master/aldryn_newsblog>`_.
 * The ``version`` is for your own convenience.
 
-Run the ``boilerplate verify`` command to check that the ``boilerplate.json``
+Run the ``boilerplate validate`` command to check that the ``boilerplate.json``
 is in order::
 
     ➜  divio boilerplate validate
@@ -508,5 +508,13 @@ Update your Boilerplate
 When you make changes to your Boilerplate, increment its ``version`` in the
 ``boilerplate.json`` and upload it to the Control Panel by running the
 ``boilerplate upload`` command on the new version.
+
+..  important::
+
+    When a Boilerplate is updated, it doesn't affect any projects that were
+    built using an earlier version of it. A Boilerplate is only used once on a
+    project, at the moment of its creation.
+
+    Any updates will need to be merged manually into existing projects.
 
 You'll find its *Versions* listed on its page in the Control Panel.
