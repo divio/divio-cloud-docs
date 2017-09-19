@@ -93,6 +93,10 @@ And when that has completed, open the project again in your browser:
 
     divio project open
 
+You should see the new polls application in the admin:
+
+..  image:: /images/polls-admin.png
+    :alt: The polls application appears in the admin
 
 Deploy the project
 ------------------
