@@ -7,14 +7,14 @@ Each Divio Cloud site has a frontend *Boilerplate*, a set of default templates
 and static files.
 
 Typically, a Boilerplate will define how the Django templates are structured
-and make opinionated choices about what frontend frameworks and tools are
-used.
+and will commit the project to certain frontend frameworks and tools.
 
 We provide :ref:`a number of default Boilerplates <about-boilerplates>`, suited
 to different purposes.
 
-If you build many sites however it's likely that you have your own preferences
-for their frontend set-ups: tooling, configuration, and so on.
+However, you may have your own preferences for frontend setups (tooling,
+configuration, and so on) for your sites, especially if you or your team build
+many of them.
 
 You could build this tooling into each site on each occasion, but it could save
 you a great deal of time to define it just once, in a custom Boilerplate, and
@@ -83,8 +83,9 @@ In the new project, run:
 
     git clone git@github.com:divio/django-polls.git
 
-and put the inner ``polls`` application directory at the root of your project,
-for example by running::
+(or use ``git clone https://github.com/divio/django-polls.git`` if you can't
+use the SSH URL) and put the inner ``polls`` application directory at the root
+of your project, for example by running::
 
     mv django-polls/polls .
 
@@ -132,10 +133,15 @@ You now have working project in which to implement the frontend.
 Add a Foundation frontend
 -------------------------
 
+We'll create a Boilerplate that sets up new projects with the popular
+`Foundation <http://foundation.zurb.com>`_ frontend.
+
+
 Add the Foundation files
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the `Foundation <http://foundation.zurb.com>`_ website, download the
+From the `Foundation download page
+<http://foundation.zurb.com/sites/download.html/>`_, select the
 complete Foundation 6 package.
 
 Copy its ``index.html`` file into your project's (**not** the polls
@@ -354,9 +360,16 @@ Create a ``boilerplate.json`` in ``tutorial-boilerplate``:
   django CMS.
 * ``identifier`` is a namespace, that will allow applications that are
   Boilerplate-aware to build in support for particular Boilerplates into their
-  own frontend code. An example of this is `Aldryn News & Blog
-  <https://github.com/aldryn/aldryn-newsblog/tree/master/aldryn_newsblog>`_.
-* The ``version`` is for your own convenience.
+  own frontend code. (An example of this is `Aldryn News & Blog
+  <https://github.com/aldryn/aldryn-newsblog>`_ - compare its `Bootstrap
+  frontend
+  <https://github.com/aldryn/aldryn-newsblog/tree/master/aldryn_newsblog/boilerp
+  lates/bootstrap3>`_ with its `'plain' templates
+  <https://github.com/aldryn/aldryn-newsblog/tree/master/aldryn_newsblog/templat
+  es/aldryn_newsblog>`_.)
+* The ``version`` should be updated appropriately, both for your own
+  convenience and to help manage the versions that you upload to the Control
+  Panel.
 
 Run the ``boilerplate validate`` command to check that the ``boilerplate.json``
 is in order::
@@ -419,8 +432,8 @@ Upload your Boilerplate
 
 Now you need to upload your Boilerplate.
 
-In the :ref: `tutorial-boilerplate directory you created earlier
-<create-boilerplate-package>`_, run the ``boilerplate upload`` command::
+In the :ref:`tutorial-boilerplate directory you created earlier
+<create-boilerplate-package>`, run the ``boilerplate upload`` command::
 
     ➜  divio boilerplate upload
     The following files will be included in your boilerplate and uploaded to
