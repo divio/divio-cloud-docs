@@ -30,10 +30,13 @@ In order to give you a meaningful context in which to learn about creating
 Boilerplates, you need a project with a suitable application. This section sets
 up a new project, with a simple Polls application.
 
-If you prefer to do this in a project using one of your own applications,
-that's even better. You may need to make some minor adjustments to some of the
-steps, but with that in mind, you can go straight to the
-:ref:`add-foundation-frontend` section.
+..  admonition:: Or, use your own application
+
+    If you'd prefer to do this in a project using one of your own applications,
+    that's even better. You'll need to make some minor adjustments to some of
+    the steps, but if you already have a suitable project ready, you can go
+    straight to the :ref:`add-foundation-frontend` section.
+
 
 Create a new project
 ~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +62,11 @@ List your cloud projects::
 Set up the new project locally, for example::
 
     divio project setup my-boilerplate-project
+
+And in the project directory, start it with::
+
+    divio project up
+
 
 .. _add-simple-application:
 
@@ -113,6 +121,9 @@ Edit ``urls.py`` to add the URLconf for the ``polls`` application:
 Then check that you can create polls with questions, and see them listed at
 http://localhost:8000/polls/.
 
+..  image:: /images/polls-default.png
+    :alt: The polls application with a Question and Choices
+
 You now have working project in which to implement the frontend.
 
 
@@ -134,72 +145,11 @@ is just a good Django convention).
 Copy the ``css`` and ``js`` directories to the ``static`` directory of the
 project.
 
+Adapt the *generic Foundation* template (``base.html``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use Foundation template in the project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you look at the polls application, you will see that each of its view
-templates (the index view, the detail view and so on) extend its own, minimal
-``polls/templates/pollls/base.html`` file, which contains nothing but:
-
-..  code-block:: HTML
-
-    {% block polls_content %}{% endblock %}
-
-But what we need is for the polls application's view templates to extend the
-``base.html`` template supplied by Foundation. We can do this by overriding the
-polls application's ``base.html`` (when using a reusable application such as
-polls, it's always better to override it than to modify it).
-
-In the project's ``templates`` directory, add a ``polls`` directory and inside
-that add a ``base.html``:
-
-..  code-block:: HTML
-
-    {% extends "main.html" %}
-
-    {% block polls_content %}{% endblock %}
-
-This will override the existing ``base.html``.
-
-And in the ``templates`` directory, alongside the ``base.html``, create
-``main.html``:
-
-..  code-block:: HTML
-
-    {% extends "base.html" %}
-
-    {% block polls_content %}{% endblock %}
-
-This might seem like an overly-complex series of ``{% extend %}`` template tags,
-but it sets a good standard and will help us later on.
-
-..  admonition:: The chain of extension
-
-    * *view-specific* templates in ``polls/templates/polls/`` extend
-    * *application-specific* template ``polls/templates/polls/base.html``,
-      which is overriden by the
-    * *application-specific* template ``templates/polls/base.html``, which
-      extends the
-    * *project-specific* template ``templates/main.html``, which extends the
-    * *generic Foundation* template ``templates/base.html``
-
-    You don't have to remember all this, or even understand it fully right now -
-    but it's here if you need to refer to it.
-
-    **Why this structure?**
-
-    Keeping the generic Foundation template free of any project-specific
-    material will make it easier to use in other projects. Keeping application-
-    specific material out of project templates will make it easier to use them
-    with other applications.
-
-If you now refresh the website, you'll see a "Welcome to Foundation" page -
-lacking any styling of course.
-
-
-Adapt the Foundation template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now we'll get to work on the templates, starting from the bottom (the
+Foundation ``base.html`` template).
 
 ``base.html`` contains:
 
@@ -220,7 +170,7 @@ And then you will need to work through the template, modifying lines and adding
 in hooks for Django content and functionality. This will also involve removing
 all the welcome text. Amended lines are highlighted:
 
-..  code-block:: HTML
+..  code-block:: Django
     :emphasize-lines: 1, 3, 7-15, 17-24
 
     {% load staticfiles %}
@@ -250,29 +200,113 @@ all the welcome text. Amended lines are highlighted:
       </body>
     </html>
 
+This template should be generic enough that it can be used right away in any
+Foundation-based project.
 
-Adapt ``main.html``
-~~~~~~~~~~~~~~~~~~~
 
-Now the ``main.html`` (the *project-specific* template) needs to be amended,
-just to check that it works with the new Foundation ``base.html``:
+Add a *project-specific* template (``main.html``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now add a ``main.html`` template, next to the new Foundation ``base.html``. It
+extends ``base.html``, and supplies some material that you would expect to be
+specific to each project. Highlighted lines show where we hook into the
+``base.html``.
 
 ..  code-block:: HTML
-    :emphasize-lines: 3, 5-8, 10-13
+    :emphasize-lines: 1, 3, 5, 9, 13
 
     {% extends "base.html" %}
 
-    {% block title %}Django Polls{% endblock %}
+    {% block title %}Project title{% endblock %}
 
     {% block body %}
       <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
-          {% block polls_content %}{% endblock %}
+          {% block application_content %}{% endblock %}
         </div>
       </div>
       </div>
     {% endblock %}
+
+
+Add an *application-specific* template (``polls/base.html``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The polls application knows nothing of the new templates we have created.
+
+If you look at the polls application, you will see that each of its view
+templates (the index view, the detail view and so on) extend its own, minimal
+``polls/templates/pollls/base.html`` file, which contains nothing but:
+
+..  code-block:: HTML
+
+    {% block polls_content %}{% endblock %}
+
+What we want is to wire up the polls application to the new templates in our
+project. We could do this by modifying ``polls/base.html`` to extend
+``main.html``, but when using a reusable application such as polls, it's always
+better to *override* it than to *modify* it).
+
+In the *project's* ``templates`` directory, add a ``polls`` directory and
+inside that add a ``base.html``:
+
+..  code-block:: HTML
+
+    {% extends "main.html" %}
+
+    {% block title %}Django Polls{% endblock %}
+
+    {% block application_content %}
+      {% block polls_content %}{% endblock %}
+    {% endblock %}
+
+This will override the existing ``base.html`` belong to the application, and
+allow the ``{% block polls_content %}`` from the views' templates to be
+inserted into the ``{% block application_content %}`` of the project template.
+
+Check that it all works. Your polls application should now have basic Foundation
+styling in all its views:
+
+..  image:: /images/polls-foundation.png
+    :alt: The polls application with a Foundation frontend
+
+
+About the chain of extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This might seem like an overly-complex series of ``{% extend %}`` template tags,
+but the template structure sets a good standard and will help us later on
+when we need to reuse it.
+
++-----------------------------+----------------------------------------+------------------------+
+| Level                       | Location                               | Notes                  |
++=============================+========================================+========================+
+|                             | ``polls/templates/polls/index.html``   |                        |
++                             +----------------------------------------+                        +
+| application view templates  | ``polls/templates/polls/detail.html``  | extend ↓               |
++                             +----------------------------------------+                        +
+|                             | ``polls/templates/polls/results.html`` |                        |
++-----------------------------+----------------------------------------+------------------------+
+| application base template   | ``polls/templates/polls/base.html``    | overridden by ↓        |
++-----------------------------+----------------------------------------+------------------------+
+| application base template   | ``templates/polls/base.html``          | overrides ↑, extends ↓ |
++-----------------------------+----------------------------------------+------------------------+
+| project-specific template   |``templates/main.html``                 | extends ↓              |
++-----------------------------+----------------------------------------+------------------------+
+| generic Foundation template | ``templates/base.html``                |                        |
++-----------------------------+----------------------------------------+------------------------+
+
+
+You don't have to remember all this, or even understand it fully right now -
+but it's here if you need to refer to it.
+
+**Why this structure?**
+
+Keeping the generic Foundation template free of any project-specific material
+will make it easier to use in other projects. Keeping application-specific
+material out of project templates will make it easier to use them with other
+applications.
 
 
 .. _create-boilerplate-package:
@@ -282,12 +316,10 @@ Create the Boilerplate package
 
 We now have enough for a basic, working Boilerplate. It provides:
 
-* a ``base.html`` template that is replete with ``{% block %}`` template tags,
-  allowing it to be extended in a vast variety of ways
+* a ``base.html`` Foundation template that is replete with ``{% block %}``
+  template tags, allowing it to be extended in a vast variety of ways
+* a ``main.html`` template that the project developer can customise
 * Foundation's static CSS and JS assets.
-
-All any project needs to do to make use of it is extend ``base.html`` in the
-same way that our ``main.html`` does, and take advantage of the blocks provided.
 
 For convenience, we will create a new directory called ``tutorial-boilerplate``
 in the root of the project, and **copy** those items to it, so that the
@@ -444,7 +476,7 @@ Then proceed to :ref:`add the polls application to it as you did earlier
 <add-simple-application>`.
 
 Finally, you'll need to wire the polls application up the project templates, so
-that the polls application's ``base.html`` will be overriden by one that is
+that the polls application's ``base.html`` will be overridden by one that is
 aware of of our Boilerplate's ``main.html``. Once again, in the project's
 ``templates`` directory, add a ``polls`` directory and inside that add a
 ``base.html``:
@@ -453,7 +485,11 @@ aware of of our Boilerplate's ``main.html``. Once again, in the project's
 
     {% extends "main.html" %}
 
-    {% block polls_content %}{% endblock %}
+    {% block title %}Django Polls{% endblock %}
+
+    {% block application_content %}
+      {% block polls_content %}{% endblock %}
+    {% endblock %}
 
 And now when you run the project and view your polls, you should see that the
 Foundation frontend is at work.
