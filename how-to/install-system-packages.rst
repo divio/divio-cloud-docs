@@ -3,7 +3,10 @@
 How to add arbitrary system packages to a project
 =================================================
 
-..  note:: See also: :ref:`install-python-dependencies`
+..  admonition:: See also
+
+    * :ref:`install-python-dependencies`
+
 
 All Divio Cloud projects are based on a customised Docker image, which uses a
 version of Ubuntu Linux.

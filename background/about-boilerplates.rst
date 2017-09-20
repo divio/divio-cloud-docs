@@ -3,6 +3,10 @@
 About Boilerplates
 ==================
 
+..  admonition:: See also
+
+    * :ref:`Create a custom Boilerplate tutorial <tutorial-create-boilerplate>`
+
 As well as Django and Python applications, our Docker containerisation can
 include and build frontend components into your projects.
 
@@ -14,6 +18,7 @@ standard Boilerplates or a custom Boilerplate of your own, which will be
 selected when the project is created. At minimum, it will use our
 :ref:`blank-boilerplate`.
 
+.. _built-in-boilerplates:
 
 Our built-in Boilerplates
 -------------------------

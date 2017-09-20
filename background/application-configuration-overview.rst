@@ -1,4 +1,4 @@
-.. _environment-variables:
+.. _application-configuration:
 
 Application configuration overview
 ==================================

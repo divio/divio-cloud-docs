@@ -3,13 +3,17 @@
 Create a custom Boilerplate
 ===========================
 
+..  admonition:: See also
+
+    * :ref:`about-boilerplates`
+
 Each Divio Cloud site has a frontend *Boilerplate*, a set of default templates
 and static files.
 
 Typically, a Boilerplate will define how the Django templates are structured
 and will commit the project to certain frontend frameworks and tools.
 
-We provide :ref:`a number of default Boilerplates <about-boilerplates>`, suited
+We provide :ref:`a number of default Boilerplates <built-in-boilerplates>`, suited
 to different purposes.
 
 However, you may have your own preferences for frontend setups (tooling,

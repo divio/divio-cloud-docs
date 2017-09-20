@@ -3,6 +3,12 @@
 How to add a new Django application to a project
 ================================================
 
+..  note::
+
+    This article assumes you are already familiar with the steps involved. For
+    a full walk-through, see the :ref:`tutorial-add-applications` section of
+    the :ref:`developer tutorial <introduction>`.
+
 The recommended way of installing Django applications is to use a Divio Cloud
 addon - an application that has already been packaged for easy installation in
 our projects.
@@ -12,12 +18,6 @@ two options:
 
 * Add the application to the project manually (described in this article).
 * Create an addon (described in :ref:`create-addon`).
-
-..  note::
-
-    This article assumes you are already familiar with the steps involved. For
-    a full walk-through, see the :ref:`tutorial-add-applications` section of
-    the :ref:`developer tutorial <introduction>`.
 
 
 Make the package available to the project

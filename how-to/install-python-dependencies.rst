@@ -3,7 +3,11 @@
 How to add arbitrary Python dependencies to a project
 =====================================================
 
-..  note:: See also: :ref:`install-system-packages`
+..  admonition:: See also
+
+    * :ref:`tutorial-add-applications`
+    * :ref:`Add new applications to a project tutorial <install-system-packages>`
+
 
 Your Divio Cloud project has a ``requirements.in`` file, processed by the
 ``pip-compile`` command from `pip-tools

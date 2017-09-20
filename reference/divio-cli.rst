@@ -16,6 +16,16 @@ It's also available:
 * in the :ref:`Divio Shell <divio-shell>`
 * at the bash prompt in Divio Cloud web containers
 
+.. _aldryn-client:
+
+..  important::
+
+    When using the *divio-cli* other than in a Divio Shell or web container, you will need to
+    install the *aldryn-client* as well to allow the *divio-cli* to perform certain operations
+    related to addons. To install::
+
+        pip install aldryn-client
+
 .. _divio-cli-command-ref:
 
 divio-cli command reference
