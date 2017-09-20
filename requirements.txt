@@ -3,4 +3,4 @@ sphinxcontrib-spelling
 pyenchant
 sphinx-autobuild
 # sphinx_rtd_theme
--e git+git@github.com:evildmp/sphinx_rtd_theme.git@fix-461-admonition-style#egg=sphinx_rtd_theme
+-e git+https://github.com/evildmp/sphinx_rtd_theme.git@fix-461-admonition-style#egg=sphinx_rtd_theme
