@@ -29,6 +29,8 @@ the admin.
 You'll see a familiar Django admin for a new site.
 
 
+.. _replicate-project-locally:
+
 Replicate it locally
 --------------------
 

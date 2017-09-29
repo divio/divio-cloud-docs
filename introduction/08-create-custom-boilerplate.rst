@@ -16,7 +16,7 @@ and will commit the project to certain frontend frameworks and tools.
 We provide :ref:`a number of default Boilerplates <built-in-boilerplates>`, suited
 to different purposes.
 
-However, you may have your own preferences for frontend setups (tooling,
+However, you may have your own preferences for frontend set-ups (tooling,
 configuration, and so on) for your sites, especially if you or your team build
 many of them.
 

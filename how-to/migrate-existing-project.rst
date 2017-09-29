@@ -1,0 +1,263 @@
+.. _how-to-migrate:
+
+How to migrate an existing project to Divio Cloud
+=================================================
+
+Initial project setup
+---------------------
+
+Create a new project in the `Divio Control Panel <https://control.divio.com>`_. You'll need to make
+sure that the project options are appropriate, including the Python version and project type.
+
+There are a number of available project types, including Django, Django-plus-django CMS and Django-plus-Wagtail, that are already set up with the relevant addon packages.
+
+..  note::
+
+    In general, if the software included in your project already exists on the Divio Cloud as an
+    Addon, it's recommended to use the packaged addon version. This will help ensure not only that
+    it is suitably configured for the Divio Cloud, but that it will also co-exist well with other
+    components.
+
+Select the Boilerplate you want to use. Several are available, with different built-in frontend
+components to work with. If you choose a complex Boilerplate and later decide that you don't need
+its functionality, it's easy to remove from a project. However, select the *Blank Boilerplate* if
+you are sure you'd rather to set up and manage your site's frontend starting from scratch.
+
+See :ref:`about-boilerplates` for more on the subject.
+
+Hit **Create project**.
+
+.. important::
+
+    Do not start a deployment yet - we’ll cover that later.
+
+
+Check addon versions
+--------------------
+
+For each of the key components in your project for which a Divio Cloud addon exists, check that it
+is set to the correct version in your project, via the project's *Manage addons*. This could
+include:
+
+* Django
+* django CMS (as well as key applications such as Django Filer, Aldryn News & Blog and so on)
+* Wagtail
+
+Note that the version you seek may exist in the *Beta* or *Alpha* release channels of the addon.
+
+
+Set up the project locally
+--------------------------
+
+Once any addons have been appropriately configured, you'll need to set the project up locally. (See
+the :ref:`local setup section in the tutorial <replicate-project-locally>` if this is new to you.)
+
+Using the Divio CLI set up a local copy of the project::
+
+    divio project setup <your-project-slug>
+
+
+Migrate your existing code base
+-------------------------------
+
+Add requirements
+^^^^^^^^^^^^^^^^
+
+Addons will install their dependencies, so there is no need to add those explicitly as
+requirements. Compare the output of::
+
+    docker-compose run --rm web pip list
+
+with your existing project's requirements, or the output of ``pip list`` in its environment, to see
+what requirements will need to be added manually. The missing dependencies will need to be added
+via the ``requirements.in`` file. See :ref:`install-python-dependencies` for more on adding Python
+packages to the project.
+
+Your project may also have some other requirements; see :ref:`install-system-packages`.
+
+
+Add application code
+^^^^^^^^^^^^^^^^^^^^
+
+If your project contains custom applications that are part of the project itself (i.e. they live in
+directories inside the project, and are not reusable applications or libraries installed via Pip),
+copy them into the project directory.
+
+..  note::
+
+    If you decide in the future that these application should be packaged as reusable addons, that
+    can be done later. See :ref:`create-addon`.
+
+
+Add templates and static files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your project's templates similarly need to be copied to the new project's ``templates`` directory,
+and static files to ``static``.
+
+
+Configure settings
+------------------
+
+The settings for your project and its applications need to be added to ``settings.py``.
+
+How they are added depends on the settings themselves.
+
+
+*Configured* settings
+^^^^^^^^^^^^^^^^^^^^^
+
+Some settings, for example ``INSTALLED_APPS`` or ``MIDDLEWARE`` (``MIDDLEWARE_CLASSES`` in older
+versions of Django) are *configured* settings in Divio Cloud projects, managed by the `Aldryn
+Addons framework <https://github.com/aldryn/aldryn-addons>`_.
+
+This allows applications to configure themselves when they are installed; for example, if an addon
+requires certain applications to be listed in ``INSTALLED_APPS``, it will add them (this is taken
+care of in the addon's :ref:`aldryn-config` file). All these are then loaded into the
+``settings.py`` by its::
+
+    aldryn_addons.settings.load(locals())
+
+If you were to declare ``INSTALLED_APPS`` in ``settings.py`` it would simply overwrite the
+``INSTALLED_APPS`` configured by the system (if you did it after the
+``aldryn_addons.settings.load(locals())``) or would be overwritten by it (if you declared it first).
+
+This is why a Divio Cloud settings file instead includes::
+
+    INSTALLED_APPS.extend([
+        # add your project specific apps here
+    ])
+
+so you can add items to ``INSTALLED_APPS`` without overwriting existing items, by manipulating the
+list.
+
+You will need to do the same for other configured settings, which will include:
+
+* ``MIDDLEWARE`` (or the older ``MIDDLEWARE_CLASSES``)
+* ``TEMPLATES`` (or the older ``TEMPLATE_CONTEXT_PROCESSORS``, ``TEMPLATE_DEBUG`` and other
+  template settings)
+* application-specific settings, for example that belong to django CMS or Wagtail. See each
+  application's :ref:`aldryn-config` for the settings it will configure.
+
+Note that in the case of more complex settings, like ``MIDDLEWARE`` or ``TEMPLATES``, which are no
+longer simple lists, you can't just extend them directly with new items, you'll need to dive into
+them to target the right list in the right dictionary, for example::
+
+     TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
+
+
+*Unconfigured* settings
+^^^^^^^^^^^^^^^^^^^^^^^
+
+*Unconfigured* settings, that are not required or handled by any other component, are much easier,
+and can simply be dropped directly into your ``settings.py``.
+
+
+Importing content
+-----------------
+
+Database
+^^^^^^^^
+
+Divio Cloud projects use Postgres databases. It's beyond the scope of this document to cover
+all possible eventualities of database importing.
+
+
+..  note::
+
+    In the examples below ``<container_name>`` will usually be something like
+    ``<project_slug>_db_1`` - but you can confirm this by running ``docker ps``::
+
+        ➜  docker ps
+        CONTAINER ID  IMAGE         COMMAND                 CREATED            STATUS            PORTS     NAMES
+        71fe7e930f60  postgres:9.4  "docker-entrypoint..."  About an hour ago  Up About an hour  5432/tcp  import_project_db_1
+        [...]
+
+    The *NAMES* column will list the container name.
+
+Postgres
+~~~~~~~~
+
+If you're already using Postgres, you're likely to find that steps along these lines will work:
+
+Drop the database of the newly-created project::
+
+    docker exec <container_name> dropdb -U postgres db --if-exists
+
+Create a new, empty database::
+
+    docker exec <container_name> createdb -U postgres db
+
+Add the ``hstore`` extension::
+
+    docker exec <container_name> psql -U postgres --dbname=db -c "CREATE EXTENSION IF NOT EXISTS
+    hstore"
+
+Finally, assuming that you have already dumped your existing database to a local file, import it::
+
+    docker exec -i <container_name> psql -U postgres --dbname db < /path/to/dump
+
+
+Other database types
+~~~~~~~~~~~~~~~~~~~~
+
+If you previously using a different database (most likely MySQL) there are various options
+available.
+
+We recommend using a conversion script such as https://github.com/lanyrd/mysql-postgresql-converter.
+
+Alternatively, you can export the data to a JSON file (via Django's ``manage.py dumpdata`` command)
+and then load it back into the new database with ``manage.py loaddata``.
+
+You may find these resources useful:
+
+* https://github.com/lanyrd/mysql-postgresql-converter
+* https://wiki.postgresql.org/wiki/Converting_from_other_Databases_to_PostgreSQL
+* https://www.calazan.com/migrating-django-app-from-mysql-to-postgresql/
+
+Once you have loaded your data, check that its migrations are in order, using the ``python
+manage.py migrate``.
+
+
+Media files
+^^^^^^^^^^^
+
+Media files should be copied to your project's ``data/media`` directory.
+
+
+Test the local site
+-------------------
+
+You're now in a position to test the local site, which should be done thoroughly. Start it up with::
+
+    divio project up
+
+
+Upload your changes back to the Divio Cloud
+-------------------------------------------
+
+Your project is a Git repository (certain files and directories are excluded), and should be
+pushed to the Divio Cloud's Git server in the usual way (``git add``/``git commit``/``git push``).
+
+Media files are not included in the Git repository (static files are however) and must be pushed::
+
+    divio project push media
+
+And the database also needs to be pushed::
+
+    divio project push db
+
+The project can now be deployed on the *Test* server::
+
+    divio project deploy
+
+
+Upload your project to an independent version control repository
+----------------------------------------------------------------
+
+Optionally, you can maintain your project's code in an independent version control repository.
+
+You can `add another Git remote <https://help.github.com/articles/adding-a-remote/>`_ or even a
+Mercurial or other remote, and push it there.
+
+
