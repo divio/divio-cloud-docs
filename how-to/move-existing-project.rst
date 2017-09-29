@@ -40,7 +40,7 @@ Divio Cloud projects use PostgreSQL as a database management system (DBMS). To t
     docker exec <container_id> dropdb -U postgres db --if-exists
     docker exec <container_id> createdb -U postgres db
     docker exec <container_id> psql -U postgres --dbname=db -c "CREATE EXTENSION IF NOT EXISTS hstore"
-    docker run --rm -v /path/to/dump:/app/tmp/db_dump --link <container_id>:postgres postgres:9.4 /bin/bash -c pg_restore -h postgres -U postgres -F /app/tmp/db_dump --dbname=db -n public --no-owner --exit-on-error
+    docker exec -i <container_id> psql -U postgres --dbname db < /path/to/dump
 
 If you were using a different DBMS like MySQL before, there are multiple options to convert them to a Postgres compatible dataset. Our recommendation is to use a conversion script like https://github.com/lanyrd/mysql-postgresql-converter - but you can also try to export the data to a JSON file (via “manage.py dumpdata”) and then load it back into the new database with “manage.py loaddata”. Note that <container_id> is usually something like: projectslug_db (if you’re unsure, open the docker-compose.yaml file and check.
 
