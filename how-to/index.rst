@@ -15,3 +15,4 @@ How-to guides
     Set up password protection <password-protect-project>
     Interact with your project’s database <interact-database>
     Use Git to manage your project <use-git>
+    Moving an existing project to Divio Cloud <move-existing-project>
