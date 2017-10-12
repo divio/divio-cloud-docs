@@ -1,7 +1,7 @@
 .. _divio-cloud-architecture:
 
-The Divio Cloud architecture
-============================
+Divio Cloud overview
+====================
 
 
 The Divio Cloud is a Docker-based platform-as-a-service. See

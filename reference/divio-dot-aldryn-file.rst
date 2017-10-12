@@ -1,7 +1,7 @@
 ..  _environment-configuration:
 
-Local Divio environment configuration
-=====================================
+The ``.aldryn`` file
+====================
 
 Your local Divio set-up can be configured via the ``~/.aldryn`` file.
 

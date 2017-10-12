@@ -1,9 +1,9 @@
 .. _redirects:
 
-Redirects in Divio Cloud projects
-=================================
+Redirects
+=========
 
-You will find that various redirects at work on URLs in Divio Cloud projects.
+You will find various redirects at work on URLs in Divio Cloud projects.
 
 They fall into different categories:
 

@@ -3,29 +3,47 @@
 Technical reference
 ===================
 
+Divio software components
+-------------------------
+
 .. toctree::
     :maxdepth: 1
 
     divio-app
     divio-cli
+    divio-dot-aldryn-file
+
+
+Docker commands and configuration
+---------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
     docker-commands
-    configuration-files
-    key-addons
-    project-anatomy
-    special-settings
-    addon-anatomy
-    environment-configuration
-    uwsgi-configuration
+    docker-configuration-files
 
 
-..  todo::
+Project configuration
+---------------------------------
 
-    ::
+.. toctree::
+    :maxdepth: 1
 
-        .. _file-storage:
+    configuration-settings-file
+    configuration-aldryn-config
+    configuration-environment-variables
+    configuration-uwsgi
 
-        File storage and management in Divio Cloud projects
-        ===================================================
 
-        Interacting directly with Amazon S3 storage
-        -------------------------------------------
+.. _key-addons:
+
+Key Divio Cloud addons
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    addons-aldryn-django
+    addons-aldryn-sso
+    addons-aldryn-addons

@@ -116,17 +116,14 @@ Commonly-used environment variables
 Many of the applications packaged for Divio Cloud deployment recognise a number
 of environment variables for your convenience.
 
-They do this in their :ref:`aldryn-config` files. To see how they are handled,
-refer to the ``aldryn_config.py`` file of key addons (*important*: make sure
-you are looking at the correct *version* of the addon, as different versions of
-the packages will assume different variables and settings):
+See :ref:`key-addons` for lists of settings that can be provided as variables
+in some Divio Cloud addons.
 
-* `Aldryn Django <https://github.com/aldryn/aldryn-django>`_
-* `Aldryn SSO <https://github.com/aldryn/aldryn-sso/blob>`_
-
-Note that various environment variables in these packages don't simply get
-converted into Django settings values. For example, the ``DISABLE_GZIP``
-variable in Aldryn Django is used to configure the GZIP middleware.
+They do this in their :ref:`configure-with-aldryn-config` files. To see
+precisely how they are handled, refer to the ``aldryn_config.py`` file of key
+addons (*important*: make sure you are looking at the correct *version* of the
+addon, as different versions of the packages will assume different variables
+and settings):
 
 Our UWSGI application gateway also :ref:`recognises environment variables
 <uwsgi-configuration>` that commence ``UWSGI_``.

@@ -101,56 +101,12 @@ Configure settings
 
 The settings for your project and its applications need to be added to ``settings.py``.
 
-How they are added depends on the settings themselves.
+..  important::
 
+    Do **not** simply copy all your settings into the file. This will not work as expected.
 
-*Configured* settings
-^^^^^^^^^^^^^^^^^^^^^
-
-Some settings, for example ``INSTALLED_APPS`` or ``MIDDLEWARE`` (``MIDDLEWARE_CLASSES`` in older
-versions of Django) are *configured* settings in Divio Cloud projects, managed by the `Aldryn
-Addons framework <https://github.com/aldryn/aldryn-addons>`_.
-
-This allows applications to configure themselves when they are installed; for example, if an addon
-requires certain applications to be listed in ``INSTALLED_APPS``, it will add them (this is taken
-care of in the addon's :ref:`aldryn-config` file). All these are then loaded into the
-``settings.py`` by its::
-
-    aldryn_addons.settings.load(locals())
-
-If you were to declare ``INSTALLED_APPS`` in ``settings.py`` it would simply overwrite the
-``INSTALLED_APPS`` configured by the system (if you did it after the
-``aldryn_addons.settings.load(locals())``) or would be overwritten by it (if you declared it first).
-
-This is why a Divio Cloud settings file instead includes::
-
-    INSTALLED_APPS.extend([
-        # add your project specific apps here
-    ])
-
-so you can add items to ``INSTALLED_APPS`` without overwriting existing items, by manipulating the
-list.
-
-You will need to do the same for other configured settings, which will include:
-
-* ``MIDDLEWARE`` (or the older ``MIDDLEWARE_CLASSES``)
-* ``TEMPLATES`` (or the older ``TEMPLATE_CONTEXT_PROCESSORS``, ``TEMPLATE_DEBUG`` and other
-  template settings)
-* application-specific settings, for example that belong to django CMS or Wagtail. See each
-  application's :ref:`aldryn-config` for the settings it will configure.
-
-Note that in the case of more complex settings, like ``MIDDLEWARE`` or ``TEMPLATES``, which are no
-longer simple lists, you can't just extend them directly with new items, you'll need to dive into
-them to target the right list in the right dictionary, for example::
-
-     TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
-
-
-*Unconfigured* settings
-^^^^^^^^^^^^^^^^^^^^^^^
-
-*Unconfigured* settings, that are not required or handled by any other component, are much easier,
-and can simply be dropped directly into your ``settings.py``.
+Add them in the appropriate way, which will depend on whether they are :ref:`addon-configured` or
+:ref:`manually-configured`.
 
 
 Importing content

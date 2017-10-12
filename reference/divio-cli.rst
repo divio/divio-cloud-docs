@@ -1,7 +1,7 @@
 .. _divio-cli-ref:
 
-*divio-cli* reference
-=====================
+Divio CLI
+=========
 
 *divio-cli* is a Python-based command line application, and can be installed
 via pip::

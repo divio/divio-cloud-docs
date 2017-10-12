@@ -1,7 +1,7 @@
 .. _addon-anatomy:
 
-Anatomy of an addon
-===================
+Anatomy of a Divio Cloud addon
+==============================
 
 Basic file structure
 --------------------
@@ -26,7 +26,7 @@ For an addon "Susan Example Application"::
 --------------------
 
 All addons have an ``aldryn_config.py`` file that takes care of settings, which
-are then loaded into ``settings.py``.
+are then loaded into :ref:`settings.py <settings.py>`.
 
 This means that any settings you need to apply in a project can't simply be
 applied in your ``settings.py`` if an addon also needs access to them.
@@ -48,6 +48,8 @@ changes are picked up when and reloaded automatically when developing.
 ``aldryn_config.py`` is an ideal place to check for environment variables that
 should be :ref:`converted into Django settings
 <environment-variables-settings>`.
+
+See :ref:`configure-with-aldryn-config`.
 
 
 ``addon.json``

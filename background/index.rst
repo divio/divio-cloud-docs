@@ -6,10 +6,10 @@ Background information
 .. toctree::
     :maxdepth: 1
 
+    divio-cloud-overview
     docker-basics
-    divio-cloud-architecture
-    redirects
-    application-configuration-overview
-    environment-variables
-    configure-application-settings
+    anatomy-project
+    anatomy-addon
+    addon-configuration-overview
     about-boilerplates
+    redirects

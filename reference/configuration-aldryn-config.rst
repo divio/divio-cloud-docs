@@ -1,11 +1,12 @@
-.. _configure-application-settings:
+.. _configure-with-aldryn-config:
 
 Application configuration with ``aldryn_config.py``
 ===================================================
 
 A Django application may require some configuration when it is deployed in a
-project. Typically this will include settings in ``settings.py``, but it can
-also include things like URL patterns that need to be set up.
+project. Typically this will include settings in :ref:`settings.py
+<settings.py>`, but it can also include things like URL patterns that need to
+be set up.
 
 Divio Cloud provides for such configuration through an addon's
 ``aldryn_config.py`` file. This file needs to be in the root directory of the
@@ -33,7 +34,7 @@ An example from a django CMS addon instance::
 The ``aldryn_config.py`` file
 -----------------------------
 
-See the :ref:`aldryn-config` reference for more detail.
+See the :ref:`configure-with-aldryn-config` reference for more detail.
 
 This file contain a class named ``Form`` that sub-classes
 ``aldryn_client.forms.BaseForm``::

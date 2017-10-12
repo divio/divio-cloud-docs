@@ -1,20 +1,25 @@
 .. _application-configuration:
 
-Application configuration overview
+Addon configuration overview
 ==================================
 
 Django applications may require or offer configuration options. Typically this
 will be achieved via the ``settings.py`` file, or through environment variables
 that Django picks up.
 
+This is largely handled by the :ref:`aldryn_config.py
+<configure-with-aldryn-config>` in each application.
+
+
 Divio Cloud projects offers both these methods, as well as configuration via
 the Control Panel:
 
-
 * Django settings
 * :ref:`environment variables <environment-variables>`
-* :ref:`addon configuration field <configure-application-settings>`
+* :ref:`addon configuration field <configure-with-aldryn-config>`
 
+
+.. _envar_setting_field:
 
 Environment variable, setting or Addon configuration field?
 -----------------------------------------------------------
