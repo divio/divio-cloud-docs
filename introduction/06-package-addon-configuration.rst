@@ -50,15 +50,15 @@ This adds the addon to the list of addons that the project will "watch".
     a Git conflict next time you pull.
 
 
-Create an ``aldryn-config.py`` file
+Create an ``aldryn_config.py`` file
 -----------------------------------
 
 This file will do the "heavy lifting" of configuring the project for your
 addon.
 
-When a project is built, it checks each addon for ``aldryn-config.py``, and
+When a project is built, it checks each addon for ``aldryn_config.py``, and
 calls its ``Form.to_settings()`` method to configure settings. *Every* addon on
-the Cloud will therefore need, at minimum, an ``aldryn-config.py`` that
+the Cloud will therefore need, at minimum, an ``aldryn_config.py`` that
 contains::
 
     from aldryn_client import forms
@@ -100,7 +100,7 @@ In ``settings.py`` we currently have:
 **Remove** all that from ``settings.py``. If you refresh your project's
 admin page, you'll see the Debug Toolbar is no longer there.
 
-We're going to implement those settings in the ``aldryn-config.py`` instead
+We're going to implement those settings in the ``aldryn_config.py`` instead
 (note that they're in a method now, so will look slightly different):
 
 ..  code-block:: python
