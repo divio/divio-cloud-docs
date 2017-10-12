@@ -1,6 +1,6 @@
 .. _about-boilerplates:
 
-About Boilerplates
+Boilerplates
 ==================
 
 ..  admonition:: See also
