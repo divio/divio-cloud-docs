@@ -12,7 +12,7 @@ the addon, so that it will be exposed on the Control Panel.
 This form also has a special method called ``to_settings()``, which is used to
 manipulate the project's settings for the addon.
 
-The form needs to be in a file called ``aldryn-config.py``, placed alongside
+The form needs to be in a file called ``aldryn_config.py``, placed alongside
 the other addon packaging files.
 
 
