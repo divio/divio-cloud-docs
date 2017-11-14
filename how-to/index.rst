@@ -14,5 +14,6 @@ How-to guides
     Log in to a local Django project <log-in-local-project>
     Set up password protection <password-protect-project>
     Interact with your project’s database <interact-database>
+    Interact with your project’s media storage <interact-storage>
     Use Git to manage your project <use-git>
     Migrate an existing project to Divio Cloud <migrate-existing-project>

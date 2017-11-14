@@ -241,11 +241,15 @@ directory.
 ``open``
     Open the local project's site in the browser.
 
+.. _divio-project-pull:
+
 ``pull``
     Pulls the database or media files from the Divio Cloud.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
     ``test`` or ``live`` (if not specified, defaults to ``test``).
+
+.. _divio-project-push:
 
 ``push``
     Pushes the database or media files to the Divio Cloud.
