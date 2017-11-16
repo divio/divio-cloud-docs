@@ -35,9 +35,10 @@ Domain name redirects
 
 You can set up your site's domains using the `Domains section of the Control
 Panel
-<http://support.divio.com/control-panel/projects/using-your-own-domain-with-divio-cloud>`_.
-This includes the ability to set a primary and secondary domains.
-The secondary domains will redirect to the primary domain.
+<http://support.divio.com/control-panel/projects/using-your-own-domain-with-divi
+o-cloud>`_. This includes the ability to set a primary and secondary domains.
+The secondary domains can each be set to redirect to the primary domain if
+required.
 
 The domains that are to be redirected to the primary domain can also be managed
 manually, via :ref:`DOMAIN_REDIRECTS`.
