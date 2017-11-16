@@ -177,10 +177,10 @@ Create a new connection with the following settings:
 Setting        Value
 =============  ===============
 Protocol       *Amazon S3*
-Address        S3 host name
-Access Key ID  key
-SECRET         secret
-Remote Path    bucket name
+Address        S3 host name from DSN value
+Access Key ID  key from DSN value
+SECRET         secret from DSN value
+Remote Path    bucket name from DSN value
 =============  ===============
 
 
@@ -207,11 +207,11 @@ Setting                   Value
 ========================  ====================  =============================
 Connection type           *Amazon S3*           *exoscale Swiss Object Store*
 Address                   ``s3.amazonaws.com``  ``sos.exo.io``
-Access Key ID/API Key     key
+Access Key ID/API Key     key from DSN value
 ------------------------  ---------------------------------------------------
-Path                      bucket name
+Path                      bucket name from DSN value
 ------------------------  ---------------------------------------------------
-Secret Access/Secret Key  secret
+Secret Access/Secret Key  secret from DSN value
 ------------------------  ---------------------------------------------------
 ========================  ====================  =============================
 
@@ -233,9 +233,9 @@ Pushing and pulling media files
 The :ref:`Divio app <divio-app>` includes an option to **Upload** (push) and
 **Download** (pull) media files to and from the cloud test server.
 
-The :ref:`Divio CLI <divio-cli-ref>` includes :ref:`divio-project-pull` and
-:ref:`divio-project-push` commands that target the test or live server as
-required.
+The :ref:`Divio CLI <divio-cli-ref>` includes :ref:`pull <divio-project-pull>`
+and :ref:`push <divio-project-push>` commands that target the test or live
+server as required.
 
 ..  warning::
 
