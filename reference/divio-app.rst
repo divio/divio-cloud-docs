@@ -39,7 +39,9 @@ Setup
 Update
     ``divio project update``
 Rebuild
-    ``docker-compose build``
+    ``docker-compose build web``. Note that this only rebuilds the web
+    container. To rebuild all the project's containers, you will need to run
+    ``docker-compose build`` in a terminal.
 Reset
     ``docker-compose rm`` to tear down the project, followed by ``divio project
     setup`` to rebuild it.

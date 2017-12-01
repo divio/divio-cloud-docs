@@ -22,7 +22,7 @@ Addon URLs
 A project, or an addon in it, may need to specify some URL patterns.
 
 They could simply be added to the project's ``urls.py`` manually. However, it's
-also convenient for addons to be able to configure URLs programatically, so
+also convenient for addons to be able to configure URLs programmatically, so
 that when an addon is installed, it will also take care of setting up the
 relevant URL configurations.
 

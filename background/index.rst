@@ -9,6 +9,7 @@ Background information
     divio-cloud-overview
     docker-basics
     anatomy-project
+    backend-services
     anatomy-addon
     addon-configuration-overview
     about-boilerplates
