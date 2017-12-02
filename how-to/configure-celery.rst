@@ -156,8 +156,8 @@ Running the local project
 ``docker-compose up`` or ``divio project up`` will now also start Celery.
 
 
-Enviroment variable changes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Environment variable changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you change environment variables locally, the containers will need to be
 stopped and restarted in order to pick up the changes.

@@ -48,7 +48,7 @@ for example:
    :alt: 'Default storage DSN value'
 
 This value contains the details you will need to use with a file transfer
-client for access to the sorage bucket.
+client for access to the storage bucket.
 
 
 .. _aws_example:
