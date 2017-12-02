@@ -21,11 +21,12 @@ Docker commands and configuration
     :maxdepth: 1
 
     docker-commands
-    docker-configuration-files
+    docker-dockerfile
+    docker-docker-compose
 
 
-Project configuration
----------------------------------
+Python/Django application configuration
+---------------------------------------
 
 .. toctree::
     :maxdepth: 1
