@@ -16,6 +16,7 @@ How-to guides
     Interact with your project’s media storage <interact-storage>
     Use Git to manage your project <use-git>
 
+    Configure settings <configure-settings>
     Package an application as an addon <create-addon>
     Update an existing addon <update-existing-addon>
 

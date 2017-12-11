@@ -19,7 +19,7 @@ Addons framework <https://github.com/aldryn/aldryn-addons>`_.
 This allows applications to configure themselves when they are installed; for example, if an addon
 requires certain applications to be listed in ``INSTALLED_APPS``, it will add them (this is taken
 care of in the addon's :ref:`configure-with-aldryn-config` file). All these are then loaded into the
-``settings.py`` by its::
+``settings.py`` by the line::
 
     aldryn_addons.settings.load(locals())
 
@@ -33,32 +33,7 @@ care of in the addon's :ref:`configure-with-aldryn-config` file). All these are 
 
     In either case, the settings **will not function correctly**.
 
-The correct way to manage settings such as ``INSTALLED_APPS`` is to manipulate the existing value, after having loaded the settings from the addons with ``aldryn_addons.settings.load(locals())``.
-For example, in the default ``settings.py``::
-
-    import aldryn_addons.settings
-    aldryn_addons.settings.load(locals())
-
-    INSTALLED_APPS.extend([
-        # add your project specific apps here
-    ])
-
-so you can add items to ``INSTALLED_APPS`` without overwriting existing items, by manipulating the
-list.
-
-You will need to do the same for other configured settings, which will include:
-
-* ``MIDDLEWARE`` (or the older ``MIDDLEWARE_CLASSES``)
-* ``TEMPLATES`` (or the older ``TEMPLATE_CONTEXT_PROCESSORS``, ``TEMPLATE_DEBUG`` and other
-  template settings)
-* application-specific settings, for example that belong to django CMS or Wagtail. See each
-  application's :ref:`configure-with-aldryn-config` for the settings it will configure.
-
-Note that in the case of more complex settings, like ``MIDDLEWARE`` or ``TEMPLATES``, which are no
-longer simple lists, you can't just extend them directly with new items, you'll need to dive into
-them to target the right list in the right dictionary, for example::
-
-     TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
+See :ref:`how-to-settings` for examples of how to handle these settings correctly.
 
 
 .. _manually-configured:
