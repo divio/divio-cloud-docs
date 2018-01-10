@@ -48,3 +48,11 @@ Working in the local development environment
 
     Log in to a local Django project <log-in-local-project>
 
+
+Troubleshooting
+---------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Identify the root cause of a failed deployment <debug-failed-deployment>
