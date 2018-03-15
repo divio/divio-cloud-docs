@@ -180,3 +180,6 @@ spelling_ignore_pypi_package_names = True
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+def setup(app):
+    app.add_stylesheet('css/divio.css')
