@@ -1,9 +1,14 @@
-body {
+body.wy-body-for-nav {
     font-family: "Museo Sans W01", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 12px;
     line-height: 1.42857;
-    color: #444
 }
 
+a:visited {color: #2980B9;}
 
-p {color: red;}
+.wy-nav-side, .wy-side-nav-search {background-color: #f0f0f0;}
+
+.wy-nav-content-wrap {background-color: white;}
+
+.wy-menu-vertical li a,
+.wy-menu-vertical li ul li a,
+.wy-menu-vertical li.current a  {color: black;}
