@@ -3,6 +3,10 @@
 How to interact with your project's media storage
 =================================================
 
+..  note::
+
+    See also :ref:`work-media-storage`.
+
 Your cloud project's media file storage is held on `Amazon Web Services's S3
 service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting service via
 another provider. Currently, most projects use Amazon's own S3 service, with
@@ -62,7 +66,7 @@ Parameter        Value
 **DSN value**    ``s3://AKAIIEJALP7LUT6ODIJA:TZJYGCfUZheXG%2BwANMFabbotgBs6d2lxZW06OIbD@example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io.s3.amazonaws.com/?domain=example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io``
 **key**          ``AKAIIEJALP7LUT6ODIJA``
 **secret**       ``TZJYGCfUZheXG+wANMFabbotgBs6d2lxZW06OIbD`` (see :ref:`DSN-reserved-characters`)
-**bucket name**  ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io``
+**bucket name**  ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io`` (from ``?domain=`` query)
 **S3 host**      ``s3.amazonaws.com``
 **AWS region**   ``us-east-1``
 **Served at**    ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io`` (from ``?domain=`` query)

@@ -81,6 +81,7 @@ We'll create a new file in the project at ``scripts/install.sh``, with commands 
 the steps listed above:
 
 ..  code-block:: bash
+
     #!/bin/bash
 
     # Exit immediately in case of error
