@@ -147,11 +147,11 @@ Opens local server logs in a shell. Equivalent command: ``docker-compose logs
 -f --tail=100``
 
 
-.. |divio-app-local-controls| image:: /images/divio-app-local-controls.png
+.. |divio-app-test-controls| image:: /images/divio-app-test-controls.png
    :alt: 'Test server controls'
    :width: 285
 
-10. Test server pane |divio-app-local-controls|
+10. Test server pane |divio-app-test-controls|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Divio app communicates with the Control Panel to provide basic management
