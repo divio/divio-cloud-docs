@@ -37,7 +37,7 @@ extensions = [
     ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+# templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -49,8 +49,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Divio Cloud developer handbook'
-copyright = u'2017, Daniele Procida'
+project = u'Developer Handbook'
+copyright = u'2017, Divio AG'
 author = u'Daniele Procida'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -85,14 +85,13 @@ todo_emit_warnings = True
 # on_rtd: whether we are on readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    try:
-        import sphinx_rtd_theme
-    except ModuleNotFoundError:
-        html_theme = 'default'
-    else:
-        html_theme = 'sphinx_rtd_theme'
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+try:
+    import divio_docs_theme
+except ModuleNotFoundError:
+    html_theme = 'default'
+else:
+    html_theme = 'divio_docs_theme'
+    html_theme_path = [divio_docs_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -103,7 +102,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 
 # -- Options for HTMLHelp output ------------------------------------------
@@ -166,8 +165,8 @@ texinfo_documents = [
 
 # Spelling check needs an additional module that is not installed by default.
 # Add it only if spelling check is requested so docs can be generated without it.
-if 'spelling' in sys.argv:
-    extensions.append("sphinxcontrib.spelling")
+# if 'spelling' in sys.argv:
+#     extensions.append("sphinxcontrib.spelling")
 
 # Spelling language.
 spelling_lang = 'en_GB'

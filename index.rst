@@ -18,7 +18,7 @@
                 width: 25%;
             }
         }
-        h2 {border-top: 1px solid black; padding-top: 1em}
+        h2 {border-top: 1px solid #e1e4e5; padding-top: 1em}
     </style>
 
 
