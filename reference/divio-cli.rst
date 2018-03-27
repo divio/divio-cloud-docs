@@ -277,7 +277,12 @@ directory.
     Starts up the local project.
 
 ``update``
-    Updates the local project with new changes from the Cloud.
+    Updates the local project with new code changes from the Cloud, then builds it. Runs::
+
+        git pull
+        docker-compose pull
+        docker-compose build
+        docker-compose run web start migrate
 
 ``version``
 ...........

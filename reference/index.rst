@@ -48,3 +48,12 @@ Key Divio Cloud addons
     addons-aldryn-django
     addons-aldryn-sso
     addons-aldryn-addons
+
+
+Quick reference
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    local-commands-cheatsheet
