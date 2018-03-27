@@ -278,6 +278,7 @@ directory.
 
 ``update``
     Updates the local project with new code changes from the Cloud, then builds it. Runs::
+
         git pull
         docker-compose pull
         docker-compose build
