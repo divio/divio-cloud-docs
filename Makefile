@@ -16,7 +16,7 @@ help:
 
 install:
 	@echo "... setting up virtualenv"
-	virtualenv env
+	python3.6 -m venv env
 	. $(VENV); pip install -r requirements.txt
 	@echo "\n" \
 	  "--------------------------------------------------------------- \n" \
