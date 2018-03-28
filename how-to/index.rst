@@ -12,7 +12,7 @@ Setting up a project and its environment
 
     Install system packages <install-system-packages>
     Install Python dependencies <install-python-dependencies>
-    Install frontend packages <install-frontend-packages>
+    Set up Sass CSS compilation <configure-sass>
     Configure Celery <configure-celery>
     Configure Django settings <configure-settings>
     Migrate an existing project to Divio Cloud <migrate-existing-project>
