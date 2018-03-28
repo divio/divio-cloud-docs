@@ -21,12 +21,12 @@ Build local ``web`` image (e.g. after updating ``requirements.in``)
 Push/pull code
     use ``git`` ``add``/``commit``/``push``/``pull`` commands as appropriate
 
-Push/pull media
-    ``divio project push media``/``divio project pull media`` (applies to ``test`` server by default; optionally,
+:ref:`Pull media/database <divio-project-pull>`
+    ``divio project pull media``/``divio project pull db`` (applies to ``test`` server by default; optionally,
     specify ``live``)
 
-Push/pull database
-    ``divio project push db``/``divio project pull db`` (applies to ``test`` server by default; optionally, specify
+:ref:`Push media/database <divio-project-push>`
+    ``divio project push media``/``divio project push db`` (applies to ``test`` server by default; optionally, specify
     ``live``)
 
 

@@ -247,7 +247,8 @@ directory.
     Pulls the database or media files from the Divio Cloud.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
-    ``test`` or ``live`` (if not specified, defaults to ``test``).
+    ``test`` or ``live`` (if not specified, defaults to ``test``), and by
+    ``--remote-id <project id>`` to pull from another project.
 
 .. _divio-project-push:
 
@@ -255,7 +256,8 @@ directory.
     Pushes the database or media files to the Divio Cloud.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
-    ``test`` or ``live`` (if not specified, defaults to ``test``).
+    ``test`` or ``live`` (if not specified, defaults to ``test``), and by
+    ``--remote-id <project id>`` to push to another project.
 
 ``setup``
     Replicates and builds a Divio Cloud project locally.
