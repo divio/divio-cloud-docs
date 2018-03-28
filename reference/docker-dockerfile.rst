@@ -29,6 +29,10 @@ warning.
 
 Removing these wrapping tags will prevent a section being poulated or changed.
 
+
+The empty ``Dockerfile`` at project creation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The ``Dockerfile`` starts life at project creation thus:
 
 ..  code-block:: Dockerfile
@@ -56,6 +60,9 @@ The ``Dockerfile`` starts life at project creation thus:
 
     # <STATIC>
     # </STATIC>
+
+These sections are in effect placeholders for Docker commands and configuration that will be used
+to define the project later.
 
 
 The ``<WARNING>`` section
