@@ -174,7 +174,7 @@ Towards the end of the ``Dockerfile``, inside the ``# <GULP>[...]# </GULP>`` sec
 
     The ``# <GULP>[...]# </GULP>`` section exists in the ``Dockerfile`` by default. On deployment,
     the Divio Cloud Control Panel will *automatically* fill this section (if it exists) with
-    appropriate commands when it discovers ``package.json`` in the project.
+    appropriate commands when it discovers ``gulpfile.js`` in the project.
 
 You will need an appropriate ``gulpfile.js`` at the root of the project too. It is beyond the scope
 of this document to describe how to create a ``gulpfile``. For reference however, you may use the

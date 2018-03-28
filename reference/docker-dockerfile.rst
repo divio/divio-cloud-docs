@@ -127,7 +127,8 @@ The ``<NPM>`` section
 ~~~~~~~~~~~~~~~~~~~~~
 
 If ``package.json`` (specifying Node packages that should be installed) is present in the root of
-the project, then instructions will be inserted to copy it to ``/app`` and install the packages.
+the project, then instructions will be inserted to copy it to the root of the image and install the
+packages.
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 4-6
