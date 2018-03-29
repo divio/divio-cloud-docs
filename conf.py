@@ -18,7 +18,7 @@
 #
 import os
 import sys
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- General configuration ------------------------------------------------
@@ -31,6 +31,7 @@ import sys
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'extensions',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
@@ -179,6 +180,16 @@ spelling_ignore_pypi_package_names = True
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
-    'python': ('http://docs.python.org/3/', None),
-    'django': ('https://docs.djangoproject.com/en/1.11/', 'https://docs.djangoproject.com/en/1.11/_objects/'),
+    'python': (
+        'http://docs.python.org/3/',
+        None
+        ),
+    'django': (
+        'https://docs.djangoproject.com/en/1.11/',
+        'https://docs.djangoproject.com/en/1.11/_objects/'
+        ),
+    'django-cms': (
+        'http://docs.django-cms.org/en/latest/',
+        None,
+        )
 }
