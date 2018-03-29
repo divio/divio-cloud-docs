@@ -84,6 +84,37 @@ In the cases where it's not, it's necessary to do the same thing manually in the
             break
 
 
+Loading media files into your applications' pages
+-------------------------------------------------
+
+Sometimes an application in your project will need to load media files using JavaScript.
+
+Since your media files are held on a server under a different domain from the application,
+browsers may refuse to allow this cross-domain loading for security reasons.
+
+There are two solutions to this.
+
+
+Load media from ``static``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One is to make sure that all files you need to load are in your site's *static* files,
+rather than media. (The static files are served from the same domain as the application itself, so
+browsers will be able to load files using JavaScript without complaint).
+
+This has the advantage of not running into the possibility of using JavaScript to load
+user-submitted material (which could include material uploaded by untrusted users).
+
+
+Enable CORS headers
+~~~~~~~~~~~~~~~~~~~
+
+The other solution to enable `CORS ("Cross-origin resource sharing") headers
+<https://en.wikipedia.org/wiki/Cross-origin_resource_sharing>`_ on the media.
+
+This must be done by our infrastructure team, on a per-website basis. Please contact Divio support to request this.
+
+
 Storage speed and performance
 -----------------------------
 
