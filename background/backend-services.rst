@@ -3,6 +3,22 @@
 Backend services
 ==================
 
+..  _media-storage:
+
+Media storage and delivery
+--------------------------
+
+..  admonition:: See also
+
+    * :ref:`work-media-storage`
+    * :ref:`interact-storage`
+
+Default file storage on Divio Cloud projects is handled by dedicated storage and hosting providers.
+These are `Amazon Web Services's S3 service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting
+service via another provider. Currently, most projects use Amazon's own S3 service, with the
+exception of projects in our Swiss region.
+
+
 .. _celery:
 
 Celery
@@ -10,7 +26,7 @@ Celery
 
 ..  admonition:: See also
 
-    * :ref:`General information about Celery on Divio Cloud <configure-celery>`
+    * :ref:`How to configure Celery on Divio Cloud <configure-celery>`
 
 Celery asynchronous task queue handling is available as a service, depending on
 enabled project features.

@@ -3,9 +3,9 @@
 Working with your project's media storage in Python applications
 ====================================================================
 
-..  note::
+..  admonition:: See also:
 
-    See also :ref:`interact-storage`.
+    * :ref:`interact-storage`
 
 Introduction
 ------------
@@ -13,7 +13,7 @@ Introduction
 Default file storage on Divio Cloud projects is handled by dedicated storage systems entirely
 separate from the application.
 
-In our architecture, The same site may be running as several different instances, on several
+In our architecture, the same site may be running as several different instances, on several
 different application hosts (this is one reason why Divio Cloud projects can be scaled, because new
 application instances can be created to meet increasing demand).
 
