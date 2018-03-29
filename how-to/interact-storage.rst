@@ -24,23 +24,21 @@ Occasionally you may need direct access to the S3 storage bucket for your
 project. You can manage this using a client of your choice that supports S3 and
 the particular storage provider.
 
-..  warning::
 
-    You make use of this access at your own risk.
+General notes
+~~~~~~~~~~~~~
 
-    S3 file operations tend to be **destructive** and do not necessarily have
-    the same behaviours you may be used to from other models, such as FTP. Make
-    sure that you know what you are doing and that you understand the
-    consequences of any actions or commands.
+Destructive operations
+^^^^^^^^^^^^^^^^^^^^^^
 
-    For example, note that all push and pull operations using the Divio CLI
-    **completely replace** all files at the destination, and **do not perform
-    any merges of assets**. Locally, the ``/data/media`` directory will be
-    deleted and replaced; on the cloud, the entire bucket will be replaced.
+Note that S3 file operations tend to be **destructive** and do not necessarily
+have the same behaviours you may be used to from other models, such as FTP.
+It's important that you know what you are doing and understand the consequences
+of any actions or commands.
 
 
 Storage ACLs (Access Control Lists)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When uploading files to your storage, note that you may need to specify
 explicitly the ACLs - in effect, the file permissions - on the files. If you
@@ -54,8 +52,8 @@ is set by default. This is the ACL required for general use.
 
 .. _storage_access_details:
 
-Obtain your storage access details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to obtain your storage access details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the Control Panel for your project, visit the ``/doctor`` URL. For each of
 the Test and Live servers, you'll see a ``DEFAULT_STORAGE_DSN`` value listed,
@@ -272,8 +270,8 @@ Then, to invoke `s3cmd commands <http://s3tools.org/usage>`_ such as ``ls``::
 The flag ``--signature-v2`` must be used to ensure the authentication details are accurate for Exoscale
 
 
-Access to storage when running locally
---------------------------------------
+Using Divio tools for local access to Cloud storage
+-----------------------------------------------------
 
 The project's media files can be found in the ``/data/media`` directory, and
 can be managed and manipulated in the normal way on your own computer.
@@ -299,6 +297,8 @@ server as required.
     the destination, and **do not perform any merges of assets**. Locally, the
     ``/data/media`` directory will be deleted and replaced; on the cloud, the
     entire bucket will be replaced.
+
+
 
 
 Limitations
