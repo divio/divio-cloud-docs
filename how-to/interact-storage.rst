@@ -219,6 +219,45 @@ Secret Access/Secret Key  secret from DSN value
 ------------------------  ---------------------------------------------------
 ========================  ====================  =============================
 
+s3cmd
+~~~~~~~~~
+
+`s3cmd <http://s3tools.org/s3cmd>`_ is a command-line utility that supports
+both AWS and other providers, like Exoscale
+
+s3cmd requires a configuration file, which can either be ``~/.s3cfg``, or a
+location passed in by the ``-c`` flag. 
+
+For Exoscale, the following configurations should be used: 
+
+
+========================  ====================
+Setting                   Value
+========================  ====================
+host_base                 sos.exo.io
+host_bucket               bucket_name.sos.exo.io
+access_key                (key)
+secret_key                (secret)
+use_https                 True
+========================  ====================
+
+The result is a ``.s3cfg`` configuration file in the following format::
+
+    [default]
+    host_base = sos.exo.io
+    host_bucket = example-test-68564d3f78d04cd2935f-8f20b19.sos.exo.io
+    access_key = EXOaaaaaaaaaaaaaaaaaaaaaaaa
+    secret_key = bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    use_https = True
+
+Then, to invoke `s3cmd commands <http://s3tools.org/usage>`_ such as ``ls``::
+
+    ➜ s3cmd ls s3://example-test-68564d3f78d04cd2935f-8f20b19/ --signature-v2
+             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public_thumbnails
+             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public/
+
+The flag ``--signature-v2`` must be used to ensure the authentication details are accurate for Exoscale
+
 
 Access to storage when running locally
 --------------------------------------
