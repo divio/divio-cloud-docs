@@ -1,6 +1,6 @@
 .. _work-media-storage:
 
-How to work with your project's media storage in Python applications
+Working with your project's media storage in Python applications
 ====================================================================
 
 ..  note::
@@ -24,10 +24,18 @@ That storage will also be inaccessible to any other instances of the application
 This means a project applications can't expect to save files to its local storage, and then expect
 to find them again.
 
+
+Our storage service providers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Instead, the applications must use our storage services. These are `Amazon Web Services's S3
 service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting service via another provider.
 Currently, most projects use Amazon's own S3 service, with the exception of projects in our Swiss
 region.
+
+
+Working with our storage backends in Django
+---------------------------------------------
 
 For most Django applications, this won't require any additional work. Django is able to use
 multiple storage backends, all addressed through a common API. This is the safe and correct way to
@@ -41,7 +49,7 @@ Similarly, an application should not rely on knowing or manipulating a File obje
 
 
 Use ``DEFAULT_FILE_STORAGE``
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Django's file storage system relies on the ``DEFAULT_FILE_STORAGE`` setting. Ideally, third-party
 applications in your project should respect this for their own file handling.
@@ -74,3 +82,18 @@ In the cases where it's not, it's necessary to do the same thing manually in the
         if storage_backend == DEFAULT_FILE_STORAGE:
             THUMBNAIL_DEFAULT_STORAGE = storage_backend
             break
+
+
+Storage speed and performance
+-----------------------------
+
+Note that if you need to make many read/write operations to file storage, or are working with very
+large objects, that the speed you experience on the cloud can be considerably less than what you
+experience in the local development environment.
+
+The local development environment has the advantage of locally-attached storage, and should not
+necessarily be taken as a guide to performance on the cloud.
+
+*In most cases, this won't actually matter.* However, if your code works very intensively with
+storage, it can be more efficient and faster to do all that work on the application instance's own
+local filesystem, in a temporary directory, and then send the finished work to the remote storage.

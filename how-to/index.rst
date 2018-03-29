@@ -50,15 +50,6 @@ Working in the local development environment
     Log in to a local Django project <local-project-log-in>
 
 
-Coding for Divio Cloud
-----------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Work with our media storage backend <work-media-storage>
-
-
 Troubleshooting
 ---------------
 

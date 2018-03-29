@@ -37,6 +37,15 @@ Python/Django application configuration
     configuration-uwsgi
 
 
+Coding in Divio Cloud applications
+----------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    work-media-storage
+
+
 .. _key-addons:
 
 Key Divio Cloud addons
