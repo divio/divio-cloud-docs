@@ -49,7 +49,7 @@ example in a web browser) give an "access denied" error.
 
 On AWS S3, the `public-read ACL
 <https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_
- is set by default. This is the ACL required for general use.
+is set by default. This is the ACL required for general use.
 
 
 .. _storage_access_details:
