@@ -33,10 +33,23 @@ the particular storage provider.
     sure that you know what you are doing and that you understand the
     consequences of any actions or commands.
 
-    For example, note that all push and pull operations **completely replace**
-    all files at the destination, and **do not perform any merges of assets**.
-    Locally, the ``/data/media`` directory will be deleted and replaced; on the
-    cloud, the entire bucket will be replaced.
+    For example, note that all push and pull operations using the Divio CLI
+    **completely replace** all files at the destination, and **do not perform
+    any merges of assets**. Locally, the ``/data/media`` directory will be
+    deleted and replaced; on the cloud, the entire bucket will be replaced.
+
+
+Storage ACLs (Access Control Lists)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When uploading files to your storage, note that you may need to specify
+explicitly the ACLs - in effect, the file permissions - on the files. If you
+don't set the correct ACLs, you may find that attempts to retrieve them (for
+example in a web browser) give an "access denied" error.
+
+On AWS S3, the `public-read ACL
+<https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_
+ is set by default. This is the ACL required for general use.
 
 
 .. _storage_access_details:
@@ -226,9 +239,9 @@ s3cmd
 both AWS and other providers, like Exoscale
 
 s3cmd requires a configuration file, which can either be ``~/.s3cfg``, or a
-location passed in by the ``-c`` flag. 
+location passed in by the ``-c`` flag.
 
-For Exoscale, the following configurations should be used: 
+For Exoscale, the following configurations should be used:
 
 
 ========================  ====================
