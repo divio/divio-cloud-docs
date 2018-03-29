@@ -44,6 +44,7 @@ Coding in Divio Cloud applications
     :maxdepth: 1
 
     work-media-storage
+    caching
 
 
 .. _key-addons:
