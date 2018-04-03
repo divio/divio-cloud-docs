@@ -1,100 +1,215 @@
+.. raw:: html
+
+    <style>
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none !important;
+      position: relative;
+    }
+    .debug-decision-tree li {
+      border-left: 2px solid #000;
+      margin-left: 1em;
+      padding-left: 1em;
+      position: relative;
+      list-style: none !important;
+    }
+    .debug-decision-tree li li {
+      margin-left: 0;
+    }
+    .debug-decision-tree li::before {
+      content:'┗';
+      color: #000;
+      position: absolute;
+      top: -5px;
+      left: -9px;
+    }
+    .debug-decision-tree ul > li:last-child {
+      border-left: 2px solid transparent;
+    }
+    .probable-fault h3::before {content: "⚠︎ "; color: red;}
+    dl.question dt:before {content: "⍰ "; color: #FFB401;}
+    dl.question li:after {content: " ➽"; color: #FFB401;}
+    </style>
+
 .. _debug-failed-deployment:
 
-How to identify the root cause of a failed deployment
-=====================================================
-
-You will sometimes encounter a failed deployment on your Test or Live server, or a build failure
-locally.
+How to debug a project that fails to start up
+=============================================
 
 
-Test/Live server deployments
-----------------------------
+Start below with the :ref:`debugging checklist <debug-checklist>`. Work through the checklist by selecting the most
+appropriate answer for each question until you arrive at a probable fault for the symptoms you're seeing.
 
-First, check that the deployment really has failed. Sometimes a site will fail to start up, but
-this doesn't necessarily indicate a deployment failure.
+There is also a :ref:`complete decision tree <debug-decision-tree>` for the debugging process.
 
-A failed deployment will show you a *Last deployment failed* message in the Control Panel, and a
-link to the deployment log:
+.. _debug-checklist:
 
-.. image:: /images/deployment-failed.png
-   :alt: 'Deployment failed, check log'
-   :width: 408
+Debugging checklist
+---------------------------
 
-(If your site is not working after a deployment, but you don't see such a message, see
-:ref:`successful-deployment-failed-startup` below.)
+Start here
+~~~~~~~~~~
 
-Open the deployment log. The end of the log will provide the final error, though you will usually
-then need to read back up to find more details.
+..  rst-class:: question
 
+Does the Control Panel show a |last-deployment-failed| message?
+    * :ref:`debug-cp-deployment-failed`
+    * :ref:`The Control Pane does not shows a Last deployment failed message
+      <debug-cp-deployment-not-failed>`
 
-.. _successful-deployment-failed-startup:
-
-Successful deployment, failed start-up
---------------------------------------
-
-Sometimes there is no failed deployment log, but the site fails to start. This is usually caused
-by a programming error that becomes apparent at runtime. In this case, the error will be shown
-in the site's runtime logs (available from the Control Panel).
+.. |last-deployment-failed| image:: /images/deployment-failed.png
+   :alt: 'Last deployment failed'
+   :width: 159
 
 
-Typical failures
-----------------
+.. _debug-cp-deployment-failed:
 
-Dependency conflict
-~~~~~~~~~~~~~~~~~~~
+The Control Panel shows a *Last deployment failed* message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example error::
-
-    Could not find a version that matches Django<1.10,<1.10.999,<1.11,<1.12,<1.9.999,<2,
-    <2.0,==1.9.13,>1.3,>=1.11,>=1.3,>=1.4,>=1.4.10,>=1.4.2,>=1.5,>=1.6,>=1.7,>=1.8
-
-Packages in your project specified conflicting dependencies. In the example above, there is no
-version of Django that matches the constraint ``>=1.11`` and also several of the others.
-
-This can happen when you have specified versions of packages that themselves require conflicting
-versions of some other package. Often, especially in a project that used to work, it's caused by an
-unpinned requirement, that then demands an unexpected dependency.
-
-We can see from the error that ``Django>=1.11`` is the problem, so we can search through the log to
-find what added it:
-
-..  code-block:: text
-
-    adding Django>=1.11
-      from django-phonenumber-field==2.0.0
-
-A search for ``adding django-phonenumber-field`` reveals:
-
-..  code-block:: python
-
-    adding django-phonenumber-field>=0.7.2
-      from aldryn-people==1.2.2
-
-So ``django-phonenumber-field`` isn't pinned adequately in Aldryn People.
-
-The solution is to pin any packages to versions that have compatible dependencies, either in the
-project's ``requirements.in``, or (if possible) in the ``setup.py`` of the other packages that
-installed them::
-
-    django-phonenumber-field<2.0.0
-
-Locally, the project can be tested for dependency conflicts of this sort by running
-``docker-compose build web``.
+Open the log. The relevant section will be right at the end. Any error will be clearly stated,
+possibly at end of a Python traceback.
 
 
-The website is locked
-~~~~~~~~~~~~~~~~~~~~~
+..  rst-class:: question
 
-Example error: ``Locked: website-lock-27441 is locked``.
-
-This usually happens when the Control Panel has set a flag for the site for deployment, and the
-flag has not been lifted.
-
-Generally the lock will time out by itself, but contact our support if you need it more quickly.
+What does the log contain?
+    * :ref:`The deployment log appears to be empty <debug-cp-deployment-failed-deployment-log-empty>`
+    * :ref:`The deployment log appers to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
+    * :ref:`The deployment log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
 
-Site launch error
-~~~~~~~~~~~~~~~~~
+.. _debug-cp-deployment-failed-deployment-log-empty:
+..  rst-class:: probable-fault
+
+Probable fault: temporary Control Panel error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If:
+
+* the deployment failed, and
+* the deployment log is empty:
+
+**Please try again.** This is usually a temporary error on the Control Panel. You may need to wait a few minutes for the
+condition to clear. If the issue is urgent, or you have already tried again, please contact Divio
+Support.
+
+
+.. _debug-cp-deployment-failed-deployment-log-no-error:
+
+The deployment log contains no obvious error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the deployment log contains no error, then the issue has not occurred during the build process,
+but later. Check the site's runtime logs (via the *Logs* menu).
+
+..  rst-class:: question
+
+Do you see any clear errors in the logs for the ``web`` container (of the appropriate server, Test or Live)?
+    * :ref:`The runtime log contains errors <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error>`
+    * :ref:`The runtime log contains no obvious error
+      <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error>`
+
+
+.. _debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error:
+..  rst-class:: probable-fault
+
+Probable fault: application is too slow to start and times out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If:
+
+* the deployment failed, and
+* the deployment log contains no error, and
+* the runtime log contains no error
+
+then probably your application took so long to start up that it triggered a timeout condition. On
+our platform, if a site is not up and running within a certain period after its build has
+completed, then the deployment is marked as failed.
+
+This could happen because it is waiting for another external resource to become available, or the
+processing it needs to do at start-up is excessive. These issues generally represent a programming
+problem that needs to be resolved.
+
+Build the site locally and start up the application to investigate why it is taking so long.
+
+If the start-up processes can't be made faster or more lightweight, investigate an asynchronous
+processing option such as :ref:`celery` to allow them to go on in the background while the project
+starts up.
+
+
+.. _debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error:
+..  rst-class:: probable-fault
+
+Probable fault: programming error in runtime code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If:
+
+* the site failed to start up, but
+* the deployment was not marked as failed, and
+* there are fatal errors in the runtime logs
+
+then probably the issue is a programming error in the site that takes down the application even
+before it is able to display an error in the browser.
+
+Build the site locally to examine the application.
+
+
+.. _debug-cp-deployment-failed-deployment-log-error:
+
+The deployment log contains an error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The end of the log will contain the key error.
+
+..  rst-class:: question
+
+What does the error most closely resemble?
+    * :ref:`ReadTimeoutError <debug-cp-deployment-failed-deployment-log-error-timeout>`
+    * :ref:`Could not find a version that matches [...]
+      <debug-cp-deployment-failed-deployment-log-error-dependency-conflict>`
+    * :ref:`ImportError <debug-cp-deployment-failed-deployment-log-error-import-error>`
+    * :ref:`npm ERR! [...] ERR! /npm-debug.log <debug-cp-deployment-failed-deployment-log-error-npm-error>`
+    * :ref:`The error does not seem to be any of the above <debug-cp-deployment-failed-deployment-log-error-other-error>`
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-timeout:
+..  rst-class:: probable-fault
+
+Probable fault: temporary Control Panel error (read timeout)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you get an error similar to (for example)::
+
+    pip._vendor.requests.packages.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='wheels-cdn.aldryn.net', port=443): Read timed out.
+
+particularly if it refers to a URL in ``aldryn.net``, then this is most likely a temporary issue in our infrastructure.
+You may need to wait a few minutes for the condition to clear. If the issue is urgent, or you have already tried again,
+please contact Divio Support.
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-dependency-conflict:
+..  rst-class:: probable-fault
+
+Probable fault: dependency conflict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you get an error similar to (for example)::
+
+    Could not find a version that matches [...]
+
+then two or more of the components in your system have specified incompatible Python dependencies.
+
+See :ref:`debug-dependency-conflict`.
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-import-error:
+..  rst-class:: probable-fault
+
+Probable fault: An import error prevents Django from starting up
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example::
 
@@ -102,5 +217,78 @@ Example::
     [...]
     ImportError: No module named django_select2
 
+
 In this case the site has been built successfully, but one of its launch routines (in this case
 ``collectstatic``) failed due to a programming error. The traceback will show where it occurred.
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-npm-error:
+..  rst-class:: probable-fault
+
+Probable fault: A Node error has halted the build
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example::
+
+    npm ERR! There is likely additional logging output above.
+    [0m[91m
+    [0m[91mnpm[0m[91m ERR![0m[91m Please include the following file with any support request:
+    [0m[91mnpm ERR! /npm-debug.log
+    [0m
+
+In this case one of the Node component installation processes has failed. If you set up the site locally and run
+``docker-compose build web``, the ``npm-debug.log`` will show you what the problem is. If it's not clear, contact Divio
+support for advice.
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-other-error:
+..  rst-class:: probable-fault
+
+Probable fault: A runtime error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are not sure what the error message reveals, please contact Divio support for assistance.
+
+
+.. _debug-cp-deployment-not-failed:
+..  rst-class:: probable-fault
+
+Probable fault: programming error at runtime
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes there is no failed deployment log, but the site fails to start. This is typically caused
+by a programming error that becomes apparent at runtime.
+
+Usually, the browser will show a Django traceback, if the site is in ``DEBUG`` mode (this is the default for the *Test*
+server). Under some circumstances, it might not, but the error will be shown in the site's runtime logs, available from
+the *Logs* menu in the Control Panel.
+
+
+..  _debug-decision-tree:
+..  rst-class:: debug-decision-tree
+
+Decision tree
+-------------------
+
+This tree represents the logic of the debugging checklist.
+
+* Deployment on the Cloud has not worked as expected:
+
+  * :ref:`debug-cp-deployment-failed`
+
+    * The deployment log appears to be empty: :ref:`debug-cp-deployment-failed-deployment-log-empty`
+    * :ref:`debug-cp-deployment-failed-deployment-log-no-error`
+
+      * Runtime log contains no errors: :ref:`debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error`
+      * Runtime log contains errors: :ref:`debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error`
+
+    * :ref:`debug-cp-deployment-failed-deployment-log-error`
+
+      * ``ReadTimeoutError``: :ref:`debug-cp-deployment-failed-deployment-log-error-timeout`
+      * ``Could not find a version that matches [...]``:
+        :ref:`debug-cp-deployment-failed-deployment-log-error-dependency-conflict`
+      * ``ImportError``: :ref:`debug-cp-deployment-failed-deployment-log-error-import-error`
+      * ``npm ERR! [...] ERR! /npm-debug.log``: :ref:`debug-cp-deployment-failed-deployment-log-error-npm-error`
+      *  An error not listed above: :ref:`debug-cp-deployment-failed-deployment-log-error-other-error`
+
+  * The Control Pane does not show a *Last deployment failed* message: :ref:`debug-cp-deployment-not-failed`
