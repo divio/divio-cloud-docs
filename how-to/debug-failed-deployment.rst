@@ -30,7 +30,44 @@
     .probable-fault h3::before {content: "⚠︎ "; color: red;}
     dl.question dt:before {content: "⍰ "; color: #FFB401;}
     dl.question li:after {content: " ➽"; color: #FFB401;}
+
+    div.debugging-checklist {border: 1px solid black; padding: 20px}
+
+    div.step {
+      display: none;
+    }
+
+    div.actual-outcome {
+      display: block;
+    }
+
+    .restart-link {text-align: right;}
+    .restart-link:after {content: " ↺"; color: red;}
     </style>
+
+    <script>
+      document.addEventListener("click", function(ev) {
+        var target = ev.target;                                       // get the element that has been clicked
+        if(target.parentElement.classList.contains("internal")) {     // if the clicked element is an .internal element
+          var
+              span = document.querySelector(                          // then get the parent of the href
+                target.parentElement.getAttribute("href")
+              ),
+              parent = span.parentElement;
+          // if the span exists and its parent is not currently shown (not having the class "actual-outcome")
+          if(span && !parent.classList.contains("actual-outcome")) {
+            // then select the current shown element (which we know will have the class "actual-outcome")
+            var visibleOutcome = document.querySelector(".actual-outcome");
+            if(visibleOutcome) {
+                // if it exists, hide it by removing the class "actual-outcome" from its classList
+                visibleOutcome.classList.remove("actual-outcome");
+            }
+            // and show the current span's parent by adding that same old class
+            parent.classList.add("actual-outcome");
+          }
+        }
+      });
+    </script>
 
 .. _debug-failed-deployment:
 
@@ -43,10 +80,15 @@ appropriate answer for each question until you arrive at a probable fault for th
 
 There is also a :ref:`complete decision tree <debug-decision-tree>` for the debugging process.
 
-.. _debug-checklist:
+
+..  rst-class:: debugging-checklist
 
 Debugging checklist
 ---------------------------
+
+..  rst-class:: step actual-outcome
+
+.. _debug-checklist:
 
 Start here
 ~~~~~~~~~~
@@ -55,7 +97,7 @@ Start here
 
 Does the Control Panel show a |last-deployment-failed| message?
     * :ref:`debug-cp-deployment-failed`
-    * :ref:`The Control Pane does not shows a Last deployment failed message
+    * :ref:`The Control Panel does not shows a Last deployment failed message
       <debug-cp-deployment-not-failed>`
 
 .. |last-deployment-failed| image:: /images/deployment-failed.png
@@ -64,6 +106,7 @@ Does the Control Panel show a |last-deployment-failed| message?
 
 
 .. _debug-cp-deployment-failed:
+..  rst-class:: step
 
 The Control Panel shows a *Last deployment failed* message
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,30 +122,33 @@ What does the log contain?
     * :ref:`The deployment log appers to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
     * :ref:`The deployment log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-empty:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: temporary Control Panel error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If:
-
-* the deployment failed, and
-* the deployment log is empty:
 
 **Please try again.** This is usually a temporary error on the Control Panel. You may need to wait a few minutes for the
 condition to clear. If the issue is urgent, or you have already tried again, please contact Divio
 Support.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-no-error:
+..  rst-class:: step
 
 The deployment log contains no obvious error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the deployment log contains no error, then the issue has not occurred during the build process,
-but later. Check the site's runtime logs (via the *Logs* menu).
+Check the site's runtime logs (via the *Logs* menu).
 
 ..  rst-class:: question
 
@@ -111,20 +157,18 @@ Do you see any clear errors in the logs for the ``web`` container (of the approp
     * :ref:`The runtime log contains no obvious error
       <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error>`
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: application is too slow to start and times out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If:
-
-* the deployment failed, and
-* the deployment log contains no error, and
-* the runtime log contains no error
-
-then probably your application took so long to start up that it triggered a timeout condition. On
+Probably your application took so long to start up that it triggered a timeout condition. On
 our platform, if a site is not up and running within a certain period after its build has
 completed, then the deployment is marked as failed.
 
@@ -138,26 +182,29 @@ If the start-up processes can't be made faster or more lightweight, investigate 
 processing option such as :ref:`celery` to allow them to go on in the background while the project
 starts up.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: programming error in runtime code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If:
-
-* the site failed to start up, but
-* the deployment was not marked as failed, and
-* there are fatal errors in the runtime logs
-
-then probably the issue is a programming error in the site that takes down the application even
+Probably the issue is a programming error in the site that takes down the application even
 before it is able to display an error in the browser.
 
 Build the site locally to examine the application.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error:
+..  rst-class:: step
 
 The deployment log contains an error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,9 +221,13 @@ What does the error most closely resemble?
     * :ref:`npm ERR! [...] ERR! /npm-debug.log <debug-cp-deployment-failed-deployment-log-error-npm-error>`
     * :ref:`The error does not seem to be any of the above <debug-cp-deployment-failed-deployment-log-error-other-error>`
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error-timeout:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: temporary Control Panel error (read timeout)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,9 +240,13 @@ particularly if it refers to a URL in ``aldryn.net``, then this is most likely a
 You may need to wait a few minutes for the condition to clear. If the issue is urgent, or you have already tried again,
 please contact Divio Support.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error-dependency-conflict:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: dependency conflict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,9 +259,13 @@ then two or more of the components in your system have specified incompatible Py
 
 See :ref:`debug-dependency-conflict`.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error-import-error:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: An import error prevents Django from starting up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,9 +280,13 @@ Example::
 In this case the site has been built successfully, but one of its launch routines (in this case
 ``collectstatic``) failed due to a programming error. The traceback will show where it occurred.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error-npm-error:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: A Node error has halted the build
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,18 +303,26 @@ In this case one of the Node component installation processes has failed. If you
 ``docker-compose build web``, the ``npm-debug.log`` will show you what the problem is. If it's not clear, contact Divio
 support for advice.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-failed-deployment-log-error-other-error:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: A runtime error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are not sure what the error message reveals, please contact Divio support for assistance.
 
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
+
 
 .. _debug-cp-deployment-not-failed:
-..  rst-class:: probable-fault
+..  rst-class:: probable-fault step
 
 Probable fault: programming error at runtime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -262,6 +333,10 @@ by a programming error that becomes apparent at runtime.
 Usually, the browser will show a Django traceback, if the site is in ``DEBUG`` mode (this is the default for the *Test*
 server). Under some circumstances, it might not, but the error will be shown in the site's runtime logs, available from
 the *Logs* menu in the Control Panel.
+
+..  rst-class:: restart-link
+
+:ref:`Restart the checklist <debug-checklist>`
 
 
 ..  _debug-decision-tree:
@@ -291,4 +366,4 @@ This tree represents the logic of the debugging checklist.
       * ``npm ERR! [...] ERR! /npm-debug.log``: :ref:`debug-cp-deployment-failed-deployment-log-error-npm-error`
       *  An error not listed above: :ref:`debug-cp-deployment-failed-deployment-log-error-other-error`
 
-  * The Control Pane does not show a *Last deployment failed* message: :ref:`debug-cp-deployment-not-failed`
+  * The Control Panel does not show a *Last deployment failed* message: :ref:`debug-cp-deployment-not-failed`
