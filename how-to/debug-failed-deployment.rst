@@ -95,14 +95,17 @@ Start here
 
 ..  rst-class:: question
 
-Does the Control Panel show a |last-deployment-failed| message?
+Does the Control Panel show a "⚠️  Last deployment failed" message?
+
+|last-deployment-failed|
+
     * :ref:`debug-cp-deployment-failed`
     * :ref:`The Control Panel does not shows a Last deployment failed message
       <debug-cp-deployment-not-failed>`
 
 .. |last-deployment-failed| image:: /images/deployment-failed.png
    :alt: 'Last deployment failed'
-   :width: 159
+   :width: 540
 
 
 .. _debug-cp-deployment-failed:
