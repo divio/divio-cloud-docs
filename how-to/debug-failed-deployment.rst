@@ -239,7 +239,8 @@ If you get an error similar to (for example)::
 
     pip._vendor.requests.packages.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='wheels-cdn.aldryn.net', port=443): Read timed out.
 
-particularly if it refers to a URL in ``aldryn.net``, then this is most likely a temporary issue in our infrastructure.
+particularly if it refers to a URL in ``aldryn.net``, then this is likely an issue with our Wheels Proxy. We pre-build Python packages for you to improve the speed of deployment; but it's not always 100% under load. 
+
 You may need to wait a few minutes for the condition to clear. If the issue is urgent, or you have already tried again,
 please contact Divio Support.
 
