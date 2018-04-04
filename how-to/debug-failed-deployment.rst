@@ -27,9 +27,9 @@
     .debug-decision-tree ul > li:last-child {
       border-left: 2px solid transparent;
     }
-    .probable-fault h3::before {content: "⚠︎ "; color: red;}
-    dl.question dt:before {content: "⍰ "; color: #FFB401;}
-    dl.question li:after {content: " ➽"; color: #FFB401;}
+    .probable-fault h3::before {content: "⚠️ "; color: red;}
+    dl.question dt:before {content: "❓"; color: #FFB401;}
+    dl.question li:after {content: " ➡️"; color: #FFB401;}
 
     div.debugging-checklist {border: 1px solid black; padding: 20px}
 
@@ -42,7 +42,7 @@
     }
 
     .restart-link {text-align: right;}
-    .restart-link:after {content: " ↺"; color: red;}
+    .restart-link:after {content: " ↩️"; color: red;}
     </style>
 
     <script>
