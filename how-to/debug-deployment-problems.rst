@@ -5,7 +5,6 @@
     /* ----- decision tree ----- */
 
     .debug-decision-tree li {
-      border-left: 2px solid gray;
       margin-left: 1em;
       padding-left: 1em;
       position: relative;
@@ -16,15 +15,27 @@
       margin-left: 0;
     }
 
-    .debug-decision-tree li::before {
-      content:'┗';
-      color:gray;
+    .debug-decision-tree li::after {
+      content:'';
       position: absolute;
-      top: -2px;
-      left: -9px;
+      top: 0px;
+      bottom: -10px;
+      left: -5px;
+      width: 2px;
+      background: #b9b9b9;
     }
-    .debug-decision-tree ul > li:last-child {
-      border-left: 2px solid transparent;
+    .debug-decision-tree li:last-child::after {
+      content:'';
+      display: none;
+    }
+    .debug-decision-tree li::before {
+      content:'';
+      position: absolute;
+      top: 10px;
+      left: -5px;
+      width: 13px;
+      height: 2px;
+      background: #b9b9b9;
     }
 
     /* ----- interactive debugger ----- */
@@ -57,27 +68,31 @@
     </style>
 
     <script>
-      document.addEventListener("click", function(ev) {
-        var target = ev.target;                                       // get the element that has been clicked
-        if(target.parentElement.classList.contains("internal")) {     // if the clicked element is an .internal element
-          var
-              span = document.querySelector(                          // then get the parent of the href
-                target.parentElement.getAttribute("href")
-              ),
-              parent = span.parentElement;
-          // if the span exists and its parent is not currently shown (not having the class "current-step")
-          if(span && !parent.classList.contains("current-step")) {
-            // then select the current shown element (which we know will have the class "current-step")
-            var visibleOutcome = document.querySelector(".current-step");
-            if(visibleOutcome) {
-                // if it exists, hide it by removing the class "current-step" from its classList
-                visibleOutcome.classList.remove("current-step");
+    window.addEventListener('load', function () {
+        $('.internal').on('click', function (e) {
+            e.preventDefault();
+      
+            var $this = $(this);
+            var anchor = $this.attr('href');
+            var step = $(anchor).parent();
+      
+            if (step.length && !step.is('current-step')) {
+                $('.current-step').removeClass('current-step');
+                step.addClass('current-step');
+                if (window.history.pushState) {
+                  window.history.pushState('', {}, anchor);
+                }
             }
-            // and show the current span's parent by adding that same old class
-            parent.classList.add("current-step");
-          }
+        });
+
+        if (window.location.hash) {
+            $('.internal[href$="' + window.location.hash + '"]').trigger('click');
         }
-      });
+
+        $(window).on('hashchange', function () {
+            $('.internal[href$="' + window.location.hash + '"]').trigger('click');
+        });
+    });
     </script>
 
 .. _debug-deployment-problems:
