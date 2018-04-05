@@ -80,7 +80,7 @@
       });
     </script>
 
-.. _debug-failed-deployment:
+.. _debug-deployment-problems:
 
 How to debug Cloud deployment problems
 ==============================================================
@@ -129,6 +129,7 @@ What does the log contain?
     * :ref:`The deployment log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -142,6 +143,7 @@ Please try again. This is a rare and usually temporary problem. You may need to 
 condition to clear. If the issue is urgent, or you have already tried again, please contact Divio Support.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -161,6 +163,7 @@ Do you see any clear errors in the logs for the ``web`` container (of the approp
       <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error>`
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -185,6 +188,7 @@ processing option such as :ref:`celery` to allow them to go on in the background
 starts up.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -198,6 +202,7 @@ Probably the issue is a programming error in the site that takes down Django as 
 be an ``ImportError``). The runtime log will reveal the error.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -239,6 +244,7 @@ indicates that two or more of the components in your system have specified incom
 See :ref:`debug-dependency-conflict`.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -260,6 +266,7 @@ In this case one of the Node component installation processes has failed. If the
 contact Divio support for advice.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -280,6 +287,7 @@ error while it was trying to run the ``collectstatic`` command. This is a progra
 where it occurred.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -297,6 +305,7 @@ This may occasionally occur when our deployment infrastructure is under heavy lo
 again. If the issue is urgent, or you have already tried again, please contact Divio Support.
 
 ..  rst-class:: restart-link
+
 :ref:`Restart the checklist <debug-checklist>`
 
 

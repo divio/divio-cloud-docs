@@ -56,5 +56,5 @@ Troubleshooting
 .. toctree::
     :maxdepth: 1
 
-    Debug Cloud deployment problems <debug-failed-deployment>
+    Debug Cloud deployment problems <debug-deployment-problems>
     Identify and resolve a dependency conflict <debug-dependency-conflict>
