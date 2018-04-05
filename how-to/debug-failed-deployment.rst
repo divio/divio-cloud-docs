@@ -1,48 +1,59 @@
 .. raw:: html
 
     <style>
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none !important;
-      position: relative;
-    }
+
+    /* ----- decision tree ----- */
+
     .debug-decision-tree li {
-      border-left: 2px solid #000;
+      border-left: 2px solid gray;
       margin-left: 1em;
       padding-left: 1em;
       position: relative;
       list-style: none !important;
     }
+
     .debug-decision-tree li li {
       margin-left: 0;
     }
+
     .debug-decision-tree li::before {
       content:'┗';
-      color: #000;
+      color:gray;
       position: absolute;
-      top: -5px;
+      top: -2px;
       left: -9px;
     }
     .debug-decision-tree ul > li:last-child {
       border-left: 2px solid transparent;
     }
-    .probable-fault h3::before {content: "⚠️ "; color: red;}
-    dl.question dt:before {content: "❓"; color: #FFB401;}
-    dl.question li:after {content: " ➡️"; color: #FFB401;}
 
-    div.debugging-checklist {border: 1px solid black; padding: 20px}
+    /* ----- interactive debugger ----- */
+
+    dl.question dt:before {font-family: FontAwesome; content: "\f059"; color: #FFB400; margin-right: 1em;}
+    dl.question li:after {font-family: FontAwesome; content: " \f0a9"; color: #FFB400;}
+    .probable-fault h3::before {font-family: FontAwesome; content: "\f071"; color: #ffb400; margin-right: 1em;}
+
+    div.debugging-checklist {
+      border: 1px solid black;
+      padding: 20px;
+      margin-bottom: 2em;
+      border-radius: 10px;
+      background: #eeeeee;}
+
+    /* by default, hide each step in the process */
 
     div.step {
       display: none;
     }
 
-    div.actual-outcome {
+    /* but display it if it is actually selected */
+
+    div.current-step {
       display: block;
     }
 
     .restart-link {text-align: right;}
-    .restart-link:after {content: " ↩️"; color: red;}
+    .restart-link:after {font-family: FontAwesome; content: " \f021"; color: red;}
     </style>
 
     <script>
@@ -54,16 +65,16 @@
                 target.parentElement.getAttribute("href")
               ),
               parent = span.parentElement;
-          // if the span exists and its parent is not currently shown (not having the class "actual-outcome")
-          if(span && !parent.classList.contains("actual-outcome")) {
-            // then select the current shown element (which we know will have the class "actual-outcome")
-            var visibleOutcome = document.querySelector(".actual-outcome");
+          // if the span exists and its parent is not currently shown (not having the class "current-step")
+          if(span && !parent.classList.contains("current-step")) {
+            // then select the current shown element (which we know will have the class "current-step")
+            var visibleOutcome = document.querySelector(".current-step");
             if(visibleOutcome) {
-                // if it exists, hide it by removing the class "actual-outcome" from its classList
-                visibleOutcome.classList.remove("actual-outcome");
+                // if it exists, hide it by removing the class "current-step" from its classList
+                visibleOutcome.classList.remove("current-step");
             }
             // and show the current span's parent by adding that same old class
-            parent.classList.add("actual-outcome");
+            parent.classList.add("current-step");
           }
         }
       });
@@ -71,11 +82,11 @@
 
 .. _debug-failed-deployment:
 
-How to debug a project that fails to start up
-=============================================
+How to debug Cloud deployment problems
+==============================================================
 
 
-Start below with the :ref:`debugging checklist <debug-checklist>`. Work through the checklist by selecting the most
+Start with the :ref:`debugging checklist <debug-checklist>`. Work through the checklist by selecting the most
 appropriate answer for each question until you arrive at a probable fault for the symptoms you're seeing.
 
 There is also a :ref:`complete decision tree <debug-decision-tree>` for the debugging process.
@@ -86,26 +97,19 @@ There is also a :ref:`complete decision tree <debug-decision-tree>` for the debu
 Debugging checklist
 ---------------------------
 
-..  rst-class:: step actual-outcome
+..  rst-class:: step current-step
 
 .. _debug-checklist:
 
-Start here
-~~~~~~~~~~
+Deployment on the Cloud has not worked as expected
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ..  rst-class:: question
 
-Does the Control Panel show a "⚠️  Last deployment failed" message?
-
-|last-deployment-failed|
-
+Does the Control Panel show a "Last deployment failed" message?
     * :ref:`debug-cp-deployment-failed`
     * :ref:`The Control Panel does not shows a Last deployment failed message
       <debug-cp-deployment-not-failed>`
-
-.. |last-deployment-failed| image:: /images/deployment-failed.png
-   :alt: 'Last deployment failed'
-   :width: 540
 
 
 .. _debug-cp-deployment-failed:
@@ -114,9 +118,8 @@ Does the Control Panel show a "⚠️  Last deployment failed" message?
 The Control Panel shows a *Last deployment failed* message
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open the log. The relevant section will be right at the end. Any error will be clearly stated,
-possibly at end of a Python traceback.
-
+Open the log. The relevant section will be towards the end, so work backwards from the end. Any error will be clearly
+stated.
 
 ..  rst-class:: question
 
@@ -126,22 +129,19 @@ What does the log contain?
     * :ref:`The deployment log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
 ..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
 .. _debug-cp-deployment-failed-deployment-log-empty:
-..  rst-class:: probable-fault step
+..  rst-class:: probable-fault step fas fa-exclamation-triangle
 
-Probable fault: temporary Control Panel error
+Probable fault: temporary problem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Please try again.** This is usually a temporary error on the Control Panel. You may need to wait a few minutes for the
-condition to clear. If the issue is urgent, or you have already tried again, please contact Divio
-Support.
+Please try again. This is a rare and usually temporary problem. You may need to wait a few minutes for the
+condition to clear. If the issue is urgent, or you have already tried again, please contact Divio Support.
 
 ..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -151,7 +151,7 @@ Support.
 The deployment log contains no obvious error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check the site's runtime logs (via the *Logs* menu).
+Check the site's *runtime logs* (via the *Logs* menu).
 
 ..  rst-class:: question
 
@@ -161,7 +161,6 @@ Do you see any clear errors in the logs for the ``web`` container (of the approp
       <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error>`
 
 ..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -186,7 +185,6 @@ processing option such as :ref:`celery` to allow them to go on in the background
 starts up.
 
 ..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -196,13 +194,10 @@ starts up.
 Probable fault: programming error in runtime code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Probably the issue is a programming error in the site that takes down the application even
-before it is able to display an error in the browser.
-
-Build the site locally to examine the application.
+Probably the issue is a programming error in the site that takes down Django as it launches (typically, this will
+be an ``ImportError``). The runtime log will reveal the error.
 
 ..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -217,32 +212,12 @@ The end of the log will contain the key error.
 ..  rst-class:: question
 
 What does the error most closely resemble?
-    * :ref:`ReadTimeoutError <debug-cp-deployment-failed-deployment-log-error-timeout>`
     * :ref:`Could not find a version that matches [...]
       <debug-cp-deployment-failed-deployment-log-error-dependency-conflict>`
-    * :ref:`ImportError <debug-cp-deployment-failed-deployment-log-error-import-error>`
     * :ref:`npm ERR! [...] ERR! /npm-debug.log <debug-cp-deployment-failed-deployment-log-error-npm-error>`
+    * :ref:`ImportError <debug-cp-deployment-failed-deployment-log-error-import-error>`
+    * :ref:`ReadTimeoutError <debug-cp-deployment-failed-deployment-log-error-timeout>`
     * :ref:`The error does not seem to be any of the above <debug-cp-deployment-failed-deployment-log-error-other-error>`
-
-..  rst-class:: restart-link
-
-:ref:`Restart the checklist <debug-checklist>`
-
-
-.. _debug-cp-deployment-failed-deployment-log-error-timeout:
-..  rst-class:: probable-fault step
-
-Probable fault: temporary Control Panel error (read timeout)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you get an error similar to (for example)::
-
-    pip._vendor.requests.packages.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='wheels-cdn.aldryn.net', port=443): Read timed out.
-
-particularly if it refers to a URL in ``aldryn.net``, then this is likely an issue with our Wheels Proxy. We pre-build Python packages for you to improve the speed of deployment; but it's not always 100% under load. 
-
-You may need to wait a few minutes for the condition to clear. If the issue is urgent, or you have already tried again,
-please contact Divio Support.
 
 ..  rst-class:: restart-link
 
@@ -255,37 +230,15 @@ please contact Divio Support.
 Probable fault: dependency conflict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you get an error similar to (for example)::
+An error that starts::
 
     Could not find a version that matches [...]
 
-then two or more of the components in your system have specified incompatible Python dependencies.
+indicates that two or more of the components in your system have specified incompatible Python dependencies.
 
 See :ref:`debug-dependency-conflict`.
 
 ..  rst-class:: restart-link
-
-:ref:`Restart the checklist <debug-checklist>`
-
-
-.. _debug-cp-deployment-failed-deployment-log-error-import-error:
-..  rst-class:: probable-fault step
-
-Probable fault: An import error prevents Django from starting up
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Example::
-
-    Step 8/8 : RUN DJANGO_MODE=build python manage.py collectstatic --noinput
-    [...]
-    ImportError: No module named django_select2
-
-
-In this case the site has been built successfully, but one of its launch routines (in this case
-``collectstatic``) failed due to a programming error. The traceback will show where it occurred.
-
-..  rst-class:: restart-link
-
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -303,12 +256,47 @@ Example::
     [0m[91mnpm ERR! /npm-debug.log
     [0m
 
-In this case one of the Node component installation processes has failed. If you set up the site locally and run
-``docker-compose build web``, the ``npm-debug.log`` will show you what the problem is. If it's not clear, contact Divio
-support for advice.
+In this case one of the Node component installation processes has failed. If the error is not clear from the log,
+contact Divio support for advice.
 
 ..  rst-class:: restart-link
+:ref:`Restart the checklist <debug-checklist>`
 
+
+.. _debug-cp-deployment-failed-deployment-log-error-import-error:
+..  rst-class:: probable-fault step
+
+Probable fault: An import error halts one of the site build routines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example::
+
+    Step 8/8 : RUN DJANGO_MODE=build python manage.py collectstatic --noinput
+    [...]
+    ImportError: No module named django_select2
+
+In this case a Python application launched by an instruction in the ``Dockerfile`` has caused Django to halt with an
+error while it was trying to run the ``collectstatic`` command. This is a programming error. The traceback will show
+where it occurred.
+
+..  rst-class:: restart-link
+:ref:`Restart the checklist <debug-checklist>`
+
+
+.. _debug-cp-deployment-failed-deployment-log-error-timeout:
+..  rst-class:: probable-fault step
+
+Probable fault: temporary timeout error (read timeout)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example::
+
+    ReadTimeoutError: [...] Read timed out.
+
+This may occasionally occur when our deployment infrastructure is under heavy load. In most cases you can simply try
+again. If the issue is urgent, or you have already tried again, please contact Divio Support.
+
+..  rst-class:: restart-link
 :ref:`Restart the checklist <debug-checklist>`
 
 
@@ -347,11 +335,11 @@ the *Logs* menu in the Control Panel.
 ..  rst-class:: debug-decision-tree
 
 Decision tree
--------------------
+-------------
 
 This tree represents the logic of the debugging checklist.
 
-* Deployment on the Cloud has not worked as expected:
+* :ref:`Deployment on the Cloud has not worked as expected <debug-checklist>`:
 
   * :ref:`debug-cp-deployment-failed`
 
@@ -363,11 +351,11 @@ This tree represents the logic of the debugging checklist.
 
     * :ref:`debug-cp-deployment-failed-deployment-log-error`
 
-      * ``ReadTimeoutError``: :ref:`debug-cp-deployment-failed-deployment-log-error-timeout`
       * ``Could not find a version that matches [...]``:
         :ref:`debug-cp-deployment-failed-deployment-log-error-dependency-conflict`
-      * ``ImportError``: :ref:`debug-cp-deployment-failed-deployment-log-error-import-error`
       * ``npm ERR! [...] ERR! /npm-debug.log``: :ref:`debug-cp-deployment-failed-deployment-log-error-npm-error`
+      * ``ImportError``: :ref:`debug-cp-deployment-failed-deployment-log-error-import-error`
+      * ``ReadTimeoutError``: :ref:`debug-cp-deployment-failed-deployment-log-error-timeout`
       *  An error not listed above: :ref:`debug-cp-deployment-failed-deployment-log-error-other-error`
 
   * The Control Panel does not show a *Last deployment failed* message: :ref:`debug-cp-deployment-not-failed`
