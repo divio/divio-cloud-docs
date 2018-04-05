@@ -44,18 +44,15 @@
     dl.question li:after {font-family: FontAwesome; content: " \f0a9"; color: #FFB400;}
     .probable-fault h3::before {font-family: FontAwesome; content: "\f071"; color: #ffb400; margin-right: 1em;}
 
-    div.debugging-checklist {
+    div.step {
       border: 1px solid black;
       padding: 20px;
-      margin-bottom: 2em;
+      margin: 2em 0 2em;
       border-radius: 10px;
-      background: #eeeeee;}
-
-    /* by default, hide each step in the process */
-
-    div.step {
+      background: #eeeeee;
+      /* by default, hide each step in the process */
       display: none;
-    }
+      }
 
     /* but display it if it is actually selected */
 
@@ -71,11 +68,11 @@
     window.addEventListener('load', function () {
         $('.internal').on('click', function (e) {
             e.preventDefault();
-      
+
             var $this = $(this);
             var anchor = $this.attr('href');
             var step = $(anchor).parent();
-      
+
             if (step.length && !step.is('current-step')) {
                 $('.current-step').removeClass('current-step');
                 step.addClass('current-step');
@@ -100,17 +97,16 @@
 How to debug Cloud deployment problems
 ==============================================================
 
-
 Start with the :ref:`debugging checklist <debug-checklist>`. Work through the checklist by selecting the most
 appropriate answer for each question until you arrive at a probable fault for the symptoms you're seeing.
 
 There is also a :ref:`complete decision tree <debug-decision-tree>` for the debugging process.
 
 
-..  rst-class:: debugging-checklist
-
 Debugging checklist
 ---------------------------
+
+..  rst-class:: debugging-checklist
 
 ..  rst-class:: step current-step
 
