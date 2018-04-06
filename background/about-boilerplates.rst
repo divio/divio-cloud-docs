@@ -3,7 +3,7 @@
 Boilerplates
 ==================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`Create a custom Boilerplate tutorial <tutorial-create-boilerplate>`
 

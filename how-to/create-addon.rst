@@ -3,7 +3,7 @@
 How to package a Django application as an addon
 ===============================================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`Add new applications to the project <tutorial-add-applications>` tutorial
     * If you simply want to add an application to a project and don't need to

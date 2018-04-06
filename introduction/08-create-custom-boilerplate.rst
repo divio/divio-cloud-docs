@@ -3,7 +3,7 @@
 Create a custom Boilerplate
 ===========================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`about-boilerplates`
 
@@ -34,7 +34,7 @@ In order to give you a meaningful context in which to learn about creating
 Boilerplates, you need a project with a suitable application. This section sets
 up a new project, with a simple Polls application.
 
-..  admonition:: Or, use your own application
+..  ..  seealso:::: Or, use your own application
 
     If you'd prefer to do this in a project using one of your own applications,
     that's even better. You'll need to make some minor adjustments to some of

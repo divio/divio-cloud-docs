@@ -224,7 +224,9 @@ the entire site will require user and password details. This is an *additional
 layer* of authentication. Access to the admin will still require login by an admin user, and even a logged-in admin user will need to supply the username
 and password.
 
-See also: :ref:`password-protect-project`.
+..  seealso::
+
+    :ref:`password-protect-project`.
 
 Though the username and password can be specified as an environment variable or
 in ``settings.py``, the latter is not good practice.

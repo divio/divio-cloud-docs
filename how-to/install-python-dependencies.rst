@@ -3,7 +3,7 @@
 How to add arbitrary Python dependencies to a project
 =====================================================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`tutorial-add-applications`
     * :ref:`Add new applications to a project tutorial <install-system-packages>`

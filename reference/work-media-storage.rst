@@ -3,7 +3,7 @@
 Working with your project's media storage in Python applications
 ====================================================================
 
-..  admonition:: See also:
+..  seealso:::
 
     * :ref:`interact-storage`
 
