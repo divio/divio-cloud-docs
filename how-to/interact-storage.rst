@@ -3,9 +3,9 @@
 How to interact with your project's media storage
 =================================================
 
-..  note::
+..  seealso::
 
-    See also :ref:`work-media-storage`.
+    :ref:`work-media-storage`.
 
 Your cloud project's media file storage is held on `Amazon Web Services's S3
 service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting service via

@@ -8,7 +8,7 @@ Backend services
 Media storage and delivery
 --------------------------
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`work-media-storage`
     * :ref:`interact-storage`
@@ -24,7 +24,7 @@ exception of projects in our Swiss region.
 Celery
 ------
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`How to configure Celery on Divio Cloud <configure-celery>`
 

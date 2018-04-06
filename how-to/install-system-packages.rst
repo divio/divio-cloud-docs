@@ -3,7 +3,7 @@
 How to add arbitrary system packages to a project
 =================================================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`install-python-dependencies`
 

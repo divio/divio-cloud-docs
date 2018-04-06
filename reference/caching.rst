@@ -3,7 +3,7 @@
 Caching in Divio Cloud applications
 ===================================
 
-..  admonition:: See also
+..  seealso::
 
     * `Caching on Divio Cloud
       <http://support.divio.com/general/essential-knowledge-caching-in-divio-cloud-projects>`_

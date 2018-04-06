@@ -3,7 +3,7 @@
 How to configure Celery
 =======================
 
-..  admonition:: See also
+..  seealso::
 
     * :ref:`celery`
 
