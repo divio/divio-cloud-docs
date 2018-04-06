@@ -117,10 +117,9 @@ Deployment on the Cloud has not worked as expected
 
 ..  rst-class:: question
 
-Does the Control Panel show a "Last deployment failed" message?
-    * :ref:`debug-cp-deployment-failed`
-    * :ref:`The Control Panel does not show a Last deployment failed message
-      <debug-cp-deployment-not-failed>`
+Does the Control Panel show a "Last deployment failed" error message?
+    * :ref:`The error message is shown <debug-cp-deployment-failed>`
+    * :ref:`The error message is not shown <debug-cp-deployment-not-failed>`
 
 
 .. _debug-cp-deployment-failed:
@@ -134,10 +133,10 @@ stated.
 
 ..  rst-class:: question
 
-What does the log contain?
-    * :ref:`The deployment log appears to be empty <debug-cp-deployment-failed-deployment-log-empty>`
-    * :ref:`The deployment log appers to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
-    * :ref:`The deployment log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
+What does the deployment log contain?
+    * :ref:`The log appears to be empty <debug-cp-deployment-failed-deployment-log-empty>`
+    * :ref:`The log appers to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
+    * :ref:`The log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
 ..  rst-class:: restart-link
 
@@ -168,7 +167,7 @@ Check the site's *runtime logs* (via the *Logs* menu).
 
 ..  rst-class:: question
 
-Do you see any clear errors in the logs for the ``web`` container (of the appropriate server, Test or Live)?
+Do you see any obvious errors in the runtime logs for the ``web`` container (of the appropriate server, Test or Live)?
     * :ref:`The runtime log contains errors <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error>`
     * :ref:`The runtime log contains no obvious error
       <debug-cp-deployment-failed-deployment-log-no-error-runtime-log-no-error>`
