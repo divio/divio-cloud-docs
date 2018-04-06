@@ -111,6 +111,7 @@ else:
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'DivioClouddeveloperhandbookdoc'
 
+show_cloud_banner = False
 
 # -- Options for LaTeX output ---------------------------------------------
 
