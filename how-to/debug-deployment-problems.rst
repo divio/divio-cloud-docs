@@ -66,7 +66,7 @@
 
     <script>
     window.addEventListener('load', function () {
-        $('.internal').on('click', function (e) {
+        $('.debugging-checklist .internal, .debug-decision-tree .internal').on('click', function (e) {
             e.preventDefault();
 
             var $this = $(this);
