@@ -119,7 +119,7 @@ Deployment on the Cloud has not worked as expected
 
 Does the Control Panel show a "Last deployment failed" message?
     * :ref:`debug-cp-deployment-failed`
-    * :ref:`The Control Panel does not shows a Last deployment failed message
+    * :ref:`The Control Panel does not show a Last deployment failed message
       <debug-cp-deployment-not-failed>`
 
 
