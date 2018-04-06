@@ -112,6 +112,9 @@ else:
 htmlhelp_basename = 'DivioClouddeveloperhandbookdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
+html_theme_options = {
+    'show_cloud_banner': False
+}
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
