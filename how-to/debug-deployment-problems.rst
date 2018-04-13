@@ -135,7 +135,7 @@ stated.
 
 What does the deployment log contain?
     * :ref:`The log appears to be empty <debug-cp-deployment-failed-deployment-log-empty>`
-    * :ref:`The log appers to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
+    * :ref:`The log appears to contain no errors <debug-cp-deployment-failed-deployment-log-no-error>`
     * :ref:`The log refers to an error <debug-cp-deployment-failed-deployment-log-error>`
 
 ..  rst-class:: restart-link
