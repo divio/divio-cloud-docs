@@ -85,8 +85,8 @@ appropriate classes to the elements:
 
 When a deployment fails on our Cloud, our Control Panel will direct you to the [interactive debugging checklist](http://docs.divio.com/en/latest/how-to/debug-deployment-problems.html#debugging-checklist).
 
-It's a kind of [Choose your own adventure story](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), except
-perhaps less fun.
+It's a kind of [Choose your own adventure story](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), but probably
+less fun.
 
 This checklist relies on [styles and JavaScript](https://raw.githubusercontent.com/divio/divio-cloud-docs/master/how-to/debug-deployment-problems.rst).
 
