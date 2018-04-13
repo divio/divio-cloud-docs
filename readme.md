@@ -24,7 +24,7 @@ Then:
 ### Read the Docs
 
 We serve our documentation via [Read the Docs](https://readthedocs.org), a superb free service that's
-especially well-know in the Python world, and is ideal for open-source projects.
+especially well-known in the Python world, and is ideal for open-source projects.
 
 The documentation is written in ReStructed Text (RST) and built using [Sphinx](http://sphinx.pocoo.org).
 
@@ -85,6 +85,9 @@ appropriate classes to the elements:
 
 When a deployment fails on our Cloud, our Control Panel will direct you to the [interactive debugging checklist](http://docs.divio.com/en/latest/how-to/debug-deployment-problems.html#debugging-checklist).
 
+It's a kind of [Choose your own adventure story](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), except
+perhaps less fun.
+
 This checklist relies on [styles and JavaScript](https://raw.githubusercontent.com/divio/divio-cloud-docs/master/how-to/debug-deployment-problems.rst).
 
 
@@ -95,10 +98,14 @@ If you don't already use [intersphinx](http://www.sphinx-doc.org/en/stable/ext/i
 This allows us to link directly to (for example) references in other Sphinx projects, such as [where we link to django CMS's caching settings](http://docs.divio.com/en/latest/reference/caching.html#caching-in-django-cms).
 
 The trick here is that unlike `:ref:` for example, `setting:` is not a natively understood by Sphinx - meaning that
-there isn't actually a way to refer to those in another project. However, we can *extend* Sphinx's capacities.
+there isn't *by default* a way to refer to those in another project. However, we can *extend* Sphinx's capacities.
 
 See our [extensions.py](https://github.com/divio/divio-cloud-docs/blob/master/extensions.py) for how we do this (we
 simply steal the [extensions.py from django CMS](https://github.com/divio/django-cms/blob/develop/docs/_ext/djangocms.py)).
+
+A reference then looks like:
+
+    :setting:`django-cms:CMS_CACHE_DURATIONS`
 
 
 ## Documentation structure
