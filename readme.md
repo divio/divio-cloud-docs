@@ -1,5 +1,7 @@
 # Divio Cloud documentation for developers
 
+Published version: [Divio Cloud developer handbook](http://docs.divio.com/en/latest/).
+
 This documentation is intended for developers using the Divio Cloud.
 
 ## Build the documentation locally
