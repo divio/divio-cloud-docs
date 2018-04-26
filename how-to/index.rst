@@ -18,6 +18,7 @@ Setting up a project and its environment
     Migrate an existing project to Divio Cloud <migrate-existing-project>
     Add a Django application <add-application>
     Set up password protection <password-protect-project>
+    Fine-tune uWSGI server performance <fine-tune-server-performance>
 
 
 Managing a project's code and resources
