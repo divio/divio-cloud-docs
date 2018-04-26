@@ -98,6 +98,7 @@ See the `AWS S3 regions table
 <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ for more
 information about regions and their names.
 
+
 .. _DSN-reserved-characters:
 
 Reserved characters
