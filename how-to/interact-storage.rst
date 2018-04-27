@@ -28,13 +28,12 @@ the particular storage provider.
 General notes
 ~~~~~~~~~~~~~
 
-Destructive operations
-^^^^^^^^^^^^^^^^^^^^^^
+.. warning::
 
-Note that S3 file operations tend to be **destructive** and do not necessarily
-have the same behaviours you may be used to from other models, such as FTP.
-It's important that you know what you are doing and understand the consequences
-of any actions or commands.
+  Note that S3 file operations tend to be
+  **destructive** and do not necessarily have the same behaviours you may be used
+  to from other models, such as FTP.  It's important that you know what you are
+  doing and understand the consequences of any actions or commands.
 
 
 Storage ACLs (Access Control Lists)
@@ -116,15 +115,15 @@ values beginning with ``%``.
 Exoscale (Divio Cloud Swiss region) example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-===============  =============================================================
-Parameter        Value
-===============  =============================================================
-**DSN value**    ``s3://EXO52e55eb39187195ffdd72219:iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00@example-test-765482644ac540dbb23367cf3837580b-f0596a8.sos.exo.io/?auth=s3``
-**key**          ``EXO52e55eb39187195ffdd72219``
-**secret**       ``iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00``
-**bucket name**  ``example-test-765482644ac540dbb23367cf3837580b-f0596a8``
-**S3 host**      ``sos.exo.io``
-===============  =============================================================
+================  =============================================================
+Parameter         Value
+================  =============================================================
+**DSN value**     ``s3://EXO52e55eb39187195ffdd72219:iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00@example-test-765482644ac540dbb23367cf3837580b-f0596a8.sos.exo.io/?auth=s3``
+**key**           ``EXO52e55eb39187195ffdd72219``
+**secret**        ``iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00``
+**bucket name**   ``example-test-765482644ac540dbb23367cf3837580b-f0596a8``
+**endpoint url**  ``https://sos-ch-dk-2.exo.io``
+================  =============================================================
 
 
 S3 clients
@@ -138,7 +137,7 @@ AWS CLI
 ~~~~~~~
 
 Amazon's official S3 client. `AWS CLI documentation
-<http://docs.aws.amazon.com/cli/>`_. Supports AWS only, not other providers.
+<http://docs.aws.amazon.com/cli/>`_. Supports AWS and limited third-party providers.
 
 It's beyond the scope of this document to provide comprehensive guidance on
 using the AWS CLI, but the steps below should get you started.
@@ -157,6 +156,16 @@ Run ``aws configure``, and you will be prompted for the *AWS Access Key ID*,
 *AWS Secret Access Key* and *Default region name*, which you can extract from
 the :ref:`DEFAULT_STORAGE_DSN <storage_access_details>` - see
 :ref:`aws_example`, above - and *Default output format*.
+
+The resulting configuration file can be found at ``~/.aws/credentials`` on Linux/MacOS machines, or ``C:\Users\USERNAME\.aws\credentials`` for Windows machines::
+
+    [default]
+    aws_access_key_id = AKAIIEJALP7LUT6ODIJA
+    aws_secret_access_key = TZJYGCfUZheXG+wANMFabbotgBs6d2lxZW06OIbD
+
+If you are manipulating multiple buckets, change the ``[default]`` to a profile name. Then, in any ``aws`` command, add a ``--profile`` parameter to specify which set of credentials to use::
+
+    ➜ aws s3 ls --profile divio-bucket ...
 
 
 Interact with your storage
@@ -178,6 +187,16 @@ or to copy (``cp``) a file from your own computer to S3::
 Run ``aws s3 help`` for more information on commands, or refer to the `AWS CLI
 Command Reference
 <http://docs.aws.amazon.com/cli/latest/reference/s3/index.html>`_
+
+
+Exoscale (Divio Cloud Swiss region) 
+...................................
+
+Commands to interact with Swiss region buckets will need to include a custom ``--endpoint-url`` parameter::
+
+    ➜ aws s3 ls --endpoint-url=https://sos-ch-dk-2.exo.io s3://example-test-765482644ac540dbb23367cf3837580b-f0596a8
+           PRE filer_public/
+           PRE filer_public_thumbnails/
 
 
 Transmit
@@ -229,45 +248,6 @@ Path                      bucket name from DSN value
 Secret Access/Secret Key  secret from DSN value
 ------------------------  ---------------------------------------------------
 ========================  ====================  =============================
-
-s3cmd
-~~~~~~~~~
-
-`s3cmd <http://s3tools.org/s3cmd>`_ is a command-line utility that supports
-both AWS and other providers, like Exoscale
-
-s3cmd requires a configuration file, which can either be ``~/.s3cfg``, or a
-location passed in by the ``-c`` flag.
-
-For Exoscale, the following configurations should be used:
-
-
-========================  ====================
-Setting                   Value
-========================  ====================
-host_base                 sos.exo.io
-host_bucket               bucket_name.sos.exo.io
-access_key                (key)
-secret_key                (secret)
-use_https                 True
-========================  ====================
-
-The result is a ``.s3cfg`` configuration file in the following format::
-
-    [default]
-    host_base = sos.exo.io
-    host_bucket = example-test-68564d3f78d04cd2935f-8f20b19.sos.exo.io
-    access_key = EXOaaaaaaaaaaaaaaaaaaaaaaaa
-    secret_key = bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-    use_https = True
-
-Then, to invoke `s3cmd commands <http://s3tools.org/usage>`_ such as ``ls``::
-
-    ➜ s3cmd ls s3://example-test-68564d3f78d04cd2935f-8f20b19/ --signature-v2
-             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public_thumbnails
-             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public/
-
-The flag ``--signature-v2`` must be used to ensure the authentication details are accurate for Exoscale
 
 
 Using Divio tools for local access to Cloud storage
