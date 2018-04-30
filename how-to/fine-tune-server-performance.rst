@@ -6,10 +6,10 @@ How to fine-tune your server's performance
 In the Divio Cloud Control Panel for your project, you can easily change the resources (instances,
 RAM, storage, transfer) allocated to your project to adjust for its needs.
 
-In most cases, having chosen suitable values, you won't need to make further changes.
+In most cases, having chosen suitable values for these, you won't need to make further changes.
 
-If your project has unusual demands or sees unusual traffic, you can also fine-tune some settings
-to match its needs even better.
+If however your project has unusual demands or sees unusual traffic, you can also fine-tune some
+settings to match its needs even better.
 
 Optimising the settings for a high-traffic site isn't just a case of allocating more resources
 indiscriminately on the basis that "more is better".
@@ -17,6 +17,18 @@ indiscriminately on the basis that "more is better".
 For example, a site that sees *large numbers* of requests that each represent a *low load* will
 benefit from being allowed to serve more concurrent requests, but that could make things worse for
 a site that sees a *smaller number* of requests each representing a *heavier load*.
+
+
+Monitoring and profiling
+------------------------
+
+Our Control Panel's metrics will give you a basic idea of RAM usage. However, there are more
+sophisticated tools available that can give you much more, and more finely-grained, information.
+
+These range from Python libraries (such as `memory-profiler
+<http://pypi.python.org/pypi/memory_profiler>`_ or `line_profiler
+<https://pypi.org/project/line_profiler/>`_) to third-party monitoring/profiling services.
+
 
 
 Aldryn Django settings
@@ -29,7 +41,7 @@ These parameters can be controlled by environment variables.
 
 ..  note::
 
-    These environment variables represent uWSGI start-up settings. It's also possible to configure
+    These environment variables represent uWSGI run-time otions. It's also possible to configure
     :ref:`other uWSGI settings <uwsgi-configuration>`, but we don't recommend doing so unless you
     are familiar with them already and understand their implications.
 
