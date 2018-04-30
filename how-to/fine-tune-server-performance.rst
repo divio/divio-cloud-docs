@@ -41,7 +41,7 @@ These parameters can be controlled by environment variables.
 
 ..  note::
 
-    These environment variables represent uWSGI run-time otions. It's also possible to configure
+    These environment variables represent uWSGI run-time options. It's also possible to configure
     :ref:`other uWSGI settings <uwsgi-configuration>`, but we don't recommend doing so unless you
     are familiar with them already and understand their implications.
 
