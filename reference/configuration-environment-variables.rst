@@ -125,5 +125,5 @@ addons (*important*: make sure you are looking at the correct *version* of the
 addon, as different versions of the packages will assume different variables
 and settings):
 
-Our UWSGI application gateway also :ref:`recognises environment variables
+Our uWSGI application gateway also :ref:`recognises environment variables
 <uwsgi-configuration>` that commence ``UWSGI_``.
