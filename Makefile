@@ -8,7 +8,7 @@ SPHINXPROJ    = DivioClouddeveloperhandbook
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENV = env/bin/activate
-PORT = 8001
+PORT = 9001
 
 # Put it first so that "make" without argument is like "make help".
 help:
