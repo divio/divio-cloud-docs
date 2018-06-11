@@ -4,9 +4,7 @@ The Divio application
 =====================
 
 The Divio app is a GUI application for interacting with local projects and
-the Divio Cloud.
-
-It also sets up :ref:`the Divio Shell <divio-shell>`.
+the Divio Cloud. It also sets up :ref:`the Divio Shell <divio-shell>`.
 
 
 Controls
@@ -54,17 +52,18 @@ Status, refresh, account settings
 See :ref:`The Divio Shell <divio-shell>`, below.
 
 
-.. |divio-app-local-controls| image:: /images/divio-app-local-controls.png
-   :alt: 'Local site controls'
-   :width: 292
-
-5. The local project pane |divio-app-local-controls|
+5. The local project pane
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Controls for managing the local server for your project. Controls and their
 command-line equivalents:
 
-Open a bash shell in the local container
+.. image:: /images/divio-app-local-controls.png
+   :alt: 'Local site controls'
+   :width: 327
+
+
+Open a bash :ref:`shell in the local container <local-shell>`
     ``docker-compose exec web /bin/bash``
 Open the local site
     ``divio project up``
@@ -207,14 +206,15 @@ up keys yourself <add-public-key>`.
 
 ..  important::
 
-    The Divio Shell and the local container's bash shell are quite different.
-    The Divio Shell is for interacting with your Divio projects. The local
-    container bash shell is *inside* an instance of a particular project,
-    allowing you to interact with its program code and operations.
+    The Divio Shell and the :ref:`local container's bash shell <local-shell>` are quite different.
+
+    * The Divio Shell is for interacting with your Divio projects.
+    * The :ref:`local container bash shell <local-shell>` is *inside* an instance of a particular
+      project, allowing you to interact with its program code and operations.
 
 
-Creating the shell
-^^^^^^^^^^^^^^^^^^
+Creating the Divio shell
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Divio app creates the shell by running a sequence of commands, expanded
 here for clarification:
@@ -240,4 +240,3 @@ here for clarification:
         cd /Users/daniele/divio-cloud-projects
         divio doctor
         bash
-
