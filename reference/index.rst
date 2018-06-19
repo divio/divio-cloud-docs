@@ -11,6 +11,7 @@ Divio software components
 
     divio-app
     divio-cli
+    divio-components-shell
     divio-dot-aldryn-file
 
 
@@ -45,6 +46,7 @@ Coding in Divio Cloud applications
 
     work-media-storage
     caching
+    coding-sending-email
 
 
 .. _key-addons:
