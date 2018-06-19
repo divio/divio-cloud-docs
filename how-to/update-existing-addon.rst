@@ -11,27 +11,23 @@ Addons will need to be updated now and then. The basic process for updating an a
 * upload the new version.
 
 
-Set up a local project
-----------------------
+Choose a local project to work with
+-----------------------------------
 
-It's recommended to work with a project that already contains the addon. This way, you can check
+Ideally, select a project that already works with an existing version of the addon. This way, you can check
 that the new version continues to work as expected, and that migrations for example run correctly.
 
-If you don't, the next best way is to create a new project on the Control Panel containing the
-addon, and then set that up locally.
-
-Get the project running locally, for example with ``docker-compose up``. If you're updating the
-addon because it no longer works correctly (a common issue is that an unpinned dependency installs
-an incompatible component) then this won't be possible.
+If you don't have such a project, the next best thing is to create a new project on the Control Panel
+containing the addon, and then set that up locally.
 
 
 Uninstall the addon locally if necessary
 ----------------------------------------
 
-You will find the addon:
+You will find the addon listed in ``requirements.in`` - remove it from there, so that when you build the
+local container it will no longer try to install the old version.
 
-*  as a directory in the ``addons`` directory
-* listed in ``requirements.in``.
+
 
 Remove it from each of these places.
 
@@ -41,7 +37,7 @@ You will also find it listed in ``INSTALLED_ADDONS`` in ``settings.py`` - *leave
 Clone the addon repository to ``addons-dev``
 --------------------------------------------
 
-It should look something like this::
+In ``addons-dev``, clone the addon from its VCS repository. It should look something like this::
 
     addons-dev/
         susan-example-application/
@@ -53,24 +49,19 @@ It should look something like this::
             susan_example_application/
                 __init__.py
 
-Make sure you checkout the **same** version of it as was previously installed.
+Check that you have the appropriate version cloned.
+
+Placing the addon into ``addons-dev`` will override any version that has been installed into the project
+using the requirements file.
 
 
-Check that it behaves as before
--------------------------------
+Run ``divio project develop``
+-----------------------------
 
-Restart the runserver (``docker-compose up``), and check that the addon continues to work as
-expected (or fails to work, if that is what previously happened).
+If the new version is different from the previously installed version and includes changed dependencies, or
+you want to check exactly what it will do when when the project is built, you should run::
 
-
-Make and test your changes
---------------------------
-
-Make your updates to the addon, checking that they work as expected.
-
-Run::
-
-    divio project develop <package name>
+     divio project develop <package name>
 
 This processes the addon, adding::
 
@@ -78,14 +69,25 @@ This processes the addon, adding::
 
 to the ``requirements.in``.
 
-You will need to run this if you make any changes in the addon that involve dependencies or
+**You will need to run this again** if you make any changes in the addon that involve dependencies or
 installation of components.
+
+
+Work on the code
+----------------
+
+Restart the runserver (``docker-compose up``), and check that the addon continues to work as
+expected (or fails to work, if that is what previously happened).
+
+Make and test any changes you want to make.
 
 
 Push your changes
 -----------------
 
-You'll need to bump the version number in the ``__init__.py``.
+When you're satisfied, you're ready to update the addon.
+
+Don't forget to bump the version number in the ``__init__.py``.
 
 When you have finished all your updates, commit and push your changes to the addon's repository (or
 make a pull request if it's not your own).
