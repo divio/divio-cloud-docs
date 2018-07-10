@@ -184,33 +184,12 @@ In the original project, all the ``INSTALLED_APPS`` are listed manually. In a Di
 most of them will be added automatically by the addons. You need to ensure that your Divio
 project includes all those in the original project.
 
-Add the following to the end of the ``settings.py`` of each project::
+In this case,
 
-    for app in INSTALLED_APPS:
-        print(app)
+::
 
-For the original project, run::
-
-    python manage.py shell
-
-and for the Divio project run::
-
-    docker-compose run --rm web python manage.py shell
-
-In each case, copy the list of applications into a file, order the lines alphabetcially and save
-the file. Now run a ``diff`` on the two files::
-
-    diff original-installed-apps divio-installed-apps
-
-In the output you will see lines starting with:
-
-* ``>`` - an application present in the Divio project, but not in the original
-* ``<`` - an application listed in the original, but not in the Divio project
-
-In the first case, no action is required. In the second case, you will see that::
-
-    < polls
-    < polls_cms_integration
+    polls
+    polls_cms_integration
 
 both need to be added manually (``the_opinions_company`` is also listed, but this is just the
 project name and doesn't need to be added).
@@ -227,6 +206,11 @@ in the::
     ])
 
 section so that they will be added.
+
+..  note::
+
+    Our project is quite simple - in a more complex project, you can :ref:`use diff on the lists of
+    INSTALLED_APPS to help ensure you don't miss any <diff_installed_apps>`.
 
 
 Transfer other settings
