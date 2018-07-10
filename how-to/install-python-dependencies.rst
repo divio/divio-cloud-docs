@@ -81,6 +81,7 @@ or a commit::
 
     https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip
 
+.. _vcs-protocol-support:
 
 ..  note::
 
