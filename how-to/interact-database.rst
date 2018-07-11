@@ -111,6 +111,9 @@ port if you are already using 5432 on your host.
 
 Now restart the ``db`` container with: ``docker-compose up -d db``
 
+
+.. _
+
 Connect to the database
 .......................
 
@@ -140,7 +143,7 @@ container.
 Identify the container
 ......................
 
-The container name ends in ``_db_1`` . If your project is named *My Django
+The database container name ends in ``_db_1`` . If your project is named *My Django
 Project*, the container for its database will be ``mydjangoproject_db_1``.
 
 However, you can check using ``docker ps``, which will list the containers.
@@ -150,7 +153,7 @@ The right-most column will give you the container names.
 Running the command in the container
 ....................................
 
-To run commands inside the container, use ``docker exec <container name>``
+To run commands inside the container, use ``docker exec <database container name>``
 followed by the command you want to run, for example::
 
     docker exec mydjangoproject_db_1 psql -U postgres --list
@@ -171,32 +174,30 @@ ways:
 
 Get help
     ``psql -h 127.0.0.1 -U postgres db --help``
-    ``docker exec <container name> psql -U postgres db --help``
+    ``docker exec <database container name> psql -U postgres db --help``
 Dump the database to a file
     ``pg_dump -h 127.0.0.1 -U postgres db > <file name>``
     ``docker exec pg_dump -U postgres db > <file name>``
 Restore from a dumped database file
     ``cat <file name> | psql -h 127.0.0.1 -U postgres db``
-    ``cat <file name> | docker exec -i <container name> psql -U postgres db``
+    ``cat <file name> | docker exec -i <database container name> psql -U postgres db``
 
 
-..  todo::
+.. _reset-the-database:
 
-    Add working example of how to reset and recreate a local database.
+Reset the database
+..................
 
-    docker-compose down destroys
+One operation you may typically need to perform is to reset the database to its newly-migrated
+state, so that it is correctly set up with its schema but no content in its table.
 
-    inspect
+::
 
-    docker-compose up -d db && docker-compose logs -f db
+    docker ps  # list the containers to find the id you need
 
-    "db ready to accept connections"
+    docker exec <database container id> dropdb -U postgres db --if-exists  # drop the database
+    docker exec <database container id> createdb -U postgres db  # create the database
+    docker exec <database container id> psql -U postgres --dbname=db -c "CREATE EXTENSION IF NOT EXISTS hstore"  # add the hstore extension
+    docker-compose run --rm web python manage.py migrate  # migrate the database
 
-    in dc.yml::
-
-        environment:
-            POSTGRES_DB: db
-
-    then migrate in container
-
-    Check with Stefan when done
+This is the state of the database as if the project had been deployed for the first time.

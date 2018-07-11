@@ -8,11 +8,21 @@ In this tutorial you will take an existing Django project and port it to Divio C
 The project (`The Opinions Company <https://github.com/divio/the-opinions-company>`_) complete with
 custom applications, database content, media files and styling is contained in a GitHub repository.
 
+Using it will allow you to go through all the required steps for a project migration in a controlled
+environment, and practise them before applying your knowledge to a project of your own.
+
+In the tutorial, we'll be using the command line rather than the Divio app. Although nearly every
+step here could equally well be run via the Divio app, the feedback from the command line tools is
+more explicit and helps see what exactly is happening.
+
+If you're interested in knowing how the controls of the Divio app correspond to commands, see
+:ref:`divio-app`.
+
 
 Set the project up locally
 --------------------------
 
-Clone the project, and cd into the directory::
+We'll begin by setting up the source project locally. Clone the project, and cd into the directory::
 
     git clone git@github.com:divio/the-opinions-company.git
     cd the-opinions-company
@@ -219,22 +229,24 @@ Transfer other settings
 Your original project's settings need to be transferred to the Divio project. Settings in Divio
 projects can be handled in multiple ways:
 
-* via an addon's configuration form, as defined by its ``aldryn_config.py`` file
-* as environment variables
-* as plain old settings in ``settings.py``
+* via an addon's configuration form, as defined by its :ref:`aldryn_config.py
+  <configure-with-aldryn-config>` file, which also
+  provides sensible defaults
+* as :ref:`environment variables <environment-variables>`
+* as plain old settings in :ref:`settings.py`
 
-The best way to maintain the ``CMS_TEMPLATES`` setting in a Divio project is via the form. In the
-local version of the project, the form values are stored in
-``addons/aldryn-djangocms/settings.json``.
+In this project there's only one other setting we need to be concerned with: ``CMS_TEMPLATES``.
 
-However, for now it's easiest to include the setting in the ``settings.py`` file temporarily, so
+The best way to maintain the ``CMS_TEMPLATES`` setting in a Divio project is via the Aldryn django
+CMS addon's configuration form, and ultimately that is what we will do (in the local version of the
+project, you can see this configuration stored in ``addons/aldryn-djangocms/settings.json``).
+
+For now however it's easiest to include the setting in the ``settings.py`` file *temporarily*, so
 add::
 
     CMS_TEMPLATES = (
         ('content.html', 'Content'),
     )
-
-(Later we will do this another way.)
 
 
 Prepare the Postgres database of the Divio project
@@ -242,22 +254,16 @@ Prepare the Postgres database of the Divio project
 
 The database has so far been migrated, but that's all.
 
-..  admonition:: Have you touched the Divio project database?
-
-    If you have done anything else to this database, you will need to restore it to its newly-migrated
-    state::
-
-        docker ps  # list the containers to find its id
-
-        docker exec <database container id> dropdb -U postgres db --if-exists  # drop the database
-        docker exec <database container id> createdb -U postgres db  # create the database
-        docker exec <database container id> psql -U postgres --dbname=db -c "CREATE EXTENSION IF NOT EXISTS hstore"  # add the hstore extension
-        docker-compose run --rm web python manage.py migrate  # migrate the database
-
 Now you can import the dumped JSON data. Copy ``database.json`` over from the original project, and
 run::
 
     docker-compose run --rm web python manage.py loaddata database.json
+
+..  admonition:: Errors from ``loaddata``
+
+    If this doesn't work, it's most likely because you have performed an operation that writes data
+    to the tables - even logging in just once will do this. In this case, you will need to restore
+    it to its newly-migrated state, following the steps in :ref:`reset-the-database`.
 
 
 Copy site templates
