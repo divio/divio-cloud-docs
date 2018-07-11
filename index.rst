@@ -37,7 +37,7 @@ Contents
 .. rst-class:: column column2
 
 
-:ref:`Tutorial <introduction>`
+:ref:`Tutorials <introduction>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Get started with a hands-on introduction to the Divio Cloud for

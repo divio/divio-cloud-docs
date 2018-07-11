@@ -3,6 +3,10 @@
 How to migrate an existing project to Divio Cloud
 =================================================
 
+This how-to guide assumes some familiarity with Divio Cloud projects. If you'd prefer a complete
+end-to-end tutorial, see the :ref:`tutorial-migrate-project` tutorial.
+
+
 Initial project setup
 ---------------------
 
@@ -107,6 +111,48 @@ The settings for your project and its applications need to be added to ``setting
 
 Add them in the appropriate way, which will depend on whether they are :ref:`addon-configured` or
 :ref:`manually-configured`.
+
+
+.. _diff_installed_apps:
+
+``INSTALLED_APPS``
+^^^^^^^^^^^^^^^^^^
+
+It can be a tedious and error-prone process to get all the ``INSTALLED_APPS`` correct, without
+either missing or duplicating any. It will help to get a complete list, sorted alphabetically, and to run a ``diff`` on the list from each project.
+
+Add the following to the end of the ``settings.py`` of both your
+source project and the new Divio project::
+
+    for app in sorted(INSTALLED_APPS):
+        print(app)
+
+For the original project, run::
+
+    python manage.py shell
+
+and for the Divio project run::
+
+    docker-compose run --rm web python manage.py shell
+
+In each case, copy the list of applications into a file and save the file. Now run a ``diff`` on
+the two files::
+
+    diff original-installed-apps new-installed-apps
+
+In the output you will see lines starting with:
+
+* ``>`` - an application present in the Divio project, but not in the original
+* ``<`` - an application listed in the original, but not in the Divio project
+
+In the first case, no action is required. In the second case, you may see entries such as::
+
+    < some_application
+
+and you will know that this application has not yet been added to your Divio project's
+``INSTALLED_APPS``.
+
+(Once done, don't forget to remove the lines you added.)
 
 
 Importing content
