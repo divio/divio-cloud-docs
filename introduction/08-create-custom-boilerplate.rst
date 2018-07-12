@@ -7,7 +7,7 @@ Create a custom Boilerplate
 
     * :ref:`about-boilerplates`
 
-Each Divio Cloud site has a frontend *Boilerplate*, a set of default templates
+Each Divio Cloud site has a frontend *Boilerplate*, which defines a set of default templates
 and static files.
 
 Typically, a Boilerplate will define how the Django templates are structured
@@ -129,7 +129,7 @@ http://localhost:8000/polls/.
 ..  image:: /images/polls-default.png
     :alt: The polls application with a Question and Choices
 
-You now have working project in which to implement the frontend.
+You now have a working project in which to implement the frontend.
 
 
 .. _add-foundation-frontend:
