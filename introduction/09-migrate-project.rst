@@ -74,10 +74,46 @@ On the Divio Cloud control panel, `create a new project
 * django CMS
 * Blank boilerplate
 
-Once the new project has been provisioned, see its *Addons* view:
+Once the new project has been provisioned, see its *Addons* view.
 
-* django CMS: ensure that the version of django CMS installed matches that in your project (3.5.3)
-* django CMS Bootstrap 4: *install* django CMS Bootstrap 4 (version 1.0.1)
+You need to install django CMS Bootstrap 4 (**important**: make sure you select version 1.0.0)
+
+Select the **Installed** button, and check the other versions.
+
+=========================== =======
+Addon                       Version
+--------------------------- -------
+Aldryn Addons               1.0.2
+Aldryn Django               1.11.11.1
+Aldryn django CMS           3.5.2.2
+Aldryn SSO                  1.3.0
+django CMS Bootstrap 4      1.0.0
+django CMS File             2.0.2
+django CMS Google Map       1.1.0
+django CMS History          0.5.3
+django CMS Link             2.1.2
+django CMS Picture          2.0.6
+django CMS Snippet          2.0.0
+django CMS Style            2.0.2
+django CMS Text CKEditor    3.5.3
+django CMS Video            2.0.4
+django Filer                1.3.2
+=========================== =======
+
+.. _check-installed-addons:
+
+..  important::
+
+    If necessary, **downgrade any installed addons to the versions listed above** . This is to
+    ensure compatibility with the database provided for the purposes of this tutorial. If you run
+    into an error, particularly when attempting to load the database into your new project, it is
+    probably because one of the addons has been updated and requires a new database schema.
+
+    In this case, select the correct version of the addon on the Control Panel, and in your project,
+    run::
+
+         git pull  # pull down the configuration into the local project
+         docker-compose build web  # rebuild the web container
 
 
 Set the project up locally
@@ -222,6 +258,10 @@ section so that they will be added.
     Our project is quite simple - in a more complex project, you can :ref:`use diff on the lists of
     INSTALLED_APPS to help ensure you don't miss any <diff_installed_apps>`.
 
+Run migrations to create tables for the new applications::
+
+    docker-compose run --rm web python manage.py migrate
+
 
 Transfer other settings
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,9 +301,17 @@ run::
 
 ..  admonition:: Errors from ``loaddata``
 
-    If this doesn't work, it's most likely because you have performed an operation that writes data
-    to the tables - even logging in just once will do this. In this case, you will need to restore
-    it to its newly-migrated state, following the steps in :ref:`reset-the-database`.
+    If this doesn't work, it's most likely for one of two reasons:
+
+    * you may have performed an operation that writes data to the tables - even logging in just
+      once will do this
+
+    * one of the addons in the project does not match the version in the original project -
+      :ref:`check the versions carefully <check-installed-addons>`, and if necessary rebuild the
+      web container with the correct versions.
+
+    In either case, you will need to restore the database to its newly-migrated state, following
+    the steps in :ref:`reset-the-database`.
 
 
 Copy site templates
