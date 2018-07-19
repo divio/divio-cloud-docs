@@ -50,6 +50,7 @@ Working in the local development environment
     :maxdepth: 1
 
     Log in to a local Django project <local-project-log-in>
+    Run the local server in Live mode <local-in-live-mode>
 
 
 Troubleshooting
