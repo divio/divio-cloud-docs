@@ -1,3 +1,19 @@
+.. raw:: html
+
+    <style>
+        .highlight .upperrow .endpoint, .highlight .lowerrow .region {text-decoration: overline;}
+        .highlight .lowerrow .endpoint, .highlight .upperrow .region {text-decoration: underline;}
+        div[class^=highlight] .manual pre {color: gray;}
+        .highlight .segment {font-weight: bold;}
+        .highlight .key {color: maroon}
+        .highlight .secret {color: navy}
+        .highlight .bucketname {color: olive}
+        .highlight .region {color: green}
+        .highlight .endpoint {color: brown}
+        .highlight .code {font-style: italic}
+    </style>
+
+
 .. _interact-storage:
 
 How to interact with your project's media storage
@@ -7,289 +23,287 @@ How to interact with your project's media storage
 
     :ref:`work-media-storage`.
 
-Your cloud project's media file storage is held on `Amazon Web Services's S3
-service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting service via
-another provider. Currently, most projects use Amazon's own S3 service, with
-the exception of projects in our Swiss region.
+Your cloud project's media file storage is held on an S3 service - typically `Amazon Web Services's
+S3 service <https://aws.amazon.com/s3/>`_, or another S3 provider. Currently, most projects use
+Amazon's own S3 service, or Exoscale for projects in our Swiss region.
 
-Locally, your projects store their media in the ``/data/media`` directory.
-
-
-.. _interact-storage-s3:
-
-Direct access to your project's S3 storage
-------------------------------------------
+Locally, your projects store their media in the ``/data/media`` directory, and you can interact
+with those directly. Then, you can :ref:`use the Divio tools to push and pull media to the Cloud
+<divio_tools_cloud_storage>` if required.
 
 Occasionally you may need direct access to the S3 storage bucket for your
 project. You can manage this using a client of your choice that supports S3 and
 the particular storage provider.
 
 
-General notes
-~~~~~~~~~~~~~
+.. _interact-storage-s3:
+
+Interact with your project's Cloud S3 storage
+----------------------------------------------
 
 .. warning::
 
-  Note that S3 file operations tend to be
-  **destructive** and do not necessarily have the same behaviours you may be used
-  to from other models, such as FTP.  It's important that you know what you are
-  doing and understand the consequences of any actions or commands.
-
-
-Storage ACLs (Access Control Lists)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When uploading files to your storage, note that you may need to specify
-explicitly the ACLs - in effect, the file permissions - on the files. If you
-don't set the correct ACLs, you may find that attempts to retrieve them (for
-example in a web browser) give an "access denied" error.
-
-On AWS S3, the `public-read ACL
-<https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_
-is set by default. This is the ACL required for general use.
+  Note that S3 file operations tend to be **destructive** and do not necessarily have the same
+  behaviours you may be used to from other models, such as FTP. It's important that you know what
+  you are doing and understand the consequences of any actions or commands.
 
 
 .. _storage_access_details:
 
-How to obtain your storage access details
+Obtain your storage access details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Control Panel for your project, visit the ``/doctor`` URL. For each of
-the Test and Live servers, you'll see a ``DEFAULT_STORAGE_DSN`` value listed,
-for example:
+In the Control Panel for your project, visit the ``/doctor`` URL. For each of the Test and Live
+servers, you'll see a ``DEFAULT_STORAGE_DSN`` value listed, for example:
 
 .. image:: /images/default-storage-dsn.png
    :alt: 'Default storage DSN value'
 
-This value contains the details you will need to use with a file transfer
-client for access to the storage bucket.
+This value contains the details you will need to use with a file transfer client for access to the
+storage bucket. The two examples below show which sections of the DSN correspond to the different
+parameters, for the hosts ``s3.amazonaws.com`` and ``sos.exo.io``:
+
+.. raw:: html
+
+    <div class="highlight-default notranslate">
+    <div class="highlight manual">
+    <pre><span class="upperrow">s3://<span class="segment key">AKAIIEJALP7LUT6ODIJA</span>:<span class="segment secret">TZJYGCfUZheXG%2BwANMFabbotgBs6d2lxZW06OIbD</span>@<span class="segment bucketname">example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io</span>.<span class="segment endpoint">s3-<span class="segment region">eu-central-1</span>.amazonaws.com</span>/?domain=example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io</span>
+    <span class="code">              <span class="segment key">key</span>                            <span class="segment secret">secret</span>                                             <span class="segment bucketname">bucket name</span>                          <span class="segment region">region</span>       <span class="segment endpoint">endpoint</span></span>
+    <span class="lowerrow">s3://<span class="segment key">EXO52e55beb39187195ddff72219</span>:<span class="segment secret">iITF12F1t321tim9zBxITexrvL_bAghgK_z4w1hEuu00</span>@<span class="segment bucketname">example-test-765482644ac540dbb23367cf3837580b-f0596a8</span>.<span class="segment endpoint">sos-<span class="segment region">ch-dk-2</span>.exo.io</span>/?auth=s3</span></pre>
+    </div>
+    </div>
+
+The **key** identifies you as a user.
+
+The **secret** may contain some symbols encoded as hexadecimal values, and you will need to change
+them back before using them:
+
+* ``%2B`` must be changed to ``+``
+* ``%2F`` must be changed to ``/``
+
+For any other values beginning with ``%`` use `a conversion table
+<https://en.wikipedia.org/wiki/ASCII#Printable_characters>`_.
+
+The **bucket name** identifies the resource you wish to work with.
+
+.. _storage-region:
+
+The **region** is contained in the **endpoint**, the S3 host name. Sometimes it may be implicit, as
+in the case of Amazon's default ``us-east-1``:
+
++--------+---------------------------------+----------------+---------------------+
+|Provider| Endpoint                        |Region          |Location             |
++========+=================================+================+=====================+
+|Amazon  |``s3.amazonaws.com``             |``us-east-1``   |US East (N. Virginia)|
++        +---------------------------------+----------------+---------------------+
+|        |``s3-eu-central-1.amazonaws.com``|``eu-central-1``|EU (Frankfurt)       |
++        +---------------------------------+----------------+---------------------+
+|        |``s3-eu-west-2.amazonaws.com``   |``eu-west-2``   |EU (London)          |
++--------+---------------------------------+----------------+---------------------+
+|Exoscale|``sos-ch-dk-2.exo.io``           |``ch-dk-2``     |Switzerland          |
++--------+---------------------------------+----------------+---------------------+
+
+See `Amazon's S3 regions table
+<http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ for more information about
+regions and their names.
+
+The **endpoint** is the address that the client will need to connect to.
 
 
-.. _aws_example:
+.. _save-aws-parameters:
 
-Amazon Web Services example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Save the parameters
+~~~~~~~~~~~~~~~~~~~
 
-===============  =============================================================
-Parameter        Value
-===============  =============================================================
-**DSN value**    ``s3://AKAIIEJALP7LUT6ODIJA:TZJYGCfUZheXG%2BwANMFabbotgBs6d2lxZW06OIbD@example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io.s3.amazonaws.com/?domain=example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io``
-**key**          ``AKAIIEJALP7LUT6ODIJA``
-**secret**       ``TZJYGCfUZheXG+wANMFabbotgBs6d2lxZW06OIbD`` (see :ref:`DSN-reserved-characters`)
-**bucket name**  ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io`` (from ``?domain=`` query)
-**S3 host**      ``s3.amazonaws.com``
-**AWS region**   ``us-east-1``
-**Served at**    ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io`` (from ``?domain=`` query)
-===============  =============================================================
+Copy and paste each of these parameters into a text file, so you have them ready for use. Now that
+you have obtained the connection parameters, you can use them to connect with the client of your
+choice.
 
 
-AWS regions
-...........
+Choose a client
+~~~~~~~~~~~~~~~
 
-The region domain name in the example above is ``s3.amazonaws.com``, so the
-Region name is ``us-east-1``, the default AWS region
+How-to guides are provided below for connecting to our storage using:
 
-``us-east-1`` applies when no other region name is explicitly given. Other
-regions will be identified in the ``s3.amazonaws.com`` portion of the URL. For
-example, storage on our EU region would refer to
-``s3-eu-central-1.amazonaws.com``.
-
-See the `AWS S3 regions table
-<http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ for more
-information about regions and their names.
+* :ref:`AWS CLI <connect-aws-cli>`, Amazon's official S3 client
+* :ref:`s3cmd <connect-s3cmd>`, an alternative command-line utility
+* :ref:`Transmit <connect-transmit>`, a popular storage client for Macintosh
+* :ref:`CyberDuck <connect-cyberduck>`, a popular storage client for Macintosh and Windows
 
 
-.. _DSN-reserved-characters:
+.. _connect-aws-cli:
 
-Reserved characters
-...................
+Connect using AWS CLI
+~~~~~~~~~~~~~~~~~~~~~
 
-In the secret in the AWS URL, certain reserved symbols (``+``, ``-``, ``=``,
-``.``, ``_``, ``:``, ``/``) will be encoded as hexadecimal values. You will
-need to convert these back to use them in your client. For example, ``%2B``
-will become ``+``, ``%2F`` will become ``/`` and so on. Use `a conversion table
-<https://en.wikipedia.org/wiki/ASCII#Printable_characters>`_ for any other
-values beginning with ``%``.
+`AWS CLI documentation <http://docs.aws.amazon.com/cli/>`_ is Amazon's official S3 client. It's a
+free, Python-based application.
 
 
-Exoscale (Divio Cloud Swiss region) example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install and configure AWS CLI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-================  =============================================================
-Parameter         Value
-================  =============================================================
-**DSN value**     ``s3://EXO52e55eb39187195ffdd72219:iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00@example-test-765482644ac540dbb23367cf3837580b-f0596a8.sos.exo.io/?auth=s3``
-**key**           ``EXO52e55eb39187195ffdd72219``
-**secret**        ``iITF12F1t123tim9zBxITexrvL_bAghgK_z4w1hEuu00``
-**bucket name**   ``example-test-765482644ac540dbb23367cf3837580b-f0596a8``
-**endpoint url**  ``https://sos-ch-dk-2.exo.io``
-================  =============================================================
+Run::
 
+    pip install awscli
+    aws configure
 
-S3 clients
-----------
+You will be prompted for some of the :ref:`storage access parameters <storage_access_details>`
+values, extracted from the DSN, that :ref:`you copied earlier <save-aws-parameters>`.
 
-A number of CLI and GUI S3 clients are available. Information is provided here
-for a few of them.
-
-
-AWS CLI
-~~~~~~~
-
-Amazon's official S3 client. `AWS CLI documentation
-<http://docs.aws.amazon.com/cli/>`_. Supports AWS and limited third-party providers.
-
-It's beyond the scope of this document to provide comprehensive guidance on
-using the AWS CLI, but the steps below should get you started.
-
-
-Install AWS CLI
-^^^^^^^^^^^^^^^
-
-Install with ``pip install awscli`` (it's a Python application).
-
-
-Configure the client for your project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Run ``aws configure``, and you will be prompted for the *AWS Access Key ID*,
-*AWS Secret Access Key* and *Default region name*, which you can extract from
-the :ref:`DEFAULT_STORAGE_DSN <storage_access_details>` - see
-:ref:`aws_example`, above - and *Default output format*.
-
-The resulting configuration file can be found at ``~/.aws/credentials`` on Linux/MacOS machines, or ``C:\Users\USERNAME\.aws\credentials`` for Windows machines::
-
-    [default]
-    aws_access_key_id = AKAIIEJALP7LUT6ODIJA
-    aws_secret_access_key = TZJYGCfUZheXG+wANMFabbotgBs6d2lxZW06OIbD
-
-If you are manipulating multiple buckets, change the ``[default]`` to a profile name. Then, in any ``aws`` command, add a ``--profile`` parameter to specify which set of credentials to use::
-
-    ➜ aws s3 ls --profile divio-bucket ...
+* *AWS Access Key ID* - *key*
+* *AWS Secret Access Key* - *secret key*
+* *Default region name* - *storage region*
+* *Default output format* - leave blank
 
 
 Interact with your storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run ``aws s3`` followed by a command and options.
-
-For example, to list the contexts of a bucket::
+Run ``aws s3`` followed by options, commands and parameters. For example, to list the contents of a
+bucket::
 
     ➜ aws s3 ls example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io
            PRE filer_public/
            PRE filer_public_thumbnails/
 
-or to copy (``cp``) a file from your own computer to S3::
+
+Or, to copy (``cp``) a file from your own computer to S3::
 
     ➜ aws s3 cp example.png s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
     upload: ./example.png to s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
 
-Run ``aws s3 help`` for more information on commands, or refer to the `AWS CLI
-Command Reference
-<http://docs.aws.amazon.com/cli/latest/reference/s3/index.html>`_
+..  admonition:: Using AWS CLI with other providers
+
+    For non-AWS providers, such as Exoscale, you will need to add the ``--url-endpoint`` option to
+    the command, as the AWS CLI assumes an endpoint on ``.amazonaws.com/``. For the Exoscale
+    example above, you would use::
+
+        aws s3 --endpoint-url=https://sos-ch-dk-2.exo.io [...]
+
+    Note that the scheme (typically ``https://``) must be included.
+
+Additional usage information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run ``aws s3 help`` for more information on commands, or refer to the `AWS CLI Command Reference
+<http://docs.aws.amazon.com/cli/latest/reference/s3/index.html>`_. The AWS CLI can maintain
+multiple profiles and offers other features but it's beyond the scope of this documentation to
+explain that here.
+
+The ``aws configure`` command stores the configuration in ``~/.aws``.
 
 
-Exoscale (Divio Cloud Swiss region) 
-...................................
+.. _connect-s3cmd:
 
-Commands to interact with Swiss region buckets will need to include a custom ``--endpoint-url`` parameter::
+Connect using s3cmd
+~~~~~~~~~~~~~~~~~~~
 
-    ➜ aws s3 ls --endpoint-url=https://sos-ch-dk-2.exo.io s3://example-test-765482644ac540dbb23367cf3837580b-f0596a8
-           PRE filer_public/
-           PRE filer_public_thumbnails/
+`S3cmd <https://s3tools.org/s3cmd>`_ is a free Python-based command line tool and client for
+uploading, retrieving and managing data in Amazon S3 and other cloud storage service providers that
+use the S3 protocol.
 
 
-Transmit
-~~~~~~~~
+Install and configure s3cmd
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Transmit file transfer application for Macintosh
-<https://www.panic.com/transmit>`_.
+Run::
 
-Create a new connection with the following settings:
+    pip install s3cmd
+    s3cmd --configure
+
+You will be prompted for some of the :ref:`storage access parameters <storage_access_details>`
+values, extracted from the DSN, that :ref:`you copied earlier <save-aws-parameters>`:
+
+* *Access Key* - enter the *key* from the DSN
+* *Secret Key* - enter the *secret key* from the DSN
+* *Default Region* - enter the :ref:`storage region <storage-region>`
+* *S3 Endoint* - enter the *endpoint* from the DSN
+
+All other settings can be left untouched.
+
+When you have entered the values, s3cmd will offer to test a connection with them (note that when
+using AWS, this will **fail** - ignore this).
+
+
+Interact with your storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run ``s3cmd`` followed by options, commands and parameters. For example, to list the contents of a
+bucket::
+
+    s3cmd ls s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io
+
+Note that the scheme (``s3://``) is required in front of the bucket name.
+
+
+Additional usage information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run ``s3cmd`` for more information on commands, or refer to `Usage <https://s3tools.org/usage>`_.
+
+Using ``s3cmd`` you can take advantage of ``--recursive`` properties for iterating over the entire
+bucket contents; however it's beyond the scope of this documentation to explain this or other
+features here.
+
+``s3cmd --configure`` creates a configuration file at ``~/.s3cfg``.
+
+
+.. _connect-transmit:
+
+Connect using Transmit
+~~~~~~~~~~~~~~~~~~~~~~
+
+Install the `Transmit file transfer application for Macintosh <https://www.panic.com/transmit>`_.
+
+Create a new connection. You will need to enter some of the :ref:`storage access parameters
+<storage_access_details>` values, extracted from the DSN, that :ref:`you copied earlier
+<save-aws-parameters>`:
+
 
 =============  ===============
 Setting        Value
 =============  ===============
 Protocol       *Amazon S3*
-Address        S3 host name from DSN value
-Access Key ID  key from DSN value
-SECRET         secret from DSN value
-Remote Path    bucket name from DSN value
+Address        *endpoint*
+Access Key ID  *key*
+Password       *secret key*
+Remote Path    *bucket name*
 =============  ===============
 
+
+.. _connect-cyberduck:
 
 Cyberduck
 ~~~~~~~~~
 
-`Cyberduck <https://cyberduck.io>`_, an open-source client for Macintosh and
-Windows.
+Install `Cyberduck <https://cyberduck.io>`_.
 
-Note that because the connection requires you to provide details of the bucket,
-you must start by creating a new bookmark, as the *Open Connection* dialog in
-Cyberduck doesn't provide this as an option.
+Create a new bookmark (note that you **cannot** simply use the *Open Connection* dialog, because
+this will not allow you to provide the required bucket name in order to proceed). You will be
+prompted for some of the :ref:`storage access parameters <storage_access_details>` values,
+extracted from the DSN, that :ref:`you copied earlier <save-aws-parameters>`:
 
-For Exoscale (Divio Cloud Swiss region) deployments, you will need to download
-and install the `Exoscale profile for Cyberduck
-<https://svn.cyberduck.io/trunk/profiles/exoscale.cyberduckprofile>`_.
-
-Connection settings:
-
-========================  ====================  =============================
+========================  ===============
 Setting                   Value
-------------------------  ---------------------------------------------------
-\                         AWS                   Exoscale
-========================  ====================  =============================
-Connection type           *Amazon S3*           *exoscale Swiss Object Store*
-Address                   ``s3.amazonaws.com``  ``sos.exo.io``
-Access Key ID/API Key     key from DSN value
-------------------------  ---------------------------------------------------
-Path                      bucket name from DSN value
-------------------------  ---------------------------------------------------
-Secret Access/Secret Key  secret from DSN value
-------------------------  ---------------------------------------------------
-========================  ====================  =============================
+========================  ===============
+Protocol                  *Amazon S3*
+Server                    *endpoint*
+Access Key ID             *key*
+Path (in *More Options*)  *bucket name*
+========================  ===============
 
-s3cmd
-~~~~~~~~~
+On attempting to connect, you will be prompted for the Secret Access Key; use the *secret key*.
 
-`s3cmd <http://s3tools.org/s3cmd>`_ is a command-line utility that supports
-both AWS and other providers, like Exoscale
-
-s3cmd requires a configuration file, which can either be ``~/.s3cfg``, or a
-location passed in by the ``-c`` flag. 
-
-For Exoscale, the following configurations should be used: 
+For Exoscale (Divio Cloud Swiss region) deployments, you can also download and install the
+`Exoscale profile for Cyberduck
+<https://svn.cyberduck.io/trunk/profiles/exoscale.cyberduckprofile>`_, which includes some
+prepared configuration.
 
 
-========================  ====================
-Setting                   Value
-========================  ====================
-host_base                 sos-ch-dk-2.exo.io
-host_bucket               %(bucket)s.sos-ch-dk-2.exo.io
-access_key                (key)
-secret_key                (secret)
-use_https                 True
-========================  ====================
+.. _divio_tools_cloud_storage:
 
-The result is a ``.s3cfg`` configuration file in the following format::
-
-    [default]
-    host_base = sos-ch-dk-2.exo.io
-    host_bucket = %(bucket)s.sos-ch-dk-2.exo.io
-    access_key = EXOaaaaaaaaaaaaaaaaaaaaaaaa
-    secret_key = bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-    use_https = True
-
-Then, to invoke `s3cmd commands <http://s3tools.org/usage>`_ such as ``ls``::
-
-    ➜ s3cmd ls s3://example-test-68564d3f78d04cd2935f-8f20b19/
-             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public_thumbnails
-             DIR s3://example-test-68564d3f78d04cd2935f-8f20b19/filter_public/
-
-Using ``s3cmd`` you can take advantage of ``--recursive`` properties for iterating over
-the entire bucket contents.
-
-Using Divio tools for local access to Cloud storage
+Use Divio tools for local access to Cloud storage
 -----------------------------------------------------
 
 The project's media files can be found in the ``/data/media`` directory, and
@@ -318,8 +332,6 @@ server as required.
     entire bucket will be replaced.
 
 
-
-
 Limitations
 ~~~~~~~~~~~
 
@@ -328,3 +340,16 @@ media using the Divio app or the Divio CLI. :ref:`Interacting directly with the
 S3 storage bucket <interact-storage-s3>` is a way around this.
 
 It can also be much faster, and allows selective changes to files in the system.
+
+
+Storage ACLs (Access Control Lists)
+===================================
+
+When uploading files to your storage, note that you may need to specify
+explicitly the ACLs - in effect, the file permissions - on the files. If you
+don't set the correct ACLs, you may find that attempts to retrieve them (for
+example in a web browser) give an "access denied" error.
+
+On AWS S3, the `public-read ACL
+<https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_
+is set by default. This is the ACL required for general use.
