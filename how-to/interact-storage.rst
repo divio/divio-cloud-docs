@@ -343,7 +343,7 @@ It can also be much faster, and allows selective changes to files in the system.
 
 
 Storage ACLs (Access Control Lists)
-===================================
+-----------------------------------
 
 When uploading files to your storage, note that you may need to specify
 explicitly the ACLs - in effect, the file permissions - on the files. If you
