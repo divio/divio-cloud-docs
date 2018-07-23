@@ -34,6 +34,10 @@ run:
 	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -a _build/html --host 0.0.0.0 --port $(PORT)
 
 
+test:
+	. $(VENV); sphinx-build -b html . _build/html
+
+
 spelling:
 	. $(VENV); $(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . _build/spelling
 	@echo
