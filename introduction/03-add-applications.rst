@@ -142,7 +142,7 @@ And check the site on the Test server:
 
 ..  code-block:: bash
 
-    divio project open test
+    divio project test
 
 Optionally, if you made some local changes to the database (perhaps you added
 some polls), you can push the database to the local server too, with:
