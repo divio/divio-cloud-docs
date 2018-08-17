@@ -26,12 +26,13 @@ care of in the addon's :ref:`configure-with-aldryn-config` file). All these are 
 ..  important::
 
     If you declare a setting such as ``INSTALLED_APPS`` **before**
-    ``aldryn_addons.settings.load(locals())``, it will be overwritten.
+    ``aldryn_addons.settings.load(locals())``, it may be overwritten by the addon system.
 
     If you declare it **after** ``aldryn_addons.settings.load(locals())``, it will overwrite the
-    setting as configured by the addons.
+    any configuration perfromed by the addon system. In this case, your setting will apply, but be
+    aware that logic in the addon's `aldryn_config.py` might operate based on a different value,
+    with unpredictable results.
 
-    In either case, the settings **will not function correctly**.
 
 See :ref:`how-to-settings` for examples of how to handle these settings correctly.
 
