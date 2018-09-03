@@ -13,7 +13,7 @@ systems.
 In this example we will install, set up and run:
 
 * Node, the server-side JavaScript application framework
-* npm, the Node Package Manage
+* npm, the Node Package Manager
 * gulp, to build the Sass CSS
 
 ..  note::

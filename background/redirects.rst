@@ -13,7 +13,7 @@ They fall into different categories:
 * :ref:`language_redirects` (e.g. ``https://example.com/about`` to
   ``https://example.com/en/about``)
 
-All by default ``302 Temporary Redirects``.
+All are by default ``302 Temporary Redirects``.
 
 
 .. _protocol_redirects:
