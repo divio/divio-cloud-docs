@@ -16,20 +16,21 @@ Key Aldryn Django configuration options
 
 Set on the Aldryn Django configuration on the Control Panel.
 
-When set, will remove ``django.middleware.locale.LocaleMiddleware`` from the
+When set, will add the ``aldryn_django.middleware.LanguagePrefixFallbackMiddleware`` to the
 middleware.
 
-This will cause Django not to use a language prefix in the URL when serving the
-default language. For example, ``/about`` will redirect to ``/en/about`` if
-English is the default language.
+This will cause Django **not** to use a language prefix in the URL when serving the default
+language. For example, by default, ``/about`` will redirect to ``/en/about`` if English is the
+default language; with this option selected, it will not (and will instead redirect in the other
+direction).
 
-Note that prior to version 1.10, this will not work with projects in which
+Note that prior to Django version 1.10, this will not work with projects in which
 multiple languages are defined.
 
 This is a ``302 Temporary Redirect``, as determined in Django's core. It is not
 safe to use permanent redirects here, because language redirects are
 content-dependent. A change in the site could cause redirect loops, as
-described above, or spurious 404 errors.
+described at :ref:`301vs302`, or spurious 404 errors.
 
 
 .. _SECURE_SSL_REDIRECT:
