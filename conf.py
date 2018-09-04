@@ -195,5 +195,6 @@ intersphinx_mapping = {
 
 # divio-docs-theme options
 html_theme_options = {
-    'show_cloud_banner': False
+    'show_cloud_banner': False,
+    'segment_id': 'FT34iqltJg6YdIX5fcyIt5J035FmSAAq',
 }
