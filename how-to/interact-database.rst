@@ -3,94 +3,136 @@
 How to interact with your project's database
 ============================================
 
-The Postgres database for your Cloud-deployed sites runs on a dedicated
-database service.
+The Postgres database for your Divio Cloud project runs:
 
-For local projects, it runs in a Docker container.
+* in a Docker container for your **local** projects: :ref:`interact-local-db`
+* on a dedicated cluster for your **Cloud-deployed** sites: :ref:`interact-cloud-db`
 
-Mostly, you will only need to interact with the database via Django. If you need
-to interact with it directly, the option exists.
-
-..  warning::
-
-    You use this feature entirely at your own risk. Any error you make could
-    cause significant damage to your database. You are strongly advised to
-    backup your database before starting.
+In either case, you will mostly only need to interact with the database via Django. However, if you
+need to interact with it directly, the option exists.
 
 
-Cloud database
---------------
+.. _interact-local-db:
 
-From the project's Cloud application container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Interact with the local database
+--------------------------------
 
-If the feature is `enabled for your project
-<http://support.divio.com/control-panel/projects/how-to-ssh-into-your-cloud-serv
-er>`_, log into your Cloud project's container (Test or Live) over SSH.
-
-Run ``env`` to list your environment variables. Amongst them you'll find ``DATABASE_URL``, which will be in the form::
-
-    DATABASE_URL=postgres://<user name>:<password>@<address>:<port>/<container>
-
-You can use these credentials in the ``psql`` client, or more conveniently,
-run::
-
-    ./manage.py dbshell
-
-which only requires the password.
-
-..  note::
-
-    It's often more appropriate to pull down the Cloud database to a local
-    project to interact with it there::
-
-        divio project pull db live  # or test
-
-    See the :ref:`divio project reference <divio-cli-project-ref>` for more.
+This is the recommended and most useful way to interact with the project's database.
 
 
-From your own computer
-^^^^^^^^^^^^^^^^^^^^^^
+From the project's local web container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Access to Cloud databases other than from the associated application containers
-is not generally possible.
+Using ``dbshell``
+^^^^^^^^^^^^^^^^^
 
+Run::
 
-Local database
---------------
-
-To connect to the locally-running database, you will need the following details:
-
-* port: ``5432``
-* username: ``postgres``
-* password: not required
-* database: ``db``
-
-Connecting from the host environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-..  important::
-
-    You will need to ensure that your locally-installed Postgres client is
-    up-to-date and compatible with the version of Postgres running in our
-    database container.
-
-    Once set-up, working from your own local environment using your preferred
-    tools will probably suit you best, but some of the configuration will be
-    up to you.
-
-    If you have any issues, you can always use our provided method, which is
-    guaranteed to work - see :ref:`connecting to the database from within the
-    database container <connect-db-within-container>` below.
+    docker-compose run --rm web python ./manage.py dbshell
 
 
-In order to the connect to the database from a tool running directly on your
-own machine, you will need to expose its port (5432).
+Connecting to the database manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can also make the connection manually from within the ``web`` container, for example::
+
+    docker-compose run --rm web psql -h postgres -U postgres db
+
+As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
+for a number of common operations:
+
+
+.. _database-usage-examples:
+
+Usage examples for common basic operations
+..........................................
+
+It's beyond the scope of this article to give general guidance on using Postgres, but these
+examples will help give you an idea of some typical operations that you might undertake while using
+Divio Cloud.
+
+All the examples assume that you are interacting with the local database, running in its  ``db``
+container.
+
+In each case, we launch the command from within the ``web`` container with ``docker-compose run
+--rm web`` and we specify:
+
+* host name: ``-h postgres``
+* user name: ``-U postgres``
+
+Dump the database to a file named ``database.dump``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web pg_dump -h postgres -U postgres db > database.dump
+
+Drop (delete) the database:
+
+..  code-block:: bash
+
+    docker-compose run --rm web dropdb -h postgres -U postgres db
+
+Create the database:
+
+..  code-block:: bash
+
+    docker-compose run --rm web createdb -h postgres -U postgres db
+
+Apply the ``hstore`` extension (required on a newly-created local database):
+
+..  code-block:: bash
+
+    docker-compose run --rm web psql -h postgres -U postgres db -c "CREATE EXTENSION hstore"
+
+Restore the database from a file named ``database.dump``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web pg_restore -h postgres -U postgres -d db database.dump --no-owner
+
+
+Reset the database
+..................
+
+To reset the database (with empty tables, but the schema in place) you would run the commands above
+to drop and create the database, create the the ``hstore`` extension, followed by a migration::
+
+    docker-compose run --rm web python manage.py migrate
+
+
+Restore from a downloaded Cloud backup
+......................................
+
+Untar the downloaded ``backup.tar`` file. It contains a ``database.dump`` file. Copy the file to
+your local project directory, then run the commands above to drop and create the database, create
+the the ``hstore`` extension, and then restore from a file.
+
+
+Using ``docker exec``
+.....................
+
+Another way of interacting with the database is via the database container itself, using ``docker
+exec``. This requires that the database container already be up and running.
+
+For example, if your database container is called ``example_db_1``::
+
+    docker exec -i example_db_1 psql -U postgres
+
+
+From your host environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have a preferred Postgres management tool that runs on your own computer, you can also
+connect to the database from outside the application.
+
 
 .. _expose-database-ports:
 
-Expose the database's ports
-...........................
+Expose the database's port
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to the connect to the database from a tool running directly on your
+own machine, you will need to expose its port (5432).
 
 Add a ports section to the ``db`` service in ``docker-compose.yml`` and map the
 port to your host:
@@ -112,92 +154,75 @@ port if you are already using 5432 on your host.
 Now restart the ``db`` container with: ``docker-compose up -d db``
 
 
-.. _
-
 Connect to the database
-.......................
+^^^^^^^^^^^^^^^^^^^^^^^
+
+You will need to use the following details:
+
+* port: ``5432``
+* username: ``postgres``
+* password: not required
+* database: ``db``
 
 Access the database using your Postgres tool of choice. Note that you must
 specify the host address, ``127.0.0.1``.
 
-If you're using the ``psql`` command line tool, you can connect to the project
-database thus::
+For example, if you're using the ``psql`` command line tool, you can connect to the project
+database with::
 
     psql -h 127.0.0.1 -U postgres db
 
-Or you can issue a general command, for example::
 
-    psql -h 127.0.0.1 -U postgres --list
+.. _interact-cloud-db:
 
+Interact with the Cloud database
+--------------------------------
 
-.. _connect-db-within-container:
+..  note::
 
-From within the database container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    It's often more appropriate to pull down the Cloud database to a local
+    project to interact with it there::
 
-Each local Divio Cloud project creates a Docker container for its database, and
-you can also invoke the ``psql`` tool from directly inside the local database
-container.
+        divio project pull db live  # or test
 
-
-Identify the container
-......................
-
-The database container name ends in ``_db_1`` . If your project is named *My Django
-Project*, the container for its database will be ``mydjangoproject_db_1``.
-
-However, you can check using ``docker ps``, which will list the containers.
-The right-most column will give you the container names.
+    See the :ref:`divio project command reference <divio-cli-project-ref>` for more on using these
+    commands.
 
 
-Running the command in the container
-....................................
+From the project's Cloud application container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To run commands inside the container, use ``docker exec <database container name>``
-followed by the command you want to run, for example::
+..  note::
 
-    docker exec mydjangoproject_db_1 psql -U postgres --list
+    SSH access to an application container on the Cloud is `available on Managed Cloud projects
+    only <http://support.divio.com/control-panel/projects/how-to-ssh-into-your-cloud-server>`_.
 
-Note that within the container, it's not necessary to specify the host (the
-``-h`` option).
-
-Usage examples
-^^^^^^^^^^^^^^
-
-It's beyond the scope of this article to give general guidance on using
-Postgres, but these examples will help give you an idea of some typical
-examples. They indicate what you'd run if you were doing it in each of the two
-ways:
-
-* first when running the command from your host computer
-* then from within the container with ``docker exec``
-
-Get help
-    ``psql -h 127.0.0.1 -U postgres db --help``
-    ``docker exec <database container name> psql -U postgres db --help``
-Dump the database to a file
-    ``pg_dump -h 127.0.0.1 -U postgres db > <file name>``
-    ``docker exec pg_dump -U postgres db > <file name>``
-Restore from a dumped database file
-    ``cat <file name> | psql -h 127.0.0.1 -U postgres db``
-    ``cat <file name> | docker exec -i <database container name> psql -U postgres db``
+Log into your Cloud project's container (Test or Live) over SSH.
 
 
-.. _reset-the-database:
+Using ``dbshell``
+^^^^^^^^^^^^^^^^^
 
-Reset the database
-..................
+Run::
 
-One operation you may typically need to perform is to reset the database to its newly-migrated
-state, so that it is correctly set up with its schema but no content in its table.
+    ./manage.py dbshell
 
-::
+This will drop you into the ``psql`` command-line client, connected to your database.
 
-    docker ps  # list the containers to find the id you need
 
-    docker exec <database container id> dropdb -U postgres db --if-exists  # drop the database
-    docker exec <database container id> createdb -U postgres db  # create the database
-    docker exec <database container id> psql -U postgres --dbname=db -c "CREATE EXTENSION IF NOT EXISTS hstore"  # add the hstore extension
-    docker-compose run --rm web python manage.py migrate  # migrate the database
+Connecting to the database manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the state of the database as if the project had been deployed for the first time.
+You can also make the connection manually. Run ``env`` to list your environment variables. Amongst
+them you'll find ``DATABASE_URL``, which will be in the form::
+
+    DATABASE_URL=postgres://<user name>:<password>@<address>:<port>/<container>
+
+You can use these credentials in the ``psql`` client.
+
+
+From your own computer
+~~~~~~~~~~~~~~~~~~~~~~
+
+Access to Cloud databases other than from the associated application containers is not possible -
+it is restricted, for security reasons, to containers running on our own infrastruture.
