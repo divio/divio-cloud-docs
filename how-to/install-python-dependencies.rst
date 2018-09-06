@@ -86,10 +86,11 @@ or a commit::
 ..  note::
 
     Our ``pip`` set-up does **not** support `VCS protocols
-    <https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_,
+    <https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_ - you cannot use for
+    example URLs starting ``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``.
 
     However, as long as the version control system host offers full package downloads, you can use
-    the tarball or zip archive URL for that to install from the VCS.
+    the tarball or zip archive URL for that to install from the VCS, as in the examples above.
 
 
 Rebuild the Docker container
