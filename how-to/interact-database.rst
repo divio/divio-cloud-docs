@@ -39,73 +39,7 @@ You can also make the connection manually from within the ``web`` container, for
     docker-compose run --rm web psql -h postgres -U postgres db
 
 As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
-for a number of common operations:
-
-
-.. _database-usage-examples:
-
-Usage examples for common basic operations
-..........................................
-
-It's beyond the scope of this article to give general guidance on using Postgres, but these
-examples will help give you an idea of some typical operations that you might undertake while using
-Divio Cloud.
-
-All the examples assume that you are interacting with the local database, running in its  ``db``
-container.
-
-In each case, we launch the command from within the ``web`` container with ``docker-compose run
---rm web`` and we specify:
-
-* host name: ``-h postgres``
-* user name: ``-U postgres``
-
-Dump the database to a file named ``database.dump``:
-
-..  code-block:: bash
-
-    docker-compose run --rm web pg_dump -h postgres -U postgres db > database.dump
-
-Drop (delete) the database:
-
-..  code-block:: bash
-
-    docker-compose run --rm web dropdb -h postgres -U postgres db
-
-Create the database:
-
-..  code-block:: bash
-
-    docker-compose run --rm web createdb -h postgres -U postgres db
-
-Apply the ``hstore`` extension (required on a newly-created local database):
-
-..  code-block:: bash
-
-    docker-compose run --rm web psql -h postgres -U postgres db -c "CREATE EXTENSION hstore"
-
-Restore the database from a file named ``database.dump``:
-
-..  code-block:: bash
-
-    docker-compose run --rm web pg_restore -h postgres -U postgres -d db database.dump --no-owner
-
-
-Reset the database
-..................
-
-To reset the database (with empty tables, but the schema in place) you would run the commands above
-to drop and create the database, create the the ``hstore`` extension, followed by a migration::
-
-    docker-compose run --rm web python manage.py migrate
-
-
-Restore from a downloaded Cloud backup
-......................................
-
-Untar the downloaded ``backup.tar`` file. It contains a ``database.dump`` file. Copy the file to
-your local project directory, then run the commands above to drop and create the database, create
-the the ``hstore`` extension, and then restore from a file.
+for a number of :ref:`common operations <common-db-operations>`, below.
 
 
 Using ``docker exec``
@@ -226,3 +160,104 @@ From your own computer
 
 Access to Cloud databases other than from the associated application containers is not possible -
 it is restricted, for security reasons, to containers running on our own infrastruture.
+
+
+.. _common-db-operations:
+
+Usage examples for common basic operations
+------------------------------------------
+
+It's beyond the scope of this article to give general guidance on using Postgres, but these
+examples will help give you an idea of some typical operations that you might undertake while using
+Divio Cloud.
+
+All the examples assume that you are interacting with the local database, running in its  ``db``
+container.
+
+In each case, we launch the command from within the ``web`` container with ``docker-compose run
+--rm web`` and we specify:
+
+* host name: ``-h postgres``
+* user name: ``-U postgres``
+
+
+.. _dump-db:
+
+Dump the database
+~~~~~~~~~~~~~~~~~
+
+Dump the database ``db`` to a file named ``database.dump``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web pg_dump -h postgres -U postgres db > database.dump
+
+
+.. _drop-db:
+
+Drop the database
+~~~~~~~~~~~~~~~~~
+
+Drop (delete) the database named ``db``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web dropdb -h postgres -U postgres db
+
+
+.. _create-db:
+
+Create the database
+~~~~~~~~~~~~~~~~~~~~~
+
+Create a database named ``db``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web createdb -h postgres -U postgres db
+
+
+.. _apply-hstore-db:
+
+Apply the ``hstore`` extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Apply the ``hstore`` extension (required on a newly-created local database) to he database named
+``db``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web psql -h postgres -U postgres db -c "CREATE EXTENSION hstore"
+
+
+.. _restore-db:
+
+Restore the database
+~~~~~~~~~~~~~~~~~~~~
+
+Restore a database named ``db`` from a file named ``database.dump``:
+
+..  code-block:: bash
+
+    docker-compose run --rm web pg_restore -h postgres -U postgres -d db database.dump --no-owner
+
+
+.. _reset-database:
+
+Reset the database
+~~~~~~~~~~~~~~~~~~
+
+To reset the database (with empty tables, but the schema in place) you would run the commands above
+to :ref:`drop <drop-db>` and :ref:`create <create-db>` the database, :ref:`create the the hstore
+extension <apply-hstore-db>`, followed by a migration::
+
+    docker-compose run --rm web python manage.py migrate
+
+
+Restore from a downloaded Cloud backup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Untar the downloaded ``backup.tar`` file. It contains a ``database.dump`` file. Copy the file to
+your local project directory, then run the commands above to :ref:`drop <drop-db>` and :ref:`create
+<create-db>` the database, :ref:`create the the hstore extension <apply-hstore-db>`, and then
+:ref:`restore from a file <restore-db>`.

@@ -311,7 +311,7 @@ run::
       web container with the correct versions.
 
     In either case, you will need to restore the database to its newly-migrated state, following
-    the steps in :ref:`reset-the-database`.
+    the steps in :ref:`reset-database`.
 
 
 Copy site templates
