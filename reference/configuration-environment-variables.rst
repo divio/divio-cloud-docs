@@ -12,8 +12,7 @@ you can isolate specific values from your codebase.
 
 Environment variables are a good place for storing instance-specific
 configuration, such as Django settings that you don't wish to hard-code into
-your project, or even for triggering more complex configuration (insertion of
-middleware classes, for example).
+your project.
 
 
 Cloud (*Live* and *Test*) environments
@@ -108,6 +107,36 @@ string, you will need to interpret the variable appropriately, as
 
 You can also use ``env()`` (from the ``getenv`` package), which will parse the
 variable as Python code.
+
+
+Where and when environment variables are applied
+------------------------------------------------
+
+Environment variables should apply only to *environments*, and not to states or processes that are
+independent of a particular environment.
+
+When a project is running, it runs in a particular environment, so you can expect environment
+variables to apply.
+
+However, when a project is being built (i.e. in deployment phase), it should not be subject to any
+particular environment conditions. Even Django operations that take place during deployment (such
+as ``collectstatic``) should be environment-agnostic - under all environment conditions, you should
+expect the same result from ``collectstatic``.
+
+
+Forcing environment variables in the build phase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Though it's not generally recommended, if for some reason you need to specify environment variables
+in the build phase, you can provide them in the ``Dockerfile``, with::
+
+    RUN <key>=<value> <command>
+
+For example::
+
+    RUN SOMEVAR=some_value ./manage.py collectstatic
+
+However, it's usually better to find another solution.
 
 
 Commonly-used environment variables
