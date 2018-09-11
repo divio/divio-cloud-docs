@@ -84,10 +84,10 @@ Select the **Installed** button, and check the other versions.
 Addon                       Version
 --------------------------- -------
 Aldryn Addons               1.0.2
-Aldryn Django               1.11.11.1
-Aldryn django CMS           3.5.2.2
+Aldryn Django               1.11.x.y
+Aldryn django CMS           3.5.x.y
 Aldryn SSO                  1.3.0
-django CMS Bootstrap 4      1.0.0
+django CMS Bootstrap 4      1.1.1
 django CMS File             2.0.2
 django CMS Google Map       1.1.0
 django CMS History          0.5.3
@@ -173,7 +173,7 @@ should still check that the version numbers are compatible.
 
 The original ``requirements.txt`` file lists some further Python dependencies. You may recogise
 some of them (and that, for example, ``easy_thumbnails`` is a dependency of Django Filer). However
-if you need to, you canc check the Divio Project to see what has already been installed, with
+if you need to, you can check the Divio Project to see what has already been installed, with
 ``docker-compose run --rm web pip freeze``. All the following should already be present, and do not
 need to be listed manually::
 
@@ -317,8 +317,9 @@ run::
 Copy site templates
 ~~~~~~~~~~~~~~~~~~~
 
-Next, we need to Copy the two templates ``base.html`` and ``content.html`` template from
-``the_opinions_company/templates`` in the original project to ``templates`` in the Divio project.
+Next, we need to copy the two templates ``base.html`` and ``content.html`` template from
+``the_opinions_company/templates`` in the original project to ``templates`` in the Divio project,
+as well as the ``includes`` directory.
 
 
 Copy static files
