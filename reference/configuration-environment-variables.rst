@@ -115,13 +115,13 @@ Where and when environment variables are applied
 Environment variables should apply only to *environments*, and not to states or processes that are
 independent of a particular environment.
 
-When a project is running, it runs in a particular environment, so you can expect environment
-variables to apply.
+* **When a project is running**, it runs in a particular environment, so you can expect environment
+  variables to apply.
 
-However, when a project is being built (i.e. in deployment phase), it should not be subject to any
-particular environment conditions. Even Django operations that take place during deployment (such
-as ``collectstatic``) should be environment-agnostic - under all environment conditions, you should
-expect the same result from ``collectstatic``.
+* **When a project is being built** (i.e. in the deployment phase), it should not be subject to any
+  particular environment conditions. Even Django operations that take place during deployment (such
+  as ``collectstatic``) should be environment-agnostic - under all environment conditions, you
+  should expect the same result from ``collectstatic``.
 
 
 Forcing environment variables in the build phase
