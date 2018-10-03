@@ -1,7 +1,7 @@
 .. _install-python-dependencies:
 
-How to add arbitrary Python dependencies to a project
-=====================================================
+How to install Python dependencies in a project
+===============================================
 
 ..  seealso::
 

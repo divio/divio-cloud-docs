@@ -21,8 +21,8 @@ Although each of those instances will have its own local file storage, this will
 each of the others, and it won't persist - once that instance ceases to exist, so will the files.
 That storage will also be inaccessible to any other instances of the application.
 
-This means a project applications can't expect to save files to its local storage, and then expect
-to find them again.
+This means a project's applications, cron jobs or other process can't expect to save files to its
+local storage, and then expect to find them again.
 
 
 Our storage service providers

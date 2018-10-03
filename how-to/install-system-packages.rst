@@ -1,7 +1,7 @@
 .. _install-system-packages:
 
-How to add arbitrary system packages to a project
-=================================================
+How to install system packages in a project
+===========================================
 
 ..  seealso::
 
