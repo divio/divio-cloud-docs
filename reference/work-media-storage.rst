@@ -7,6 +7,8 @@ Working with your project's media storage in Python applications
 
     * :ref:`interact-storage`
 
+.. _work-media-storage-introduction:
+
 Introduction
 ------------
 
@@ -48,15 +50,46 @@ File objects directly, it doesn't need to do anything differently.
 Similarly, an application should not rely on knowing or manipulating a File object's file path.
 
 
-Use ``DEFAULT_FILE_STORAGE``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use Django's defined ``DEFAULT_FILE_STORAGE``, not ``FileSystemStorage``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Django's file storage system relies on the ``DEFAULT_FILE_STORAGE`` setting. Ideally, third-party
-applications in your project should respect this for their own file handling.
+Your code may use Django's :mod:`FileSystemStorage <django:django.core.files.storage>`. This
+provides basic file storage, on a filesystem local to the code. For the reasons described in the
+:ref:`Introduction <work-media-storage-introduction>` it is therefore not suitable for use on
+Divio Cloud.
+
+Instead, you must use the storage as defined by Django's ``DEFAULT_FILE_STORAGE`` - which you can
+do simply by not explictly specifying a storage system, and using
+``django.core.files.storage.default_storage``.
+
+See also :ref:`Django's discussion <django:file storage systems>` of the subject.
+
+
+File storage in third-party applications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ideally, third-party applications in your project should respect this for their own file handling.
 
 This is not always the case however. In some cases the application may need to be configured
 explicitly. More problematically, some applications may have hard-coded expectations for the file
 storage system, and these will need to be rewritten.
+
+
+Private file storage
+~~~~~~~~~~~~~~~~~~~~
+
+Our storage backend does not support private file storage (i.e. requiring authentication) on S3
+objects.
+
+If you need private storage, you can define an additional Django storage backend in your project,
+which sets S3 objects to be private as required.
+
+Whenever you need to manage private files, you will need to invoke this custom backend.
+
+The backend can use the buckets we provide to do this, but please be aware that if you restore a
+backup, or use our tools to push files, *all the files will become public*.
+
+Alternatively, you can use a bucket of your own with this backend.
 
 
 Using Easy Thumbnails
