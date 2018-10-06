@@ -18,7 +18,7 @@ Then:
     cd divio-cloud-docs
     make install  # create a virtualenv and install required components
     make run  # build and serve the documentation
-    open http://localhost:8001  # open it in a browser
+    open http://localhost:9001  # open it in a browser
 
 
 ## Notable techniques used in this documentation
