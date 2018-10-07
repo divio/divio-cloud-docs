@@ -18,6 +18,10 @@
                 width: 25%;
             }
         }
+
+        .main-visual {
+            margin-bottom: 0 !important;
+        }
         h2 {border-top: 1px solid #e1e4e5; padding-top: 1em}
     </style>
 
@@ -25,8 +29,9 @@
 Divio Cloud developer handbook
 ==============================
 
-.. image:: /images/divio-cloud.jpg
+.. image:: /images/divio-support.jpg
    :alt: 'Divio Cloud'
+   :class: 'main-visual'
 
 
 Contents
