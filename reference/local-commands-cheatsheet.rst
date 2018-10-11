@@ -26,7 +26,7 @@ Push/pull code
     specify ``live``)
 
 :ref:`Push media/database <divio-project-push>`
-    ``divio project push media``/``divio project push db`` (applies to ``test`` server by default; optionally, specify
+    ``divio project push db``/``divio project push db`` (applies to ``test`` server by default; optionally, specify
     ``live``)
 
 
