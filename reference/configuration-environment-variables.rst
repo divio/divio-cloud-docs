@@ -61,7 +61,7 @@ Via the Control Panel
 In the project, select *Environment Variables*. Enter the keys and values, and
 **Save**.
 
-.. image:: /images/environment-variables.png
+.. image:: /images/control-panel-environment-variables.png
    :alt: 'Managing environment variables'
 
 
