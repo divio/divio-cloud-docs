@@ -27,10 +27,6 @@ Uninstall the addon locally if necessary
 You will find the addon listed in ``requirements.in`` - remove it from there, so that when you build the
 local container it will no longer try to install the old version.
 
-
-
-Remove it from each of these places.
-
 You will also find it listed in ``INSTALLED_ADDONS`` in ``settings.py`` - *leave it there*.
 
 
