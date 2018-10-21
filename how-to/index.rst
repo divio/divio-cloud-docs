@@ -31,6 +31,7 @@ Managing a project's code and resources
     Interact with your project’s database <interact-database>
     Interact with your project’s media storage <interact-storage>
     Use Git to manage your project <use-git>
+    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
 Working with addons
