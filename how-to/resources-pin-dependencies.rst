@@ -15,8 +15,8 @@ contains::
     rsa==1.3.4
     django-storages
 
-then while you are guaranteed that version 1.3.4 of the ``rsa`` package will be installed, but you
-can't be sure in the case of ``django-storages``.
+then while you are guaranteed that version 1.3.4 of the ``rsa`` package will be installed the next
+time the project is built, you can't be sure in the case of ``django-storages``.
 
 This means that when ``django-storages`` is updated and released to PyPI, an unexpected change can
 creep in to your project. You don't need to change anything in your project: *simply redeploying
