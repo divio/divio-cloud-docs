@@ -160,13 +160,15 @@ deployment process will insert:
     # </BOWER>
 
 
+.. _dockerfile-reference-python:
+
 The ``<PYTHON>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If either ``requirements.in`` or ``requirements.txt`` are present in the root of the project, then
-the deployment process will insert appropriate instructions, that will handle installation of Divio
-Cloud addons and other packages. The exact contents of this section will depend on the project; an
-example for a Python 3 project:
+If ``requirements.in`` is present in the project, then at deployment time the Control Panel will
+ensure that this section contains appropriate instructions to handle installation of Divio
+Cloud addons and other packages. The exact contents of this section will depend on the project,
+for example:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 2-10
@@ -182,6 +184,11 @@ example for a Python 3 project:
             --no-index --no-deps \
             --requirement requirements.urls
     # </PYTHON>
+
+If ``requirements.txt`` is present in the project, then the ``pip-reqs compile`` instruction will
+be removed. See :ref:`How to pin all of your project's Python dependencies <manage-dependencies>`
+for why you might want to do this.
+
 
 .. _dockerfile-source-section:
 
