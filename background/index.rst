@@ -14,3 +14,4 @@ Background information
     addon-configuration-overview
     about-boilerplates
     redirects
+    multisite-projects

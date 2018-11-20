@@ -1,20 +1,46 @@
-.. _set-up-multisite:
+.. _multisite-projects:
 
-How to work with multi-site projects
-====================================
+Multi-site projects on Divio Cloud
+==================================
 
 Multi-site hosting, also known as *multi-tenancy*, makes it possible to host multiple sites,
 serving multiple domains, using a single database.
 
 ..  note::
 
-    This is distinct from serving a single site under multiple domains - this does not requite
-    django-multisite, and only requires those domains to be set up in the Control Panel.
+    This is distinct from serving a *single site* under *multiple domains* - this does not require django-multisite,
+    and only requires those domains to be set up in the Control Panel.
 
-There are two ways of achieving this:
+We support two multi-site options:
 
-* multiple sites, one database, one project: :ref:`multisite-single-project`
-* multiple sites, one database, multiple projects: :ref:`multisite-multiple-projects`
+* our fully-supported Django Multisite+ addon, available for qualifying projects only
+* a DIY implementation via the `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_
+
+
+Fully supported Django Multisite+ option
+----------------------------------------
+
+This is the easiest way to set up multi-site projects on Divio Cloud. Note that not all projects
+will qualify for this option; it's available only for Business plan projects that meet certain
+criteria. Please contact Divio support for more details.
+
+We will install and configure Django Multisite+.
+
+You need to inform us about each domain to be served. We will apply the configuration required,
+which includes:
+
+* installing and configuring Django Multisite Plus addon
+* applying the necessary settings and environment variables
+
+
+DIY implementation
+------------------
+
+You will need to install `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_ and manage any
+settings and configuration manually.
+
+We are able to assist by setting up your Test server domains, but other than that we are not able
+to provide support for this option.
 
 
 Logging in to multi-site instances
@@ -24,33 +50,8 @@ In all multi-site projects, you will notice that each site requires its own log-
 one will not log you in to another. This is because the Django session cookie is *per-domain*.
 
 
-.. _multisite-single-project:
-
-Django Multisite
-----------------
-
-Our Django Multisite Plus allows you to serve multiple sites under multiple domains (including
-sub-domains) from a single Divio Cloud Django project.
-
-You need to inform us about each domain to be served. We will apply the configuration required,
-which includes:
-
-* installing and configuring Django Multisite Plus addon
-* applying the necessary settings and environment variables
-
-Because Live and Test servers use different domains, we provide a runtime module that sets up the
-domain rewriting - via the ``Site`` model - appropriately in each case.
-
-This will populate the Django Sites table (*Sites > Sites* in the admin), and the Django Multisite
-Plus Sites table (*Multisite+ > Sites* in the admin), when the environment variable
-``DJANGO_MULTISITE_PLUS_AUTO_POPULATE_SITES`` is ``True``.
-
-In this case, **these auto-populated domains should not be edited manually**, as any changes will
-simply be overwritten at the next deployment.
-
-
-Switching between sites in a multi-site project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Switching between sites in a local multi-site project
+-----------------------------------------------------
 
 Suppose you have a multi-site project ``example-stage.eu.aldryn.io`` whose domains are configured
 thus:
@@ -77,7 +78,7 @@ There are two approaches you can take:
 
 
 Option one: Force the site with an environment variable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the simpler method and recommended unless you need to be able to switch often between sites.
 
@@ -92,7 +93,7 @@ If you set explictly set the ``SITE_ID`` this way, the next method will not work
 
 
 Option two: capture the sites' domains in ``/etc/hosts``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The other method is to point all the domains you need to handle locally to ``localhost``. For
 example, for each of the domains in the table above, you could add an entry in your ``/etc/hosts``
@@ -130,30 +131,3 @@ must remember to remove the entries from ``hosts`` once you've finished.
 
 Note also that if you force the site using the environment variable method, then this method will
 not work.
-
-
-.. _multisite-multiple-projects:
-
-Multiple Divio Cloud projects
------------------------------
-
-This method involves separate Django instances, one for each site. Its advantage is that it allows
-you guarantee that each site will be served from a different instance, and it gives you more
-control over the resources allocated to each site.
-
-Set up your projects, including their domains, and then contact Divio support so we can configure
-them all to use the same database and storage backend.
-
-We will also advise on any other configuration you need to make.
-
-..  important::
-
-    It is **crucial** that you ensure all the projects sharing the same database use the same code,
-    particularly around models. Otherwise, you could run into site errors or even database
-    corruption problems, if model code is not in line with database table structure.
-
-    You must take care to make and deploy code changes across sites in as consistent way as
-    possible.
-
-As each project runs separately, the easiest way to work on them locally is simply to launch
-and stop each one as required.

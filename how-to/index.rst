@@ -19,7 +19,6 @@ Setting up a project and its environment
     Add a Django application <add-application>
     Set up password protection <password-protect-project>
     Fine-tune uWSGI server performance <fine-tune-server-performance>
-    Work with multi-site projects <work-with-multisite-projects>
 
 
 Managing a project's code and resources
