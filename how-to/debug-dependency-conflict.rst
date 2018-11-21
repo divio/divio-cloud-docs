@@ -61,7 +61,7 @@ change.
 
 In example above, we have a strong clue. The most firmly-pinned of these requirements is
 ``==1.8.18``. All the others are more loosely pinned. That suggests that Django 1.8.18 has been
-specificed for a good reason.
+specified for a good reason.
 
 In this example, searching through the log for ``Django==1.8.18`` will reveal::
 
