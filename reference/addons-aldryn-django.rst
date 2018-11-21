@@ -84,6 +84,41 @@ Can be specified as an environment variable (recommended) or in ``settings.py``.
 See :ref:`301vs302` for more information.
 
 
+.. _static-file-cache-control:
+
+Cache control for static files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Static files in our Django projects are collected by Django at build time, and served by uWSGI.
+Aldryn Django configures the command it issues to uWSGI to start static file serving on the basis
+of project settings. By default, files are served with no ``Cache-Control`` header applied.
+
+
+*Hash static file names*
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Aldryn Django addon includes a *Hash static file names* option. When selected, Django's
+:class:`ManifestStaticFilesStorage <django:storage.ManifestStaticFilesStorage>` will be used as the
+storage backend. This appends an MD5 hash of each file's contents to its filename, allowing caching
+headers to be safely set in the far future.
+
+Aldryn Django configures uWSGI to set the ``Cache-Control`` header to one year on files with a
+hash in the filename.
+
+
+.. _STATICFILES_DEFAULT_MAX_AGE:
+
+``STATICFILES_DEFAULT_MAX_AGE``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``STATICFILES_DEFAULT_MAX_AGE`` determines the ``Cache-Control`` header value that uWSGI will
+use for unhashed files. It is not recommended to set this to high values, as the cached versions
+can continue to be used even after files themselves have been updated.
+
+``STATICFILES_DEFAULT_MAX_AGE`` can be specified as an environment variable (recommended) or in
+``settings.py``.
+
+
 Other options
 -------------
 

@@ -35,15 +35,16 @@ Aldryn Django settings
 ----------------------
 
 The :ref:`Aldryn Django addon <aldryn-django>` is responsible for ensuring that uWSGI (the
-application gateway server) starts up with appropriate parameters.
+application gateway server) starts up with appropriate parameters, for example for :ref:`static
+file caching control <static-file-cache-control>`.
 
 These parameters can be controlled by environment variables.
 
 ..  note::
 
-    These environment variables represent uWSGI run-time options. It's also possible to configure
-    :ref:`other uWSGI settings <uwsgi-configuration>`, but we don't recommend doing so unless you
-    are familiar with them already and understand their implications.
+    Some of these environment variables represent uWSGI run-time options. It's also possible to
+    configure :ref:`other uWSGI settings <uwsgi-configuration>`, but we don't recommend doing so
+    unless you are familiar with them already and understand their implications.
 
 
 Increase ``DJANGO_WEB_WORKERS``
@@ -88,5 +89,3 @@ but will allow the site to try again, or serve other requests.
 Taking this as low as 10 seconds may have benefits with no adverse effects. If your site
 occasionally needs to serve views that entail long processes (for example, applying a filter on a
 huge admin list) then you will need to adjust it upwards appropriately.
-
-
