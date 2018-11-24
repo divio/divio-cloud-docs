@@ -3,46 +3,58 @@
 Anatomy of a Divio Cloud project
 ================================
 
-.. _build-process:
+Docker-related files
+~~~~~~~~~~~~~~~~~~~~
 
-The project build process
--------------------------
+Your local project contains a :ref:`Dockerfile <dockerfile-reference>` and a
+:ref:`docker-compose.yml file <docker-compose-yml-reference>`.
 
-Local builds
-^^^^^^^^^^^^
+These describe how the project is built. It is important to note that the ``docker-compose.yml``
+file is **only** used in the local project, and is not used in Cloud deployments.
 
-#.  The Divio CLI clones (downloads) the project's files from the Divio Cloud
-    Git server.
-#.  The project's ``docker-compose.yml`` file is invoked, telling Docker
-    what containers need to be created, starting with the ``web`` container,
-    which is built using...
-#.  ...the project's ``Dockerfile``. This tells Docker how to build the
-    the project's containers - Docker begins executing the commands contained
-    in the file.
-#.  If necessary, Docker downloads the layers from which the container image
-    is built.
-#.  Docker continues executing the commands, which will include copying files,
-    installing packages using Pip, and running Django management commands.
-#.  Docker returns to the ``docker-compose.yml``, which sets up filesystem,
-    port and database access for the container, and the database container
-    itself.
-#.  The ``docker-compose.yml`` file contains a default ``command`` that starts
-    up the Django server.
-#.  The Divio CLI opens a web browser window with a login page for the locally
-    running site.
+Directories
+-----------
+
+``addons``
+~~~~~~~~~~
+
+For each addon in your project, a directory will be created in ``addons``, containing:
+
+* ``addon.json``: basic metadata for the addon (generally, there is no need ever to edit this file)
+* ``aldryn_config.py``: optional; manages settings for the addon (see :ref:`aldryn_config.py
+  explanation <aldryn-config>` and :ref:`how to create an aldryn_config.py file
+  <create-aldryn-config>`)
+* ``settings.json``: any settings that were applied via the Control Panel, so that they can
+  be used locally
+
+
+``addons-dev``
+~~~~~~~~~~~~~~
+
+For local development use only. An addon can be placed here for development purposes.
+``addons-dev`` contains a little magic; any packages within directories in ``addons-dev`` will
+automatically be placed on the Python path for convenience.
+
+Running ``divio project develop <addon>`` for an addon in ``addons-dev`` will add it to the
+project's ``requirements.in`` and ``settings.INSTALLED_ADDONS``, then attempt to build the
+project.
+
+
+``data``
+~~~~~~~~
+
+For local development use only. In ``data``, a ``media`` directory functions as the local analogue
+of Cloud project's S3 storage bucket (see :ref:`interact-storage`).
 
 
 .. _addon-templates:
 
-Addons' templates in projects
------------------------------
+``templates``
+~~~~~~~~~~~~~
 
-In your Divio Cloud project directories, you will find a ``templates``
-directory. This is the place for your project's templates, such as its own base
-templates.
+Project-level Django templates.
 
-It's also where you can place templates to override addon applications'
-templates. Templates at the project level will override templates at the
+Templates at the project level will override templates at the
 application level if they are on similar paths. This is standard Django behaviour,
 allowing application developers to provide templates that can easily be
 customised.
@@ -76,3 +88,34 @@ In this case:
   obtain any updated templates and merge them with your own versions
 * if you have not made any changes, you can simply delete your local versions
   and Django will use the updated application templates.
+
+
+.. _build-process:
+
+The project build process
+-------------------------
+
+Local builds
+^^^^^^^^^^^^
+
+#.  The Divio CLI clones (downloads) the project's files from the Divio Cloud
+    Git server.
+#.  The project's ``docker-compose.yml`` file is invoked, telling Docker
+    what containers need to be created, starting with the ``web`` container,
+    which is built using...
+#.  ...the project's ``Dockerfile``. This tells Docker how to build the
+    the project's containers - Docker begins executing the commands contained
+    in the file.
+#.  If necessary, Docker downloads the layers from which the container image
+    is built.
+#.  Docker continues executing the commands, which will include copying files,
+    installing packages using Pip, and running Django management commands.
+#.  Docker returns to the ``docker-compose.yml``, which sets up filesystem,
+    port and database access for the container, and the database container
+    itself.
+#.  The ``docker-compose.yml`` file contains a default ``command`` that starts
+    up the Django server.
+#.  The Divio CLI opens a web browser window with a login page for the locally
+    running site.
+
+

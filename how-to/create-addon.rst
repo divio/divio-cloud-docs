@@ -138,6 +138,8 @@ The other packaging files are simpler:
 Add configuration
 -----------------
 
+.. _create-aldryn-config:
+
 Create ``aldryn_config.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
