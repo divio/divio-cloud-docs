@@ -3,6 +3,9 @@
 Documentation standards
 =======================
 
+Wrap ReStructured Text source to 100 columns.
+
+
 Headings
 --------
 

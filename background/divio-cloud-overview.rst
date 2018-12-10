@@ -48,6 +48,31 @@ The three environments are created in Docker containers from the same images.
 In our workflow, development is done locally, before being deployed to *Test*
 and finally to *Live*.
 
+.. _default-project-conditions:
+
+Default project conditions
+..........................
+
+Some of these conditions may be easily altered according your needs, for example the ``DEBUG``
+setting. See also :ref:`local-in-live-mode`.
+
++----------------------------------+------------------+----------------------------+---------------------------+
+|                                  | Local            | Test                       | Live                      |
++==================================+==================+============================+===========================+
+| ``STAGE`` environment variable   | ``local``        | ``test``                   | ``live``                  |
++----------------------------------+------------------+----------------------------+---------------------------+
+| ``DEBUG`` environment variable   | ``True``         |``True``                    | ``False``                 |
++----------------------------------+------------------+----------------------------+---------------------------+
+| static files served by           | Python runserver |  uWSGI                                                 |
++----------------------------------+                  +----------------------------+---------------------------+
+| media files served by            |                  | our Cloud S3 service                                   |
++----------------------------------+------------------+----------------------------+---------------------------+
+| database runs in                 | a local container| our Cloud database cluster                             |
++----------------------------------+------------------+----------------------------+---------------------------+
+| number of application containers | one                                           | according to subscription |
++----------------------------------+------------------+----------------------------+---------------------------+
+| application container sleeps     | n/a              | after 15 minutes' activity | never                     |
++----------------------------------+------------------+----------------------------+---------------------------+
 
 Project site stack
 ^^^^^^^^^^^^^^^^^^

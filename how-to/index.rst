@@ -18,7 +18,6 @@ Setting up a project and its environment
     Migrate an existing project to Divio Cloud <migrate-existing-project>
     Add a Django application <add-application>
     Set up password protection <password-protect-project>
-    Fine-tune uWSGI server performance <fine-tune-server-performance>
 
 
 Managing a project's code and resources
@@ -51,6 +50,16 @@ Working in the local development environment
 
     Log in to a local Django project <local-project-log-in>
     Run the local server in Live mode <local-in-live-mode>
+
+
+Going live and maintaining performance
+--------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Go-live checklist <live-checklist>
+    Fine-tune uWSGI server performance <live-performance>
 
 
 Troubleshooting

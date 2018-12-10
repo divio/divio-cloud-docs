@@ -94,6 +94,8 @@ Aldryn Django configures the command it issues to uWSGI to start static file ser
 of project settings. By default, files are served with no ``Cache-Control`` header applied.
 
 
+.. _hash-static-file-names:
+
 *Hash static file names*
 ^^^^^^^^^^^^^^^^^^^^^^^^
 

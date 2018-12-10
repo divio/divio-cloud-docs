@@ -1,4 +1,4 @@
-.. fine-tune-performance:
+.. _live-performance:
 
 How to fine-tune your server's performance
 ==========================================
