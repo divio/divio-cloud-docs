@@ -3,6 +3,13 @@
 Go-live checklist
 ================================
 
+Check your subscription plan
+----------------------------
+
+* In the Control Panel, check the project's *Subscription*, and that it includes the technical and
+  support resources it will require once the site is live.
+
+
 Dependencies
 ------------
 
@@ -74,4 +81,5 @@ After deployment
 * Check your site as a logged-in user, an anonymous user and in your browser's private/incognito
   mode to verify expected behaviour.
 * Check response times with a tool such `Pingdom <https://tools.pingdom.com>`_.
-* If necessary, consult the :ref:`live-performance` guide.
+* If necessary, allocate more resources to the project via its *Subscription* and consult the
+  :ref:`live-performance` guide.
