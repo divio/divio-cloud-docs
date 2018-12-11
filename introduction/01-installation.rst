@@ -14,7 +14,7 @@ Our Divio GUI application can set up all you need to get started. In this tutori
 install and configure the components - Docker, the Divio CLI, and so on - manually. This will give
 more experienced developers a better insight into the system and how it all works together.
 
-We expect you to have Pip and Git installed and to have at least a basic understanding of their
+We expect you to have pip and Git installed and to have at least a basic understanding of their
 usage.
 
 ..  admonition:: Older versions of Macintosh OS X and Windows
@@ -39,22 +39,16 @@ usage.
 Install the Divio CLI package
 ---------------------------------
 
-The :ref:`Divio CLI application <divio-cli-ref>` is installable using pip::
+The :ref:`Divio CLI application <divio-cli-ref>` is installable using pip (along with the
+aldryn-client package that is required for some local operations)::
 
-    pip install divio-cli
+    pip install divio-cli aldryn-client
 
-If you already have it installed, check that it is up-to-date::
+If you already have them installed, check that they are up-to-date::
 
-    pip install --upgrade divio-cli
+    pip install --upgrade divio-cli aldryn-client
 
-You can install this in a virtualenv if you prefer not to install it globally.
-
-..  important::
-
-    You will also need to install the Aldryn Client package (a future update
-    will make this unnecessary)::
-
-        pip install aldryn-client
+You can install this in a virtualenv if you prefer not to install them globally.
 
 
 Log in
