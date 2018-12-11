@@ -144,7 +144,7 @@ What does the deployment log contain?
 
 
 .. _debug-cp-deployment-failed-deployment-log-empty:
-..  rst-class:: probable-fault step fas fa-exclamation-triangle
+..  rst-class:: probable-fault step
 
 Probable fault: temporary problem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
