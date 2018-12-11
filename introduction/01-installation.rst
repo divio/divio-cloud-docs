@@ -10,6 +10,31 @@ A Divio Cloud account is free to set up and use indefinitely. Create your
 account on the Divio Cloud `Control Panel <https://control.divio.com/>`_, or
 log in there if you already have one.
 
+Our Divio GUI application can set up all you need to get started. In this tutorial however we will
+install and configure the components - Docker, the Divio CLI, and so on - manually. This will give
+more experienced developers a better insight into the system and how it all works together.
+
+We expect you to have Pip and Git installed and to have at least a basic understanding of their
+usage.
+
+..  admonition:: Older versions of Macintosh OS X and Windows
+
+    Older versions of Macintosh OS X and Windows do not support the native Docker application.
+    Instead, they require Docker to be run in a virtual machine (in VirtualBox) while the Docker
+    Toolbox application provides a set of tools to interact with it.
+
+    This can be more difficult to set up than Docker running natively, but the Divio app will take
+    care of it. **This is the strongly recommended way to set up Docker in such a case.**
+
+    If you're using one of these older systems and cannot upgrade, please download and run the
+    Divio app. With some fairly minor differences, you'll be able to follow this tutorial using the
+    Divio Shell that the app provides.
+
+    `Download the Divio application <https://divio.com/app/>`_ and install it. When you run it, it
+    will take care of installing and setting up Docker the components you require.
+
+    Continue at :ref:`tutorial-set-up`.
+
 
 Install the Divio CLI package
 ---------------------------------
@@ -68,46 +93,10 @@ server and so on. Visit `SSH Keys in the Control Panel
 Set up Docker
 -------------
 
-At this stage, you have two ways to set up Docker. You can either do it by
-hand, or use the :ref:`Divio app <divio-app>` to manage this for you.
+Download and install `Docker for Mac <https://www.docker.com/docker-mac>`_ or `Docker for Windows
+<https://www.docker.com/docker-windows>`_.
 
-We recommend using the Divio app, which is available for Macintosh, Linux and
-Windows. (It's especially recommended if you are using a version of Windows
-other than Windows 10 Professional.)
+Launch Docker. Check that it's running correctly with::
 
-If you prefer to do it by hand, see :ref:`docker-ssh-by-hand` below.
-
-`Download the Divio application <https://divio.com/app/>`_ and install it. When
-you run it, it will take care of installing and setting up Docker.
-
-The Divio app is also a useful tool when you need technical support - it's
-easier for us to assist users who have it installed.
-
-
-.. _docker-ssh-by-hand:
-
-Set up Docker by hand
----------------------
-
-..  important::
-
-    We recommend that you allow the Divio app to manage installation and configuration.
-
-    Consider a manual installation only if you already know what you are doing!
-
-* Download and install `Docker for Mac <https://www.docker.com/docker-mac>`_ or `Docker for Windows
-  <https://www.docker.com/docker-windows>`_.
-
-* Check that it runs correctly and that the Divio app is able to communicate with it.
-
-..  note::
-
-    Older versions of macOS and Windows do not support the native Docker
-    application. Instead, they require Docker to be run in a virtual machine
-    (in VirtualBox) and the Docker Toolbox application provides a set of tools
-    to interact with it.
-
-    This can be more difficult to set up than Docker for Windows, but the Divio
-    app will take care of it. **This is the strongly recommended way to set up
-    Docker in such a case.**
+    docker run --rm busybox true
 
