@@ -4,7 +4,7 @@ Anatomy of a Divio Cloud project
 ================================
 
 Docker-related files
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Your local project contains a :ref:`Dockerfile <dockerfile-reference>` and a
 :ref:`docker-compose.yml file <docker-compose-yml-reference>`.
@@ -117,5 +117,3 @@ Local builds
     up the Django server.
 #.  The Divio CLI opens a web browser window with a login page for the locally
     running site.
-
-

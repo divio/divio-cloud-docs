@@ -34,7 +34,7 @@ Divio Cloud projects
 --------------------
 
 The three environments
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Each Divio Cloud project includes three environments, each of which will create
 a version of the website.
@@ -48,10 +48,11 @@ The three environments are created in Docker containers from the same images.
 In our workflow, development is done locally, before being deployed to *Test*
 and finally to *Live*.
 
+
 .. _default-project-conditions:
 
 Default project conditions
-..........................
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some of these conditions may be easily altered according your needs, for example the ``DEBUG``
 setting. See also :ref:`local-in-live-mode`.
@@ -74,8 +75,9 @@ setting. See also :ref:`local-in-live-mode`.
 | application container sleeps     | n/a              | after 15 minutes' activity | never                     |
 +----------------------------------+------------------+----------------------------+---------------------------+
 
+
 Project site stack
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The stack running Cloud sites is:
 
@@ -92,10 +94,23 @@ Applications
     Python/Django
 
 
+Project repository branches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, each project's code is in its Git ``develop`` branch. This is then
+pushed to our Git server, where it can be deployed to the *Test* or *Live* servers
+(our strongly -recommended workflow is always to deploy to *Test* first),
+
+However, on request different branches can be set for the *Test* and *Live* servers - for example, ``develop`` and ``master`` respectively.
+
+In this workflow you would work on ``develop`` before manually merging into
+``master``, and then deploying *Live*.
+
+
 .. _boilerplates_reference:
 
 Boilerplates
-^^^^^^^^^^^^
+------------
 
 Divio Cloud projects represent web projects. Each project requires a frontend,
 however minimal - at the very least, a basic ``base.html`` template. In order
@@ -115,30 +130,8 @@ sophisticated ones include advanced frontend tooling: NPM, webpack, Sass and
 other components.
 
 
-Project repository branches
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-By default, each project's code is in its ``develop`` branch. This is then
-pushed our Git server, where it can be deployed to the *Test* or *Live* servers
-(our strongly -recommended workflow is always to deploy to *Test* first),
-
-However, on request different branches can be set for the *Test* and *Live* servers - for example, ``develop`` and ``master`` respectively.
-
-In this workflow you would work on ``develop`` before manually merging into
-``master``, and then deploying *Live*.
-
-
-Deployment
-^^^^^^^^^^
-
-A number of optimisations have been built into our Cloud deployment process to
-make deployments faster and more reliable.
-
-Python packaging
-~~~~~~~~~~~~~~~~
-
-We maintain our own Python Package Index, with which has pre-built
-platform-specific `wheels <http://pythonwheels.com>`_ for all Python packages.
+Docker on Divio Cloud
+---------------------
 
 Docker layer caching
 ~~~~~~~~~~~~~~~~~~~~
