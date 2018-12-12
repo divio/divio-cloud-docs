@@ -88,9 +88,19 @@ Set up Docker
 -------------
 
 Download and install `Docker for Mac <https://www.docker.com/docker-mac>`_ or `Docker for Windows
-<https://www.docker.com/docker-windows>`_.
+<https://www.docker.com/docker-windows>`_ (Windows users should consult the :ref:`checklist
+<checklist-docker-installation-windows>` below).
 
 Launch Docker. Check that it's running correctly with::
 
     docker run --rm busybox true
 
+
+.. _checklist-docker-installation-windows:
+
+Checklist for Docker installation on Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* In Docker's settings, make sure that it is set to use *Linux containers*.
+* Ensure that your Windows user is in the `docker-users` group.
+* When you launch Docker, make sure that you do so as a Windows administrator.
