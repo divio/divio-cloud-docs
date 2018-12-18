@@ -5,13 +5,19 @@ How to install Python dependencies in a project
 
 ..  seealso::
 
-    * :ref:`tutorial-add-applications`
-    * :ref:`Add new applications to a project tutorial <install-system-packages>`
+    * :ref:`Adding applications to a project <tutorial-add-applications>` in our tutorial
+    * :ref:`How to install system packages <install-system-packages>`
 
+To install dependencies in a project, you must first :ref:`list-dependencies`, then
+:ref:`process-dependencies`. Both steps are described below.
 
-Your Divio Cloud project has a ``requirements.in`` file, processed by the
-``pip-compile`` command from `pip-tools
-<https://github.com/jazzband/pip-tools>`_.
+.. _list-dependencies:
+
+List your dependencies
+----------------------
+
+Your Divio Cloud project has a ``requirements.in`` file, processed by the ``pip-compile`` command
+from `pip-tools <https://github.com/jazzband/pip-tools>`_ when the project is built.
 
 Place your dependencies in the file, making sure that they are *outside* the::
 
@@ -33,15 +39,16 @@ the requirements from the Addons system.
     codebase may have changed, but a fresh deployment can unexpectedly pick up a newly-released
     version of a package.
 
+    When :ref:`installing from a version control repository <pip-install-from-online-package>`, it
+    is strongly recommended to pin the package by specifying a tag or commit, rather than branch.
+
     Sometimes your dependencies may themselves have unpinned dependencies. In this case, it
-    can be worth explicitly pinning those too.
-
-    When `installing from a version control repository <pip-install-from-online-package>`_, it is
-    strongly recommended to pin the package by specifying a tag or commit, rather than  branch.
+    can be worth explicitly pinning those too - you can easily :ref:`pin all dependencies in a
+    project <manage-dependencies>` automatically.
 
 
-Installing from PyPI
---------------------
+Listing packages from PyPI
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the package name, pinned with an optional (but :ref:`very strongly recommended
 <pinning-dependencies>`) version number, for example::
@@ -51,15 +58,15 @@ Use the package name, pinned with an optional (but :ref:`very strongly recommend
 
 .. _pip-install-from-online-package:
 
-Installing from an online package or version control system
------------------------------------------------------------
+Listing packages from version control systems or as archives
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use the URL of a tarballed or zipped archive of the package, typically provided by a
 version control system.
 
 
 Examples from GitHub
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 Master branch, as tarball::
 
@@ -93,9 +100,16 @@ or a commit::
     the tarball or zip archive URL for that to install from the VCS, as in the examples above.
 
 
-Rebuild the Docker container
-----------------------------
+.. _process-dependencies:
 
-To rebuild the Docker container, installing the new dependencies::
+Process the list
+----------------
+
+The requirements file is processed when the project is build. This is taken care of in Cloud
+deployments by the :ref:`Dockerfile <dockerfile-reference-python>`, and locally by running a
+``build`` command::
 
     docker-compose build web
+
+Make sure that you don't also have a ``requirements.txt`` of pinned dependencies, otherwise you
+will simply be re-installing the old list.
