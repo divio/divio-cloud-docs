@@ -30,6 +30,8 @@ These range from Python libraries (such as `memory-profiler
 <https://pypi.org/project/line_profiler/>`_) to third-party monitoring/profiling services.
 
 
+.. _aldryn-django-performance-settings:
+
 Aldryn Django settings
 ----------------------
 
