@@ -351,5 +351,8 @@ don't set the correct ACLs, you may find that attempts to retrieve them (for
 example in a web browser) give an "access denied" error.
 
 On AWS S3, the `public-read ACL
-<https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_
-is set by default. This is the ACL required for general use.
+<https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_ needs to be set
+(by default it's `private`). This is the ACL required for general use.
+
+For example, you can use ``--acl public-read`` as a flag for operations such as ``cp``, or ``aws
+s3api put-object-acl`` and ``aws s3api get-object-acl`` to set set and get ACLs on existing objects.
