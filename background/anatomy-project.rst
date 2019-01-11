@@ -64,7 +64,8 @@ On initial project creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For your convenience, when you first create a project, any templates in addons
-are copied to the project level so you have them right at hand.
+are copied to the project level so you have them right at hand (*if* the addon's
+:ref:`package name and inner application name match <addon_application_naming>`.)
 
 For example, templates from Aldryn News & Blog will be copied to
 ``templates/aldryn_newsblog/`` in your project.

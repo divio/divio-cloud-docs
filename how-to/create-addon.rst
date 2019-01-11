@@ -29,7 +29,7 @@ When you hit **Create addon**, the addon will be registered on the system.
 
 ..  important::
 
-    The package name must not contain underscores. See the note in :ref:`the addon packaging
+    The package name **must not** contain underscores. See the note in :ref:`the addon packaging
     tutorial <tutorial-package-addon>` for more information.
 
 
@@ -76,6 +76,19 @@ If your addon *contains* an application
 
 If on the other hand, for example if the application is not available on PyPI,
 simply add it as the inner application directory.
+
+.. _addon_application_naming:
+
+..  important::
+
+    The *inner application directory*, in this case ``susan_example_application``, should have a
+    name that matches the *package name* (``susan-example-application``), with underscores
+    substituted for the dashes.
+
+    This will allow the Control Panel to copy the application's templates into the project's
+    Git repository when the addon is first installed in a project. If the names don't match,
+    the project will still work, but the templates will not be made available for easy editing.
+
 
 The addon will then contain some additional files:
 
