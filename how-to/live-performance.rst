@@ -51,16 +51,20 @@ These parameters can be controlled by environment variables.
 Increase ``DJANGO_WEB_WORKERS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default number of uWSGI web workers (which determines the number of concurrent web processes)
-per instance is three (note that your plan may include multiple instances).
+By default, each instance can can run three concurrent uWSGI web workers, in other words, three concurrent web processes (note that your plan may include multiple instances). This is determined by ``DJANGO_WEB_WORKERS``.
 
 Increasing the number of web workers will allow you to serve more concurrent requests. Note that
 this will increase the RAM consumption of each instance, so make sure you monitor the results over
-time (briefly exceeding your hosting plan's RAM limits will not matter, but if this is sustained,
+time (briefly exceeding your hosting plan's RAM limits might not matter, but if this is sustained,
 you will need to upgrade to a higher plan).
 
-You are likely to find that you can safely double the number of web workers. You are unlikely to
-see any benefit from lowering it below the default.
+You can calculate as follows: *requests per second* * *average time to serve a request (in seconds)* will give you a
+rough idea how many concurrent web workers your sight needs.
+
+Three uWSGI web workers is quite a conservative number. You are likely to find that you can safely double the number of
+web workers. Increase them in small increments, and back off if you find that RAM consumption becomes excessive.
+
+You are unlikely to see any benefit from lowering ``DJANGO_WEB_WORKERS`` below the default.
 
 
 Increase or decrease ``DJANGO_WEB_MAX_REQUESTS``
@@ -90,3 +94,15 @@ but will allow the site to try again, or serve other requests.
 Taking this as low as 10 seconds may have benefits with no adverse effects. If your site
 occasionally needs to serve views that entail long processes (for example, applying a filter on a
 huge admin list) then you will need to adjust it upwards appropriately.
+
+
+Disable or reconfigure ``UWSGI_CHEAPER`` (uWSGI cheaper mode)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, projects use `uWSGI's cheaper mode <https://uwsgi-docs-additions.readthedocs.io/en/latest/Cheaper.html>`_.
+
+When the site is idling in cheaper mode, uWSGI will dismiss unneeded web workers. This saves RAM, and is the
+recommended configuration for most projects. In some circumstances however it can be advantageous to disable this mode,
+or adjust its settings.
+
+This is generally only applicable to constant high-traffic sites. Please contact Divio support if you feel you need to disable cheaper mode or modify its settings, as mis-configuration can have adverse results.
