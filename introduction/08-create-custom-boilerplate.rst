@@ -3,6 +3,16 @@
 Create a custom Boilerplate
 ===========================
 
+..  admonition:: This tutorial assumes your project uses Django 1.11
+
+    At the time of writing, version 1.11 is `Django's Long-Term Support release
+    <https://www.djangoproject.com/download/#supported-versions>`_, and is
+    guaranteed support until at least April 2020.
+    
+    If you use a different version, you will need to modify some of the code
+    examples and version numbers of packages mentioned.
+
+
 ..  seealso::
 
     * :ref:`about-boilerplates`
