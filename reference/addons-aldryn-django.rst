@@ -79,6 +79,8 @@ Environment variable/``settings.py`` options
 Security-related settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _security-middleware-settings:
+
 Security middleware settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -25,7 +25,8 @@ Our projects are HTTPS-ready by default, and `we provide free SSL certificates
 even on free projects
 <http://support.divio.com/control-panel/projects/ssl-certificates-and-https-on-divio-cloud- projects>`_.
 
-Adding a :ref:`SECURE_SSL_REDIRECT` will enable these redirects.
+Adding a :ref:`SECURE_SSL_REDIRECT <security-middleware-settings>` will enable
+these redirects.
 
 
 .. _domain_name_redirects:

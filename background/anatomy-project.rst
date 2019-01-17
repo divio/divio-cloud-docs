@@ -97,7 +97,7 @@ The project build process
 -------------------------
 
 Local builds
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 #.  The Divio CLI clones (downloads) the project's files from the Divio Cloud
     Git server.
