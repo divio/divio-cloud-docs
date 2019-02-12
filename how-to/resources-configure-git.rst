@@ -3,9 +3,8 @@
 How to set up Git hosting for your project
 =======================================================
 
-All Divio Cloud projects can use the Git private server we provide. If you prefer, you can instead use the Git hosting
+All Divio Cloud projects can use the Git private server we provide. If you prefer, you can instead use a Git hosting
 provider of your choice.
-
 
 ..  important::
 
@@ -26,29 +25,29 @@ The external Git repository can be set up either:
 * at project creation time: select *Repository* > *Custom* in the project creation page
 * later: select *Repository* from your project's menu in the Dashboard, then **Migrate to external repository**
 
-In most cases, you will have created a new repository on the provider ready for this. Enter the repository URL - you
-can use different formats, for example:
+In most cases, you will have created a new repository on the provider ready for this. Enter the repository URL that
+you would use if cloning the project, for example:
 
 * git@github.com/user/repository.git
-* https://github.com/user/repository
-* other
-* examples
+* https://github.com/user/repository.git
 
-The repository **must** have a ``master`` branch, which **must** be empty. If not, you will not be able to add the
-repository URL in the Divio Control Panel.
+The repository **must** have a ``master`` branch, which **must** not contain anything other than ``.git``, ``LICENSE``,
+``README``, ``README.md`` or ``README.rst``. Otherwise the Control Panel will not accept the repository URL.
 
 
 SSH or HTTPS?
 ^^^^^^^^^^^^^
 
-By default, the Control Panel will assume that you will be using SSH, even if you don't actually specify it. However
-you can explicitly provide an HTTPS URL, in which case the Control Panel will also request the associated username and
-password. Generally, SSH is easier, but HTTPS can be useful in environments where SSH is not permitted.
+By default, the Control Panel will assume that you will be using SSH, even if you don't actually specify it.
+
+SSH is preferred. HTTPS can be useful in environments where SSH is not permitted, and is available however if you
+explicitly provide an HTTPS URL. Note that HTTPS is only available for services that *prohibit authentication* that
+would require you to share your password with us.
 
 Continue to:
 
 * :ref:`SSH set-up steps <git-setup-ssh>`
-* HTTPS set-up steps
+* :ref:`HTTPS set-up steps <git-setup-HTTPS>`
 
 
 .. _git-setup-ssh:
@@ -81,16 +80,7 @@ HTTPS: Add the Git project's username and password to the Control Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and
-password.
-
-
-GitHub
-^^^^^^
-
-GitHub requires you to use a *personal access token* in place of your password. `Generate a new token
-<https://github.com/settings/tokens/new>`_. The token will need access to the *Repo* functions.
-
-Paste that into the *password* field in the Control Panel dialog.
+and a personal access token.
 
 
 .. _git-setup-webhook:
@@ -125,7 +115,9 @@ addon configuration as Git commits.
 It's also possible to maintain stricter control over the repository, allowing only read access. In this case, project
 configuration that would normally be maintained via the Control Panel must be undertaken manually.
 
-<describe affected files and operations here>
+*Write access is required to set up the external Git configuration*, but may be disabled subsequently. If you need to
+set up a read-only configuration in which the Control Panel is never able to write to the repository, please contact
+Divio support and we handle this for you manually.
 
 
 Errors and what they mean
@@ -148,5 +140,11 @@ This can also occur if the repository does not contain an empty ``master`` branc
 Unable to get commit count from repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The Control Panel needs to be able to read the repository, and tests for this by getting a commit count. If this fails,
+then you will need to check authentication and branch settings.
+
+
 You have no webhook set up
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Although the Control Panel has been
