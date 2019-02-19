@@ -24,7 +24,7 @@ layer that makes it possible to present common user and application interfaces.
 Project repository branches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, each project's code is in its Git ``develop`` branch, and can be deployed directly from the Git server to the *Test* or *Live* servers
+By default, each project's code is in its Git ``master`` branch, and can be deployed directly from the Git server to the *Test* or *Live* servers
 (our strongly-recommended workflow is always to deploy to *Test* first),
 
 However, on request different branches can be set for the *Test* and *Live* servers - for example, ``develop`` and ``master`` respectively.
