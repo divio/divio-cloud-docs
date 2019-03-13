@@ -7,21 +7,37 @@ Boilerplates
 
     * :ref:`Create a custom Boilerplate tutorial <tutorial-create-boilerplate>`
 
-As well as Django and Python applications, our Docker containerisation can
-include and build frontend components into your projects.
 
-Your project's *Boilerplate* will define the components - HTML, CSS and
-JavaScript - that are set up each time the project is built.
+.. _boilerplates_reference:
 
-Every Divio Cloud project includes a Boilerplate, whether it's one of our
-standard Boilerplates or a custom Boilerplate of your own, which will be
-selected when the project is created. At minimum, it will use our
-:ref:`blank-boilerplate`.
+Boilerplates
+------------
+
+A **Boilerplate** is a convenient way to define components to be used by a project, so that new
+projects can be created quickly with the same tooling set up as soon as the project is created.
+
+A Boilerplate can be used to define any project-level components and processes that are to be
+re-used (note that *Python* components will be handled by our addon system and PIP, not by
+Boilerplates) but will typically take care of a project's frontend set-up.
+
+For example, a Boilerplate will define how the Django templates are structured and make opinionated
+choices about what JavaScript frameworks and CSS tools are used.
+
+When a project is created, it will always specify a Boilerplate - even if it's a pre-defined
+:ref:`blank-boilerplate` that leaves all these choices up to you.
+
+Various Boilerplates are provided as defaults. Some provide only basic HTML and CSS,
+whereas more sophisticated ones include advanced frontend tooling: NPM, webpack, Sass and other
+components. It it's also possible to define and reuse your own.
+
 
 .. _built-in-boilerplates:
 
 Our built-in Boilerplates
 -------------------------
+
+This list represents some key built-in Boilerplates, but others are added regularly.
+
 
 .. _blank-boilerplate:
 
@@ -31,9 +47,6 @@ Blank Boilerplate
 The `Blank Boilerplate <https://github.com/aldryn/aldryn-boilerplate-blank>`_
 installs no components. It will be up to you to install anything you need,
 including templates for your site.
-
-Unless you are creating a django CMS site, the Blank Boilerplate is the only
-one we offer by default.
 
 
 HTML5 Boilerplate

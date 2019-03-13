@@ -3,15 +3,6 @@
 Background information
 ======================
 
-Docker
-------
-
-.. toctree::
-    :maxdepth: 1
-
-    Docker basics <docker-basics>
-
-
 Our infrastructure
 ------------------
 
@@ -31,6 +22,7 @@ Projects
     :maxdepth: 1
 
     anatomy-project
+    version-control
     about-boilerplates
     multisite-projects
 
@@ -43,3 +35,12 @@ Addons
 
     anatomy-addon
     addon-configuration-overview
+
+Docker
+------
+
+.. toctree::
+    :maxdepth: 1
+
+    Docker basics <docker-basics>
+

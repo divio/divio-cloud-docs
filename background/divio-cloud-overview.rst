@@ -94,42 +94,6 @@ Applications
     Python/Django
 
 
-Project repository branches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, each project's code is in its Git ``develop`` branch. This is then
-pushed to our Git server, where it can be deployed to the *Test* or *Live* servers
-(our strongly -recommended workflow is always to deploy to *Test* first),
-
-However, on request different branches can be set for the *Test* and *Live* servers - for example, ``develop`` and ``master`` respectively.
-
-In this workflow you would work on ``develop`` before manually merging into
-``master``, and then deploying *Live*.
-
-
-.. _boilerplates_reference:
-
-Boilerplates
-------------
-
-Divio Cloud projects represent web projects. Each project requires a frontend,
-however minimal - at the very least, a basic ``base.html`` template. In order
-to make Divio Cloud projects immediately useful, they each come with frontend
-files included. These are defined by the site's :ref:`Boilerplate
-<about-boilerplates>`, a set of default templates and static file.
-
-Typically, a Boilerplate will define how the Django templates are structured and
-make opinionated choices about what JavaScript frameworks and CSS tools are
-used.
-
-Various Boilerplates are provided as defaults, but it's also possible to define
-and reuse your own.
-
-Our simplest Boilerplates provide only basic HTML and CSS, but more
-sophisticated ones include advanced frontend tooling: NPM, webpack, Sass and
-other components.
-
-
 Docker on Divio Cloud
 ---------------------
 
