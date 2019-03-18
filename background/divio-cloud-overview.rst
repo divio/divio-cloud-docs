@@ -97,8 +97,28 @@ Applications
 Docker on Divio Cloud
 ---------------------
 
+In a Divio Cloud project, you will have:
+
+* a **repository**
+* an **image**
+* one or more **containers** based on that image
+
+
+The repository
+~~~~~~~~~~~~~~
+
 A Divio Cloud project is defined by its *repository*. This contains the instructions required to
 build it, such as source code for the project, a ``Dockerfile``, ``requirements.in`` and so on.
+
+
+The image
+~~~~~~~~~
+
+An image will be built from the instructions in the repository.
+
+
+Building the image
+^^^^^^^^^^^^^^^^^^
 
 At deployment time, our infrastructure will typically build a new *image* based on those
 instructions. It's important to note that the *same* instructions might produce a *different* image
@@ -106,20 +126,23 @@ instructions. It's important to note that the *same* instructions might produce 
 exactly which version of Django (say, ``django>=2.0``) then the package manager will install the
 most recent version that matches. The same goes for Node dependencies and other items.
 
+
+When images can be re-used
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In some circumstances, the build process will *not* build a new image:
 
 * If there are no new commits in the repository, and an image has been built already for the *Test*
   server, that image will be re-used for the *Live* server.
 * When deploying a mirror project, the image already created for the original will be re-used.
 
+
+The container
+~~~~~~~~~~~~~
+
 A Docker *container* (an actual running instance) is then created from that image. The container
 will use whatever environment variables are applied to that particular server, which could be the
 local, Test or Live environment.
-
-In other words, the repository is like the DNA that contains the instrutions for the building of a
-living organism. In principle, every instance of that organism with the same DNA could be
-identical, but any differences in environment - or environment variables - will also be reflected
-in the actual organism - or site - that is created.
 
 
 Docker layer caching
