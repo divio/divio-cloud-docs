@@ -16,13 +16,14 @@ We support two multi-site options:
 * our fully-supported Django Multisite+ addon, available for qualifying projects only
 * a DIY implementation via the `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_
 
+Multi-site functionality is available only for Business plan projects that meet certain criteria. Please contact Divio
+support for more details.
+
 
 Fully supported Django Multisite+ option
 ----------------------------------------
 
-This is the easiest way to set up multi-site projects on Divio Cloud. Note that not all projects
-will qualify for this option; it's available only for Business plan projects that meet certain
-criteria. Please contact Divio support for more details.
+This is the easiest way to set up multi-site projects on Divio Cloud.
 
 We will install and configure Django Multisite+.
 
