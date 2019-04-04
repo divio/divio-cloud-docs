@@ -1,10 +1,41 @@
+.. raw:: html
+
+    <style>
+        .row {clear: both}
+
+        .column img {border: 1px solid black;}
+
+        @media only screen and (min-width: 1000px),
+               only screen and (min-width: 500px) and (max-width: 768px){
+
+            .column {
+                padding-left: 5px;
+                padding-right: 5px;
+                float: left;
+            }
+
+            .column2  {
+                width: 50%;
+            }
+            .column3  {
+                width: 33%;
+            }
+        }
+
+        .main-visual {
+            margin-bottom: 0 !important;
+        }
+        h2 {border-top: 1px solid #e1e4e5; padding-top: 1em}
+    </style>
+
+
 .. _configure-version-control:
 
 How to set up Git hosting for your project
 =======================================================
 
-All Divio Cloud projects can use the Git private server we provide. If you prefer, you can instead use a Git hosting
-provider of your choice.
+All Divio Cloud projects can use the Git private server we provide. This article describes how you can instead use the
+Git hosting provider of your choice.
 
 ..  important::
 
@@ -18,106 +49,118 @@ Set up external Git hosting
 Prepare the external Git repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will need a new repository on the provider ready for your Divio project. Any standard Git hosting provider should
-work well, though you may find that some aspects of the configuration that you will need to do will differ a little
-between them.
+Create a new repository at the Git provider.
 
-Depending on whether you are *migrating an existing Divio Cloud project's Git hosting* or *creating a new Divio Cloud
-project* there are some important steps to take:
+What you do next depends on whether you are creating a new Divio Cloud project, or migrating an existing project:
 
+.. rst-class:: clearfix row
 
-Migrating an existing Divio Cloud project's Git hosting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-..  danger::
-
-    The migration process *will delete your project's code from the Divio Cloud server* before restoring it from the
-    new Git remote.
-
-    You **must** ensure that the new Git remote holds the latest code for the project **before** completing the
-    migration process. **Read the steps below carefully.**
-
-
-* Ensure that in the local version of your repository all the branches you wish to keep are present and up to date
-  with the Divio Cloud server: ``git pull <branch>``
-* Create the new remote repository.
-* Add the new Git repository to the local version of your project as a new Git remote: ``git remote add external
-  <repository URL>``.
-* Push the branches you require to the new remote: ``git push external <branch>``
-
+.. rst-class:: column column2
 
 Creating a new Divio Cloud project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Create the new remote repository.
+Make sure the new repository has a ``master`` branch.
 
-The repository **must** have a ``master`` branch, which **must not** contain anything other than ``.git``, ``LICENSE``,
-``README``, ``README.md`` or ``README.rst``. If these conditions are not met, the Control Panel will not accept the
-repository URL.
+It shouldn't contain anything other than ``.git``, ``LICENSE``, ``README``, ``README.md`` or ``README.rst``.
 
+If these conditions are not met, the Control Panel will not accept the repository URL.
+
+
+.. rst-class:: column column2
+
+Migrating an existing project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Add the new Git repository to the local version of your project as a new Git remote: ``git remote add external
+  <repository URL>``.
+* Ensure that all the branches you wish to keep are present and up to date with the Divio Cloud server: ``git pull
+  <branch>``
+* Push the branches you require to the new remote: ``git push external <branch>``
+
+
+.. rst-class:: clearfix row
 
 .. _git-repository-add-url:
 
 Add the Git repository URL to the Control Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* For a new Divio Cloud project: select *Repository* > *Custom* in the project creation page.
-* For an existing project that you are migrating: select *Repository* from your project's menu in the Dashboard, then
-  **Migrate to external repository**.
-
-When asked, enter the repository URL that you would use if cloning the project, for example
-``git@github.com/user/repository.git``.
+You will need to supply the URL (we recommend using SSH URLs - but :ref:`you can also use HTTPS URLs <git-setup-HTTPS>`
+if you prefer) of your new repository to the Control Panel. The next step depends whether this is a new or
+existing Divio project:
 
 
-SSH or HTTPS URLs?
-^^^^^^^^^^^^^^^^^^
+.. rst-class:: clearfix row
 
-By default, the Control Panel will assume that you will be using SSH, even if you don't actually specify it.
+.. rst-class:: column column2
 
-SSH is preferred. HTTPS can be useful in environments where SSH is not permitted, and is available however if you
-explicitly provide an HTTPS URL. HTTPS is not available for services whose authentication methods could require you to
-share your password with us.
+Creating a new Divio Cloud project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Continue to:
+Select *Repository* > *Custom* in the project creation page.
 
-* :ref:`SSH set-up steps <git-setup-ssh>`
-* :ref:`HTTPS set-up steps <git-setup-HTTPS>`
 
+.. rst-class:: column column2
+
+Migrating an existing project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Select *Repository* from your project's menu in the Dashboard.
+* **Migrate to external repository**.
+
+
+.. rst-class:: clearfix row
 
 .. _git-setup-ssh:
 
-SSH: Add your project's public key to the Git project
+Add your project's public key to the Git host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is give your Divio Project access to the Git repository. This is done by lodging the Divio Project's
-*public key* with the repository.
+The Divio Control Panel will provide you with a public key to add to the Git host, allowing our infrastructure to
+access the repository (:ref:`see below for HTTPS <git-setup-HTTPS>`).
 
-A public key will be generated for you to copy. Add it to the settings of the Git repository.
+Copy the key, and add it to the Git repository:
 
-..  admonition:: Regenerating the public key
 
-    You can regenerate the key at any time, invalidating the old one. This also happens automatically if you change the
-    repository URL in our Control Panel.
+.. rst-class:: clearfix row
 
-At this point the Control Panel will test its access by performing a ``git pull`` action. If all is successful, the project Dashboard will now show the repository URL, and inform you that the webhook has not yet been set up.
+.. rst-class:: column column3
+
+GitHub
+^^^^^^
+
+*Account* > *Settings* > *SSH and GPG keys* > *New SSH key*
+
+
+.. rst-class:: column column3
+
+GitLab
+^^^^^^
+
+In the repository, go to *Settings* > *Repository* > *Deploy keys*. Select *Write access allowed*.
+
+
+.. rst-class:: column column3
+
+BitBucket
+^^^^^^^^^
+
+*Account* > *BitBucket settings* > *Security* > *SSH keys* > *Add keys*
+
+
+.. rst-class:: clearfix row
+
+Testing access
+~~~~~~~~~~~~~~
+
+When you hit **Continue** in the Control Panel, it will test its access by performing a ``git pull`` action. If all is
+successful, the project Dashboard will now show the repository URL, and inform you that the webhook has not yet been
+set up.
 
 Go on to :ref:`git-setup-webhook`
 
 
-.. _git-setup-HTTPS:
-
-HTTPS: Add the Git project's username and password to the Control Panel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and
-and a personal access token.
-
-This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
-security policies, Divio Cloud will not request or store your passwords for other services.
-
-Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
-However, GitHub, GitLab and BitBucket all permit HTTPS authentication without the protection of two-factor
-authorisation, and for this reason we do not permit HTTPS as an authentication method for these platforms.
 
 
 .. _git-setup-webhook:
@@ -155,6 +198,37 @@ configuration that would normally be maintained via the Control Panel must be un
 *Write access is required to set up the external Git configuration*, but may be disabled subsequently. If you need to
 set up a read-only configuration in which the Control Panel is never able to write to the repository, please contact
 Divio support and we handle this for you manually.
+
+
+SSH or HTTPS URLs?
+^^^^^^^^^^^^^^^^^^
+
+By default, the Control Panel will assume that you will be using SSH, even if you don't actually specify it.
+
+SSH is preferred. HTTPS can be useful in environments where SSH is not permitted, and is available however if you
+explicitly provide an HTTPS URL. HTTPS is not available for services whose authentication methods could require you to
+share your password with us.
+
+Continue to:
+
+* :ref:`SSH set-up steps <git-setup-ssh>`
+* :ref:`HTTPS set-up steps <git-setup-HTTPS>`
+
+.. _git-setup-HTTPS:
+
+HTTPS: Add the Git project's username and password to the Control Panel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and
+and a personal access token.
+
+This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
+security policies, Divio Cloud will not request or store your passwords for other services.
+
+Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
+However, GitHub, GitLab and BitBucket all permit HTTPS authentication without the protection of two-factor
+authorisation, and for this reason we do not permit HTTPS as an authentication method for these platforms.
+
 
 
 Errors and what they mean
