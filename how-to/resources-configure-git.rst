@@ -130,7 +130,7 @@ Copy the key, and add it to the Git repository:
 GitHub
 ^^^^^^
 
-*Account* > *Settings* > *SSH and GPG keys* > *New SSH key*
+In the repository, go to *Settings* > *Deploy keys* > *Add deploy key*. Select *Allow write access*.
 
 
 .. rst-class:: column column3
@@ -138,7 +138,8 @@ GitHub
 GitLab
 ^^^^^^
 
-In the repository, go to *Settings* > *Repository* > *Deploy keys*. Select *Write access allowed*.
+In the repository, go to *Settings* > *Repository* > *Deploy keys* > *Create a new deploy key*. Select *Write access
+allowed*.
 
 
 .. rst-class:: column column3
@@ -146,7 +147,8 @@ In the repository, go to *Settings* > *Repository* > *Deploy keys*. Select *Writ
 BitBucket
 ^^^^^^^^^
 
-*Account* > *BitBucket settings* > *Security* > *SSH keys* > *Add keys*
+Go to *Bitbucket settings* > *SSH keys* > *Add key*. The key will allow push access to all your Bitbucket projects; if
+you don't want this, create a Bitbucket account specifically for your Divio Cloud projects.
 
 
 .. rst-class:: clearfix row
@@ -154,7 +156,7 @@ BitBucket
 Testing access
 ~~~~~~~~~~~~~~
 
-When you hit **Continue** in the Control Panel, it will test its access by performing a ``git pull`` action. If all is
+When you hit **Continue** in the Control Panel, it tests its access by performing a ``git pull`` action. If all is
 successful, the project Dashboard will now show the repository URL, and inform you that the webhook has not yet been
 set up.
 
