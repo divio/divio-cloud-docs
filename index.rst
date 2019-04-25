@@ -48,8 +48,8 @@ Contents
 Get started with a hands-on introduction to the Divio Cloud for
 developers.
 
-.. rst-class:: column column2
 
+.. rst-class:: column column2
 
 :ref:`How-to guides <how-to>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
