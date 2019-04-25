@@ -1,10 +1,52 @@
+.. raw:: html
+
+    <style>
+        .row {clear: both}
+
+        @media only screen and (min-width: 1000px),
+               only screen and (min-width: 500px) and (max-width: 768px){
+
+            .column {
+                padding-left: 5px;
+                padding-right: 5px;
+                float: left;
+            }
+
+            .column2  {
+                width: 50%;
+            }
+            .column3  {
+                width: 33%;
+            }
+        }
+
+        .main-visual {
+            margin-bottom: 0 !important;
+        }
+        h2 {border-top: 1px solid #e1e4e5; padding-top: 1em}
+    </style>
+
+
+.. |github| image:: /images/github.png
+   :alt: 'GitHub'
+   :width: 28
+
+.. |gitlab| image:: /images/gitlab.png
+   :alt: 'GitLab'
+   :width: 26
+
+.. |bitbucket| image:: /images/bitbucket.png
+   :alt: 'BitBucket'
+   :width: 27
+
+
 .. _configure-version-control:
 
 How to set up Git hosting for your project
 =======================================================
 
-All Divio Cloud projects can use the Git private server we provide. If you prefer, you can instead use a Git hosting
-provider of your choice.
+All Divio Cloud projects can use the Git private server we provide. This article describes how you can instead use the
+Git hosting provider of your choice.
 
 ..  important::
 
@@ -18,106 +60,106 @@ Set up external Git hosting
 Prepare the external Git repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will need a new repository on the provider ready for your Divio project. Any standard Git hosting provider should
-work well, though you may find that some aspects of the configuration that you will need to do will differ a little
-between them.
+Go to your Git hosting service. The next step depends on whether you are *creating a new Divio Cloud project*, or
+*migrating an existing project*:
 
-Depending on whether you are *migrating an existing Divio Cloud project's Git hosting* or *creating a new Divio Cloud
-project* there are some important steps to take:
+.. rst-class:: clearfix row
 
-
-Migrating an existing Divio Cloud project's Git hosting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-..  danger::
-
-    The migration process *will delete your project's code from the Divio Cloud server* before restoring it from the
-    new Git remote.
-
-    You **must** ensure that the new Git remote holds the latest code for the project **before** completing the
-    migration process. **Read the steps below carefully.**
-
-
-* Ensure that in the local version of your repository all the branches you wish to keep are present and up to date
-  with the Divio Cloud server: ``git pull <branch>``
-* Create the new remote repository.
-* Add the new Git repository to the local version of your project as a new Git remote: ``git remote add external
-  <repository URL>``.
-* Push the branches you require to the new remote: ``git push external <branch>``
-
+.. rst-class:: column column2
 
 Creating a new Divio Cloud project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Create the new remote repository.
+#. Create a new repository at the Git provider.
+#. Ensure the new repository has a ``master`` branch, and does not contain anything other than ``.git``, ``LICENSE``,
+   ``README``, ``README.md`` or ``README.rst``.
 
-The repository **must** have a ``master`` branch, which **must not** contain anything other than ``.git``, ``LICENSE``,
-``README``, ``README.md`` or ``README.rst``. If these conditions are not met, the Control Panel will not accept the
-repository URL.
+If these conditions are not met, the Control Panel will not accept the repository URL.
 
+
+.. rst-class:: column column2
+
+Migrating an existing project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Add the Git repository to the local version of your project as a remote: ``git remote add external <repository URL>``.
+#. Ensure that all the branches you wish to keep are present and up to date with the Divio Cloud server: ``git pull <branch>``
+#. Push the branches you require to the new remote: ``git push external <branch>``
+
+
+.. rst-class:: clearfix row
 
 .. _git-repository-add-url:
 
 Add the Git repository URL to the Control Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* For a new Divio Cloud project: select *Repository* > *Custom* in the project creation page.
-* For an existing project that you are migrating: select *Repository* from your project's menu in the Dashboard, then
-  **Migrate to external repository**.
-
-When asked, enter the repository URL that you would use if cloning the project, for example
-``git@github.com/user/repository.git``.
+You will need to supply the URL (SSH URLs are recommended, but :ref:`you can also use HTTPS URLs <git-setup-HTTPS>`) of
+your new repository to the Control Panel. The next step depends on whether this is a new or existing Divio project:
 
 
-SSH or HTTPS URLs?
-^^^^^^^^^^^^^^^^^^
+.. rst-class:: clearfix row
 
-By default, the Control Panel will assume that you will be using SSH, even if you don't actually specify it.
+.. rst-class:: column column2
 
-SSH is preferred. HTTPS can be useful in environments where SSH is not permitted, and is available however if you
-explicitly provide an HTTPS URL. HTTPS is not available for services whose authentication methods could require you to
-share your password with us.
+Creating a new Divio Cloud project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Continue to:
+* Select *Repository* > *Custom* in the project creation page.
 
-* :ref:`SSH set-up steps <git-setup-ssh>`
-* :ref:`HTTPS set-up steps <git-setup-HTTPS>`
 
+.. rst-class:: column column2
+
+Migrating an existing project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Select *Repository* from your project's menu in the Dashboard.
+#. Select **Migrate to external repository**.
+
+
+.. rst-class:: clearfix row
 
 .. _git-setup-ssh:
 
-SSH: Add your project's public key to the Git project
+Add your project's public key to the Git host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is give your Divio Project access to the Git repository. This is done by lodging the Divio Project's
-*public key* with the repository.
+The Divio Control Panel will provide you with a public key to add to the Git host, allowing our infrastructure to
+access the repository (:ref:`see below for HTTPS <git-setup-HTTPS>`).
 
-A public key will be generated for you to copy. Add it to the settings of the Git repository.
-
-..  admonition:: Regenerating the public key
-
-    You can regenerate the key at any time, invalidating the old one. This also happens automatically if you change the
-    repository URL in our Control Panel.
-
-At this point the Control Panel will test its access by performing a ``git pull`` action. If all is successful, the project Dashboard will now show the repository URL, and inform you that the webhook has not yet been set up.
-
-Go on to :ref:`git-setup-webhook`
+Copy the key, and add it to the Git repository:
 
 
-.. _git-setup-HTTPS:
+|github| GitHub
+^^^^^^^^^^^^^^^
 
-HTTPS: Add the Git project's username and password to the Control Panel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. In the repository, go to *Settings* > *Deploy keys* > *Add deploy key*.
+#. Paste the key.
+#. Select *Allow write access*.
 
-You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and
-and a personal access token.
 
-This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
-security policies, Divio Cloud will not request or store your passwords for other services.
+|gitlab| GitLab
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
-However, GitHub, GitLab and BitBucket all permit HTTPS authentication without the protection of two-factor
-authorisation, and for this reason we do not permit HTTPS as an authentication method for these platforms.
+#. In the repository, go to *Settings* > *Repository* > *Deploy keys* > *Create a new deploy key*.
+#. Paste the key.
+#. Select *Write access allowed*.
+
+
+|bitbucket| BitBucket
+^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Optionally, create a Bitbucket account specifically for Divio Cloud projects - otherwise the key will grant
+   access to all your Bitbucket projects.
+#. Go to *Bitbucket settings* > *SSH keys* > *Add key*.
+#. Paste the key.
+
+
+Test access
+~~~~~~~~~~~~~~
+
+When you hit **Continue** in the Control Panel, it tests its access by performing a ``git pull`` action. If
+successful, the project Dashboard will show the repository URL.
 
 
 .. _git-setup-webhook:
@@ -125,20 +167,58 @@ authorisation, and for this reason we do not permit HTTPS as an authentication m
 Configure a webhook for the Git repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A webhook is needed to allow the Git repository to send signals to the Control Panel, so that the Control Panel can
-be aware of new events. In the *Repository* view, select the appropriate webhook type (GitHub, GitLab and BitBucket
-each have their own type of webhook. Other providers will generally use a webhook that is similar to one of these).
+In order for the Control Panel to receive a signal when the repository is updated, you need to set up a webhook. This
+step is optional but strongly recommended for convenience.
 
-At the Git host, add a new webhook.
+In the *Repository* view, select the appropriate webhook type (GitHub, GitLab and BitBucket each have their own type of
+webhook. Other providers will generally use a webhook that is similar to one of these).
 
-The Control Panel will give you a URL to use for the webhook. GitHub for example refers to this as its *Payload URL*. The Control Panel will also give you a secret key.
+The Control Panel will give you a URL to use for the webhook, and a secret key.
 
-The only event type that the webhook should respond to are *push* events.
+At the Git host, add a new webhook:
 
-Once the webhook is active and saved, new push events on the repository will send a request to the Control Panel with
-the specified URL and the secret key. The Control Panel will immediately pull the change into its own local project,
-making them available for you to deploy.
 
+|github| GitHub
+^^^^^^^^^^^^^^^
+
+#. In the repository, go to *Settings* > *Webhooks* > *Add webhook*.
+#. Add the Webhook URL to the *Payload URL* field.
+#. Leave the *Content type* as ``application-x/www-form-urlencode``.
+#. Add the Webhook Shared Secret to the *Secret* field.
+#. Set *Push events* as the trigger for the webhook.
+
+
+|gitlab| GitLab
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. In the repository, go to *Settings* > *Integrations*.
+#. Add the Webhook URL to the *URL* field.
+#. Add the Webhook Shared Secret to the *Secret token* field.
+#. Leave the *Push events* trigger set.
+
+
+|bitbucket| BitBucket
+^^^^^^^^^^^^^^^^^^^^^^^
+
+#. In the repository, go to *Settings* > *Webhooks*.
+#. Give the webhook a *title*.
+#. Add the Webhook URL to the *URL* field.
+#. For *Triggers*, ensure that *Repository push* is set.
+
+The Webhook Shared Secret is not used.
+
+
+Using the external Git remote
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your external Git remote has now been set up.
+
+The Control Panel can save commits to it (using :ref:`the key you provided <git-setup-ssh>`) and the repository can
+send a signal to the Control Panel to pull in new commits when they land (using :ref:`the webhook <git-setup-webhook>`).
+
+
+Options and special cases
+-------------------------
 
 .. _read-only-repository:
 
@@ -152,16 +232,36 @@ addon configuration as Git commits.
 It's also possible to maintain stricter control over the repository, allowing only read access. In this case, project
 configuration that would normally be maintained via the Control Panel must be undertaken manually.
 
-*Write access is required to set up the external Git configuration*, but may be disabled subsequently. If you need to
-set up a read-only configuration in which the Control Panel is never able to write to the repository, please contact
-Divio support and we handle this for you manually.
+*Write access is required to set up the external Git configuration*, but may be disabled subsequently.
+
+
+.. _git-setup-HTTPS:
+
+HTTPS authentication
+~~~~~~~~~~~~~~~~~~~~
+
+By default, the Control Panel will assume that you will be using SSH authentication to the Git provider, which is
+preferred.
+
+However, HTTPS can be useful in environments where SSH is not permitted, and is available if you explicitly provide an
+HTTPS URL.
+
+You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and a
+personal access token.
+
+This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
+security policies, Divio Cloud will not request or store your passwords for other services.
+
+Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
+However, GitHub, GitLab and BitBucket all permit HTTPS authentication without the protection of two-factor
+authorisation, and for this reason we do not permit HTTPS as an authentication method for these platforms.
 
 
 Errors and what they mean
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 The remote repository requires a ``master`` branch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Control Panel expected to find a branch (by default named ``master``) at the remote.
 
@@ -172,7 +272,7 @@ Check the repository for the expected branch.
 
 
 Authentication error
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 The most likely problem is that one or more of:
 
@@ -185,7 +285,7 @@ are not correct. Check these values.
 
 
 The ``master`` branch must exist and only include a single readme file in order to create a new project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``master`` branch at the remote repository contained other files.
 
@@ -193,7 +293,7 @@ Check that no other files are in the branch.
 
 
 You have no webhook set up
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although the Control Panel has been able to connect to the repository and authenticate, a webhook has not yet been set
 up.
