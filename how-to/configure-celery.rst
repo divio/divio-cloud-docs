@@ -46,7 +46,7 @@ new services will be need to be added in a similar way, so that each runs in its
 Cloud, they will run on our dedicated clusters, and the :ref:`docker-compose file is not used <docker-compose-local>`.)
 
 
-RabbitMB
+RabbitMQ
 ~~~~~~~~
 
 Set up the RabbitMQ messaging service, by adding the following lines:
