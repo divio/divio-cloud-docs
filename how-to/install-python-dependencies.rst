@@ -53,7 +53,7 @@ Listing packages from PyPI
 Use the package name, pinned with an optional (but :ref:`very strongly recommended
 <pinning-dependencies>`) version number, for example::
 
-    markdown=2.6.8
+    markdown==2.6.8
 
 
 .. _pip-install-from-online-package:
@@ -64,29 +64,35 @@ Listing packages from version control systems or as archives
 You can use the URL of a tarballed or zipped archive of the package, typically provided by a
 version control system.
 
+..  important::
+
+    More recent versions of `pip tools <https://pypi.org/project/pip-tools/>`_ as used in the Divio base projects
+    require you to use URLS that provide the ``egg`` fragment (as shown in the examples below), and will raise an error
+    if they encounter URLs lacking it. Older versions would allow you to omit the fragment.
+
 
 Examples from GitHub
 ^^^^^^^^^^^^^^^^^^^^
 
 Master branch, as tarball::
 
-    https://github.com/account/repository/archive/master.tar.gz
+    https://github.com/account/repository/archive/master.tar.gz#egg=repository
 
 or as a zipped archive::
 
-    https://github.com/account/repository/archive/master.zip
+    https://github.com/account/repository/archive/master.zip#egg=repository
 
 Specify a different branch::
 
-    https://github.com/account/repository/archive/develop.zip
+    https://github.com/account/repository/archive/develop.zip#egg=repository
 
 However, we :ref:`very strongly recommend <pinning-dependencies>` specifying either a tag::
 
-    https://github.com/account/repository/archive/1.6.0.zip
+    https://github.com/account/repository/archive/1.6.0.zip#egg=repository
 
 or a commit::
 
-    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip
+    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=repository
 
 .. _vcs-protocol-support:
 
