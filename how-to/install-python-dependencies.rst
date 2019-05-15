@@ -76,23 +76,23 @@ Examples from GitHub
 
 Master branch, as tarball::
 
-    https://github.com/account/repository/archive/master.tar.gz#egg=repository
+    https://github.com/account/repository/archive/master.tar.gz#egg=package-name
 
 or as a zipped archive::
 
-    https://github.com/account/repository/archive/master.zip#egg=repository
+    https://github.com/account/repository/archive/master.zip#egg=package-name
 
 Specify a different branch::
 
-    https://github.com/account/repository/archive/develop.zip#egg=repository
+    https://github.com/account/repository/archive/develop.zip#egg=package-name
 
 However, we :ref:`very strongly recommend <pinning-dependencies>` specifying either a tag::
 
-    https://github.com/account/repository/archive/1.6.0.zip#egg=repository
+    https://github.com/account/repository/archive/1.6.0.zip#egg=package-name
 
 or a commit::
 
-    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=repository
+    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name
 
 .. _vcs-protocol-support:
 
