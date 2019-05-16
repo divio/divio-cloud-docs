@@ -200,7 +200,7 @@ Test it
 
 Your addon is now ready to be tested.
 
-Add it the package name to the ``INSTALLED_ADDONS`` in ``settings.py``. This
+Add the package name to the ``INSTALLED_ADDONS`` in ``settings.py``. This
 adds it to the list of addons that the project will “watch”.
 
 Run::
