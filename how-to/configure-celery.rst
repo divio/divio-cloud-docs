@@ -16,14 +16,30 @@ Add Celery to your project
 In your project's subscription, add the number of Celery workers you require. You can start with just one and add more
 later if required.
 
-If your Test and Live servers have not yet been deployed, please deploy each of them. This is required before Celery
-can be provisioned on the project.
+..  _important::
+
+    If your Test and Live servers have not yet been deployed, please deploy each of them. This is required before
+    Celery can be provisioned on the project.
 
 Celery will then be provisioned on your project's Test and Live servers by our infrastructure team. This includes the
 installation of our `Aldryn Celery <https://github.com/aldryn/aldryn-celery>`_ addon, and configuration of new
 :ref:`environment variables <celery-environment-variables>` your project will need.
 
-Finally, you need to redeploy the project with the new configuration in order to make use of Celery.
+
+About Aldryn Celery
+~~~~~~~~~~~~~~~~~~~
+
+Aldryn Celery is a wrapper application that `installs
+<https://github.com/divio/aldryn-celery/blob/master/requirements.txt>`_ and configures Celery in your project, exposing
+multiple Celery settings as `environment variables
+<https://github.com/divio/aldryn-celery/blob/master/aldryn_config.py>`_ for fine-tuning its configuration.
+
+You don't *need* to use Aldryn Celery to use Celery and Django Celery on Divio Cloud - you can of course install and
+configure Celery components manually if you prefer, perhaps if you wish to use a version that we haven't provided
+support for in Aldryn Celery. You will in that case need to:
+
+* install the Celery components you need in your project's requirements file
+* apply the settings we provide as :ref:`environment variables <celery-environment-variables>`.
 
 
 Configure Celery for the local server
@@ -207,6 +223,11 @@ And in the ``tasks.py`` file:
     @app.task()
     def add(x, y):
         return x + y
+
+
+Note that we are using Aldryn Celery's ready configured code here for convenience - otherwise, you would follow the
+steps as described in the `First steps with Django
+<http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html>`_ from the Celery documentation.
 
 And finally, add ``"tasks_app"`` to ``INSTALLED_APPS`` in ``settings.py``.
 
