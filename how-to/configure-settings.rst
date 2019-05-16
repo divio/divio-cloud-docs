@@ -52,8 +52,8 @@ Of course you can use Python to manipulate the collections in any way you requir
 Manipulating more complex settings
 ----------------------------------
 
-Note that in the case of more complex settings, like ``MIDDLEWARE`` or ``TEMPLATES``, which are no
-longer simple lists, you can't just extend them directly with new items, you'll need to dive into
+Note that in the case of more complex settings, like ``TEMPLATES``, which is no
+longer a simple list, you can't just extend them directly with new items, you'll need to dive into
 them to target the right list in the right dictionary, for example::
 
      TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
