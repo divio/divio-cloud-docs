@@ -55,7 +55,7 @@ Environment variables
 Serving configuration
 ---------------------
 
-* Check the Aldryn Django addon configuration. We recommend the :ref:`Has static filenames
+* Check the Aldryn Django addon configuration. We recommend the :ref:`Hash static filenames
   <hash-static-file-names>` option, which lets you take advantage of caching.
 
 
