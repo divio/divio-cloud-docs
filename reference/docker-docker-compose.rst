@@ -9,6 +9,8 @@ part of a project, usually referred to as an 'application'. This is what a
 ports they need to expose, whether the have access to the host filesystem, what
 commands should be run, and so on.
 
+.. _docker-compose-local:
+
 ..  important::
 
     In the Divio Cloud architecture, the ``docker-compose.yml`` file is **not**

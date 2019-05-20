@@ -27,19 +27,15 @@ Dependencies
 Domains
 -------
 
-..  note::
-
-    You may wish instead to follow these steps *after* conducting a live deployment. This will
-    allow you to run performance and other checks on the live site while still using our private
-    ``aldryn.io`` domain, so that your content is not exposed under your domain until you're ready.
-
-* Check that the live domain for the server is set up for the site in the Control Panel (support
-  article: `how to use your own domain with Divio Cloud
+* If you are using existing domains, prepare them for the switch. Ensure that they have low (less than 60 seconds)
+  TTLs. High TTLs can cause problems when the domains are pointed at the new site, including delays in the automatic
+  provisioning of SSL certificates.
+* Check that the live domain for the server is set up for the site in the Control Panel (support article: `how to use
+  your own domain with Divio Cloud
   <http://support.divio.com/control-panel/projects/how-to-use-your-own-domain-with-divio-cloud>`_).
-* Check that any domains that should redirect to the primary domain are also set in the *Domains*
-  setting in the Control Panel.
-* If required, enable redirects to HTTPS by setting the
-  :ref:`SECURE_SSL_REDIRECT environment variable
+* Check that any domains that should redirect to the primary domain are also set in the *Domains* setting in the
+  Control Panel.
+* If required, enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment variable
   <security-middleware-settings>` to ``True``.
 
 
