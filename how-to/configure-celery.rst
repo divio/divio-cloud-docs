@@ -16,7 +16,7 @@ Add Celery to your project
 In your project's subscription, add the number of Celery workers you require. You can start with just one and add more
 later if required.
 
-..  _important::
+..  important::
 
     If your Test and Live servers have not yet been deployed, please deploy each of them. This is required before
     Celery can be provisioned on the project.

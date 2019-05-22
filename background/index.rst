@@ -33,7 +33,8 @@ Addons
 .. toctree::
     :maxdepth: 1
 
-    anatomy-addon
+    addons-basics
+    addon-anatomy
     addon-configuration-overview
 
 Docker
