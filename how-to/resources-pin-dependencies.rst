@@ -3,29 +3,38 @@
 How to pin all of your project's Python dependencies
 ====================================================
 
-The Divio Cloud addons and other Python packages in your project have Python *dependencies*:
-packages that they install. Dependencies can in turn themselves have dependencies. If a dependency
-is *unpinned* (that is, a particular version is not specified in the project's requirements) pip
-will generally install the latest version of it, even if a different version was previously
-installed.
+.. _pinning-dependencies-good-practice:
 
-For example, if your ``requirements.in`` (or the requirements of any other package in the project)
-contains::
+Pinning dependencies is good practice
+-------------------------------------
+
+If a dependency is *unpinned* (that is, a particular version is not specified in the project's requirements) pip will
+install the latest version it finds, even if a different version was previously installed. This can cause your your
+project to fail with an deployment error or worse, a runtime error, the next time it is built - *even if you didn't
+change anything in it yourself*.
+
+We strongly recommend that when you add a dependency to a project via its ``requirements.in`` that you pin it to a
+particular version, by specifying its version number.
+
+For example, if you use ``rsa`` and know that version ``1.3.4`` works, specify it::
 
     rsa==1.3.4
-    django-storages
 
-then while you are guaranteed that version 1.3.4 of the ``rsa`` package will be installed the next
-time the project is built, you can't be sure in the case of ``django-storages``.
+That way if a newer, incompatible version of the package is released, your project will still install the correct
+version the next time you build or redeploy it.
 
-This means that when ``django-storages`` is updated and released to PyPI, an unexpected change can
-creep in to your project. You don't need to change anything in your project: *simply redeploying
-the project will be enough for the new version to be installed*.
 
-The change might cause a deployment error, or even worse, a run-time error, and you will need to
-identify and pin the changed package in order to proceed.
+What about dependencies of dependencies?
+-----------------------------------------------
 
-To prevent this from occurring, you can pin *all* the dependencies in your project.
+However, dependencies can in turn themselves have dependencies. Even if you pin *your* requirements, their dependencies
+may be unpinned.
+
+For example, your project may specify ``some-package==1.2.3``, but if ``some-package`` lists ``rsa`` in its
+requirements, then the next time the project is built, it will attempt to do so using the latest version of ``rsa`` -
+which might not be compatible.
+
+The solution is to pin *all* the dependencies in your project.
 
 Compile ``requirements.txt``
 ----------------------------

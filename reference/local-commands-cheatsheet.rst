@@ -9,25 +9,25 @@ Project resource management
 Set up a project
     ``divio project setup <slug>``
 
-Deploy test server
+Deploy Cloud server
     ``divio project deploy`` (applies to ``test`` server by default; optionally, specify ``live``)
 
 Update local project code:
     ``divio project update`` (pulls code, updates and builds local images, runs migrations)
 
-Build local ``web`` image (e.g. after updating ``requirements.in``)
+Build local ``web`` image (e.g. after updating ``requirements.in`` or the ``Dockerfile``)
     ``docker-compose build web``
 
 Push/pull code
-    use ``git`` ``add``/``commit``/``push``/``pull`` commands as appropriate
+    Use ``git`` commands as appropriate.
 
-:ref:`Pull media/database <divio-project-pull>`
-    ``divio project pull media``/``divio project pull db`` (applies to ``test`` server by default; optionally,
-    specify ``live``)
+:ref:`Pull <divio-project-pull>` or :ref:`push <divio-project-pull>`  media or database
+    ``divio project pull media`` or ``divio project pull media``
 
-:ref:`Push media/database <divio-project-push>`
-    ``divio project push db``/``divio project push db`` (applies to ``test`` server by default; optionally, specify
-    ``live``)
+    ``divio project push media`` or ``divio project push db``
+
+    These commands apply to the ``test`` server by default; optionally, you can specify ``live``, e.g. ``divio project
+    pull media live``).
 
 
 Running the local server
@@ -44,7 +44,7 @@ Working inside the containerised environment
 --------------------------------------------
 
 Run a specific command inside the web container
-    ``docker-compose run --rm web <command>``
+    ``docker-compose run --rm web <command>``, for example ``docker-compose run --rm web python manage.py shell``
 
 Run a specific command inside the web container, exposing the ports listed in the ``Dockerfile``
     ``docker-compose run --rm --service-ports web <command>``

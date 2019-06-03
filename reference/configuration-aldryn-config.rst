@@ -1,6 +1,6 @@
 .. _configure-with-aldryn-config:
 
-Application configuration with ``aldryn_config.py``
+Addon configuration with ``aldryn_config.py``
 ===================================================
 
 A Django application may require some configuration when it is deployed in a

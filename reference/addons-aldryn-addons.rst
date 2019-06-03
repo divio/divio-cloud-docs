@@ -3,10 +3,10 @@
 Aldryn Addons (addon integration)
 ====================================
 
-Aldryn Addons framework helps integrate addons and their settings into
+The Aldryn Addons framework helps integrate addons and their settings into
 a Django project.
 
-Its an `open-source package <https://github.com/aldryn/aldryn-addons/>`_, and
+It's an `open-source package <https://github.com/aldryn/aldryn-addons/>`_, and
 is itself an addon. The addons framework is installed by default in all Divio
 Cloud Django projects.
 

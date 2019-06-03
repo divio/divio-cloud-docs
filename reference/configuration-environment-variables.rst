@@ -1,6 +1,6 @@
 .. _environment-variables:
 
-Application configuration with environment variables
+Environment variables
 ====================================================
 
 Divio Cloud projects allow you to maintain separate configuration for each of
