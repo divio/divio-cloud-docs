@@ -12,12 +12,13 @@ Setting up a project and its environment
 
     Install system packages <install-system-packages>
     Install Python dependencies <install-python-dependencies>
-    Set up Sass CSS compilation <configure-sass>
-    Configure Celery <configure-celery>
-    Configure Django settings <configure-settings>
     Migrate an existing project to Divio Cloud <migrate-existing-project>
+    Configure Django settings <configure-settings>
     Add a Django application <add-application>
     Set up password protection <password-protect-project>
+    Set up Sass CSS compilation <configure-sass>
+    Configure Celery <configure-celery>
+    Configure external logging <configure-external-logging>
 
 
 Managing a project's code
