@@ -6,6 +6,9 @@ How to describe a problem when contacting Divio support
 In order to help Divio support help you, it's important to provide us with the information we need, and to be sure it's
 :ref:`something that we can actually help you with <support-scope>`.
 
+This page contains a :ref:`report template <problem-report-template>` and an :ref:`example of a good report
+<problem-report-example>`.
+
 
 What information we need
 ------------------------
@@ -21,16 +24,61 @@ What information we need
 
   * Have you set up the project locally?
   * Does the issue present itself there?
-  * If appropriate, test with your local project in live configuration.
+  * If appropriate, test with your :ref:`local project in live configuration <local-in-live-mode>`.
   * Are you using logging to help understand the behaviour of the program?
 
   Include any relevant information from troubleshooting in your report.
 
+.. _problem-report-template:
+
+Template
+--------
+
+You may find it helpful to copy and paste this template into your support requests:
+
+Dashboard URLs
+~~~~~~~~~~~~~~
+
+* https://control.divio.com/control/...
+
+Steps to replicate
+~~~~~~~~~~~~~~~~~~
+
+* step 1
+* step 2
+* step 3
+
+
+What we expected to happen
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[description]
+
+
+What actually happened
+~~~~~~~~~~~~~~~~~~~~~~
+
+[description]
+
+
+Troubleshooting information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The issue [does/does not] occur when running the project locally in live configuration.
+
+
+Additional information
+~~~~~~~~~~~~~~~~~~~~~~
+
+[include error messages, links to logs, etc]
+
+
+.. _problem-report-example:
 
 Example report
 --------------
 
-A good report could look something like this:
+A good report could might something like this:
 
     We are having problems with a form in our DynaCorp Global project
     https://control.divio.com/control/3097/edit/50704/. To see this:

@@ -1,4 +1,4 @@
-.. configure-external-logging:
+.. _configure-external-logging:
 
 How to configure an external logging service
 ============================================
