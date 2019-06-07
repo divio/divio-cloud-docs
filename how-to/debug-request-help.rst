@@ -39,7 +39,7 @@ You may find it helpful to copy and paste this template into your support reques
 Dashboard URLs
 ~~~~~~~~~~~~~~
 
-* https://control.divio.com/control/...
+* ``https://control.divio.com/control/...``
 
 Steps to replicate
 ~~~~~~~~~~~~~~~~~~

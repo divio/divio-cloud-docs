@@ -36,7 +36,7 @@ manually.
 
 .. _addon-configured:
 
-Setings that are configured by addons
+Settings that are configured by addons
 --------------------------------------
 
 Some settings, for example ``INSTALLED_APPS`` or ``MIDDLEWARE`` (``MIDDLEWARE_CLASSES`` in older
