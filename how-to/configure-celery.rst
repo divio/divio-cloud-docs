@@ -190,9 +190,13 @@ In ``.env-local`` add::
 Run the local project
 -------------------------
 
-``docker-compose up`` or ``divio project up`` will now also start the services that Celery requires.
+Build the newly-configured project::
 
-Note that although the Django runsever in your ``web`` container will restart automatically to load new code whenever
+  docker-compose build
+
+Now ``docker-compose up`` or ``divio project up`` will start the services that Celery requires.
+
+Note that although the Django runserver in your ``web`` container will restart automatically to load new code whenever
 you make changes, that will not apply to the other services.
 
 These will need to be restarted manually, for example by stopping and restarting the local project or by running
