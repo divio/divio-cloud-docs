@@ -53,4 +53,9 @@ Upload your public key at https://control.divio.com/account/ssh-keys/.
 Usage
 -----
 
+The CLI allows you to interact with projects locally and on the Cloud; for
+example, to set up a Cloud project locally::
+
+  divio project setup <project slug>
+
 See the :ref:`reference guide <divio-cli-ref>`.
