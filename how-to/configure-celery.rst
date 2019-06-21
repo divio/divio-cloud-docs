@@ -192,7 +192,7 @@ Run the local project
 
 Build the newly-configured project::
 
-  docker-compose build
+    docker-compose build
 
 Now ``docker-compose up`` or ``divio project up`` will start the services that Celery requires.
 
