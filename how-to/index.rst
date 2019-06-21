@@ -58,6 +58,7 @@ Working in the local development environment
 .. toctree::
     :maxdepth: 1
 
+    Get started with the Divio CLI <local-cli>
     Log in to a local Django project <local-project-log-in>
     Run the local server in Live mode <local-in-live-mode>
 
