@@ -36,41 +36,31 @@ Template
 
 You may find it helpful to copy and paste this template into your support requests:
 
-Dashboard URLs
-~~~~~~~~~~~~~~
+    **Dashboard URLs**
 
-* ``https://control.divio.com/control/...``
+    * ``https://control.divio.com/control/...``
 
-Steps to replicate
-~~~~~~~~~~~~~~~~~~
+    **Steps to replicate**
 
-* step 1
-* step 2
-* step 3
+    * step 1
+    * step 2
+    * step 3
 
+    **What we expected to happen**
 
-What we expected to happen
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [description]
 
-[description]
+    **What actually happened**
 
+    [description]
 
-What actually happened
-~~~~~~~~~~~~~~~~~~~~~~
+    **Troubleshooting information**
 
-[description]
+    The issue [does/does not] occur when running the project locally in live configuration.
 
+    **Additional information**
 
-Troubleshooting information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The issue [does/does not] occur when running the project locally in live configuration.
-
-
-Additional information
-~~~~~~~~~~~~~~~~~~~~~~
-
-[include error messages, links to logs, etc]
+    [include error messages, links to logs, etc]
 
 
 .. _problem-report-example:
@@ -78,7 +68,7 @@ Additional information
 Example report
 --------------
 
-A good report could might something like this:
+A good report might look something like this:
 
     We are having problems with a form in our DynaCorp Global project
     https://control.divio.com/control/3097/edit/50704/. To see this:
@@ -98,7 +88,6 @@ A good report could might something like this:
 
 As well as giving us enough information to continue investigating further, the inclusion of information about where it
 has been tested provides some valuable clues as to the nature of the problem.
-
 
 Ensure that we have access to your project
 ------------------------------------------
