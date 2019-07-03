@@ -58,6 +58,8 @@ them to target the right list in the right dictionary, for example::
      TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
 
 
+.. _list:
+
 Listing applied settings
 ------------------------
 
