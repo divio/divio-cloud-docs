@@ -32,6 +32,7 @@ You will need to add ``logdna`` to its requirements (strongly recommended: :ref:
 
 This package provides a new logging handler (``logdna.LogDNAHandler``) that will forward log messages to LogDNA.
 
+
 Amend the ``LOGGING`` configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -66,8 +67,8 @@ Next, we need to configure the existing loggers, that actually produce the logs,
      LOGGING["loggers"]["django"]['handlers'].append('logdna')
      LOGGING["loggers"]["django.request"]['handlers'].append('logdna')
 
-More information about configuring Django logging can be found in :doc:`Django's looging documentation
-<django:topics/email>`.
+More information about configuring Django logging can be found in :doc:`Django's logging documentation
+<django:topics/logging>`.
 
 
 Other logging options
