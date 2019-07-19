@@ -12,13 +12,23 @@ Setting up a project and its environment
 
     Install system packages <install-system-packages>
     Install Python dependencies <install-python-dependencies>
-    Migrate an existing project to Divio Cloud <migrate-existing-project>
-    Configure Django settings <configure-settings>
-    Add a Django application <add-application>
+    Pin all of your project's Python dependencies <resources-pin-dependencies>
     Set up password protection <password-protect-project>
     Set up Sass CSS compilation <configure-sass>
     Configure Celery <configure-celery>
     Configure external logging <configure-external-logging>
+    Set up CI/CD <configure-ci>
+
+
+Working with Django projects
+----------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Add a Django application <add-application>
+    Configure Django settings <configure-settings>
+    Migrate an existing Django project to Divio Cloud <migrate-existing-project>
 
 
 Managing a project's code
@@ -29,7 +39,6 @@ Managing a project's code
 
     Configure Git hosting for your project <resources-configure-git>
     Use Git to manage your project <use-git>
-    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
 Managing a project's resources

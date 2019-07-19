@@ -1,7 +1,7 @@
 .. _how-to-migrate:
 
-How to migrate an existing project to Divio Cloud
-=================================================
+How to migrate an existing Django project to Divio Cloud
+========================================================
 
 This how-to guide assumes some familiarity with Divio Cloud projects. If you'd prefer a complete
 end-to-end tutorial, see the :ref:`tutorial-migrate-project` tutorial.
