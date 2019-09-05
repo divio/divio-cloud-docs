@@ -45,6 +45,7 @@ Coding in Divio Cloud applications
 
     Working with your project’s media storage <work-media-storage>
     Caching <caching>
+    File compression <compression>
     Sending email <coding-sending-email>
 
 

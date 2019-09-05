@@ -13,6 +13,30 @@ Occasionally, you may wish to run the local server in a configuration closer to 
 few steps are needed to achieve this.
 
 
+Build the project
+-----------------
+
+Build the project in the normal way (``docker-compose build web``) if there have been any changes to it.
+
+
+..  _local-live-volumes:
+
+Disable the ``volumes`` behaviour in ``docker-compose.yml`` (optional)
+-----------------------------------------------------------------------
+
+If your ``Dockerfile`` includes commands that mean that files in the project are processed at build time (say,
+processing of static files before collection), the :ref:`default volumes configuration in the docker-compose.yml file
+<docker-compose-volumes>` will cause this to be overwrriten at run-time.
+
+In such a case, comment out the line::
+
+    - ".:/app:rw"
+
+in ``docker-compose.yml``. Note that this means that further
+changes you make to the project files on your host system will not be reflected inside the container until the
+line is restored and the project restarted.
+
+
 Turn off Django ``DEBUG`` mode
 ------------------------------
 

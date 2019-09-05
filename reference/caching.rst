@@ -1,6 +1,6 @@
 .. _caching:
 
-Caching in Divio Cloud applications
+Caching in Divio applications
 ===================================
 
 ..  seealso::
