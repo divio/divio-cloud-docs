@@ -78,7 +78,7 @@ Explanation and discussion of key topics
 About the Divio Cloud
 ---------------------
 
-The `Divio <https://divio.com>`_ is a platform for Python/Django web
+`Divio <https://divio.com>`_ is a platform for Python/Django web
 projects. Divio's cloud platform aims to offer developers:
 
 **More reliable deployment** - it's built in Python and Django, and uses Docker
