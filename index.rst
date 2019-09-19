@@ -26,7 +26,7 @@
     </style>
 
 
-Divio Cloud developer handbook
+Divio developer handbook
 ==============================
 
 .. image:: /images/divio-support.jpg
@@ -45,7 +45,7 @@ Contents
 :ref:`Tutorials <introduction>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get started with a hands-on introduction to the Divio Cloud for
+Get started with a hands-on introduction to the Divio for
 developers.
 
 
@@ -78,8 +78,8 @@ Explanation and discussion of key topics
 About the Divio Cloud
 ---------------------
 
-The `Divio Cloud <https://divio.com>`_ is a platform for Python/Django web
-projects. The Divio Cloud aims to offer developers:
+`Divio <https://divio.com>`_ is a platform for Python/Django web
+projects. Divio's cloud platform aims to offer developers:
 
 **More reliable deployment** - it's built in Python and Django, and uses Docker
 to give application developers a local development environment that is
@@ -91,9 +91,9 @@ possible for developers to get their projects online, and to take charge of
 deployment, maintenance and scaling, without needing the operations or system
 administrator skills this usually demands to do well.
 
-**Better portability** - the containerisation technology used in Divio Cloud
+**Better portability** - the containerisation technology used in Divio
 projects guarantees portability and means freedom from lock-in to a single
-provider. A Divio Cloud project can be easily deployed on another platform
+provider. A Divio project can be easily deployed on another platform
 that supports Docker.
 
 
@@ -107,7 +107,7 @@ programmers.
 For those with less experience, we recommend `our tutorial for non-developers
 <http://support.divio.com/academy/basic-how-to-build-a-website-and-blog-with-dja
 ngo-cms-60-minutes/introduction>`_, while if you'd like an overview of what the
-Divio Cloud can offer as a business tool, please visit `the Divio website
+Divio can offer as a business tool, please visit `the Divio website
 <https://divio.com>`_.
 
 
