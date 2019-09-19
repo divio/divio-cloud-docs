@@ -22,24 +22,39 @@ They will take you through a complete cycle of operations as a Divio Cloud
 developer, from setting up a project locally to deploying your own applications
 on the Cloud.
 
+Getting started
+~~~~~~~~~~~~~~~
+
 .. toctree::
     :maxdepth: 1
-    :numbered:
 
     01-installation
     02-set-up
+
+
+Manage applications and their settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+
     Add new applications <03-add-applications>
     04-addon-configuration
+
+
+Create your own addon
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
     05-package-addon
     06-package-addon-configuration
     07-package-addon-cloud
 
 
-Standalone tutorials
---------------------
-
-Once you have some familiarity with the system and its basic operations, our more advanced
-stand-alone tutorials introduce additional concepts and processes.
+Other topics
+~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
