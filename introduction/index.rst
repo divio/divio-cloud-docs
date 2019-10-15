@@ -3,8 +3,6 @@
     <style>
         .row {clear: both}
 
-        .column img {border: 1px solid black;}
-
         @media only screen and (min-width: 1000px),
                only screen and (min-width: 500px) and (max-width: 768px){
 
@@ -73,10 +71,14 @@ Django, using Aldryn
     09-migrate-project
 
 
+.. |flavours| image:: /images/flavours.svg
+   :width: 9
+
+
 .. rst-class:: column column2
 
-PHP/Lavarel, using Flavours
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PHP/Lavarel, using Flavours |flavours|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
