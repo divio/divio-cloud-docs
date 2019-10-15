@@ -57,7 +57,7 @@ Create a new project
 
 ..  note::
 
-    See the more detailed tutorial, :ref:`tutorial-set-up`, if you are not
+    See the more detailed tutorial, :ref:`tutorial-aldryn-django-set-up`, if you are not
     already familiar with these steps.
 
 In the Divio Cloud Control Panel, create a new ``Django``-type project, based

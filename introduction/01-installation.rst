@@ -17,24 +17,6 @@ more experienced developers a better insight into the system and how it all work
 We expect you to have pip and Git installed and to have at least a basic understanding of their
 usage.
 
-..  admonition:: Older versions of Macintosh OS X and Windows
-
-    Older versions of Macintosh OS X and Windows do not support the native Docker application.
-    Instead, they require Docker to be run in a virtual machine (in VirtualBox) while the Docker
-    Toolbox application provides a set of tools to interact with it.
-
-    This can be more difficult to set up than Docker running natively, but the Divio app will take
-    care of it. **This is the strongly recommended way to set up Docker in such a case.**
-
-    If you're using one of these older systems and cannot upgrade, please download and run the
-    Divio app. With some fairly minor differences, you'll be able to follow this tutorial using the
-    Divio Shell that the app provides.
-
-    `Download the Divio application <https://divio.com/app/>`_ and install it. When you run it, it
-    will take care of installing and setting up Docker the components you require.
-
-    Continue at :ref:`tutorial-set-up`.
-
 
 Install the Divio CLI package
 ---------------------------------
