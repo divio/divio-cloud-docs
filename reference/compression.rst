@@ -21,7 +21,7 @@ See ``GZippedStaticFilesMixin.post_process()``, in `Aldryn Django's storage.py
 
 
 Using ``DISABLE_GZIP``
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 When gzip is disabled, gzipped versions of static files are not used (though they are still collected). A default
 Django storage class is used instead.

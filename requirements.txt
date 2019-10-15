@@ -1,5 +1,5 @@
 sphinx
-# sphinxcontrib-spelling
+sphinxcontrib-spelling
 pyenchant
 sphinx-autobuild
 divio-docs-theme
