@@ -99,7 +99,7 @@ Reset
 7. Files |divio-app-file-controls|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Manage the syncronisation of code, database and media between your local site
+Manage the synchronisation of code, database and media between your local site
 and the cloud Test server. Each can be downloaded or uploaded. Controls and
 their command-line equivalents:
 

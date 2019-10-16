@@ -18,7 +18,7 @@ What information we need
   take to see it for ourselves? If there are multiple steps involved, please list them.
 * What you expect to happen - we need to understand what you expected to happen. If you expected some output or result,
   describe it, bearing in mind that we may not be familiar with your project.
-* What actually does happen - sescribe the unexpected output or result. Include logs, error messages from the server
+* What actually does happen - describe the unexpected output or result. Include logs, error messages from the server
   and browser and so on.
 * Tell us what troubleshooting steps you have taken so far - please check:
 
@@ -73,7 +73,7 @@ A good report might look something like this:
     We are having problems with a form in our DynaCorp Global project
     https://control.divio.com/control/3097/edit/50704/. To see this:
 
-    * log in at https://example.com/clientarea with the username "diviosupport" and password "t3mpp4sswd" that we have
+    * log in at https://example.com/clientarea with the username "diviosupport" and password "T3mpP4sswd" that we have
       prepared for you
     * in the "Manage your holding" page at https://example.com/clientarea/holdings/edit, change
       the text in the "Name" field in the form that appears, and press "Update"
@@ -117,6 +117,6 @@ We are unable to provide support for:
 * debugging of user applications or third-party software
 * users’ local hardware/software set-up
 
-Please note that we are able to proide more in-depth technical support for Business-class projects than those on
+Please note that we are able to provide more in-depth technical support for Business-class projects than those on
 Economy plans. For more information please see our `full support policy
 <https://www.divio.com/terms-and-policies/support-policy/>`_.

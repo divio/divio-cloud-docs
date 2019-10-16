@@ -10,7 +10,7 @@ deployment of commits that have passed tests and been merged into the deployment
 The basic principles
 --------------------
 
-When a build completes successully on the CI service, it needs to send a signal to the Control Panel to start the
+When a build completes successfully on the CI service, it needs to send a signal to the Control Panel to start the
 deployment. Typically this would be with the command::
 
     divio project deploy --remote-id <website id>

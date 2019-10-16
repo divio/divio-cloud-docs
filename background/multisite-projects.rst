@@ -87,10 +87,10 @@ Set a :ref:`local environment variable <local-environment-variables>`, ``SITE_ID
 Django to serve a particular site. The site ID you need can be found in the list of Sites in the
 admin.
 
-After changing the ``SITE_ID`` you will neeed to restart the runserver for the change to take
+After changing the ``SITE_ID`` you will need to restart the runserver for the change to take
 effect.
 
-If you set explictly set the ``SITE_ID`` this way, the next method will not work.
+If you set explicitly set the ``SITE_ID`` this way, the next method will not work.
 
 
 Option two: capture the sites' domains in ``/etc/hosts``
