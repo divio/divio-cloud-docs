@@ -59,7 +59,7 @@ provides basic file storage, on a filesystem local to the code. For the reasons 
 Divio Cloud.
 
 Instead, you must use the storage as defined by Django's ``DEFAULT_FILE_STORAGE`` - which you can
-do simply by not explictly specifying a storage system, and using
+do simply by not explicitly specifying a storage system, and using
 ``django.core.files.storage.default_storage``.
 
 See also :ref:`Django's discussion <django:file storage systems>` of the subject.
@@ -104,7 +104,7 @@ In most projects on Divio Cloud, Django Filer is installed. This takes care of t
 ``THUMBNAIL_DEFAULT_STORAGE`` - if Django Filer is installed, you don't need to do anything else to
 use Easy Thumbnails correctly.
 
-In the cases where it's not, it's necessary to do the same thing manually in the settings.py::
+In the cases where it's not, it's necessary to do the same thing manually in the ``settings.py``::
 
     # If the DEFAULT_FILE_STORAGE has been set to a value known by
     # aldryn-django, then use that as THUMBNAIL_DEFAULT_STORAGE as well.

@@ -277,7 +277,7 @@ Authentication error
 The most likely problem is that one or more of:
 
 * the :ref:`URL of the Git repository <git-repository-add-url>` entered into the Control Panel
-* (for SSH) the :ref:`Control Panel public key <git-setup-ssh>` that you added to the deploy keys of the Git repository, and the deploy keys must have corewct read/write access
+* (for SSH) the :ref:`Control Panel public key <git-setup-ssh>` that you added to the deploy keys of the Git repository, and the deploy keys must have correct read/write access
 * (for HTTPS) the :ref:`Git repository username/personal access token <git-setup-https>` that you added to the Control
   Panel
 

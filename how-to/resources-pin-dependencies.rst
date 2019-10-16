@@ -84,6 +84,6 @@ will need to:
 
 * pull the latest changes to your local repository
 * run ``docker-compose run --rm web pip-reqs compile`` to compile the pinned requirements
-* rebuld it locally to check that it works as expected
+* rebuild it locally to check that it works as expected
 * push the updated ``requirements.txt`` back to the cloud.
 

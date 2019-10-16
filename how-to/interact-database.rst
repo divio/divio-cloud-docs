@@ -159,7 +159,7 @@ From your own computer
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Access to Cloud databases other than from the associated application containers is not possible -
-it is restricted, for security reasons, to containers running on our own infrastruture.
+it is restricted, for security reasons, to containers running on our own infrastructure.
 
 
 .. _common-db-operations:
