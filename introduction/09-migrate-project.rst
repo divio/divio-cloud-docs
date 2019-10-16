@@ -171,7 +171,7 @@ should still check that the version numbers are compatible.
     django-treebeard>=4.0,<5.0          # automatically anyway.
     djangocms-admin-style>=1.2,<1.3     #
 
-The original ``requirements.txt`` file lists some further Python dependencies. You may recogise
+The original ``requirements.txt`` file lists some further Python dependencies. You may recognise
 some of them (and that, for example, ``easy_thumbnails`` is a dependency of Django Filer). However
 if you need to, you can check the Divio Project to see what has already been installed, with
 ``docker-compose run --rm web pip freeze``. All the following should already be present, and do not

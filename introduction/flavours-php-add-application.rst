@@ -94,7 +94,7 @@ when the project is built, the addon will be installed::
 
     "spatie/laravel-responsecache": "6.1.1"
 
-Finally, if it wasn't there already, you will find a ``.flavour`` director, which contains information about the addon
+Finally, if it wasn't there already, you will find a ``.flavour`` directory, which contains information about the addon
 and some configuration for it.
 
 Rebuild the project::
@@ -108,7 +108,7 @@ installed and activated.
 Deploy to the Cloud
 -------------------
 
-To deploy your changes to the Test server, push your changes, and run a deployment commmand:
+To deploy your changes to the Test server, push your changes, and run a deployment command:
 
 ..  code-block:: bash
 

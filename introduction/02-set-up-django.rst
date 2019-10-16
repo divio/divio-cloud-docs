@@ -21,8 +21,8 @@ If you have not already done so, you will need to :ref:`create your Divio accoun
 environment <tutorial-installation>`.
 
 
-Create a new Aldyn Django project
----------------------------------
+Create a new Aldryn Django project
+----------------------------------
 
 On the Control Panel, create a new project selecting:
 
