@@ -3,6 +3,12 @@
 Set up a new PHP/Flavours project
 ===================================
 
+..  admonition:: Our Flavours implementation is in private beta
+
+    Access to Flavours on Divio is currently in a *private beta* phase. Sign up for access via `the Flavours website
+    <https://www.flavours.dev>`_.
+
+
 This part of the tutorial will introduce you to the Divio development/deployment workflow using Flavours and a PHP
 project as an example.
 
@@ -19,6 +25,15 @@ On the Control Panel, create a new project selecting:
 
 * *Python*: ``PHP``
 * *Project type*: ``Laravel``
+
+..  admonition:: Beta phase constraint
+
+    Your project *must* be:
+
+    * assigned to an Organisation in the Control Panel
+    * configured to use an :ref:`external Git repository <configure-version-control>`
+
+    otherwise the Control Panel will not handle it correctly.
 
 Other options can be left on their default settings.
 

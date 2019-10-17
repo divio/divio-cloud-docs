@@ -17,6 +17,11 @@
 Add a new package to the project
 ===================================
 
+..  admonition:: Our Flavours implementation is in private beta
+
+    Access to Flavours on Divio is currently in a *private beta* phase. Sign up for access via `the Flavours website
+    <https://www.flavours.dev>`_.
+
 There are various ways to add packages to PHP projects, but since this project is managed using Flavours, we'll use
 that. Flavours is a platform-independent specification for building containerised web projects; the Flavours *addon
 manager* for PHP Laravel - `flavour/fam-php-laravel <https://hub.docker.com/r/flavour/fam-php-laravel>`_ - knows how

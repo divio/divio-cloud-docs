@@ -80,6 +80,9 @@ Django, using Aldryn
 PHP/Lavarel, using Flavours |flavours|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Access to Flavours on Divio is currently in a *private beta* phase. Sign up for access via `the Flavours website
+<https://www.flavours.dev>`_.
+
 .. toctree::
     :maxdepth: 1
 
