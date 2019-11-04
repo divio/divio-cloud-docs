@@ -28,7 +28,7 @@ Install the ``logdna`` Python library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will need to add ``logdna`` to its requirements (strongly recommended: :ref:`pin it to a particular version
-<pinning-dependencies-good-practice>`) and rebuild the project (``docker-compose run --rm web build``).
+<pinning-dependencies-good-practice>`) and rebuild the project (``docker-compose build``).
 
 This package provides a new logging handler (``logdna.LogDNAHandler``) that will forward log messages to LogDNA.
 

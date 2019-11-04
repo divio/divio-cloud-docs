@@ -39,4 +39,7 @@ different branches to be set for the *Test* and *Live* servers - for example, ``
 In this workflow you would work on ``develop`` before manually merging into ``master``, and then
 deploying *Live*.
 
-All commits made by our Control Panel are to the branch used by the *Test* environment.
+All commits made by our Control Panel are to the branch used by the *Test* environment. For example, the *Addons* view
+in the Control Panel displays (and only affects) the configuration of the Test environment. When you use *Custom
+Tracking Branches*, the Live environment configuration is untouched except by Git operations that explicitly target its
+branch.
