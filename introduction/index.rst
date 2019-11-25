@@ -51,9 +51,16 @@ Create an account and set up your local environment.
 Learn the development and deployment workflow
 ----------------------------------------------------
 
-.. rst-class:: clearfix row
+.. raw:: html
 
-.. rst-class:: column column2
+    <div class="tabs">
+      <div class="tabs__nav">
+         <a href="#django-using-aldryn" class="tabs__link tab__link--active">Django</a>
+         <a href="#php-lavarel-using-flavours-flavours" class="tabs__link">PHP, Laravel</a>
+      <div>
+      <div class="tabs__content">
+
+.. rst-class:: tabs-pane
 
 Django, using Aldryn
 ~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +82,7 @@ Django, using Aldryn
    :width: 9
 
 
-.. rst-class:: column column2
+.. rst-class:: tabs-pane
 
 PHP/Lavarel, using Flavours |flavours|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,3 +95,8 @@ Access to Flavours on Divio is currently in a *private beta* phase. Sign up for 
 
     flavours-php-set-up
     flavours-php-add-application
+
+.. raw:: html
+
+    </div><!-- .tabs__content -->
+    </div><!-- .tabs -->
