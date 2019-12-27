@@ -3,7 +3,7 @@
 What are addons, and why use them?
 ==================================
 
-The :ref:`Divio Cloud addons framework <aldryn-addons>` allows packages to be installed and configured very easily and
+The :ref:`Divio Django addons framework <aldryn-addons>` allows packages to be installed and configured very easily and
 in some cases fully automatically.
 
 
@@ -33,8 +33,6 @@ Using the Addons framework on Divio Cloud is completely optional.
 
 You don't *need* Aldryn Django to install or use Django. Similarly, django CMS can be installed and configured
 manually, without using Aldryn Django CMS, if you prefer, and the same goes for others.
-
-
 
 
 Why use addons?

@@ -24,6 +24,10 @@ numerous advantages over other Python packaging options.
 Using wheels reduces installation times significantly, both locally and on our infrastructure. Using wheels also allows
 us to perform additional dependency resolution during installation.
 
+
+Not using the wheels proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You don't have to use our wheels proxy, though it's the default and it's strongly recommended. To change the way
 Python installs packages, see the ``Dockerfile``. Our standard ``Dockerfile`` for Python/Django projects contains::
 
@@ -33,3 +37,9 @@ Python installs packages, see the ``Dockerfile``. Our standard ``Dockerfile`` fo
 This can be removed or changed, along with the subsequent instruction::
 
     RUN pip install --requirement requirements.in
+
+
+Caching
+-------
+
+See :ref:`docker-layer-caching` for the implications of caching for package installation with pip.

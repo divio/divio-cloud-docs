@@ -3,8 +3,7 @@
 How-to guides
 =============
 
-
-Setting up a project and its environment
+Package installation and management
 ----------------------------------------
 
 .. toctree::
@@ -13,11 +12,18 @@ Setting up a project and its environment
     Install system packages <install-system-packages>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>
+
+
+Setting up a project and its environment
+----------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
     Set up password protection <password-protect-project>
     Set up Sass CSS compilation <configure-sass>
     Configure Celery <configure-celery>
     Configure external logging <configure-external-logging>
-    Set up CI/CD <configure-ci>
 
 
 Working with Django projects
@@ -31,7 +37,7 @@ Working with Django projects
     Migrate an existing Django project to Divio Cloud <migrate-existing-project>
 
 
-Managing a project's code
+The development pipeline
 -------------------------
 
 .. toctree::
@@ -39,6 +45,7 @@ Managing a project's code
 
     Configure Git hosting for your project <resources-configure-git>
     Use Git to manage your project <use-git>
+    Set up CI/CD <configure-ci>
 
 
 Managing a project's resources

@@ -75,10 +75,10 @@ Explanation and discussion of key topics
 
 .. rst-class:: clearfix row
 
-About the Divio Cloud
----------------------
+About the Divio cloud deployment platform
+-----------------------------------------
 
-`Divio <https://divio.com>`_ is a platform for Python/Django web
+`Divio <https://divio.com>`_ is a platform for containerised web
 projects. Divio's cloud platform aims to offer developers:
 
 **More reliable deployment** - it's built in Python and Django, and uses Docker

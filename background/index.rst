@@ -9,10 +9,8 @@ Our infrastructure
 .. toctree::
     :maxdepth: 1
 
-    divio-cloud-overview
-    backend-services
-    redirects
-    infrastructure-python-packaging
+    Overview <divio-cloud-overview>
+    Docker basics <docker-basics>
 
 
 Projects
@@ -21,27 +19,33 @@ Projects
 .. toctree::
     :maxdepth: 1
 
-    anatomy-project
-    version-control
-    about-boilerplates
+    project-anatomy
+    project-build-process
+    project-environments
+    project-version-control
+    project-about-boilerplates
     multisite-projects
 
 
-Addons
+Django addons
 ------------------
 
 .. toctree::
     :maxdepth: 1
 
     addons-basics
-    addon-anatomy
-    addon-configuration-overview
+    addons-anatomy
+    addons-configuration-overview
+    addons-templates
 
-Docker
-------
+
+Miscellaneous
+-------------
 
 .. toctree::
     :maxdepth: 1
 
-    Docker basics <docker-basics>
+    backend-services
+    redirects
+    infrastructure-python-packaging
 

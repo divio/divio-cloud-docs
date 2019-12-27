@@ -7,6 +7,7 @@ Version control
 
     * :ref:`How to configure a Git remote for your project
       <configure-version-control>`
+    * :ref:`use-git-manage-project`
 
 
 Divio Cloud projects use Git for version control.
