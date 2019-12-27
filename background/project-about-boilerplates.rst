@@ -17,7 +17,7 @@ A **Boilerplate** is a convenient way to define components to be used by a proje
 projects can be created quickly with the same tooling set up as soon as the project is created.
 
 A Boilerplate can be used to define any project-level components and processes that are to be
-re-used (note that *Python* components will be handled by our addon system and PIP, not by
+re-used (note that *Python* components will be handled by our addon system and Pip, not by
 Boilerplates) but will typically take care of a project's frontend set-up.
 
 For example, a Boilerplate will define how the Django templates are structured and make opinionated
