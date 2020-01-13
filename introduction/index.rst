@@ -3,13 +3,13 @@
 Tutorials
 =========
 
-These tutorials are suitable for developers. They assume that you are reasonably familiar with
-using the command line for development work, and that you know how to use and manage things such as
+These tutorials are suitable for developers who are reasonably familiar with
+using the command line for development work, and who know how to use and manage things such as
 Git, Pip and SSH keys.
 
 If not, `our tutorial for non-developers
 <http://support.divio.com/academy/basic-how-to-build-a-website-and-blog-with-dja
-ngo-cms-60-minutes/introduction>`_ will be a better starting point.
+ngo-cms-60-minutes/introduction>`_ is a better starting point.
 
 
 Introductory tutorials

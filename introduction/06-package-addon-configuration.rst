@@ -82,7 +82,7 @@ contains::
 Create that now, in your ``tutorial-django-debug-toolbar`` directory.
 
 So far, it doesn't actually do anything, but we can see that it receives a
-``settings`` argument, which will contain the project's settings that can we
+``settings`` argument, which will contain the project's settings that we
 then can manipulate and pass on.
 
 

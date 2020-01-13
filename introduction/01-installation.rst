@@ -8,7 +8,7 @@ Create your account
 
 A Divio Cloud account is free to set up and use indefinitely. Create your
 account on the Divio Cloud `Control Panel <https://control.divio.com/>`_, or
-log in there if you already have one.
+log in if you already have one.
 
 Our Divio GUI application can set up all you need to get started. In this tutorial however we will
 install and configure the components - Docker, the Divio CLI, and so on - manually. This will give
@@ -78,7 +78,7 @@ The Control Panel needs your public key, so that you can interact with our Git
 server and so on. Visit `SSH Keys in the Control Panel
 <https://control.divio.com/account/ssh-keys/>`_. Add your **public** key.
 
-..  note:: Note sure how to manage SSH keys?
+..  note:: Not sure how to manage SSH keys?
 
     See the excellent GitHub articles on `how to connect with SSH
     <https://help.github.com/articles/connecting-to-github-with-ssh/>`_.
