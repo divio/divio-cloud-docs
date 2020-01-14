@@ -281,7 +281,7 @@ The best way to maintain the ``CMS_TEMPLATES`` setting in a Divio project is via
 CMS addon's configuration form, and ultimately that is what we will do (in the local version of the
 project, you can see this configuration stored in ``addons/aldryn-djangocms/settings.json``).
 
-For now however it's easiest to include the setting in the ``settings.py`` file *temporarily*, so
+For now however it's easier to include the setting in the ``settings.py`` file *temporarily*, so
 add::
 
     CMS_TEMPLATES = (

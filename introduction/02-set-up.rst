@@ -32,7 +32,7 @@ the admin.
 
 ..  note::
 
-    By logging in, you will add your :ref:`divio-cloud-sso` user to the
+    By logging in, you will add your :ref:`Divio cloud single-sign-on <divio-cloud-sso>` user to the
     project's database, and will be able to log in to the site locally without
     having to add the new user to the database manually.
 
@@ -127,7 +127,7 @@ Using ``docker-compose``
 You can also start the project with the :ref:`Docker Compose command
 <docker-compose-reference>`, a command for working with projects (we will
 specify that we want to bring up the ``web`` service described in the project's
-:ref:`docker-compose-yml-reference` file, which also launches the ``db``
+:ref:`docker-compose-yml-reference`, which also launches the ``db``
 service)::
 
     ➜  docker-compose up web

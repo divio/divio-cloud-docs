@@ -121,7 +121,7 @@ Don't worry about the warnings - as long as there are no errors, all is in
 order.
 
 As the output notes, this version of the addon has been placed into the *Alpha*
-release channel. If you visit the its *Versions* page, you'll be able to change
+release channel. If you visit its *Versions* page, you'll be able to change
 the release channel.
 
 

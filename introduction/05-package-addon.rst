@@ -184,7 +184,7 @@ You'll see from the ``setup.py`` that it expects to find a version number at ``t
     )
 
 Create a new directory inside the addon, named
-``tutorial_django_debug_toolbar``. Download and move the the ``__init__.py``
+``tutorial_django_debug_toolbar``. Download and move the ``__init__.py``
 file provided by the Control Panel to the new directory.
 
 By default it declares the version number as ``0.0.1``, but we recommend
@@ -248,7 +248,7 @@ You can test that it works by starting the project again (``docker-compose
 up``).
 
 Once ``divio project develop <addon>`` has been run, it doesn't need to be
-executed again. From this point henceforth any changes you make to the addon,
+executed again. From this point onward any changes you make to the addon,
 other than in its ``setup.py``, can be picked up automatically, even while the
 project is still running.
 
