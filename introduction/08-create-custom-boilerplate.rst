@@ -470,7 +470,7 @@ In the :ref:`tutorial-boilerplate directory you created earlier
 Your Boilerplate is now on the Divio Cloud.
 
 Refresh the Boilerplate's *General settings* page, and you will see that the
-*Identifier* field now reflects the ``foundation`` value in the
+*Identifier* field now reflects the ``foundation6`` value in the
 ``boilerplate.json``.
 
 Add a description, for example:
