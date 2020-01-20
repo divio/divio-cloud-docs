@@ -25,7 +25,7 @@ In this example we will install, set up and run:
 What we want to do
 ------------------
 
-If we were doing this by hand we might run:
+If we were doing this manually, we would run:
 
 ..  code-block:: bash
 

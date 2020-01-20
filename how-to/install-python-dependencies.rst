@@ -1,15 +1,15 @@
 .. _install-python-dependencies:
 
-How to install Python dependencies in a project
-===============================================
+How to manage Python and its dependencies in a project
+=======================================================
 
 ..  seealso::
 
     * :ref:`Adding applications to a project <tutorial-add-applications>` in our tutorial
     * :ref:`How to install system packages <install-system-packages>`
 
-To install dependencies in a project, you must first :ref:`list-dependencies`, then
-:ref:`process-dependencies`. Both steps are described below.
+To install dependencies in a project, you must first :ref:`list your dependencies <list-dependencies>`, 
+then :ref:`process the list <process-dependencies>`. Both steps are described below.
 
 .. _list-dependencies:
 
@@ -67,7 +67,7 @@ version control system.
 ..  important::
 
     More recent versions of `pip tools <https://pypi.org/project/pip-tools/>`_ as used in the Divio base projects
-    require you to use URLS that provide the ``egg`` fragment (as shown in the examples below), and will raise an error
+    require you to use URLs that provide the ``egg`` fragment (as shown in the examples below), and will raise an error
     if they encounter URLs lacking it. Older versions would allow you to omit the fragment.
 
 
@@ -100,7 +100,7 @@ or a commit::
 
     Our ``pip`` set-up does **not** support `VCS protocols
     <https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_ - you cannot use for
-    example URLs starting ``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``.
+    example URLs starting with ``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``.
 
     However, as long as the version control system host offers full package downloads, you can use
     the tarball or zip archive URL for that to install from the VCS, as in the examples above.
@@ -111,7 +111,7 @@ or a commit::
 Process the list
 ----------------
 
-The requirements file is processed when the project is build. This is taken care of in Cloud
+The requirements file is processed when the project is built. This is taken care of in Cloud
 deployments by the :ref:`Dockerfile <dockerfile-reference-python>`, and locally by running a
 ``build`` command::
 

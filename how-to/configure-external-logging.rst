@@ -15,8 +15,8 @@ effectively.
 Example using LogDNA
 --------------------
 
-This document will show you how to set up logging using the popular LogDNA service. Using other services the principle
-will be the same, with only some minor differences.
+This document will show you how to set up logging using the popular LogDNA service. Using other services,
+the principle, except for some minor differences, will be the same.
 
 If you don't already have a LogDNA account, visit https://logdna.com and register for a free account. LogDNA will
 provide you with an *ingestion key*.

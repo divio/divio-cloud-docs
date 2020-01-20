@@ -80,7 +80,7 @@ If these conditions are not met, the Control Panel will not accept the repositor
 .. rst-class:: column column2
 
 Migrating an existing project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Add the Git repository to the local version of your project as a remote: ``git remote add external <repository URL>``.
 #. Ensure that all the branches you wish to keep are present and up to date with the Divio Cloud server: ``git pull <branch>``
@@ -111,7 +111,7 @@ Creating a new Divio Cloud project
 .. rst-class:: column column2
 
 Migrating an existing project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Select *Repository* from your project's menu in the Dashboard.
 #. Select **Migrate to external repository**.
@@ -122,7 +122,7 @@ Migrating an existing project
 .. _git-setup-ssh:
 
 Add your project's public key to the Git host
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Divio Control Panel will provide you with a public key to add to the Git host, allowing our infrastructure to
 access the repository (:ref:`see below for HTTPS <git-setup-HTTPS>`).
@@ -295,7 +295,7 @@ Check that no other files are in the branch.
 You have no webhook set up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Although the Control Panel has been able to connect to the repository and authenticate, a webhook has not yet been set
+Although the Control Panel has been able to connect to the repository and authenticates, a webhook has not yet been set
 up.
 
 This is not necessarily an error, but it does mean that your Divio Cloud project will not automatically receive signals

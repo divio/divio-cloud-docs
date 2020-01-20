@@ -74,7 +74,7 @@ In this case, you will need to add the package to be installed to the
 If your addon *contains* an application
 .......................................
 
-If on the other hand, for example if the application is not available on PyPI,
+On the other hand, if for example, the application is not available on PyPI,
 simply add it as the inner application directory.
 
 .. _addon_application_naming:
@@ -83,7 +83,7 @@ simply add it as the inner application directory.
 
     The *inner application directory*, in this case ``susan_example_application``, should have a
     name that matches the *package name* (``susan-example-application``), with underscores
-    substituted for the dashes.
+    substituting for the dashes.
 
     This will allow the Control Panel to copy the application's templates into the project's
     Git repository when the addon is first installed in a project. If the names don't match,
@@ -228,7 +228,7 @@ Upload the addon
 Upload with ``divio addon upload``.
 
 This version of the addon will be placed into the *Alpha* release channel. If
-you visit the its *Versions* page, you'll be able to change the release channel.
+you visit its *Versions* page, you'll be able to change the release channel.
 
 Your addon is now available for installation into projects via the control
 panel. If you make it public, other users will be able to install it too.

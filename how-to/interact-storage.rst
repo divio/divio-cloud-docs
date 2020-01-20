@@ -53,7 +53,7 @@ Interact with your project's Cloud S3 storage
 Obtain your storage access details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Control Panel for your project, visit the ``/doctor`` URL. For each of the Test and Live
+In the Control Panel of your project, visit the ``/doctor`` URL. For each of the Test and Live
 servers, you'll see a ``DEFAULT_STORAGE_DSN`` value listed, for example:
 
 .. image:: /images/default-storage-dsn.png
@@ -168,7 +168,7 @@ bucket::
            PRE filer_public_thumbnails/
 
 
-Or, to copy (``cp``) a file from your own computer to S3::
+or, to copy (``cp``) a file from your own computer to S3::
 
     ➜ aws s3 cp example.png s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
     upload: ./example.png to s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
@@ -188,8 +188,7 @@ Additional usage information
 
 Run ``aws s3 help`` for more information on commands, or refer to the `AWS CLI Command Reference
 <http://docs.aws.amazon.com/cli/latest/reference/s3/index.html>`_. The AWS CLI can maintain
-multiple profiles and offers other features but it's beyond the scope of this documentation to
-explain that here.
+multiple profiles and offers other features but it's beyond the scope of this documentation.
 
 The ``aws configure`` command stores the configuration in ``~/.aws``.
 

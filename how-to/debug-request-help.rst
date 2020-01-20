@@ -81,7 +81,7 @@ A good report might look something like this:
     At this point you should be redirected to https://example.com/clientarea/holdings, with the data you entered.
 
     Instead what actually happens is that sometimes the expected data will appear, but approximately 50% of the time,
-    it will not be.
+    it will not.
 
     There are no errors in the logs or browser. The error occurs only on the Live server, not on Test or locally (even
     when running in Live configuration).
@@ -92,7 +92,7 @@ has been tested provides some valuable clues as to the nature of the problem.
 Ensure that we have access to your project
 ------------------------------------------
 
-If your project uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
+If your project uses the Divio Git server, we'll be able to set it up locally for testing, if we need to. However if you
 :ref:`use a private remote Git repository <configure-version-control>`, this won't be possible unless you can provide
 us with access to the repository. Usually we will provide you with :ref:`a public key to add to the respository
 <git-setup-ssh>`.
@@ -105,7 +105,7 @@ What we can and can't help with
 
 Our technical support is limited in scope to our platform and infrastructure:
 
-* general questions about use of the platform and its tools
+* general questions about the use of the platform and its tools
 * use and configuration of the local development environment
 * best practices for project configuration on Divio Cloud
 * best practices for project migration to Divio Cloud

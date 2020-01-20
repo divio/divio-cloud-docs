@@ -55,7 +55,7 @@ Run ``divio project develop``
 -----------------------------
 
 If the new version is different from the previously installed version and includes changed dependencies, or
-you want to check exactly what it will do when when the project is built, you should run::
+you want to check exactly what it will do when the project is built, you should run::
 
      divio project develop <package name>
 

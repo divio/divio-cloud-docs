@@ -13,9 +13,7 @@ version of Ubuntu Linux.
 
 If your project requires a particular system package, you can include them in
 the Docker image, by listing the commands required to install them - typically,
-using ``RUN apt-get`` - in the ``Dockerfile``.
-
-The commands in the ``Dockerfile`` are executed in order, so an appropriate
+using ``RUN apt-get`` - in the ``Dockerfile``. The commands in the ``Dockerfile`` are executed in order, so an appropriate
 place to put such commands is early on, after::
 
     # <DOCKER_FROM>
@@ -43,4 +41,4 @@ having to rebuild the entire project, jump into a new container running
 
      docker-compose run --rm web bash
 
-This container will disappear (``--rm``) when you exit.
+``--rm`` will make the container disappear when you exit.

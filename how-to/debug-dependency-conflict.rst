@@ -47,7 +47,7 @@ same.
 
 ..  admonition:: But I didn't change anything in my project!
 
-    Because of the way pip works, even if you don't change anything at all in your project, simply
+    Because of the way pip works, even if you didn't change anything at all in your project, simply
     rebuilding it can pull in new packages, if they were unpinned. Whenever the project is built,
     it will select the latest versions of unpinned packages, and those versions may introduce new,
     incompatible, requirements of their own.
@@ -59,7 +59,7 @@ Identify the problem requirement
 The question now is to ascertain *which* of these requirements we will accept and which we will
 change.
 
-In example above, we have a strong clue. The most firmly-pinned of these requirements is
+In the example above, we have a strong clue. The most firmly-pinned of these requirements is
 ``==1.8.18``. All the others are more loosely pinned. That suggests that Django 1.8.18 has been
 specified for a good reason.
 

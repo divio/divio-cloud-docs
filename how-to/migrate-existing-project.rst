@@ -25,7 +25,7 @@ There are a number of available project types, including Django, Django-plus-dja
 Select the Boilerplate you want to use. Several are available, with different built-in frontend
 components to work with. If you choose a complex Boilerplate and later decide that you don't need
 its functionality, it's easy to remove from a project. However, select the *Blank Boilerplate* if
-you are sure you'd rather to set up and manage your site's frontend starting from scratch.
+you are sure you'd rather set up and manage your site's frontend starting from scratch.
 
 See :ref:`about-boilerplates` for more on the subject.
 

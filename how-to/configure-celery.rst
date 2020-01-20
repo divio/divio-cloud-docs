@@ -58,7 +58,7 @@ In the following steps you will set up a number of local services using the :ref
 * ``celerycam``, a monitoring service
 
 Your project will already have at least two services, ``web`` and ``db``, listed in ``docker-compose.yml``. Each of the
-new services will be need to be added in a similar way, so that each runs in its own Docker container locally. (On our
+new services will have to be added in a similar way, so that each runs in its own Docker container locally. (On our
 Cloud, they will run on our dedicated clusters, and the :ref:`docker-compose file is not used <docker-compose-local>`.)
 
 
@@ -98,7 +98,7 @@ Celery worker
 ~~~~~~~~~~~~~~~~
 
 Next add a Celery worker service in the same way. This service needs to run a Django environment almost identical to
-that used by the ``web`` service, as it will use the same codebase, need access to the same database and so on. Its
+that used by the ``web`` service, as it will use the same codebase, needs access to the same database and so on. Its
 definition will therefore be very similar, with key changes noted here:
 
 ..  code-block:: yaml

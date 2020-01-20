@@ -3,8 +3,8 @@
 How to fine-tune your server's performance
 ==========================================
 
-In the Divio Cloud Control Panel for your project, you can easily change the resources (instances,
-RAM, storage, transfer) allocated to your project to adjust for its needs.
+In the Divio Cloud Control Panel of your project, you can easily change the resources (instances,
+RAM, storage, transfer) allocated to your project to adjust to its needs.
 
 In most cases, having chosen suitable values for these, you won't need to make further changes.
 
@@ -51,7 +51,7 @@ These parameters can be controlled by environment variables.
 Increase ``DJANGO_WEB_WORKERS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, each instance can can run three concurrent uWSGI web workers, in other words, three concurrent web processes (note that your plan may include multiple instances). This is determined by ``DJANGO_WEB_WORKERS``.
+By default, each instance can run three concurrent uWSGI web workers, in other words, three concurrent web processes (note that your plan may include multiple instances). This is determined by ``DJANGO_WEB_WORKERS``.
 
 Increasing the number of web workers will allow you to serve more concurrent requests. Note that
 this will increase the RAM consumption of each instance, so make sure you monitor the results over
@@ -70,7 +70,7 @@ You are unlikely to see any benefit from lowering ``DJANGO_WEB_WORKERS`` below t
 Increase or decrease ``DJANGO_WEB_MAX_REQUESTS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you see more RAM use than expected, try lowering ``DJANGO_WEB_MAX_REQUESTS``. This controls the
+If you see more RAM usage than expected, try lowering ``DJANGO_WEB_MAX_REQUESTS``. This controls the
 number of requests each worker serves before it is recycled (replaced by a fresh one).
 
 There is a small overhead in replacing the worker. Typically - unless you are seeing excessive RAM
@@ -102,7 +102,7 @@ Disable or reconfigure ``UWSGI_CHEAPER`` (uWSGI cheaper mode)
 By default, projects use `uWSGI's cheaper mode <https://uwsgi-docs-additions.readthedocs.io/en/latest/Cheaper.html>`_.
 
 When the site is idling in cheaper mode, uWSGI will dismiss unneeded web workers. This saves RAM, and is the
-recommended configuration for most projects. In some circumstances however it can be advantageous to disable this mode,
+recommended configuration for most projects. In some circumstances however, it can be advantageous to disable this mode,
 or adjust its settings.
 
 This is generally only applicable to constant high-traffic sites. Please contact Divio support if you feel you need to

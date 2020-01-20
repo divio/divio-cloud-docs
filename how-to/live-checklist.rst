@@ -77,6 +77,6 @@ After deployment
   <https://wummel.github.io/linkchecker/>`_.
 * Check your site as a logged-in user, an anonymous user and in your browser's private/incognito
   mode to verify expected behaviour.
-* Check response times with a tool such `Pingdom <https://tools.pingdom.com>`_.
+* Check response times with a tool such as `Pingdom <https://tools.pingdom.com>`_.
 * If necessary, allocate more resources to the project via its *Subscription* and consult the
   :ref:`live-performance` guide.

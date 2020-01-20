@@ -38,7 +38,7 @@ You can also make the connection manually from within the ``web`` container, for
 
     docker-compose run --rm web psql -h postgres -U postgres db
 
-As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
+The same as ``psql``, you can also run commands such as ``pg_dump`` and ``pg_restore``. This is useful
 for a number of :ref:`common operations <common-db-operations>`, below.
 
 
@@ -68,7 +68,7 @@ Expose the database's port
 In order to the connect to the database from a tool running directly on your
 own machine, you will need to expose its port (5432).
 
-Add a ports section to the ``db`` service in ``docker-compose.yml`` and map the
+Add a **ports** section to the ``db`` service in ``docker-compose.yml`` and map the
 port to your host:
 
 ..  code-block:: yaml
@@ -168,7 +168,7 @@ Usage examples for common basic operations
 ------------------------------------------
 
 It's beyond the scope of this article to give general guidance on using Postgres, but these
-examples will help give you an idea of some typical operations that you might undertake while using
+examples will give you an idea of some typical operations that you might undertake while using
 Divio Cloud.
 
 All the examples assume that you are interacting with the local database, running in its  ``db``
@@ -222,7 +222,7 @@ Create a database named ``db``:
 Apply the ``hstore`` extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Apply the ``hstore`` extension (required on a newly-created local database) to he database named
+Apply the ``hstore`` extension (required on a newly-created local database) to the database named
 ``db``:
 
 ..  code-block:: bash
@@ -248,7 +248,7 @@ Reset the database
 ~~~~~~~~~~~~~~~~~~
 
 To reset the database (with empty tables, but the schema in place) you would run the commands above
-to :ref:`drop <drop-db>` and :ref:`create <create-db>` the database, :ref:`create the the hstore
+to :ref:`drop <drop-db>` and :ref:`create <create-db>` the database, :ref:`create the hstore
 extension <apply-hstore-db>`, followed by a migration::
 
     docker-compose run --rm web python manage.py migrate
@@ -259,5 +259,5 @@ Restore from a downloaded Cloud backup
 
 Untar the downloaded ``backup.tar`` file. It contains a ``database.dump`` file. Copy the file to
 your local project directory, then run the commands above to :ref:`drop <drop-db>` and :ref:`create
-<create-db>` the database, :ref:`create the the hstore extension <apply-hstore-db>`, and then
+<create-db>` the database, :ref:`create the hstore extension <apply-hstore-db>`, and then
 :ref:`restore from a file <restore-db>`.
