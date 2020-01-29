@@ -152,8 +152,8 @@ directory.
 
     Options:
 
-    --backup
-        Take a backup before deploying
+    --remote-id INTEGER
+        Remote Project ID to use for project commands. Defaults to the project in the current directory using the .aldryn file.
 
 ``deploy-log``
     Returns the latest deployment log for the project's Test or Live servers.
