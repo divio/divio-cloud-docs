@@ -14,6 +14,18 @@ We provide a REST API using `OpenAPI <https://www.openapis.org>`_, and publish b
 https://api.dev.aldryn.net/apps/v3/schema.json>`_ for it.
 
 
+Create a Divio account for use with the API
+-------------------------------------------
+
+..  warning::
+
+    The API allows destructive operations to be carried out. Although you can, we strongly recommend that you **do not
+    use your own account/access token with the API**, and especially not with code that is in development or not fully
+    tested.
+
+We recommend that you create a dedicated account for use with the API, and minimise the access it is granted. For example - where possible - rather than granting the account access to multiple organisations, give it access to just one, and do not give it admin access unless this is necessary.
+
+
 Connecting to the API
 ----------------------
 
@@ -25,7 +37,7 @@ You will need a suitable client to connect to the API. This could be the ``curl`
 Authentication
 ~~~~~~~~~~~~~~
 
-Each request made to the API must contain a valid Divio Control Panel access token. You can obtain your own access
+Each request made to the API must contain a valid Divio Control Panel access token. You can obtain an account's access
 token from https://control.divio.com/account/desktop-app/access-token/.
 
 ..  warning::
