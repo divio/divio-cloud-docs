@@ -9,17 +9,15 @@ How to use our API
     By design, the API will work only with projects that belong to an organisation. Projects under an user's
     *Personal* space will not be fully accessible via the API.
 
-We provide a REST API, using `Swagger <https://swagger.io>`_ version 3 and the `OpenAPI <https://www.openapis.org>`_
-specification.
-
-A specification (machine-readable and human-readable) specifcation for the API is published at
-https://cp-api-ref-stage.us.aldryn.io.
+We provide a REST API using `OpenAPI <https://www.openapis.org>`_, and publish both a `human-friendly
+<https://cp-api-ref-stage.us.aldryn.io> specification`_ and a `machine-readable specification
+https://api.dev.aldryn.net/apps/v3/schema.json>`_ for it.
 
 
 Connecting to the API
 ----------------------
 
-The APU's end-point is https://api.divio.com/apps/v3/.
+The API's end-point is https://api.divio.com/apps/v3/.
 
 You will need a suitable client to connect to the API. This could be the ``curl`` command or another application.
 
