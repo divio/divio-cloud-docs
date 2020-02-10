@@ -77,36 +77,3 @@ The result of the command above will be a JSON response, something like::
         "builds": "https://api.dev.aldryn.net/apps/v3/builds/",
         "regions": "https://api.dev.aldryn.net/apps/v3/regions/"
     }
-
-
-Using UUIDs to retrieve objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-At each of these URLs, some meta-data and a list of available objects will be provided. Each object's UUID will be
-shown; this can be appended to the URL to retireve further information about a particular object, for example:
-
-    https://api.dev.aldryn.net/apps/v3/applications/l33t2jdmbrhhrlf6yherrnn7g4
-
-
-Using parameters
-~~~~~~~~~~~~~~~~
-
-The interface for each of these endpoints is described at https://cp-api-ref-stage.us.aldryn.io; for example, for
-``applications``, see https://cp-api-ref-stage.us.aldryn.io/#tag/applications. This lists the available query
-parameters and their type, along with an optional description:
-
-``name_search``: *string*
-``slug``: *string*
-``page``: *integer* (A page number within the paginated result set.)
-
-This means that you can search for an application (i.e. a Divio Cloud project) containing the name *PyCon*::
-
-    https://api.dev.aldryn.net/apps/v3/applications?name_search=PyCon
-
-or find the application whose exact slug is *pycon-africa*::
-
-    https://api.dev.aldryn.net/apps/v3/applications?slug=pycon-africa
-
-These queries can be combined in the usual way::
-
-    https://api.dev.aldryn.net/apps/v3/endpoint?query_name_1=my_first_query&query_name_2=my_second_query
