@@ -14,7 +14,7 @@ Grant support access
 ----------------------
 
 We will need you to grant support access to your account.
-Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, 
+Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_,
 and grant consent for Support Access.
 
 Preferably, grant support for one year so that on future occasions we will not need to ask you again.
@@ -103,7 +103,7 @@ has been tested provides some valuable clues as to the nature of the problem.
 Ensure that we have access to your project
 ------------------------------------------
 
-If your project uses the Divio Git server, we'll be able to set it up locally for testing, if we need to. However if you
+If your project uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
 :ref:`use a private remote Git repository <configure-version-control>`, this won't be possible unless you can provide
 us with access to the repository. Usually we will provide you with :ref:`a public key to add to the respository
 <git-setup-ssh>`.
