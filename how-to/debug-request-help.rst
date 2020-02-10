@@ -13,11 +13,12 @@ This page contains a :ref:`report template <problem-report-template>` and an :re
 Grant support access
 ----------------------
 
-We will need higher-level access to your account to be able to investigate this further.
-Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, and grant consent for Support Access? 
+We will need you to grant support access to your account.
+Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, 
+and grant consent for Support Access.
+
 Preferably, grant support for one year so that on future occasions we will not need to ask you again.
 The access you grant will be used exclusively for support purposes within Divio.
-Please let us know when the access has been granted.
 
 
 Provide key information
