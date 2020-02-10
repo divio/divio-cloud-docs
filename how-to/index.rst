@@ -46,6 +46,7 @@ The development pipeline
     Configure Git hosting for your project <resources-configure-git>
     Use Git to manage your project <use-git>
     Set up CI/CD <configure-ci>
+    Use our API <use-api>
 
 
 Managing a project's resources
