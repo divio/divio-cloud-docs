@@ -56,7 +56,7 @@ Basic requests
 
 A example using ``curl``::
 
-    curl https://api.dev.aldryn.net/apps/v3/ -H 'authorization: Token yFagta25sbsus8d9JK9DrJCSKinqSWAoxU7NgN7IamtheCscry6jFfk3kingofthedivannTyYa10iqqD7EY5nvPR6yN47'
+    curl https://api.divio.com/apps/v3/ -H 'authorization: Token yFagta25sbsus8d9JK9DrJCSKinqSWAoxU7NgN7IamtheCscry6jFfk3kingofthedivannTyYa10iqqD7EY5nvPR6yN47'
 
 Here, the ``-H`` flag is used to pass the ``authorization`` header.
 
@@ -67,13 +67,13 @@ specify the URL, and provide the expected header.
 The result of the command above will be a JSON response, something like::
 
     {
-        "applications": "https://api.dev.aldryn.net/apps/v3/applications/",
-        "environments": "https://api.dev.aldryn.net/apps/v3/environments/",
-        "domains": "https://api.dev.aldryn.net/apps/v3/domains/",
-        "patches": "https://api.dev.aldryn.net/apps/v3/patches/",
-        "repositories": "https://api.dev.aldryn.net/apps/v3/repositories/",
-        "serviceinstances": "https://api.dev.aldryn.net/apps/v3/serviceinstances/",
-        "deployments": "https://api.dev.aldryn.net/apps/v3/deployments/",
-        "builds": "https://api.dev.aldryn.net/apps/v3/builds/",
-        "regions": "https://api.dev.aldryn.net/apps/v3/regions/"
+        "applications": "https://api.divio.com/apps/v3/applications/",
+        "environments": "https://api.divio.com/apps/v3/environments/",
+        "domains": "https://api.divio.com/apps/v3/domains/",
+        "patches": "https://api.divio.com/apps/v3/patches/",
+        "repositories": "https://api.divio.com/apps/v3/repositories/",
+        "serviceinstances": "https://api.divio.com/apps/v3/serviceinstances/",
+        "deployments": "https://api.divio.com/apps/v3/deployments/",
+        "builds": "https://api.divio.com/apps/v3/builds/",
+        "regions": "https://api.divio.com/apps/v3/regions/"
     }
