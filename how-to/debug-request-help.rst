@@ -1,7 +1,7 @@
 .. _debug-describe-problem:
 
-How to describe a problem when contacting Divio support
-==============================================================
+How to get help when you have a problem
+==========================================
 
 In order to help Divio support help you, it's important to provide us with the information we need, and to be sure it's
 :ref:`something that we can actually help you with <support-scope>`.
@@ -10,7 +10,18 @@ This page contains a :ref:`report template <problem-report-template>` and an :re
 <problem-report-example>`.
 
 
-What information we need
+Grant support access
+----------------------
+
+We will need you to grant support access to your account.
+Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, 
+and grant consent for Support Access.
+
+Preferably, grant support for one year so that on future occasions we will not need to ask you again.
+The access you grant will be used exclusively for support purposes within Divio.
+
+
+Provide key information
 ------------------------
 
 * The dashboard URL of each project - for each project you are referring to, we need its dashboard URL, in the form ``https://control.divio.com/control/...``.
@@ -81,7 +92,7 @@ A good report might look something like this:
     At this point you should be redirected to https://example.com/clientarea/holdings, with the data you entered.
 
     Instead what actually happens is that sometimes the expected data will appear, but approximately 50% of the time,
-    it will not be.
+    it will not.
 
     There are no errors in the logs or browser. The error occurs only on the Live server, not on Test or locally (even
     when running in Live configuration).
@@ -92,7 +103,7 @@ has been tested provides some valuable clues as to the nature of the problem.
 Ensure that we have access to your project
 ------------------------------------------
 
-If your project uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
+If your project uses the Divio Git server, we'll be able to set it up locally for testing, if we need to. However if you
 :ref:`use a private remote Git repository <configure-version-control>`, this won't be possible unless you can provide
 us with access to the repository. Usually we will provide you with :ref:`a public key to add to the respository
 <git-setup-ssh>`.
@@ -105,7 +116,7 @@ What we can and can't help with
 
 Our technical support is limited in scope to our platform and infrastructure:
 
-* general questions about use of the platform and its tools
+* general questions about the use of the platform and its tools
 * use and configuration of the local development environment
 * best practices for project configuration on Divio Cloud
 * best practices for project migration to Divio Cloud
