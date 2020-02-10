@@ -96,13 +96,13 @@ Aldryn SSO configuration options
 
 ..  important::
 
-    Most of these options must either be provided as environment variables, or
-    as settings that are declared in :ref:`settings.py <settings.py>`
-    **before** ``aldryn_addons.settings.load(locals())``.
+    The preferred way to set these options is as environment variables.
 
-    This allows them to be processed correctly by the addons system.
+    If you supply them as Django settings declared in :ref:`settings.py <settings.py>`, they must appear **before**
+    ``aldryn_addons.settings.load(locals())``. This allows them to be processed correctly by the addons system.
 
-    The exception is :ref:`ALDRYN_SSO_HIDE_USER_MANAGEMENT`.
+    The exception is :ref:`ALDRYN_SSO_HIDE_USER_MANAGEMENT`, which is configured via the Control Panel, or by adding the
+    variable *after* ``aldryn_addons.settings.load(locals())``.
 
 More details of how Aldryn SSO processes these settings can be studied at
 `aldryn-sso.aldryn_config.py
