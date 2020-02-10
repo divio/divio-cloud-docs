@@ -1,7 +1,7 @@
 .. _debug-describe-problem:
 
 How to get help when you have a problem
-=========================================
+==========================================
 
 In order to help Divio support help you, it's important to provide us with the information we need, and to be sure it's
 :ref:`something that we can actually help you with <support-scope>`.
@@ -9,14 +9,16 @@ In order to help Divio support help you, it's important to provide us with the i
 This page contains a :ref:`report template <problem-report-template>` and an :ref:`example of a good report
 <problem-report-example>`.
 
+
 Grant support access
----------------------
+----------------------
 
 We will need higher-level access to your account to be able to investigate this further.
 Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, and grant consent for Support Access? 
 Preferably, grant support for one year so that on future occasions we will not need to ask you again.
 The access you grant will be used exclusively for support purposes within Divio.
 Please let us know when the access has been granted.
+
 
 Provide key information
 ------------------------
