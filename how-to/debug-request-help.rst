@@ -16,7 +16,7 @@ We will need higher-level access to your account to be able to investigate this 
 Please go to `your privacy settings <https://control.divio.com/account/change-privacy-settings/>`_, and grant consent for Support Access? 
 Preferably, grant support for one year so that on future occasions we will not need to ask you again.
 The access you grant will be used exclusively for support purposes within Divio.
-Please let me know when the access has been granted. Thanks.
+Please let us know when the access has been granted.
 
 Provide key information
 ------------------------
