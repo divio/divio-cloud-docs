@@ -23,7 +23,9 @@ Create a Divio account for use with the API
     use your own account/access token with the API**, and especially not with code that is in development or not fully
     tested.
 
-We recommend that you create a dedicated account for use with the API, and minimise the access it is granted. For example - where possible - rather than granting the account access to multiple organisations, give it access to just one, and do not give it admin access unless this is necessary.
+We recommend that you create a dedicated account for use with the API, and minimise the access it is granted. For
+example - where possible - rather than granting the account access to multiple organisations, give it access to just
+one, and do not give it admin access unless this is necessary.
 
 
 Connecting to the API
