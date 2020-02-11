@@ -1,6 +1,6 @@
 .. _multisite-projects:
 
-Multi-site projects on Divio Cloud
+Multi-site projects on Divio
 ==================================
 
 Multi-site hosting, also known as *multi-tenancy*, makes it possible to host multiple sites,
@@ -13,29 +13,42 @@ serving multiple domains, using a single database.
 
 We support two multi-site options:
 
-* our fully-supported Django Multisite+ addon, available for qualifying projects only
-* a DIY implementation via the `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_
-
-Multi-site functionality is available only for Business plan projects that meet certain criteria. Please contact Divio
-support for more details.
+* using our Mirrors feature, with multiple projects running the same codebase and using the same content (recommended)
+* (for Django sites only) a DIY implementation via the `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_
 
 
-Fully supported Django Multisite+ option
+Using Mirrors
 ----------------------------------------
 
-This is the easiest way to set up multi-site projects on Divio Cloud.
+Multiple "mirror" projects can be launched as duplicates of an original. They will all share exactly the same codebase.
+By default, each mirror is an independent project, with its own database and media storage. In a multi-site arrangement, all
+the mirrors will share a single database and media storage.
 
-We will install and configure Django Multisite+.
-
-You need to inform us about each domain to be served. We will apply the configuration required,
-which includes:
-
-* installing and configuring Django Multisite Plus addon
-* applying the necessary settings and environment variables
+Commits to the base project codebase can be rolled out automatically or manually across all the mirrors.
 
 
-DIY implementation
-------------------
+Advantages
+~~~~~~~~~~
+
+This arrangement has numerous benefits. It brings better subsite isolation; a problem with one site's performance will not affect other
+sites. It also offers better permission management, and better scalability of many small applications across multiple hosts.
+
+Per-site resources can be fine-tuned more effectively (though overall resource usage may be slightly higher).
+
+
+Caveats
+~~~~~~~
+
+To achieve zero downtime deployments a good policy of maintaining backwards-compatible database migrations is required, as the first project
+in the mirrored groups to be deployed with the fresh code will apply any database migrations; these will affect all projects. They therefore
+need to be backwards-compatible, so that others will continue to work with the new database schema. Subsequent code updates, applied once
+*all* projects in the group have been deployed, will no longer need to support the old schema.
+
+
+DIY implementation (for Django sites only)
+------------------------------------------
+
+This option is still available, but is no longer recommended.
 
 You will need to install `django CMS Multisite package <https://pypi.org/project/djangocms-multisite/>`_ and manage any
 settings and configuration manually.
@@ -65,8 +78,7 @@ Ghana    example.gh  gh.example-stage.eu.aldryn.io
 USA      example.us  us.example-stage.eu.aldryn.io
 =======  ==========  =============================
 
-On both the Test and Live Cloud servers, domain routing will be configured by us and will work
-automatically.
+On both the Test and Live Cloud servers, domain routing will be configured automatically.
 
 Locally, more work is required, as each of the sites will be served at the same address (i.e.
 ``localhost``). Unlike the Cloud set-up, your local environment has no way to route different
@@ -84,10 +96,10 @@ Option one: Force the site with an environment variable
 This is the simpler method and recommended unless you need to be able to switch often between sites.
 
 Set a :ref:`local environment variable <local-environment-variables>`, ``SITE_ID``, to force
-Django to serve a particular site. The site ID you need can be found in the list of Sites in the
+serving of a particular site. The site ID you need can be found in the list of Sites in the
 admin.
 
-After changing the ``SITE_ID`` you will need to restart the runserver for the change to take
+After changing the ``SITE_ID`` you may need to restart the local server for the change to take
 effect.
 
 If you set explicitly set the ``SITE_ID`` this way, the next method will not work.
