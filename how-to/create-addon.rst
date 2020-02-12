@@ -213,9 +213,9 @@ You can test that the project now works as expected.
 Validate it
 ^^^^^^^^^^^
 
-You will need the python package "aldryn-client" installed to be able to validate your addon.
+You will need the python package ``aldryn-client`` installed to be able to validate your addon.
 
-Run::
+If you have not already installed it, run::
 
     pip install aldryn-client
 
