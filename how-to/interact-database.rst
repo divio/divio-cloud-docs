@@ -38,7 +38,7 @@ You can also make the connection manually from within the ``web`` container, for
 
     docker-compose run --rm web psql -h postgres -U postgres db
 
-The same as ``psql``, you can also run commands such as ``pg_dump`` and ``pg_restore``. This is useful
+As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
 for a number of :ref:`common operations <common-db-operations>`, below.
 
 
@@ -68,7 +68,7 @@ Expose the database's port
 In order to the connect to the database from a tool running directly on your
 own machine, you will need to expose its port (5432).
 
-Add a **ports** section to the ``db`` service in ``docker-compose.yml`` and map the
+Add a ports section to the ``db`` service in ``docker-compose.yml`` and map the
 port to your host:
 
 ..  code-block:: yaml

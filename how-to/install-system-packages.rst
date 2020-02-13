@@ -43,4 +43,4 @@ having to rebuild the entire project, jump into a new container running
 
      docker-compose run --rm web bash
 
-``--rm`` will make the container disappear when you exit.
+This container will disappear (``--rm``) when you exit.

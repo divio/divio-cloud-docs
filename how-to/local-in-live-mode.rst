@@ -24,7 +24,7 @@ Build the project in the normal way (``docker-compose build web``) if there have
 Disable the ``volumes`` behaviour in ``docker-compose.yml`` (optional)
 -----------------------------------------------------------------------
 
-If your ``Dockerfile`` includes commands it means that files in the project are processed at build time (say,
+If your ``Dockerfile`` includes commands that means that files in the project are processed at build time (say,
 processing of static files before collection), the :ref:`default volumes configuration in the docker-compose.yml file
 <docker-compose-volumes>` will cause this to be overwritten at run-time.
 
@@ -34,7 +34,7 @@ In such a case, comment out the line::
 
 in ``docker-compose.yml``. Note that this means that further
 changes you make to the project files on your host system will not be reflected inside the container until the
-line is restored and the project is restarted.
+line is restored and the project restarted.
 
 
 Turn off Django ``DEBUG`` mode
