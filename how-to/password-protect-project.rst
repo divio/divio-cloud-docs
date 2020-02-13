@@ -29,7 +29,7 @@ See :ref:`basic-auth` for more.
 How this works
 --------------
 
-These variables are handled in the :ref:`Divio Cloud single-sign-on <divio-cloud-sso>` module.
+These variables are handled in the :ref:`Divio single-sign-on <divio-cloud-sso>` module.
 
 You can see exactly what it does with them - and others - in
 https://github.com/aldryn/aldryn-sso/blob/master/aldryn_config.py

@@ -295,7 +295,7 @@ Check that no other files are in the branch.
 You have no webhook set up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Although the Control Panel has been able to connect to the repository and authenticates, a webhook has not yet been set
+Although the Control Panel has been able to connect to the repository and authenticate, a webhook has not yet been set
 up.
 
 This is not necessarily an error, but it does mean that your Divio Cloud project will not automatically receive signals

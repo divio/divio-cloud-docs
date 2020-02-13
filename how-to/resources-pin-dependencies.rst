@@ -5,7 +5,7 @@ How to pin all of your project's Python dependencies
 
 .. _pinning-dependencies-good-practice:
 
-Pinning dependencies is a good practice
+Pinning dependencies is good practice
 ---------------------------------------
 
 If a dependency is *unpinned* (that is, a particular version is not specified in the project's requirements), pip will
@@ -16,7 +16,7 @@ change anything in it yourself*.
 We strongly recommend that when you add a dependency to a project via its ``requirements.in`` that you pin it to a
 particular version, by specifying its version number.
 
-For example, if you use ``rsa`` and you know that version ``1.3.4`` works, specify it::
+For example, if you use ``rsa`` and know that version ``1.3.4`` works, specify it::
 
     rsa==1.3.4
 
@@ -27,7 +27,8 @@ version the next time you build or redeploy it.
 What about dependencies of dependencies?
 ------------------------------------------
 
-Even if you pin *your* requirements, their dependencies may be unpinned.
+However, dependencies can in turn themselves have dependencies. Even if you pin *your* requirements, their dependencies
+may be unpinned.
 
 For example, your project may specify ``some-package==1.2.3``, but if ``some-package`` lists ``rsa`` in its
 requirements, then the next time the project is built, it will attempt to do so using the latest version of ``rsa`` -

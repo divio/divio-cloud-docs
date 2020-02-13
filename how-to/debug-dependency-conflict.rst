@@ -47,7 +47,7 @@ same.
 
 ..  admonition:: But I didn't change anything in my project!
 
-    Because of the way pip works, even if you didn't change anything at all in your project, simply
+    Because of the way pip works, even if you don't change anything at all in your project, simply
     rebuilding it can pull in new packages, if they were unpinned. Whenever the project is built,
     it will select the latest versions of unpinned packages, and those versions may introduce new,
     incompatible, requirements of their own.

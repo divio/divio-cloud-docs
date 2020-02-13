@@ -74,7 +74,7 @@ In this case, you will need to add the package to be installed to the
 If your addon *contains* an application
 .......................................
 
-On the other hand, if for example, the application is not available on PyPI,
+If on the other hand the application is not available on PyPI,
 simply add it as the inner application directory.
 
 .. _addon_application_naming:
@@ -83,7 +83,7 @@ simply add it as the inner application directory.
 
     The *inner application directory*, in this case ``susan_example_application``, should have a
     name that matches the *package name* (``susan-example-application``), with underscores
-    substituting for the dashes.
+    substituted for the dashes.
 
     This will allow the Control Panel to copy the application's templates into the project's
     Git repository when the addon is first installed in a project. If the names don't match,
