@@ -60,6 +60,33 @@ If you have a preferred Postgres management tool that runs on your own computer,
 connect to the database from outside the application.
 
 
+.. _change-database-version:
+
+changing the local database version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the cloud database is updated and the local Postgres version does not match, the sequences fail to restore.
+In this case, you can simply upgrade your local Postgres instance to be the same as the one running in the cloud.
+To do so you can edit the docker-compose.yml file, change the database image version (image: postgres:9.4) 
+to that of the cloud, (say postgres:11-alpine) as in the example below. 
+
+change
+
+..  code-block:: yaml
+    :emphasize-lines: 2
+
+    db:
+        image: postgres:9.4
+
+to
+
+..  code-block:: yaml
+    :emphasize-lines: 2
+
+    db:
+        image: postgres:11-alpine
+
+
 .. _expose-database-ports:
 
 Expose the database's port
