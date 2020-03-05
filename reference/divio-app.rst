@@ -24,31 +24,29 @@ The Divio application opens with a list of the projects available to you.
    :width: 472
 
 Select from *All projects*, or the projects in your Personal/Organisation views. You can also
-filter projects by name using the search field.
+filter projects by name using the search field. The equivalent command is ``divio project list``.
 
-Equivalent command: ``divio project list``.
+Select a project to see its status in your local environment.
 
 
 Toolbar controls
 ^^^^^^^^^^^^^^^^
 
-The toolbar at the bottom of the application interface is always available and provides some useful controls:
+The toolbar at the bottom of the application interface is always available and provides some useful
+controls:
 
 .. image:: /images/divio-app-controls-toolbar.png
    :alt: 'Divio app Shell launcher Help and settings'
    :width: 360
 
-
-**Open shell** will open a shell environment, running in Docker itself, with your keys and access to projects set up automatically.
+**Open shell** will open a shell environment, running in Docker itself, with your keys and access
+to projects set up automatically.
 
 The other icons give you:
-
 
 * Docker status
 * help options
 * Divio application preferences
-
-Select a project to see its status in your local environment.
 
 
 Setting up a project
@@ -89,7 +87,7 @@ Project list/open Dashboard
    :alt: 'Divio app Dashboard launcher'
    :width: 472
 
-Return to list of projects; open the project Dashboard in the Control Panel (equivalent to: ``divio
+Return to list of projects; open the project Dashboard in the Control Panel (equivalent to ``divio
 project dashboard``).
 
 
@@ -139,15 +137,15 @@ The other options are only available when the project is running locally:
 Respectively, they will:
 
 * open the local site in your browser
-* open a console displaying the site runtime logs in a Divio shell. Equivalent command:
+* open a console displaying the site runtime logs in a Divio shell; equivalent to
   ``docker-compose logs -f --tail=100``
-* open a shell inside the local site's ``web`` container. Equivalent command: ``docker-compose exec
-  web /bin/bash``
+* open a shell inside the local site's ``web`` container; equivalent to ``docker-compose
+  exec web /bin/bash``
 * present additional options for managing the Docker build:
 
-  * **Update** - equivalent command: ``divio project update`` (pulls latest Git commits, rebuilds)
-  * **Rebuild** -  equivalent command: ``docker-compose build web``
-  * **Reset** - equivalent actions: ``docker-compose rm`` to tear down the project, followed by ``divio project setup`` to rebuild it.
+  * **Update** - equivalent to ``divio project update`` (pulls latest Git commits, rebuilds)
+  * **Rebuild** -  equivalent to ``docker-compose build web``
+  * **Reset** - equivalent to ``docker-compose rm`` to tear down the project, followed by ``divio project setup`` to rebuild it.
 
 
 First run
