@@ -13,32 +13,73 @@ Controls
 Most of the controls in the Divio app correspond to :ref:`divio-cli-ref` or
 :ref:`docker-compose <docker-compose-reference>` commands.
 
-.. image:: /images/divio-app.png
-   :alt: 'Divio app'
-   :width: 480
 
-
-1. ALL PROJECTS
+Project list
 ^^^^^^^^^^^^^^^^^^^
 
-ALL PROJECTS shows the main menu to toggle between Personal and Organisation list of projects.
+.. image:: /images/divio-app-project-list.png
+   :alt: 'Divio app'
+   :width: 357
+
+Select from *All projects*, or the projects in your Personal/Organisation views. You can also
+filter projects by name using the search field.
+
 Equivalent command: ``divio project list``
 
-.. image:: /images/divio-app-all-projects.png
-   :alt: 'Divio app'
-   :width: 200
 
-.. |divio-app-open-shell|  image:: /images/divio-app-openshell-help-settings.png
+.. |divio-app-toolbar-controls|  image:: /images/divio-app-toolbar-controls.png
    :alt: 'Divio app Shell launcher Help and settings'
-   :width: 400
+   :width: 360
 
-2.  Divio Shell launcher |divio-app-open-shell|
+Toolbar controls |divio-app-toolbar-controls|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-OPEN SHELL, Docker status, help, and settings
+The toolbar allows you to open a Divio shell - a shell environment, running in Docker itself, with your keys and access to projects set up automatocally.
 
-3. The local project pane
+The other icons give you: Docker status, help, and Divio application preferences.
+
+
+The local project view
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Setting up a project |divio-app-project-setup|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you select a project for the first time, you will be given the option to set it up.
+
+.. image:: /images/divio-app-project-setup.png
+   :alt: 'Project setup'
+   :width: 472
+
+When you select **Set up project**, the Divio application will clone the project's repository to the
+directory specified in the the application's preferences, build it, and finally pull down its
+media and database.
+
+The command-line equivalent is ``divio project setup <project slug>``; the process is decribed
+in more detail in :ref:`the project build process <build-process>`.
+
+
+Managing a project
+~~~~~~~~~~~~~~~~~~
+
+.. |divio-app-project-dashboard|  image:: /images/divio-app-project-dashboard.png
+   :alt: 'Divio app Dashboard launcher'
+   :width: 360
+
+.. |divio-app-project-media-db|  image:: /images/divio-app-project-media-db.png
+   :alt: 'Divio app database and media controls'
+   :width: 360
+
+
+
+Return to list of projects, open the project Dashboard in the Control Panel (equivalent to: )
+
+|divio-app-project-dashboard|
+
+Download and upload code, media and database
+
+|divio-app-project-media-db|
+
 
 Controls for managing the local server for your project - Controls and their
 command-line equivalents.
@@ -57,19 +98,9 @@ Opens local server logs in a shell. Equivalent command: ``docker-compose logs
 Open a bash in the local container - local-shell ``docker-compose exec web /bin/bash``
 
 
-4. Actions 
+4. Actions
 ^^^^^^^^^^^^
 
-.. |divio-app-project-setup| image:: /images/divio-app-project-setup.png
-   :alt: 'Project setup'
-   :width: 200
-
-Project Setup |divio-app-project-setup| 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When you select a project for the first time, you will be given the option to set it up. 
-
-Command-line equivalent   ``divio project setup <project slug>``
 
 .. |divio-app-project-update-rebuild-reset| image:: /images/divio-app-project-update-rebuild-reset.png
    :alt: 'Project Update, Rebuild and Reset controls'
@@ -88,7 +119,7 @@ Controls and their command-line equivalents:
 **Reset**   ``docker-compose rm`` to tear down the project, followed by ``divio project setup`` to rebuild it.
 
 
-5. Files 
+5. Files
 ^^^^^^^^^^
 
 Manage the synchronisation of code, database and media between your local site
@@ -131,7 +162,7 @@ equivalents:
    :alt: 'Open Dashboard'
    :width: 50
 
-7. Could Dashboard 
+7. Could Dashboard
 ^^^^^^^^^^^^^^^^^^^^^
 
 |divio-app-open-cloud-dashboard|
