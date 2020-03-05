@@ -10,6 +10,7 @@ Package installation and management
     :maxdepth: 1
 
     Install system packages <install-system-packages>
+    Select Python versions <manage-base-image>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>
 
