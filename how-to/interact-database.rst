@@ -8,8 +8,9 @@ The Postgres database for your Divio Cloud project runs:
 * in a Docker container for your **local** projects: :ref:`interact-local-db`
 * on a dedicated cluster for your **Cloud-deployed** sites: :ref:`interact-cloud-db`
 
-In either case, you will mostly only need to interact with the database via Django. However, if you
-need to interact with it directly, the option exists.
+In either case, you will mostly only need to interact with the database using the tools provided by
+your project's runtime stack (e.g. Django). However, if you need to interact with it directly, the
+option exists.
 
 
 .. _interact-local-db:
@@ -20,8 +21,8 @@ Interact with the local database
 This is the recommended and most useful way to interact with the project's database.
 
 
-From the project's local web container
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the project's local Django web container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using ``dbshell``
 ^^^^^^^^^^^^^^^^^
@@ -31,8 +32,8 @@ Run::
     docker-compose run --rm web python ./manage.py dbshell
 
 
-Connecting to the database manually
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Connecting to a Postgres database manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also make the connection manually from within the ``web`` container, for example::
 
@@ -66,7 +67,7 @@ Expose the database's port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to the connect to the database from a tool running directly on your
-own machine, you will need to expose its port (5432).
+own machine, you will need to expose its port (5432 by default for Postgres).
 
 Add a ports section to the ``db`` service in ``docker-compose.yml`` and map the
 port to your host:
@@ -88,8 +89,8 @@ port if you are already using 5432 on your host.
 Now restart the ``db`` container with: ``docker-compose up -d db``
 
 
-Connect to the database
-^^^^^^^^^^^^^^^^^^^^^^^
+Connect to a Postgres database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You will need to use the following details:
 
@@ -134,8 +135,8 @@ From the project's Cloud application container
 Log into your Cloud project's container (Test or Live) over SSH.
 
 
-Using ``dbshell``
-^^^^^^^^^^^^^^^^^
+Using ``dbshell`` in a Django project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run::
 
@@ -144,8 +145,8 @@ Run::
 This will drop you into the ``psql`` command-line client, connected to your database.
 
 
-Connecting to the database manually
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Connecting to a Postgres database manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also make the connection manually. Run ``env`` to list your environment variables. Amongst
 them you'll find ``DATABASE_URL``, which will be in the form::
@@ -160,6 +161,45 @@ From your own computer
 
 Access to Cloud databases other than from the associated application containers is not possible -
 it is restricted, for security reasons, to containers running on our own infrastructure.
+
+
+.. _change-database-version:
+
+Change the local database engine version
+----------------------------------------
+
+Sometimes, you will need to change the version of the database engine that your local project uses
+- for example if the cloud database is updated or changed. If the two database engines are not the
+same, you may run into problems.
+
+The local database engine is specified by the ``image`` option in the ``db`` service in your
+project's ``docker-compose.yml`` file, for example:
+
+..  code-block:: yaml
+    :emphasize-lines: 2
+
+    db:
+        image: postgres:9.6-alpine
+
+Should you need to change this, that line should be updated - for example if the Cloud database is
+now running Postgres 11:
+
+..  code-block:: yaml
+    :emphasize-lines: 2
+
+    db:
+        image: postgres:11-alpine
+
+Docker will use the new version the next time the local project is launched.
+
+If you are not sure what image to use for the local database, Divio support will be able to advise
+you.
+
+..  important::
+
+    In the Divio Cloud architecture, the ``docker-compose.yml`` file is **not**
+    used for Cloud deployments, but **only** for the local server. The changes you
+    make here will not affect the Cloud database.
 
 
 .. _common-db-operations:
