@@ -17,33 +17,42 @@ Most of the controls in the Divio app correspond to :ref:`divio-cli-ref` or
 Project list
 ^^^^^^^^^^^^^^^^^^^
 
+The Divio application opens with a list of the projects available to you.
+
 .. image:: /images/divio-app-project-list.png
    :alt: 'Divio app'
-   :width: 357
+   :width: 472
 
 Select from *All projects*, or the projects in your Personal/Organisation views. You can also
 filter projects by name using the search field.
 
-Equivalent command: ``divio project list``
+Equivalent command: ``divio project list``.
 
 
-.. |divio-app-toolbar-controls|  image:: /images/divio-app-toolbar-controls.png
+Toolbar controls
+^^^^^^^^^^^^^^^^
+
+The toolbar at the bottom of the application interface is always available and provides some useful controls:
+
+.. image:: /images/divio-app-controls-toolbar.png
    :alt: 'Divio app Shell launcher Help and settings'
    :width: 360
 
-Toolbar controls |divio-app-toolbar-controls|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The toolbar allows you to open a Divio shell - a shell environment, running in Docker itself, with your keys and access to projects set up automatocally.
+**Open shell** will open a shell environment, running in Docker itself, with your keys and access to projects set up automatically.
 
-The other icons give you: Docker status, help, and Divio application preferences.
+The other icons give you:
 
 
-The local project view
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Docker status
+* help options
+* Divio application preferences
 
-Setting up a project |divio-app-project-setup|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Select a project to see its status in your local environment.
+
+
+Setting up a project
+^^^^^^^^^^^^^^^^^^^^
 
 When you select a project for the first time, you will be given the option to set it up.
 
@@ -53,130 +62,92 @@ When you select a project for the first time, you will be given the option to se
 
 When you select **Set up project**, the Divio application will clone the project's repository to the
 directory specified in the the application's preferences, build it, and finally pull down its
-media and database.
+media and database. While it does this, it will also display the local build log.
 
-The command-line equivalent is ``divio project setup <project slug>``; the process is decribed
-in more detail in :ref:`the project build process <build-process>`.
+.. image:: /images/divio-app-project-setup-process.png
+   :alt: 'Project setup process'
+   :width: 472
+
+The command-line equivalent is ``divio project setup <project slug>``; the process is decribed in
+more detail in :ref:`the project build process <build-process>`. The process can take a few minutes.
+
+Once succesfully set up, the application will show more information and options for managing the
+project.
+
+.. image:: /images/divio-app-project-controls.png
+   :alt: 'Divio app Dashboard launcher'
+   :width: 472
 
 
 Managing a project
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
-.. |divio-app-project-dashboard|  image:: /images/divio-app-project-dashboard.png
+Project list/open Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /images/divio-app-project-controls-back-launch.png
    :alt: 'Divio app Dashboard launcher'
-   :width: 360
+   :width: 472
 
-.. |divio-app-project-media-db|  image:: /images/divio-app-project-media-db.png
+Return to list of projects; open the project Dashboard in the Control Panel (equivalent to: ``divio
+project dashboard``).
+
+
+Download/upload
+~~~~~~~~~~~~~~~
+
+.. image:: /images/divio-app-project-controls-download-upload.png
    :alt: 'Divio app database and media controls'
-   :width: 360
+   :width: 472
+
+**Download** and **Upload** controls for:
+
+* code (equivalent: using ``git`` commands to interact with the repository)
+* media (equivalent: using ``divio project push media`` and ``divio project push media`` commands)
+* database (equivalent: using ``divio project push db`` and ``divio project push db`` commands)
 
 
+Open local files
+~~~~~~~~~~~~~~~~
 
-Return to list of projects, open the project Dashboard in the Control Panel (equivalent to: )
+.. image:: /images/divio-app-project-controls-local-files.png
+   :alt: 'Divio app open project directory'
+   :width: 472
 
-|divio-app-project-dashboard|
-
-Download and upload code, media and database
-
-|divio-app-project-media-db|
-
-
-Controls for managing the local server for your project - Controls and their
-command-line equivalents.
-
-.. image:: /images/divio-app-open-local-logs-bash.png
-   :alt: 'Local site controls'
-   :width: 480
-
-`Open local site`,   `Open project logs`,   `Open bash in local container`
-
-Open the local site     ``divio project up``
-
-Opens local server logs in a shell. Equivalent command: ``docker-compose logs
--f --tail=100``
-
-Open a bash in the local container - local-shell ``docker-compose exec web /bin/bash``
+Open the local project directory for access to the files.
 
 
-4. Actions
-^^^^^^^^^^^^
+Start/stop
+~~~~~~~~~~
+
+.. image:: /images/divio-app-project-controls-start-stop.png
+   :alt: 'Divio app open project directory'
+   :width: 472
+
+**Start** to launch the local project (or **Stop** if it is already running).
 
 
-.. |divio-app-project-update-rebuild-reset| image:: /images/divio-app-project-update-rebuild-reset.png
-   :alt: 'Project Update, Rebuild and Reset controls'
-   :width: 180
+Options when running
+~~~~~~~~~~~~~~~~~~~~
 
-Update, Rebuild and Reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Controls and their command-line equivalents:
+The other options are only available when the project is running locally:
 
-|divio-app-project-update-rebuild-reset|
+.. image:: /images/divio-app-project-controls-running-options.png
+   :alt: 'Divio app options when running'
+   :width: 472
 
-**Update**   ``divio project update``
+Respectively, they will:
 
-**Rebuild** ``docker-compose build web``. Note that this only rebuilds the web container. To rebuild all the project's containers, you will need to run ``docker-compose build`` in a terminal.
+* open the local site in your browser
+* open a console displaying the site runtime logs in a Divio shell. Equivalent command:
+  ``docker-compose logs -f --tail=100``
+* open a shell inside the local site's ``web`` container. Equivalent command: ``docker-compose exec
+  web /bin/bash``
+* present additional options for managing the Docker build:
 
-**Reset**   ``docker-compose rm`` to tear down the project, followed by ``divio project setup`` to rebuild it.
-
-
-5. Files
-^^^^^^^^^^
-
-Manage the synchronisation of code, database and media between your local site
-and the cloud Test server. Each can be downloaded or uploaded. Controls and
-their command-line equivalents:
-
-.. image:: /images/divio-app-upload-download-code-media-database.png
-   :alt: 'Upload Download files'
-   :width: 320
-
-**DOWNLOAD/UPLOAD CODE** Uses ``git pull`` to update the local codebase / ``git push`` to update the Cloud project codebase.
-
-**DOWNLOAD MEDIA / DOWNLOAD DATABASE** ``divio project pull media`` / ``divio project pull db``
-
-**UPLOAD MEDIA / UPLOAD DATABASE** ``divio project push media`` / ``divio project push db``
-
-
-As soon as the databae or the media files are transferred in either direction, they are available - there's no need to redeploy the cloud server or relaunch the local server.
-
-
-.. |divio-app-project-start| image:: /images/divio-app-project-start.png
-   :alt: 'Local server run controls'
-   :width: 100
-
-.. |divio-app-project-stop| image:: /images/divio-app-project-stop.png
-   :alt: 'Local server run controls'
-   :width: 100
-
-6. Run controls |divio-app-project-start|  /  |divio-app-project-stop|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Manage the state of the local server. Controls and their command-line
-equivalents:
-
-**START**  ``docker-compose up``
-
-**STOP**  ``docker-compose stop``
-
-.. |divio-app-open-cloud-dashboard| image:: /images/divio-app-open-cloud-dashboard.png
-   :alt: 'Open Dashboard'
-   :width: 50
-
-7. Could Dashboard
-^^^^^^^^^^^^^^^^^^^^^
-
-|divio-app-open-cloud-dashboard|
-
-The Divio app communicates with the Control Panel to provide basic management
-of your Test and Live servers. Command-line equivalent is ``divio project dashboard``
-
-
-8. File synchronisation
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-(Must be enabled in the Divio app's settings). When active, synchronises
-frontend file (HTML templates, CSS and JavaScript) changes between the local
-and test servers. This may be useful to frontend developers, for quick changes.
+  * **Update** - equivalent command: ``divio project update`` (pulls latest Git commits, rebuilds)
+  * **Rebuild** -  equivalent command: ``docker-compose build web``
+  * **Reset** - equivalent actions: ``docker-compose rm`` to tear down the project, followed by ``divio project setup`` to rebuild it.
 
 
 First run
@@ -196,10 +167,9 @@ When first run, the Divio app will:
 The Divio Shell
 ---------------
 
-The Divio Shell is a pre-configured shell environment for interacting with
-local Divio projects. It's launched with the |divio-shell| button in the bottom
-left corner of the Divio app, and drops you in a bash prompt, in your Divio
-Cloud workspace directory.
+The Divio Shell is a pre-configured shell environment for interacting with local Divio projects.
+It's launched with the **open shell** button in the toolbar of the Divio app, and drops you in a
+bash prompt, in your Divio Cloud workspace directory.
 
 The Divio Shell is configured with the SSH keys required to give you access to
 our Cloud servers. You don't have to use the Divio Shell (you can use an
