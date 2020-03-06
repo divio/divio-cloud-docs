@@ -79,6 +79,7 @@ The ``<WARNING>`` is always populated.
     # this functionality by simply removing the wrapping tags.
     # </WARNING>
 
+.. _dockerfile-reference-DOCKER-FROM-section:
 
 The ``<DOCKER_FROM>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
