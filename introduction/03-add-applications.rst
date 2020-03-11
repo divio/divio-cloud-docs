@@ -8,7 +8,7 @@ Add new applications to the project
     At the time of writing, version 1.11 is `Django's Long-Term Support release
     <https://www.djangoproject.com/download/#supported-versions>`_, and is
     guaranteed support until at least April 2020.
-    
+
     If you use a different version, you will need to modify some of the code
     examples and version numbers of packages mentioned.
 
@@ -167,7 +167,7 @@ Add a package via pip
 ---------------------
 
 Often, you want to add a reusable, pip-installable application. For this
-example, we'll use `Django Axes <https://github.com/aldryn/aldryn-sso>`_,
+example, we'll use `Django Axes <https://github.com/jazzband/django-axes>`_,
 a simple package that keeps access logs (and failed login attempts) for a site.
 
 Add the package

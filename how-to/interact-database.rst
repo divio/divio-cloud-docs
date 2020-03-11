@@ -262,7 +262,7 @@ Create a database named ``db``:
 Apply the ``hstore`` extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Apply the ``hstore`` extension (required on a newly-created local database) to he database named
+Apply the ``hstore`` extension (required on a newly-created local database) to the database named
 ``db``:
 
 ..  code-block:: bash
