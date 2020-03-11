@@ -9,7 +9,7 @@ Building a Docker application
 .. toctree::
     :maxdepth: 1
 
-    Select a base image <manage-base-image>
+    Manage a project's base image <manage-base-image>
     Install system packages <install-system-packages>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>

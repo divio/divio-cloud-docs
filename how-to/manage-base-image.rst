@@ -17,24 +17,26 @@ in a particular *Release Channel*.
 
 A project's Release Channel is indicated in its Dashboard, in *Settings* > *Base Project*. Note
 however that because the base image can also be specified in the repository via the ``Dockerfile``,
-the manual setting will override what's indicated in the Dashboard. This document is concerned with
-using the ``Dockerfile`` to manage the base image.
+the manual setting will override what's indicated in the Dashboard.
+
+This document is concerned with using the ``Dockerfile`` to manage the base image.
 
 
+Choose a base image
+-------------------
 
-..  seealso::
+You don't need to use a Divio-provided base image. However, it's recommended.
 
-   Reference in :ref:`dockerfile-reference-DOCKER-FROM-section`
+Our base images are listed on `Docker Hub <https://hub.docker.com/r/divio/base/tags>`_.
+
+Your base image should include the runtime environment(s) you need for your application, such as
+an appropriate version of Python.
 
 
-All Divio Cloud projects are based on a customised Docker image, which uses a version of Ubuntu Linux.
+Specify the base image in the ``Dockerfile``
+--------------------------------------------
 
-If you wish to change the Python version of your project, you will need to select a different base image in the project's ``Dockerfile``.
-
-Our base images are published at `Divio base <https://hub.docker.com/r/divio/base/tags>`.
-
-For example, if you wish to change to Python 3.7, you could use our 0.4-py3.7-slim-stretch base image by specifying it in the ``Dockerfile``
-inside the ``<DOCKER_FROM>`` section as shown below:
+For example, to use our ``0.4-py3.7-slim-stretch`` base image:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 2
@@ -43,4 +45,26 @@ inside the ``<DOCKER_FROM>`` section as shown below:
     FROM divio/base:0.4-py3.7-slim-stretch
     # </DOCKER_FROM>
 
-Note that this should be tested locally with ``docker-compose build`` before being pushed to the cloud.
+
+See our :ref:`Dockerfile reference guide <dockerfile-reference-DOCKER-FROM-section>` for more
+information on the ``# <DOCKER_FROM>`` section.
+
+Test the build locally with ``docker-compose build`` before pushing the change to the cloud.
+
+
+Caveats
+-------
+
+Different base images may provide different packages and libraries. Our newer images tend to be
+slimmer, in order to make builds faster and to use fewer resources, but may lack some software
+that your application previously relied on.
+
+For example, you may encounter a build error after adopting one of these images, such as:
+
+..  code-block:: text
+
+    ENOGIT git is not installed or not in the PATH
+
+In other words, Git was available in the old image but not the new one, and is required to build
+the project. In such a case, the missing libraries should be :ref:`installed into the image
+manually <install-system-packages>`.
