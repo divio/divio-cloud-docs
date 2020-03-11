@@ -73,11 +73,11 @@ The local shell
 Open the shell
 ~~~~~~~~~~~~~~~~~~~
 
-The Divio app provides a convenient short-cut:
+The Divio app provides a convenient short-cut in its toolbar:
 
-.. image:: /images/divio-app-open-shell.png
-   :alt: 'Divio app SSH icon'
-   :width: 368
+.. image:: /images/divio-app-controls-toolbar.png
+   :alt: 'Divio app Shell launcher Help and settings'
+   :width: 360
 
 Alternatively, you can use the command-line. In the project directory, run::
 

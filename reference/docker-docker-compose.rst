@@ -9,20 +9,28 @@ part of a project, usually referred to as an 'application'. This is what a
 ports they need to expose, whether the have access to the host filesystem, what
 commands should be run, and so on.
 
+
 .. _docker-compose-local:
 
-..  important::
+Function of ``docker-compose.yml``
+------------------------------------------------------------
 
-    In the Divio Cloud architecture, the ``docker-compose.yml`` file is **not**
-    used for Cloud deployments, but **only** for the local server. On the Cloud,
-    the deployment is taken care of by dedicated systems on our servers.
+In the our project architecture, the ``docker-compose.yml`` file is **not** used for cloud
+deployments, but **only** for configuration of the local server. On the cloud, the deployment is
+taken care of by dedicated systems on our servers.
 
-The ``docker-compose.yml`` in Divio Cloud projects builds a ``web`` service in
+This means that entries in or changesto ``docker-compose.yml`` will not affect cloud deployments in
+any way.
+
+
+Services defined in ``docker-compose.yml``
+------------------------------------------------
+
+By default, the ``docker-compose.yml`` in Divio projects builds a ``web`` service in
 a container using its ``Dockerfile``. It also builds a ``db`` service, from a
-standard ``postgres:9.4`` image.
+standard ``postgres`` image.
 
-Most Divio Cloud projects will use this ``docker-compose.yml``, or something
-very similar to it.
+Most Divio projects will use a ``docker-compose.yml`` along these lines.
 
 ..  code-block:: yaml
 
@@ -42,8 +50,11 @@ very similar to it.
      volumes:
       - ".:/app:rw"
 
+Some projects will have additional services (such as Celery for example) defined.
+
+
 The ``web`` service
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 
 The first definition in the file is for the ``web`` service. In order, the
@@ -65,7 +76,7 @@ directives mean:
 .. _docker-compose-volumes:
 
 The ``volumes`` directive
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you execute a ``docker-compose`` command, the ``volumes`` directive in ``docker-compose.yml`` file mounts *source*
 directories or volumes from your computer at *target* paths inside the container. If a matching target path exists
@@ -109,10 +120,10 @@ they will be picked up when the image and container are rebuilt.
 
 
 The ``db`` service
-------------------
+~~~~~~~~~~~~~~~~~~
 
 
-The second definition is for the ``db`` service. On the Cloud, the project's
+The second definition is for the ``db`` service. On the cloud, the project's
 database runs on an AWS server; locally, it runs on a Postgres instance in
 ``db``.
 
