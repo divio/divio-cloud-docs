@@ -3,14 +3,14 @@
 How-to guides
 =============
 
-Package installation and management
+Building a Docker application
 ----------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
+    Select a base image <manage-base-image>
     Install system packages <install-system-packages>
-    Select Python versions <manage-base-image>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>
 
