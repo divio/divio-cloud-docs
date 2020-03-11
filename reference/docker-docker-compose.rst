@@ -19,7 +19,7 @@ In the our project architecture, the ``docker-compose.yml`` file is **not** used
 deployments, but **only** for configuration of the local server. On the cloud, the deployment is
 taken care of by dedicated systems on our servers.
 
-This means that entries in or changesto ``docker-compose.yml`` will not affect cloud deployments in
+This means that entries in or changes to ``docker-compose.yml`` will not affect cloud deployments in
 any way.
 
 
