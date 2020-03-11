@@ -58,7 +58,7 @@ with the ``divio project setup`` command, for example::
 ..  note::
 
     You can find the exact command, and other useful commands, in
-    `this cheat sheet
+    `our local commands cheat sheet
     <https://docs.divio.com/en/latest/reference/local-commands-cheatsheet.html>`_.
 
 Various processes will unfold, taking a few minutes (see :ref:`build-process`
