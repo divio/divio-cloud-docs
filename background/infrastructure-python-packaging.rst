@@ -1,6 +1,6 @@
 .. _infrastructure-python-packaging:
 
-Python packaging on Divio
+Python packaging
 ===============================
 
 Python packages in Divio projects are installed using pip.

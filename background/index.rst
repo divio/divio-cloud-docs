@@ -13,6 +13,18 @@ Our infrastructure
     Docker basics <docker-basics>
 
 
+How it works on Divio
+---------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    backend-services
+    redirects
+    Caching <caching>
+    infrastructure-python-packaging
+
+
 Projects
 ------------------
 
@@ -37,14 +49,3 @@ Django addons
     addons-anatomy
     addons-configuration-overview
     addons-templates
-
-
-Miscellaneous
--------------
-
-.. toctree::
-    :maxdepth: 1
-
-    backend-services
-    redirects
-    infrastructure-python-packaging

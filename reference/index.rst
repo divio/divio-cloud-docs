@@ -44,7 +44,6 @@ Coding in Divio Cloud applications
     :maxdepth: 1
 
     Working with your project’s media storage <work-media-storage>
-    Caching <caching>
     File compression <compression>
     Sending email <coding-sending-email>
 
