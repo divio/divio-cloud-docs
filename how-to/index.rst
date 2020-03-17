@@ -36,6 +36,7 @@ Working with Django projects
     Add a Django application <add-application>
     Configure Django settings <configure-settings>
     Migrate an existing Django project to Divio Cloud <migrate-existing-project>
+    Create a multi-site Django project using Mirrors <multisite-mirrors>
 
 
 The development pipeline
