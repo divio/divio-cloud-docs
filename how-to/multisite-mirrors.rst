@@ -21,8 +21,8 @@ Apply environment variables to each mirror
 Database and media storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following environment variables from the Test and Live environments of the original will need applied to the
-corresponding environments on each of the mirrors:
+The following environment variables from the Test and Live environments of the original will need to be applied to
+the corresponding environments on each of the mirrors:
 
 * ``DATABASE_URL``
 * ``DEFAULT_STORAGE_DSN``
