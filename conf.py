@@ -183,11 +183,15 @@ intersphinx_mapping = {
         None
         ),
     'django': (
-        'https://docs.djangoproject.com/en/1.11/',
-        'https://docs.djangoproject.com/en/1.11/_objects/'
+        'https://docs.djangoproject.com/en/2.2/',
+        'https://docs.djangoproject.com/en/2.2/_objects/'
         ),
     'django-cms': (
         'http://docs.django-cms.org/en/latest/',
+        None,
+        ),
+    'celery': (
+        'https://docs.celeryproject.org/en/stable',
         None,
         )
 }

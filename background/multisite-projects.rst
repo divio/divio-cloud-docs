@@ -30,7 +30,7 @@ Commits to the base project codebase can be rolled out automatically or manually
 Advantages
 ~~~~~~~~~~
 
-This arrangement has numerous benefits. It brings better subsite isolation; a problem with one site's performance will not affect other
+This arrangement has numerous benefits. It brings better sub-site isolation; a problem with one site's performance will not affect other
 sites. It also offers better permission management, and better scalability of many small applications across multiple hosts.
 
 Per-site resources can be fine-tuned more effectively (though overall resource usage may be slightly higher).

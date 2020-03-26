@@ -1,3 +1,11 @@
+.. raw:: html
+
+    <style>
+        table.docutils { width: 100%; table-layout: fixed;}
+        table.docutils th, table.docutils td { white-space: normal }
+    </style>
+
+
 .. _configure-celery:
 
 How to configure Celery
@@ -44,22 +52,43 @@ support for in Aldryn Celery. You will in that case need to:
 
 Configure Celery for the local server
 -------------------------------------
-
 For development purposes you will need to set up Celery in the local environment too, in such a way that it reflects
 the provision made on our Cloud.
 
-In the following steps you will set up a number of local services using the :ref:`docker-compose.yml
-<docker-compose-yml-reference>` file:
+.. list-table::
+   :widths: 40 20 20 20
+   :header-rows: 1
 
-* ``rabbitmq`` - `RabbitMQ <http://www.rabbitmq.com>`_, a *broker service* responsible for the creation of task queues,
-  assignment of tasks to queues and delivering tasks to workers
-* ``celeryworker``; the worker(s) will execute the assigned tasks
-* ``celerybeat``, a scheduling service for periodic tasks
-* ``celerycam``, a monitoring service
+   * - function
+     - handled by
+     - on the cloud
+     - local container
+   * - `AMPQ <http://www.amqp.org>`_ message broker service responsible for the creation of task queues
+     - `RabbitMQ <http://www.rabbitmq.com>`_
+     - `CloudAMPQ <https://www.cloudamqp.com>`_
+     - ``rabbitmq``
+   * - task execution
+     - Celery workers
+     - Celery containers
+     - ``celeryworker``
+   * - scheduling
+     - :ref:`Celery beat <celery:guide-beat>`
+     - Celery beat container
+     - ``celerybeat``
+   * - monitoring
+     - :ref:`Celery snapshots <monitoring-snapshots>`
+     - Celery camera container
+     - ``celerycam``
+
+Locally, the four new containers will be set up as new local services using the :ref:`docker-compose.yml
+<docker-compose-yml-reference>` file.
+
+Note that in the cloud environment, the Celery-related containers are launched automatically. They, and the AMPQ message
+queue, are not accessible. All monitoring and interaction must be handled via the main application running in the ``web``
+containers. The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
 
 Your project will already have at least two services, ``web`` and ``db``, listed in ``docker-compose.yml``. Each of the
-new services will be need to be added in a similar way, so that each runs in its own Docker container locally. (On our
-Cloud, they will run on our dedicated clusters, and the :ref:`docker-compose file is not used <docker-compose-local>`.)
+new services will be need to be added in a similar way.
 
 
 RabbitMQ

@@ -66,10 +66,10 @@ media and database. While it does this, it will also display the local build log
    :alt: 'Project setup process'
    :width: 472
 
-The command-line equivalent is ``divio project setup <project slug>``; the process is decribed in
+The command-line equivalent is ``divio project setup <project slug>``; the process is described in
 more detail in :ref:`the project build process <build-process>`. The process can take a few minutes.
 
-Once succesfully set up, the application will show more information and options for managing the
+Once successfully set up, the application will show more information and options for managing the
 project.
 
 .. image:: /images/divio-app-project-controls.png
