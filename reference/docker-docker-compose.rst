@@ -28,7 +28,7 @@ Services defined in ``docker-compose.yml``
 
 By default, the ``docker-compose.yml`` in Divio projects builds a ``web`` service in
 a container using its ``Dockerfile``. It also builds a ``db`` service, from a
-standard ``postgres`` image.
+standard ``postgres`` or other database image.
 
 Most Divio projects will use a ``docker-compose.yml`` along these lines.
 

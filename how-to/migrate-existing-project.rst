@@ -161,8 +161,8 @@ Importing content
 Database
 ^^^^^^^^
 
-Divio Cloud projects use Postgres databases. It's beyond the scope of this document to cover
-all possible eventualities of database importing.
+Divio projects use Postgres databases by default, with other options available. It's beyond the scope of this document to
+cover all possible eventualities of database importing.
 
 
 ..  note::
@@ -177,8 +177,9 @@ all possible eventualities of database importing.
 
     The *NAMES* column will list the container name.
 
-Postgres
-~~~~~~~~
+
+Example of Postgres-to-Postgres migration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're already using Postgres, you're likely to find that steps along these lines will work:
 
@@ -200,13 +201,10 @@ Finally, assuming that you have already dumped your existing database to a local
     docker exec -i <container_name> psql -U postgres --dbname db < /path/to/dump
 
 
-Other database types
-~~~~~~~~~~~~~~~~~~~~
+Migrating from one database to another
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you previously using a different database (most likely MySQL) there are various options
-available.
-
-We recommend using a conversion script such as https://github.com/lanyrd/mysql-postgresql-converter.
+If you need to convert your existing database, you can use a conversion script such as https://github.com/lanyrd/mysql-postgresql-converter.
 
 Alternatively, you can export the data to a JSON file (via Django's ``manage.py dumpdata`` command)
 and then load it back into the new database with ``manage.py loaddata``.

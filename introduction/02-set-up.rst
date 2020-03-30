@@ -3,11 +3,11 @@
 Set up a new project
 ====================
 
-..  admonition:: This tutorial assumes your project uses Django 1.11
+..  admonition:: This tutorial assumes your project uses Django 2.2
 
-    At the time of writing, version 1.11 is `Django's Long-Term Support release
+    At the time of writing, version 2.2 is `Django's Long-Term Support release
     <https://www.djangoproject.com/download/#supported-versions>`_, and is
-    guaranteed support until at least April 2020.
+    guaranteed support until at least April 2022.
 
     If you use a different version, you will need to modify some of the code
     examples and version numbers of packages mentioned.

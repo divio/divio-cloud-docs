@@ -136,7 +136,7 @@ definition will therefore be very similar, with key changes noted here:
     celeryworker:
       build: "."
       links:
-        - "db:postgres"
+        - "db:postgres"  # the actual value will depend on your project's database
         - "rabbitmq:rabbitmq"
       volumes:
         - ".:/app:rw"
@@ -161,7 +161,7 @@ Celery beat needs to be set up in much the same way:
     celerybeat:
       build: "."
       links:
-        - "db:postgres"
+        - "db:postgres"  # the actual value will depend on your project's database
         - "rabbitmq:rabbitmq"
       volumes:
         - ".:/app:rw"
@@ -181,7 +181,7 @@ And Celery cam:
     celerycam:
       build: "."
       links:
-        - "db:postgres"
+        - "db:postgres"  # the actual value will depend on your project's database
         - "rabbitmq:rabbitmq"
       volumes:
         - ".:/app:rw"
