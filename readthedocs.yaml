@@ -1,5 +1,7 @@
-version:
-  2
+version: 2
 
 sphinx:
   builder: dirhtml
+
+python:
+  install: requirements.txt
