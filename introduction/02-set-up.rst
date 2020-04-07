@@ -68,10 +68,17 @@ for a description of them).
 
 Start the project::
 
-    divio project up
+    ➜  docker-compose up
+    Starting demoproject_db_1
+    Performing system checks...
 
-``divio project up`` will also open the project in a web browser once it's up
-and running.
+    System check identified 1 issue (0 silenced).
+    June 21, 2017 - 05:48:10
+    Django version 1.8.18, using settings 'settings'
+    Starting development server at http://0.0.0.0:80/
+    Quit the server with CONTROL-C.
+
+By default, your project can be reached at http://0.0.0.0:8000.
 
 ..  note::
 
@@ -79,6 +86,12 @@ and running.
     project locally, you'll need to add a user to the database before you can
     log in. The :ref:`Divio Cloud SSO system <divio-cloud-sso>` allows you to
     do this from the Django login page.
+
+Once you have successfully logged into the local site, try stopping the project with ``CONTROL-C``.
+
+(Another option: you can use ``divio project up`` to launch the project. This will also open the project in a web browser once
+it's up and running. If the project uses a non-default port in the :ref:`docker-compose.yml <docker-compose-yml-reference>`
+file, it will recognise that. Unlike ``docker-compose up`` however it runs in the background and does not display a console.)
 
 
 .. _tutorial-control:
@@ -89,11 +102,8 @@ Control your project and see its console
 As you proceed through this tutorial, you will inevitably encounter the
 occasional issue. There are some commands that will help you when this happens.
 
-You already know how to start your project with the ``divio`` command (``divio
-project up``, above). We'll be introducing two new tools in this section:
-
-* ``docker``
-* ``docker-compose``
+You already know how to start your project with ``docker-compose`` and the ``divio`` command (``divio
+project up``, above). Another useful command is ``docker``.
 
 This may seem a complex combination of commands, but through practice you will
 start to understand when and how to use each one. **Try them now to become
@@ -125,43 +135,15 @@ more information using the Docker tool).
 Using ``docker-compose``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can also start the project with the :ref:`Docker Compose command
-<docker-compose-reference>`, a command for working with projects (we will
-specify that we want to bring up the ``web`` service described in the project's
-:ref:`docker-compose-yml-reference`, which also launches the ``db``
-service)::
+See the :ref:`Docker Compose command reference <docker-compose-reference>`.
 
-    ➜  docker-compose up web
-    Starting demoproject_db_1
-    Performing system checks...
-
-    System check identified 1 issue (0 silenced).
-    June 21, 2017 - 05:48:10
-    Django version 1.8.18, using settings 'settings'
-    Starting development server at http://0.0.0.0:80/
-    Quit the server with CONTROL-C.
-
-This is a good thing to do while developing, because it gives you the console
-output in your terminal, so you can see what's going on.
-
-When you stop it with ``CONTROL-C``, the ``web`` service will stop, but the
-``db`` service will remain running. On the other hand, if you start the
-project with ``docker-compose up``, then when you stop it with ``CONTROL-C``,
-*both* containers will stop.
-
-..  note::
-
-    To make matters more complicated, under certain circumstances, the ``web``
-    container may continue running after exiting from the ``docker-compose up
-    web`` command. Invoking and exiting it again will usually stop it.
-
-Now you can also run a command in a specific container, such as::
+Try::
 
     docker-compose run --rm --service-ports web bash
 
 which will open ``bash`` right in the ``web`` container. (``--rm`` means remove
 the container when exiting; ``--service-ports`` tells it to expose the ports
-listed in the ``docker-compose.yml``.) And you can run::
+listed in the ``docker-compose.yml``.) And then run::
 
     python manage.py runserver 0.0.0.0:80
 

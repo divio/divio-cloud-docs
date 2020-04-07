@@ -6,15 +6,15 @@ Get started
 Create your account
 -------------------
 
-A Divio Cloud account is free to set up and use indefinitely. Create your
-account on the Divio Cloud `Control Panel <https://control.divio.com/>`_, or
+A Divio account is free to set up and use indefinitely. Create your
+account on the Divio  `Control Panel <https://control.divio.com/>`_, or
 log in if you already have one.
 
-Our Divio GUI application can set up all you need to get started. In this tutorial however we will
-install and configure the components - Docker, the Divio CLI, and so on - manually. This will give
-more experienced developers a better insight into the system and how it all works together.
+Our Divio GUI application can set up all you need to get started. In this tutorial however we will install and configure the
+components - Docker, the Divio CLI, and so on - manually. This will give a better insight into the system and how it all works
+together.
 
-We expect you to have pip and Git installed and to have at least a basic understanding of their
+We expect you to have Pip and Git installed and to have at least a basic understanding of their
 usage.
 
 ..  admonition:: Older versions of Macintosh OS X and Windows
@@ -39,7 +39,7 @@ usage.
 Install the Divio CLI package
 ---------------------------------
 
-The :ref:`Divio CLI application <divio-cli-ref>` is installable using pip (along with the
+The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip (along with the
 aldryn-client package that is required for some local operations)::
 
     pip install divio-cli aldryn-client
@@ -54,7 +54,7 @@ You can install this in a virtualenv if you prefer not to install them globally.
 Log in
 ------
 
-*divio-cli* needs to be authenticated with the Control Panel in order to
+The Divio CLI needs to be authenticated with the Control Panel in order to
 interact with it::
 
     divio login
@@ -63,7 +63,7 @@ This will open your browser at
 https://control.divio.com/account/desktop-app/access-token/, where you can copy
 an access token to paste into the prompt::
 
-    ➜  ~ divio login
+    ➜  divio login
     Your browser has been opened to visit: https://control.divio.com/account/desktop-app/access-token/
     Please copy the access token and paste it here: rsYa1d0qDyF6TbI4wzfrdfSKinqSWAoxU7NgN7Cssgg5ndFfk3naghagh7
     Welcome to Divio Cloud. You are now logged in.
