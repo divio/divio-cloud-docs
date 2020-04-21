@@ -31,7 +31,7 @@ clean:
 	-rm -rf _build/*
 
 run:
-	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -a _build/html --host 0.0.0.0 --port $(PORT)
+	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port $(PORT)
 
 
 test:
