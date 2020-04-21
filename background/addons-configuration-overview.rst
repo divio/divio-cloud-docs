@@ -1,7 +1,7 @@
 .. _application-configuration:
 
-Addon configuration overview
-==================================
+Django addon configuration overview
+===================================
 
 Django applications may require or offer configuration options. Typically this
 will be achieved via the ``settings.py`` file, or through environment variables
@@ -10,8 +10,7 @@ that Django picks up.
 This is largely handled by the :ref:`aldryn_config.py
 <configure-with-aldryn-config>` in each application.
 
-
-Divio Cloud projects offers both these methods, as well as configuration via
+Divio project offers both these methods, as well as configuration via
 the Control Panel:
 
 * Django settings
