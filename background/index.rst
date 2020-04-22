@@ -13,13 +13,22 @@ Our infrastructure
     Docker basics <docker-basics>
 
 
+Services
+---------
+
+.. toctree::
+    :maxdepth: 1
+
+    services
+    services-available
+
+
 How it works on Divio
 ---------------------
 
 .. toctree::
     :maxdepth: 1
 
-    backend-services
     redirects
     Caching <caching>
     infrastructure-python-packaging
@@ -37,6 +46,7 @@ Projects
     project-version-control
     project-about-boilerplates
     multisite-projects
+
 
 
 Django addons

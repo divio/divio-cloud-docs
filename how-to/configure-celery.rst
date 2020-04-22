@@ -5,7 +5,7 @@
         table.docutils th, table.docutils td { white-space: normal }
     </style>
 
-
+.. _celery:
 .. _configure-celery:
 
 How to configure Celery
@@ -32,6 +32,12 @@ later if required.
 Celery will then be provisioned on your project's Test and Live servers by our infrastructure team. This includes the
 installation of our `Aldryn Celery <https://github.com/aldryn/aldryn-celery>`_ addon, and configuration of new
 :ref:`environment variables <celery-environment-variables>` your project will need.
+
+Once provisioned and deployed, your cloud project will run with new Docker instances for the Celery workers. The containers
+running the Celery workers are built using the same image as the web container.
+
+Note that a project's Test server, or projects on the free Developer plan, will pause after 15 minutes' inactivity in order to
+save resources. This will also pause the Celery workers.
 
 
 About Aldryn Celery
@@ -232,6 +238,9 @@ These will need to be restarted manually, for example by stopping and restarting
 ``docker-compose restart``. (Usually, only the ``celeryworker`` container needs to be restarted, so you can do
 ``docker-compose restart celeryworker``.)
 
+If you make any local changes to a project's configuration that need to be accessible to the Celery workers, run
+``docker-compose build`` to rebuild them.
+
 
 Testing
 -------
@@ -301,3 +310,8 @@ Other environment variables used by Aldryn Celery can be found in its `aldryn_co
 
 If you change environment variables locally, the containers will need to be stopped and restarted in order to pick up
 the changes.
+
+The number of Celery workers per Docker instance can be configured with the
+``CELERYD_CONCURRENCY`` environment variable. The default is 2. This can be
+increased, but in that case, you will need to monitor your own RAM consumption
+via the Control Panel.
