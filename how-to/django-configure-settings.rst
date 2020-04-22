@@ -3,6 +3,11 @@
 How to configure Django settings
 ================================
 
+In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the ``settings.py`` file).
+
+Settings can be added to this file in the usual way, but some key points should be noted.
+
+
 It is important to understand that in Divio Cloud projects, some settings need to be inspected and
 manipulate programatically, to allow the addons system to handle configuration automatically. See
 the :ref:`addon-configured` section for more on this.
