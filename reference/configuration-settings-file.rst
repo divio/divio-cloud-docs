@@ -1,14 +1,16 @@
-..  If this file moves, ensure that the redirect at divio.com/docs/settings is amended appropriately.
+..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html) from
+    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
 
 ..  _settings.py:
 
 The ``settings.py`` file
 ========================
 
-Divio Cloud Django projects that use our addons framework are shipped with a ``settings.py`` file that hooks into the
+Divio Django projects that use our addons framework are shipped with a ``settings.py`` file that hooks into the
 framework. The framework allows addon applications to configure their own settings programmatically.
 
 At first sight, this ``settings.py`` file may seem unusual, but in fact it behaves as a standard Django settings module.
+
 
 ``INSTALLED_ADDONS``
 ----------------------
@@ -30,43 +32,35 @@ develop`` is run.
         # </INSTALLED_ADDONS>
     ]
 
-Settings in Divio Cloud projects can either be configured automatically via the addons framework, or set
-manually.
+Settings in Divio Cloud projects can either be :ref:`configured automatically via the addons framework
+<application-configuration>`, or set manually.
 
 
-.. _addon-configured:
+Automatic settings loading
+--------------------------
 
-Settings that are configured by addons
---------------------------------------
+Using this list of ``INSTALLED_ADDONS``, the::
 
-Some settings, for example ``INSTALLED_APPS`` or ``MIDDLEWARE`` (``MIDDLEWARE_CLASSES`` in older
-versions of Django) are *addon-configured* settings in Divio Cloud projects, managed by the `Aldryn
-Addons framework <https://github.com/aldryn/aldryn-addons>`_.
+  import aldryn_addons.settings
+  aldryn_addons.settings.load(locals())
 
-This allows applications to configure themselves when they are installed; for example, if an addon
-requires certain applications to be listed in ``INSTALLED_APPS``, it will add them (this is taken
-care of in the addon's :ref:`configure-with-aldryn-config` file). All these are then loaded into the
-``settings.py`` by the line::
+section that follows checks each one for any settings that it has to apply. These settings will be loaded into the
+settings module at this point. For example, ``INSTALLED_APPS`` will be populated appropriately.
 
-    aldryn_addons.settings.load(locals())
+Any settings that have been loaded can be manipulated. For example, to add new applications to ``INSTALLED_APPS``,
+you can add them in::
 
-..  important::
+  INSTALLED_APPS.extend([
+      # Extend the INSTALLED_APPS setting by listing additional applications here
+  ])
 
-    If you declare a setting such as ``INSTALLED_APPS`` **before**
-    ``aldryn_addons.settings.load(locals())``, it may be overwritten by the addon system.
+It's important to understand which settings are applied automatically.
 
-    If you declare it **after** ``aldryn_addons.settings.load(locals())``, it will overwrite any
-    configuration performed by the addon system. In this case, your setting *will* apply, but be
-    aware that logic in the addon's ``aldryn_config.py`` might operate based on a different value,
-    with unpredictable results.
+If you declare a setting such as ``INSTALLED_APPS`` **before** ``aldryn_addons.settings.load(locals())``, it may be
+overwritten by the addon system.
 
+If you declare it **after** ``aldryn_addons.settings.load(locals())``, it will overwrite any configuration performed by
+the addon system, with possibly unpredictable results.
 
-See :ref:`how-to-settings` for examples of how to handle these settings correctly.
-
-
-.. _manually-configured:
-
-Settings that are configured manually
------------------------------------------
-
-*Manually-configured* settings, that are not required or handled by any other component, can simply be dropped directly into your ``settings.py``.
+See :ref:`application-configuration` for an overview of how settings are handled in general, and :ref:`how-to-settings`
+for advice on how to manipulate them.

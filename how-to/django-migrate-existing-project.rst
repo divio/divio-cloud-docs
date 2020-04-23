@@ -109,8 +109,7 @@ The settings for your project and its applications need to be added to ``setting
 
     Do **not** simply copy all your settings into the file. This will not work as expected.
 
-Add them in the appropriate way, which will depend on whether they are :ref:`addon-configured` or
-:ref:`manually-configured`.
+Add them in the appropriate way, which will depend on :ref:`how they are configured <application-configuration>`.
 
 
 .. _diff_installed_apps:

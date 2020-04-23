@@ -1,3 +1,6 @@
+..  This section is referred to (as http://docs.divio.com/en/latest/reference/configuration-aldryn-config.html) from
+    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+
 .. _configure-with-aldryn-config:
 
 Addon configuration with ``aldryn_config.py``
@@ -8,9 +11,9 @@ project. Typically this will include settings in :ref:`settings.py
 <settings.py>`, but it can also include things like URL patterns that need to
 be set up.
 
-Divio Cloud provides for such configuration through an addon's
+For Aldryn addons, Divio provides for such configuration through an addon's
 ``aldryn_config.py`` file. This file needs to be in the root directory of the
-Addon.
+addon.
 
 Through this mechanism you can also allow the user to provide configuration in
 a simple web form that will be available in the Control Panel.
@@ -33,8 +36,6 @@ An example from a django CMS addon instance::
 
 The ``aldryn_config.py`` file
 -----------------------------
-
-See the :ref:`configure-with-aldryn-config` reference for more detail.
 
 This file contain a class named ``Form`` that sub-classes
 ``aldryn_client.forms.BaseForm``::
@@ -156,4 +157,28 @@ Example::
             else:
                 return colour
 
+
+.. _envar_setting_field:
+
+What configuration method to provide?
+-------------------------------------
+
+There are multiple ways of providing configuration in the addons you create - see :ref:`application-configuration` for
+an overview. You can choose to provide configuration via any method you like, but some rules of thumb for the
+appropriate method:
+
+* For highly-sensitive configuration, such as passwords, use an environment
+  variable - it's safer, because it's not stored in the codebase.
+* For configuration that is specific to each instance of the codebase, or that
+  needs to be different across *Local*, *Test* and *Live* environments,
+  environment variables are recommended.
+* For required configuration, it is a good idea to make it visible as a field,
+  so it's obvious to the user that it needs to be set; similarly if it's
+  something that a non-technical user might be expected to set.
+* If you provide an addon configuration field, make sure it isn't overridden by
+  other configuration, as that could be confusing to the user.
+* The ``settings.py`` file makes sense for configuration that isn't sensitive,
+  and will be the same in different instances of the codebase and can be the
+  same across the different environments.
+* The cleaner you keep your ``settings.py``, the better.
 

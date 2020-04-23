@@ -1,44 +1,108 @@
 .. _application-configuration:
 
-Addon configuration overview
-==================================
+How settings are handled in Django addons
+=========================================
 
-Django applications may require or offer configuration options. Typically this
-will be achieved via the ``settings.py`` file, or through environment variables
-that Django picks up.
+In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the
+``settings.py`` file).
 
-This is largely handled by the :ref:`aldryn_config.py
-<configure-with-aldryn-config>` in each application.
+In Aldryn addons - those that include an ``aldryn_config.py`` file - many of these settings will be automatically
+managed by the addon itself. This takes place in ``aldryn_config.py``.
+
+All key settings (i.e. settings required for the package to function correctly) as well as many optional settings will
+be configured. They are then applied to the settings module via the lines::
+
+ import aldryn_addons.settings
+ aldryn_addons.settings.load(locals())
+
+From this point in the settings module, those settings that were automatically configured by the addon will be available
+in the ``settings.py`` file.
+
+For example, in a Django project, you will find a file::
+
+  addons/aldryn-django/aldryn_config.py
+
+This files adds items to the ``INSTALLED_APPS``, ``MIDDLEWARE``, and applies other settings.
+
+These settings can be controlled and determined in a number of different ways.
 
 
-Divio Cloud projects offers both these methods, as well as configuration via
-the Control Panel:
+Via addon settings in the Control Panel
+---------------------------------------
 
-* Django settings
-* :ref:`environment variables <environment-variables>`
-* :ref:`addon configuration field <configure-with-aldryn-config>`
+An addon can expose options for configuration in the Control Panel interface. For example, Aldryn Django has a
+:ref:`PREFIX_DEFAULT_LANGUAGE` option. This will apply to all environments of the project.
+
+The value is stored in JSON. You can find the JSON file in the project locally, for example
+``addons/aldryn-django/settings.json``.
 
 
-.. _envar_setting_field:
+Via environment variables
+--------------------------
 
-Environment variable, setting or Addon configuration field?
------------------------------------------------------------
+Environment variables are suitable for:
 
-When should you adopt each of these methods in your applications?
+* environment-specific settings (e.g. database settings, since each environment should have its own)
+* secret settings (e.g. keys for services and APIs)
 
-Rules of thumb:
+*Environment variables are better than the codebase for such settings.* If committed as part of the codebase, they
+provide the same value in all environments, and they are vulnerable to being accidentally shared.
 
-* For highly-sensitive configuration, such as passwords, use an environment
-  variable - it's safer, because it's not stored in the codebase.
-* For configuration that is specific to each instance of the codebase, or that
-  needs to be different across *Local*, *Test* and *Live* environments,
-  environment variables are recommended.
-* For required configuration, it is a good idea to make it visible as a field,
-  so it's obvious to the user that it needs to be set; similarly if it's
-  something that a non-technical user might be expected to set.
-* If you provide an addon configuration field, make sure it isn't overridden by
-  other configuration, as that could be confusing to the user.
-* The ``settings.py`` file makes sense for configuration that isn't sensitive,
-  and will be the same in different instances of the codebase and can be the
-  same across the different environments.
-* The cleaner you keep your ``settings.py``, the better.
+
+Via automatically applied environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some environment variables are provided automatically, and you don't need to do anything about them at all.
+
+Each project environment has its own variables provided for services such as the database (``DEFAULT_DATABASE_DSN``), media storage (``DEFAULT_STORAGE_DSN``) and so on. Locally, the variables are saved in the ``.env-local`` file and :ref:`loaded into the environment via docker compose <docker-compose-env>`.
+
+
+Via user-configured environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Other environment variables can be provided by the user, via the Control Panel's
+*Env Variables* view:
+
+.. image:: /images/env-vars.png
+   :alt: 'Adding an environment variable'
+   :class: 'main-visual'
+
+If you need the variable in the local development environment as well, add::
+
+  SECRET_API_KEY = "aaPfaH1oJ5pdqYBc"
+
+to its ``.env-local``.
+
+
+Manually in ``settings.py``
+---------------------------
+
+As mentioned above, all these settings will be applied to the settings file by the
+``aldryn_addons.settings.load(locals())`` function. If any of them were written into the file manually *before* this
+point, it will overwrite them. Any settings you wish to provide manually should be added *after* the function to avoid
+this.
+
+
+Overwriting automatically-configured settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Overwriting automatically-configured settings is almost always a bad idea.* For example, multiple addons may have
+added their own requirements to the ``MIDDLEWARE`` setting. If you simply do::
+
+  MIDDLEWARE = [
+     ...
+  ]
+
+you will obliterate the automatic configuration (or if you place your setting before
+``aldryn_addons.settings.load(locals())``, your own setting will be overwritten).
+
+If for example you need to specify additional middleware, the safer and more sophisticated way to do it is by
+**manipulating** the list (see :ref:`how-to-settings`).
+
+To understand which settings are provided automatically, you can:
+
+* examine the addon's ``aldryn_config.py`` file
+* check the :ref:`reference documentation for Aldryn Django, Aldryn SSO and Adryn Addons, where many important settings
+  are listed <key-addons>`
+
+You can :ref:`list changed settings <list>` to see those that have been altered from Django's own defaults.
