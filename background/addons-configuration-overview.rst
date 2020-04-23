@@ -22,7 +22,7 @@ For example, in a Django project, you will find a file::
 
   addons/aldryn-django/aldryn_config.py
 
-This files will adds items to the ``INSTALLED_APPS``, ``MIDDLEWARE``, and applies other settings.
+This files adds items to the ``INSTALLED_APPS``, ``MIDDLEWARE``, and applies other settings.
 
 These settings can be controlled and determined in a number of different ways.
 
