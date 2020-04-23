@@ -16,16 +16,25 @@ be configured. They are then applied to the settings module via the lines::
  aldryn_addons.settings.load(locals())
 
 From this point in the settings module, those settings that were automatically configured by the addon will be available
-in the ``settings.py`` file. For example, the project's ``addons/aldryn-django/aldryn_config.py`` will add entries to
-``INSTALLED_APPS``, ``MIDDLEWARE`` and so on. Such settings can be controlled and determined in a number of ways.
+in the ``settings.py`` file.
+
+For example, in a Django project, you will find a file::
+
+  addons/aldryn-django/aldryn_config.py
+
+This files will adds items to the ``INSTALLED_APPS``, ``MIDDLEWARE``, and applies other settings.
+
+These settings can be controlled and determined in a number of different ways.
 
 
-Via Addon settings in the Control Panel
+Via addon settings in the Control Panel
 ---------------------------------------
 
-An Addon can expose options for configuration in the Control Panel interface. For example, Aldryn Django has a
-:ref:`PREFIX_DEFAULT_LANGUAGE` option. This will apply to all cloud environments of the project. For the local
-development environment, it will be placed in the project's ``addons/aldryn-django/settings.json``.
+An addon can expose options for configuration in the Control Panel interface. For example, Aldryn Django has a
+:ref:`PREFIX_DEFAULT_LANGUAGE` option. This will apply to all environments of the project.
+
+The value is stored in JSON. You can find the JSON file in the project locally, for example
+``addons/aldryn-django/settings.json``.
 
 
 Via environment variables
@@ -36,8 +45,8 @@ Environment variables are suitable for:
 * environment-specific settings (e.g. database settings, since each environment should have its own)
 * secret settings (e.g. keys for services and APIs)
 
-Environment variables are better for such settings than committing them to code because. If stored as part of the
-codebase, they provide the same value in all environments, and they are vulnerable to being accidentally shared.
+*Environment variables are better than the codebase for such settings.* If committed as part of the codebase, they
+provide the same value in all environments, and they are vulnerable to being accidentally shared.
 
 
 Via automatically applied environment variables
@@ -58,11 +67,11 @@ Other environment variables can be provided by the user, via the Control Panel's
    :alt: 'Adding an environment variable'
    :class: 'main-visual'
 
-If you need the variable in the local development environment, add::
+If you need the variable in the local development environment as well, add::
 
   SECRET_API_KEY = "aaPfaH1oJ5pdqYBc"
 
-to the ``.env-local``.
+to its ``.env-local``.
 
 
 Manually in ``settings.py``
@@ -85,8 +94,10 @@ added their own requirements to the ``MIDDLEWARE`` setting. If you simply do::
   ]
 
 you will obliterate the automatic configuration (or if you place your setting before
-``aldryn_addons.settings.load(locals())``, your own setting will be overwritten). If you need to add middleware, the
-safer and more sophisticated way to do it is by **manipulating** the list (see :ref:`how-to-settings`).
+``aldryn_addons.settings.load(locals())``, your own setting will be overwritten).
+
+If for example you need to specify additional middleware, the safer and more sophisticated way to do it is by
+**manipulating** the list (see :ref:`how-to-settings`).
 
 To understand which settings are provided automatically, you can:
 
@@ -95,28 +106,3 @@ To understand which settings are provided automatically, you can:
   are listed <key-addons>`
 
 You can :ref:`list changed settings <list>` to see those that have been altered from Django's own defaults.
-
-
-.. _envar_setting_field:
-
-In your own addon applications
-------------------------------
-
-When writing your own addons, you can choose to provide configuration via any method you like.
-
-Some rules of thumb for the appropriate method:
-
-* For highly-sensitive configuration, such as passwords, use an environment
-  variable - it's safer, because it's not stored in the codebase.
-* For configuration that is specific to each instance of the codebase, or that
-  needs to be different across *Local*, *Test* and *Live* environments,
-  environment variables are recommended.
-* For required configuration, it is a good idea to make it visible as a field,
-  so it's obvious to the user that it needs to be set; similarly if it's
-  something that a non-technical user might be expected to set.
-* If you provide an addon configuration field, make sure it isn't overridden by
-  other configuration, as that could be confusing to the user.
-* The ``settings.py`` file makes sense for configuration that isn't sensitive,
-  and will be the same in different instances of the codebase and can be the
-  same across the different environments.
-* The cleaner you keep your ``settings.py``, the better.

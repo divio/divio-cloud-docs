@@ -35,14 +35,14 @@ You will need to do the same for other configured settings, which will include:
 * ``TEMPLATES`` (or the older ``TEMPLATE_CONTEXT_PROCESSORS``, ``TEMPLATE_DEBUG`` and other
   template settings)
 * application-specific settings, for example that belong to django CMS or Wagtail. See each
-  application's :ref:`configure-with-aldryn-config` for the settings it will configure.
+  application's :ref:`aldryn_config.py <configure-with-aldryn-config>` file for the settings it will configure.
 
 
 Inserting an item at a particular position
 ------------------------------------------
 
 Sometimes it's not enough just to *add* an application or class to a list. It may need to be
-added before another item. Say you need to add your application `security` just before `cms`. In this case you can target `cms` in the list like this::
+added before another item. Say you need to add your application ``security`` just before ``cms``. In this case you can target ``cms`` in the list like this::
 
     INSTALLED_APPS.insert(
         INSTALLED_APPS.index("cms") + 0,
