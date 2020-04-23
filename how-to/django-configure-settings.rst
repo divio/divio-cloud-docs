@@ -1,3 +1,6 @@
+..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html) from
+    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+
 ..  _how-to-settings:
 
 How to configure Django settings
@@ -5,12 +8,9 @@ How to configure Django settings
 
 In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the ``settings.py`` file).
 
-Settings can be added to this file in the usual way, but some key points should be noted.
-
-
-It is important to understand that in Divio Cloud projects, some settings need to be inspected and
-manipulate programatically, to allow the addons system to handle configuration automatically. See
-the :ref:`addon-configured` section for more on this.
+Settings can be added to this file in the usual way, but in Divio projects, some settings need to be inspected and
+manipulated programatically, to allow the addons system to handle configuration automatically. See
+:ref:`application-configuration` for more on how this works.
 
 This can entail a little extra work when you need to change settings yourself, but the huge
 convenience it offers is more than worth the effort.
@@ -63,6 +63,9 @@ them to target the right list in the right dictionary, for example::
 
      TEMPLATES[0]["OPTIONS"]["context_processors"].append('my_application.some_context_processor')
 
+
+..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html#list) from
+    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
 
 .. _list:
 

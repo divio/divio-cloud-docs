@@ -119,6 +119,16 @@ they will be picked up when the image and container are rebuilt.
     This will allow local configuration to replicate the cloud environment even more closely.
 
 
+.. _docker-compose-env:
+
+Environment variables
+^^^^^^^^^^^^^^^^^^^^^
+
+Environment variables are loaded from a file, specified by::
+
+  env_file: .env-local
+
+
 The ``db`` service
 ~~~~~~~~~~~~~~~~~~
 
