@@ -25,6 +25,7 @@ Setting up a project and its environment
     Set up Sass CSS compilation <configure-sass>
     Configure Celery <configure-celery>
     Configure external logging <configure-external-logging>
+    Configure Application Performance Monitoring <configure-apm>
 
 
 Working with Django projects
