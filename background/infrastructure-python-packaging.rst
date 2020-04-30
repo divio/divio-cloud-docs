@@ -6,7 +6,7 @@
 
 .. _infrastructure-python-packaging:
 
-Python packaging
+Python package installation
 ===============================
 
 Python packages in Divio projects are installed using pip. Our :ref:`Dockerfile <dockerfile-reference>` for Python
