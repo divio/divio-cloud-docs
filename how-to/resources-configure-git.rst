@@ -253,8 +253,8 @@ This is *disabled* for those providers that would allow us to connect using your
 security policies, Divio Cloud will not request or store your passwords for other services.
 
 Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
-However, GitHub, GitLab and BitBucket all permit HTTPS authentication without the protection of two-factor
-authorisation, and for this reason we do not permit HTTPS as an authentication method for these platforms.
+However, GitHub, GitLab and BitBucket all permit HTTPS authentication using account passwords, and for this reason we
+do not permit HTTPS as an authentication method for these platforms.
 
 
 Errors and what they mean

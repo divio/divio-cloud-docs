@@ -15,11 +15,12 @@ Git behind the scenes for its *Upload* and *Download* operations.
 If you are familiar with Git, then all you need to know is that your project is a completely
 standard Git repository, and:
 
-* our Git server is ``git.divio.com``
+* our own Git server is ``git.divio.com``, but you can also :ref:`configure an external Git service for your project
+  <configure-version-control>`
 * by default, we use the branch ``develop`` (optionally, different Git branches can be linked to
   your Test and Live servers)
 
-If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys will be set up for you;
+If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys to our Git server will be set up for you;
 otherwise you will need to :ref:`set them up yourself <add-public-key>`.
 
 
