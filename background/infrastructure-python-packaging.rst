@@ -100,8 +100,8 @@ This indicates that one of those commands has failed, usually in one of the foll
 
 .. _wheels-dependency-unfindable:
 
-A dependency cannot be found
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A dependency cannot be found (from ``pip-reqs compile``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes a dependency cannot be found. This could be because a version has been specified incorrectly, or no longer
 exists::
@@ -115,8 +115,8 @@ versions of a dependency (for example, ``django==1.11.29`` and ``django>2.0`` as
 
 .. _wheels-dependency-unbuildable:
 
-A wheel cannot be built
-^^^^^^^^^^^^^^^^^^^^^^^
+A wheel cannot be built (from ``pip-reqs resolve``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Occasionally, a wheel cannot be built for a particular package. This is usually because although the package exists on
 PyPI, it is not compatible with the particular version of Python specified for that wheel (an example might be a Python
@@ -131,8 +131,8 @@ from the wheels server. In such a case, check that the dependency mentioned is i
 
 .. _wheels-dependency-uninstallable:
 
-A wheel cannot be installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A wheel cannot be installed (from ``pip install``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes, a wheel can be found and downloaded, but fails to install. Example output (in this case for
 ``jupyter``) might be::
@@ -147,8 +147,10 @@ Sometimes, a wheel can be found and downloaded, but fails to install. Example ou
 In this case, the wheel was found and downloaded, but could not be installed because it contained a "hidden" dependency
 (``setuptools``). One option is to contact Divio support; we can ensure that the wheel is built with this requirement.
 
-Another is to bypass the wheels proxy, described in the immediately following section:
+Another is to bypass the wheels proxy, described in :ref:`wheels-not-using-proxy` below.
 
+
+.. _wheels-not-using-proxy:
 
 Not using the wheels proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
