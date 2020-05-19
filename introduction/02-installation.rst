@@ -7,7 +7,7 @@ In order to work on your project, we need to set it up in the local development 
 
 Docker makes it possible to run and work on a project in the same environment as on the cloud, thus side-stepping some
 of the most troublesome problems faced by development teams, in which something works well in development, but runs
-into problems as a result of different environment conditions in production, or when a another team member tries to set
+into problems as a result of different environment conditions in production, or when another team member tries to set
 it up on their own machine.
 
 Using Docker means that not only does every member of the development team work in the same environment - versions of
@@ -40,7 +40,7 @@ The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip::
 
     pip install divio-cli
 
-If you already have them installed, check that they are up-to-date::
+If you already have it installed, check that they are up-to-date::
 
     pip install --upgrade divio-cli
 

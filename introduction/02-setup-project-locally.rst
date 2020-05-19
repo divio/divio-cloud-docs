@@ -20,7 +20,7 @@ Alternatively you can use the ``divio`` command to list your cloud project, whic
 Build the project locally
 -------------------------
 
-Run the ``divio project setup`` command, for example::
+Run the ``divio project setup`` command (for example if your project slug is ``django-project``)::
 
     divio project setup django-project
 
