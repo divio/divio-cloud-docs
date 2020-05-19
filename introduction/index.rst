@@ -3,13 +3,9 @@
 Tutorials
 =========
 
-These tutorials are suitable for developers who are reasonably familiar with
-using the command line for development work, and who know how to use and manage things such as
-Git, Pip and SSH keys.
-
-If not, `our tutorial for non-developers
-<http://support.divio.com/academy/basic-how-to-build-a-website-and-blog-with-dja
-ngo-cms-60-minutes/introduction>`_ is a better starting point.
+These tutorials will introduce you to the Divio toolchain, and the complete cycle of project creation, development,
+deployment and management. The tutorials assume you are comfortable with the command line, and understand the basics
+of using SSH keys, Git and so on.
 
 
 Introductory tutorials
@@ -28,8 +24,9 @@ Getting started
 .. toctree::
     :maxdepth: 1
 
-    01-installation
-    02-set-up
+    01-create-project
+    02-installation
+    02-setup-project-locally
 
 
 Manage applications and their settings

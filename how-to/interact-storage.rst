@@ -303,7 +303,7 @@ prepared configuration.
 
 .. _divio_tools_cloud_storage:
 
-Use Divio tools for local access to Cloud storage
+Use the Divio CLI for local access to Cloud storage
 -----------------------------------------------------
 
 The project's media files can be found in the ``/data/media`` directory, and
@@ -316,9 +316,6 @@ will be pushed too. This will however not usually present a problem.
 
 Pushing and pulling media files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The :ref:`Divio app <divio-app>` includes an option to **Upload** (push) and
-**Download** (pull) media files to and from the cloud test server.
 
 The :ref:`Divio CLI <divio-cli-ref>` includes :ref:`pull <divio-project-pull>`
 and :ref:`push <divio-project-push>` commands that target the test or live
@@ -335,9 +332,8 @@ server as required.
 Limitations
 ~~~~~~~~~~~
 
-You may encounter some file transfer size limitations when pushing and pulling
-media using the Divio app or the Divio CLI. :ref:`Interacting directly with the
-S3 storage bucket <interact-storage-s3>` is a way around this.
+You may encounter some file transfer size limitations when pushing and pulling media using the Divio CLI.
+:ref:`Interacting directly with the S3 storage bucket <interact-storage-s3>` is a way around this.
 
 It can also be much faster, and allows selective changes to files in the system.
 
