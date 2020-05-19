@@ -55,7 +55,7 @@ First, we'll add the new logging *handler* to this.
 
 What we have done here is added the new handler, ``logdna`` (the name doesn't actually matter) as a key to the dictionary.
 
-Next, we need to configure the existing loggers, that actually produce the logs, to use the handler. In this example, we will append the ``logdna`` hander to the configuration of:
+Next, we need to configure the existing loggers, that actually produce the logs, to use the handler. In this example, we will append the ``logdna`` handler to the configuration of:
 
 * the unnamed root logger ``""``
 * the ``django`` logger

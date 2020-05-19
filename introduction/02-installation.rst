@@ -11,7 +11,7 @@ into problems as a result of different environment conditions in production, or 
 it up on their own machine.
 
 Using Docker means that not only does every member of the development team work in the same environment - versions of
-installed packages, environment variables, database and other services - but they're all in the same evironment that
+installed packages, environment variables, database and other services - but they're all in the same environment that
 the application will have in production.
 
 
