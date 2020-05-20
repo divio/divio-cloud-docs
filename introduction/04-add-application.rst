@@ -121,4 +121,28 @@ that it works correctly, you can deploy the Live server too::
 
     divio project deploy live
 
-This completes the basic cycle of project creation, development and deployment.
+
+Using ``divio project push/pull``
+---------------------------------
+
+Your cloud database doesn't contain records of the access attempts you made locally. One very useful function of the
+Divio CLI is ability to push and pull your database and media storage to and from the cloud environments. For example,
+try::
+
+    divio project push db
+
+The local database will be pushed to the cloud Test environment; you'll see it the records there after a few moments.
+Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
+cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
+environment, so that you can test new development with real data.
+
+
+Where to go next?
+------------------
+
+This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+fundamental concepts and tools involved.
+
+Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many
+common operations. And if there's something you're looking for but can't find, please contact Divio support.
+
