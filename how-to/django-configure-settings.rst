@@ -76,7 +76,7 @@ The Django :djadmin:`diffsettings <django:diffsettings>` management command
 will show the differences between your settings and Django's defaults, for
 example with::
 
-    docker-compose run --rm web python manage.py diffsettings
+    docker-compose run web python manage.py diffsettings
 
 In some projects (with addons that manipulate settings late in the start-up
 process), you may get an error: ``RuntimeError: dictionary changed size during

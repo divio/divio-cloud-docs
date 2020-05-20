@@ -30,7 +30,7 @@ Divio developer handbook
 ==============================
 
 .. image:: /images/divio-support.jpg
-   :alt: 'Divio Cloud'
+   :alt: 'Divio'
    :class: 'main-visual'
 
 

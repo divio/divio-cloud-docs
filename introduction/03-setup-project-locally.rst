@@ -81,7 +81,7 @@ Once you have successfully logged into the local site, try stopping the project 
 Useful commands
 ----------------------------------------
 
-So far, we have used the ``divio``, ```docker-compose``` and ``docker`` commands. It's good to have a basic familiarity
+So far, we have used the ``divio``, ``docker-compose`` and ``docker`` commands. It's good to have a basic familiarity
 with them and what they do. As you proceed through this tutorial, you will inevitably encounter the occasional issue.
 These commands will help you when this happens.
 

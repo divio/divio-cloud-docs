@@ -3,11 +3,6 @@
 Boilerplates
 ==================
 
-..  seealso::
-
-    * :ref:`Create a custom Boilerplate tutorial <tutorial-create-boilerplate>`
-
-
 .. _boilerplates_reference:
 
 Boilerplates
