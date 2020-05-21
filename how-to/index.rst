@@ -28,8 +28,30 @@ Setting up a project and its environment
     Configure Application Performance Monitoring <configure-apm>
 
 
-Working with Django projects
+Platform-specific guides
 ----------------------------------------
+
+..  What follows is a terrible hack to force the behaviour we want from Sphinx. It could end badly. See hacks.rst for
+    more.
+
+.. raw:: html
+
+    <div class="tabs">
+      <div class="tabs__nav">
+         <a href="#django" class="tabs__link tab__link--active">
+           <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
+         </a>
+         <a href="#node" class="tabs__link">
+           <img src="../_images/node-logo.svg" alt="Node.js" width="60">
+         </a>
+      <div>
+      <div class="tabs__content">
+
+
+.. rst-class:: tabs-pane
+
+Django
+~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
@@ -38,6 +60,22 @@ Working with Django projects
     Configure Django settings <django-configure-settings>
     Migrate an existing Django project to Divio Cloud <django-migrate-existing-project>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+
+
+.. rst-class:: tabs-pane
+
+Node.js
+~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+
+    Force HTTPS with Express.js <node-express-force-https>
+
+.. raw:: html
+
+    </div><!-- .tabs__content -->
+    </div><!-- .tabs -->
 
 
 The development pipeline
