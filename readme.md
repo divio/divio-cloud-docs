@@ -110,7 +110,9 @@ A reference then looks like:
     :setting:`django-cms:CMS_CACHE_DURATIONS`
 
 
-## Documentation structure
+## Documentation structure and standards
 
-Our documentation structure is key to its usability. See our [What nobody tells you about documentation](https://www.divio.com/en/blog/documentation/) for an
+Our documentation structure is key to its usability. See our [What nobody tells you about documentation](https://documentation.divio.com) for an
 explanation of why it's important and how it works.
+
+See also https://docs.divio.com/documentation-standards
