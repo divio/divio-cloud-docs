@@ -18,19 +18,20 @@ Add django-debug-toolbar to ``requirements.in``
 
 The `Django Debug Toolbar installation notes
 <https://django-debug-toolbar.readthedocs.io/en/stable/installation.html>`_ suggest to install it using ``pip install
-django-debug-toolbar``. The latest stable version at the time of writing is 2.2, so add ``django-debug-toolbar==2.2``
+django-debug-toolbar``. The latest stable version at the time of writing is 2.2, so add::
+
+    django-debug-toolbar==2.2
+
 to ``requirements.in``.
 
 :ref:`As before <tutorial-add-requirements>`, run ``docker-compose build web`` to rebuild the project with the new
-requirement. Run ``docker-compose build web`` to rebuild the project with the new dependency.
+requirement.
 
 
 Configure ``settings.py``
 ----------------------------
 
-Django Debug Toolbar requires various settings to be configured. We don't want to load the Debug Toolbar into the
-project unless we're running in with ``DEBUG = True`` (doing so could expose data and configuration that we definitely
-should not share with the outside world.) So, in the configuration, we'll check for this.
+Django Debug Toolbar requires various settings to be configured.
 
 
 Configure INSTALLED_APPS
@@ -45,7 +46,11 @@ be present in ``INSTALLED_APPS``. Is ``django.contrib.staticfiles`` already ther
 
 The Django :djadmin:`diffsettings <django:diffsettings>` management command shows the differences between your settings
 and Django's defaults. In this case it should reassure us that ``django.contrib.staticfiles`` is already there as it's
-included in Divio Django projects by default, so we just need to add ``debug_toolbar``:
+included in Divio Django projects by default, so we just need to add ``debug_toolbar``.
+
+However, we don't want to load the Debug Toolbar into the project unless we're running in with Django's Debug mode
+enabled (doing so could expose data and configuration that we definitely should not share with the outside world.) So,
+in the configuration, we'll check for this (with ``if DEBUG:``) before enabling any Django Debug Toolbar components.
 
 ..  code-block:: python
 
@@ -61,7 +66,8 @@ Configure middleware settings
 <https://django-debug-toolbar.readthedocs.io/en/stable/installation.html#middleware>`_, and that it should come as soon
 as possible in the list "after any other middleware that encodes the response’s content, such as ``GZipMiddleware``."
 
-So let's insert it right after ``django.middleware.gzip.GZipMiddleware``:
+A suitable place would be right after ``django.middleware.gzip.GZipMiddleware``, and we can use a little Python list
+manipulation to insert it there:
 
 ..  code-block:: python
     :emphasize-lines: 5-8
@@ -70,8 +76,8 @@ So let's insert it right after ``django.middleware.gzip.GZipMiddleware``:
 
         INSTALLED_APPS.extend(["debug_toolbar"])
 
-        MIDDLEWARE_CLASSES.insert(
-            MIDDLEWARE_CLASSES.index("django.middleware.gzip.GZipMiddleware") + 1,
+        MIDDLEWARE.insert(
+            MIDDLEWARE.index("django.middleware.gzip.GZipMiddleware") + 1,
             "debug_toolbar.middleware.DebugToolbarMiddleware"
             )
 
@@ -81,13 +87,15 @@ This will find the ``GZipMiddleware`` in the list, and insert the ``DebugToolbar
 Triggering the toolbar
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The toolbar is only triggered if certain conditions are met. By default, it's only if ``DEBUG = True`` and the server
-IP address is `listed in INTERNAL_IPS
+The toolbar should only be triggered if certain conditions are met. By default, it's only if ``DEBUG = True`` *and* the
+server IP address is `listed in INTERNAL_IPS
 <https://django-debug-toolbar.readthedocs.io/en/stable/installation.html#configuring-internal-ips>`_.
 
 With Docker, we don't have a way to know what internal IP address a project will have, so we can't rely on that.
 However, relying on ``DEBUG`` will be enough, so we define a function that will serve as a ``SHOW_TOOLBAR_CALLBACK``
-callback to replace the default:
+callback to replace the default.
+
+At the end of the ``settings.py`` file, add:
 
 ..  code-block:: python
 
@@ -100,14 +108,15 @@ callback to replace the default:
 Configure ``urls.py``
 ---------------------
 
-We need to include the ``debug_toolbar.urls`` in the project's URL configuration. Our approach in the ``urls.py`` is
-similar: we only want it active in ``DEBUG`` mode, so this to the end of the file:
+We need to include the ``debug_toolbar.urls`` in the project's URL configuration. Our approach here is similar: we only
+want it active in ``DEBUG`` mode, so add this to the end of your project's ``urls.py``:
 
 ..  code-block:: python
 
     from django.conf import settings
 
     if settings.DEBUG:
+
         from django.urls import include, path
         import debug_toolbar
         urlpatterns = [
@@ -118,8 +127,7 @@ similar: we only want it active in ``DEBUG`` mode, so this to the end of the fil
 See the results
 ---------------
 
-And that's it (Debug Toolbar has no database tables, so you don't need to run
-migrations).
+And that's it (Debug Toolbar has no database tables, so you don't need to run migrations).
 
 Visit the admin to see the Debug Toolbar in action.
 

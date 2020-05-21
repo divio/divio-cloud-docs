@@ -15,15 +15,14 @@ Install a package
 To be used in a containerised system, packages must be built onto the image, otherwise the next time a container is
 launched, the package will not be there. The image is built by the Dockerfile, and in our Dockerfile for Django
 projects, this includes an instruction to process the project's ``requirements.in`` file with Pip. This is where the
-package needs to be added. Add::
+package needs to be added. Open ``requirements.in`` and at the end of it add a new line::
 
     django-axes==3.0.3
 
-at the end of the ``requirements.in`` file. It's important to pin dependencies to a particular version this way; it
-helps ensure that we don't run into unwanted surprises if the package is updated, and the new version introduces an
-incompatibility.
+It's important to pin dependencies to a particular version this way; it helps ensure that we don't run into unwanted
+surprises if the package is updated, and the new version introduces an incompatibility.
 
-Now you can build the project again::
+Now you can build the project again by running::
 
     docker-compose build
 
