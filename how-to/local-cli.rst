@@ -1,3 +1,8 @@
+..  Do not change this document name!
+    Referred to by: tutorial message 103 account-access-token
+    Where: https://control.divio.com/account/desktop-app/access-token/
+    As: https://docs.divio.com/en/latest/how-to/local-cli/
+
 .. _local-cli:
 
 How to get started with the Divio CLI

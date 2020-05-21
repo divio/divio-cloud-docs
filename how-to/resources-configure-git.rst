@@ -1,3 +1,8 @@
+..  Do not change this document name!
+    Referred to by: tutorial message 115 alert-can-add-repository
+    Where: ???
+    As: https://docs.divio.com/en/latest/how-to/resources-configure-git/
+
 .. raw:: html
 
     <style>
