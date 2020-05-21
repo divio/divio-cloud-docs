@@ -3,13 +3,6 @@
 How to package a Django application as an addon
 ===============================================
 
-..  seealso::
-
-    * :ref:`Add new applications to the project <tutorial-add-applications>` tutorial
-    * If you simply want to add an application to a project and don't need to
-      package it as an addon, see :ref:`add-application` instead.
-
-
 Register the addon
 ------------------
 
@@ -29,8 +22,7 @@ When you hit **Create addon**, the addon will be registered on the system.
 
 ..  important::
 
-    The package name **must not** contain underscores. See the note in :ref:`the addon packaging
-    tutorial <tutorial-package-addon>` for more information.
+    The package name **must not** contain underscores.
 
 
 Add the packaging files

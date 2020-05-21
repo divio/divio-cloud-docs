@@ -212,4 +212,4 @@ Using Boilerplates for quicker project creation
 
 If you typically use the same particular frontend set-up for many sites, you should consider
 packaging it up as a :ref:`Boilerplate <about-boilerplates>` that can be used at project creation
-time. See :ref:`tutorial-create-boilerplate` in the tutorial section.
+time.

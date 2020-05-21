@@ -3,10 +3,6 @@
 How to migrate an existing Django project to Divio
 ========================================================
 
-This how-to guide assumes some familiarity with Divio projects. If you'd prefer a complete
-end-to-end tutorial, see the :ref:`tutorial-migrate-project` tutorial.
-
-
 Initial project setup
 ---------------------
 

@@ -53,6 +53,8 @@ Most Divio projects will use a ``docker-compose.yml`` along these lines.
 Some projects will have additional services (such as Celery for example) defined.
 
 
+.. _docker-compose-web:
+
 The ``web`` service
 ~~~~~~~~~~~~~~~~~~~
 
