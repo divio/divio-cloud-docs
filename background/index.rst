@@ -40,6 +40,7 @@ Projects
 .. toctree::
     :maxdepth: 1
 
+    project-creation-options
     project-anatomy
     project-build-process
     project-environments

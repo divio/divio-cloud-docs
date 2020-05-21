@@ -9,7 +9,7 @@ for an explanation of why it's important and how it works.
 Column widths
 -------------
 
-Wrap ReStructured Text source to 100 columns.
+Wrap new ReStructured Text source to 120 columns.
 
 Headings
 --------
@@ -50,8 +50,7 @@ External resources link to this documentation. Any link to a documentation refer
 about the external resource, e.g.::
 
   ..  Do not change this reference!
-
-      Referred to by: tutorial message 53
+      Referred to by: tutorial message 51 project-create-base-project
       Where: in the project creation dialog e.g. https://control.divio.com/control/project/create/#step-1
       As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
 
