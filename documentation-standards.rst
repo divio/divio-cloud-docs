@@ -49,7 +49,7 @@ Noting references
 External resources link to this documentation. Any link to a documentation reference must be noted with information
 about the external resource, e.g.::
 
-  ..  Do not change this reference!
+  ..  Do not change this reference! [or document name]
       Referred to by: tutorial message 51 project-create-base-project
       Where: in the project creation dialog e.g. https://control.divio.com/control/project/create/#step-1
       As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
