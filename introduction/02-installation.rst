@@ -36,7 +36,8 @@ proceeding:
 Install the Divio CLI package
 ---------------------------------
 
-The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip::
+The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip (depending on your system, use ``pip3`` in
+the examples below)::
 
     pip install divio-cli
 
@@ -70,6 +71,10 @@ The Control Panel needs your public key, so that you can interact with our Git s
 Control Panel <https://control.divio.com/account/ssh-keys/>`_. Add your **public** key. If you're not sure how to
 manage SSH keys, see the excellent GitHub articles on `how to connect with SSH
 <https://help.github.com/articles/connecting-to-github-with-ssh/>`_.
+
+Test that your key is set up correctly; you should receive a ``No interactive access`` response::
+
+    ssh -T git@git.divio.com
 
 
 Install Docker and Docker Compose
