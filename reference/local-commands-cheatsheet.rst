@@ -3,6 +3,8 @@
 Local commands cheatsheet
 ========================================================
 
+.. _cheatsheet-project-resource-management:
+
 Project resource management
 ---------------------------
 

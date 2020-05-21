@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Developer Handbook'
-copyright = u'2017-2019, Divio AG'
+copyright = u'2017-2020, Divio AG'
 author = u'Daniele Procida'
 
 # The version info for the project you're documenting, acts as replacement for

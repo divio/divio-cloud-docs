@@ -1,34 +1,42 @@
 .. _build-process:
 
-The project build process
-=========================
+The project deployment process
+==============================
 
-Local builds
-------------
-
-#.  The Divio CLI clones (downloads) the project's files from its Git server.
-#.  The project's ``docker-compose.yml`` file is invoked, telling Docker
-    what containers need to be created, starting with the ``web`` container,
-    which is built using...
-#.  ...the project's ``Dockerfile``. This tells Docker how to build the
-    the project's containers - Docker begins executing the commands contained
-    in the file.
-#.  If necessary, Docker downloads the layers from which the container image
-    is built, or uses cached layers.
-#.  Docker continues executing the commands, which can include copying files,
-    installing packages using Pip, and running Django management commands.
-#.  Docker returns to the ``docker-compose.yml``, which sets up filesystem,
-    port and database access for the container, and the database container
-    itself.
-
-
-Cloud deployments
+Deployment steps
 -----------------
 
-A similar process unfolds on the cloud, with some differences:
+#. The Control Panel checks that required services (such as the database) are available.
+#. The project's Git repository is checked out.
+#. An image is built, using the instructions in the ``Dockerfile``.
+#. A container is deployed from the image.
+#. Any migration commands (post-build instructions) defined by the project are executed.
+#. Additional containers are deployed according to the project's configuration.
+#. The Control Panel tests that the application is responding.
 
-* cloud projects are orchestrated by the Divio deployment system rather than a ``docker-compose.yml`` file
-* the cloud does not use Docker layer caching
+
+Zero-downtime cloud deployments
+-------------------------------
+
+If all of the steps above are successful, then the deployment is marked as successful, and requests will be routed to
+the new containers, and the old containers will be be shut down. They are never shut down until the new containers are
+able to respond to requests without errors. This allows us to provide zero-downtime deployments - in the event of a
+deployment failure, the old containers will simply continue running without interruption.
+
+
+Differences between cloud deployment and local builds
+-------------------------------------------------------
+
+* **Orchestration**: on the cloud the Control Panel manages orchestration; locally, it's handled by docker-compose
+  according to the :ref:`docker-compose.yml <docker-compose-yml-reference>` file.
+* **Services**: on the cloud, backing services such as the database and media storage - and if appropriate, optional
+  services such as a message queue - are provided from our cloud infrastructure. Locally, these must be handled
+  differently (your computer doesn't contain a Postgres cluster or S3 bucket): the database will be provided in a
+  separate Docker container, the media storage will be handled via local file storage, and so on. docker-compose will
+  configure this local functionality.
+* **Docker layer caching** :ref:`on the cloud we don't cache, locally we do <docker-layer-caching>`.
+* **Migration commands**: locally these are not executed by default; execute them with :ref:`docker-compose run --rm
+  web start migrate <run-migration-commands>`
 
 
 Notes on Docker image building

@@ -54,6 +54,8 @@ Gather static files to be served, using ``collectstatic``. Run::
     docker-compose run --rm web python manage.py collectstatic
 
 
+.. _run-migration-commands:
+
 Run the ``migrate`` command
 ---------------------------
 
