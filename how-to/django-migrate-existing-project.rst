@@ -1,9 +1,9 @@
 .. _how-to-migrate:
 
-How to migrate an existing Django project to Divio Cloud
+How to migrate an existing Django project to Divio
 ========================================================
 
-This how-to guide assumes some familiarity with Divio Cloud projects. If you'd prefer a complete
+This how-to guide assumes some familiarity with Divio projects. If you'd prefer a complete
 end-to-end tutorial, see the :ref:`tutorial-migrate-project` tutorial.
 
 
@@ -17,9 +17,9 @@ There are a number of available project types, including Django, Django-plus-dja
 
 ..  note::
 
-    In general, if the software included in your project already exists on the Divio Cloud as an
+    In general, if the software included in your project already exists on Divio as an
     Addon, it's recommended to use the packaged addon version. This will help ensure not only that
-    it is suitably configured for the Divio Cloud, but that it will also co-exist well with other
+    it is suitably configured for Divio, but that it will also co-exist well with other
     components.
 
 Select the Boilerplate you want to use. Several are available, with different built-in frontend

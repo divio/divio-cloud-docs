@@ -3,7 +3,17 @@
 How-to guides
 =============
 
-Building a Docker application
+Working in the local development environment
+--------------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Get started with the Divio CLI <local-cli>
+    Run the local server in Live mode <local-in-live-mode>
+
+
+Building your Docker application
 ----------------------------------------
 
 .. toctree::
@@ -11,20 +21,15 @@ Building a Docker application
 
     Manage a project's base image <manage-base-image>
     Install system packages <install-system-packages>
-    Install Python dependencies <install-python-dependencies>
-    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
-Setting up a project and its environment
+Adding new functionality to a project
 ----------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    Set up password protection <password-protect-project>
     Set up Sass CSS compilation <configure-sass>
-    Configure Celery <configure-celery>
-    Configure external logging <configure-external-logging>
     Configure Application Performance Monitoring <configure-apm>
 
 
@@ -38,7 +43,10 @@ Platform-specific guides
 
     <div class="tabs">
       <div class="tabs__nav">
-         <a href="#django" class="tabs__link tab__link--active">
+         <a href="#python" class="tabs__link tab__link--active">
+           <img src="../_images/python-logo.svg" alt="Python" width="80">
+         </a>
+         <a href="#django" class="tabs__link">
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
          </a>
          <a href="#node" class="tabs__link">
@@ -46,6 +54,18 @@ Platform-specific guides
          </a>
       <div>
       <div class="tabs__content">
+
+
+.. rst-class:: tabs-pane
+
+Python
+~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+
+    Install Python dependencies <install-python-dependencies>
+    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
 .. rst-class:: tabs-pane
@@ -58,8 +78,12 @@ Django
 
     Add a Django application <django-add-application>
     Configure Django settings <django-configure-settings>
-    Migrate an existing Django project to Divio Cloud <django-migrate-existing-project>
+    Migrate an existing Django project to Divio <django-migrate-existing-project>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+    Configure external logging <django-configure-external-logging>
+    Configure Celery <configure-celery>
+    Set up password protection <password-protect-project>
+    Log in to a local Django project <local-project-log-in>
 
 
 .. rst-class:: tabs-pane
@@ -110,17 +134,6 @@ Working with addons
     Update an existing addon <update-existing-addon>
 
 
-Working in the local development environment
---------------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Get started with the Divio CLI <local-cli>
-    Log in to a local Django project <local-project-log-in>
-    Run the local server in Live mode <local-in-live-mode>
-
-
 Going live and maintaining performance
 --------------------------------------
 
@@ -137,6 +150,6 @@ Troubleshooting
 .. toctree::
     :maxdepth: 1
 
-    Debug Cloud deployment problems <debug-deployment-problems>
-    Identify and resolve a dependency conflict <debug-dependency-conflict>
+    Debug cloud deployment problems <debug-deployment-problems>
+    Identify and resolve a Python dependency conflict <debug-dependency-conflict>
     Get help when you have a problem <debug-request-help>

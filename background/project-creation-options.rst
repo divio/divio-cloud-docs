@@ -10,7 +10,11 @@ select from our optional ready-to-go definitions for a quick start. For example:
 * **Type**: *django CMS*
 * **Boilerplate**: *HTML5*
 
-Alternatively, you can build your own from scratch.
+Alternatively, you can build your own from scratch, by choosing the *No platform* option.
+
+It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
+get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
+to :ref:`add Sass CSS compilation using Node to a project that doesn't already include Node <configure-sass>`.
 
 
 ..  Do not change this reference!

@@ -11,3 +11,6 @@ can be used by raw HTML. See the how-to/index.
 
 .. image:: /images/node-logo.svg
    :width: 60
+
+.. image:: /images/python-logo.svg
+   :width: 60
