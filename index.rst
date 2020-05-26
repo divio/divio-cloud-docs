@@ -30,7 +30,7 @@ Divio developer handbook
 ==============================
 
 .. image:: /images/divio-support.jpg
-   :alt: 'Divio Cloud'
+   :alt: 'Divio'
    :class: 'main-visual'
 
 
@@ -75,11 +75,11 @@ Explanation and discussion of key topics
 
 .. rst-class:: clearfix row
 
-About the Divio cloud deployment platform
+About the Divio deployment platform
 -----------------------------------------
 
 `Divio <https://divio.com>`_ is a platform for containerised web
-projects. Divio's cloud platform aims to offer developers:
+projects. Divio's platform aims to offer developers:
 
 **More reliable deployment** - it's built in Python and Django, and uses Docker
 to give application developers a local development environment that is
