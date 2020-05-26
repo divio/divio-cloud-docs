@@ -17,7 +17,7 @@ Create a custom Boilerplate
 
     * :ref:`about-boilerplates`
 
-Each Divio Cloud site has a frontend *Boilerplate*, which defines a set of default templates
+Each Divio site has a frontend *Boilerplate*, which defines a set of default templates
 and static files.
 
 Typically, a Boilerplate will define how the Django templates are structured
@@ -60,7 +60,7 @@ Create a new project
     See the more detailed tutorial, :ref:`tutorial-set-up`, if you are not
     already familiar with these steps.
 
-In the Divio Cloud Control Panel, create a new ``Django``-type project, based
+In the Divio Control Panel, create a new ``Django``-type project, based
 on ``Python 3.x`` and the ``Blank Boilerplate``.
 
 Deploy the Test server.
@@ -369,7 +369,7 @@ Create a ``boilerplate.json`` in ``tutorial-boilerplate``:
     }
 
 * The ``package-name`` is whatever you'd like to call it - however, it must
-  be unique on the Divio Cloud system.
+  be unique on the Divio system.
 * ``templates`` are only required for Boilerplates intended to be used with
   django CMS.
 * ``identifier`` is a namespace, that will allow applications that are
@@ -427,13 +427,13 @@ This is a `2-Clause BSD "Simplified" License
 <https://opensource.org/licenses/BSD-2-Clause>`_.
 
 
-Create a Boilerplate on Divio Cloud
------------------------------------
+Create a Boilerplate on Divio
+------------------------------
 
 Register your Boilerplate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to `your Boilerplates on the Divio Cloud website
+Go to `your Boilerplates on the Divio website
 <https://control.divio.com/account/my-boilerplates/>`_, and hit **Add custom
 Boilerplate**.
 
@@ -451,7 +451,7 @@ In the :ref:`tutorial-boilerplate directory you created earlier
 
     ➜  divio boilerplate upload
     The following files will be included in your boilerplate and uploaded to
-    the Divio Cloud:
+    Divio:
     ./LICENSE
     ./static/css/app.css
     ./static/css/foundation.css
@@ -464,10 +464,10 @@ In the :ref:`tutorial-boilerplate directory you created earlier
     ./templates/base.html
     ./templates/main.html
     Are you sure you want to continue and upload the preceding (#10) files to
-    the Divio Cloud? [Y/n]: y
+    Divio? [Y/n]: y
     ok
 
-Your Boilerplate is now on the Divio Cloud.
+Your Boilerplate is now on Divio.
 
 Refresh the Boilerplate's *General settings* page, and you will see that the
 *Identifier* field now reflects the ``foundation6`` value in the
@@ -529,7 +529,7 @@ Update your Boilerplate
 
     It would be wise to turn your ``tutorial-boilerplate`` directory into a Git
     repository, so you can track changes in it. (This is what we do with
-    :ref:`the provided Divio Cloud Boilerplates <about-boilerplates>`).
+    :ref:`the provided Divio Boilerplates <about-boilerplates>`).
 
 
 When you make changes to your Boilerplate, increment its ``version`` in the

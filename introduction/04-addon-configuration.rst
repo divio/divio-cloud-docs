@@ -59,7 +59,7 @@ Configure INSTALLED_APPS
 
 Debug Toolbar requires ``django.contrib.staticfiles`` and ``debug_toolbar`` to
 be present in ``INSTALLED_APPS``. ``django.contrib.staticfiles`` is installed
-in Divio Cloud projects by default, so we just add ``debug_toolbar``:
+in Divio projects by default, so we just add ``debug_toolbar``:
 
 ..  code-block:: python
 

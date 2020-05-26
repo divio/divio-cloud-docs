@@ -18,7 +18,7 @@ Introductory tutorials
 These tutorials are recommended for the new user. We suggest that you follow its
 sections in order.
 
-They will take you through a complete cycle of operations as a Divio Cloud
+They will take you through a complete cycle of operations as a Divio
 developer, from setting up a project locally to deploying your own applications
 on the Cloud.
 

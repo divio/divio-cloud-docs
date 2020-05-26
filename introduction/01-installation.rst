@@ -6,8 +6,8 @@ Get started
 Create your account
 -------------------
 
-A Divio Cloud account is free to set up and use indefinitely. Create your
-account on the Divio Cloud `Control Panel <https://control.divio.com/>`_, or
+A Divio account is free to set up and use indefinitely. Create your
+account on the Divio `Control Panel <https://control.divio.com/>`_, or
 log in if you already have one.
 
 Our Divio GUI application can set up all you need to get started. In this tutorial however we will
@@ -66,7 +66,7 @@ an access token to paste into the prompt::
     ➜  ~ divio login
     Your browser has been opened to visit: https://control.divio.com/account/desktop-app/access-token/
     Please copy the access token and paste it here: rsYa1d0qDyF6TbI4wzfrdfSKinqSWAoxU7NgN7Cssgg5ndFfk3naghagh7
-    Welcome to Divio Cloud. You are now logged in.
+    Welcome to Divio. You are now logged in.
 
 
 .. _add-public-key:

@@ -1,9 +1,9 @@
 .. _tutorial-migrate-project:
 
-Migrate a project to Divio Cloud
-================================
+Migrate a project to Divio
+===========================
 
-In this tutorial you will take an existing Django project and port it to Divio Cloud.
+In this tutorial you will take an existing Django project and port it to Divio.
 
 The project (`The Opinions Company <https://github.com/divio/the-opinions-company>`_) complete with
 custom applications, database content, media files and styling is contained in a GitHub repository.
@@ -61,13 +61,13 @@ Cloud project, you can dump them with::
     python manage.py dumpdata --natural-foreign --natural-primary --indent 4 > database.json
 
 
-Migrate to Divio Cloud
+Migrate to Divio
 ----------------------
 
-Create a new Divio Cloud project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a new Divio project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the Divio Cloud control panel, `create a new project
+On the Divio control panel, `create a new project
 <https://control.divio.com/control/project/create/>`_, with the options:
 
 * Python 3
@@ -350,8 +350,8 @@ Once again, check that the site works as expected.
 Now you're ready to push your work to the Cloud.
 
 
-Push your changes to the Divio Cloud environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Push your changes to the Divio environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Code
 ^^^^
@@ -401,8 +401,8 @@ And the media files::
     divio project push media
 
 
-Deploy the new Divio Cloud project
-----------------------------------
+Deploy the new Divio project
+-----------------------------
 
 On the Control Panel, you see that there are now a number of undeployed commits, representing the
 work you have done.

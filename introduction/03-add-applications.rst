@@ -128,7 +128,7 @@ Commit them:
 
     git commit -m "Added polls application"
 
-And push to the Divio Cloud Git server:
+And push to the Divio Git server:
 
 ..  code-block:: bash
 

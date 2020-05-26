@@ -27,13 +27,13 @@ This is done by providing an application with an :ref:`aldryn_config.py
 ensure that ``INSTALLED_APPS``, ``urls.py`` and other key configuration
 settings are correct.
 
-The Divio Cloud also allows applications to be installed into projects from the
+Divio also allows applications to be installed into projects from the
 Control Panel, selecting the version to be installed and configuring the
 application - i.e. applying some settings - using a web form. This is also
 handled by the same ``aldryn_config.py`` file.
 
 In this section of the tutorial, we'll start packaging Django Debug Toolbar as
-a Divio Cloud addon, so that it can install itself into a project.
+a Divio addon, so that it can install itself into a project.
 
 ..  important::
 
@@ -52,7 +52,7 @@ a Divio Cloud addon, so that it can install itself into a project.
 Register the addon
 ------------------
 
-Before your addon can be uploaded, the Divio Cloud must be ready to receive it
+Before your addon can be uploaded, the Cloud must be ready to receive it
 (just as GitHub requires you to create the repository on the platform before
 you can push a local repository)
 
@@ -91,8 +91,8 @@ addon::
     Tutorial Django Debug Toolbar
     =============================
 
-    A Divio Cloud addon to install and configure Django Debug Toolbar into
-    Divio Cloud projects. Created as part of the Divio Cloud developer
+    A Divio addon to install and configure Django Debug Toolbar into
+    Divio projects. Created as part of the Divio developer
     tutorial.
 
 and hit **Save** once more.

@@ -13,7 +13,7 @@ Package an addon (configuration)
     examples and version numbers of packages mentioned.
 
 
-There are a few more steps required. One feature of the Divio Cloud Control
+There are a few more steps required. One feature of the Divio Control
 Panel is the option to configure the settings associated with addons via a form.
 
 The form is a fairly standard Django ``Form`` class. It needs to be built into
@@ -184,7 +184,7 @@ We now have *a self-configuring addon*, with only the most minimal traces of it
 left in the project configuration itself.
 
 The remaining steps are concerned with completing the configuration and
-packaging of the addon for the Divio Cloud.
+packaging of the addon for the Cloud.
 
 ..  note::
 

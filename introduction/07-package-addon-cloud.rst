@@ -15,7 +15,7 @@ Package an addon (deployment)
 
 Our Django Debug Toolbar Addon can now install and configure itself in a local
 project; next is to complete the work of packaging it so that it can do the
-same in a Divio Cloud project online.
+same in a Divio project online.
 
 As noted previously, when addons are installed into projects from the Control
 Panel, they can expose their settings to the user via a web form in the
@@ -76,7 +76,7 @@ though we don't use any of those in this addon.
 ``addon.json``
 ^^^^^^^^^^^^^^
 
-The final packaging file is specific to the Divio Cloud, ``addon.json``, which
+The final packaging file is specific to the Divio, ``addon.json``, which
 provides some additional metadata::
 
     {

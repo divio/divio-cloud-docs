@@ -19,7 +19,7 @@ then replicate it locally.
 Set up a project in the Cloud
 -----------------------------
 
-In the Divio Cloud Control Panel, create a new project.
+In the Divio Control Panel, create a new project.
 
 For the purposes of this tutorial, select the following options for your
 project (other options can be left on their default settings):
@@ -32,7 +32,7 @@ the admin.
 
 ..  note::
 
-    By logging in, you will add your :ref:`Divio cloud single-sign-on <divio-cloud-sso>` user to the
+    By logging in, you will add your :ref:`Divio single-sign-on <divio-cloud-sso>` user to the
     project's database, and will be able to log in to the site locally without
     having to add the new user to the database manually.
 
@@ -76,7 +76,7 @@ and running.
 
     If you didn't previously log in to the Cloud site before setting up the
     project locally, you'll need to add a user to the database before you can
-    log in. The :ref:`Divio Cloud SSO system <divio-cloud-sso>` allows you to
+    log in. The :ref:`Divio SSO system <divio-cloud-sso>` allows you to
     do this from the Django login page.
 
 
