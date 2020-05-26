@@ -1,8 +1,8 @@
-# Divio Cloud documentation for developers
+# Divio documentation for developers
 
-Published version: [Divio Cloud developer handbook](http://docs.divio.com/en/latest/).
+Published version: [Divio developer handbook](http://docs.divio.com/en/latest/).
 
-This documentation is intended for developers using the Divio Cloud.
+This documentation is intended for developers using Divio.
 
 ## Build the documentation locally
 
@@ -63,8 +63,7 @@ appropriate classes to the elements:
      :ref:`Tutorial <introduction>`
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-     Get started with a hands-on introduction to the Divio Cloud for
-     developers.
+     Get started with a hands-on introduction to Divio for developers.
 
      .. rst-class:: column column2
 
@@ -79,8 +78,8 @@ appropriate classes to the elements:
 
      .. rst-class:: clearfix row
 
-     About the Divio Cloud
-     ---------------------
+     About Divio
+     ------------
 
 
 ### Create an interactive debugging checklist
