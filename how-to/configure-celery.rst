@@ -34,7 +34,7 @@ Aldryn Celery is a wrapper application that `installs
 multiple Celery settings as `environment variables
 <https://github.com/divio/aldryn-celery/blob/master/aldryn_config.py>`_ for fine-tuning its configuration.
 
-You don't *need* to use Aldryn Celery to use Celery and Django Celery on Divio Cloud - you can of course install and
+You don't *need* to use Aldryn Celery to use Celery and Django Celery on Divio - you can of course install and
 configure Celery components manually if you prefer, perhaps if you wish to use a version that we haven't provided
 support for in Aldryn Celery. You will in that case need to:
 

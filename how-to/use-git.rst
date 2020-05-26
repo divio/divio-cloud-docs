@@ -3,7 +3,7 @@
 How to use Git to manage your project
 =====================================
 
-Your Divio Cloud project is a Git repository, offering several advantages to the developer -
+Your Divio project is a Git repository, offering several advantages to the developer -
 fine-grained revision control, excellent collaboration options, easy export and replication.
 
 The :ref:`Divio app <divio-app>`, our desktop application for project management, also uses

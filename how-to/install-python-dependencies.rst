@@ -16,7 +16,7 @@ then :ref:`process the list <process-dependencies>`. Both steps are described be
 List your dependencies
 ----------------------
 
-Your Divio Cloud project has a ``requirements.in`` file, processed by the ``pip-compile`` command
+Your Divio project has a ``requirements.in`` file, processed by the ``pip-compile`` command
 from `pip-tools <https://github.com/jazzband/pip-tools>`_ when the project is built.
 
 Place your dependencies in the file, making sure that they are *outside* the::

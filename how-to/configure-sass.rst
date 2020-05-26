@@ -6,7 +6,7 @@ How to configure Sass CSS compilation
 `Sass <http://sass-lang.com>`_ is a popular CSS extension language, favoured by many frontend
 developers.
 
-This document explains how to implement Sass compilation in a Divio Cloud project. Although this
+This document explains how to implement Sass compilation in a Divio project. Although this
 guide specifically deals with Sass, many of the principles it involves can be applied to other
 systems.
 
@@ -50,7 +50,7 @@ into the process, making it easier to maintain.
 Building this into the Dockerfile
 ---------------------------------
 
-See :ref:`the Divio Cloud Dockerfile reference <dockerfile-reference>` for more information on
+See :ref:`the Divio Dockerfile reference <dockerfile-reference>` for more information on
 how our ``Dockerfile`` works.
 
 
@@ -150,7 +150,7 @@ In order to process these, you can add:
 ..  note::
 
     It is strongly recommended to place these lines inside the ``# <NPM>[...]# </NPM>`` comments
-    that exist by default in every Divio Cloud ``Dockerfile``. This is because the Divio Cloud
+    that exist by default in every Divio ``Dockerfile``. This is because the Divio
     Control Panel will *automatically* fill this section (if it exists) with appropriate commands
     when it discovers ``package.json`` in the project.
 
@@ -173,7 +173,7 @@ Towards the end of the ``Dockerfile``, inside the ``# <GULP>[...]# </GULP>`` sec
 ..  note::
 
     The ``# <GULP>[...]# </GULP>`` section exists in the ``Dockerfile`` by default. On deployment,
-    the Divio Cloud Control Panel will *automatically* fill this section (if it exists) with
+    the Divio Control Panel will *automatically* fill this section (if it exists) with
     appropriate commands when it discovers ``gulpfile.js`` in the project.
 
 You will need an appropriate ``gulpfile.js`` at the root of the project too. It is beyond the scope

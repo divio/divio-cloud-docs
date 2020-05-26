@@ -1,9 +1,9 @@
 .. _how-to-migrate:
 
-How to migrate an existing Django project to Divio Cloud
-========================================================
+How to migrate an existing Django project to Divio
+===================================================
 
-This how-to guide assumes some familiarity with Divio Cloud projects. If you'd prefer a complete
+This how-to guide assumes some familiarity with Divio projects. If you'd prefer a complete
 end-to-end tutorial, see the :ref:`tutorial-migrate-project` tutorial.
 
 
@@ -17,9 +17,9 @@ There are a number of available project types, including Django, Django-plus-dja
 
 ..  note::
 
-    In general, if the software included in your project already exists on the Divio Cloud as an
+    In general, if the software included in your project already exists on Divio as an
     Addon, it's recommended to use the packaged addon version. This will help ensure not only that
-    it is suitably configured for the Divio Cloud, but that it will also co-exist well with other
+    it is suitably configured for Divio, but that it will also co-exist well with other
     components.
 
 Select the Boilerplate you want to use. Several are available, with different built-in frontend
@@ -39,7 +39,7 @@ Hit **Create project**.
 Check addon versions
 --------------------
 
-For each of the key components in your project for which a Divio Cloud addon exists, check that it
+For each of the key components in your project for which a Divio addon exists, check that it
 is set to the correct version in your project, via the project's *Manage addons*. This could
 include:
 
@@ -161,7 +161,7 @@ Importing content
 Database
 ^^^^^^^^
 
-Divio Cloud projects use Postgres databases. It's beyond the scope of this document to cover
+Divio projects use Postgres databases. It's beyond the scope of this document to cover
 all possible eventualities of database importing.
 
 
@@ -235,11 +235,11 @@ You're now in a position to test the local site, which should be done thoroughly
     divio project up
 
 
-Upload your changes back to the Divio Cloud
--------------------------------------------
+Upload your changes back to Divio
+----------------------------------
 
 Your project is a Git repository (certain files and directories are excluded), and should be
-pushed to the Divio Cloud's Git server in the usual way (``git add``/``git commit``/``git push``).
+pushed to Divio's Git server in the usual way (``git add``/``git commit``/``git push``).
 
 Media files are not included in the Git repository (static files are however) and must be pushed::
 

@@ -3,7 +3,7 @@
 How to configure Django settings
 ================================
 
-It is important to understand that in Divio Cloud projects, some settings need to be inspected and
+It is important to understand that in Divio projects, some settings need to be inspected and
 manipulate programatically, to allow the addons system to handle configuration automatically. See
 the :ref:`addon-configured` section for more on this.
 

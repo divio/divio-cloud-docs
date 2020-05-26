@@ -13,7 +13,7 @@ It can be useful in the development process, for example, when you need to
 restrict access, or for a site that provides API endpoints that should require
 the client to authenticate.
 
-A similar site-wide password requirement can be added to a Divio Cloud site,
+A similar site-wide password requirement can be added to a Divio site,
 using environment variables. Set them as follows::
 
     ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN=basicauth

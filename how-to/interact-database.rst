@@ -3,7 +3,7 @@
 How to interact with your project's database
 ============================================
 
-The Postgres database for your Divio Cloud project runs:
+The Postgres database for your Divio project runs:
 
 * in a Docker container for your **local** projects: :ref:`interact-local-db`
 * on a dedicated cluster for your **Cloud-deployed** sites: :ref:`interact-cloud-db`
@@ -169,7 +169,7 @@ Usage examples for common basic operations
 
 It's beyond the scope of this article to give general guidance on using Postgres, but these
 examples will give you an idea of some typical operations that you might undertake while using
-Divio Cloud.
+Divio.
 
 All the examples assume that you are interacting with the local database, running in its  ``db``
 container.
