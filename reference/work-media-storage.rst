@@ -12,11 +12,11 @@ Working with your project's media storage in Python applications
 Introduction
 ------------
 
-Default file storage on Divio Cloud projects is handled by dedicated storage systems entirely
+Default file storage on Divio projects is handled by dedicated storage systems entirely
 separate from the application.
 
 In our architecture, the same site may be running as several different instances, on several
-different application hosts (this is one reason why Divio Cloud projects can be scaled, because new
+different application hosts (this is one reason why Divio projects can be scaled, because new
 application instances can be created to meet increasing demand).
 
 Although each of those instances will have its own local file storage, this will be independent of
@@ -56,7 +56,7 @@ Use Django's defined ``DEFAULT_FILE_STORAGE``, not ``FileSystemStorage``
 Your code may use Django's :mod:`FileSystemStorage <django:django.core.files.storage>`. This
 provides basic file storage, on a filesystem local to the code. For the reasons described in the
 :ref:`Introduction <work-media-storage-introduction>` it is therefore not suitable for use on
-Divio Cloud.
+Divio.
 
 Instead, you must use the storage as defined by Django's ``DEFAULT_FILE_STORAGE`` - which you can
 do simply by not explicitly specifying a storage system, and using
@@ -97,10 +97,10 @@ Using Easy Thumbnails
 
 Easy Thumbnails is the most widely-used image processing application in the Django ecosystem.
 
-On Divio Cloud, ``THUMBNAIL_DEFAULT_STORAGE`` for Easy Thumbnails needs to be set explicitly, even
+On Divio, ``THUMBNAIL_DEFAULT_STORAGE`` for Easy Thumbnails needs to be set explicitly, even
 if ``DEFAULT_FILE_STORAGE`` has been set.
 
-In most projects on Divio Cloud, Django Filer is installed. This takes care of the
+In most projects on Divio, Django Filer is installed. This takes care of the
 ``THUMBNAIL_DEFAULT_STORAGE`` - if Django Filer is installed, you don't need to do anything else to
 use Easy Thumbnails correctly.
 

@@ -1,9 +1,9 @@
 .. _environment-variables:
 
 Environment variables
-====================================================
+=====================
 
-Divio Cloud projects allow you to maintain separate configuration for each of
+Divio projects allow you to maintain separate configuration for each of
 the *Live*, *Test* and *Local* environments.
 
 Environment variables are dynamic values that can be used by the processes or
@@ -142,11 +142,11 @@ However, it's usually better to find another solution.
 Commonly-used environment variables
 -----------------------------------
 
-Many of the applications packaged for Divio Cloud deployment recognise a number
+Many of the applications packaged for Divio deployment recognise a number
 of environment variables for your convenience.
 
 See :ref:`key-addons` for lists of settings that can be provided as variables
-in some Divio Cloud addons.
+in some Divio addons.
 
 They do this in their :ref:`configure-with-aldryn-config` files. To see
 precisely how they are handled, refer to the ``aldryn_config.py`` file of key

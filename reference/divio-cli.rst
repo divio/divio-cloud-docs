@@ -14,7 +14,7 @@ on GitHub.
 It's also available:
 
 * in the :ref:`Divio Shell <divio-shell>`
-* at the bash prompt in Divio Cloud web containers
+* at the bash prompt in Divio web containers
 
 .. _aldryn-client:
 
@@ -62,9 +62,9 @@ The ``addon`` command is used when in the directory of a local addon.
 It take one of three commands as an argument:
 
 ``register``
-    Registers an addon with the Divio Cloud addons system
+    Registers an addon with the Divio addons system
 ``upload``
-    Uploads an addon to the Divio Cloud
+    Uploads an addon to Divio
 ``validate``
     Validates basic aspects of an addon's configuration
 
@@ -93,7 +93,7 @@ boilerplate.
 It take one of two commands as an argument:
 
 ``upload``
-    Uploads a boilerplate to the Divio Cloud
+    Uploads a boilerplate to Divio
 ``validate``
     Validates basic aspects of an boilerplates's configuration
 
@@ -120,7 +120,7 @@ The ``doctor`` command checks that your environment is correctly configured.
 login
 .....
 
-Authorise your machine with the Divio Cloud. ``divio login`` opens your browser
+Authorise your machine with Divio. ``divio login`` opens your browser
 at https://control.divio.com/account/desktop-app/access-token/, where you can
 copy an access token to paste into the prompt.
 
@@ -231,7 +231,7 @@ directory.
     ``local_db.sql``.
 
 ``list``
-    Lists your Divio Cloud projects.
+    Lists your Divio projects.
 
     *Not specific to a particular project.*
 
@@ -244,7 +244,7 @@ directory.
 .. _divio-project-pull:
 
 ``pull``
-    Pulls the database or media files from the Divio Cloud.
+    Pulls the database or media files from Divio.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
     ``test`` or ``live`` (if not specified, defaults to ``test``), and by
@@ -253,14 +253,14 @@ directory.
 .. _divio-project-push:
 
 ``push``
-    Pushes the database or media files to the Divio Cloud.
+    Pushes the database or media files to Divio.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
     ``test`` or ``live`` (if not specified, defaults to ``test``), and by
     ``--remote-id <project id>`` to push to another project.
 
 ``setup``
-    Replicates and builds a Divio Cloud project locally.
+    Replicates and builds a Divio project locally.
 
     Takes a single argument, the slug of the project.
 

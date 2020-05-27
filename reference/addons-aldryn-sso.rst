@@ -3,18 +3,18 @@
 Aldryn SSO (authentication)
 ==============================
 
-Authentication to the Divio Cloud platform, and (by default) to user projects
-running on the platform, is handled by the Divio Cloud SSO (single-sign-on)
-system. This provides a convenient way to authenticate users for Divio Cloud
+Authentication to the Divio platform, and (by default) to user projects
+running on the platform, is handled by the Divio SSO (single-sign-on)
+system. This provides a convenient way to authenticate users for Divio
 projects (whether locally, or on the *Test* or *Live* servers) without needing
-to log in again, as long as they have logged into the Divio Cloud Control Panel.
+to log in again, as long as they have logged into the Divio Control Panel.
 
 This includes making it possible for users working on projects locally to
 log in locally with a single click, as they have already been authenticated.
 
-Divio Cloud SSO is managed by the `open-source Aldryn SSO
+Divio SSO is managed by the `open-source Aldryn SSO
 <https://github.com/aldryn/aldryn-sso>`_ addon. The system is optional, but is
-installed by default in all Divio Cloud Django projects.
+installed by default in all Divio Django projects.
 
 If the addon is uninstalled, then Django's standard authentication behaviour
 will apply.
@@ -25,8 +25,7 @@ will apply.
 Login methods
 -------------
 
-The Aldryn SSO addon provides three different login methods to Divio Cloud
-projects:
+The Aldryn SSO addon provides three different login methods to Divio projects:
 
 ..  image:: /images/login-options.png
     :alt: 'Illustration of Divio project login options'
@@ -61,12 +60,12 @@ See :ref:`ALDRYN_SSO_ENABLE_LOGIN_FORM`.
 
 .. _divio-cloud-sso:
 
-3. Divio Cloud single-sign-on
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Divio single-sign-on
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This is intended to appear on projects running in Cloud environments only. It
 allows users to sign in to their own projects with a single click, once they
-have authenticated with the Divio Cloud control panel.
+have authenticated with the Divio control panel.
 
 See :ref:`ALDRYN_SSO_ENABLE_SSO_LOGIN`.
 
@@ -87,8 +86,7 @@ There are two ways in which it's possible to see a protected *Test* site:
      :width: 406
 
   This URL can be shared with other people - for example, if you need to show
-  progress on the *Test* server to someone who doesn't have a Divio Cloud
-  account.
+  progress on the *Test* server to someone who doesn't have a Divio account.
 
 
 Aldryn SSO configuration options

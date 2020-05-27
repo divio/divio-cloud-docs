@@ -32,7 +32,7 @@ develop`` is run.
         # </INSTALLED_ADDONS>
     ]
 
-Settings in Divio Cloud projects can either be :ref:`configured automatically via the addons framework
+Settings in Divio projects can either be :ref:`configured automatically via the addons framework
 <application-configuration>`, or set manually.
 
 
