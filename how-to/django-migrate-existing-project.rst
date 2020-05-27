@@ -35,7 +35,7 @@ Hit **Create project**.
 Check addon versions
 --------------------
 
-For each of the key components in your project for which a Divio Cloud addon exists, check that it
+For each of the key components in your project for which a Divio addon exists, check that it
 is set to the correct version in your project, via the project's *Manage addons*. This could
 include:
 
@@ -228,11 +228,11 @@ You're now in a position to test the local site, which should be done thoroughly
     divio project up
 
 
-Upload your changes back to the Divio Cloud
--------------------------------------------
+Upload your changes back to the Divio
+-------------------------------------
 
 Your project is a Git repository (certain files and directories are excluded), and should be
-pushed to the Divio Cloud's Git server in the usual way (``git add``/``git commit``/``git push``).
+pushed to the Divio's Git server in the usual way (``git add``/``git commit``/``git push``).
 
 Media files are not included in the Git repository (static files are however) and must be pushed::
 

@@ -3,7 +3,7 @@
 How to log in to a local Django project
 =======================================
 
-By default, Divio Cloud projects include the :ref:`Aldryn SSO <divio-cloud-sso>` addon.
+By default, Divio projects include the :ref:`Aldryn SSO <divio-cloud-sso>` addon.
 
 This allows you to log in to any of your projects automatically (whether locally, on the test
 environment or the live server) with your credentials provided to the Control Panel.

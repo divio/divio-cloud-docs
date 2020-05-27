@@ -118,8 +118,8 @@ Our technical support is limited in scope to our platform and infrastructure:
 
 * general questions about the use of the platform and its tools
 * use and configuration of the local development environment
-* best practices for project configuration on Divio Cloud
-* best practices for project migration to Divio Cloud
+* best practices for project configuration on Divio
+* best practices for project migration to Divio
 * deployment issues related to our infrastructure
 
 We are unable to provide support for:

@@ -14,7 +14,7 @@ preferred tool for working with Divio projects is the Divio CLI.
 
 ..  seealso::
 
-    If you are completely new to Divio Cloud, please see :ref:`our tutorial
+    If you are completely new to Divio, please see :ref:`our tutorial
     <tutorial-installation>`, which guides you through installation and use of
     the Divio CLI in more detail.
 
