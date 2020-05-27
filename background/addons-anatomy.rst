@@ -1,7 +1,7 @@
 .. _addon-anatomy:
 
-Anatomy of a Divio Cloud addon
-==============================
+Anatomy of a Divio addon
+========================
 
 Basic file structure
 --------------------

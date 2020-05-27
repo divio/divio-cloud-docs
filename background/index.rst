@@ -9,7 +9,7 @@ Our infrastructure
 .. toctree::
     :maxdepth: 1
 
-    Overview <divio-cloud-overview>
+    Overview <divio-overview>
     Docker basics <docker-basics>
 
 
