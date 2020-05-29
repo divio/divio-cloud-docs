@@ -24,7 +24,7 @@ Push/pull code
     Use ``git`` commands as appropriate.
 
 :ref:`Pull <divio-project-pull>` or :ref:`push <divio-project-pull>`  media or database
-    ``divio project pull media`` or ``divio project pull media``
+    ``divio project pull media`` or ``divio project pull db``
 
     ``divio project push media`` or ``divio project push db``
 
