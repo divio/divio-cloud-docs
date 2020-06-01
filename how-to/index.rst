@@ -43,13 +43,13 @@ Platform-specific guides
 
     <div class="tabs">
       <div class="tabs__nav">
-         <a href="#python" class="tabs__link tab__link--active">
+         <a href="#python-tab" class="tabs__link tab__link--active">
            <img src="../_images/python-logo.svg" alt="Python" width="80">
          </a>
-         <a href="#django" class="tabs__link">
+         <a href="#django-tab" class="tabs__link">
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
          </a>
-         <a href="#node" class="tabs__link">
+         <a href="#node.js-tab" class="tabs__link">
            <img src="../_images/node-logo.svg" alt="Node.js" width="60">
          </a>
       <div>
