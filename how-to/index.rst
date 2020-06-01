@@ -31,6 +31,7 @@ Adding new functionality to a project
 
     Set up Sass CSS compilation <configure-sass>
     Configure Application Performance Monitoring <configure-apm>
+    Configure media serving on a custom domain <configure-media-custom-domain>
 
 
 Platform-specific guides
