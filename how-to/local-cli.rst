@@ -3,6 +3,11 @@
     Where: https://control.divio.com/account/desktop-app/access-token/
     As: https://docs.divio.com/en/latest/how-to/local-cli/
 
+    Referred to by: Readme of Divio CLI
+    Where: https://github.com/divio/divio-cli/blob/master/README.md
+    As: https://docs.divio.com/en/latest/how-to/local-cli/
+
+
 .. _local-cli:
 
 How to get started with the Divio CLI
