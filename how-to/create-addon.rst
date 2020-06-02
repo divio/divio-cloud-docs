@@ -6,7 +6,7 @@ How to package a Django application as an addon
 Register the addon
 ------------------
 
-Before your addon can be uploaded, Divio must be ready to receive it.
+Before your addon can be uploaded, the Divio Control Panel must be ready to receive it.
 
 Select **Add custom addon** from `Personal Addons in the Divio Control Panel
 <https://control.divio.com/account/my-addons/>`_, or simply go straight to `Add custom addon

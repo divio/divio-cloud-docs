@@ -232,7 +232,7 @@ Upload your changes back to the Divio
 -------------------------------------
 
 Your project is a Git repository (certain files and directories are excluded), and should be
-pushed to the Divio's Git server in the usual way (``git add``/``git commit``/``git push``).
+pushed to Git server in the usual way (``git add``/``git commit``/``git push``).
 
 Media files are not included in the Git repository (static files are however) and must be pushed::
 
