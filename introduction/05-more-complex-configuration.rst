@@ -46,17 +46,14 @@ be present in ``INSTALLED_APPS``. Is ``django.contrib.staticfiles`` already ther
 
 The Django :djadmin:`diffsettings <django:diffsettings>` management command shows the differences between your settings
 and Django's defaults. In this case it should reassure us that ``django.contrib.staticfiles`` is already there as it's
-included in Divio Django projects by default, so we just need to add ``debug_toolbar``.
-
-However, we don't want to load the Debug Toolbar into the project unless we're running in with Django's Debug mode
-enabled (doing so could expose data and configuration that we definitely should not share with the outside world.) So,
-in the configuration, we'll check for this (with ``if DEBUG:``) before enabling any Django Debug Toolbar components.
+included in Divio Django projects by default, so we just need to add ``debug_toolbar`` to ``INSTALLED_APPS``:
 
 ..  code-block:: python
+    :emphasize-lines: 2
 
-    if DEBUG:
-
-        INSTALLED_APPS.extend(["debug_toolbar"])
+    INSTALLED_APPS.extend([
+        'debug_toolbar',
+    ])
 
 
 Configure middleware settings
@@ -67,14 +64,11 @@ Configure middleware settings
 as possible in the list "after any other middleware that encodes the response’s content, such as ``GZipMiddleware``."
 
 A suitable place would be right after ``django.middleware.gzip.GZipMiddleware``, and we can use a little Python list
-manipulation to insert it there:
+manipulation to insert it there. In addition, it makes sense only to activate the Debug Toolbar middleware when we're running with Django's Debug mode, and we'll check for this (with ``if DEBUG:``):
 
 ..  code-block:: python
-    :emphasize-lines: 5-8
 
     if DEBUG:
-
-        INSTALLED_APPS.extend(["debug_toolbar"])
 
         MIDDLEWARE.insert(
             MIDDLEWARE.index("django.middleware.gzip.GZipMiddleware") + 1,
