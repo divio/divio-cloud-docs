@@ -83,7 +83,7 @@ Django
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
     Configure external logging <django-configure-external-logging>
     Configure Celery <configure-celery>
-    Manage authentication <django-manage-authentication>
+    Manage access authentication <django-manage-authentication>
     Log in to a local Django project <local-project-log-in>
 
 
