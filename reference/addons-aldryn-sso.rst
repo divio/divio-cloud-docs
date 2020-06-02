@@ -1,4 +1,4 @@
-.. _authentication:
+.. _aldryn-sso:
 
 Aldryn SSO (authentication)
 ==============================
@@ -178,6 +178,8 @@ ALDRYN_SSO_ENABLE_LOCALDEV            False
 Can also be specified as an environment variable or in ``settings.py``.
 
 
+.. _ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN:
+
 ``ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -216,8 +218,10 @@ effect of the form value.
 
 .. _basic-auth:
 
-``ALDRYN_SSO_BASICAUTH_USER`` and ``ALDRYN_SSO_BASICAUTH_PASSWORD``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Basic access authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Basic access authentication is configured using ``ALDRYN_SSO_BASICAUTH_USER`` and ``ALDRYN_SSO_BASICAUTH_PASSWORD``.
 
 When ``ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN`` is set to ``basicauth``, access to
 the entire site will require user and password details. This is an *additional

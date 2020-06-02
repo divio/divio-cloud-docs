@@ -89,7 +89,7 @@ Once you have successfully deployed the Test server, the Control Panel will indi
 https://my-project-stage.us.aldryn.io.
 
 Open the link to access the project. Since this is your own project, you can use our :ref:`single-sign-on
-<authentication>` to log in by selecting **Log in with Divio**.
+<aldryn-sso>` to log in by selecting **Log in with Divio**.
 
 You'll see the familiar Django admin for a new project.
 
