@@ -60,7 +60,7 @@ containers.
 **Processes** - each session is isolated from any other extant processes (web processes, workers,
 other shell sessions).
 
-**Caches** - if your site's cache relies on the database (the Divio Projects default) then
+**Caches** - if your site's cache relies on the database (the default in Divio projects) then
 your container will be able to make use of it, clear it and so on. However, if you're using for
 example a ``locmem`` cache, it will not be available to your container.
 

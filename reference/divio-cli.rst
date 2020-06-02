@@ -244,7 +244,7 @@ directory.
 .. _divio-project-pull:
 
 ``pull``
-    Pulls the database or media files from Divio.
+    Pulls the database or media files from the Divio cloud environment.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
     ``test`` or ``live`` (if not specified, defaults to ``test``), and by
@@ -253,7 +253,7 @@ directory.
 .. _divio-project-push:
 
 ``push``
-    Pushes the database or media files to Divio.
+    Pushes the database or media files to the Divio cloud environment.
 
     Takes a required argument, ``db`` or ``media``, followed optionally by
     ``test`` or ``live`` (if not specified, defaults to ``test``), and by
