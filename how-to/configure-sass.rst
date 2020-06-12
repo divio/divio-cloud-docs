@@ -97,7 +97,7 @@ the file:
 
 ..  code-block:: Dockerfile
 
-    ADD scripts /scripts
+    ADD scripts scripts
 
     RUN bash scripts/install.sh
 
