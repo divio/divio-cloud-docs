@@ -47,10 +47,10 @@ Start the project by running ``docker-compose up`` in the terminal::
     System check identified no issues (0 silenced).
     May 19, 2020 - 03:29:06
     Django version 2.2.12, using settings 'settings'
-    Starting development server at http://0.0.0.0:80/
+    Starting development server at http://localhost:80/
     Quit the server with CONTROL-C.
 
-Open the project in your web browser by visiting http://0.0.0.0:8000.
+Open the project in your web browser by visiting http://localhost:8000.
 
 (You may notice above that Django claims to be running on port 80, not port 8000. It is - but that's only *inside* the
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping
