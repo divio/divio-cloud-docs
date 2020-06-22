@@ -74,19 +74,12 @@ Test site protection
 --------------------
 
 By default the *Test* site is protected so that it's not publicly discoverable
-or viewable.
+or viewable. Only the owner or an authorised user of the project can view its contents.
 
-There are two ways in which it's possible to see a protected *Test* site:
+This is controlled with the :ref:`ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN` environment variable, which is `True` by default and
+can be overriden by setting it manually.
 
-* by being logging in as a user who is the owner or an authorised user of that site.
-* by using the secret hashed URL available from the icon on the Control Panel:
-
-  .. image:: /images/open-test-site.png
-     :alt: 'Open Test site icon'
-     :width: 406
-
-  This URL can be shared with other people - for example, if you need to show
-  progress on the *Test* server to someone who doesn't have a Divio account.
+See also :ref:`how to apply/remove password protection to Django sites <manage-access-login>`.
 
 
 Aldryn SSO configuration options
@@ -105,6 +98,24 @@ Aldryn SSO configuration options
 More details of how Aldryn SSO processes these settings can be studied at
 `aldryn-sso.aldryn_config.py
 <https://github.com/aldryn/aldryn-sso/blob/master/aldryn_config.py>`_.
+
+
+.. _ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN:
+
+``ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Controls whether visitors need to be logged-in. Available options are:
+
+* ``True``: Users will need to log in via the SSO system in order to access
+  the site (default for test site).
+* ``False``: No login is required (default for local and live environments).
+* ``basicauth``: The site will be protected by `basic HTML access
+  authorisation
+  <https://en.wikipedia.org/wiki/Basic_access_authentication>`_. See
+  :ref:`basicauth <basic-auth>`.
+
+Can also be specified as an environment variable or in ``settings.py``.
 
 
 .. _ALDRYN_SSO_ENABLE_LOCALDEV:
@@ -172,24 +183,6 @@ ALDRYN_SSO_ENABLE_AUTO_SSO_LOGIN      True
 ALDRYN_SSO_ENABLE_LOGIN_FORM          False
 ALDRYN_SSO_ENABLE_LOCALDEV            False
 ====================================  =========
-
-Can also be specified as an environment variable or in ``settings.py``.
-
-
-.. _ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN:
-
-``ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Controls whether visitors need to be logged-in. Available options are:
-
-* ``True``: Users will need to log in via the SSO system in order to access
-  the site (default for test site).
-* ``False``: No login is required (default for local and live environments).
-* ``basicauth``: The site will be protected by `basic HTML access
-  authorisation
-  <https://en.wikipedia.org/wiki/Basic_access_authentication>`_. See
-  :ref:`basicauth <basic-auth>`.
 
 Can also be specified as an environment variable or in ``settings.py``.
 

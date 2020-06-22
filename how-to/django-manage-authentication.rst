@@ -1,4 +1,4 @@
-.. _django-manage-pass:
+.. _django-manage-access:
 
 How to manage access authentication
 ===================================
@@ -6,7 +6,9 @@ How to manage access authentication
 In Django projects, access via password can be managed by the :ref:`Aldryn SSO addon <aldryn-sso>`.
 
 
-Overriding defaults
+.. _manage-access-login:
+
+Require login
 -------------------
 
 By default, the Test site is password protected while the Live site is not. This is controlled by the
@@ -31,7 +33,7 @@ It can be useful in the development process, for example, when you need to
 restrict access, or for a site that provides API endpoints that should require
 the client to authenticate.
 
-A similar site-wide password requirement can be added to a Divio site,
+A similar site-wide password requirement can be added to a Django site,
 using environment variables. Set them as follows::
 
     ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN=basicauth
