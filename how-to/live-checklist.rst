@@ -31,7 +31,7 @@ Domains
   TTLs. High TTLs can cause problems when the domains are pointed at the new site, including delays in the automatic
   provisioning of SSL certificates.
 * Check that the live domain for the server is set up for the site in the Control Panel (support article: `how to use
-  your own domain with Divio Cloud
+  your own domain with Divio
   <http://support.divio.com/control-panel/projects/how-to-use-your-own-domain-with-divio-cloud>`_).
 * Check that any domains that should redirect to the primary domain are also set in the *Domains* setting in the
   Control Panel.

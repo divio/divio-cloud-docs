@@ -3,7 +3,7 @@
 How to fine-tune your server's performance
 ==========================================
 
-In the Divio Cloud Control Panel for your project, you can easily change the resources (instances,
+In the Divio Control Panel for your project, you can easily change the resources (instances,
 RAM, storage, transfer) allocated to your project to adjust for its needs.
 
 In most cases, having chosen suitable values for these, you won't need to make further changes.

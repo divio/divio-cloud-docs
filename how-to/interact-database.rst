@@ -3,7 +3,7 @@
 How to interact with your project's database
 ============================================
 
-The database for your Divio Cloud project runs:
+The database for your Divio project runs:
 
 * in a Docker container for your **local** projects: :ref:`interact-local-db`
 * on a dedicated cluster for your **cloud-deployed** sites: :ref:`interact-cloud-db`
@@ -197,7 +197,7 @@ you.
 
 ..  important::
 
-    In the Divio Cloud architecture, the ``docker-compose.yml`` file is **not**
+    In the Divio architecture, the ``docker-compose.yml`` file is **not**
     used for Cloud deployments, but **only** for the local server. The changes you
     make here will not affect the Cloud database.
 
@@ -209,7 +209,7 @@ Usage examples for common basic operations
 
 It's beyond the scope of this article to give general guidance on using the database, but these
 examples will help give you an idea of some typical operations that you might undertake while using
-Divio Cloud.
+Divio.
 
 All the examples assume that you are interacting with the local database, running in its  ``db``
 container, and will use Postgres.

@@ -295,7 +295,7 @@ Path (in *More Options*)  *bucket name*
 
 On attempting to connect, you will be prompted for the Secret Access Key; use the *secret key*.
 
-For Exoscale (Divio Cloud Swiss region) deployments, you can also download and install the
+For Exoscale (Divio Swiss region) deployments, you can also download and install the
 `Exoscale profile for Cyberduck
 <https://svn.cyberduck.io/trunk/profiles/exoscale.cyberduckprofile>`_, which includes some
 prepared configuration.

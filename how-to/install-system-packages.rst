@@ -8,7 +8,7 @@ How to install system packages in a project
     * :ref:`install-python-dependencies`
 
 
-All Divio Cloud projects are based on a customised Docker image, which uses a
+All Divio projects are based on a customised Docker image, which uses a
 version of Ubuntu Linux.
 
 If your project requires a particular system package, you can include them in
