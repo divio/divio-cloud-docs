@@ -1,9 +1,9 @@
 .. _sending-email:
 
-Sending email in Divio Cloud applications
-=========================================
+Sending email in Divio applications
+===================================
 
-Divio Cloud does not provide mail services. To send mail from your Django applications, you will
+Divio does not provide mail services. To send mail from your Django applications, you will
 need to provide the appropriate configuration.
 
 Django :doc:`provides email wrappers <django:topics/email>` around Python's ``smtplib`` module.
@@ -87,7 +87,7 @@ Import the Django ``send_mail`` function::
 and try sending a message::
 
     send_mail(
-        "Welcome to Divio Cloud",
+        "Welcome to Divio",
         "It's great!",
         "from@example.com",
         ["to@example.com"],

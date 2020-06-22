@@ -1,7 +1,7 @@
 .. _aldryn-addons:
 
 Aldryn Addons (addon integration)
-====================================
+=================================
 
 The Aldryn Addons framework helps integrate addons and their settings into
 a Django project.
@@ -26,7 +26,7 @@ also convenient for addons to be able to configure URLs programmatically, so
 that when an addon is installed, it will also take care of setting up the
 relevant URL configurations.
 
-Aldryn Addons provides a way to do this. A Divio Cloud project's ``urls.py``
+Aldryn Addons provides a way to do this. A Divio project's ``urls.py``
 contains::
 
     urlpatterns = [

@@ -22,7 +22,7 @@ migrate``). It's particularly useful to be able to drop into a:
     <divio-shell>`.
 
     The Divio Shell is a convenient environment on your own computer, configured for interaction
-    with your Divio Cloud account and projects, and the local development environment.
+    with your Divio account and projects, and the local development environment.
 
     The Cloud and local shells will provide you with terminal access inside a running project.
 
@@ -60,7 +60,7 @@ containers.
 **Processes** - each session is isolated from any other extant processes (web processes, workers,
 other shell sessions).
 
-**Caches** - if your site's cache relies on the database (the Divio Cloud Projects default) then
+**Caches** - if your site's cache relies on the database (the default in Divio projects) then
 your container will be able to make use of it, clear it and so on. However, if you're using for
 example a ``locmem`` cache, it will not be available to your container.
 
