@@ -205,6 +205,12 @@ You can test that the project now works as expected.
 Validate it
 ^^^^^^^^^^^
 
+You will need the python package ``aldryn-client`` installed to be able to validate your addon.
+
+If you have not already installed it, run::
+
+    pip install aldryn-client
+
 Now make sure you're in the ``addons-dev/<package name>`` directory.
 
 Now, running ``divio addon validate`` should now confirm that the addon is
