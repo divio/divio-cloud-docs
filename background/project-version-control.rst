@@ -22,8 +22,17 @@ Our Control Panel interacts with different Git providers via an abstraction laye
 possible to present common user and application interfaces.
 
 
+All commits target the *Test* environment
+--------------------------------------------
+
+All commits made by our Control Panel are to the branch used by the *Test* environment. For example, the *Addons* view
+in the Control Panel displays (and only affects) the configuration of the Test environment. When you use
+:ref:`custom-tracking-branches` (below), the Live environment configuration is untouched except by Git operations that
+explicitly target its branch.
+
+
 Project repository branches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 By default, each project's code is in its Git ``master`` branch, and can be deployed directly from
 the Git server to the *Test* or *Live* servers (our strongly-recommended workflow is always to
@@ -33,16 +42,10 @@ deploy to *Test* first).
 .. _custom-tracking-branches:
 
 Custom Tracking Branches
-^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
-However, on request the *Custom Tracking Branches* feature can be enabled for a project, allowing
-different branches to be set for the *Test* and *Live* servers - for example, ``develop`` and
-``master`` respectively.
+Each environment can be confiured to track a different Git branch, by editing the *Branch* field in the *Environments*
+view. If the branch specified cannot be found, an *Unable to get commit count from repository* message will be shown.
 
-In this workflow you would work on ``develop`` before manually merging into ``master``, and then
-deploying *Live*.
-
-All commits made by our Control Panel are to the branch used by the *Test* environment. For example, the *Addons* view
-in the Control Panel displays (and only affects) the configuration of the Test environment. When you use *Custom
-Tracking Branches*, the Live environment configuration is untouched except by Git operations that explicitly target its
-branch.
+Using custom branches allows (for example) a workflow in which you work on ``develop`` before manually merging into
+``master``, and then deploying *Live*.
