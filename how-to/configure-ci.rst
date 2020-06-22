@@ -53,7 +53,7 @@ Your project needs a ``.travis.yml`` file, which depending on the project might 
 Triggering the deployment on success
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a build is successful, we need Travis to log in as a Divio Cloud user and execute some steps in the
+When a build is successful, we need Travis to log in as a Divio user and execute some steps in the
 ``after_success`` section of the file:
 
 * install the Divio CLI
@@ -64,13 +64,13 @@ When a build is successful, we need Travis to log in as a Divio Cloud user and e
 Authentication
 ^^^^^^^^^^^^^^
 
-To log in, Travis needs to provide `your Divio Cloud authentication token
+To log in, Travis needs to provide `your Divio authentication token
 <https://control.divio.com/account/desktop-app/access-token/>`_.
 
 ..  admonition:: **Never** include security keys in plain text
 
     The token must **never** be included in plain text in the repository. Instead, you need to use an encrypted
-    version. We recommend creating a Divio Cloud account specifically for using with Travis, so that you can more
+    version. We recommend creating a Divio account specifically for using with Travis, so that you can more
     easily manage and revoke access.
 
 You can encrypt your token using `Travis's encrypt tool <https://docs.travis-ci.com/user/encryption-keys/>`_. Once you

@@ -50,7 +50,7 @@
 How to configure external Git hosting
 =======================================================
 
-All Divio Cloud projects can use the Git private server we provide. This article describes how you can instead use the
+All Divio projects can use the Git private server we provide. This article describes how you can instead use the
 Git hosting provider of your choice.
 
 ..  important::
@@ -164,7 +164,7 @@ Copy the key, and add it to the Git repository:
 |bitbucket| BitBucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Optionally, create a Bitbucket account specifically for Divio Cloud projects - otherwise the key will grant
+#. Optionally, create a Bitbucket account specifically for Divio projects - otherwise the key will grant
    access to all your Bitbucket projects.
 #. Go to *Bitbucket settings* > *SSH keys* > *Add key*.
 #. Paste the key.
@@ -243,7 +243,7 @@ Read-only access to the repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In most cases, you will want to allow write access to the repository. This is the standard configuration and gives you
-full access to the benefits of the Divio Cloud addon system, in which the Control Panel records interface actions and
+full access to the benefits of the Divio addon system, in which the Control Panel records interface actions and
 addon configuration as Git commits.
 
 It's also possible to maintain stricter control over the repository, allowing only read access. In this case, project
@@ -267,7 +267,7 @@ You can give the Divio Project access to the Git repository over HTTPS by provid
 personal access token.
 
 This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
-security policies, Divio Cloud will not request or store your passwords for other services.
+security policies, Divio will not request or store your passwords for other services.
 
 Some Git providers enforce the use of personal access tokens for HTTPs, rather than allowing passwords to be used.
 However, GitHub, GitLab and BitBucket all permit HTTPS authentication using account passwords, and for this reason we
@@ -282,7 +282,7 @@ The remote repository requires a ``master`` branch
 
 The Control Panel expected to find a branch (by default named ``master``) at the remote.
 
-If the Divio Cloud project uses the *Custom tracking branches* feature, then whatever branch is used for the *Test*
+If the Divio project uses the *Custom tracking branches* feature, then whatever branch is used for the *Test*
 environment should be present at the remote.
 
 Check the repository for the expected branch.
@@ -315,7 +315,7 @@ You have no webhook set up
 Although the Control Panel has been able to connect to the repository and authenticate, a webhook has not yet been set
 up.
 
-This is not necessarily an error, but it does mean that your Divio Cloud project will not automatically receive signals
+This is not necessarily an error, but it does mean that your Divio project will not automatically receive signals
 from the remote when new commits are made to it, and so you will need to use the manual **Update** button to pull new
 changes to your project.
 
