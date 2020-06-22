@@ -45,7 +45,7 @@ Contents
 :ref:`Tutorials <introduction>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get started with a hands-on introduction to the Divio for
+Get started with a hands-on introduction to Divio for
 developers.
 
 
