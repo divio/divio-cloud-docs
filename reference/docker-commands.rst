@@ -7,7 +7,7 @@ Docker commands
 
     It is beyond the scope of this documentation to provide a complete
     reference for Docker-related commands. This page is concerned only with
-    providing basic reference for these commands in the context of Divio Cloud
+    providing basic reference for these commands in the context of Divio
     projects.
 
 

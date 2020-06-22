@@ -4,7 +4,7 @@ The Divio application
 =====================
 
 The Divio app is a GUI application for interacting with local projects and
-the Divio Cloud. It also sets up :ref:`the Divio Shell <divio-shell>`.
+the Cloud. It also sets up :ref:`the Divio Shell <divio-shell>`.
 
 
 Controls
@@ -167,7 +167,7 @@ The Divio Shell
 
 The Divio Shell is a pre-configured shell environment for interacting with local Divio projects.
 It's launched with the **open shell** button in the toolbar of the Divio app, and drops you in a
-bash prompt, in your Divio Cloud workspace directory.
+bash prompt, in your Divio workspace directory.
 
 The Divio Shell is configured with the SSH keys required to give you access to
 our Cloud servers. You don't have to use the Divio Shell (you can use an

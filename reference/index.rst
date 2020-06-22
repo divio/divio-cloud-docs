@@ -37,8 +37,8 @@ Python/Django application configuration
     configuration-uwsgi
 
 
-Coding in Divio Cloud applications
-----------------------------------
+Coding in Divio applications
+----------------------------
 
 .. toctree::
     :maxdepth: 1
