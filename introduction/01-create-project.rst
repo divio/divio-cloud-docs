@@ -22,7 +22,7 @@ log in if you already have one.
 Create the project
 ~~~~~~~~~~~~~~~~~~
 
-In the Divio Cloud Control Panel, `create a new project <https://control.divio.com/control/project/create/>`_.
+In the Divio Control Panel, `create a new project <https://control.divio.com/control/project/create/>`_.
 
 Any web application in any language can run on Divio, as long as there is nothing that prevents its being Dockerised.
 However for convenience we also provide a number of ready-to-go project types for applications built in Java, PHP, Node
