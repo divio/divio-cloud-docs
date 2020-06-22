@@ -90,7 +90,7 @@ Caching in django CMS
 The Aldryn django CMS addon applies caching rules by default, via the
 :setting:`django-cms:CMS_CACHE_DURATIONS` setting.
 
-Control over caching settings is exposed in the Divio Cloud Control Panel in the configuration
+Control over caching settings is exposed in the Divio Control Panel in the configuration
 options for Aldryn django CMS. Defaults are to cache content for 60 seconds and menus for one hour.
 
 It is often convenient to disable caching while developing or working intensively on content. Adding::
@@ -145,5 +145,4 @@ Other backends, such as `Redis <https://redis.io>`_ (a popular open-source
 database) can be used as caching backends for Django.
 
 If it suits your needs, you can procure a Redis or other caching instance from
-a provider and use it with your Divio Cloud project.
-
+a provider and use it with your Divio project.

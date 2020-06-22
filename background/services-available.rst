@@ -25,7 +25,7 @@ Databases can use public (shared) or private clusters in the same region as the 
 Media object storage
 ------------------------
 
-Default file storage in Divio Cloud projects is handled by dedicated storage and hosting providers.
+Default file storage in Divio projects is handled by dedicated storage and hosting providers.
 
 Depending on the project's region, these can be S3 providers such as `Amazon Web Services's S3 service
 <https://aws.amazon.com/s3/>`_ or a generic S3 hosting service via another provider, or `MS Azure Blob storage <https://azure.microsoft.com/en-us/services/storage/blobs/>`_.

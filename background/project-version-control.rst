@@ -10,7 +10,7 @@ Version control
     * :ref:`use-git-manage-project`
 
 
-Divio Cloud projects use Git for version control.
+Divio projects use Git for version control.
 
 By default, projects use our own Git server.
 

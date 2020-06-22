@@ -3,7 +3,7 @@
 Redirects
 =========
 
-You will find various redirects at work on URLs in Divio Cloud projects.
+You will find various redirects at work on URLs in Divio projects.
 
 They fall into different categories:
 

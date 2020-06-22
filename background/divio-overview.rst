@@ -1,7 +1,7 @@
 .. _divio-cloud-architecture:
 
-Divio cloud management platform overview
-=========================================
+Divio platform overview
+=======================
 
 Divio is a cloud management platform, providing Docker-based containerised web application hosting.
 
@@ -20,8 +20,8 @@ new instances, without requiring manual configuration.
 
 .. _divio-cloud-infrastructure:
 
-Divio cloud infrastructure
---------------------------
+Cloud infrastructure
+--------------------
 
 Our cloud is vendor-neutral, and can be run on AWS, MS Azure and other infrastructures. Both our Control Panel and
 customer applications can be deployed on public, private and on-premise infrastructures.

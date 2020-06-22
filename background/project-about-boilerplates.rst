@@ -107,7 +107,7 @@ Bootstrap framework as a fully-compiled frontend set-up. It uses:
 How Boilerplates work
 ---------------------
 
-When you create a new project via the Divio Cloud Control Panel, you select a
+When you create a new project via the Divio Control Panel, you select a
 Boilerplate at the same time.
 
 The Control Panel examines the Boilerplate to determine what components should
