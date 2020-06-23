@@ -106,6 +106,57 @@ or a commit::
     the tarball or zip archive URL for that to install from the VCS, as in the examples above.
 
 
+Locally changing addon version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One way to change an addon version would be to use the control panel, but there are times 
+you need to change the addon version and test it locally before changing it on the cloud. 
+
+To be able to change an addon version locally, you can get the **tag** of the required addon version 
+from GitHub/GitLab and build the URL of the addon as shown in the tag of the 
+:ref:`above lising for installing from online packages <pip-install-from-online-package>`. 
+
+The URL for installing the package/addon with a specific tag/version of the dependency has the following format.
+    
+    https://github.com/account/**repository**/archive/**tag**.zip#egg= **package-name** == **tag**.
+
+For example, if the addon is Aldryn Django and the tag is 2.0.4.1,
+then the URL for installing the dependency will be
+
+    https://github.com/divio/aldryn-django/archive/2.0.4.1.zip#egg=aldryn-django==2.0.4.1
+
+To be able to change the version of the addon locally, you have to change what will be built in the requirements file.
+ 
+* Comment out the automatic dependency URL, in side the INSTALLED_ADDONS:
+
+..  code-block:: python
+    :emphasize-lines: 3
+
+    # <INSTALLED_ADDONS>...
+            ...
+        # commented URL of the addon to be replaced...
+    
+    # </INSTALLED_ADDONS>
+
+* Add the new addon dependency URL, outside the INSTALLED_ADDONS:
+
+..  code-block:: python
+    :emphasize-lines: 5
+
+    # <INSTALLED_ADDONS>...
+
+    # </INSTALLED_ADDONS>
+    
+    URL with the new tag
+
+
+Process the requirements file, to complete the update by building the image:: 
+
+    docker-compose build web
+
+
+
+
 .. _process-dependencies:
 
 Process the list
