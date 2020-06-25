@@ -11,7 +11,7 @@ Our infrastructure
 
     Overview <divio-overview>
     Docker basics <docker-basics>
-    IP addresses <IP addresses>
+    IP addresses <ip-addresses>
 
 
 Services
