@@ -71,8 +71,9 @@ In such cases, for projects running in private regions only, a number of solutio
 
 Please contact Divio support to discuss these options.
 
-IPv6
-----
 
-Divio uses the most commonly used Internet protocol IPv4. Even though we plan to support IPv6 in the future,
-as IPv6 is not yet supported in key parts of AWS, at the moment, Divio is not able to support it.
+IPv6 support
+------------
+
+We do not currently support IPv6 on our infrastructure, as IPv6 is not yet supported in key components provided by our
+vendors. Future IPv6 support will be introduced when possible.
