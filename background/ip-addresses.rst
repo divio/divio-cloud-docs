@@ -9,13 +9,16 @@ time, the servers within each region are allocated an IP address from that regio
 Servers in our infrastucture (application builders and runners, and other services) are not permanent hosts but
 short-lived instances that can be provisioned at a moment's notice and are regularly recycled.
 
-The numbers in the pool of IP addresses within a region are therefore constantly being reallocated to different
-servers, and there is no guarantee that a server's address will remain the same from one moment to another.
+An IP address within a particular pool can therefore be reallocated to a different server at any time, and there is no
+guarantee that a server's address will remain the same from one moment to another.
 
 In addition, vendors' IP ranges themselves are not guaranteed and can be subject to change regularly and frequently,
 sometimes without notice.
 
-This means that **IP addresses are not to be relied upon as a means of reaching or identifying Divio servers**.
+Finally, even if a server's IP remains the same, an application might be moved to a different server at any time.
+
+This means that **IP addresses are not to be relied upon as a means of reaching or identifying Divio applications or
+servers**.
 
 
 Load-balancer IP addresses
