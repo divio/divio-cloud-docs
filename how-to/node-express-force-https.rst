@@ -1,3 +1,5 @@
+.. _how-to-express-js-https:
+
 How to force HTTPS with Express.js
 ===================================================================
 

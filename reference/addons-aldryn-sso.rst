@@ -77,7 +77,7 @@ By default the *Test* site is protected so that it's not publicly discoverable
 or viewable. Only the owner or an authorised user of the project can view its contents.
 
 This is controlled with the :ref:`ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN` environment variable, which is `True` by default and
-can be overriden by setting it manually.
+can be overridden by setting it manually.
 
 See also :ref:`how to apply/remove password protection to Django sites <manage-access-login>`.
 

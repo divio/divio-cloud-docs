@@ -84,7 +84,9 @@ Django
     Configure external logging <django-configure-external-logging>
     Configure Celery <configure-celery>
     Manage access authentication <django-manage-authentication>
+    Manage redirects in Django projects <django-manage-redirects>
     Log in to a local Django project <local-project-log-in>
+    Go-live checklist for Django projects <live-checklist>
 
 
 .. rst-class:: tabs-pane
@@ -135,14 +137,17 @@ Working with addons
     Update an existing addon <update-existing-addon>
 
 
-Going live and maintaining performance
+.. |uwsgi| image:: /images/uwsgi.png
+   :alt: ''
+
+|uwsgi| Configuring uWSGI
 --------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    Go-live checklist <live-checklist>
-    Fine-tune uWSGI server performance <live-performance>
+    Manage uWSGI configuration <uwsgi-configuration>
+    Fine-tune uWSGI server performance <uwsgi-performance>
 
 
 Troubleshooting

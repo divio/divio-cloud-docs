@@ -1,0 +1,53 @@
+.. _django-manage-redirects:
+
+How to manage redirects in Django projects
+==========================================
+
+.. _django_protocol_redirects:
+
+Protocol redirects
+------------------
+
+Divio projects are HTTPS-ready by default, and we provide free SSL certificates on all projects.
+
+To force redirect from HTTP to HTTPS in Django, set the :ref:`SECURE_SSL_REDIRECT <security-middleware-settings>`
+environment variable to ``True``.
+
+
+.. _domain_name_redirects:
+
+Domain name redirects
+---------------------
+
+You can set up your site's domains using the `Domains section of the Control Panel
+<http://support.divio.com/control-panel/projects/using-your-own-domain-with-divi o-cloud>`_. This includes the ability
+to set a primary and secondary domains. The secondary domains can each be set to redirect to the primary domain if
+required.
+
+The domains that are to be redirected to the primary domain can also be managed
+manually, via :ref:`DOMAIN_REDIRECTS`.
+
+
+.. _language_redirects:
+
+Language redirects
+------------------
+
+Django provides redirection to the the default language URL when none is
+specified. (In addition, django CMS offers complex fallback options for
+unavailable languages.)
+
+For example, ``/about`` will redirect to ``/en/about`` if English is the
+default language.
+
+:ref:`aldryn-django <aldryn-django>` can be configured to not use the prefix
+for the default language, by checking the :ref:`Remove URL language prefix for
+default language <PREFIX_DEFAULT_LANGUAGE>` checkbox on the settings for the
+Aldryn Django addon in the Control Panel.
+
+
+Permanent redirects
+-------------------
+
+:ref:`ALDRYN_SITES_REDIRECT_PERMANENT` will force permanent redirects for protocol and domain directs. This is to be
+:ref:`used with caution <301vs302>`.

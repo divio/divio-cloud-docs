@@ -3,3 +3,4 @@ sphinxcontrib-spelling
 pyenchant
 sphinx-autobuild
 divio-docs-theme
+sphinxcontrib-mermaid

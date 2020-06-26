@@ -34,7 +34,6 @@ Python/Django application configuration
 
     configuration-settings-file
     configuration-environment-variables
-    configuration-uwsgi
 
 
 Coding in Divio applications
