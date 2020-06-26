@@ -1,12 +1,12 @@
 .. _infrastructure-ip-addresses:
 
-IP adresses
+IP addresses
 ===============================
 
 Divio's containerised infrastructure is distributed over a number of geographical and vendor based regions. At any one
 time, the servers within each region are allocated an IP address from that region's range.
 
-Servers in our infrastucture (application builders and runners, and other services) are not permanent hosts but
+Servers in our infrastructure (application builders and runners, and other services) are not permanent hosts but
 short-lived instances that can be provisioned at a moment's notice and are regularly recycled.
 
 An IP address within a particular pool can therefore be reallocated to a different server at any time, and there is no
@@ -30,7 +30,7 @@ Customers' projects may be attached to domains for which CNAMES cannot used (tha
 ``example.com``, rather than sub-domains such as ``www.example.com``). In this case we recommend using ALIAS records.
 Not all DNS providers support ALIAS, and in those cases it is necessary to use A records, which require IP addresses.
 
-We take efforts to keep our load-balancers in each region on a very small number of IP addreses so that A records can
+We take efforts to keep our load-balancers in each region on a very small number of IP addresses so that A records can
 rely on them. All the same, even these occasionally must be amended. In that event affected customers are informed in
 advance to minimise disruption.
 

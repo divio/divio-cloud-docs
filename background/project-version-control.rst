@@ -44,7 +44,7 @@ deploy to *Test* first).
 Custom Tracking Branches
 ---------------------------------
 
-Each environment can be confiured to track a different Git branch, by editing the *Branch* field in the *Environments*
+Each environment can be configured to track a different Git branch, by editing the *Branch* field in the *Environments*
 view. If the branch specified cannot be found, an *Unable to get commit count from repository* message will be shown.
 
 Using custom branches allows (for example) a workflow in which you work on ``develop`` before manually merging into
