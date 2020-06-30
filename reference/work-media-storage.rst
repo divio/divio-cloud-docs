@@ -142,7 +142,7 @@ user-submitted material (which could include material uploaded by untrusted user
 Enable CORS headers
 ~~~~~~~~~~~~~~~~~~~
 
-The other solution to enable `CORS ("Cross-origin resource sharing") headers
+The other solution is to enable `CORS ("Cross-origin resource sharing") headers
 <https://en.wikipedia.org/wiki/Cross-origin_resource_sharing>`_ on the media.
 
 This must be done by our infrastructure team, on a per-website basis. Please contact Divio support to request this.
