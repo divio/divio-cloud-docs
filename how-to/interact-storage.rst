@@ -16,8 +16,8 @@
 
 .. _interact-storage:
 
-How to interact with your project's media storage
-=================================================
+How to interact with your project's cloud media storage
+=======================================================
 
 ..  seealso::
 
@@ -38,7 +38,7 @@ the particular storage provider.
 
 .. _interact-storage-s3:
 
-Interact with your project's Cloud S3 storage
+Interact with your project's cloud S3 storage
 ----------------------------------------------
 
 .. warning::
@@ -53,11 +53,9 @@ Interact with your project's Cloud S3 storage
 Obtain your storage access details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Control Panel for your project, visit the ``/doctor`` URL. For each of the Test and Live
-servers, you'll see a ``DEFAULT_STORAGE_DSN`` value listed, for example:
-
-.. image:: /images/default-storage-dsn.png
-   :alt: 'Default storage DSN value'
+SSH into a cloud container, and issue the ``env`` command. This will list the environment variables applied to that
+environment. Amongst them a ``DEFAULT_STORAGE_DSN`` value will be listed (note that each environment includes its
+own storage and has its own ``DEFAULT_STORAGE_DSN``).
 
 This value contains the details you will need to use with a file transfer client for access to the
 storage bucket. The two examples below show which sections of the DSN correspond to the different

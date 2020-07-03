@@ -124,7 +124,7 @@ Managing a project's resources
     :maxdepth: 1
 
     Interact with your project’s database <interact-database>
-    Interact with your project’s media storage <interact-storage>
+    Interact with your project’s cloud media storage <interact-storage>
 
 
 Working with addons
