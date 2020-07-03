@@ -27,6 +27,14 @@ Install and configure the Divio Telemetry addon
 `Divio Telemetry <https://github.com/divio/divio-telemetry-apm>`_ is available as an Aldryn addon via the Control
 Panel. It uses the official `elastic-apm <https://pypi.org/project/elastic-apm/>`_ package provided by Elastic, and adds easy configuration via a single environment variable, ``DEFAULT_APM_DSN``.
 
+..  note::
+
+    At the time of writing, you will need to pin the ``elastic-apm`` package in your ``requirements.in``::
+
+        elastic-apm<5.8.0
+
+    as the result of a `known issue <https://github.com/elastic/apm-agent-python/issues/880>`_.
+
 ``DEFAULT_APM_DSN`` is a URL, and can be assembled from the Elastic credentials you collected earlier. It's in the
 form::
 
