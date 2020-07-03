@@ -1,27 +1,49 @@
 .. _use-git-manage-project:
 
-How to use Git to manage your project
-=====================================
+How to use Git to with a Divio project
+======================================
 
 Your Divio project is a Git repository, offering several advantages to the developer -
 fine-grained revision control, excellent collaboration options, easy export and replication.
+
+We provide Git hosting by default. Our server is ``git.divio.com``. You can also :ref:`use an external Git provider
+<configure-version-control>`.
+
+By default, we use the branch ``develop``, but you ccan specify the Git branches to be used by each environment.
+
+You will need to :ref:`set up your public key on our Control Panel <add-public-key>` if you use our Git server.
+
+
+Important limitations
+---------------------
+
+Certain conditions can cause deployment errors when the Control Panel tries to read the Git repository. These will
+typically appear in the deployment log with an exception from ``pygit2``, such as::
+
+    Traceback (most recent call last):
+      [...]
+      File "/usr/local/lib/python3.6/site-packages/pygit2/repository.py", line 131, in __getitem__
+        raise KeyError(key)
+    KeyError: abaddeed2d00ad47a9bb82db969707a21dead81ed
+
+This can be caused by:
+
+* an empty directory committed to the respository (remove it or add a file to it)
+* a `Git submodule included in the repository <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ (remove it)
+* files containing mixed line endings, if the ``.gitattributes`` configuration includes an instruction to resolve them
+  (remove ``* text=auto`` if it appears in ``.gitattributes``).
+
+
+Git with the Divio app or Divio shell
+-------------------------------------
+
+If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys to our Git server will be set up for you.
 
 The :ref:`Divio app <divio-app>`, our desktop application for project management, also uses
 Git behind the scenes for its *Upload* and *Download* operations.
 
 .. image:: /images/upload-download.png
    :alt: 'Upload and download buttons in the Divio app'
-
-If you are familiar with Git, then all you need to know is that your project is a completely
-standard Git repository, and:
-
-* our own Git server is ``git.divio.com``, but you can also :ref:`configure an external Git service for your project
-  <configure-version-control>`
-* by default, we use the branch ``develop`` (optionally, different Git branches can be linked to
-  your Test and Live servers)
-
-If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys to our Git server will be set up for you;
-otherwise you will need to :ref:`set them up yourself <add-public-key>`.
 
 
 Basic Git operations
@@ -51,14 +73,3 @@ Pull changes from the Cloud
 
 * ``git pull`` will pull fetch and merge any changes that have been made on the Cloud
 
-
-Excluded directories
---------------------
-
-Note that a number of directories and files are excluded (using the ``.gitgignore`` file) from the project. They include:
-
-* ``.env`` - the project's virtualenv, for software installed using  pip
-* ``data`` - temporary file storage
-* ``static_collected`` - processed static files
-* ``node_modules`` - for frontend frameworks
-* ``.env-local``
