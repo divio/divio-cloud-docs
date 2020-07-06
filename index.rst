@@ -29,11 +29,6 @@
 Divio developer handbook
 ==============================
 
-.. image:: /images/divio-support.jpg
-   :alt: 'Divio'
-   :class: 'main-visual'
-
-
 Contents
 --------
 
@@ -74,6 +69,14 @@ Explanation and discussion of key topics
 
 
 .. rst-class:: clearfix row
+
+Our development/deployment cycle in seven minutes
+-------------------------------------------------------
+
+..  raw:: html
+
+    <iframe src="https://player.vimeo.com/video/435660924" width="758" height="474" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 
 About the Divio cloud deployment platform
 -----------------------------------------
