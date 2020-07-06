@@ -12,7 +12,9 @@ Obtain the project's slug (its unique ID) from the Dashboard:
    :alt: 'Project slug'
    :width: 400
 
-Alternatively you can use the ``divio`` command to list your cloud project, which will show their slugs::
+Alternatively you can use the ``divio`` command to list your cloud project, which will show their slugs:
+
+.. code-block:: bash
 
     divio project list
 
@@ -63,6 +65,12 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
     log in. The :ref:`Divio SSO system <divio-cloud-sso>` allows you to
     do this from the Django login page with the **Add user** option.
 
+    Or, you could run::
+
+        docker-compose run web manage.py createsuperuser
+
+    See below for :ref:`more on the use of docker-compose <tutorial-docker-compose>`.
+
 If you open a new terminal window and run::
 
     docker ps
@@ -98,6 +106,7 @@ push and pull database and media content.
 
 See the :ref:`Divio CLI reference <divio-cli-ref>` for more.
 
+.. _tutorial-docker-compose:
 
 Using ``docker-compose``
 ^^^^^^^^^^^^^^^^^^^^^^^^

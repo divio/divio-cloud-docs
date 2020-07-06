@@ -3,16 +3,13 @@
 Set up the local development environment
 ========================================
 
-In order to work on your project, we need to set it up in the local development environment. This also uses Docker.
+In order to work on your project, we need to set it up in the **local development environment**. This also uses Docker.
 
-Docker makes it possible to run and work on a project in the same environment as on the cloud, thus side-stepping some
-of the most troublesome problems faced by development teams, in which something works well in development, but runs
-into problems as a result of different environment conditions in production, or when another team member tries to set
-it up on their own machine.
+In this section we will:
 
-Using Docker means that not only does every member of the development team work in the same environment - versions of
-installed packages, environment variables, database and other services - but they're all in the same environment that
-the application will have in production.
+* :ref:`install the Divio CLI <install-divio-cli>`
+* :ref:`add your public key to the Divio Control Panel <add-public-key>`
+* :ref:`install Docker <install-docker>`
 
 
 ..  admonition:: Older versions of Macintosh OS X and Windows
@@ -24,14 +21,33 @@ the application will have in production.
     This is considerably more difficult to set up than Docker running natively. It's possible to
     manage, but we are not able to provide support for this combination.
 
+
+Why does local development environment matter?
+----------------------------------------------
+
+Docker makes it possible to run and work on a project locally in the same environment as it runs on in the cloud. This
+side-steps some of the most troublesome problems faced by development teams, in which something works well in
+development, but then runs into trouble as a result of different environment conditions in production, or when another
+team member tries to set it up on their own machine.
+
+Using Docker means that not only does every member of the development team work in the same environment - which
+includes versions of installed packages, environment variables, database and other services - but they're all in the
+same environment that the application will have in production.
+
+
+Before you start
+----------------
+
 You will need to have the following installed or configured, and know at least the basics of using them, before
 proceeding:
 
-* Git (`GitHub's set up Git guide <https://help.github.com/en/github/getting-started-with-github/set-up-git>`_)
+* Git (see `GitHub's set up Git guide <https://help.github.com/en/github/getting-started-with-github/set-up-git>`_)
 * SSH, so that you can provide your public key to a server (`GitHub's guides to setting up SSH
   <https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_)
 * Pip, the `Python Package Installer <https://pip.pypa.io/en/stable/installing/>`_
 
+
+.. _install-divio-cli:
 
 Install the Divio CLI package
 ---------------------------------
@@ -53,13 +69,14 @@ Log in
 ------
 
 The Divio CLI needs to be authenticated with the Control Panel in order to
-interact with it::
+interact with it, using the command::
 
     divio login
 
 This will open your browser at
 https://control.divio.com/account/desktop-app/access-token/, where you can copy
 an access token to paste into the prompt.
+
 
 
 .. _add-public-key:
@@ -76,6 +93,8 @@ Test that your key is set up correctly; you should receive a ``No interactive ac
 
     ssh -T git@git.divio.com
 
+
+.. _install-docker:
 
 Install Docker and Docker Compose
 ----------------------------------

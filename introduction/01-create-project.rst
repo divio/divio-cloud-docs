@@ -29,7 +29,7 @@ However for convenience we also provide a number of ready-to-go project types fo
 and other languages (and the list is growing).
 
 This tutorial uses `Django <https://www.djangoproject.com/>`_, the most popular Python web application framework, for
-an example project. You don't need to know Django or Python, or have them installed on your system, and the principles
+an example project. You don't need to know Django or Python, or have them installed on your system. The principles
 covered by the tutorial will apply to any other development stack.
 
 Select the following options for your project (other options can be left on their default settings):
@@ -76,9 +76,9 @@ Project environments
    :class: 'main-visual'
 
 
-Your project has two independent server environments, Test and Live. The Test and Live servers have their own services,
-and unique environment variables to configure access to them. They can be deployed independently, and can also :ref:`be
-configured to track different Git branches <custom-tracking-branches>`.
+Your project has two independent server environments, *Test* and *Live* . The Test and Live servers have their own
+services, and unique environment variables to configure access to them. They can be deployed independently, and can
+also :ref:`be configured to track different Git branches <custom-tracking-branches>`.
 
 
 Log in to the project
