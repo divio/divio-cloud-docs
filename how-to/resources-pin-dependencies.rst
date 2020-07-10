@@ -71,6 +71,16 @@ If you later remove the ``requirements.txt`` file, the Control Panel will recogn
 restore the ``pip-reqs compile`` instruction to the ``Dockerfile`` when the project is next
 deployed. Alternatively you can restore it locally yourself.
 
+..  important::
+
+    If the relevant sections in the ``Dockerfile`` are surrounded by the Divio-specific comment tags::
+
+        # <PYTHON>
+        ...
+        # </PYTHON>
+
+    remove these tags - otherwise the Control Panel will simply overwrite your changes.
+
 See :ref:`the Dockerfile reference <dockerfile-reference-python>` for more information about how
 the Control Panel populates the ``Dockerfile``.
 
