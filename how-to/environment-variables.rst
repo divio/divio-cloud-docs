@@ -50,11 +50,11 @@ Use the ``--all`` flag to include automatically applied variables, for example:
 
     Key               Value
     ----------------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    ALT_DATABASE_DSN      mysql://example:Ro1T-d4Ldeaddeadqu6Gu3tkIt@appctl-black-mysql-00.cluster-cs4nfpsgul9fcn.us-east-1.rds.amazonaws.com:3306/example-live-b00bde685-ebdee65
+    ALT_DATABASE_DSN      mysql://example:Ro1T-d4Ldeaddeadqu6Gu3tkIt@appctl-black-mysql-00.cluster-cs4nfpsgul9fcn.us-east-1.rds.amazonaws.com:3306/example-live-b00bde685-deade65
     CACHE_URL             db://django_dbcache
     DEBUG                 False
-    DEFAULT_DATABASE_DSN  postgres://example-live-bead1e173ef383-3638:OIut5vYvWjI3UQzcAGJ4aJIXGWBTscsq_MobDltHiUMiI2VHFbxyW_yKYAl5-aw0F@appctl-black-sites-02.cs4nx9fcn.us-east-1.rds.amazonaws.com:5432/example-live-6214e314797994491151a83-ee6263
-    DEFAULT_STORAGE_DSN   s3://AKIAS5JR2R35Z3PLOF:t62LdAvROXgFR14%2BOwidSI6N9WQL454G0ipJY@example-live-b328dddd68536e314797994491-c967f23.divio-media.org.s3.amazonaws.com/?auth=s3v4&domain=example-live-b32868536e314797994491-c967f23.divio-media.org
+    DEFAULT_DATABASE_DSN  postgres://example-live-bead1e173ef383-3638:OIut5vYvWjI3UQzcAGJ4aJIXGWBTscsq_MobDltHiUMiI2VHFbxyW_yKYAl5-aw0F@appctl-black-sites-02.cs4nx9fcn.us-east-1.rds.amazonaws.com:5432/example-live-bead1e173ef3833638-ee6263
+    DEFAULT_STORAGE_DSN   s3://A5JHDYDTYZ3PLOF:t62LdAvROXgFR14%2BOwidSI6N9WQL454G0ipJY@example-live-b328dddd68536e314797994491-c967f23.divio-media.org.s3.amazonaws.com/?auth=s3v4&domain=example-live-b32868536e314797994491-c967f23.divio-media.org
     DOMAIN                example.us.aldryn.io
     DOMAIN_ALIASES        .*
     GIT_BRANCH            master
