@@ -53,9 +53,13 @@ Interact with your project's cloud S3 storage
 Obtain your storage access details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-SSH into a cloud container, and issue the ``env`` command. This will list the environment variables applied to that
-environment. Amongst them a ``DEFAULT_STORAGE_DSN`` value will be listed (note that each environment includes its
-own storage and has its own ``DEFAULT_STORAGE_DSN``).
+Use the Divio CLI to obtain the ``DEFAULT_STORAGE_DSN`` for the environment, for example:
+
+..  code-block:: python
+
+    divio project env-vars -s test --all --get "DEFAULT_STORAGE_DSN"
+
+See :ref:`how to read environment variables <reading-env-vars>`.
 
 This value contains the details you will need to use with a file transfer client for access to the
 storage bucket. The two examples below show which sections of the DSN correspond to the different

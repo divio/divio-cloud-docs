@@ -125,6 +125,7 @@ Managing a project's resources
 
     Interact with your project’s database <interact-database>
     Interact with your project’s cloud media storage <interact-storage>
+    Manage environment variables <environment-variables>
 
 
 Working with addons

@@ -37,6 +37,8 @@ The value is stored in JSON. You can find the JSON file in the project locally, 
 ``addons/aldryn-django/settings.json``.
 
 
+.. _application-configuration-env-vars:
+
 Via environment variables
 --------------------------
 
