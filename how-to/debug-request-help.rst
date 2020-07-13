@@ -105,7 +105,7 @@ Ensure that we have access to your project
 
 If your project uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
 :ref:`use a private remote Git repository <configure-version-control>`, this won't be possible unless you can provide
-us with access to the repository. Usually we will provide you with :ref:`a public key to add to the respository
+us with access to the repository. Usually we will provide you with :ref:`a public key to add to the repository
 <git-setup-ssh>`.
 
 

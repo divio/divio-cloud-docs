@@ -9,7 +9,7 @@ fine-grained revision control, excellent collaboration options, easy export and 
 We provide Git hosting by default. Our server is ``git.divio.com``. You can also :ref:`use an external Git provider
 <configure-version-control>`.
 
-By default, we use the branch ``develop``, but you ccan specify the Git branches to be used by each environment.
+By default, we use the branch ``develop``, but you can specify the Git branches to be used by each environment.
 
 You will need to :ref:`set up your public key on our Control Panel <add-public-key>` if you use our Git server.
 
@@ -28,7 +28,7 @@ typically appear in the deployment log with an exception from ``pygit2``, such a
 
 This can be caused by:
 
-* an empty directory committed to the respository (remove it or add a file to it)
+* an empty directory committed to the repository (remove it or add a file to it)
 * a `Git submodule included in the repository <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ (remove it)
 * files containing mixed line endings, if the ``.gitattributes`` configuration includes an instruction to resolve them
   (remove ``* text=auto`` if it appears in ``.gitattributes``).
