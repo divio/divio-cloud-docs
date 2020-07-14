@@ -1,4 +1,4 @@
-.. _tutorial-set-up:
+..  _tutorial-set-up:
 
 Create a new Django project
 ===========================
@@ -9,7 +9,7 @@ Python, or have them installed on your system. The principles covered by the tut
 development stack.
 
 
-.. include:: includes/set-up-project.rst
+..  include:: includes/set-up-project.rst
 
 
 * *Python*: ``Python 3.x``
@@ -23,7 +23,7 @@ development stack.
     selected by default in Divio projects.
 
 
-.. include:: includes/set-up-project-cont.rst
+..  include:: includes/set-up-project-cont.rst
 
 
 Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
@@ -33,4 +33,5 @@ Divio**. You'll see the familiar Django admin for a new project.
    :alt: 'Django admin'
    :class: 'main-visual'
 
-.. include:: includes/deployment-dashboard.rst
+
+..  include:: includes/deployment-dashboard.rst

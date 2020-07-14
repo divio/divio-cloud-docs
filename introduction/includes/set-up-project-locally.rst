@@ -25,12 +25,25 @@ Run the ``divio project setup`` command (for example if your project slug is ``t
 
     divio project setup tutorial-project
 
-..  note::
+The Divio CLI will execute a number of steps - this make take a few minutes, depending on how much needs to be
+downloaded and processed. The Divio CLI tool will build your project locally (see :ref:`build-process` for a
+more detailed description of what's happening here):
 
-    You can find other useful commands listed in `our local commands cheat sheet
-    <https://docs.divio.com/en/latest/reference/local-commands-cheatsheet.html>`_.
+..  code-block:: text
 
-The Divio CLI tool will build your project locally. See :ref:`build-process`
-for a description of what it does.
+    Creating workspace
+
+    cloning project repository
+    [...]
+    downloading remote docker images
+    [...]
+    building local docker images
+    [...]
+    creating new database container
+    [...]
+    syncing and migrating database
+    [...]
+    Your workspace is setup and ready to start.
+
 
 ``cd`` into the newly-created project directory, where you will find your project code.

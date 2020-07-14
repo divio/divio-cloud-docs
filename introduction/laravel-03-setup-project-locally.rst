@@ -74,6 +74,3 @@ Once you have successfully logged into the local site, try stopping the project 
 
 
 which will open a Django shell in the ``web`` container.
-
-
-..  include:: includes/set-up-project-locally-useful-commands-cont.rst
