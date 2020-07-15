@@ -76,6 +76,7 @@ Next, select your path through the tutorial.
       <div class="tabs__nav">
          <a href="#django-tab" class="tabs__link tab__link--active">
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60"></a>
+         <a href="#wagtail-tab" class="tabs__link tab__link--active">Wagtail</a>
          <a href="#php-lavarel-tab" class="tabs__link">
            <img src="../_images/laravel-logo.svg" alt="Laravel" width="60"> (beta)</a>
         </a>
@@ -97,6 +98,20 @@ Python/Django chapters
     django-03-setup-project-locally.rst
     django-04-add-application
     django-05-more-complex-configuration
+
+
+.. _wagtail:
+
+.. rst-class:: tabs-pane
+
+Wagtail chapters
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+
+    wagtail-02-create-project
+    wagtail-03-setup-project-locally.rst
 
 
 .. |flavours| image:: /images/flavours.svg

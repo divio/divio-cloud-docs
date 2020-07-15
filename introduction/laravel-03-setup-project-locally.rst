@@ -71,5 +71,3 @@ Once you have successfully logged into the local site, try stopping the project 
 This will run the ``composer install`` inside the container (in fact this is one of the command in the ``setup.php``
 script you ran earlier).
 
-
-..  include:: includes/set-up-project-locally-useful-commands-cont.rst

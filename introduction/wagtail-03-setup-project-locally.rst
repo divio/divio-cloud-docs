@@ -1,8 +1,5 @@
-.. _tutorial-setup-project-locally:
-.. _replicate-project-locally:
 
-
-.. include:: includes/set-up-project-locally.rst
+..  include:: includes/set-up-project-locally.rst
 
 
 Start the local project
