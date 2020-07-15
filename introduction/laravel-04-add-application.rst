@@ -17,15 +17,10 @@
 Add a new package to the project
 ===================================
 
-..  admonition:: Our Flavours implementation is in private beta
-
-    Access to Flavours on Divio is currently in a *private beta* phase. Sign up for access via `the Flavours website
-    <https://www.flavours.dev>`_.
-
-There are various ways to add packages to PHP projects, but since this project is managed using Flavours, we'll use
-that. Flavours is a platform-independent specification for building containerised web projects; the Flavours *addon
-manager* for PHP Laravel - `flavour/fam-php-laravel <https://hub.docker.com/r/flavour/fam-php-laravel>`_ - knows how
-to add a package to a Laravel project.
+There are various ways to add packages to PHP projects, but since this project is managed using `Flavours
+<https://www.flavours.dev>`_, we'll use that. Flavours is a platform-independent specification for building
+containerised web projects; the Flavours *addon manager* for PHP Laravel - `flavour/fam-php-laravel
+<https://hub.docker.com/r/flavour/fam-php-laravel>`_ - knows how to add a package to a Laravel project.
 
 We will add the `laravel-responsecache <https://www.laravelplay.com/packages/spatie::laravel-responsecache>`_ package.
 It's an open-source addon, released the Belgian agency `Spatie <https://spatie.be/opensource>`_, and can improve
@@ -45,7 +40,7 @@ Run::
 Run the ``flavour add`` command
 -------------------------------
 
-Run ``flavour add``:
+Run the ``flavour add`` command, as follows:
 
 ..  code-block:: bash
 
@@ -57,6 +52,7 @@ Run ``flavour add``:
       ✔ Installed composer/spatie/laravel-responsecache:6.1.1
 
 ``laravel-responsecache`` is now installed in the project.
+
 
 About the command
 ~~~~~~~~~~~~~~~~~
@@ -115,6 +111,9 @@ installed and activated.
 Deploy to the Cloud
 -------------------
 
+Push your code
+~~~~~~~~~~~~~~
+
 To deploy your changes to the Test server, push your changes, and run a deployment command:
 
 ..  code-block:: bash
@@ -126,6 +125,26 @@ To deploy your changes to the Test server, push your changes, and run a deployme
 
 Divio's hosting service is Flavours-aware; your changes, once pushed and deployed on the Control Panel, will
 automatically use the ``composer.json`` file to rebuild the project with the new package installed.
+
+
+Push the database
+~~~~~~~~~~~~~~~~~
+
+Using ``divio project push/pull``
+---------------------------------
+
+Your cloud database hasn't yet been migrated, unlike the local database. One very useful function of the Divio CLI is
+ability to push and pull your database and media storage to and from the cloud environments. Push the database with:
+
+..  code-block:: bash
+
+    divio project push db
+
+The local database will be pushed to the cloud Test environment; you'll see it the records there after a few moments.
+
+Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
+cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
+environment, so that you can test new development with real data.
 
 
 Explore configuration
@@ -142,3 +161,13 @@ edit). These defaults were contained in the addon's YAML. If you hit **Save**, y
 environment variables (you can see them in the *Env Variables* view).
 
 When next deployed, those variables will be applied.
+
+
+Where to go next?
+------------------
+
+This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+fundamental concepts and tools involved.
+
+Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many
+common operations. And if there's something you're looking for but can't find, please contact Divio support.

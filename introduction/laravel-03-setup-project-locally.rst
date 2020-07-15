@@ -8,17 +8,18 @@
 Run the set-up script
 ---------------------
 
-You'll find a script in ``divio/setup.php`` that sets up components in the project. Run it with:
+This step is required as part of the beta implementation of the PHP/Laravel project type, and will be
+refined in later releases.
+
+You'll find a script in ``divio/setup.php`` that sets up components in the project, and performs database migrations.
+Run it with:
 
 ..  code-block:: bash
 
-    docker-compose run --rm web php /app/divio/setup.php
+    docker-compose run web php /app/divio/setup.php
 
 This takes a few minutes. Once complete, you can run your project.
 
-..  note::
-
-    Explain here why this doesn't need to be run on the cloud.
 
 
 Start the local project
@@ -44,7 +45,6 @@ Open the project in your web browser by visiting http://localhost:8000.
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping
 <docker-compose-web>`.)
 
-
 If you open a new terminal window and run::
 
     docker ps
@@ -64,16 +64,12 @@ Once you have successfully logged into the local site, try stopping the project 
 ..  include:: includes/set-up-project-locally-useful-commands.rst
 
 
-..  note::
-
-    Add something interesting here.
-
 ..  code-block:: bash
 
-    docker-compose run web python manage.py shell
+    docker-compose run web composer install
 
-
-which will open a Django shell in the ``web`` container.
+This will run the ``composer install`` inside the container (in fact this is one of the command in the ``setup.php``
+script you ran earlier).
 
 
 ..  include:: includes/set-up-project-locally-useful-commands-cont.rst
