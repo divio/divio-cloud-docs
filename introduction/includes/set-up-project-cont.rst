@@ -17,7 +17,7 @@ Project environments
    :class: 'main-visual'
 
 
-Your project has two independent server environments, *Test* and *Live* . The Test and Live servers have their own
+Your project has two independent server environments, *Test* and *Live* . The Test and Live environments have their own
 services, and unique environment variables to configure access to them. They can be deployed independently, and can
 also :ref:`be configured to track different Git branches <custom-tracking-branches>`.
 
@@ -37,6 +37,6 @@ Typically, this takes a minute or so.
 Open the Test environment website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once you have successfully deployed the Test server, the Control Panel will indicate a *Last deployment successful at
-...* message, and the project URL in the Test server pane will display as link, e.g.
+Once you have successfully deployed the Test environment, the Control Panel will indicate a *Last deployment successful
+at ...* message, and the project URL in the Test environment pane will display as a link, for example
 ``https://tutorial-project-stage.us.aldryn.io``. Open the link to access the project.

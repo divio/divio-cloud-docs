@@ -59,7 +59,7 @@ to help you become familiar with key when working with Divio.
 Tutorial chapters
 ------------------
 
-.. toctree::
+..  toctree::
     :maxdepth: 1
 
     01-installation
@@ -67,16 +67,20 @@ Tutorial chapters
 
 Next, select your path through the tutorial.
 
+..  What follows is a terrible hack to force the behaviour we want from Sphinx. It could end badly. See hacks.rst for
+    more.
 
-.. raw:: html
+..  raw:: html
 
     <div class="tabs">
       <div class="tabs__nav">
-         <a href="#django-tab" class="tabs__link tab__link--active">Django</a>
-         <a href="#php-lavarel-tab" class="tabs__link">PHP/Laravel (currently in beta)</a>
+         <a href="#django-tab" class="tabs__link tab__link--active">
+           <img src="../_images/django-logo-negative.svg" alt="Django" width="60"></a>
+         <a href="#php-lavarel-tab" class="tabs__link">
+           <img src="../_images/laravel-logo.svg" alt="Laravel" width="60"> (beta)</a>
+        </a>
       <div>
       <div class="tabs__content">
-
 
 
 .. _django:
