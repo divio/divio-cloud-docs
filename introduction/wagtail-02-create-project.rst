@@ -1,4 +1,4 @@
-..  _tutorial-set-up:
+..  _wagtail-tutorial-set-up:
 
 Create a new Wagtail Django project
 ===================================
