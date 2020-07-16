@@ -1,4 +1,12 @@
-The new project doesn't do anything interesting yet - but it's up and running and ready to start working on.
+..  This include is used by:
+
+    * django-02-create-project.rst
+    * laravel-02-create-project.rst
+    * wagtail-02-create-project.rst
+
+
+The new project doesn't do anything very useful or interesting yet - but it's up and running and ready to start working
+on.
 
 
 About deployment

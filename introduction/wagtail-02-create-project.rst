@@ -38,7 +38,7 @@ Divio**. You'll see the "Welcome to Wagtail" page.
 More interesting are the admin pages:
 
 * the Wagtail admin, at ``/admin``, shown below
-* the Django admn, at ``/django-admin``
+* the Django admin, at ``/django-admin``
 
 .. image:: /images/intro-wagtail.png
    :alt: 'Wagtail admin'

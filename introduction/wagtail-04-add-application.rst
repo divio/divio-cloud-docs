@@ -40,30 +40,12 @@ Edit its ``models.py`` to add a new HomePage model with a ``body`` field:
             FieldPanel('body', classname="full"),
         ]
 
-Add ``home`` to ``INSTALLED_APPS``:
-
 
 Configure the Django settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``home`` needs to be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Open ``settings.py``.
-You'll find the lines::
-
-    import aldryn_addons.settings
-    aldryn_addons.settings.load(locals())
-
-This project uses the optional Aldryn Addons system, which makes it possible for projects to configure themselves. For
-example, you can can find all the configuration that the Aldryn Django does for Django settings in
-``addons/aldryn-django/aldryn_config.py``. You don't have to use this system, but it makes development much faster, as
-it takes care of all the settings that would otherwise need to be managed correctly for the different cloud
-environments as well as the local environment.
-
-The lines above load all those settings into the ``settings`` module. A good way to see what settings are applied is
-via Django's ``diffsettings`` command::
-
-   docker-compose run web python manage.py diffsettings
-
-As you can see, a number of ``INSTALLED_APPS`` are already defined, so we can add ``home`` to the list:
+``home`` needs to be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Add ``home`` to the
+list:
 
 ..  code-block:: python
     :emphasize-lines: 4
@@ -74,22 +56,8 @@ As you can see, a number of ``INSTALLED_APPS`` are already defined, so we can ad
         "home",
     ])
 
-..  admonition:: A note for experienced Djangonauts
 
-    This project set-up, and the way we handle settings, may strike experienced Django users as unusual.
-
-    It's important to bear in mind that it's just one way of handling settings in a Django project on Divio. Use of
-    Aldryn Django and the whole Aldryn Addons system is wholly optional; if you prefer to manage settings manually,
-    that will work just as well.
-
-    One advantage of this way of doing it is that it declutters the ``settings.py file``, removing
-    deployment-related values that are better handled via environment variables, and also provides a guarantee that
-    settings for database, media and so on will always be correct - Aldryn Django's ``aldryn_config.py`` will set them
-    appropriately for each environment, including the local development environment, and also appropriately at each
-    stage of the build/deployment process.
-
-    Even if you later plan to use your one preferred set-up, for the purposes of this tutorial it's strongly
-    recommended to continue with the way Aldryn Django does it.
+..  include:: includes/04-add-application-django-01.rst
 
 
 Create migrations and migrate the database
@@ -145,7 +113,7 @@ In ``home/templates/home/home_page.html``:
 Add a page in the Wagtail admin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the usual Wagtail way, add a new page under *Home*, and ensure that in Settings > Sites, the default Site is
+In the usual Wagtail way, add a new page under *Home*, and ensure that in *Settings* > *Sites*, the default Site is
 attached to it.
 
 
@@ -177,21 +145,7 @@ that it works correctly, you can deploy the Live server too:
     divio project deploy live
 
 
-Using ``divio project push/pull``
----------------------------------
-
-Your cloud database doesn't contain records of the access attempts you made locally. One very useful function of the
-Divio CLI is ability to push and pull your database and media storage to and from the cloud environments. For example,
-try:
-
-..  code-block:: bash
-
-    divio project push db
-
-The local database will be pushed to the cloud Test environment; you'll see it the records there after a few moments.
-Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
-cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
-environment, so that you can test new development with real data.
+..  include:: includes/04-add-application-push-01.rst
 
 
 Install a package from pip
@@ -264,7 +218,7 @@ Once more, you need to:
 More complex configuration
 --------------------------
 
-See :ref:`tutorial-application-configuration` from basic Django tutorial pathway. This includes some further
+See :ref:`tutorial-application-configuration` from the basic Django tutorial pathway. This includes some further
 configuration examples that it is good to know about.
 
 

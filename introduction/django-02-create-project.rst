@@ -4,9 +4,13 @@ Create a new Django project
 ===========================
 
 In this section we will create and deploy a new project in the Control Panel using `Django
-<https://www.djangoproject.com/>`_, the most popular Python web application framework. You don't need to know Django or
-Python, or have them installed on your system. The principles covered by the tutorial will apply to any other
-development stack.
+<https://www.djangoproject.com/>`_, the most popular Python web application framework. The principles covered by the
+tutorial will apply to any other development stack.
+
+..  note::
+
+    This tutorial is intended to introduce the basics of working with Divio, using Django as an example. **It is not a
+    tutorial for Django**. However, you don't need to know Django or Python, or have them installed on your system.
 
 
 ..  include:: includes/02-create-project-1.rst

@@ -12,10 +12,12 @@ Next, we're going to install a new package, `Django Axes <https://github.com/jaz
 Install a package
 -----------------
 
-To be used in a containerised system, packages must be built onto the image, otherwise the next time a container is
-launched, the package will not be there. The image is built by the Dockerfile, and in our Dockerfile for Django
+To be used in a containerised system, packages must be built into the image, otherwise the next time a container is
+launched, the package will not be there. The image is built by the ``Dockerfile``, and in our ``Dockerfile`` for Django
 projects, this includes an instruction to process the project's ``requirements.in`` file with Pip. This is where the
-package needs to be added. Open ``requirements.in`` and at the end of it add a new line::
+package needs to be added. Open ``requirements.in`` and at the end of it add a new line:
+
+..  code-block:: bash
 
     django-axes==3.0.3
 
@@ -30,24 +32,8 @@ Now you can build the project again by running::
 Configure the Django settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Django Axes requires that it be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Open ``settings.py``.
-You'll find the lines::
-
-    import aldryn_addons.settings
-    aldryn_addons.settings.load(locals())
-
-This project uses the optional Aldryn Addons system, which makes it possible for projects to configure themselves. For
-example, you can can find all the configuration that the Aldryn Django does for Django settings in
-``addons/aldryn-django/aldryn_config.py``. You don't have to use this system, but it makes development much faster, as
-it takes care of all the settings that would otherwise need to be managed correctly for the different cloud
-environments as well as the local environment.
-
-The lines above load all those settings into the ``settings`` module. A good way to see what settings are applied is
-via Django's ``diffsettings`` command::
-
-   docker-compose run web python manage.py diffsettings
-
-As you can see, a number of ``INSTALLED_APPS`` are already defined, so we can add ``axes`` to the list:
+Django Axes requires that it be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Add ``axes`` to the
+list:
 
 ..  code-block:: python
     :emphasize-lines: 4
@@ -58,28 +44,16 @@ As you can see, a number of ``INSTALLED_APPS`` are already defined, so we can ad
         "axes",
     ])
 
-..  admonition:: A note for experienced Djangonauts
 
-    This project set-up, and the way we handle settings, may strike experienced Django users as unusual.
-
-    It's important to bear in mind that it's just one way of handling settings in a Django project on Divio. Use of
-    Aldryn Django and the whole Aldryn Addons system is wholly optional; if you prefer to manage settings manually,
-    that will work just as well.
-
-    One advantage of this way of doing it is that it declutters the ``settings.py file``, removing
-    deployment-related values that are better handled via environment variables, and also provides a guarantee that
-    settings for database, media and so on will always be correct - Aldryn Django's ``aldryn_config.py`` will set them
-    appropriately for each environment, including the local development environment, and also appropriately at each
-    stage of the build/deployment process.
-
-    Even if you later plan to use your one preferred set-up, for the purposes of this tutorial it's strongly
-    recommended to continue with the way Aldryn Django does it.
+..  include:: includes/04-add-application-django-01.rst
 
 
 Run migrations
 --------------
 
-Django Axes introduces new database tables, so we need to run migrations::
+Django Axes introduces new database tables, so we need to run migrations:
+
+..  code-block:: bash
 
     docker-compose run web python manage.py migrate
 
@@ -104,44 +78,33 @@ Deploy to the cloud
 
 If you are satisfied with your work, you can deploy it to the cloud.
 
-We made changes to two files (``requirements.in``, ``settings.py``). So::
+We made changes to two files (``requirements.in``, ``settings.py``). So:
+
+..  code-block:: bash
 
     git add .
     git commit -m "Added Django Axes"
     git push
 
 On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
-using the Control Panel, or by running::
+using the Control Panel, or by running:
+
+..  code-block:: bash
 
     divio project deploy
 
 When it has finished deploying, you should check the Test server to see that all is as expected. Once you're satisfied
-that it works correctly, you can deploy the Live server too::
+that it works correctly, you can deploy the Live server too:
+
+..  code-block:: bash
 
     divio project deploy live
 
 
-Using ``divio project push/pull``
----------------------------------
-
-Your cloud database doesn't contain records of the access attempts you made locally. One very useful function of the
-Divio CLI is ability to push and pull your database and media storage to and from the cloud environments. For example,
-try::
-
-    divio project push db
-
-The local database will be pushed to the cloud Test environment; you'll see it the records there after a few moments.
-Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
-cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
-environment, so that you can test new development with real data.
+..  include:: includes/04-add-application-push-01.rst
 
 
-Where to go next?
-------------------
+--------------
 
-This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
-fundamental concepts and tools involved.
-
-Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many
-common operations. And if there's something you're looking for but can't find, please contact Divio support.
-
+:ref:`The next section <tutorial-application-configuration>` looks at some more complex configuration and application
+integration.

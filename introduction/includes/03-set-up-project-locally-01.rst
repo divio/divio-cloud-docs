@@ -1,3 +1,10 @@
+..  This include is used by:
+
+    * django-03-setup-project-locally.rst
+    * wagtail-03-setup-project-locally.rst
+    * laravel-03-setup-project-locally.rst
+
+
 Set up your project locally
 ========================================
 

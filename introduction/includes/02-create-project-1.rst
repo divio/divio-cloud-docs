@@ -1,3 +1,10 @@
+..  This include is used by:
+
+    * django-02-create-project.rst
+    * laravel-02-create-project.rst
+    * wagtail-02-create-project.rst
+
+
 Set up a project in the Cloud
 -----------------------------
 

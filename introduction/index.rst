@@ -133,6 +133,8 @@ PHP/Laravel chapters
     laravel-02-create-project
     laravel-03-setup-project-locally
     laravel-04-add-application
+    laravel-05-flavours
+
 
 .. raw:: html
 

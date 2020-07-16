@@ -8,8 +8,12 @@ Create a new PHP/Flavours project
     Flavours on Divio is currently in a *beta* phase. `Learn more about Flavours <https://www.flavours.dev>`_.
 
 In this section we will create and deploy a new project in the Control Panel using `Laravel <https://laravel.com/>`_, a
-popular PHP web application framework. You don't need to know Laravel or PHP, or have them installed on your system.
-The principles covered by the tutorial will apply to any other development stack.
+popular PHP web application framework. The principles covered by the tutorial will apply to any other development stack.
+
+..  note::
+
+    This tutorial assumes some basic familiarity with PHP. It is intended to introduce the basics of working with
+    Divio, using Laravel as an example. **It is not a tutorial for Laravel**.
 
 
 ..  include:: includes/02-create-project-1.rst

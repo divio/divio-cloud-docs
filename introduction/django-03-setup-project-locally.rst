@@ -39,21 +39,6 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 
     See below for more on the use of ``docker-compose``.
 
-If you open a new terminal window and run::
-
-    docker ps
-
-it will show you the Docker processes that are running - you will see something like::
-
-    ➜ docker ps
-    CONTAINER ID  IMAGE                COMMAND                 CREATED         STATUS        PORTS                 NAME
-    d6007edbaf32  tutorialproject_web  "/tini -g -- pytho..."  17 minutes ago  Up 8 seconds  0.0.0.0:8000->80/tcp  djangoproject_web_
-    27ff3e661027  postgres:9.6         "docker-entrypoint..."  17 minutes ago  Up 8 seconds  5432/tcp              djangoproject_db_
-
-The first container is your Django project. The second is the Postgres database, running in its own Docker container.
-
-Once you have successfully logged into the local site, try stopping the project with ``CONTROL-C``.
-
 
 ..  include:: includes/03-set-up-project-locally-02.rst
 

@@ -1,3 +1,10 @@
+..  This include is used by:
+
+    * django-02-create-project.rst
+    * laravel-02-create-project.rst
+    * wagtail-02-create-project.rst
+
+
 Divio projects use Git for code management. We provide a Git server that your projects will use by default; you can
 also choose to :ref:`use another Git service if you prefer <configure-version-control>`. For this tutorial, use our
 Git server.
@@ -15,7 +22,6 @@ Project environments
 .. image:: /images/intro-dashboard.png
    :alt: 'Project Dashboard'
    :class: 'main-visual'
-
 
 Your project has two independent server environments, *Test* and *Live* . The Test and Live environments have their own
 services, and unique environment variables to configure access to them. They can be deployed independently, and can
@@ -37,6 +43,9 @@ Typically, this takes a minute or so.
 Open the Test environment website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once you have successfully deployed the Test environment, the Control Panel will indicate a *Last deployment successful
-at ...* message, and the project URL in the Test environment pane will display as a link, for example
-``https://tutorial-project-stage.us.aldryn.io``. Open the link to access the project.
+Once you have successfully deployed the Test environment, the Control Panel will indicate this in the interface:
+
+    Last deployment successful at ...
+
+and the project URL in the Test environment pane will display as a link, for example
+``https://tutorial-project-stage.us.aldryn.io``. Select the link to access the project.

@@ -18,7 +18,9 @@ Add django-debug-toolbar to ``requirements.in``
 
 The `Django Debug Toolbar installation notes
 <https://django-debug-toolbar.readthedocs.io/en/stable/installation.html>`_ suggest to install it using ``pip install
-django-debug-toolbar``. The latest stable version at the time of writing is 2.2, so add::
+django-debug-toolbar``. The latest stable version at the time of writing is 2.2, so add:
+
+..  code-block:: bash
 
     django-debug-toolbar==2.2
 
@@ -128,3 +130,12 @@ Visit the admin to see the Debug Toolbar in action.
 .. image:: /images/intro-debug-toolbar.png
    :alt: 'Django Debug Toolbar'
 
+
+Where to go next?
+------------------
+
+This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+fundamental concepts and tools involved.
+
+Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many
+common operations. And if there's something you're looking for but can't find, please contact Divio support.
