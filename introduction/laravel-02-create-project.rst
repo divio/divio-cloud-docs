@@ -12,14 +12,14 @@ popular PHP web application framework. You don't need to know Laravel or PHP, or
 The principles covered by the tutorial will apply to any other development stack.
 
 
-..  include:: includes/set-up-project.rst
+..  include:: includes/02-create-project-1.rst
 
 
 * *Python*: ``PHP``
 * *Project type*: ``Laravel``
 
 
-.. include:: includes/set-up-project-cont.rst
+..  include:: includes/02-create-project-2.rst
 
 
 You'll see the familiar Laravel starting page.
@@ -29,4 +29,4 @@ You'll see the familiar Laravel starting page.
    :class: 'main-visual'
 
 
-..  include:: includes/deployment-dashboard.rst
+..  include:: includes/02-create-project-3.rst

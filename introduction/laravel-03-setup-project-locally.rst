@@ -2,7 +2,7 @@
 .. _replicate-laravel-project-locally:
 
 
-..  include:: includes/set-up-project-locally.rst
+..  include:: includes/03-set-up-project-locally-01.rst
 
 
 Run the set-up script
@@ -61,7 +61,7 @@ The first container is your Django project. The second is the Postgres database,
 Once you have successfully logged into the local site, try stopping the project with ``CONTROL-C``.
 
 
-..  include:: includes/set-up-project-locally-useful-commands.rst
+..  include:: includes/03-set-up-project-locally-02.rst
 
 
 ..  code-block:: bash
@@ -71,3 +71,5 @@ Once you have successfully logged into the local site, try stopping the project 
 This will run the ``composer install`` inside the container (in fact this is one of the command in the ``setup.php``
 script you ran earlier).
 
+
+..  include:: includes/03-set-up-project-locally-03.rst

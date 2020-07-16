@@ -1,5 +1,5 @@
 
-..  include:: includes/set-up-project-locally.rst
+..  include:: includes/03-set-up-project-locally-01.rst
 
 
 Start the local project
@@ -52,7 +52,7 @@ The first container is your Django project. The second is the Postgres database,
 Once you have successfully logged into the local site, try stopping the project with ``CONTROL-C``.
 
 
-..  include:: includes/set-up-project-locally-useful-commands.rst
+..  include:: includes/03-set-up-project-locally-02.rst
 
 
 ..  code-block:: bash
@@ -60,3 +60,6 @@ Once you have successfully logged into the local site, try stopping the project 
     docker-compose run web python manage.py shell
 
 which will open a Django shell in the ``web`` container.
+
+
+..  include:: includes/03-set-up-project-locally-03.rst

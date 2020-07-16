@@ -14,7 +14,7 @@
 
 .. _tutorial-flavours-php-add-application:
 
-Add a new package to the project
+Make changes and deploy them
 ===================================
 
 There are various ways to add packages to PHP projects, but since this project is managed using `Flavours

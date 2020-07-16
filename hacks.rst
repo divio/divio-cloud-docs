@@ -21,3 +21,6 @@ can be used by raw HTML. Used in:
 
 .. image:: /images/laravel-logo.svg
    :width: 60
+
+.. image:: /images/wagtail-logo.svg
+   :width: 60

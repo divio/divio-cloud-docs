@@ -9,7 +9,7 @@ Python, or have them installed on your system. The principles covered by the tut
 development stack.
 
 
-..  include:: includes/set-up-project.rst
+..  include:: includes/02-create-project-1.rst
 
 
 * *Python*: ``Python 3.x``
@@ -23,7 +23,7 @@ development stack.
     selected by default in Divio projects.
 
 
-..  include:: includes/set-up-project-cont.rst
+..  include:: includes/02-create-project-2.rst
 
 
 Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
@@ -34,4 +34,4 @@ Divio**. You'll see the familiar Django admin for a new project.
    :class: 'main-visual'
 
 
-..  include:: includes/deployment-dashboard.rst
+..  include:: includes/02-create-project-3.rst

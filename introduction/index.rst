@@ -48,8 +48,7 @@ cloud.
 Choose your pathway
 -------------------
 
-We offer two pathways though the tutorial, for Python/Django and for PHP/Laravel (currently in beta). You don't need
-to know either language or framework in order to make sense of the tutorial.
+We currently offer three pathways though the tutorial, for Django, Wagtail and Laravel (currently in beta).
 
 The same principles will be used for any language you use for your applications on Divio. We recommend starting with
 one of these tutorials even if you plan to work with a different language later, as the tutorials have been designed
@@ -76,7 +75,9 @@ Next, select your path through the tutorial.
       <div class="tabs__nav">
          <a href="#django-tab" class="tabs__link tab__link--active">
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60"></a>
-         <a href="#wagtail-tab" class="tabs__link tab__link--active">Wagtail</a>
+         <a href="#wagtail-tab" class="tabs__link tab__link--active">
+           <img src="../_images/wagtail-logo.svg" alt="Wagtail" width="60"></a>
+         </a>
          <a href="#php-lavarel-tab" class="tabs__link">
            <img src="../_images/laravel-logo.svg" alt="Laravel" width="60"> (beta)</a>
         </a>
@@ -111,7 +112,8 @@ Wagtail chapters
     :maxdepth: 1
 
     wagtail-02-create-project
-    wagtail-03-setup-project-locally.rst
+    wagtail-03-setup-project-locally
+    wagtail-04-add-application
 
 
 .. |flavours| image:: /images/flavours.svg
