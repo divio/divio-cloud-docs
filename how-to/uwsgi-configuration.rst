@@ -1,7 +1,7 @@
 .. gateway-configuration:
 
 How to manage uWSGI configuration
-==========================================
+=================================
 
 In our Django projects, the uWSGI gateway to the load balancers is part of the customer application:
 
