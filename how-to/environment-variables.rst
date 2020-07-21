@@ -131,7 +131,6 @@ configured for each environment.
     undesired space.
 
 
-
 In the local environment
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -139,3 +138,24 @@ By default, the ``.env-local`` file is used to store variables for the local env
 specified by the ``env_file: .env-local`` in the ``docker-compose.yml`` file).
 
 
+.. _setting-env-vars-build:
+
+In the build phase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use ``ENV`` in the ``Dockerfile`` to set an environment variable that will be used for the rest of the build process,
+and will also be baked into the image and accessible at runtime.
+
+..  code-block:: dockerfile
+
+    ENV <key>=<value>
+
+You can also force a particular command to run with a certain environment variable:
+
+..  code-block:: dockerfile
+
+    RUN <key>=<value> <command>
+
+However, the environment variables with which the cloud environments are provisioned (for example, for services such as
+database and media storage) are not accessible at build time (nor would it be desirable to rely on them in the build,
+since the same image will be used in multiple cloud environments).

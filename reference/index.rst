@@ -33,7 +33,6 @@ Python/Django application configuration
     :maxdepth: 1
 
     configuration-settings-file
-    configuration-environment-variables
 
 
 Coding in Divio applications

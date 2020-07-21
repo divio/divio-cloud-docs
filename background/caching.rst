@@ -6,22 +6,14 @@ Caching in Divio projects
 Infrastructure-level caching
 ----------------------------
 
-Caching is provided by `Cloudflare <http://cloudflare.com>`_. Caching is provided on all projects
-and plans, and on Test as well as Live servers. It's automatic and requires no additional action or
-configuration.
+Caching is generally provided by `Cloudflare <http://cloudflare.com>`_.
 
+:ref:`Caching for media storage <media-file-caching>` is available on all projects and plans, and on Test as well as
+Live servers. It's automatic and requires no additional action or configuration. Note that this only includes files
+served from our S3 media buckets (typically, images). Resources served by the application instances (HTML, static
+files) are **not** cached.
 
-Defaults
-~~~~~~~~
-
-By default, only files served from our media buckets (typically images) are cached. Resources
-served by the application instances (HTML, static files) are not cached.
-
-Files are cached indefinitely; the cache is not invalidated automatically when a file is
-changed, unless its URL is changed.
-
-Caching is URL-based, and wholly content-unaware - the caching system does not detect when files
-have changed.
+Caching is URL-based, and wholly content-unaware - caching does not detect when files have changed.
 
 
 Options
@@ -41,18 +33,24 @@ includes:
 * custom Cloudflare page rules
 
 
+.. _media-file-caching:
+
 Media file caching
 ~~~~~~~~~~~~~~~~~~
 
 Typically, the bulk of a page web's transfer load is accounted for by its media files, most of
 which will be images in the page.
 
-All media files are handled by our dedicated storage and hosting providers, using S3 buckets.
+All media files are handled by our dedicated storage and hosting providers, using S3 buckets. If your application uses
+the ``aldryn-media.io`` domain for S3 buckets, then the files are *not* cached.
 
-Delivery of these files is handled by Cloudflare's CDN, which also caches the files. Cloudflare
-will cache media files according to the ``Cache-Control`` header applied to the files.
+Delivery of these files is handled by Cloudflare's CDN, which also caches the files.
 
-For example:
+
+Controlling caching headers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cloudflare will cache media files according to the ``Cache-Control`` header applied to the files. For example:
 
 ..  code-block:: text
 
@@ -60,18 +58,17 @@ For example:
 
 will set a TTL of one hour (3600 seconds).
 
+Your application can set these headers when managing the file storage. Aldryn Django does this by default, also
+applying some sensible default values (see also :ref:`DISABLE_S3_MEDIA_HEADERS_UPDATE`).
 
-Controlling caching headers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For an example: our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail files
+Our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail files
 <https://github.com/divio/django-filer/blob/master/aldryn_config.py#L22-L27>`_ using the
 ``MEDIA_HEADERS`` setting. In turn, our Aldryn Django addon applies the ``MEDIA_HEADERS`` values it
 discovers to `the media storage class that configures the S3 bucket
 <https://github.com/divio/aldryn-django/blob/support/2.2.x/aldryn_django/storage.py#L29-L74>`_.
 
 Any application that needs to control the behaviour of cached media will need either to make use
-of the provided functionality in Aldryn Django, or configure the S3 bucket directly itself.
+of provided functionality (for example, such as in Aldryn Django), or configure the S3 bucket directly itself.
 
 
 Application-level caching
@@ -114,8 +111,8 @@ environments.
 Application caching options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-What *not* to use
-^^^^^^^^^^^^^^^^^
+What *not* to use in your code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Caching should rely on a shared store that persists for all containers. For example, caching that
 relies on a container's local file-system or local memory should not be used, as only that

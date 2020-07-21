@@ -1,6 +1,6 @@
 .. _tutorial-flavours-php-set-up:
 
-Create a new PHP/Flavours project
+Create a new PHP/Laravel project
 ===================================
 
 ..  admonition:: Our Flavours implementation is in beta

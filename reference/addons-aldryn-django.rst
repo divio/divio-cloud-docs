@@ -173,12 +173,18 @@ to set this to high values, as the cached versions can continue to be used even 
 themselves have been updated.
 
 
+.. _DISABLE_S3_MEDIA_HEADERS_UPDATE:
+
 DISABLE_S3_MEDIA_HEADERS_UPDATE
 ...............................
 
-On deployment, by default we check and update S3 media file headers. Occasionally this can cause
-problems (for example, excessively long deployment times on very large media buckets). Setting this
-to ``True`` will skip this step on deployment.
+Applications using Aldryn Django will update media file headers by running the command:
+
+..  code-block:: python
+
+    python manage.py aldryn_update_s3_media_headers
+
+as a post-build migration/release operation; this can be controlled with the ``DISABLE_S3_MEDIA_HEADERS_UPDATE`` environment variable. The ``aldryn_update_s3_media_headers`` command can cause excessively long deployment times on very large media buckets, so setting this variable to ``True`` can avoid that.
 
 
 Django server settings

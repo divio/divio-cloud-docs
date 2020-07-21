@@ -11,7 +11,7 @@ applications running on the server. One of the advantages in using them is that
 you can isolate specific values from your codebase.
 
 Environment variables are a good place for storing instance-specific
-configuration, such as Django settings that you don't wish to hard-code into
+configuration, such as settings that you don't wish to hard-code into
 your project.
 
 
@@ -120,23 +120,10 @@ independent of a particular environment.
 
 * **When a project is being built** (i.e. in the deployment phase), it should not be subject to any
   particular environment conditions. Even Django operations that take place during deployment (such
-  as ``collectstatic``) should be environment-agnostic - under all environment conditions, you
+  as ``collectstatic``) should be environment-agnostic - under *all* environment conditions, you
   should expect the same result from ``collectstatic``.
 
-
-Forcing environment variables in the build phase
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Though it's not generally recommended, if for some reason you need to specify environment variables
-in the build phase, you can provide them in the ``Dockerfile``, with::
-
-    RUN <key>=<value> <command>
-
-For example::
-
-    RUN SOMEVAR=some_value ./manage.py collectstatic
-
-However, it's usually better to find another solution.
+  However you can :ref:`set environment variables during the build phase <setting-env-vars-build>`.
 
 
 Commonly-used environment variables
