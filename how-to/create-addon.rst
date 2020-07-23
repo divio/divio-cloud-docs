@@ -173,7 +173,7 @@ Provide form-based configuration
 
 You can use the ``Form`` class to allow configuration via the Control Panel.
 
-See :ref:`adding form fields for user configuraion <adding-form-fields>`
+See :ref:`adding form fields for user configuration <adding-form-fields>`
 for more information.
 
 
