@@ -1,10 +1,13 @@
 .. _caching:
 
-Caching in Divio projects
+Caching and CDN in Divio projects
 ===================================
 
 Infrastructure-level caching
 ----------------------------
+
+As well as the caching and CDN (Content Delivery Network) we provide, you can also :ref:`apply your own
+<apply-your-own-caching-cdn>`.
 
 Caching is generally provided by `Cloudflare <http://cloudflare.com>`_.
 
@@ -69,6 +72,22 @@ discovers to `the media storage class that configures the S3 bucket
 
 Any application that needs to control the behaviour of cached media will need either to make use
 of provided functionality (for example, such as in Aldryn Django), or configure the S3 bucket directly itself.
+
+
+.. _apply-your-own-caching-cdn:
+
+Applying your own caching/CDN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is nothing to stop you applying your own caching and CDN.
+
+**For media files**, if you are using our media domain (the default), your projects will automatically use the CDN we
+provide and this cannot be changed. However, it's also possible to use your own domain (see for example
+:ref:`how-to-configure-media-serving-custom-domain`) for media, in which case you are free to use what you wish.
+
+**For the rest of the project**, you can set up another CDN, for example using your own Cloudflare account. In such a
+case you should inform us so that instead of providing a certificate automatically ourselves, you can upload your own
+manually.
 
 
 Application-level caching

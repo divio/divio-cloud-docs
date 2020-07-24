@@ -2,6 +2,7 @@
 #
 
 # You can set these variables from the command line.
+
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = DivioClouddeveloperhandbook
@@ -10,7 +11,10 @@ BUILDDIR      = _build
 VENV = env/bin/activate
 PORT = 9001
 
-# Put it first so that "make" without argument is like "make help".
+# list the targets that we don't want confused with files in the directory
+.PHONY: help install clean run Makefile
+
+# "help" is first so that "make" without an argument acts like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
@@ -18,6 +22,7 @@ install:
 	@echo "... setting up virtualenv"
 	python3.7 -m venv env
 	. $(VENV); pip install --upgrade -r requirements.txt
+
 	@echo "\n" \
 	  "--------------------------------------------------------------- \n" \
       "* watch, build and serve the documentation: make run \n" \
@@ -28,7 +33,7 @@ install:
 	  "--------------------------------------------------------------- \n"
 
 clean:
-	-rm -rf _build/*
+	-rm -r $(BUILDDIR)/*
 
 run:
 	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port $(PORT)
@@ -37,15 +42,23 @@ run:
 test:
 	. $(VENV); sphinx-build -b html . _build/html
 
-
 spelling:
 	. $(VENV); $(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . _build/spelling
 	@echo
 	@echo "Check finished. Wrong words can be found in " \
 		"_build/spelling/output.txt."
 
+changes:
+	. $(VENV); $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) . $(BUILDDIR)/changes
+	@echo
+	@echo "The overview file is in build/changes."
 
-.PHONY: help install clean run Makefile
+linkcheck:
+	. $(VENV); $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	@echo
+	@echo "Link check complete; look for any errors in the above output " \
+	      "or in build/linkcheck/output.txt."
+
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

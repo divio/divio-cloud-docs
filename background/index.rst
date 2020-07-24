@@ -31,7 +31,7 @@ How it works on Divio
     :maxdepth: 1
 
     redirects
-    Caching <caching>
+    Caching and CDN <caching>
     infrastructure-python-packaging
     Environment variables <configuration-environment-variables>
 
