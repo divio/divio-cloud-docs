@@ -10,7 +10,7 @@ Working in the local development environment
     :maxdepth: 1
 
     Get started with the Divio CLI <local-cli>
-    Run the local server in Live mode <local-in-live-mode>
+    Run the local server in Live configuration <local-in-live-mode>
 
 
 Building your Docker application

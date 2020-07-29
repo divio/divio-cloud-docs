@@ -159,7 +159,7 @@ You can use these credentials in the appropriate client, e.g. ``psql``.
 From your own computer
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Access to Cloud databases other than from the associated application containers is not possible -
+Access to cloud databases other than from the associated application containers is not possible -
 it is restricted, for security reasons, to containers running on our own infrastructure.
 
 
