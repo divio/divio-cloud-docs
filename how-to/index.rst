@@ -134,8 +134,8 @@ Working with addons
 .. toctree::
     :maxdepth: 1
 
-    Package an application as an addon <create-addon>
-    Update an existing addon <update-existing-addon>
+    Package an application as an addon <addon-create>
+    Update an existing addon <addon-update-existing>
 
 
 .. |uwsgi| image:: /images/uwsgi.png

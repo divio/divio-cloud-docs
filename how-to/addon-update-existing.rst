@@ -1,3 +1,9 @@
+..  Do not change this document name!
+    Referred to by: Aldryn django CMS repository
+    Where: https://github.com/divio/aldryn-django-cms/readme.rst
+    As: https://docs.divio.com/en/latest/how-to/addon-update-existing
+
+
 .. _update-addon:
 
 How to update an existing addon
