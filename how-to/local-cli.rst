@@ -38,9 +38,11 @@ do not already have them installed, including:
 Install the CLI
 ----------------
 
-The Divio CLI is a Python application. Install it with::
+The Divio CLI is a Python application. Note that it requires Python 3.6 or higher. Install it with:
 
-  pip install divio-cli
+..  code-block:: bash
+
+    pip install divio-cli
 
 
 Log in using the CLI

@@ -90,8 +90,10 @@ work.
 Install the Divio CLI package
 ---------------------------------
 
-The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip (depending on your system, use ``pip3`` in
-the examples below)::
+The :ref:`Divio CLI application <divio-cli-ref>` is installable using Pip. Note that it requires Python 3.6 or higher.
+Depending on your system, you may need to use ``pip3`` in the examples below.
+
+..  code-block:: bash
 
     pip install divio-cli
 
