@@ -42,6 +42,9 @@ You can also make the connection manually from within the ``web`` container, for
 As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
 for a number of :ref:`common operations <common-db-operations>`, below.
 
+Your project may not have the ``psql`` client installed already, in which case you will need to install it first. See
+:ref:`install-system-packages`.
+
 
 Using ``docker exec``
 .....................
