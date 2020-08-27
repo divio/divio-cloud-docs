@@ -82,7 +82,11 @@ Next, select your path through the tutorial.
     <div class="tabs">
       <div class="tabs__nav">
          <a href="#django-tab" class="tabs__link tab__link--active">
-           <img src="../_images/django-logo-negative.svg" alt="Django" width="60"></a>
+           <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
+         </a>
+         <a href="#aldryn-tab" class="tabs__link tab__link--active">
+           Aldryn
+         </a>
          <a href="#wagtail-tab" class="tabs__link tab__link--active">
            <img src="../_images/wagtail-logo.svg" alt="Wagtail" width="60"></a>
          </a>
@@ -97,7 +101,7 @@ Next, select your path through the tutorial.
 
 .. rst-class:: tabs-pane
 
-Python/Django chapters
+Django chapters
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -105,8 +109,24 @@ Python/Django chapters
 
     django-02-create-project
     django-03-setup-project-locally.rst
-    django-04-add-application
-    django-05-more-complex-configuration
+    django-04-deploy-add-services
+    django-05-services
+
+
+.. _aldryn-django-chapters:
+
+.. rst-class:: tabs-pane
+
+Aldryn Django chapters
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+
+    aldryn-django-02-create-project
+    aldryn-django-03-setup-project-locally.rst
+    aldryn-django-04-add-application
+    aldryn-django-05-more-complex-configuration
 
 
 .. _wagtail:

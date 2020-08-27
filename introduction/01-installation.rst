@@ -144,6 +144,7 @@ On to the next step
 Now you're ready to go on to the next step. At this point the tutorial branches, and you can continue working with
 Python/Django or PHP/Laravel.
 
-* continue with :ref:`Django <tutorial-set-up>`
+* continue with :ref:`Django from scratch <tutorial-django-set-up>`
+* continue with :ref:`Django using the Aldryn addons framework <tutorial-aldryn-set-up>`
 * continue with :ref:`Wagtail <wagtail-tutorial-set-up>`
 * continue with :ref:`PHP/Laravel <tutorial-flavours-php-set-up>`

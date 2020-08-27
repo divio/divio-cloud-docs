@@ -3,7 +3,7 @@
 The Cloud and local shells
 ==========================
 
-To interact with the environment in your project, for example to run commands using its code-base,
+To interact with the environment in your project, for example to run commands using its codebase,
 you can make use of a shell.
 
 On the Cloud you can :ref:`SSH into a Cloud shell instance <cloud-shell>` (available on Managed

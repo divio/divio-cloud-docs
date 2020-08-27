@@ -13,14 +13,19 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
 ..  note::
 
     This tutorial assumes some basic familiarity with Wagtail. It is intended to introduce the basics of working with
-    Divio, using Django/Wagtail as an example. **It is not a tutorial for learning Wagtail (or Django)**. For a simpler
-    Django-based introduction, use our :ref:`basic Django tutorial <tutorial-set-up>`.
+    the Aldryn Django framework on Divio, using Wagtail as an example. **It is not a tutorial for learning Wagtail (or
+    Django)**.
+
+    We also provide tutorials to get started with Django
+
+    *  :ref:`from scratch <tutorial-django-set-up>`.
+    *  :ref:`using the Aldryn Django framework <tutorial-aldryn-set-up>`.
 
 
-..  include:: includes/02-create-project-1.rst
+..  include:: includes/02-create-1-set-up.rst
 
 
-* *Python*: ``Python 3.x``
+* *Platform*: ``Python 3.x``
 * *Project type*: ``Wagtail``
 
 ..  admonition:: Wagtail 2.9.2
@@ -29,7 +34,9 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
     available.
 
 
-..  include:: includes/02-create-project-2.rst
+..  include:: includes/02-create-2-git-environments.rst
+
+..  include:: includes/02-create-3-deploy-open.rst
 
 
 Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
@@ -45,4 +52,4 @@ More interesting are the admin pages:
    :class: 'main-visual'
 
 
-..  include:: includes/02-create-project-3.rst
+..  include:: includes/02-create-4-deployment-dashboard.rst

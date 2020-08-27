@@ -1,3 +1,6 @@
+.. _tutorial-setup-project-locally:
+.. _replicate-project-locally:
+
 
 ..  include:: includes/03-local-1-set-up.rst
 
@@ -37,6 +40,7 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
     See below for more on the use of ``docker-compose``.
 
 ``CONTROL-C`` will stop the project.
+
 
 ..  include:: includes/03-local-2-useful-commands.rst
 

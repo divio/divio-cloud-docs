@@ -2,8 +2,10 @@
 .. _replicate-laravel-project-locally:
 
 
-..  include:: includes/03-set-up-project-locally-01.rst
+..  include:: includes/03-local-1-set-up.rst
 
+
+.. _laravel-set-up-script:
 
 Run the set-up script
 ---------------------
@@ -45,16 +47,17 @@ Open the project in your web browser by visiting http://localhost:8000.
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping
 <docker-compose-web>`.)
 
+``CONTROL-C`` will stop the project.
 
-..  include:: includes/03-set-up-project-locally-02.rst
+..  include:: includes/03-local-2-useful-commands.rst
 
 
 ..  code-block:: bash
 
     docker-compose run web composer install
 
-This will run the ``composer install`` inside the container (in fact this is one of the command in the ``setup.php``
+This will run the ``composer install`` inside the container (in fact this is one of the commands in the ``setup.php``
 script you ran earlier).
 
 
-..  include:: includes/03-set-up-project-locally-03.rst
+..  include:: includes/03-local-3-next.rst
