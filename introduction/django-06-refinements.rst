@@ -41,6 +41,18 @@ empty - which would be the case only in the local development environment. Edit 
     ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
 
 
+Configure ``SECRET_KEY``
+------------------------
+
+Django's secret key is hard-coded in our settings and committed to the repository. This is all right locally, but not
+in production. However, since each cloud environment is provided with its own randomised ``SECRET_KEY`` variable, we
+can use that by changing ``settings.py`` to use:
+
+..  code-block:: python
+
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'c(oz0r_18@)5ojt(fnom)r)^)gb5zt519$$%5jnz)gpyzxn-4+')
+
+
 Add ``collectstatic`` to the build
 ---------------------------------------
 
