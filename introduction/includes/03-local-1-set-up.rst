@@ -55,7 +55,7 @@ all the intermediate steps here:
     [...]
     Your workspace is setup and ready to start.
 
-As well as cloning the repository and attemting to build the project, the ``setup`` command will add a ``.divio``
+As well as cloning the repository and attempting to build the project, the ``setup`` command will add a ``.divio``
 directory containing some Divio-related configuration that connects it to the Control Panel.
 
 ``cd`` into the newly-created project directory, where you will find your project code.

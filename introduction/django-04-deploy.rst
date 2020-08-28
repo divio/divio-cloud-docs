@@ -1,17 +1,17 @@
 .. _tutorial-django-deploy:
 
-Deploy your application
-===================================
+Deploy your application to the cloud
+====================================
 
-One further step is required before the application can be deployed to the cloud. Django's ``ALLOWED_HOSTS`` setting
-controls the hosts that are allowed to serve the project. When undefined, ``localhost`` is allowed by default, which
-will work locally, but not in a cloud deployment.
+One further step is required before the application can be deployed to the cloud. Django's :setting:`ALLOWED_HOSTS
+<django:ALLOWED_HOSTS>` setting controls the hosts that are allowed to serve the project. When undefined, ``localhost``
+is allowed by default, which will work locally, but not in a cloud deployment.
 
 The simple solution is to amend ``settings.py``, with:
 
 ..  code-block:: python
 
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ['*']
 
 It's a crude solution, but we will refine it later.
 
@@ -56,7 +56,7 @@ You can deploy the Test environment using the Control Panel, or by running:
     divio project deploy
 
 Once you have successfully deployed the Test environment, the Control Panel will indicate this in the interface with a
-*Last deployment successful at ...* message and the project URL in the Test environment pane will display as a link,
+*Last deployment successful* message and the project URL in the Test environment pane will display as a link,
 for example ``https://tutorial-project-stage.us.aldryn.io``. Select the link to access the project.
 
 

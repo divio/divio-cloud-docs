@@ -18,8 +18,8 @@ includes Python, we can speed up build times and rely on a lightweight and exper
 
 This will use the official Docker ``python`` base image as the foundation for everything else that we build on top.
 
-Inside the container we will build the application at ``/app`` (it doesn't have to be there, but it's a useful
-convention). Set the working directory for subsequent commands in the ``Dockerfile`` to use this directory:
+Inside the container we will build the application at ``/app`` (it doesn't need to be there in particular, but ``/app``
+is a useful convention). Set the working directory for subsequent commands in the ``Dockerfile`` to use this directory:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 2
@@ -40,8 +40,8 @@ the ``Dockerfile``:
 
     RUN pip install django==3.1
 
-However this would quickly become quite unpleasant to deal with as the list of Python dependencies grows. A better way
-is to create a new file ``requirements.txt`` in the project, and list any dependencies in it:
+However this would quickly become quite unpleasant to deal with as the list of Python dependencies grows, so don't do
+that. A better way is to create a new file ``requirements.txt`` in the project, and list any dependencies in it:
 
 ..  code-block:: text
 
@@ -107,9 +107,10 @@ can run:
 
     docker-compose run web django-admin startproject myapp .
 
-This starts up a container (``web``) and executes the ``django-admin`` command inside it. The advantage of executing
-the command inside the container is that the project thus created will have been created in exactly the same
-environment that it will eventually run.
+This starts up a container (``web``, which according to ``docker-compose.yml`` will be based on the ``Dockerfile`` in
+the same directory) and executes the ``django-admin`` command inside it. The advantage of executing the command inside
+the container is that the project thus created will have been created in exactly the same environment that it will
+eventually run.
 
 The command will add a new ``myapp`` directory and a ``manage.py`` file. Although they were created *inside* the
 container, so you wouldn't normally be able to see them, the ``volumes`` directive in the ``docker-compose.yml`` file
@@ -170,10 +171,21 @@ myapp.asgi:application`` automatically, to start it up in - for example - a clou
 However, when we start it locally with ``docker-compose up``, the ``command`` line in the ``docker-compose.yml`` file
 will override that, and use ``python manage.py runserver 0.0.0.0:80`` instead.
 
-If we need to run the project locally using Uvicorn rather than the runsever, we can do that by temporarily commenting
+If we need to run the project locally using Uvicorn rather than the runserver, we can do that by temporarily commenting
 out the ``command`` line in the ``docker-compose.yml`` file.
 
 Try it both ways. As before, the Django project can be found locally at http://127.0.0.1:8000.
+
+..  admonition:: Static files when using Uvicorn
+
+    The Django runserver provides a lot of convenience. An example is that it will (as long as ``DEBUG = True``)
+    automatically serve static files such as CSS without additional configuration. When you launch the site using
+    Uvicorn, or when ``DEBUG = False``, static files are not automatically served. You can try loading the `fonts.css
+    <http://127.0.0.1:8000/static/admin/css/fonts.css>`_ static file in each configuration to see this for yourself. We
+    will refine this later.
+
+    In the meantime, make sure you set ``DEBUG = True`` and restore the ``command`` line in the ``docker-compose.yml``
+    file before continuing.
 
 
 ..  include:: includes/03-local-2-useful-commands.rst

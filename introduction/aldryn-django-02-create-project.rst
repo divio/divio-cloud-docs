@@ -3,10 +3,17 @@
 Create a new Django project using Aldryn Django
 ===============================================
 
-In this section we will create and deploy a new project in the Control Panel using `Django
-<https://www.djangoproject.com/>`_, the most popular Python web application framework, and :ref:`Divio's Aldryn
-framework for managing project components and configuration <addons-why>`. The principles covered by the tutorial will
-apply to any other development stack.
+About this tutorial
+-------------------
+
+In this tutorial you will create and deploy a new project using Aldryn Django. Aldryn is a wrapper around `Django
+<https://www.djangoproject.com/>`_, the most popular Python web application framework. Aldryn provides automatic
+configuration and integration with cloud services such as database, media storage and so on.
+
+Aldryn is a friendly (and somewhat opinionated) option for working with Django that allows you to get straight to the
+business of application development. If you'd prefer to start with a plainer Django set-up and build a project from
+scratch, see our :ref:`Django tutorial <tutorial-django-set-up>`.
+
 
 ..  note::
 

@@ -19,9 +19,9 @@ Create the project
 In the Divio Control Panel, `create a new project <https://control.divio.com/control/project/create/>`_.
 
 Any web application in any language can run on Divio, as long as there is nothing that prevents its being Dockerised.
-However for convenience we also provide a number of ready-to-go project types for applications built in Java, PHP, Node
-and other languages (and the list is growing). Use of these optional - if you start with a *No platform* project,
-you can build your application from a blank sheet.
+For convenience we some ready-to-go project types for applications built in Java, PHP, Node and other languages. Use of
+these is optional. You can also start with a *No platform* project, in which you build your application from a blank
+sheet.
 
 For this tutorial, select the following options for your project (other options should be left on their default
 settings):

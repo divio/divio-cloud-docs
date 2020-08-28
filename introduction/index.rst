@@ -56,15 +56,17 @@ cloud.
 Choose your pathway
 -------------------
 
-We currently offer three pathways though the tutorial, for Django, Wagtail and Laravel (currently in beta).
+We offer multiple pathways though the tutorial. In each case, the same principles will be used for any language you use
+for your applications on Divio. We recommend starting with one of these tutorials even if you plan to work with a
+different language later, as the tutorials have been designed to help you become familiar with key when working with
+Divio.
 
-The same principles will be used for any language you use for your applications on Divio. We recommend starting with
-one of these tutorials even if you plan to work with a different language later, as the tutorials have been designed
-to help you become familiar with key when working with Divio.
 
-
-Tutorial chapters
+The tutorials
 ------------------
+
+**Before you do anything else, start here.** The local development environment is where you'll be doing most of your
+work.
 
 ..  toctree::
     :maxdepth: 1
@@ -85,7 +87,7 @@ Next, select your path through the tutorial.
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
          </a>
          <a href="#aldryn-tab" class="tabs__link tab__link--active">
-           Aldryn
+           Django, using Aldryn
          </a>
          <a href="#wagtail-tab" class="tabs__link tab__link--active">
            <img src="../_images/wagtail-logo.svg" alt="Wagtail" width="60"></a>
@@ -101,7 +103,7 @@ Next, select your path through the tutorial.
 
 .. rst-class:: tabs-pane
 
-Django chapters
+Django
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -109,15 +111,16 @@ Django chapters
 
     django-02-create-project
     django-03-setup-project-locally.rst
-    django-04-deploy-add-services
+    django-04-deploy
     django-05-services
+    django-06-refinements.rst
 
 
 .. _aldryn-django-chapters:
 
 .. rst-class:: tabs-pane
 
-Aldryn Django chapters
+Django, using Aldryn
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -133,7 +136,7 @@ Aldryn Django chapters
 
 .. rst-class:: tabs-pane
 
-Wagtail chapters
+Wagtail
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -152,8 +155,8 @@ Wagtail chapters
 
 .. rst-class:: tabs-pane
 
-PHP/Laravel chapters
-~~~~~~~~~~~~~~~~~~~~~~
+PHP/Laravel, using Flavours
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1

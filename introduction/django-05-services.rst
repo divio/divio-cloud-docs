@@ -79,7 +79,10 @@ Configure database access using an environment variable
 
 Configuration for application services is `stored in environment variables, following the Twelve-Factor model
 <https://www.12factor.net/config>`_. These variables will need to be parsed by the application. For the database the
-values are provided via ``DEFAULT_DATABASE_DSN``.
+values are provided via an environment variable named ``DEFAULT_DATABASE_DSN``, a *Data Source Name*, in the general
+form::
+
+    scheme://username:password@host:port/path?query#fragment
 
 The variables are provided in the cloud environments as soon as the service is provisioned. We should add a variable
 to the local environment too. The easiest way to do this is again with the help of ``docker-compose.yml``.
@@ -90,8 +93,7 @@ First, create a new file called ``.env-local``, and add the variable to it:
 
     DEFAULT_DATABASE_DSN=postgres://postgres@postgres:5432/db
 
-If you're familiar with Postgres, you'll recognise its default user and port in the URL, which contains credentials in
-the form ``schema://<username>:<password>@<address>:<port>/<database name>`` (the password isn't used locally).
+If you're familiar with Postgres, you'll recognise its default user and port in the URL.
 
 Then add a new line to the ``web`` section in ``docker-compose.yml`` to tell it where it should find the variables for
 the environment it creates:
@@ -129,7 +131,7 @@ List both libraries in ``requirements.txt``:
     psycopg2==2.8.5
     dj_database_url==0.5.0
 
-You'll need to rebuild the image once more to include the new packages.
+Rebuild the image once more to include the new packages.
 
 Then in ``settings.py``, add (replacing the existing ``DATABASES`` setting):
 
@@ -167,6 +169,12 @@ It is worth verifying that the site now runs on the cloud too. Commit the change
     git commit -m "Added database configuration"
     git push
 
+and deploy:
+
+..  code-block:: bash
+
+    divio project deploy
+
 ..  admonition:: Pushing ``.env-local``
 
     In this case, there is nothing in ``.env-local`` that can't be safely committed, and having the
@@ -197,19 +205,24 @@ Similarly, you can push/pull media files, and also specify which cloud environme
 commands cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the
 development environment, so that you can test new development with real data.
 
+You can also execute commands like ``python manage.py migrate`` directly in the cloud environment. Copy the SSH URL
+from the Test environment pane in the Control Panel, and use it to open a session directly to a cloud container. Then
+run:
+
+..  code-block:: bash
+
+    python manage.py migrate
+
 
 Serving static files
 ---------------------
 
 The site's static files need to be handled properly.
 
-You will notice that when running locally with ``docker-compose up``, that you are able to load the Django admin's
-CSS at http://127.0.0.1:8000/static/admin/css/fonts.css; this is because the Django runserver takes care of serving
-static files for you.
-
-Temporarily comment out the line in ``docker-compose.yml`` that starts the runserver, and launch the local site again.
-This time, when Uvicorn is serving it, you will find that ``fonts.css`` cannot be found. Uf you try to load the same
-file from the cloud server, you'll have a similar experience.
+As mentioned previously, when using the runserver locally you are able to load the Django admin's CSS at
+http://127.0.0.1:8000/static/admin/css/fonts.css; this is because the Django runserver takes care of serving static
+files for you. When running with Uvicorn instead of the runserver, the file is not served. If you try to load the same
+file from the cloud server, where the ``Dockerfile`` launches the site with Uvicorn, you'll have a similar experience.
 
 When running with a production server like Uvicorn, you need to configure static file serving explicitly. There are
 multiple ways to do this, but one very good way to do so on the Divio infrastructure is to use the Python library
@@ -243,15 +256,19 @@ And to have it cache and compress static files, and to tell Django where to put 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-Rebuild the image to have WhiteNoise installed, and then run ``collectstatic`` to have static files collected:
+Rebuild the image to have WhiteNoise installed.
+
+To test that Uvicorn and WhiteNoise are serving the static files as expected, comment out the ``command`` line in
+``docker-compose.yml`` and set ``DEBUG`` in ``settings.py`` to ``False``.
+
+You will not be able to load the CSS file until you run ``collectstatic`` to have static files collected:
 
 ..  code-block:: bash
 
     docker-compose run web python manage.py collectstatic
 
-And now when you start the local site with Uvicorn, you'll be able to load the CSS file as expected.
-
-Commit and push your changes (not including the temporary change to ``docker-compose.yml``). Deploy the Test environment, and check that static files work as expected there too.
+Commit and push your changes (first revert the temporary changes to ``docker-compose.yml`` and ``settings.py``).
+Deploy the Test environment, and check that static files work as expected there too.
 
 
 Serving media files
@@ -289,9 +306,6 @@ We can configure the storage system for this with the ``DEFAULT_STORAGE_DSN`` va
 ..  code-block:: text
 
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
-
-This variable is a URL containing credentials in the form ``schema://<username>:<password>@<address>:<port>/<url query
-string>`` (as in the database's DSN, not all the parts need to provided for local use).
 
 For convenience, we should expose the container's ``/data`` directory so you can see the files in it. In
 ``docker-compose.yml``, add:
@@ -463,10 +477,11 @@ This time, you should find that the saved file is now served from the external m
 The final test is to try it all in the cloud. Revert the ``DEFAULT_STORAGE_DSN`` to its local value
 (``file:///data/media/?url=%2Fmedia%2F``) and commit your code changes in the usual way.
 
-Then, push your local media and database to the cloud:
+Then, deploy the changes and push your local media and database to the cloud:
 
 ..  code-block:: bash
 
+    divio project deploy
     divio project push media
     divio project push db
 

@@ -3,9 +3,11 @@
 Create a new Django project from scratch
 ===============================================
 
-In this section we will create and deploy a new project in the Control Panel using `Django
-<https://www.djangoproject.com/>`_, the most popular Python web application framework. The principles covered by the
-tutorial will apply to any other development stack.
+In this tutorial you will create and deploy a new project using `Django <https://www.djangoproject.com/>`_, the most
+popular Python web application framework. The project will be set up in Docker and integrated with various cloud
+services such as database and media storage.
+
+The principles covered by the tutorial will apply to any other development stack.
 
 ..  note::
 
