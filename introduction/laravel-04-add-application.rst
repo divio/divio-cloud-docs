@@ -23,6 +23,9 @@ and reload the page to check that it has taken effect.
 Deploy to the Cloud
 -------------------
 
+Push your code
+~~~~~~~~~~~~~~~~~
+
 To deploy your changes to the Test server, push your changes, and run a deployment command:
 
 ..  code-block:: bash
@@ -44,6 +47,26 @@ that it works correctly, you can deploy the Live server too:
 ..  code-block:: bash
 
     divio project deploy live
+
+
+Push the database
+~~~~~~~~~~~~~~~~~
+
+Your cloud database hasn't yet been migrated, unlike the local database (which you migrated when you ran the
+:ref:`divio/setup.php set-up script <laravel-set-up-script>`). One very useful function of the Divio CLI is ability to
+push and pull your database and media storage to and from the cloud environments. Push the database with:
+
+..  code-block:: bash
+
+    divio project push db
+
+This will push the local database to the cloud Test environment. (``divio project push db live`` will do the same for
+the Live environment.)
+
+Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
+cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
+environment, so that you can test new development with real data.
+
 
 ------------
 

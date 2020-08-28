@@ -13,6 +13,7 @@ Divio software components
     divio-cli
     divio-components-shell
     divio-dot-aldryn-file
+    divio-environment-variables
 
 
 Docker commands and configuration

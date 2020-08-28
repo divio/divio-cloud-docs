@@ -1,7 +1,7 @@
 .. _how-to-migrate:
 
-How to migrate an existing Django project to Divio
-========================================================
+How to migrate an existing Django project using Aldryn Django
+=============================================================
 
 Initial project setup
 ---------------------

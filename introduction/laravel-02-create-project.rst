@@ -16,14 +16,16 @@ popular PHP web application framework. The principles covered by the tutorial wi
     Divio, using Laravel as an example. **It is not a tutorial for Laravel**.
 
 
-..  include:: includes/02-create-project-1.rst
+..  include:: includes/02-create-1-set-up.rst
 
 
-* *Python*: ``PHP``
+* *Platform*: ``PHP``
 * *Project type*: ``Laravel``
 
 
-..  include:: includes/02-create-project-2.rst
+..  include:: includes/02-create-2-git-environments.rst
+
+..  include:: includes/02-create-3-deploy-open.rst
 
 
 You'll see the familiar Laravel starting page.
@@ -33,4 +35,4 @@ You'll see the familiar Laravel starting page.
    :class: 'main-visual'
 
 
-..  include:: includes/02-create-project-3.rst
+..  include:: includes/02-create-4-deployment-dashboard.rst

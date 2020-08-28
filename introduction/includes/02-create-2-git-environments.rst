@@ -1,0 +1,29 @@
+..  This include is used by:
+
+    * django-02-create-project.rst
+    * aldryn-django-02-create-project
+    * laravel-02-create-project.rst
+    * wagtail-02-create-project.rst
+
+
+Divio projects use Git for code management. We provide a Git server that your projects will use by default; you can
+also choose to :ref:`use another Git service if you prefer <configure-version-control>`. For this tutorial, use our
+Git server.
+
+Hit **Create**. Select the free *Developer* plan for this project.
+
+It takes a few moments to create the project. During this process, the Control Panel defines the basic project files
+for your application by adding commits to its repository. This could include assembling its :ref:`Dockerfile
+<dockerfile-reference>` and other files, depending on the project type.
+
+
+Project environments
+~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /images/intro-dashboard.png
+   :alt: 'Project Dashboard'
+   :class: 'main-visual'
+
+Your project has two independent server environments, *Test* and *Live* . The Test and Live environments have their own
+services, and unique environment variables to configure access to them. They can be deployed independently, and can
+also :ref:`be configured to track different Git branches <custom-tracking-branches>`.

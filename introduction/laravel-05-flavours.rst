@@ -126,9 +126,6 @@ installed and activated.
 Deploy to the Cloud
 -------------------
 
-Push your code
-~~~~~~~~~~~~~~
-
 To deploy your changes to the Test server, push your changes, and run a deployment command:
 
 ..  code-block:: bash
@@ -140,26 +137,6 @@ To deploy your changes to the Test server, push your changes, and run a deployme
 
 Divio's hosting service is Flavours-aware; your changes, once pushed and deployed on the Control Panel, will
 automatically use the ``composer.json`` file to rebuild the project with the new package installed.
-
-
-Push the database
-~~~~~~~~~~~~~~~~~
-
-Using ``divio project push/pull``
----------------------------------
-
-Your cloud database hasn't yet been migrated, unlike the local database. One very useful function of the Divio CLI is
-ability to push and pull your database and media storage to and from the cloud environments. Push the database with:
-
-..  code-block:: bash
-
-    divio project push db
-
-The local database will be pushed to the cloud Test environment; you'll see it the records there after a few moments.
-
-Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands
-cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the development
-environment, so that you can test new development with real data.
 
 
 Explore configuration
