@@ -58,8 +58,8 @@ Choose your pathway
 
 We offer multiple pathways though the tutorial. In each case, the same principles will be used for any language you use
 for your applications on Divio. We recommend starting with one of these tutorials even if you plan to work with a
-different language later, as the tutorials have been designed to help you become familiar with key when working with
-Divio.
+different language later, as the tutorials have been designed to help you become familiar with key ideas and operations
+when working with Divio.
 
 
 The tutorials
