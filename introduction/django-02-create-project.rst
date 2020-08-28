@@ -1,6 +1,6 @@
 ..  _tutorial-django-set-up:
 
-Create a new Django project from scratch
+Create a new Django project
 ===============================================
 
 In this tutorial you will create and deploy a new project using `Django <https://www.djangoproject.com/>`_, the most
