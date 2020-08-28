@@ -20,7 +20,7 @@ help:
 
 install:
 	@echo "... setting up virtualenv"
-	python3.7 -m venv env
+	python3.8 -m venv env
 	. $(VENV); pip install --upgrade -r requirements.txt
 
 	@echo "\n" \
@@ -38,6 +38,8 @@ clean:
 run:
 	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port $(PORT)
 
+html:
+	. $(VENV); $(SPHINXBUILD) -b html . _build/html
 
 test:
 	. $(VENV); sphinx-build -b html . _build/html
