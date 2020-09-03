@@ -10,7 +10,8 @@ Divio projects use Git for code management. We provide a Git server that your pr
 also choose to :ref:`use another Git service if you prefer <configure-version-control>`. For this tutorial, use our
 Git server.
 
-Hit **Create**. Select the free *Developer* plan for this project.
+Hit **Continue**, then select the free *Developer* plan for this project (the Developer plan is fully-featured and
+provides all you need to work on an application up to the point of putting it into production).
 
 It takes a few moments to create the project. During this process, the Control Panel defines the basic project files
 for your application by adding commits to its repository. This could include assembling its :ref:`Dockerfile

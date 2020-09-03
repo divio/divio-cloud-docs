@@ -229,7 +229,7 @@ multiple ways to do this, but one very good way to do so on the Divio infrastruc
 `WhiteNoise <http://whitenoise.evans.io>`_. WhiteNoise is designed to work behind Content Delivery Networks and
 integrates well with Django.
 
-Add ``whitenoise`` to the ``requirements.in``:
+Add ``whitenoise`` to the ``requirements.txt``:
 
 ..  code-block:: text
 
@@ -248,7 +248,6 @@ In ``settings.py``, add it to the list of ``MIDDLEWARE``, after the ``SecurityMi
 
 And to have it cache and compress static files, and to tell Django where to put collected static files, add:
 
-
 ..  code-block:: python
     :emphasize-lines: 2-3
 
@@ -258,14 +257,19 @@ And to have it cache and compress static files, and to tell Django where to put 
 
 Rebuild the image to have WhiteNoise installed.
 
-To test that Uvicorn and WhiteNoise are serving the static files as expected, comment out the ``command`` line in
-``docker-compose.yml`` and set ``DEBUG`` in ``settings.py`` to ``False``.
+You can check that Uvicorn and WhiteNoise are serving the static files as expected by:
 
-You will not be able to load the CSS file until you run ``collectstatic`` to have static files collected:
+* commenting out the ``command`` line in ``docker-compose.yml`` (to ensure that the runserver isn't handling them), and
+* setting ``DEBUG`` in ``settings.py`` to ``False`` (to ensure that they aren't being served by :ref:`Django's built-in
+  static file serving <django:serving-static-files-in-development>`).
+
+Collect the static files to their destination for serving:
 
 ..  code-block:: bash
 
     docker-compose run web python manage.py collectstatic
+
+And now you should be able to load http://127.0.0.1:8000/static/admin/css/fonts.css.
 
 Commit and push your changes (first revert the temporary changes to ``docker-compose.yml`` and ``settings.py``).
 Deploy the Test environment, and check that static files work as expected there too.

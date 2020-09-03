@@ -25,8 +25,6 @@ you are sure you'd rather to set up and manage your site's frontend starting fro
 
 See :ref:`about-boilerplates` for more on the subject.
 
-Hit **Create project**.
-
 .. important::
 
     Do not start a deployment yet - we’ll cover that later.

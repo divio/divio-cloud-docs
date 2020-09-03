@@ -15,9 +15,9 @@ The simple solution is to amend ``settings.py``, with:
 
 It's a crude solution, but we will refine it later.
 
-The application is now in a state where it can deployed to the cloud. All the files that define the application should
-be committed and pushed. It's always nice to exclude unwanted files from Git *before* you commit them inadvertently, so
-add some new patterns to the project's ``.gitignore`` file:
+The application is now in a state where it can be deployed to the cloud. All the files that define the application
+should be committed and pushed. It's always nice to exclude unwanted files from Git *before* you commit them
+inadvertently, so add some new patterns to the project's ``.gitignore`` file:
 
 ..  code-block:: bash
 

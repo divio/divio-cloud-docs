@@ -151,8 +151,8 @@ Add:
 
     uvicorn==0.11.8
 
-to ``requirements.txt``. Every time you amend ``requirements.txt``, you will need to run  and rebuild, because it
-implies a change to the image:
+to ``requirements.txt``. Every time you amend ``requirements.txt``, you will need to rebuild the image, because it
+implies a change to it:
 
 ..  code-block:: bash
 
