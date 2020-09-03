@@ -3,8 +3,8 @@
 
 ..  _how-to-settings:
 
-How to configure Django settings
-================================
+How to configure Django settings in Aldryn projects
+===================================================
 
 In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the ``settings.py`` file).
 

@@ -6,8 +6,8 @@
 
 .. _update-addon:
 
-How to update an existing addon
-===============================
+How to update an existing Aldryn addon
+=======================================
 
 Addons will need to be updated now and then. The basic process for updating an addon is to:
 

@@ -1,7 +1,7 @@
 .. _add-application:
 
-How to add a new Django application to a project
-================================================
+How to add a Django application to an Aldryn project
+=========================================================
 
 ..  note::
 

@@ -3,7 +3,7 @@
 How to manage access authentication
 ===================================
 
-In Django projects, access via password can be managed by the :ref:`Aldryn SSO addon <aldryn-sso>`.
+In Aldryn Django projects, access via password can be managed by the :ref:`Aldryn SSO addon <aldryn-sso>`.
 
 
 .. _manage-access-login:

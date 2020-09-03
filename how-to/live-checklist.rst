@@ -35,8 +35,8 @@ Domains
   <http://support.divio.com/control-panel/projects/how-to-use-your-own-domain-with-divio-cloud>`_).
 * Check that any domains that should redirect to the primary domain are also set in the *Domains* setting in the
   Control Panel.
-* If required, enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment variable
-  <security-middleware-settings>` to ``True``.
+* (For Aldryn projects) if required, enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
+  variable <security-middleware-settings>` to ``True``.
 
 
 Environment variables
