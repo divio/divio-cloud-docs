@@ -34,7 +34,7 @@ Run the ``divio project setup`` command (for example if your project slug is ``t
 
     divio project setup tutorial-project
 
-The Divio CLI will execute a number of steps - this make take a few minutes, depending on how much needs to be
+The Divio CLI will execute a number of steps - this may take a few minutes, depending on how much needs to be
 downloaded and processed. The Divio CLI tool will build your project locally (see :ref:`build-process` for a
 more detailed description of what's happening here). Note that depending on the project, you won't necessarily see
 all the intermediate steps here:

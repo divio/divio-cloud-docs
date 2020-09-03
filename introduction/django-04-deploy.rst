@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-django-deploy:
 
 Deploy your application to the cloud

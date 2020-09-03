@@ -1,3 +1,5 @@
+:sequential_nav: prev
+
 .. raw:: html
 
     <style>

@@ -1,3 +1,5 @@
+:sequential_nav: prev
+
 Make changes and deploy them
 ===================================
 

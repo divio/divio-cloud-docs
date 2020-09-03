@@ -1,3 +1,5 @@
+:sequential_nav: prev
+
 .. _tutorial-application-configuration:
 
 Configure a more complex application

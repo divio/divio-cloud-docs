@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-django-services:
 
 Add and configure services

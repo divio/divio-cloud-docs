@@ -1,3 +1,5 @@
+:sequential_nav: prev
+
 .. _tutorial-django-refinements:
 
 Apply some refinements

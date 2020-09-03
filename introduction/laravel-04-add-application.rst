@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-flavours-php-add-application:
 
 Make changes and deploy them

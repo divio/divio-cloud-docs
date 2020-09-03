@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-add-applications:
 
 Make changes and deploy them
