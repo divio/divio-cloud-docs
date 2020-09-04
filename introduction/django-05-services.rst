@@ -476,9 +476,9 @@ You can also check that it will work with the cloud storage values; you can do t
 
     divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN
 
-to get the value of the ``DEFAULT_DATABASE_DSN`` from the cloud test environment. (If you don't get a value, check in
+to get the value of the ``DEFAULT_STORAGE_DSN`` from the cloud test environment. (If you don't get a value, check in
 the *Services* view of the project that it has been provisioned.) In your ``.env-local``, apply this value as the
-``DEFAULT_DATABASE_DSN``. Launch the application once more, and run the test above again, uploading and saving a file.
+``DEFAULT_STORAGE_DSN``. Launch the application once more, and run the test above again, uploading and saving a file.
 This time, you should find that the saved file is now served from the external media server.
 
 The final test is to try it all in the cloud. Revert the ``DEFAULT_STORAGE_DSN`` to its local value

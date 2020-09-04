@@ -55,9 +55,9 @@ We use this to...
 See [docs.divio.com](http://docs.divio.com). There, we add the styles you see in the example above, and apply
 appropriate classes to the elements:
 
-     .. rst-class:: clearfix row
+     ..  rst-class:: clearfix row
 
-     .. rst-class:: column column2
+     ..  rst-class:: column column2
 
 
      :ref:`Tutorial <introduction>`
@@ -65,7 +65,7 @@ appropriate classes to the elements:
 
      Get started with a hands-on introduction to Divio for developers.
 
-     .. rst-class:: column column2
+     ..  rst-class:: column column2
 
 
      :ref:`How-to guides <how-to>`
@@ -76,7 +76,7 @@ appropriate classes to the elements:
 
      [...]
 
-     .. rst-class:: clearfix row
+     ..  rst-class:: clearfix row
 
      About Divio
      ------------

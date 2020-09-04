@@ -75,9 +75,9 @@ Prepare the external Git repository
 Go to your Git hosting service. The next step depends on whether you are *creating a new Divio project*, or
 *migrating an existing Divio project*:
 
-.. rst-class:: clearfix row
+..  rst-class:: clearfix row
 
-.. rst-class:: column column2
+..  rst-class:: column column2
 
 Creating a new Divio project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +92,7 @@ branch, with no conflicts.
 If these conditions are not met, the Control Panel will not accept the repository URL.
 
 
-.. rst-class:: column column2
+..  rst-class:: column column2
 
 Migrating an existing Divio project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +102,7 @@ Migrating an existing Divio project
 #. Push the branches you require to the new remote: ``git push external <branch>``
 
 
-.. rst-class:: clearfix row
+..  rst-class:: clearfix row
 
 .. _git-repository-add-url:
 
@@ -113,9 +113,9 @@ You will need to supply the URL (SSH URLs are recommended, but :ref:`you can als
 your new repository to the Control Panel. The next step depends on whether this is a new or existing Divio project:
 
 
-.. rst-class:: clearfix row
+..  rst-class:: clearfix row
 
-.. rst-class:: column column2
+..  rst-class:: column column2
 
 Creating a new Divio project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +123,7 @@ Creating a new Divio project
 * Select *Repository* > *Custom* in the project creation page.
 
 
-.. rst-class:: column column2
+..  rst-class:: column column2
 
 Migrating an existing Divio project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ Migrating an existing Divio project
 #. Select **Migrate to external repository**.
 
 
-.. rst-class:: clearfix row
+..  rst-class:: clearfix row
 
 .. _git-setup-ssh:
 

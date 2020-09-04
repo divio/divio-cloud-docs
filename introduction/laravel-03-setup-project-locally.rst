@@ -43,7 +43,7 @@ Start the project by running ``docker-compose up`` in the terminal::
     web_1               | Laravel development server started: http://0.0.0.0:80
 
 
-Open the project in your web browser by visiting http://localhost:8000.
+Open the project in your web browser by visiting http://127.0.0.1:8000.
 
 (You may notice above that Laravel claims to be running on port 80, not port 8000. It is - but that's only *inside* the
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping

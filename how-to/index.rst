@@ -87,7 +87,7 @@ Platform-specific guides
       <div class="tabs__content">
 
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Python
 ~~~~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ For all Python-based projects, including those using Django and the Aldryn addon
     Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Django
 ~~~~~~~~~~~~~~~~
@@ -115,7 +115,7 @@ For Django-based projects.
     Go-live checklist for Django projects <live-checklist>
 
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Django with Aldryn
 ~~~~~~~~~~~~~~~~~~
@@ -139,7 +139,7 @@ For Django-based projects using the Aldryn addons framework.
     Update an existing Aldryn addon <addon-update-existing>
 
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Node.js
 ~~~~~~~~~~~~~~~~

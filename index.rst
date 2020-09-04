@@ -1,4 +1,4 @@
-.. raw:: html
+..  raw:: html
 
     <style>
         .row {clear: both}
@@ -15,68 +15,82 @@
             }
 
             .column2  {
-                width: 25%;
+                width: 50%;
             }
         }
 
         .main-visual {
             margin-bottom: 0 !important;
         }
-        h2 {border-top: 1px solid #e1e4e5; padding-top: 1em}
+
+        .embed-responsive {
+          position: relative;
+          width: 100%;
+        }
+          .embed-responsive:before {
+            display: block;
+            content: "";
+          }
+        .embed-responsive-item,
+        .embed-responsive iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .embed-responsive-16by9::before {
+            padding-top: 56.25%;
+        }
+        .embed-responsive-4by3::before {
+            padding-top: 75%;
+        }
+
     </style>
 
 
 Divio developer handbook
 ==============================
 
-Contents
---------
 
-.. rst-class:: clearfix row
+..  rst-class:: clearfix row
 
-.. rst-class:: column column2
+..  rst-class:: column column2
 
 
-:ref:`Tutorials <introduction>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Get started with a hands-on introduction to Divio for
-developers.
-
-
-.. rst-class:: column column2
-
-:ref:`How-to guides <how-to>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Step-by-step guides for the developer covering key operations and procedures
-
-
-.. rst-class:: column column2
-
-:ref:`Reference <reference>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Technical reference - tools, components and commands
-
-
-.. rst-class:: column column2
-
-:ref:`Background <background>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Explanation and discussion of key topics
-
-
-.. rst-class:: clearfix row
-
-Our development/deployment cycle in seven minutes
+:ref:`Get started <introduction>`
 -------------------------------------------------------
 
-..  raw:: html
+**Tutorials.** A hands-on introduction to Divio for developers. *Recommended for all new users.*
 
-    <iframe src="https://player.vimeo.com/video/435660924" width="758" height="474" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+..  rst-class:: column column2
+
+:ref:`How-to guides <how-to>`
+-------------------------------------------------------
+
+**Step-by-step guides.** Covers key tasks and operations and common problems.
+
+
+..  rst-class:: clearfix row
+..  rst-class:: column column2
+
+:ref:`Background <background>`
+-------------------------------------------------------
+
+**Explanation.** Clarification and discussion of key topics.
+
+
+..  rst-class:: column column2
+
+:ref:`Reference <reference>`
+-------------------------------------------------------
+
+**Technical reference.** Covers tools, components, commands and resources.
+
+
+
+..  rst-class:: clearfix row
 
 About the Divio cloud deployment platform
 -----------------------------------------
@@ -100,11 +114,9 @@ provider. A Divio project can be easily deployed on another platform
 that supports Docker.
 
 
-Detailed table of contents
---------------------------
-
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+    :hidden:
 
     introduction/index
     how-to/index

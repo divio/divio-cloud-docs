@@ -33,20 +33,13 @@
 
 .. _introduction:
 
-Tutorial
-=========
-
-About the tutorial
-------------------
+Get started
+===========
 
 The tutorial will introduce you to the Divio toolchain, and the complete cycle of project creation, development,
-deployment and management as a Developer, from setting up a project locally to deploying your own application on the
+deployment and management as a developer, from setting up a project locally to deploying your own application on the
 cloud. It assumes you are comfortable with the command line, and understand the basics of using SSH keys, Git
 and so on.
-
-
-The tutorials
-------------------
 
 **Before you do anything else, start here.** The local development environment is where you'll be doing most of your
 work.
@@ -84,13 +77,14 @@ Next, select your path through the tutorial.
 
 .. _django:
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Django
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
+    :numbered: 1
 
     django-02-create-project
     django-03-setup-project-locally.rst
@@ -101,13 +95,14 @@ Django
 
 .. _aldryn-django-chapters:
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Django with Aldryn
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
+    :numbered: 1
 
     aldryn-django-02-create-project
     aldryn-django-03-setup-project-locally.rst
@@ -117,13 +112,14 @@ Django with Aldryn
 
 .. _wagtail:
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 Wagtail
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
+    :numbered: 1
 
     wagtail-02-create-project
     wagtail-03-setup-project-locally
@@ -136,13 +132,14 @@ Wagtail
 
 .. _php-laravel:
 
-.. rst-class:: tabs-pane
+..  rst-class:: tabs-pane
 
 PHP/Laravel, using Flavours
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
+    :numbered: 1
 
     laravel-02-create-project
     laravel-03-setup-project-locally
