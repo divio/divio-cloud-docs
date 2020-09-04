@@ -6,7 +6,7 @@ Apply some refinements
 We now have a working application, that functions in multiple environments and takes its configuration for the services
 it requires from environment-provided variables.
 
-However, there a number of refinements we can make.
+However, there are a number of refinements we can make.
 
 
 Configure ``ALLOWED_HOSTS``

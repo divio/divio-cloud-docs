@@ -290,9 +290,10 @@ Create the media storage
 For the cloud environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the same way that you did for the database earlier, in the project's :ref:`Services <services>` view, add an S3
-object storage instance. Once deployed, or if you manually select *Provision* from the services options menu, the
-service will be provisioned for the project and the environment variable will be applied.
+In the same way that you did for the database earlier, in the project's :ref:`Services <services>` view, add an *Object
+storage* instance. This will provide S3 storage for the project. Once deployed, or if you manually select *Provision*
+from the services options menu, the service will be provisioned for the project and the environment variable will be
+applied.
 
 Locally
 ^^^^^^^^^^^^

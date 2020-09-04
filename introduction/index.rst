@@ -39,27 +39,10 @@ Tutorial
 About the tutorial
 ------------------
 
-..  admonition:: Prerequisites
-
-    The tutorial assumes you are comfortable with the command line, and understand the basics of using SSH keys, Git
-    and so on.
-
-    **Not a developer?** If you would like a quick overview of the Divio platform features and interface, see our
-    short video `Web project management with Divio <https://www.divio.com/demo/watch/?video=management>`_.
-
-
 The tutorial will introduce you to the Divio toolchain, and the complete cycle of project creation, development,
 deployment and management as a Developer, from setting up a project locally to deploying your own application on the
-cloud.
-
-
-Choose your pathway
--------------------
-
-We offer multiple pathways though the tutorial. In each case, the same principles will be used for any language you use
-for your applications on Divio. We recommend starting with one of these tutorials even if you plan to work with a
-different language later, as the tutorials have been designed to help you become familiar with key ideas and operations
-when working with Divio.
+cloud. It assumes you are comfortable with the command line, and understand the basics of using SSH keys, Git
+and so on.
 
 
 The tutorials
