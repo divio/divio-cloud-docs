@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-setup-project-locally:
 .. _replicate-project-locally:
 

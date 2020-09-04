@@ -1,7 +1,7 @@
 .. _create-addon:
 
-How to package a Django application as an addon
-===============================================
+How to package a Django application as an Aldryn addon
+======================================================
 
 Register the addon
 ------------------

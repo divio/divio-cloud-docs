@@ -24,3 +24,6 @@ can be used by raw HTML. Used in:
 
 .. image:: /images/wagtail-logo.svg
    :width: 60
+
+.. image:: /images/aldryn-logo.svg
+   :width: 60

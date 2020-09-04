@@ -1,3 +1,5 @@
+:sequential_nav: both
+
 .. _tutorial-laravel-setup-project-locally:
 .. _replicate-laravel-project-locally:
 

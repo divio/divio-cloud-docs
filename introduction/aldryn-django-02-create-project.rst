@@ -1,3 +1,5 @@
+:sequential_nav: next
+
 ..  _tutorial-aldryn-set-up:
 
 Create a new Django project using Aldryn Django

@@ -1,3 +1,4 @@
+:sequential_nav: both
 
 ..  include:: includes/03-local-1-set-up.rst
 

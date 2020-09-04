@@ -1,3 +1,5 @@
+:sequential_nav: next
+
 ..  _tutorial-django-set-up:
 
 Create a new Django project

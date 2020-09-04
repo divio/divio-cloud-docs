@@ -1,3 +1,5 @@
+:sequential_nav: next
+
 .. _tutorial-flavours-php-set-up:
 
 Create a new PHP/Laravel project

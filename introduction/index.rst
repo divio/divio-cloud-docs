@@ -70,7 +70,7 @@ Next, select your path through the tutorial.
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
          </a>
          <a href="#aldryn-tab" class="tabs__link tab__link--active">
-           Django, using Aldryn
+           Django with <img src="../_images/aldryn-logo.svg" alt="Aldryn" width="100">
          </a>
          <a href="#wagtail-tab" class="tabs__link tab__link--active">
            <img src="../_images/wagtail-logo.svg" alt="Wagtail" width="60"></a>
@@ -103,7 +103,7 @@ Django
 
 .. rst-class:: tabs-pane
 
-Django, using Aldryn
+Django with Aldryn
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
