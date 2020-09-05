@@ -1,7 +1,9 @@
 .. _manage-dependencies:
 
-How to pin all of your project's Python dependencies
-====================================================
+How to pin all of your Aldryn Django project's Python dependencies
+==================================================================
+
+..  seealso:: :ref:`infrastructure-python-packaging`
 
 .. _pinning-dependencies-good-practice:
 

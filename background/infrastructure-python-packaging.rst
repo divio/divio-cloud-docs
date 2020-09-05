@@ -6,12 +6,12 @@
 
 .. _infrastructure-python-packaging:
 
-Python package installation
-===============================
+Python package installation in Aldryn Django projects
+=====================================================
 
-Python packages in Divio projects are installed using pip. Our :ref:`Dockerfile <dockerfile-reference>` for Python
-projects performs three operations in sequence: it *compiles a list of dependencies*, *creates a list of wheels*, and
-*installs the wheels*, using the following commands:
+Python packages in Aldryn Django projects are installed using pip. Our :ref:`Dockerfile <dockerfile-reference>` for
+Python projects performs three operations in sequence: it *compiles a list of dependencies*, *creates a list of
+wheels*, and *installs the wheels*, using the following commands:
 
 ..  code-block:: Dockerfile
 

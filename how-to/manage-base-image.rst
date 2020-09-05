@@ -39,15 +39,20 @@ Specify the base image in the ``Dockerfile``
 For example, to use our ``0.4-py3.7-slim-stretch`` base image:
 
 ..  code-block:: Dockerfile
-    :emphasize-lines: 2
 
-    # <DOCKER_FROM>
     FROM divio/base:0.4-py3.7-slim-stretch
-    # </DOCKER_FROM>
 
 
-See our :ref:`Dockerfile reference guide <dockerfile-reference-DOCKER-FROM-section>` for more
-information on the ``# <DOCKER_FROM>`` section.
+..  important::
+
+    If the relevant sections in the ``Dockerfile`` are surrounded by the Divio-specific comment tags::
+
+        # <DOCKER_FROM>
+        ...
+        # </DOCKER_FROM>
+
+    remove these tags - otherwise the Control Panel will simply overwrite your changes. See our :ref:`Dockerfile
+    reference guide <dockerfile-reference-DOCKER-FROM-section>` for more information on the ``# <DOCKER_FROM>`` section.
 
 Test the build locally with ``docker-compose build`` before pushing the change to the cloud.
 
