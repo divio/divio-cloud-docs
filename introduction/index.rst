@@ -87,10 +87,12 @@ Django
     :numbered: 1
 
     django-02-create-project
-    django-03-setup-project-locally.rst
+    django-03-setup-project-locally
     django-04-deploy
-    django-05-services
-    django-06-refinements.rst
+    django-05-database
+    django-06-static
+    django-07-media
+    django-08-refinements
 
 
 .. _aldryn-django-chapters:

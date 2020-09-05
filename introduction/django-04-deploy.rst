@@ -64,11 +64,9 @@ for example ``https://tutorial-project-stage.us.aldryn.io``. Select the link to 
 
 --------------
 
-The application is now running in a cloud deployment. However, more needs to be done. Core concerns of a web
-application will typically include
+Your Django application is now running in the cloud as well as locally, but it can't do anything useful until it is
+attached to basic services, such as the database and media storage. In the next sections we will take care of:
 
 * database storage
 * static asset compilation, storage and serving
 * media storage and serving
-
-:ref:`The next section <tutorial-django-services>` will take care of those.

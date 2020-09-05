@@ -5,17 +5,17 @@
     * laravel-03-setup-project-locally.rst
 
 
-Useful commands
+Local commands
 ----------------------------------------
 
 So far, we have used the ``divio``, ``docker-compose`` and ``docker`` commands. It's good to have a basic familiarity
 with them and what they do. As you proceed through this tutorial, you may encounter the occasional issue. These
 commands will help you when this happens.
 
-..  note::
+..  sidebar:: Other useful commands
 
     See `our local commands cheat sheet <https://docs.divio.com/en/latest/reference/local-commands-cheatsheet.html>`_
-    for many useful commands.
+    for many more useful commands.
 
 
 Using ``divio``

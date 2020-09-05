@@ -29,7 +29,7 @@ is a useful convention). Set the working directory for subsequent commands in th
     FROM python
     WORKDIR /app
 
-At every stage you can stop to check that Docker can build an image from the Dockerfile:
+At every stage you can stop to check that Docker can build an image from the Dockerfile, by running:
 
 ..  code-block:: bash
 
@@ -43,7 +43,7 @@ the ``Dockerfile``:
     RUN pip install django==3.1
 
 However this would quickly become quite unpleasant to deal with as the list of Python dependencies grows, so don't do
-that. A better way is to create a new file ``requirements.txt`` in the project, and list any dependencies in it:
+that. A better way is to create a new file ``requirements.txt`` in the project, and then list any dependencies in it:
 
 ..  code-block:: text
 
