@@ -79,7 +79,7 @@ port to your host. For Postgres, for example:
     :emphasize-lines: 3,4
 
     db:
-        image: postgres:9.4
+        image: postgres:9.6
         ports:
             - 5432:5432
 

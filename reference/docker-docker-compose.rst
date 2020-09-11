@@ -7,7 +7,7 @@ In order to do something useful with containers, they have to be arranged as
 part of a project, usually referred to as an 'application'. This is what a
 ``docker-compose.yml`` file does, specifying what images are required, what
 ports they need to expose, whether the have access to the host filesystem, what
-commands should be run, and so on.
+commands should be run when they start up, and so on.
 
 
 .. _docker-compose-local:
@@ -15,8 +15,8 @@ commands should be run, and so on.
 Function of ``docker-compose.yml``
 ------------------------------------------------------------
 
-In the our project architecture, the ``docker-compose.yml`` file is **not** used for cloud
-deployments, but **only** for configuration of the local server. On the cloud, the deployment is
+In the Divio project architecture, the ``docker-compose.yml`` file is **not** used for cloud
+deployments, but **only** for configuration of the local environment. On the cloud, the deployment is
 taken care of by dedicated systems on our servers.
 
 This means that entries in or changes to ``docker-compose.yml`` will not affect cloud deployments in
@@ -26,11 +26,21 @@ any way.
 Services defined in ``docker-compose.yml``
 ------------------------------------------------
 
-By default, the ``docker-compose.yml`` in Divio projects builds a ``web`` service in
-a container using its ``Dockerfile``. It also builds a ``db`` service, from a
+In a ``docker-compose.yml`` file, *services* represent the *containers* that will be created in the application.
+
+When you create a new Divio project using one of our *defined project types* (e.g. Aldryn Django or PHP/Laravel using
+Flavours) it will include a ``docker-compose.yml`` file ready for local use, with the services already defined.
+
+If you start with a *blank project type*, you will need to assemble the ``docker-compose.yml`` file yourself. This is a
+fairly straightforward process once you know what you are doing. Our :ref:`Django tutorial <tutorial-django-set-up>`
+includes steps for creating a complete ``docker-compose.yml`` file from scratch. It's a very good way to become familiar
+with using Docker Compose, even if you aren't going to be using Django.
+
+For a working local project, various things need to be defined in the file. In a Divio project, there will be a ``web``
+service, that's built in a container using the ``Dockerfile``. There will typically also be a ``db`` service, from a
 standard ``postgres`` or other database image.
 
-Most Divio projects will use a ``docker-compose.yml`` along these lines.
+Most Divio projects will use a ``docker-compose.yml`` that contains entries along these lines.
 
 ..  code-block:: yaml
 
@@ -46,11 +56,13 @@ Most Divio projects will use a ``docker-compose.yml`` along these lines.
      command: python manage.py runserver 0.0.0.0:80
      env_file: .env-local
     db:
-     image: postgres:9.4
+     image: postgres:9.6
      volumes:
       - ".:/app:rw"
 
 Some projects will have additional services (such as Celery for example) defined.
+
+Let's look at the components of the file more closely.
 
 
 .. _docker-compose-web:
@@ -62,16 +74,18 @@ The ``web`` service
 The first definition in the file is for the ``web`` service. In order, the
 directives mean:
 
-* ``build``: build it from the ``Dockerfile`` in the parent directory
-* ``links``: link to the database container
-* ``ports``: map the external port 8000 to the internal port 80
+* ``build``: build it from the ``Dockerfile`` in the cuurent directory
+* ``links``: link to the database container (``db``) using the name ``postgres``
+* ``ports``: map the *external* port 8000 to the *internal* port 80
 * ``volumes``:
-    * map the parent directory on the host to ``/app`` in the container, with
-      read and write access
-    * map the ``data`` directory on the host to ``/data`` in the container,
-      with read and write access
+
+  * ``.:/app:rw`` maps the parent directory on the host to ``/app`` in the container, with
+    read and write access
+  * ``/data:/data:rw`` maps the ``data`` directory on the host to ``/data`` in the container,
+    with read and write access
+
 * ``command``: by default, when the command ``docker-compose run`` is issued,
-  execute ``python manage.py runserver 0.0.0.0:80``
+  execute ``python manage.py runserver 0.0.0.0:80`` (this will override the ``CMD`` instruction in the ``Dockerfile``)
 * ``env_file``: use the ``.env-local`` to supply environment variables to the
   container
 
@@ -141,9 +155,19 @@ database runs on an AWS server; locally, it runs on a Postgres instance in
 
 The directives mean:
 
-* ``image``: build the container from the ``postgres:9.4`` image
+* ``image``: build the container from the ``postgres:9.6`` image
 * ``volumes``: map the parent directory on the host to ``/app`` in the
   container, with read and write access
 
 See :ref:`expose-database-ports` for an example of adding configuration to
 ``docker-compose.yml``.
+
+
+Further reading
+---------------
+
+Our :ref:`Django tutorial <tutorial-django-set-up>` is strongly recommended as a way to learn how a
+``docker-compose.yml`` file can be built from scratch to suit your needs.
+
+The :ref:`configure-celery` section describes adding additional services in Docker Compose for a more complex local
+set-up.

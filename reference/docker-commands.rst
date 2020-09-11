@@ -54,4 +54,4 @@ Usage::
         ➜ docker ps
         CONTAINER ID  IMAGE            COMMAND                 CREATED         STATUS        PORTS                 NAME
         d6007edbaf32  demoproject_web  "/tini -g -- pytho..."  17 minutes ago  Up 8 seconds  0.0.0.0:8000->80/tcp  demoproject_web_
-        27ff3e661027  postgres:9.4     "docker-entrypoint..."  6 days ago      Up 8 seconds  5432/tcp              demoproject_db_
+        27ff3e661027  postgres:9.6     "docker-entrypoint..."  6 days ago      Up 8 seconds  5432/tcp              demoproject_db_

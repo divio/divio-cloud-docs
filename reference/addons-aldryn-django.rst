@@ -41,8 +41,8 @@ hash in the filename.
 Enables GeoDjango support. Adds ``django.contrib.gis`` to ``INSTALLED_APPS`` and sets the database
 engine to ``django.contrib.gis.db.backends.postgis``.
 
-For local development you will need to edit ``docker-compose.yml``, changing ``postgres:9.4`` to
-``mdillon/postgis:9.4``. On the Cloud, you will need to make a support request to have the new
+For local development you will need to edit ``docker-compose.yml``, changing ``postgres:9.6`` to
+``mdillon/postgis:9.6``. On the Cloud, you will need to make a support request to have the new
 database enabled for the project.
 
 

@@ -168,7 +168,7 @@ cover all possible eventualities of database importing.
 
         ➜  docker ps
         CONTAINER ID  IMAGE         COMMAND                 CREATED            STATUS            PORTS     NAMES
-        71fe7e930f60  postgres:9.4  "docker-entrypoint..."  About an hour ago  Up About an hour  5432/tcp  import_project_db_1
+        71fe7e930f60  postgres:9.6  "docker-entrypoint..."  About an hour ago  Up About an hour  5432/tcp  import_project_db_1
         [...]
 
     The *NAMES* column will list the container name.
