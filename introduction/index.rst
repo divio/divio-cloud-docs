@@ -82,6 +82,8 @@ Next, select your path through the tutorial.
 Django
 ~~~~~~~~~~~~~~~~~~~~~~
 
+This tutorial is recommended as an introduction for all Python/Django developers.
+
 .. toctree::
     :maxdepth: 1
     :numbered: 1
@@ -102,6 +104,8 @@ Django
 Django with Aldryn
 ~~~~~~~~~~~~~~~~~~~~~~
 
+Aldryn is our auto-configuration framework for Django.
+
 .. toctree::
     :maxdepth: 1
     :numbered: 1
@@ -118,6 +122,9 @@ Django with Aldryn
 
 Wagtail
 ~~~~~~~~~~~~~~~~~~~~~~
+
+Aldryn is our auto-configuration framework for Django. Wagtail is one of the most popular Django-based content
+management systems.
 
 .. toctree::
     :maxdepth: 1
@@ -138,6 +145,8 @@ Wagtail
 
 PHP/Laravel, using Flavours
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Flavours <https://flavours.dev>`_ is an open specification for web application configuration>.
 
 .. toctree::
     :maxdepth: 1
