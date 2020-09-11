@@ -1,7 +1,12 @@
 .. _how-to-migrate:
 
-How to migrate an existing Django project using Aldryn Django
-=============================================================
+How to configure an existing Django project to use Aldryn
+==========================================================
+
+..  sidebar:: You don't need to use Aldryn Django
+
+    If you prefer not to adapt your project to use the :ref:`Aldryn Django configuration framework <aldryn>`,
+    follow the process described in the :ref:`Divio Django tutorial <tutorial-django-set-up>` instead.
 
 Initial project setup
 ---------------------
@@ -9,14 +14,12 @@ Initial project setup
 Create a new project in the `Divio Control Panel <https://control.divio.com>`_. You'll need to make
 sure that the project options are appropriate, including the Python version and project type.
 
-There are a number of available project types, including Django, Django-plus-django CMS and Django-plus-Wagtail, that are already set up with the relevant addon packages.
+There are a number of available project types, including Django, Django-plus-django CMS and Django-plus-Wagtail, that
+are already set up with the relevant addon packages.
 
-..  note::
-
-    In general, if the software included in your project already exists on Divio as an
-    Addon, it's recommended to use the packaged addon version. This will help ensure not only that
-    it is suitably configured for Divio, but that it will also co-exist well with other
-    components.
+In general, if the software included in your project already exists on Divio as an Addon, it's recommended to use the
+packaged addon version. This will help ensure not only that it is suitably configured for Divio, but that it will also
+co-exist well with other components.
 
 Select the Boilerplate you want to use. Several are available, with different built-in frontend
 components to work with. If you choose a complex Boilerplate and later decide that you don't need
