@@ -15,9 +15,11 @@ Configure ``ALLOWED_HOSTS``
 ---------------------------
 
 :ref:`Earlier <tutorial-django-deploy>`, we set :setting:`ALLOWED_HOSTS <django:ALLOWED_HOSTS>` to ``['*']``, which
-allows any host to serve the application, for convenience. This isn't ideal - ``ALLOWED_HOSTS`` exists for a reason.
+allows any host to serve the application, for convenience. This isn't ideal - ``ALLOWED_HOSTS`` exists for a reason,
+and even if it's safe to do this in some environments, it's a bad idea to bake in configuration that could be unsafe in
+others.
 
-Each client environment is provided with a :ref:`DOMAIN <env-var-domain>` environment variable, and (if the project
+Each cloud environment is provided with a :ref:`DOMAIN <env-var-domain>` environment variable, and (if the project
 uses multiple domains) a :ref:`DOMAIN_ALIASES <env-var-domain-aliases>` environment variable, which can be used to
 configure ``ALLOWED_HOSTS``. You can see what environment variables have been set by using:
 
@@ -47,8 +49,8 @@ Configure ``SECRET_KEY``
 ------------------------
 
 Django's secret key is hard-coded in our settings and committed to the repository. This is all right locally, but not
-in production. However, since each cloud environment is provided with its own randomised ``SECRET_KEY`` variable, we
-can use that by changing ``settings.py`` to use:
+in production. However, since each cloud environment is provided with its own randomised :ref:`SECRET_KEY
+<env-var-secret-key>` variable, we can use that by changing ``settings.py`` to use that (also providing a fall-back):
 
 ..  code-block:: python
 
@@ -156,11 +158,12 @@ and change the risky ``DEBUG = True`` in ``settings.py``:
 
 ..  code-block:: python
 
-    DEBUG = os.environ.get('DJANGO_DEBUG', False)
-    TEMPLATE_DEBUG = os.environ.get('DJANGO_TEMPLATE_DEBUG', False)
+    DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
+    TEMPLATE_DEBUG = os.environ.get('DJANGO_TEMPLATE_DEBUG') == "True"
 
 Your code can now be deployed with more confidence; only if the environment explicitly declares that Django can run in
-debug mode will it do that.
+debug mode will it do that (any other value for the environment variables than ``True`` will evaluate to ``False`` in
+the settings).
 
 Test locally; commit your changes once again, and redeploy and test on the cloud.
 

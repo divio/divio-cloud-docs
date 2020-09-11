@@ -9,13 +9,13 @@ One further step is required before the application can be deployed to the cloud
 <django:ALLOWED_HOSTS>` setting controls the hosts that are allowed to serve the project. When undefined, ``localhost``
 is allowed by default, which will work locally, but not in a cloud deployment.
 
-The simple solution is to amend ``settings.py``, with:
+The solution is to amend ``settings.py``, with:
 
 ..  code-block:: python
 
     ALLOWED_HOSTS = ['*']
 
-It's a crude solution, but we will refine it later.
+Normally, this is not something you would do in production. However it will suffice for now and we can refine it later.
 
 The application is now in a state where it can be deployed to the cloud. All the files that define the application
 should be committed and pushed. It's always nice to exclude unwanted files from Git *before* you commit them

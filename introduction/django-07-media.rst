@@ -6,9 +6,10 @@ Add and configure media storage
 ================================
 
 Each cloud environment can have its own media storage running on a service such as S3 or MS Azure, and is provided with
-a ``DEFAULT_STORAGE_DSN`` variable containing details of how and where files are stored, and the URL from which they
-can be retrieved. Django can be configured to access the media storage of each environment by using the
-``DEFAULT_STORAGE_DSN`` to determine Django's :setting:`DEFAULT_FILE_STORAGE <django:DEFAULT_FILE_STORAGE>` setting.
+a :ref:`DEFAULT_STORAGE_DSN <env-var-storage-dsn>` variable containing details of how and where files are stored, and
+the URL from which they can be retrieved. Django can be configured to access the media storage of each environment by
+using the ``DEFAULT_STORAGE_DSN`` to determine Django's :setting:`DEFAULT_FILE_STORAGE <django:DEFAULT_FILE_STORAGE>`
+setting.
 
 
 Create the media storage

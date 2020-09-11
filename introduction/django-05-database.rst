@@ -77,8 +77,8 @@ Configure database access using an environment variable
 
 Configuration for application services is `stored in environment variables, following the Twelve-Factor model
 <https://www.12factor.net/config>`_. These variables will need to be parsed by the application. For the database the
-values are provided via an environment variable named ``DEFAULT_DATABASE_DSN``, a *Data Source Name*, in the general
-form::
+values are provided via an environment variable named :ref:`DEFAULT_DATABASE_DSN <env-var-database-dsn>`, a *Data
+Source Name*, in the general form::
 
     scheme://username:password@host:port/path?query#fragment
 

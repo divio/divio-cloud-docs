@@ -56,7 +56,10 @@ Via automatically applied environment variables
 
 Some environment variables are provided automatically, and you don't need to do anything about them at all.
 
-Each project environment has its own variables provided for services such as the database (``DEFAULT_DATABASE_DSN``), media storage (``DEFAULT_STORAGE_DSN``) and so on. Locally, the variables are saved in the ``.env-local`` file and :ref:`loaded into the environment via docker compose <docker-compose-env>`.
+Each project environment has its own variables provided for services such as the database (:ref:`DEFAULT_DATABASE_DSN
+<env-var-database-dsn>`), media storage (:ref:`DEFAULT_STORAGE_DSN <env-var-storage-dsn>`) and so on. Locally, the
+variables are saved in the ``.env-local`` file and :ref:`loaded into the environment via docker compose
+<docker-compose-env>`.
 
 
 Via user-configured environment variables
@@ -69,7 +72,7 @@ Other environment variables can be provided by the user, via the Control Panel's
    :alt: 'Adding an environment variable'
    :class: 'main-visual'
 
-If you need the variable in the local development environment as well, add::
+If you need the variable in the local development environment as well, add (for example)::
 
   SECRET_API_KEY = "aaPfaH1oJ5pdqYBc"
 
