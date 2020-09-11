@@ -3,11 +3,14 @@
 The ``docker-compose.yml`` file
 ===============================
 
-In order to do something useful with containers, they have to be arranged as
-part of a project, usually referred to as an 'application'. This is what a
-``docker-compose.yml`` file does, specifying what images are required, what
-ports they need to expose, whether the have access to the host filesystem, what
-commands should be run when they start up, and so on.
+In order to do something useful with containers, they have to be arranged - *orchestrated* - as
+part of a project, usually referred to as an 'application'.
+
+There are multiple ways of orchestrating a Docker application, but Docker Compose is probably the most human-friendly. It's what we use for our local development environments.
+
+To configure the orchestration, Docker Compose uses a ``docker-compose.yml`` file. It specifies what images are
+required, what ports they need to expose, whether thy e have access to the host filesystem, what commands should be run
+when they start up, and so on.
 
 
 .. _docker-compose-local:
