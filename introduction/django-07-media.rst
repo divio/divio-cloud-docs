@@ -41,7 +41,7 @@ We can configure the storage system for this with the ``DEFAULT_STORAGE_DSN`` va
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
 
 For convenience, we should expose the container's ``/data`` directory so you can see the files in it. In
-``docker-compose.yml``, add:
+``docker-compose.yml``, add (make sure you're editing the ``web`` service, not ``db``):
 
 ..  code-block:: yaml
     :emphasize-lines: 7
