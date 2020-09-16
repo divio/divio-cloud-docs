@@ -15,26 +15,26 @@ Configure ``ALLOWED_HOSTS``
 ---------------------------
 
 :ref:`Earlier <tutorial-django-deploy>`, we set :setting:`ALLOWED_HOSTS <django:ALLOWED_HOSTS>` to ``['*']``, which
-allows any host to serve the application, for convenience. This isn't ideal - ``ALLOWED_HOSTS`` exists for a reason,
-and even if it's safe to do this in some environments, it's a bad idea to bake in configuration that could be unsafe in
-others.
+allows any host to serve the application, for convenience. This isn't ideal - ``ALLOWED_HOSTS`` exists to
+:ref:`mitigate fake Host header attacks <django:host-headers-virtual-hosting>`, and even if this risk doesn't apply in
+Divio's cloud hosting environments, it's a bad idea to bake in configuration to your code that could be unsafe in
+others. It's better if we can restrict ``ALLOWED_HOSTS`` to the right domains.
 
-Each cloud environment is provided with a :ref:`DOMAIN <env-var-domain>` environment variable, and (if the project
-uses multiple domains) a :ref:`DOMAIN_ALIASES <env-var-domain-aliases>` environment variable, which can be used to
-configure ``ALLOWED_HOSTS``. You can see what environment variables have been set by using:
+Each Divio cloud environment is provided with a :ref:`DOMAIN <env-var-domain>` environment variable, and (if the
+project uses multiple domains) a :ref:`DOMAIN_ALIASES <env-var-domain-aliases>` environment variable. These can be used
+to configure ``ALLOWED_HOSTS``. You can see what environment variables have been set by using:
 
-..  code-block::bash
+..  code-block:: bash
 
     divio project env-vars --all
 
 (Use the ``-s live`` option to see the variables for the Live environment.)
 
-We can use these environment variables to populate ``ALLOWED_HOSTS``, and only use ``['*']`` if it would otherwise be
-empty - which would be the case only in the local development environment. Edit the settings file again:
+We can use these environment variables to populate ``ALLOWED_HOSTS``. Edit the settings file again:
 
 ..  code-block:: python
 
-    DIVIO_DOMAIN = os.environ.get('DOMAIN', '*')
+    DIVIO_DOMAIN = os.environ.get('DOMAIN', '')
 
     DIVIO_DOMAIN_ALIASES = [
         d.strip()
@@ -43,6 +43,13 @@ empty - which would be the case only in the local development environment. Edit 
     ]
 
     ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
+
+Now, ``ALLOWED_HOSTS`` will always contain only the domains specified by the environment variables. On the cloud, these
+are provided automatically; For the local development environment, we need to add the right ones to ``.env-local``:
+
+..  code-block: text
+
+    DOMAIN_ALIASES=localhost, 127.0.0.1
 
 
 Configure ``SECRET_KEY``
@@ -54,7 +61,7 @@ in production. However, since each cloud environment is provided with its own ra
 
 ..  code-block:: python
 
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'c(oz0r_18@)5ojt(fnom)r)^)gb5zt519$$%5jnz)gpyzxn-4+')
+    SECRET_KEY = os.environ.get('SECRET_KEY', '<a string of random characters>')
 
 
 Add ``collectstatic`` to the build
@@ -71,7 +78,7 @@ to have it executed automatically. We can do this using the ``Dockerfile``:
 
     RUN pip install -r requirements.txt
     RUN python manage.py collectstatic --noinput
-    CMD uvicorn --host=0.0.0.0 --port=80 myapp.asgi:application
+    CMD uwsgi --module=myapp.wsgi --http=0.0.0.0:80
 
 However, if you try to run ``docker-compose build`` now, you'll run into an error. During the build process, Docker has
 no access to environment variables - including the ones it's expecting to use to define settings such as ``DATABASES``.
@@ -99,7 +106,7 @@ Commit and push the code changes, and run a deployment to check results. From no
 with their own static files, or change the static files in existing applications, they will be collected automatically
 on deployment.
 
-..  admonition:: Static files, locally
+..  admonition:: Serving static files, locally
 
     When working locally, the static files collected by Docker inside the container will be *overwritten*, because of
 
@@ -129,8 +136,10 @@ There is something unsatisfactory about the way we hard-code these settings:
 
 If we ever decide to use a different value for ``DEFAULT_STORAGE_DSN`` locally, we'll also have to update the settings
 file. Since we already have the ``DEFAULT_STORAGE_DSN`` value in settings, we should extract the values we need from
-that. We can do that with the `furl <https://github.com/gruns/furl>`_ library (which is what Django Storage URL does
-internally).
+that. We can do that with the `furl <https://github.com/gruns/furl>`_ library (which is what Django Storage URL also
+uses internally).
+
+Add ``furl==2.1.0`` to the ``requirements.txt``, then in the settings:
 
 ..  code-block:: python
 
@@ -152,14 +161,12 @@ where we need it to be True. First, in ``.env-local``:
 ..  code-block:: text
 
     DJANGO_DEBUG=True
-    DJANGO_TEMPLATE_DEBUG=True
 
 and change the risky ``DEBUG = True`` in ``settings.py``:
 
 ..  code-block:: python
 
     DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
-    TEMPLATE_DEBUG = os.environ.get('DJANGO_TEMPLATE_DEBUG') == "True"
 
 Your code can now be deployed with more confidence; only if the environment explicitly declares that Django can run in
 debug mode will it do that (any other value for the environment variables than ``True`` will evaluate to ``False`` in

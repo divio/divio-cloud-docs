@@ -5,8 +5,8 @@
 Deploy your application to the cloud
 ====================================
 
-One further step is required before the application can be deployed to the cloud. Django's :setting:`ALLOWED_HOSTS
-<django:ALLOWED_HOSTS>` setting controls the hosts that are allowed to serve the project. When undefined, ``localhost``
+One further step is required before the application can be deployed to the cloud. :setting:`Django's ALLOWED_HOSTS
+<django:ALLOWED_HOSTS> setting` controls the hosts that are allowed to serve the project. When undefined, ``localhost``
 is allowed by default, which will work locally, but not in a cloud deployment.
 
 The solution is to amend ``settings.py``, with:
@@ -15,10 +15,10 @@ The solution is to amend ``settings.py``, with:
 
     ALLOWED_HOSTS = ['*']
 
-Normally, this is not something you would do in production. However it will suffice for now and we can refine it later.
+Normally, this is not something you would do in production. However it will suffice for now and we will refine it later.
 
 The application is now in a state where it can be deployed to the cloud. All the files that define the application
-should be committed and pushed. It's always nice to exclude unwanted files from Git *before* you commit them
+should be committed and pushed. It's always good to exclude unwanted files from Git *before* you commit them
 inadvertently, so add some new patterns to the project's ``.gitignore`` file:
 
 ..  code-block:: bash

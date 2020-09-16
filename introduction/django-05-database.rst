@@ -10,8 +10,9 @@ cloud for deployment.
 
 ..  important::
 
-    For this part of the tutorial you will need to be opted-in to Beta features on the Divio Control Panel. You can do
-    this in your `account settings <https://control.divio.com/account/contact/>`_.
+    For this part of the tutorial make sure that you have opted-in to Beta features on the Divio Control Panel. Go to
+    your `account settings <https://control.divio.com/account/contact/>`_, and ensure that you have *Beta features*
+    enabled.
 
 
 Create the database
@@ -21,8 +22,8 @@ For the cloud environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the project's :ref:`Services <services>` view, add a PostgreSQL database. When you next deploy, or if you manually
-select *Provision* from the services options menu, it will be provisioned for the project (you need to do one of those
-now).
+select *Provision* from the services options menu, it will be provisioned for the project. Do one of these two things
+now.
 
 .. image:: /images/intro-services.png
    :alt: 'The Services view'
@@ -33,10 +34,10 @@ Locally
 ~~~~~~~
 
 For development purposes when working locally, we should also have a database. It's not so easy to set up the right
-version of Postgres locally, especially when working with different projects, and as a result many Django developers
-content themselves with using SQLite locally, because it's an easy-to-use default. However, it's much better to use the
-same database in development as you do in deployment, and Docker Compose can take care of this for you too. Edit your
-``docker-compose.yml`` to add some new lines:
+version of Postgres locally, especially when working with multiple projects, and as a result many Django developers
+content themselves with using SQLite locally, simply because it's an easy-to-use default. However, it's much better to
+use the same database in development as you do in deployment, and Docker Compose can take care of this for you too.
+Edit your ``docker-compose.yml`` to add some new lines:
 
 ..  code-block:: YAML
     :emphasize-lines: 16-
@@ -105,9 +106,10 @@ the environment it creates:
           - "db:postgres"
         env_file: .env-local
 
-Now in every runtime environment, the application will find the correct database connection values; in a cloud
-environment, it will find variables provided by the cloud infrastructure, while locally it will use the ones we supply
-via ``.env-local``.
+Now in every runtime environment, the application will find the correct database connection values:
+
+* in a cloud environment, it will find variables provided by the cloud infrastructure
+* locally it will use the ones we supply via ``.env-local``
 
 Again, this follows the Twelve-Factor principles. `We manage one codebase in version control, and deploy exactly the
 same codebase in every deployment <https://www.12factor.net/codebase>`_ - even locally.
@@ -124,10 +126,10 @@ List both libraries in ``requirements.txt``:
 ..  code-block:: YAML
     :emphasize-lines: 3-
 
-    django==3.1
-    uvicorn==0.11.8
+    django>=3.1,<3.2
+    uwsgi==2.0.19.1
     psycopg2==2.8.5
-    dj_database_url==0.5.0
+    dj-database-url==0.5.0
 
 Rebuild the image once more to include the new packages.
 
@@ -152,8 +154,9 @@ running migrations, and then add an admin user to the database:
     docker-compose run web python manage.py createsuperuser
 
 The next time you run ``docker-compose up``, you'll be able to `log in to the admin <http://127.0.0.1:8000/admin>`_.
-(If you don't see the expected styling of the Django admin, it's probably because the site is running with Uvicorn
-rather than the runserver - check whether you left the ``command`` line in ``docker-compose.yml`` commented out.)
+
+If you don't see the expected styling of the Django admin, it's probably because the site is running with uWSGI
+rather than the runserver - check whether you left the ``command`` line in ``docker-compose.yml`` commented out.
 
 
 Deploy your changes
@@ -190,7 +193,7 @@ database tables have not yet been created, so if you try to access the admin the
     relation "auth_user" does not exist
     LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
 
-The Divio CLI includes a very convenient way to upload your local database to the cloud. Run:
+So let's push the local database, which does contain the required tables, to the cloud. The Divio CLI includes a convenient way to do this. Run:
 
 ..  code-block:: bash
 
@@ -218,4 +221,3 @@ with a convenient way to move content between them. Your codebase remains clean 
 environments - and configuration is devolved to its environments.
 
 In the next section, we'll configure static file serving.
-

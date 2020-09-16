@@ -19,8 +19,8 @@ For the cloud environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the same way that you did for the database earlier, in the project's :ref:`Services <services>` view, add an *Object
-storage* instance. This will provide S3 storage for the project. Once deployed, or if you manually select *Provision*
-from the services options menu, the service will be provisioned for the project and the environment variable will be
+storage* instance. This will provide S3 storage for the project. Deploy the environment, or manually select *Provision*
+from the services options menu. The service will be provisioned for the project and the environment variable will be
 applied.
 
 Locally
@@ -69,11 +69,11 @@ Use the environment variable in our settings
 
 The next task is to configure Django's ``DEFAULT_FILE_STORAGE`` setting. We need Django to parse the
 ``DEFAULT_STORAGE_DSN`` variable that contains the connection details and select the appropriate backend accordingly.
-For this, we'll use the ``django_storage_url`` library, which needs to be added to ``requirements.txt``. We also need to install ``boto3``, the Python storage backend that will handle files in the project's S3 cloud storage:
+For this, we'll use the ``django-storage-url`` library, which needs to be added to ``requirements.txt``. We also need to install ``boto3``, the Python storage backend that will handle files in the project's S3 cloud storage:
 
 ..  code-block:: YAML
 
-    django_storage_url==0.5.0
+    django-storage-url==0.5.0
     boto3==1.14.49
 
 Rebuild the image once more to include the new package.
@@ -99,10 +99,14 @@ Then in ``settings.py``, add:
     # Django's DEFAULT_FILE_STORAGE requires the class name
     DEFAULT_FILE_STORAGE = 'myapp.settings.DefaultStorageClass'
 
-In brief: we read the ``DEFAULT_STORAGE_DSN`` environment variable value into the setting ``DEFAULT_STORAGE_DSN``. The
-``DefaultStorageClass`` is defined using the setting, and then finally that class is used in the
-``DEFAULT_FILE_STORAGE`` setting. Now when Django needs to handle media files, it can delegate the task to the
-appropriate backend, as defined by the class that ``DEFAULT_FILE_STORAGE`` refers to.
+In brief:
+
+* We read the ``DEFAULT_STORAGE_DSN`` environment variable value into the setting ``DEFAULT_STORAGE_DSN``.
+* The ``DefaultStorageClass`` is defined using the setting.
+* Finally that class is used in the ``DEFAULT_FILE_STORAGE`` setting.
+
+Now when Django needs to handle media files, it can delegate the task to the appropriate backend, as defined by the
+class that ``DEFAULT_FILE_STORAGE`` refers to.
 
 (Note that ``dsn_configured_storage_class()`` and ``DEFAULT_FILE_STORAGE`` both require the *name* of the value, rather
 than the value itself, which is why this looks a little long-winded.)
@@ -190,27 +194,39 @@ And create and run migrations:
     docker-compose run web python manage.py makemigrations uploader
     docker-compose run web python manage.py migrate uploader
 
+
+Test local media storage
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Now when you start the project again with ``docker-compose up``, you can go to the admin and try uploading a file .
 
 Once you have saved it in the admin, you should be able to verify that it has been saved in the filesystem at
 ``/data/media``, that Django shows its URL path in ``/media/`` in the admin interface, and finally, that by selecting
 the link to the file in the admin it opens correctly in your browser.
 
-You can also check that it will work with the cloud storage values; you can do this locally. Stop the application, and use:
+
+Test cloud media storage
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can also check that it will work with the cloud storage values, and will actually store and serve files from the S3
+object storage instance. You can do this locally. Stop the application, and use:
 
 ..  code-block:: bash
 
     divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN
 
 to get the value of the ``DEFAULT_STORAGE_DSN`` from the cloud test environment. (If you don't get a value, check in
-the *Services* view of the project that it has been provisioned.) In your ``.env-local``, apply this value as the
-``DEFAULT_STORAGE_DSN``. Launch the application once more, and run the test above again, uploading and saving a file.
-This time, you should find that the saved file is now served from the external media server.
+the *Services* view of the project that it has been provisioned.) In your ``.env-local``, *temporarily* apply this
+value as the ``DEFAULT_STORAGE_DSN``, replacing the existing one. Launch the application once more, and run the test
+above again, uploading and saving a file. This time, you should find that the saved file is now served from the
+external media server.
 
-The final test is to try it all in the cloud. Revert the ``DEFAULT_STORAGE_DSN`` to its local value
-(``file:///data/media/?url=%2Fmedia%2F``) and commit your code changes in the usual way.
+The final test is to try it all in the cloud.
 
-Then, deploy the changes and push your local media and database to the cloud:
+Revert the ``DEFAULT_STORAGE_DSN`` to its local value (``file:///data/media/?url=%2Fmedia%2F``). Now, commit all your
+code changes in the usual way and push them.
+
+Finally deploy the changes and push your local media and database to the cloud:
 
 ..  code-block:: bash
 
