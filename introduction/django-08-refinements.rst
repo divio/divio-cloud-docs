@@ -45,9 +45,9 @@ We can use these environment variables to populate ``ALLOWED_HOSTS``. Edit the s
     ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
 
 Now, ``ALLOWED_HOSTS`` will always contain only the domains specified by the environment variables. On the cloud, these
-are provided automatically; For the local development environment, we need to add the right ones to ``.env-local``:
+are provided automatically; for the local development environment, we need to add the right ones to ``.env-local``:
 
-..  code-block: text
+..  code-block:: text
 
     DOMAIN_ALIASES=localhost, 127.0.0.1
 
