@@ -84,7 +84,7 @@ However, if you try to run ``docker-compose build`` now, you'll run into an erro
 no access to environment variables - including the ones it's expecting to use to define settings such as ``DATABASES``.
 This is how it should be: building a Docker image should not be dependent upon any particular environment conditions.
 
-The solution is a to build a fallback into the Django settings by editing the line that determines the
+The solution is to build a fallback into the Django settings by editing the line that determines the
 ``DEFAULT_DATABASE_DSN`` setting:
 
 ..  code-block:: python
