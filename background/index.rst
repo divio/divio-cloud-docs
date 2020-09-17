@@ -52,8 +52,8 @@ Projects
 
 
 
-Django addons
-------------------
+Aldryn Django and addons
+-------------------------
 
 .. toctree::
     :maxdepth: 1
