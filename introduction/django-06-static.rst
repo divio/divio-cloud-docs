@@ -46,17 +46,18 @@ of the settings file add:
 
 Rebuild the image to have WhiteNoise installed.
 
+Now, collect the static files to their destination for serving:
+
+..  code-block:: bash
+
+    docker-compose run web python manage.py collectstatic
+
 You can check that uWSGI and WhiteNoise are serving the static files as expected by:
 
 * commenting out the ``command`` line in ``docker-compose.yml`` (to ensure that the runserver isn't handling them), and
 * setting ``DEBUG`` in ``settings.py`` to ``False`` (to ensure that they aren't being served by :ref:`Django's built-in
   static file serving <django:serving-static-files-in-development>`).
 
-Collect the static files to their destination for serving:
-
-..  code-block:: bash
-
-    docker-compose run web python manage.py collectstatic
 
 And now you should be able to load http://127.0.0.1:8000/static/admin/css/fonts.css.
 

@@ -206,13 +206,20 @@ Similarly, you can push/pull media files, and also specify which cloud environme
 commands cheatsheet <cheatsheet-project-resource-management>`. A common use-case is to pull live content into the
 development environment, so that you can test new development with real data.
 
-You can also execute commands like ``python manage.py migrate`` directly in the cloud environment. Copy the SSH URL
-from the Test environment pane in the Control Panel, and use it to open a session directly to a cloud container. Then
-run:
+You can also execute commands like ``python manage.py migrate`` directly in the cloud environment. Try it - copy the
+SSH URL from the Test environment pane in the Control Panel, and use it to open a session directly to a cloud
+container. Then try, for example:
 
 ..  code-block:: bash
 
     python manage.py migrate
+
+or:
+
+..  code-block:: bash
+
+    python manage.py shell
+
 
 -------------------
 

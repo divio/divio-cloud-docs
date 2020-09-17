@@ -5,11 +5,11 @@
 Deploy your application to the cloud
 ====================================
 
-One further step is required before the application can be deployed to the cloud. :setting:`Django's ALLOWED_HOSTS
-<django:ALLOWED_HOSTS> setting` controls the hosts that are allowed to serve the project. When undefined, ``localhost``
+One further step is required before the application can be deployed to the cloud. Django's :setting:`ALLOWED_HOSTS
+<django:ALLOWED_HOSTS>` setting controls the hosts that are allowed to serve the project. When undefined, ``localhost``
 is allowed by default, which will work locally, but not in a cloud deployment.
 
-The solution is to amend ``settings.py``, with:
+The quick solution is to amend ``settings.py`` to allow any host:
 
 ..  code-block:: python
 

@@ -131,14 +131,18 @@ First, set the Django settings ``MEDIA_URL`` and ``MEDIA_ROOT`` to match the val
 And then add a new pattern to ``myapp/urls.py``:
 
 ..  code-block:: python
-    :emphasize-lines: 1-2, 6
+    :emphasize-lines: 1-2, 8-
 
     from django.conf import settings
     from django.conf.urls.static import static
 
     urlpatterns = [
         path('admin/', admin.site.urls),
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ]
+
+    if settings.DEBUG:
+        urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+
 
 As the Django documentation notes, this is not for production use, but in any case, it will only work when Django
 is in debug mode, so it's ideal for local development.

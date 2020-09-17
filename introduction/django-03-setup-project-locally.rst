@@ -135,12 +135,8 @@ Add:
 
     uwsgi==2.0.19.1
 
-to ``requirements.txt``. Every time you amend ``requirements.txt``, you will need to rebuild the image with the new
-dependency list, with:
-
-..  code-block:: bash
-
-    docker-compose build
+to ``requirements.txt``. These dependencies are baked into the image, so every time you amend the requirements, you
+will need to rebuild with the new dependency list (we'll do that in a moment).
 
 The Django project can be started with uWSGI. This should be baked into the ``Dockerfile`` itself, as a start-up command. To the end of the file, add:
 
@@ -148,7 +144,14 @@ The Django project can be started with uWSGI. This should be baked into the ``Do
 
     CMD uwsgi --module=myapp.wsgi --http=0.0.0.0:80
 
-Rebuild once more. Now when the web container is launched it will run the command automatically, to start it up in - for example - a cloud deployment.
+Run:
+
+..  code-block:: bash
+
+    docker-compose build
+
+once more. Now when the web container is launched it will run the command automatically, to start it up in - for
+example - a cloud deployment.
 
 However, when we start it locally with ``docker-compose up``, the ``command`` line in the ``docker-compose.yml`` file
 overrides that, and uses ``python manage.py runserver 0.0.0.0:80`` instead.

@@ -11,6 +11,30 @@ it requires from environment-provided variables.
 However, there are a number of refinements we can make.
 
 
+Set ``DEBUG`` using an environment variable
+--------------------------------------------
+
+``DEBUG`` is hard-coded into the project code. This is not a good idea. We want to be sure that we don't inadvertently
+go into production with ``DEBUG = True``. So, let's make it default to ``False``, and overwrite it only where we need
+it to be True. First, in ``.env-local``:
+
+..  code-block:: text
+
+    DJANGO_DEBUG=True
+
+and change the risky ``DEBUG = True`` in ``settings.py``:
+
+..  code-block:: python
+
+    DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
+
+Your code can now be deployed with more confidence; only if the environment explicitly declares that Django can run in
+debug mode will it do that (any other value for the environment variables than ``True`` will evaluate to ``False`` in
+the settings).
+
+Test locally; commit your changes once again, and redeploy and test on the cloud.
+
+
 Configure ``ALLOWED_HOSTS``
 ---------------------------
 
@@ -123,61 +147,6 @@ on deployment.
 
         docker-compose run web python manage.py collectstatic
 
-
-Improve the way we set ``MEDIA_ROOT`` and ``MEDIA_URL``
----------------------------------------------------------
-
-There is something unsatisfactory about the way we hard-code these settings:
-
-..  code-block:: python
-
-    MEDIA_URL = 'media/'
-    MEDIA_ROOT = os.path.join('/data/media/')
-
-If we ever decide to use a different value for ``DEFAULT_STORAGE_DSN`` locally, we'll also have to update the settings
-file. Since we already have the ``DEFAULT_STORAGE_DSN`` value in settings, we should extract the values we need from
-that. We can do that with the `furl <https://github.com/gruns/furl>`_ library (which is what Django Storage URL also
-uses internally).
-
-Add ``furl==2.1.0`` to the ``requirements.txt``, then in the settings:
-
-..  code-block:: python
-
-    from furl import furl
-
-    [...]
-
-    MEDIA_URL = furl(DEFAULT_STORAGE_DSN).args.get('url')
-    MEDIA_ROOT = os.path.join(str(furl(DEFAULT_STORAGE_DSN).path))
-
-
-Set ``DEBUG`` using an environment variable
---------------------------------------------
-
-``DEBUG`` is also hard-coded into the project code. This is not a good idea. We want to be sure that we don't
-inadvertently go into production with ``DEBUG = True``. So, let's make it default to ``False``, and overwrite it only
-where we need it to be True. First, in ``.env-local``:
-
-..  code-block:: text
-
-    DJANGO_DEBUG=True
-
-and change the risky ``DEBUG = True`` in ``settings.py``:
-
-..  code-block:: python
-
-    DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
-
-Your code can now be deployed with more confidence; only if the environment explicitly declares that Django can run in
-debug mode will it do that (any other value for the environment variables than ``True`` will evaluate to ``False`` in
-the settings).
-
-Test locally; commit your changes once again, and redeploy and test on the cloud.
-
-Run ``divio project deploy live``, and test it in the Live environment too.
-
-You should be able to verify that exactly the same codebase runs in multiple different environments, configuring itself
-appropriately and using the different resources and services available in each.
 
 -------------------
 
