@@ -144,7 +144,7 @@ The application can be run inside its container now and commands can be executed
 
     docker-compose run web django-admin startproject myapp .
 
-If you use a different name, you will need to change the reference to ``myapp`` in the ``Dockerfile``'s ``CMD`` line,
+If you use a different name, you will need to change the reference to ``myapp`` in the :ref:`static settings <django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line,
 :ref:`below <django-create-deploy-CMD>`.
 
 
@@ -191,6 +191,8 @@ Configure database settings:
     DATABASES = {'default': dj_database_url.parse(DEFAULT_DATABASE_DSN)}
 
 
+..  _django-create-deploy-static:
+
 Configure static and media settings:
 
 ..  code-block:: python
@@ -214,6 +216,8 @@ Configure static and media settings:
     # only required for local file storage and serving, in development
     MEDIA_URL = 'media/'
     MEDIA_ROOT = os.path.join('/data/media/')
+
+(Note that the ``DEFAULT_FILE_STORAGE`` assumes your Django project was named ``myapp``.)
 
 
 ..  _django-create-deploy-CMD:
