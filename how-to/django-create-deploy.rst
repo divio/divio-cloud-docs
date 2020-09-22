@@ -248,7 +248,7 @@ Deployment and further development
 
 The project can be committed using Git, and deployed using the Divio CLI or the Control Panel in the usual way.
 
-It would make sense to add an appropriate ``.gitgnore`` file to keep things clean, such as:
+It would make sense to add an appropriate ``.gitignore`` file to keep things clean, such as:
 
 ..  code-block:: text
 
