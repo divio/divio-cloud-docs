@@ -3,6 +3,19 @@
 The ``docker-compose.yml`` file
 ===============================
 
+.. _docker-compose-local:
+
+Function of ``docker-compose.yml``
+------------------------------------------------------------
+
+..  admonition:: ``docker-compose.yml`` is used exclusively for local project set-up
+
+    In the Divio project architecture, the ``docker-compose.yml`` file is **not** used for cloud deployments, but
+    **only** for configuration of the local environment. On the cloud, the deployment is taken care of by dedicated
+    systems on our servers.
+
+    This means that entries in or changes to ``docker-compose.yml`` will not affect cloud deployments in any way.
+
 In order to do something useful with containers, they have to be arranged - *orchestrated* - as
 part of a project, usually referred to as an 'application'.
 
@@ -11,19 +24,6 @@ There are multiple ways of orchestrating a Docker application, but Docker Compos
 To configure the orchestration, Docker Compose uses a ``docker-compose.yml`` file. It specifies what images are
 required, what ports they need to expose, whether thy e have access to the host filesystem, what commands should be run
 when they start up, and so on.
-
-
-.. _docker-compose-local:
-
-Function of ``docker-compose.yml``
-------------------------------------------------------------
-
-In the Divio project architecture, the ``docker-compose.yml`` file is **not** used for cloud
-deployments, but **only** for configuration of the local environment. On the cloud, the deployment is
-taken care of by dedicated systems on our servers.
-
-This means that entries in or changes to ``docker-compose.yml`` will not affect cloud deployments in
-any way.
 
 
 Services defined in ``docker-compose.yml``
@@ -77,7 +77,7 @@ The ``web`` service
 The first definition in the file is for the ``web`` service. In order, the
 directives mean:
 
-* ``build``: build it from the ``Dockerfile`` in the cuurent directory
+* ``build``: build it from the ``Dockerfile`` in the current directory
 * ``links``: link to the database container (``db``) using the name ``postgres``
 * ``ports``: map the *external* port 8000 to the *internal* port 80
 * ``volumes``:

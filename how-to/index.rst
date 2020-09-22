@@ -111,6 +111,7 @@ For Django-based projects.
 .. toctree::
     :maxdepth: 1
 
+    Create and deploy a Django project <django-create-deploy>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
     Go-live checklist for Django projects <live-checklist>
 
