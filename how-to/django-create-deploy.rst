@@ -248,6 +248,30 @@ Deployment and further development
 
 The project can be committed using Git, and deployed using the Divio CLI or the Control Panel in the usual way.
 
+It would make sense to add an appropriate ``.gitgnore`` file to keep things clean, such as:
+
+..  code-block:: text
+
+    # macOS
+    .DS_Store
+    .DS_Store?
+    ._*
+    .Spotlight-V100
+    .Trashes
+
+    # Python
+    *.pyc
+    *.pyo
+    db.sqlite3
+
+    # Django
+    /staticfiles
+
+    # Divio
+    .divio
+    /data.tar.gz
+    /data
+
 
 Notes on working with the project
 ---------------------------------
