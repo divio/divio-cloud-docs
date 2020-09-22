@@ -215,7 +215,11 @@ Configure static and media settings:
     MEDIA_URL = 'media/'
     MEDIA_ROOT = os.path.join('/data/media/')
 
+
 ..  _django-create-deploy-CMD:
+
+Extend the ``Dockerfile``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that a Django project has been created, append to the ``Dockerfile``:
 
