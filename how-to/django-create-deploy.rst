@@ -228,7 +228,19 @@ Configure database settings:
 
 ..  _django-create-deploy-static:
 
-Configure static and media settings:
+Configure static and media settings. First, add the ``WhiteNoiseMiddleware`` to the list of ``MIDDLEWARE``, after the
+``SecurityMiddleware``:
+
+..  code-block:: python
+    :emphasize-lines: 3
+
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        [...]
+    ]
+
+and then:
 
 ..  code-block:: python
 
