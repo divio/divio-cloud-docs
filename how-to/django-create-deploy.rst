@@ -95,7 +95,7 @@ You will need this in order to be able to run the application locally for develo
 * local file storage (instead of S3 instance)
 
 ..  code-block:: yaml
-    :emphasize-lines: 17-19, 23-43
+    :emphasize-lines: 17-19, 23-42
 
     version: "2.4"
     services:
@@ -113,17 +113,16 @@ You will need this in order to be able to run the application locally for develo
         command: python manage.py runserver 0.0.0.0:80
         # the URL 'postgres' or 'mysql' will point to the application's db service
         links:
-          # select one of the following for the database
-          - "db:postgres"
-          - "db:mysql"
+          - "database_default"
         env_file: .env-local
 
-      db:
+      database_default:
         # Select one of the following db configurations for the database
         image: postgres:9.6-alpine
         environment:
           POSTGRES_DB: "db"
           POSTGRES_HOST_AUTH_METHOD: "trust"
+          SERVICE_MANAGER: "fsm-postgres"
         volumes:
           - ".:/app:rw"
 
@@ -152,8 +151,8 @@ used in the local development environment. Create a ``.env-local`` file, contain
     :emphasize-lines: 1-3
 
     # select one of the following for the database
-    DEFAULT_DATABASE_DSN=postgres://postgres@postgres:5432/db
-    DEFAULT_DATABASE_DSN=mysql://root@mysql:3306/db
+    DEFAULT_DATABASE_DSN=postgres://postgres@database_default:5432/db
+    DEFAULT_DATABASE_DSN=mysql://root@database_default:3306/db
 
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
     DJANGO_DEBUG=True
@@ -173,14 +172,15 @@ Now you can build the application containers locally:
 Create the Django project module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The application can be run inside its container now and commands can be executed in the Docker environment. Use it to create a new Django project module:
+The application can be run inside its container now and commands can be executed in the Docker environment. Use it to
+create a new Django project module:
 
 ..  code-block:: bash
 
     docker-compose run web django-admin startproject myapp .
 
-If you use a different name, you will need to change the reference to ``myapp`` in the :ref:`static settings <django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line,
-:ref:`below <django-create-deploy-CMD>`.
+If you use a different name, you will need to change the reference to ``myapp`` in the :ref:`static settings
+<django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line, :ref:`below <django-create-deploy-CMD>`.
 
 
 Configure ``settings.py``
@@ -302,8 +302,6 @@ The database will need to be migrated before you can start any application devel
 Deployment and further development
 -----------------------------------------
 
-The project can be committed using Git, and deployed using the Divio CLI or the Control Panel in the usual way.
-
 It would make sense to add an appropriate ``.gitignore`` file to keep things clean, such as:
 
 ..  code-block:: text
@@ -327,6 +325,9 @@ It would make sense to add an appropriate ``.gitignore`` file to keep things cle
     .divio
     /data.tar.gz
     /data
+
+And now the project is ready to be committed using Git, and deployed using the Divio CLI or the Control Panel in the
+usual way.
 
 
 Notes on working with the project
