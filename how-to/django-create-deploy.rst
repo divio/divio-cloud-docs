@@ -119,7 +119,7 @@ You will need this in order to be able to run the application locally for develo
         env_file: .env-local
 
       db:
-        # select one of the following db configurations for the database
+        # Select one of the following db configurations for the database
         image: postgres:9.6-alpine
         environment:
           POSTGRES_DB: "db"
@@ -260,17 +260,16 @@ Configure static and media settings:
 Extend the ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that a Django project has been created, append to a command to the ``Dockerfile`` that will collect static files:
+Now that a Django project has been created, append to a command to the ``Dockerfile`` that will collect static files.
+Depending which application gateway server :ref:`you installed above <django-create-deploy-requirements>`, include the
+appropriate command to launch the application when a container starts:
 
 ..  code-block:: Dockerfile
+    :emphasize-lines: 3-6
 
     RUN python manage.py collectstatic --noinput
 
-and choose *one* of the following, depending which application gateway server :ref:`you installed above
-<django-create-deploy-requirements>`, to launch the application when a container starts:
-
-..  code-block:: Dockerfile
-
+    # Select one of the following application gateway server commands
     CMD uwsgi --http=0.0.0.0:80 --module=myapp.wsgi
     CMD gunicorn --bind=0.0.0.0:80 myapp.wsgi
     CMD uvicorn --host=0.0.0.0 --port=80 myapp.asgi:application
