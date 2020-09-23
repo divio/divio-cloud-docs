@@ -2,9 +2,9 @@
 
 .. meta::
    :description:
-       This guide explains step-by-step how to create and deploy a Twelve-factor Django project including Postgres, and
-       cloud media storage using S3, with Docker.
-   :keywords: Docker, Django, Postgres, S3
+       This guide explains step-by-step how to create and deploy a Twelve-factor Django project including Postgre or
+       MySQL, and cloud media storage using S3, with Docker.
+   :keywords: Docker, Django, Postgres, MySQL, S3
 
 
 How to create and deploy a Django project
@@ -12,21 +12,23 @@ How to create and deploy a Django project
 
 This guide will take you through the steps to: create a `Twelve-factor <https://www.12factor.net/config>`_ Django project, including:
 
-* Postgres database
+* Postgres or MySQL database
 * cloud media storage using S3
 * `WhiteNoise <http://whitenoise.evans.io>`_ to serve static files in production
-* `uWSGI <https://uwsgi-docs.readthedocs.io>`_, for the application server
+* `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
+  <https://www.uvicorn.org>`_ for the application gateway server
 
 and to deploy it using Docker.
 
-This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the Divio CLI installed. If not, please start with :ref:`our complete tutorial for Django <introduction>`.
+This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the Divio CLI
+installed. If not, please start with :ref:`our complete tutorial for Django <introduction>`.
 
 
 Create a blank Divio project
 ----------------------------
 
 Create a new project, selecting the *No Platform* > *Empty* options. In the newly-created project, use the *Services*
-menu to add a Postgres database, and an S3 object storage instance for media. Use the options menu to
+menu to add a Postgres or MySQL database, and an S3 object storage instance for media. Use the options menu to
 provision each service.
 
 
@@ -56,34 +58,46 @@ Edit the ``Dockerfile``, adding:
     RUN pip install -r requirements.txt
 
 
+..  _django-create-deploy-requirements:
+
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one, containing:
 
 ..  code-block:: Dockerfile
+    :emphasize-lines: 7-9, 11-14
 
     django>=3.1,<3.2
     dj-database-url==0.5.0
     django-storage-url==0.5.0
     whitenoise==5.2.0
     boto3==1.14.49
+
+    # Select one of the following for the database
     psycopg2==2.8.5
+    mysqlclient==2.0.1
+
+    # Select one of the following for the gateway server
     uwsgi==2.0.19.1
+    uvicorn==0.11.8
+    gunicorn==20.0.4
 
 
 Local container orchestration with ``docker-compose.yml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate
-the ``web`` image used in cloud deployments, and will set up:
+You will need this in order to be able to run the application locally for development purposes. Create a
+``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate the
+``web`` image used in cloud deployments, and will set up:
 
-* a Postgres database running in a local container (instead of on a cloud database cluster)
+* a Postgres or MySQL database running in a local container (instead of on a cloud database cluster)
 * local file storage (instead of S3 instance)
 
 ..  code-block:: yaml
+    :emphasize-lines: 17-19, 23-43
 
-    version: "2"
+    version: "2.4"
     services:
       web:
         # the application's web service (container) will use an image based on our Dockerfile
@@ -97,18 +111,35 @@ the ``web`` image used in cloud deployments, and will set up:
           - "./data:/data:rw"
         # the default command to run wheneve the container is launched
         command: python manage.py runserver 0.0.0.0:80
-        # the URL 'postgres' will point to the application's db service
+        # the URL 'postgres' or 'mysql' will point to the application's db service
         links:
+          # select one of the following for the database
           - "db:postgres"
+          - "db:mysql"
         env_file: .env-local
+
       db:
-        # the application's web service will use an off-the-shelf image
+        # select one of the following db configurations for the database
         image: postgres:9.6-alpine
         environment:
           POSTGRES_DB: "db"
           POSTGRES_HOST_AUTH_METHOD: "trust"
         volumes:
           - ".:/app:rw"
+
+        image: mysql:5.7
+        environment:
+          MYSQL_DATABASE: "db"
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+          SERVICE_MANAGER: "fsm-mysql"
+        volumes:
+          - ".:/app:rw"
+          - "./data/db:/var/lib/mysql"
+        healthcheck:
+            test: "/usr/bin/mysql --user=root -h 127.0.0.1 --execute \"SHOW DATABASES;\""
+            interval: 2s
+            timeout: 20s
+            retries: 10
 
 
 Local configuration using ``.env-local``
@@ -118,8 +149,12 @@ As you can see above, the ``web`` service refers to an ``env_file`` containing t
 used in the local development environment. Create a ``.env-local`` file, containing:
 
 ..  code-block:: text
+    :emphasize-lines: 1-3
 
+    # select one of the following for the database
     DEFAULT_DATABASE_DSN=postgres://postgres@postgres:5432/db
+    DEFAULT_DATABASE_DSN=mysql://root@mysql:3306/db
+
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
     DJANGO_DEBUG=True
     DOMAIN_ALIASES=localhost, 127.0.0.1
@@ -225,16 +260,22 @@ Configure static and media settings:
 Extend the ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that a Django project has been created, append to the ``Dockerfile``:
+Now that a Django project has been created, append to a command to the ``Dockerfile`` that will collect static files:
 
 ..  code-block:: Dockerfile
 
     RUN python manage.py collectstatic --noinput
-    CMD uwsgi --module=myapp.wsgi --http=0.0.0.0:80
+
+and choose *one* of the following, depending which application gateway server :ref:`you installed above
+<django-create-deploy-requirements>`, to launch the application when a container starts:
+
+..  code-block:: Dockerfile
+
+    CMD uwsgi --http=0.0.0.0:80 --module=myapp.wsgi
+    CMD gunicorn --bind=0.0.0.0:80 myapp.wsgi
+    CMD uvicorn --host=0.0.0.0 --port=80 myapp.asgi:application
 
 (Note that this assumes your Django project was named ``myapp``.)
-
-This will collect static files during the build process, and launch the site with uWSGI.
 
 
 Run database migrations
@@ -280,7 +321,7 @@ It would make sense to add an appropriate ``.gitignore`` file to keep things cle
 Notes on working with the project
 ---------------------------------
 
-Using the twelve-factor model places all configuration in environment variables, so that the project can readily be
+Using the Twelve-factor model places all configuration in environment variables, so that the project can readily be
 moved to another host or platform, or set up locally for development. The configuration for:
 
 * security
@@ -304,19 +345,20 @@ exactly the same codebase.
 Django server
 ~~~~~~~~~~~~~
 
-In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Django using uWSGI.
+In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Django using the uWSGI/Gunicorn/Uvicorn
+application gateway server.
 
 In the local environment: the ``command`` line in ``docker-compose.yml`` starts up Django using the runserver,
 overriding the ``CMD`` in the ``Dockerfile``. If the ``command`` line is commented out, ``docker-compose up`` will use
-uWSGI locally instead.
+the application gateway server locally instead.
 
 
 Database
 ~~~~~~~~
 
-In cloud environments: the application will use one of our database clusters running Postgres.
+In cloud environments: the application will use one of our database clusters.
 
-In the local environment: the application will use a container running the same version of Postgres.
+In the local environment: the application will use a container running the same database.
 
 During the build phase: the database falls back to in-memory SQLite, as there is no database available to connect to,
 and no configuration variables available from the environment in any case.
@@ -353,11 +395,11 @@ In the local environment: default values are provided via the ``DOMAIN_ALIASES``
 Static files
 ~~~~~~~~~~~~
 
-In cloud environments: uWSGI and WhiteNoise are used.
+In cloud environments: the application gateway server and WhiteNoise are used.
 
-In the local environment: static files are served by the Django runserver. By :ref:`running uWSGI locally
-<django-create-deploy-startup>` and enforcing ``DEBUG = False``, uWSGI and WhiteNoise can be tested in the local
-environment.
+In the local environment: static files are served by the Django runserver. By :ref:`running the application gateway
+server locally <django-create-deploy-startup>` and enforcing ``DEBUG = False``, it can be tested with WhiteNoise in the
+local environment.
 
 
 Media files

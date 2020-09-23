@@ -42,6 +42,7 @@ filename
 frontend
 gh
 Google
+Gunicorn
 gzipped
 hostname
 HTTPS
@@ -100,6 +101,7 @@ uppercase
 userland
 username
 Uvicorn
+uWSGI
 virtualisation
 virtualised
 vs
