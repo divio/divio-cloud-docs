@@ -95,7 +95,7 @@ You will need this in order to be able to run the application locally for develo
 * local file storage (instead of S3 instance)
 
 ..  code-block:: yaml
-    :emphasize-lines: 17-19, 23-42
+    :emphasize-lines: 21-
 
     version: "2.4"
     services:
@@ -150,7 +150,7 @@ used in the local development environment. Create a ``.env-local`` file, contain
 ..  code-block:: text
     :emphasize-lines: 1-3
 
-    # select one of the following for the database
+    # Select one of the following for the database
     DEFAULT_DATABASE_DSN=postgres://postgres@database_default:5432/db
     DEFAULT_DATABASE_DSN=mysql://root@database_default:3306/db
 
