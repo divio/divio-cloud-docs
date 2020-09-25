@@ -27,40 +27,6 @@ Building your Docker application
     Install system packages <install-system-packages>
 
 
-Adding new functionality to a project
-----------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Set up Sass CSS compilation <configure-sass>
-    Configure Application Performance Monitoring <configure-apm>
-    Configure media serving on a custom domain <configure-media-custom-domain>
-
-
-The development pipeline
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Configure external Git hosting <resources-configure-git>
-    Use Git to manage your project <use-git>
-    Set up CI/CD <configure-ci>
-    Use our API <use-api>
-
-
-Managing a project's resources
-------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Interact with your project’s database <interact-database>
-    Interact with your project’s cloud media storage <interact-storage>
-    Manage environment variables <environment-variables>
-
-
 Platform-specific guides
 ----------------------------------------
 
@@ -71,11 +37,11 @@ Platform-specific guides
 
     <div class="tabs">
       <div class="tabs__nav">
-         <a href="#python-tab" class="tabs__link tab__link--active">
-           <img src="../_images/python-logo.svg" alt="Python" width="80">
-         </a>
          <a href="#django-tab" class="tabs__link tab__link--active">
            <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
+         </a>
+         <a href="#python-tab" class="tabs__link tab__link--active">
+           <img src="../_images/python-logo.svg" alt="Python" width="80">
          </a>
          <a href="#aldryn-tab" class="tabs__link tab__link--active">
            Django with <img src="../_images/aldryn-logo.svg" alt="Aldryn" width="100">
@@ -85,20 +51,6 @@ Platform-specific guides
          </a>
       <div>
       <div class="tabs__content">
-
-
-..  rst-class:: tabs-pane
-
-Python
-~~~~~~~~~~~~~~~~
-
-For all Python-based projects, including those using Django and the Aldryn addons framework.
-
-.. toctree::
-    :maxdepth: 1
-
-    Install Python dependencies <install-python-dependencies>
-    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
 ..  rst-class:: tabs-pane
@@ -114,6 +66,20 @@ For Django-based projects.
     Create and deploy a Django project <django-create-deploy>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
     Go-live checklist for Django projects <live-checklist>
+
+
+..  rst-class:: tabs-pane
+
+Python
+~~~~~~~~~~~~~~~~
+
+For all Python-based projects, including those using Django and the Aldryn addons framework.
+
+.. toctree::
+    :maxdepth: 1
+
+    Install Python dependencies <install-python-dependencies>
+    Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 
 ..  rst-class:: tabs-pane
@@ -156,6 +122,40 @@ Node.js
     </div><!-- .tabs -->
 
 -------------------------
+
+
+Managing a project's resources
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Interact with your project’s database <interact-database>
+    Interact with your project’s cloud media storage <interact-storage>
+    Manage environment variables <environment-variables>
+
+
+Adding new functionality to a project
+----------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Set up Sass CSS compilation <configure-sass>
+    Configure Application Performance Monitoring <configure-apm>
+    Configure media serving on a custom domain <configure-media-custom-domain>
+
+
+The development pipeline
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Configure external Git hosting <resources-configure-git>
+    Use Git to manage your project <use-git>
+    Set up CI/CD <configure-ci>
+    Use our API <use-api>
 
 
 Troubleshooting

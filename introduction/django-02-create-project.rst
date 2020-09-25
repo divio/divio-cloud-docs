@@ -13,8 +13,9 @@ The principles covered by the tutorial will apply to any other development stack
 
 ..  note::
 
-    This tutorial is intended to introduce the basics of working with Divio, using Django as an example. **It is not a
-    tutorial for Django**.
+    This tutorial is intended for newcomers to the Divio platform. If you're already familiar with the basics of Divio,
+    see our guide :ref:`How to create and deploy a Django project <django-create-deploy>`, which shows step-by-step how
+    to create and deploy a Twelve-factor Django project including Postgres or MySQL, and cloud media storage using S3.
 
 
 ..  include:: includes/02-create-1-set-up.rst
