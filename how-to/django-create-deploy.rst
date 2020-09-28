@@ -215,7 +215,7 @@ appropriate; in all cases they will fall back to safe values if an environment v
     ]
     ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
 
-    # Redirect to HTTPS by default, unless explcitly disabled
+    # Redirect to HTTPS by default, unless explicitly disabled
     SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
 
 
