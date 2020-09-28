@@ -157,6 +157,7 @@ used in the local development environment. Create a ``.env-local`` file, contain
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
     DJANGO_DEBUG=True
     DOMAIN_ALIASES=localhost, 127.0.0.1
+    SECURE_SSL_REDIRECT=False
 
 
 Build with Docker
@@ -195,8 +196,8 @@ Edit ``myapp.settings.py``, to add some code that will read configuration from e
     from django_storage_url import dsn_configured_storage_class
 
 
-Some security-related settings - the cloud environments will provide these values where appropriate, and they will fall
-back to safe values otherwise:
+Some security-related settings. The cloud environments will provide some of these values as environment variables where
+appropriate; in all cases they will fall back to safe values if an environment variable is not provided:
 
 ..  code-block:: python
 
@@ -213,6 +214,9 @@ back to safe values otherwise:
         if d.strip()
     ]
     ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
+
+    # Redirect to HTTPS by default, unless explcitly disabled
+    SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
 
 
 Configure database settings:
