@@ -302,6 +302,12 @@ The database will need to be migrated before you can start any application devel
 
     docker-compose run web python manage.py migrate
 
+And create a Django superuser:
+
+..  code-block:: bash
+
+    docker-compose run web python manage.py createsuperuser
+
 
 Deployment and further development
 -----------------------------------------
@@ -332,6 +338,9 @@ It would make sense to add an appropriate ``.gitignore`` file to keep things cle
 
 And now the project is ready to be committed using Git, and deployed using the Divio CLI or the Control Panel in the
 usual way.
+
+Note that once deployed to a cloud environment, your project will run with ``DEBUG = False`` unless otherwise
+configured, and Django's welcome page will not be shown. Log in to the Django admin at ``/admin``.
 
 
 Notes on working with the project
