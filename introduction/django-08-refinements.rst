@@ -88,6 +88,24 @@ in production. However, since each cloud environment is provided with its own ra
     SECRET_KEY = os.environ.get('SECRET_KEY', '<a string of random characters>')
 
 
+Configure SSL redirects
+-----------------------
+
+In production, it's almost always better to redirect to HTTPS, when the server supports it. However, we don't want it
+when running locally. So, in settings, we will default to redirecting:
+
+..  code-block:: python
+
+    # Redirect to HTTPS by default, unless explicitly disabled
+    SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
+
+And in the ``.env-local``, to disable it:
+
+..  code-block:: text
+
+    SECURE_SSL_REDIRECT=False
+
+
 Add ``collectstatic`` to the build
 ---------------------------------------
 
