@@ -187,7 +187,7 @@ If you use a different name, you will need to change the reference to ``myapp`` 
 Configure ``settings.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Edit ``myapp.settings.py``, to add some code that will read configuration from environment variables, instead of hard-coding it. Add some imports:
+Edit ``myapp/settings.py``, to add some code that will read configuration from environment variables, instead of hard-coding it. Add some imports:
 
 ..  code-block:: python
 
@@ -269,6 +269,26 @@ and then:
     MEDIA_ROOT = os.path.join('/data/media/')
 
 (Note that the ``DEFAULT_FILE_STORAGE`` assumes your Django project was named ``myapp``.)
+
+
+Add a URL pattern for serving media files in local development
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Edit ``myapp/urls.py``:
+
+..  code-block:: python
+    :emphasize-lines: 1-2, 8-
+
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+    ]
+
+    if settings.DEBUG:
+        urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+
 
 
 ..  _django-create-deploy-CMD:
