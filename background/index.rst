@@ -14,14 +14,15 @@ Our infrastructure
     IP addresses <ip-addresses>
 
 
-Services
----------
+Cloud management
+----------------
 
 .. toctree::
     :maxdepth: 1
 
     services
     services-available
+    release-commands
 
 
 How it works on Divio
