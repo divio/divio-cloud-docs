@@ -11,10 +11,6 @@ via pip::
 The `divio-cli source code <https://github.com/divio/divio-cli>`_ is available
 on GitHub.
 
-It's also available:
-
-* in the :ref:`Divio Shell <divio-shell>`
-* at the bash prompt in Divio web containers
 
 .. _aldryn-client:
 

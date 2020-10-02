@@ -9,7 +9,6 @@ Divio software components
 .. toctree::
     :maxdepth: 1
 
-    divio-app
     divio-cli
     divio-components-shell
     divio-dot-aldryn-file

@@ -6,8 +6,8 @@ The Cloud and local shells
 To interact with the environment in your project, for example to run commands using its codebase,
 you can make use of a shell.
 
-On the Cloud you can :ref:`SSH into a Cloud shell instance <cloud-shell>` (available on Managed
-Cloud projects only). Locally, you can use the :ref:`local Shell <local-shell>`.
+On the Cloud you can :ref:`SSH into a Cloud shell instance <cloud-shell>`. Locally, you can use the :ref:`local Shell
+<local-shell>`.
 
 Once inside the shell, you can inspect the environment, run commands (such as ``python manage.py
 migrate``). It's particularly useful to be able to drop into a:
@@ -16,15 +16,6 @@ migrate``). It's particularly useful to be able to drop into a:
 * Django shell: ``python manage.py shell``
 * database shell: ``python manage.py dbshell``
 
-..  important::
-
-    The Cloud and local shells described here are not to be confused with the :ref:`Divio Shell
-    <divio-shell>`.
-
-    The Divio Shell is a convenient environment on your own computer, configured for interaction
-    with your Divio account and projects, and the local development environment.
-
-    The Cloud and local shells will provide you with terminal access inside a running project.
 
 
 .. _cloud-shell:
@@ -73,17 +64,10 @@ The local shell
 Open the shell
 ~~~~~~~~~~~~~~~~~~~
 
-The Divio app provides a convenient short-cut in its toolbar:
-
-.. image:: /images/divio-app-controls-toolbar.png
-   :alt: 'Divio app Shell launcher Help and settings'
-   :width: 360
-
-Alternatively, you can use the command-line. In the project directory, run::
-
-    docker exec web bash  # if the web container is already running
-
-or::
+In the project directory, run::
 
     docker-compose run --rm web bash  # if you need to start the container too
 
+or::
+
+    docker exec web bash  # if the web container is already running

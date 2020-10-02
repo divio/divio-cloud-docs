@@ -34,15 +34,6 @@ This can be caused by:
   (remove ``* text=auto`` if it appears in ``.gitattributes``).
 
 
-Git with the Divio app or Divio shell
--------------------------------------
-
-If you use the Divio app or the :ref:`Divio Shell <divio-shell>`, SSH keys to our Git server will be set up for you.
-
-The :ref:`Divio app <divio-app>`, our desktop application for project management, also uses
-Git behind the scenes for its code *Upload* and *Download* operations.
-
-
 Basic Git operations
 --------------------
 
