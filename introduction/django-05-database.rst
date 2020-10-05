@@ -8,12 +8,6 @@ Add and configure a Postgres database
 In this section, we'll configure the application to use a Postgres database, both locally for development, and on the
 cloud for deployment.
 
-..  important::
-
-    For this part of the tutorial make sure that you have opted-in to Beta features on the Divio Control Panel. Go to
-    your `account settings <https://control.divio.com/account/contact/>`_, and ensure that you have *Beta features*
-    enabled.
-
 
 Create the database
 --------------------------------

@@ -20,8 +20,7 @@ Service management (Beta)
 
 ..  note::
 
-    The Services view is currently provided as a Beta feature, and is available only to users who have signed up for access
-    to Beta-release features.
+    The Services view is currently provided as a Beta feature.
 
 As well as its application code, a Divio project can include various services that are provided independently, such as a
 database, media storage, a message queue and so on. These can be added, removed and configured in the *Services* view of any
