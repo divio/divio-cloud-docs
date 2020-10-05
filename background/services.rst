@@ -22,51 +22,54 @@ Service management (Beta)
 
     The Services view is currently provided as a Beta feature.
 
-As well as its application code, a Divio project can include various services that are provided independently, such as a
-database, media storage, a message queue and so on. These can be added, removed and configured in the *Services* view of any
-project.
+As well as its application code, a Divio project can include various services that are provided independently, such as
+a database, media storage, a message queue and so on. These can be added, removed and configured in the *Services* view
+of any project.
 
 
 .. image:: /images/services.png
    :alt: 'Services'
    :class: 'main-visual'
 
-Projects include a Postgres database and S3 media object storage by default; additional services such as alternative databases,
-Elasticsearch and so on are also available.
+Available services depend on the project's region. For example, S3 media storage is provided on AWS regions, and MS Blob storage on Azure regions.
 
 See :ref:`Available services <available-services>` for an outline of services currently provided.
 
 Multiple instances of a service - for example, two Postgres databases - may be used at the same time.
 
 
-..
-  project-services-install-service
-  Add service dialog
+Environment variables
+---------------------
+
+For each environment, each service provisioned will create an environment variable, that can be used to configure
+the applications that need to use it. Use the Divio CLI to obtain the values, for example:
+
+..  code-block:: bash
+
+    divio project env-vars --all
+
+See :ref:`reading environment variables <reading-env-vars>` for more.
+
 
 .. _managing-services:
 
 Service management via the Control Panel
 -----------------------------------------
 
-Before services can be configured for a project, the project's subscription must be updated to include them. For example, to
-add Elasticsearch, you would add the requisite number of *Elasticsearch* instances via the *Subscription* view. Once added,
-those services will be available to add in the *Services* view.
-
-
 Adding and attaching
 ~~~~~~~~~~~~~~~~~~~~
 
 Making a service available to an application is a two-stage process:
 
-First, the service must be **added** to each environment that requires it. A unique prefix should be provided in case other
-instances of the same service have already been applied.
+First, the service must be **added** to each environment that requires it. A unique prefix should be provided in case
+other instances of the same service have already been applied.
 
 Next, the environment must be deployed. Deployment **provisions** the service, and **attaches** it to the application.
 
-If required, the option exists to provision a service independently of attachment. In this state, the application has not yet
-been deployed with the environment variables it needs to use the service, but the service itself is functional and usable.
-In the case of a media storage or database service, for example, this would allow you to populate it in advance of the
-application's next deployment.
+If required, the option exists to provision a service independently of attachment. In this state, the application has
+not yet been deployed with the environment variables it needs to use the service, but the service itself is functional
+and usable. In the case of a media storage or database service, for example, this would allow you to populate it in
+advance of the application's next deployment.
 
 
 Detaching and removing
