@@ -151,8 +151,8 @@ used in the local development environment. Create a ``.env-local`` file, contain
     :emphasize-lines: 1-3
 
     # Select one of the following for the database
-    DEFAULT_DATABASE_DSN=postgres://postgres@database_default:5432/db
-    DEFAULT_DATABASE_DSN=mysql://root@database_default:3306/db
+    DATABASE_URL=postgres://postgres@database_default:5432/db
+    DATABASE_URL=mysql://root@database_default:3306/db
 
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
     DJANGO_DEBUG=True
@@ -223,11 +223,11 @@ Configure database settings:
 
 ..  code-block:: python
 
-    # Configure database using DEFAULT_DATABASE_DSN; fall back to sqlite in memory when no
+    # Configure database using DATABASE_URL; fall back to sqlite in memory when no
     # environment variable is available, e.g. during Docker build
-    DEFAULT_DATABASE_DSN = os.environ.get('DEFAULT_DATABASE_DSN', 'sqlite://:memory:')
+    DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
 
-    DATABASES = {'default': dj_database_url.parse(DEFAULT_DATABASE_DSN)}
+    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 
 ..  _django-create-deploy-static:

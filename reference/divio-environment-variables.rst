@@ -7,9 +7,11 @@ the Control Panel.
 
 .. _env-var-database-dsn:
 
-``<prefix>_DATABASE_DSN``
+
+``DATABASE_URL``, ``<prefix>_DATABASE_DSN``
   Each database provisioned in :ref:`Services <services>` will have a corresponding environment variable, for example
-  ``DEFAULT_DATABASE_DSN`` (depending on the prefix applied - the default prefix is always ``DEFAULT``).
+  ``DEFAULT_DATABASE_DSN`` (depending on the prefix applied - the default prefix is always ``DEFAULT``). The
+  ``DEFAULT_DATABASE_DSN`` is also exposed as ``DATABASE_URL``
 
 .. _env-var-domain:
 

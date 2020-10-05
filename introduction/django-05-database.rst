@@ -72,7 +72,7 @@ Configure database access using an environment variable
 
 Configuration for application services is `stored in environment variables, following the Twelve-Factor model
 <https://www.12factor.net/config>`_. These variables will need to be parsed by the application. For the database the
-values are provided via an environment variable named :ref:`DEFAULT_DATABASE_DSN <env-var-database-dsn>`, a *Data
+values are provided via an environment variable named :ref:`DATABASE_URL <env-var-database-dsn>`, a *Data
 Source Name*, in the general form::
 
     scheme://username:password@host:port/path?query#fragment
@@ -84,7 +84,7 @@ First, create a new file called ``.env-local``, and add the variable to it:
 
 ..  code-block:: text
 
-    DEFAULT_DATABASE_DSN=postgres://postgres@postgres:5432/db
+    DATABASE_URL=postgres://postgres@postgres:5432/db
 
 If you're familiar with Postgres, you'll recognise its default user and port in the URL.
 
@@ -136,8 +136,8 @@ Then in ``settings.py``, add (replacing the existing ``DATABASES`` setting):
 
     [...]
 
-    DEFAULT_DATABASE_DSN = os.environ.get('DEFAULT_DATABASE_DSN')
-    DATABASES = {'default': dj_database_url.parse(DEFAULT_DATABASE_DSN)}
+    DATABASE_URL = os.environ.get('DATABASE_URL')
+    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 We're now in a position to use the database for the first time. The first thing to do is create Django's tables, by
 running migrations, and then add an admin user to the database:
@@ -174,7 +174,7 @@ and deploy:
     :subtitle: Configuration secrets should not be committed to code repositories.
 
     In this case, there is nothing in ``.env-local`` that can't be safely committed, and having the
-    ``DEFAULT_DATABASE_DSN`` in there means that if a colleague needs to set up your Divio project, they will that in
+    ``DATABASE_URL`` in there means that if a colleague needs to set up your Divio project, they will that in
     there too, ready to use in their own local environment. However if you were testing functionality that required you
     add a secret key, for example to use some external service, you should take care not to commit that.
 

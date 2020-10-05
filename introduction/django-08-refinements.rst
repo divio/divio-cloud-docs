@@ -127,13 +127,13 @@ no access to environment variables - including the ones it's expecting to use to
 This is how it should be: building a Docker image should not be dependent upon any particular environment conditions.
 
 The solution is to build a fallback into the Django settings by editing the line that determines the
-``DEFAULT_DATABASE_DSN`` setting:
+``DATABASE_URL`` setting:
 
 ..  code-block:: python
 
-    DEFAULT_DATABASE_DSN = os.environ.get('DEFAULT_DATABASE_DSN', 'sqlite://:memory:')
+    DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
 
-Now when no ``DEFAULT_DATABASE_DSN`` can be found in the environment, Django will happily use a dummy backend instead.
+Now when no ``DATABASE_URL`` can be found in the environment, Django will happily use a dummy backend instead.
 You can test it by building again.
 
 The ``/staticfiles`` directory no longer needs to be a part of the repository. Remove it:
