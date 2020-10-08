@@ -1,11 +1,10 @@
-..  _django-create-deploy:
-
 .. meta::
    :description:
        This guide explains step-by-step how to create and deploy a Twelve-factor Django project including Postgres or
        MySQL, and cloud media storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
+..  _django-create-deploy:
 
 How to create and deploy a Django project
 ===========================================================================================
