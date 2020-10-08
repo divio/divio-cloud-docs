@@ -10,7 +10,7 @@
 How to create and deploy a Django project
 ===========================================================================================
 
-This guide will take you through the steps to: create a `Twelve-factor <https://www.12factor.net/config>`_ Django project, including:
+This guide will take you through the steps to create a `Twelve-factor <https://www.12factor.net/config>`_ Django project from scratch, including:
 
 * Postgres or MySQL database
 * cloud media storage using S3
@@ -21,34 +21,17 @@ This guide will take you through the steps to: create a `Twelve-factor <https://
 and to deploy it using Docker.
 
 This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the Divio CLI
-installed. If not, please start with :ref:`our complete tutorial for Django <introduction>`.
+installed. If not, please start with :ref:`our complete tutorial for Django <introduction>`, or at least :ref:`ensure
+that you have the basic tools in place <local-cli>`.
 
 
-Create a blank Divio project
-----------------------------
-
-Create a new project, selecting the *No Platform* > *Empty* options. In the newly-created project, use the *Services*
-menu to add a Postgres or MySQL database, and an S3 object storage instance for media. Use the options menu to
-provision each service.
-
-
-Build the project locally
---------------------------
-
-Run ``setup``
-~~~~~~~~~~~~~
-
-Run:
-
-..  code-block:: bash
-
-    divio project setup <project-slug>
-
+Create the project files
+-------------------------
 
 The ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Edit the ``Dockerfile``, adding:
+Create a file named ``Dockerfile``, adding:
 
 ..  code-block:: Dockerfile
 
@@ -63,7 +46,8 @@ Edit the ``Dockerfile``, adding:
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one, containing:
+The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one. Where indicated below, choose the
+appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 7-9, 11-14
@@ -91,8 +75,8 @@ You will need this in order to be able to run the application locally for develo
 ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate the
 ``web`` image used in cloud deployments, and will set up:
 
-* a Postgres or MySQL database running in a local container (instead of on a cloud database cluster)
-* local file storage (instead of S3 instance)
+* a Postgres or MySQL database (choose the appropriate lines below) running in a local container
+* local file storage
 
 ..  code-block:: yaml
     :emphasize-lines: 21-
@@ -329,19 +313,35 @@ And create a Django superuser:
     docker-compose run web python manage.py createsuperuser
 
 
+Check the local site
+~~~~~~~~~~~~~~~~~~~~
+
+You can now start up the site locally to test it:
+
+..  code-block:: bash
+
+    docker-compose up
+
+and log into the admin at http://127.0.0.1:8000/admin.
+
+All the site's configuration (Debug mode, ``ALLOWED_HOSTS``, database settings, etc) is being provided by the
+environment variables in the ``.env-local`` file. On the cloud, the environment variables will be provided
+automatically by each environment.
+
+
 Deployment and further development
 -----------------------------------------
 
-It would make sense to add an appropriate ``.gitignore`` file to keep things clean, such as:
+Initialise the project as a Git repository:
+
+..  code-block:: bash
+
+    git init .
+
+
+A ``.gitignore`` file is needed to exclude unwanted files from the repository. Add:
 
 ..  code-block:: text
-
-    # macOS
-    .DS_Store
-    .DS_Store?
-    ._*
-    .Spotlight-V100
-    .Trashes
 
     # Python
     *.pyc
@@ -356,15 +356,103 @@ It would make sense to add an appropriate ``.gitignore`` file to keep things cle
     /data.tar.gz
     /data
 
-And now the project is ready to be committed using Git, and deployed using the Divio CLI or the Control Panel in the
-usual way.
 
-Note that once deployed to a cloud environment, your project will run with ``DEBUG = False`` unless otherwise
-configured, and Django's welcome page will not be shown. Log in to the Django admin at ``/admin``.
+    # OS-specific patterns - add your own here
+    .DS_Store
+    .DS_Store?
+    ._*
+    .Spotlight-V100
+    .Trashes
+
+The project is now ready to be pushed and deployed to the cloud.
+
+
+Create and deploy the cloud project
+-----------------------------------
+
+Create a new project on Divio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+We need somewhere to push the project to. In the `Divio Control Panel <https://control.divio.com>`_ add a new project,
+selecting the *No Platform* > *Empty* options.
+
+Use the *Services* menu to add a Postgres or MySQL database to match your choice earlier, and an S3 object storage
+instance for media.
+
+
+Connect the local project to the cloud project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+List your cloud projects (grouped by organisation), and note the *id* and *slug* fields:
+
+..  code-block:: bash
+
+    divio project list -g
+
+Create a new file in the project at ``.divio/config.json``:
+
+..  code-block:: javascript
+
+    {
+        "id": <id>,
+        "slug": "<slug>"
+    }
+
+If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
+
+Add the project's Git repository as a remote, using the *slug* value in the remote address:
+
+..  code-block:: bash
+
+    git remote add origin git@git.divio.com:<slug>.git
+
+
+Commit your work
+~~~~~~~~~~~~~~~~
+
+..  code-block:: bash
+
+    git add .                                      # add all the newly-created files
+    git commit -m "Created new project"            # commit
+    git push --set-upstream --force origin master  # push, overwriting any unneeded commits made by the Control Panel at creation time
+
+You'll now see "1 undeployed commit" listed for the project in the Control Panel.
+
+
+Deploy the Test server
+~~~~~~~~~~~~~~~~~~~~~~
+
+Deploy with:
+
+..  code-block:: bash
+
+    divio project deploy
+
+(or use the **Deploy** button in the Control Panel).
+
+Once deployed, your project will be accessible via the Test server URL shown in the Control Panel.
+
+
+Working with the database on the cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your cloud project does not yet have any content in the database, so you can't log in or do any other work there.
+You can push the local database with the superuser you created to the Test environment:
+
+..  code-block:: bash
+
+    divio project push db
+
+or, use the SSH URL available in the Test environment pane to open a session in a cloud container, and execute
+Django migrations and create a superuser there in the usual way.
 
 
 Notes on working with the project
 ---------------------------------
+
+
+
 
 Using the Twelve-factor model places all configuration in environment variables, so that the project can readily be
 moved to another host or platform, or set up locally for development. The configuration for:
