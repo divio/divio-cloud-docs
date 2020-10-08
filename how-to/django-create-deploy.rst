@@ -9,7 +9,8 @@
 How to create and deploy a Django project
 ===========================================================================================
 
-This guide will take you through the steps to create a `Twelve-factor <https://www.12factor.net/config>`_ Django project from scratch, including:
+This guide will take you through the steps to create a portable, vendor-neutral `Twelve-factor
+<https://www.12factor.net/config>`_ Django project from scratch, including:
 
 * Postgres or MySQL database
 * cloud media storage using S3
