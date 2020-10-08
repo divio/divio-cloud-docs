@@ -3,14 +3,16 @@
 Project creation options
 ==============================
 
-Each Divio project is based on a combination of *Platform*, *Type* and *Boilerplate*. You can
-select from our optional ready-to-go definitions for a quick start. For example:
+Each Divio project is based on a combination of *Stack*, *Additional components* and *Additional Boilerplate*.
 
-* **Platform**: *Python*
-* **Type**: *django CMS*
-* **Boilerplate**: *HTML5*
+Any application that is suited to being run in Docker can be run on Divio and build up using the default *Build your
+own* option as a starting point.
 
-Alternatively, you can build your own from scratch, by choosing the *No platform* option.
+We also provide some optional ready-to-go definitions for a quick start. For example:
+
+* **Stack**: *Aldryn Python*
+* **Additional components**: *django CMS*
+* **Additional Boilerplate**: *HTML5*
 
 It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
 get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
@@ -24,13 +26,12 @@ to :ref:`add Sass CSS compilation using Node to a project that doesn't already i
 
 .. _project-creation-platform:
 
-Platform
+Stack
 ---------
 
-Options include Python, Node, PHP, Java and others.
+Options include Build your own, Aldryn Python, Node, PHP, Java and others.
 
-If you prefer to build your own Dockerfile and project components from scratch, select *No platform*. We recommend
-becoming familiar with Divio projects before doing this.
+:ref:`django-create-deploy` for a good example of using the *Build your own* option with Django.
 
 
 ..  Do not change this reference!
@@ -40,13 +41,13 @@ becoming familiar with Divio projects before doing this.
 
 .. _project-creation-type:
 
-Type
-----
+Additional components
+----------------------
 
-The available project types depend on the selected Platform.
+The available additional components depend on the selected Stack.
 
-For the Python platform, examples include Django, django CMS and Flask; for the PHP platform, Laravel and Symfony, and
-so on.
+For the Aldryn Python platform, examples include Django, django CMS and Flask; for the PHP platform, Laravel and
+Symfony, and so on.
 
 
 ..  Do not change this reference!
@@ -56,13 +57,13 @@ so on.
 
 .. _project-creation-boilerplate:
 
-Boilerplate
------------
+Additional Boilerplate
+-----------------------
 
-Available Boilerplates depend on the selected project Type.
+Available Boilerplates depend on the additional components selected.
 
-Boilerplates provide additional functionality baked into the project, typically related its frontend configuration. For
-example, a django CMS project Type can be launched with Boilerplates for Bootstrap, Foundation and other technologies.
+Boilerplates provide additional functionality baked into the project. For example, an Aldryn Python/django CMS project
+can be launched with Boilerplates for Bootstrap, Foundation and other technologies.
 
 
 ..  Do not change this reference!

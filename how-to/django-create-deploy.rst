@@ -431,7 +431,7 @@ Deploy with:
 
 (or use the **Deploy** button in the Control Panel).
 
-Once deployed, your project will be accessible via the Test server URL shown in the Control Panel.
+Once deployed, your project will be accessible via the Test server URL shown in the Control Panel (append ``/admin``).
 
 
 Working with the database on the cloud
@@ -450,8 +450,6 @@ Django migrations and create a superuser there in the usual way.
 
 Notes on working with the project
 ---------------------------------
-
-
 
 
 Using the Twelve-factor model places all configuration in environment variables, so that the project can readily be
