@@ -373,12 +373,14 @@ Create and deploy the cloud project
 Create a new project on Divio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 We need somewhere to push the project to. In the `Divio Control Panel <https://control.divio.com>`_ add a new project,
-selecting the *No Platform* > *Empty* options.
+selecting the *Build your own* option.
 
-Use the *Services* menu to add a Postgres or MySQL database to match your choice earlier, and an S3 object storage
-instance for media.
+Add database and media services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The new project does not include any additional services; they must be added manually. Use the *Services* menu to add a
+Postgres or MySQL database to match your choice earlier, and an S3 object storage instance for media.
 
 
 Connect the local project to the cloud project
