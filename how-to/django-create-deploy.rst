@@ -15,7 +15,7 @@ This guide will take you through the steps to create a `Twelve-factor <https://w
 * Postgres or MySQL database
 * cloud media storage using S3
 * `WhiteNoise <http://whitenoise.evans.io>`_ to serve static files in production
-* `uWSGI <https://uwsgi-docs.readthedocs.io>`_ or `Uvicorn
+* `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
   <https://www.uvicorn.org>`_ for the application gateway server
 
 and to deploy it using Docker.
@@ -47,7 +47,7 @@ Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one. Where indicated below, choose the
-appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn:
+appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 7-9, 11-14
@@ -65,6 +65,7 @@ appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvic
     # Select one of the following for the gateway server
     uwsgi==2.0.19.1
     uvicorn==0.11.8
+    gunicorn==20.0.4
 
 
 Local container orchestration with ``docker-compose.yml``
@@ -290,6 +291,7 @@ appropriate command to launch the application when a container starts:
 
     # Select one of the following application gateway server commands
     CMD uwsgi --http=0.0.0.0:80 --module=myapp.wsgi
+    CMD gunicorn --bind=0.0.0.0:80 myapp.wsgi
     CMD uvicorn --host=0.0.0.0 --port=80 myapp.asgi:application
 
 (Note that this assumes your Django project was named ``myapp``.)
@@ -476,7 +478,7 @@ exactly the same codebase.
 Django server
 ~~~~~~~~~~~~~
 
-In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Django using the uWSGI/Uvicorn
+In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Django using the uWSGI/Gunicorn/Uvicorn
 application gateway server.
 
 In the local environment: the ``command`` line in ``docker-compose.yml`` starts up Django using the runserver,
