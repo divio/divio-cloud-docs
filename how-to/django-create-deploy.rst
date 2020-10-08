@@ -292,7 +292,7 @@ appropriate command to launch the application when a container starts:
     # Select one of the following application gateway server commands
     CMD uwsgi --http=0.0.0.0:80 --module=myapp.wsgi
     CMD gunicorn --bind=0.0.0.0:80 myapp.wsgi
-    CMD uvicorn --host=0.0.0.0 --port=80 myapp.asgi:application
+    CMD uvicorn --host=0.0.0.0 --forwarded-allow-ips="*" --port=80 myapp.asgi:application
 
 (Note that this assumes your Django project was named ``myapp``.)
 
