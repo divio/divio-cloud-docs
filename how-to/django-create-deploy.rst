@@ -386,20 +386,16 @@ Postgres or MySQL database to match your choice earlier, and an S3 object storag
 Connect the local project to the cloud project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-List your cloud projects (grouped by organisation), and note the *id* and *slug* fields:
+Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
+get your project's slug; you can also read the slug from the Control Panel.
+
+Run:
 
 ..  code-block:: bash
 
-    divio project list -g
+    divio project configure
 
-Create a new file in the project at ``.divio/config.json``:
-
-..  code-block:: javascript
-
-    {
-        "id": <id>,
-        "slug": "<slug>"
-    }
+and provide the slug. (This creates a new file in the project at ``.divio/config.json``.)
 
 If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
 
