@@ -445,10 +445,12 @@ You can push the local database with the superuser you created to the Test envir
 or, use the SSH URL available in the Test environment pane to open a session in a cloud container, and execute
 Django migrations and create a superuser there in the usual way.
 
+You can run migrations automatically on deployment by adding a :ref:`release command <release-commands>` in the Control
+Panel.
+
 
 Notes on working with the project
 ---------------------------------
-
 
 Using the Twelve-factor model places all configuration in environment variables, so that the project can readily be
 moved to another host or platform, or set up locally for development. The configuration for:
