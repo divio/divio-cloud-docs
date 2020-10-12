@@ -25,7 +25,7 @@ Release command are suited to performing actions that take place *in* the applic
 example, actions such as:
 
 * running database migrations (e.g. ``python manage.py migrate`` in Django)
-* programatically applying headers to media storage
+* programmatically applying headers to media storage
 * performing a self-test or batch repair on an application's content (e.g. ``python manage.py cms fix-tree`` in django
   CMS)
 * performing a self-test on an application's configuration
