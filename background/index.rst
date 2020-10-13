@@ -44,8 +44,8 @@ Projects
     :maxdepth: 1
 
     project-creation-options
-    project-anatomy
     project-build-process
+    project-anatomy
     project-environments
     project-version-control
     project-about-boilerplates

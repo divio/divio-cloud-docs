@@ -1,27 +1,63 @@
 .. _build-process:
 
-The project deployment process
+The deployment process
 ==============================
 
 Deployment steps
 -----------------
 
-#. The Control Panel checks that required services (such as the database) are available.
-#. The project's Git repository is checked out.
-#. An image is built, using the instructions in the ``Dockerfile``.
-#. A container is deployed from the image.
-#. Any migration commands (post-build instructions) defined by the project are executed.
-#. Additional containers are deployed according to the project's configuration.
-#. The Control Panel tests that the application is responding.
+1. Services check
+~~~~~~~~~~~~~~~~~
+
+The Control Panel checks that required services (such as the database) are available.
+
+
+2. Git check out
+~~~~~~~~~~~~~~~~
+
+The project's Git repository is checked out into a working directory.
+
+
+3. Build stage
+~~~~~~~~~~~~~~
+
+Docker builds the application image from the ``Dockerfile``. Once successfully built, the image is tagged so that it
+can be re-used.
+
+The build stage does not have access to environment variables. If environment variables are required as part of the
+build process, :ref:`use the ENV command to supply them via the Dockerfile <setting-env-vars-build>`
+
+
+4. Release commands
+~~~~~~~~~~~~~~~~~~~
+
+A container is launched from the image, and any :ref:`release commands <release-commands>` applied will be executed.
+
+(In the case of an Aldryn Django project, the ``MIGRATION_COMMANDS`` setting also applies release commands. This
+setting can be populated automatically by Aldryn Addons.)
+
+
+5. Scaling
+~~~~~~~~~~
+
+New containers are launched in parallel, according to the number specified in the project's subscription.
+
+The application controller tests each container for an HTTP response, for up to 300 attempts.
+
+* Each connection test times out after 0.4 seconds.
+* Once a connection has been established, the test for a positive response (1xx, 2xx, 3xx, 4xx or 500); this times out
+  after 20 seconds.
+
+If any container fails to respond in time or responds with a 5xx server error other than 500, the deployment fails.
 
 
 Zero-downtime cloud deployments
 -------------------------------
 
 If all of the steps above are successful, then the deployment is marked as successful, and requests will be routed to
-the new containers, and the old containers will be be shut down. They are never shut down until the new containers are
-able to respond to requests without errors. This allows us to provide zero-downtime deployments - in the event of a
-deployment failure, the old containers will simply continue running without interruption.
+the new containers, and the old containers will be be shut down. Running containers are never shut down until the new
+containers are able to respond to requests without errors. This allows us to provide zero-downtime deployments - in the
+event of a deployment failure, the old containers will simply continue running without interruption.
 
 
 Differences between cloud deployment and local builds
@@ -31,12 +67,12 @@ Differences between cloud deployment and local builds
   according to the :ref:`docker-compose.yml <docker-compose-yml-reference>` file.
 * **Services**: on the cloud, backing services such as the database and media storage - and if appropriate, optional
   services such as a message queue - are provided from our cloud infrastructure. Locally, these must be handled
-  differently (your computer doesn't contain a Postgres cluster or S3 bucket): the database will be provided in a
-  separate Docker container, the media storage will be handled via local file storage, and so on. docker-compose will
-  configure this local functionality.
-* **Docker layer caching** :ref:`on the cloud we don't cache, locally we do <docker-layer-caching>`.
-* **Migration commands**: locally these are not executed by default; execute them with :ref:`docker-compose run --rm
-  web start migrate <run-migration-commands>`
+  differently (for example, your computer doesn't contain a Postgres cluster or S3 bucket): the database will be
+  provided in a separate Docker container, the media storage will be handled via local file storage, and so on.
+  docker-compose will configure this local functionality.
+* **Docker layer caching** :ref:`on the cloud we don't cache, locally <docker-layer-caching>` is used.
+* **Release commands**: locally, these need to be executed manually (in Aldryn Django projects, :ref:`docker-compose
+  run --rm web start migrate <run-migration-commands>` can be used to do this)
 
 
 Notes on Docker image building

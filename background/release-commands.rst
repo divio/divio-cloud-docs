@@ -85,7 +85,7 @@ release`` heading, for example:
 
 ..  code-block:: text
 
-    ===== docker migrate release =====
+    ===== docker release commands =====
 
     Running security configuration checks...
 
