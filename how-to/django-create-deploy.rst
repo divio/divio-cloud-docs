@@ -28,6 +28,9 @@ that you have the basic tools in place <local-cli>`.
 Create the project files
 -------------------------
 
+Start in a new directory, or in an existing Django project of your own.
+
+
 The ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,6 +43,8 @@ Create a file named ``Dockerfile``, adding:
     COPY . /app
     RUN pip install -r requirements.txt
 
+(change the version of Python if required).
+
 
 ..  _django-create-deploy-requirements:
 
@@ -47,7 +52,7 @@ Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one. Where indicated below, choose the
-appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn:
+appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn, for example:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 7-9, 11-14
@@ -66,6 +71,8 @@ appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvic
     uwsgi==2.0.19.1
     uvicorn==0.11.8
     gunicorn==20.0.4
+
+You may have Python components of your own that need to be added.
 
 
 Local container orchestration with ``docker-compose.yml``
@@ -157,21 +164,23 @@ Now you can build the application containers locally:
 Create the Django project module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The application can be run inside its container now and commands can be executed in the Docker environment. Use it to
-create a new Django project module:
+The application can be run inside its container now and commands can be executed in the Docker environment. If this is
+a new project you will need to create a new Django project module:
 
 ..  code-block:: bash
 
     docker-compose run web django-admin startproject myapp .
 
-If you use a different name, you will need to change the reference to ``myapp`` in the :ref:`static settings
-<django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line, :ref:`below <django-create-deploy-CMD>`.
+If you use a different name, or you're working on an existing Django project, you will need to change the reference to
+``myapp`` in the :ref:`static settings <django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line,
+:ref:`below <django-create-deploy-CMD>`.
 
 
 Configure ``settings.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Edit ``myapp/settings.py``, to add some code that will read configuration from environment variables, instead of hard-coding it. Add some imports:
+Edit your settings file (for example, ``myapp/settings.py``), to add some code that will read configuration from
+environment variables, instead of hard-coding it. Add some imports:
 
 ..  code-block:: python
 
@@ -258,7 +267,7 @@ and then:
 Add a URL pattern for serving media files in local development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Edit ``myapp/urls.py``:
+You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
 
 ..  code-block:: python
     :emphasize-lines: 1-2, 8-
@@ -272,7 +281,6 @@ Edit ``myapp/urls.py``:
 
     if settings.DEBUG:
         urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
-
 
 
 ..  _django-create-deploy-CMD:
@@ -312,6 +320,8 @@ And create a Django superuser:
 
     docker-compose run web python manage.py createsuperuser
 
+**Or**, you can import the database content from an existing database.
+
 
 Check the local site
 ~~~~~~~~~~~~~~~~~~~~
@@ -332,7 +342,7 @@ automatically by each environment.
 Deployment and further development
 -----------------------------------------
 
-Initialise the project as a Git repository:
+Initialise the project as a Git repository if it's not Git-enabled already:
 
 ..  code-block:: bash
 
@@ -405,15 +415,16 @@ Add the project's Git repository as a remote, using the *slug* value in the remo
 
     git remote add origin git@git.divio.com:<slug>.git
 
+(Use e.g. ``divio`` if you already have a remote named ``origin``.)
 
 Commit your work
 ~~~~~~~~~~~~~~~~
 
 ..  code-block:: bash
 
-    git add .                                      # add all the newly-created files
-    git commit -m "Created new project"            # commit
-    git push --set-upstream --force origin master  # push, overwriting any unneeded commits made by the Control Panel at creation time
+    git add .                                                 # add all the newly-created files
+    git commit -m "Created new project"                       # commit
+    git push --set-upstream --force origin [or divio] master  # push, overwriting any unneeded commits made by the Control Panel at creation time
 
 You'll now see "1 undeployed commit" listed for the project in the Control Panel.
 
