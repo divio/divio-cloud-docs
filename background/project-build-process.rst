@@ -3,6 +3,8 @@
 The deployment process
 ==============================
 
+.. _deployment-steps:
+
 Deployment steps
 -----------------
 
@@ -18,6 +20,8 @@ The Control Panel checks that required services (such as the database) are avail
 The project's Git repository is checked out into a working directory.
 
 
+.. _deployment-build:
+
 3. Build stage
 ~~~~~~~~~~~~~~
 
@@ -28,6 +32,8 @@ The build stage does not have access to environment variables. If environment va
 build process, :ref:`use the ENV command to supply them via the Dockerfile <setting-env-vars-build>`
 
 
+.. _deployment-release-commands:
+
 4. Release commands
 ~~~~~~~~~~~~~~~~~~~
 
@@ -36,6 +42,8 @@ A container is launched from the image, and any :ref:`release commands <release-
 (In the case of an Aldryn Django project, the ``MIGRATION_COMMANDS`` setting also applies release commands. This
 setting can be populated automatically by Aldryn Addons.)
 
+
+.. _deployment-scaling:
 
 5. Scaling
 ~~~~~~~~~~
