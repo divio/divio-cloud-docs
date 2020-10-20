@@ -1,3 +1,7 @@
+..  Do not change this document name!
+    Referred to by: https://control.divio.com/admin/tutorial/message/148/change/ project-settings-metrics
+    Where: in the project view
+    As: https://docs.divio.com/en/latest/background/metrics/
 
 .. _metrics:
 
