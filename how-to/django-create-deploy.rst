@@ -25,8 +25,8 @@ installed. If not, please start with :ref:`our complete tutorial for Django <int
 that you have the basic tools in place <local-cli>`.
 
 
-Create the project files
--------------------------
+Create or edit the project files
+--------------------------------
 
 Start in a new directory, or in an existing Django project of your own.
 
@@ -161,7 +161,7 @@ Now you can build the application containers locally:
     docker-compose build
 
 
-Create the Django project module
+Create or edit the Django project module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The application can be run inside its container now and commands can be executed in the Docker environment. If this is
