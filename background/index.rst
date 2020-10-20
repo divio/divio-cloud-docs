@@ -20,6 +20,7 @@ Cloud management
 .. toctree::
     :maxdepth: 1
 
+    metrics
     services
     services-available
     release-commands
@@ -34,7 +35,7 @@ How it works on Divio
     redirects
     Caching and CDN <caching>
     infrastructure-python-packaging
-    Environment variables <configuration-environment-variables>
+    Configuration using environment variables <configuration-environment-variables>
 
 
 Projects
