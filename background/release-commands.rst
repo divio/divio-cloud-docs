@@ -29,6 +29,7 @@ example, actions such as:
 * performing a self-test or batch repair on an application's content (e.g. ``python manage.py cms fix-tree`` in django
   CMS)
 * performing a self-test on an application's configuration
+* using an API hook to flush a content cache
 * posting a notice to a company messaging tool to announce a successful deployment
 
 are all good examples of release commands.
@@ -50,6 +51,9 @@ Release commands can be added in a project's *Settings* view, along with a human
    :class: 'main-visual'
 
 Commands will be executed in the order that they are added.
+
+Commands can also be added programmatically by applications - for example those that use the Aldryn Django framework -
+and will be listed here as well.
 
 
 Cautions

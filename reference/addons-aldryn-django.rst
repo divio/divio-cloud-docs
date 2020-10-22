@@ -178,13 +178,15 @@ themselves have been updated.
 DISABLE_S3_MEDIA_HEADERS_UPDATE
 ...............................
 
-Applications using Aldryn Django will update media file headers by running the command:
+Applications using Aldryn Django will update media file headers by running:
 
 ..  code-block:: python
 
     python manage.py aldryn_update_s3_media_headers
 
-as a post-build migration/release operation; this can be controlled with the ``DISABLE_S3_MEDIA_HEADERS_UPDATE`` environment variable. The ``aldryn_update_s3_media_headers`` command can cause excessively long deployment times on very large media buckets, so setting this variable to ``True`` can avoid that.
+as a :ref:`release command <release-commands>`; this can be controlled with the ``DISABLE_S3_MEDIA_HEADERS_UPDATE``
+environment variable. The ``aldryn_update_s3_media_headers`` command can cause excessively long deployment times on
+very large media buckets, so setting this variable to ``True`` can avoid that.
 
 
 Django server settings
