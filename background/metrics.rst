@@ -52,4 +52,4 @@ CPU usage
 
 Figures for CPU reflect the total number of instances available to the environment. With 2 instances, 200% will be available overall.
 
-As CPU usage for an instance approaches 100% there will be a small performance loss; after that, there will be a dramatic decline in performance, and issues such as dropped connections and requests that don’t get answered because there aren’t enough resources available to answer them.
+As CPU usage for an instance approaches 100% there will be a small performance loss; after that, there will be a dramatic decline in performance, and issues such as dropped connections and requests that don’t get answered because there are not enough resources available to answer them.
