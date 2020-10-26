@@ -15,15 +15,14 @@ Run the set-up script
 This step is required as part of the beta implementation of the PHP/Laravel project type, and will be
 refined in later releases.
 
-You'll find a script in ``divio/setup.php`` that sets up components in the project, and performs database migrations.
-Run it with:
+You'll find a script in ``divio/setup.php`` that helps set up the project for local development purposes, and performs
+database migrations. Run it with:
 
 ..  code-block:: bash
 
     docker-compose run web php /app/divio/setup.php
 
 This takes a few minutes. Once complete, you can run your project.
-
 
 
 Start the local project

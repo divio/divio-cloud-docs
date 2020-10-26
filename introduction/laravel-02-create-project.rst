@@ -22,7 +22,7 @@ popular PHP web application framework. The principles covered by the tutorial wi
 
 
 * *Platform*: ``PHP``
-* *Project type*: ``Laravel``
+* *Project type*: ``Laravel (Beta)``
 
 
 ..  include:: includes/02-create-2-git-environments.rst
