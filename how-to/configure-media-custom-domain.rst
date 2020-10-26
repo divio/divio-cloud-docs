@@ -19,7 +19,7 @@ Set up the reverse proxy project
 
 Create a new Divio project, using the options:
 
-* *Platform*: ``No platform``
+* *Platform*: ``Build your own``
 * *Project type*: ``Nginx``
 
 This project will contain the reverse proxy, that will refer all requests made to the custom domain

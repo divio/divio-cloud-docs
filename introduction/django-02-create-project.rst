@@ -11,18 +11,17 @@ services such as database and media storage.
 
 The principles covered by the tutorial will apply to any other development stack.
 
-..  note::
+..  admonition:: This is a step-by-step introduction intended for beginners.
 
-    This tutorial is intended for newcomers to the Divio platform. If you're already familiar with the basics of Divio,
-    see our guide :ref:`How to create and deploy a Django project <django-create-deploy>`, which shows step-by-step how
-    to create and deploy a Twelve-factor Django project including Postgres or MySQL, and cloud media storage using S3.
+     If you're already familiar with the basics of Divio or have experience with Docker and cloud platforms in general,
+     our guide :ref:`How to create and deploy a Django project <django-create-deploy>` is probably more appropriate.
 
 
 ..  include:: includes/02-create-1-set-up.rst
 
 
-* *Platform*: ``No platform``
-* *Project type*: ``Empty``
+* *Platform*: ``Build your own``
+* *Project type*: ``None``
 
 
 ..  include:: includes/02-create-2-git-environments.rst

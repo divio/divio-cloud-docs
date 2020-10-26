@@ -12,15 +12,10 @@ In this tutorial you will create and deploy a new project using Aldryn Django. A
 <https://www.djangoproject.com/>`_, the most popular Python web application framework. Aldryn provides automatic
 configuration and integration with cloud services such as database, media storage and so on.
 
-Aldryn is a friendly (and somewhat opinionated) option for working with Django that allows you to get straight to the
-business of application development. If you'd prefer to start with a plainer Django set-up and build a project from
-scratch, see our :ref:`Django tutorial <tutorial-django-set-up>`.
+..  important::
 
-
-..  note::
-
-    This tutorial is intended to introduce the basics of working with Divio, using Django as an example. **It is not a
-    tutorial for Django**.
+    Unless you are sure you wish to use Aldryn, we recommend starting with :ref:`our standard Django tutorial
+    <tutorial-django-set-up>` instead.
 
 
 ..  include:: includes/02-create-1-set-up.rst
