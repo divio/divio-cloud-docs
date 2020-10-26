@@ -23,7 +23,7 @@ First, add the dependency. Then, test that it is installed as expected by runnin
 
 ..  code-block:: bash
 
-    docker-comopose build
+    docker-compose build
 
 If you commit and push your changes once again as you did in the previous section, the project will be rebuilt with
 the new dependency when the cloud environment is redeployed.

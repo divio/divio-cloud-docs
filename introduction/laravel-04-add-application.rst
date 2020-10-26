@@ -32,8 +32,8 @@ To deploy your changes to the Test server, push your changes, and run a deployme
 
 ..  code-block:: bash
 
-    git add composer.json app.flavour .flavour
-    git commit -m "Added laravel-responsecache"
+    git add .
+    git commit -m "Change background colour of welcome page"
     git push origin master
 
 On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
