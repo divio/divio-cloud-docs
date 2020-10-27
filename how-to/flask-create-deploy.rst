@@ -10,8 +10,8 @@ How to create (or migrate) and deploy a Flask project
 ===========================================================================================
 
 This guide will take you through the steps to create a portable, vendor-neutral Flask project, either by building it
-from scratch or migrating an existing application, and deploying it using Docker. The project architecture in line with
-`Twelve-factor <https://www.12factor.net/config>`_ design principles.
+from scratch or migrating an existing application, and deploying it using Docker. The project architecture is in line
+with `Twelve-factor <https://www.12factor.net/config>`_ design principles.
 
 This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the :ref:`Divio CLI
 <local-cli>` installed.
@@ -29,12 +29,13 @@ The ``Dockerfile``
 Create a file named ``Dockerfile``, adding:
 
 ..  code-block:: Dockerfile
-    :emphasize-lines: 5-7
+    :emphasize-lines: 6-8
 
     FROM python:3.8
     WORKDIR /app
     COPY . /app
     RUN pip install -r requirements.txt
+
     # Select one of the following application gateway server commands
     CMD uwsgi --http=0.0.0.0:80 --module="flaskr:create_app()"
     CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
@@ -72,8 +73,9 @@ Local container orchestration with ``docker-compose.yml``
 Create a ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate
 the ``web`` image used in cloud deployments, allowing you to run the application in an environment as close to that of
 the cloud servers as possible. Amongst other things, it will allow the project to use a Postgres or MySQL database
-(choose the appropriate lines below) running in a local container, and provides convenient access to files inside the
-containerised application.
+running in a local container, and provides convenient access to files inside the containerised application.
+
+You will need to include/delete the highlighted sections below appropriately:
 
 ..  code-block:: yaml
     :emphasize-lines: 15-17, 20-
