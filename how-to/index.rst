@@ -63,7 +63,7 @@ For Django-based projects.
 .. toctree::
     :maxdepth: 1
 
-    Create and deploy a Django project <django-create-deploy>
+    Create (or migrate) and deploy a Django project <django-create-deploy>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
     Go-live checklist for Django projects <live-checklist>
 
@@ -73,11 +73,12 @@ For Django-based projects.
 Python
 ~~~~~~~~~~~~~~~~
 
-For all Python-based projects, including those using Django and the Aldryn addons framework.
+For all Python-based in general, including those using Django and the Aldryn addons framework.
 
 .. toctree::
     :maxdepth: 1
 
+    Create (or migrate) and deploy a Flask project <flask-create-deploy>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>
 

@@ -1,3 +1,5 @@
+.. _env-var-list:
+
 Divio environment variables
 ===========================
 

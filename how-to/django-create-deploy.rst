@@ -6,19 +6,19 @@
 
 ..  _django-create-deploy:
 
-How to create and deploy a Django project
+How to create (or migrate) and deploy a Django project
 ===========================================================================================
 
 This guide will take you through the steps to create a portable, vendor-neutral `Twelve-factor
-<https://www.12factor.net/config>`_ Django project from scratch, including:
+<https://www.12factor.net/config>`_ Django project, either by building it from scratch or migrating an existing application. It includes configuration for:
 
 * Postgres or MySQL database
 * cloud media storage using S3
-* `WhiteNoise <http://whitenoise.evans.io>`_ to serve static files in production
+* static file handling using `WhiteNoise <http://whitenoise.evans.io>`_
 * `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
-  <https://www.uvicorn.org>`_ for the application gateway server
+  <https://www.uvicorn.org>`_
 
-and to deploy it using Docker.
+and deployment using Docker.
 
 This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the Divio CLI
 installed. If not, please start with :ref:`our complete tutorial for Django <introduction>`, or at least :ref:`ensure
@@ -78,12 +78,11 @@ You may have Python components of your own that need to be added.
 Local container orchestration with ``docker-compose.yml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will need this in order to be able to run the application locally for development purposes. Create a
-``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate the
-``web`` image used in cloud deployments, and will set up:
-
-* a Postgres or MySQL database (choose the appropriate lines below) running in a local container
-* local file storage
+Create a ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate
+the ``web`` image used in cloud deployments, allowing you to run the application in an environment as close to that of
+the cloud servers as possible. Amongst other things, it will allow the project to use a Postgres or MySQL database
+(choose the appropriate lines below) running in a local container, and provides convenient access to files inside the
+containerised application.
 
 ..  code-block:: yaml
     :emphasize-lines: 21-
@@ -135,7 +134,7 @@ You will need this in order to be able to run the application locally for develo
 Local configuration using ``.env-local``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As you can see above, the ``web`` service refers to an ``env_file`` containing the environment variables that will be
+As you will see above, the ``web`` service refers to an ``env_file`` containing the environment variables that will be
 used in the local development environment. Create a ``.env-local`` file, containing:
 
 ..  code-block:: text
@@ -342,6 +341,39 @@ automatically by each environment.
 Deployment and further development
 -----------------------------------------
 
+Create a new project on Divio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the `Divio Control Panel <https://control.divio.com>`_ add a new project, selecting the *Build your own* option.
+
+
+Add database and media services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The new project does not include any additional services; they must be added manually. Use the *Services* menu to add a
+Postgres or MySQL database to match your choice earlier, and an S3 object storage instance for media.
+
+
+Connect the local project to the cloud project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
+get your project's slug; you can also read the slug from the Control Panel.
+
+Run:
+
+..  code-block:: bash
+
+    divio project configure
+
+and provide the slug. (This creates a new file in the project at ``.divio/config.json``.)
+
+If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
+
+
+Configure the Git repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Initialise the project as a Git repository if it's not Git-enabled already:
 
 ..  code-block:: bash
@@ -374,48 +406,14 @@ A ``.gitignore`` file is needed to exclude unwanted files from the repository. A
     .Spotlight-V100
     .Trashes
 
-The project is now ready to be pushed and deployed to the cloud.
-
-
-Create and deploy the cloud project
------------------------------------
-
-Create a new project on Divio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We need somewhere to push the project to. In the `Divio Control Panel <https://control.divio.com>`_ add a new project,
-selecting the *Build your own* option.
-
-Add database and media services
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The new project does not include any additional services; they must be added manually. Use the *Services* menu to add a
-Postgres or MySQL database to match your choice earlier, and an S3 object storage instance for media.
-
-
-Connect the local project to the cloud project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
-get your project's slug; you can also read the slug from the Control Panel.
-
-Run:
-
-..  code-block:: bash
-
-    divio project configure
-
-and provide the slug. (This creates a new file in the project at ``.divio/config.json``.)
-
-If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
-
 Add the project's Git repository as a remote, using the *slug* value in the remote address:
 
 ..  code-block:: bash
 
     git remote add origin git@git.divio.com:<slug>.git
 
-(Use e.g. ``divio`` if you already have a remote named ``origin``.)
+(Use e.g. ``divio`` instead if you already have a remote named ``origin``.)
+
 
 Commit your work
 ~~~~~~~~~~~~~~~~
@@ -557,5 +555,6 @@ instance instead.
 Database migrations
 ~~~~~~~~~~~~~~~~~~~
 
-In its current state, database migrations are not executed automatically in cloud deployments. After deploying changes
-that require a database migration, you will need to run them manually in the cloud environment using SSH.
+In its current state, database migrations are not executed automatically in cloud deployments. To run migrations
+automaically, add a :ref:`release command <release-commands>`: ``python manage.py migrate``. Alternatively you can run
+the command manually in the cloud environment using SSH.
