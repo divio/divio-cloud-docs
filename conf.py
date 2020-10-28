@@ -35,7 +35,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinxcontrib.mermaid'
+    'sphinxcontrib.mermaid',
+    # 'sphinxcontrib.fulltoc',
     ]
 
 mermaid_version='8.5.2'
@@ -89,13 +90,16 @@ todo_emit_warnings = True
 # on_rtd: whether we are on readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-try:
-    import divio_docs_theme
-except ModuleNotFoundError:
-    html_theme = 'default'
-else:
-    html_theme = 'divio_docs_theme'
-    html_theme_path = [divio_docs_theme.get_html_theme_path()]
+# try:
+#     import divio_docs_theme
+# except ModuleNotFoundError:
+#     html_theme = 'default'
+# else:
+#     html_theme = 'divio_docs_theme'
+#     html_theme_path = [divio_docs_theme.get_html_theme_path()]
+
+# html_theme = 'sphinx_rtd_theme'
+html_theme = 'divio_docs_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -194,9 +198,17 @@ intersphinx_mapping = {
         None,
         ),
     'celery': (
-        'https://docs.celeryproject.org/en/stable',
+        'https://docs.celeryproject.org/en/stable/',
         None,
-        )
+        ),
+    'whitenoise': (
+        'https://whitenoise.evans.io/en/stable/',
+        None,
+        ),
+    'flask': (
+        'https://flask.palletsprojects.com/en/master/',
+        None,
+        ),
 }
 
 
@@ -204,4 +216,8 @@ intersphinx_mapping = {
 html_theme_options = {
     'show_cloud_banner': False,
     'segment_id': 'FT34iqltJg6YdIX5fcyIt5J035FmSAAq',
+    'style_external_links': True,
+    'navigation_depth': 2,
 }
+
+# html_sidebars = {'**': ['localtoc.html']}

@@ -23,6 +23,57 @@ Create or edit the project files
 Start in a new directory, or in an existing Flask project of your own.
 
 
+Create a minimal application if required
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You may already have a Flask application of your own to migrate, but if not, the example below provides a minimal one.
+The example is taken from the :doc:`Flask tutorial's own flaskr example <tutorial/factory>`. Create a ``flaskr``
+directory, containing an ``__init__.py`` file:
+
+..  code-block:: python
+    :emphasize-lines: 10-12
+
+    import os
+
+    from flask import Flask
+
+
+    def create_app(test_config=None):
+        # create and configure the app
+        app = Flask(__name__, instance_relative_config=True)
+        app.config.from_mapping(
+            SECRET_KEY = os.environ.get('SECRET_KEY', 'dev'),
+            DATABASE = os.environ.get('DATABASE_URL', os.path.join(app.instance_path, 'flaskr.sqlite'),
+            STORAGE = os.environ.get('DEFAULT_STORAGE_DSN')
+        )
+
+        if test_config is None:
+            # load the instance config, if it exists, when not testing
+            app.config.from_pyfile('config.py', silent=True)
+        else:
+            # load the test config if passed in
+            app.config.from_mapping(test_config)
+
+        # ensure the instance folder exists
+        try:
+            os.makedirs(app.instance_path)
+        except OSError:
+            pass
+
+        # a simple page that says hello
+        @app.route('/hello')
+        def hello():
+            return 'Hello, World!'
+
+        return app
+
+Note the highlighted sections above, in which the application obtains configuration values from its environment. If you
+are working on your own application that has database or other configuration of this kind, you should adapt it so that
+it is similarly able to obtain these values.
+
+The next step is to Dockerise the application.
+
+
 The ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,7 +91,8 @@ Create a file named ``Dockerfile``, adding:
     CMD uwsgi --http=0.0.0.0:80 --module="flaskr:create_app()"
     CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
 
-(change the version of Python if required, and select the ``CMD`` to start your preferred gateway server).
+You may need to change the version of Python, and should also select the ``CMD`` that will start your preferred gateway
+server for production - if you're not using the ``flaskr`` example, you'll need to amend the name in the command too.
 
 
 ..  _flask-create-deploy-requirements:
@@ -160,54 +212,6 @@ Now you can build the application containers locally:
     docker-compose build
 
 
-Create a minimal application if required
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The application can be run inside its container now and commands can be executed in the Docker environment. If this is
-a new project you will need to create a new Flask application. Using the Flask tutorial's own example, create a ``flaskr`` directory, containing ``__init__.py``. Note the difference highlighted below, in which we obtain the
-``SECRET_KEY`` from the environment.
-
-..  code-block:: python
-    :emphasize-lines: 10
-
-    import os
-
-    from flask import Flask
-
-
-    def create_app(test_config=None):
-        # create and configure the app
-        app = Flask(__name__, instance_relative_config=True)
-        app.config.from_mapping(
-            SECRET_KEY = os.environ.get('SECRET_KEY', 'dev'),
-            DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-        )
-
-        if test_config is None:
-            # load the instance config, if it exists, when not testing
-            app.config.from_pyfile('config.py', silent=True)
-        else:
-            # load the test config if passed in
-            app.config.from_mapping(test_config)
-
-        # ensure the instance folder exists
-        try:
-            os.makedirs(app.instance_path)
-        except OSError:
-            pass
-
-        # a simple page that says hello
-        @app.route('/hello')
-        def hello():
-            return 'Hello, World!'
-
-        return app
-
-
-If you use a different name, or you're working on an existing Flask project, you will need to change the reference to
-``flaskr`` in ``.env-local`` and the ``Dockerfile``'s ``CMD`` line appropriately.
-
-
 Application configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -222,10 +226,10 @@ For example:
 Database
 ^^^^^^^^
 
-In the ``flaskr`` example above, the database configuration is hard-coded to use SQLite. This should be adapted so that
-the ``DATABASE_URL`` environment variable will be read and parsed to configure Flask's database interface.
+In the ``flaskr`` example above, the database configuration is read from the ``DATABASE_URL`` environment variable, and
+falls back to use SQLite if not provided.
 
-Each Divio cloud environment with a database attached to it will similarly be provided automatically with a
+Each Divio cloud environment with a database attached to it will be provided automatically with a
 ``DATABASE_URL`` environment variable. In the ``.env-local`` and ``docker-compose.yml`` files above, example
 configuration is provided so that when running locally, the application can use the same database type as it does in
 production. (This is a much more satisfactory approach than using say Postgres in production and SQLite for
