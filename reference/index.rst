@@ -10,6 +10,7 @@ Divio software components
     :maxdepth: 1
 
     divio-cli
+    divio-api
     divio-components-shell
     divio-dot-aldryn-file
     divio-environment-variables

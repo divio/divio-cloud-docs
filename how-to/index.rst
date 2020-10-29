@@ -147,7 +147,7 @@ Adding new functionality to a project
     Configure media serving on a custom domain <configure-media-custom-domain>
 
 
-The development pipeline
+Development workflow
 -------------------------
 
 .. toctree::
@@ -156,7 +156,7 @@ The development pipeline
     Configure external Git hosting <resources-configure-git>
     Use Git to manage your project <use-git>
     Set up CI/CD <configure-ci>
-    Use our API <use-api>
+    Use the Divio API <use-api>
 
 
 Troubleshooting

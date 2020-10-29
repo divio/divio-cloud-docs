@@ -1,29 +1,24 @@
-How to use our API
+.. _use-divio-api:
+
+How to use the Divio API
 ================================================
 
 We provide a REST API using `OpenAPI <https://www.openapis.org>`_.
 
-..  note::
-
-    Our Control Panel API is currently provided on an as-is basis. The API is scheduled for a full public
-    release, but until then must be regarded as unstable and subject to change.
-
-    By design, the API will work only with projects that belong to an organisation. Projects under an user's
-    *Personal* space will not be fully accessible via the API.
+`Divio API reference documentation <https://api.docs.divio.com>`_
 
 
-Create a Divio account for use with the API
--------------------------------------------
+Create an API-only account
+---------------------------------------------------------
 
-..  warning::
+..  admonition:: The API allows destructive operations to be carried out.
 
-    The API allows destructive operations to be carried out. Although you can, we strongly recommend that you **do not
-    use your own account/access token with the API**, and especially not with code that is in development or not fully
-    tested.
+    We strongly recommend that you **do not use your own account/access token with the API**, and
+    especially not with code that is in development or not fully tested.
 
-We recommend that you create a dedicated account for use with the API, and minimise the access it is granted. For
-example - where possible - rather than granting the account access to multiple organisations, give it access to just
-one, and do not give it admin access unless this is necessary.
+We recommend instead that you create a dedicated account for use with the API, and minimise the access it is granted.
+For example - where possible - rather than granting the account access to multiple organisations, give it access to
+just one, and do not give it admin access unless this is necessary.
 
 
 Connecting to the API
@@ -64,7 +59,7 @@ The principle using a dedicated REST API client, which will offer you more conve
 same, whether it provides a graphical or command-line interface. It will behave in much the same way: you need to
 specify the URL, and provide the expected header.
 
-The result of the command above will be a JSON response, something like::
+The result of the command above will be a JSON response, for example::
 
     {
         "applications": "https://api.divio.com/apps/v3/applications/",
@@ -77,3 +72,6 @@ The result of the command above will be a JSON response, something like::
         "builds": "https://api.divio.com/apps/v3/builds/",
         "regions": "https://api.divio.com/apps/v3/regions/"
     }
+
+Refer to the `Divio API reference documentation <https://api.docs.divio.com>`_ for structured reference information on
+the API.
