@@ -556,5 +556,5 @@ Database migrations
 ~~~~~~~~~~~~~~~~~~~
 
 In its current state, database migrations are not executed automatically in cloud deployments. To run migrations
-automaically, add a :ref:`release command <release-commands>`: ``python manage.py migrate``. Alternatively you can run
+automatically, add a :ref:`release command <release-commands>`: ``python manage.py migrate``. Alternatively you can run
 the command manually in the cloud environment using SSH.

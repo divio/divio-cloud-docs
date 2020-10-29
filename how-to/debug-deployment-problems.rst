@@ -201,7 +201,6 @@ starts up.
 
 :ref:`Restart the checklist <debug-checklist>`
 
-
 .. _debug-cp-deployment-failed-deployment-log-no-error-runtime-log-error:
 ..  rst-class:: probable-fault step
 
@@ -227,6 +226,8 @@ The end of the log will contain the key error.
 ..  rst-class:: question
 
 What does the error most closely resemble?
+    * :ref:`ContainerBrokenException: unable to connect to the container
+      <debug-cp-deployment-failed-deployment-log-no-error>`
     * :ref:`Could not find a version that matches [...]
       <debug-cp-deployment-failed-deployment-log-error-dependency-conflict>`
     * :ref:`npm ERR! [...] ERR! /npm-debug.log <debug-cp-deployment-failed-deployment-log-error-npm-error>`
