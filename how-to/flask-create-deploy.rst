@@ -1,26 +1,26 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to create and deploy a Flask project with Docker, in accordance with
+       This guide explains step-by-step how to deploy a Flask project with Docker, in accordance with
        Twelve-factor principles.
    :keywords: Docker, Flask, Postgres, MySQL, S3
 
 ..  _flask-create-deploy:
 
-How to create (or migrate) and deploy a Flask project
+How to migrate (or create) and deploy a Flask project
 ===========================================================================================
 
-This guide will take you through the steps to create a portable, vendor-neutral Flask project, either by building it
-from scratch or migrating an existing application, and deploying it using Docker. The project architecture is in line
+This guide will take you through the steps to deploy a portable, vendor-neutral Flask project, either by building it
+from scratch or migrating an existing application, using Docker. The project architecture is in line
 with `Twelve-factor <https://www.12factor.net/config>`_ design principles.
 
 This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the :ref:`Divio CLI
 <local-cli>` installed.
 
 
-Create or edit the project files
---------------------------------
+Edit (or create) the project files
+-----------------------------------
 
-Start in a new directory, or in an existing Flask project of your own.
+Start in an existing Flask project, or if necessary, create a new directory.
 
 
 Create a minimal application if required
@@ -116,7 +116,8 @@ appropriate options to install the components for Postgres/MySQL if you plan to 
     uwsgi==2.0.19.1
     gunicorn==20.0.4
 
-You may have Python components of your own that need to be added.
+Check that the version of Flask is correct, and note that you may have Python components of your own that need to be
+added.
 
 
 Local container orchestration with ``docker-compose.yml``

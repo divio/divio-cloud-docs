@@ -1,16 +1,16 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to create and deploy a Twelve-factor Django project including Postgres or
+       This guide explains step-by-step how to deploy a Twelve-factor Django project including Postgres or
        MySQL, and cloud media storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
 ..  _django-create-deploy:
 
-How to create (or migrate) and deploy a Django project
+How to migrate (or create) and deploy a Django project
 ===========================================================================================
 
-This guide will take you through the steps to create a portable, vendor-neutral `Twelve-factor
-<https://www.12factor.net/config>`_ Django project, either by building it from scratch or migrating an existing application. It includes configuration for:
+This guide will take you through the steps to deploy a portable, vendor-neutral `Twelve-factor
+<https://www.12factor.net/config>`_ Django project. It includes configuration for:
 
 * Postgres or MySQL database
 * cloud media storage using S3
@@ -25,10 +25,10 @@ installed. If not, please start with :ref:`our complete tutorial for Django <int
 that you have the basic tools in place <local-cli>`.
 
 
-Create or edit the project files
---------------------------------
+Edit (or create) the project files
+-----------------------------------
 
-Start in a new directory, or in an existing Django project of your own.
+Start in an existing Django project, or if necessary, create a new directory.
 
 
 The ``Dockerfile``
@@ -51,8 +51,8 @@ Create a file named ``Dockerfile``, adding:
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one. Where indicated below, choose the
-appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn, for example:
+The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one if required. Where indicated below, choose
+the appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvicorn/Gunicorn, for example:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 7-9, 11-14
@@ -72,7 +72,7 @@ appropriate options to install the components for Postgres/MySQL, and uWSGI/Uvic
     uvicorn==0.11.8
     gunicorn==20.0.4
 
-You may have Python components of your own that need to be added.
+Check that the version of Django is correct, and include any other Python components required by your project.
 
 
 Local container orchestration with ``docker-compose.yml``
@@ -160,19 +160,15 @@ Now you can build the application containers locally:
     docker-compose build
 
 
-Create or edit the Django project module
+Create a minimal Django project if required
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The application can be run inside its container now and commands can be executed in the Docker environment. If this is
-a new project you will need to create a new Django project module:
+If you need to create a new Django project, you can run the ``startproject`` command inside the Docker application's
+container:
 
 ..  code-block:: bash
 
     docker-compose run web django-admin startproject myapp .
-
-If you use a different name, or you're working on an existing Django project, you will need to change the reference to
-``myapp`` in the :ref:`static settings <django-create-deploy-static>` and the ``Dockerfile``'s ``CMD`` line,
-:ref:`below <django-create-deploy-CMD>`.
 
 
 Configure ``settings.py``
@@ -287,9 +283,9 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
 Extend the ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that a Django project has been created, append to a command to the ``Dockerfile`` that will collect static files.
-Depending which application gateway server :ref:`you installed above <django-create-deploy-requirements>`, include the
-appropriate command to launch the application when a container starts:
+Append to a command to the ``Dockerfile`` that will collect static files. Finally, depending which application gateway
+server :ref:`you installed above <django-create-deploy-requirements>`, include the appropriate command to launch the
+application when a container starts:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 3-6
@@ -304,10 +300,10 @@ appropriate command to launch the application when a container starts:
 (Note that this assumes your Django project was named ``myapp``.)
 
 
-Run database migrations
-~~~~~~~~~~~~~~~~~~~~~~~
+Run database migrations if required
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The database will need to be migrated before you can start any application development work:
+The database may need to be migrated before you can start any application development work:
 
 ..  code-block:: bash
 
