@@ -5,18 +5,8 @@ Project creation options
 
 Each Divio project is based on a combination of *Stack*, *Additional components* and *Additional Boilerplate*.
 
-Any application that is suited to being run in Docker can be run on Divio and build up using the default *Build your
+Any application that is suited to being run in Docker can be run on Divio and built up using the default *Build your
 own* option as a starting point.
-
-We also provide some optional ready-to-go definitions for a quick start. For example:
-
-* **Stack**: *Aldryn Python*
-* **Additional components**: *django CMS*
-* **Additional Boilerplate**: *HTML5*
-
-It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
-get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
-to :ref:`add Sass CSS compilation using Node to a project that doesn't already include Node <configure-sass>`.
 
 
 ..  Do not change this reference!
@@ -24,12 +14,17 @@ to :ref:`add Sass CSS compilation using Node to a project that doesn't already i
     Where: in the project creation dialog e.g. https://control.divio.com/control/project/create/#step-1
     As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
 
+
 .. _project-creation-platform:
 
 Stack
 ---------
 
-Options include Build your own, Aldryn Python, Node, PHP, Java and others.
+.. image:: /images/project-creation-stack.png
+   :alt: 'project creation Stack options'
+
+Generally, you will select *Build your own* and construct your own ``Dockerfile``. We also provide some pre-built
+project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below <project-creation-pre-built>`).
 
 :ref:`django-create-deploy` for a good example of using the *Build your own* option with Django.
 
@@ -44,9 +39,12 @@ Options include Build your own, Aldryn Python, Node, PHP, Java and others.
 Additional components
 ----------------------
 
-The available additional components depend on the selected Stack.
+.. image:: /images/project-creation-components.png
+   :alt: 'project creation Additional component options'
 
-For the Aldryn Python platform, examples include Django, django CMS and Flask; for the PHP platform, Laravel and
+Additional components *may* be available, depending on the selected Stack.
+
+For the Aldryn Python platform, examples include Django and django CMS; for the PHP platform, Laravel and
 Symfony, and so on.
 
 
@@ -60,7 +58,10 @@ Symfony, and so on.
 Additional Boilerplate
 -----------------------
 
-Available Boilerplates depend on the additional components selected.
+.. image:: /images/project-creation-boilerplate.png
+   :alt: 'project creation Additional boilerplate options'
+
+Additional Boilerplates *may* be available, depending on the selected Additional components.
 
 Boilerplates provide additional functionality baked into the project. For example, an Aldryn Python/django CMS project
 can be launched with Boilerplates for Bootstrap, Foundation and other technologies.
@@ -76,8 +77,27 @@ can be launched with Boilerplates for Bootstrap, Foundation and other technologi
 Git repository manager
 ----------------------
 
+.. image:: /images/project-creation-git.png
+   :alt: 'project creation Git options'
+
 By default, your project will use Divio's own private Git server. Alternatively you can select a Git provider of your
 choice. You can :ref:`migrate a project from our Git server to an external provider at any time
 <configure-version-control>`.
 
 For a quick start, use Divio's Git server.
+
+
+.. _project-creation-pre-built:
+
+About pre-built project templates
+---------------------------------
+
+We also provide some optional ready-to-go definitions for a quick start. For example:
+
+* **Stack**: *Aldryn Python*
+* **Additional components**: *django CMS*
+* **Additional Boilerplate**: *HTML5*
+
+It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
+get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
+to :ref:`add Sass CSS compilation using Node to a project that doesn't already include Node <configure-sass>`.
