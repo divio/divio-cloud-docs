@@ -12,15 +12,6 @@ The `divio-cli source code <https://github.com/divio/divio-cli>`_ is available
 on GitHub.
 
 
-.. _aldryn-client:
-
-..  important::
-
-    When using the *divio-cli* other than in a Divio Shell or web container, you will need to
-    install the *aldryn-client* as well to allow the *divio-cli* to perform certain operations
-    related to addons. To install::
-
-        pip install aldryn-client
 
 .. _divio-cli-command-ref:
 
@@ -234,6 +225,15 @@ directory.
 ``live``
     Opens the project's Live site in the browser.
 
+.. _divio-project-logs:
+
+``logs``
+    Displays runtime logs from a cloud environment.
+
+    Takes the name of the environment (e.g. ``test`` or ``live``; if not specified, defaults to ``test``). Use the
+    ``--remote-id <project id>`` option to obtain the logs of another project, ``--tail`` to tail the output and
+    ``--utc`` to show times in UTC.
+
 ``open``
     Open the local project's site in the browser.
 
@@ -262,6 +262,14 @@ directory.
 
     *Can be run outside a project folder.*
 
+.. _divio-project-ssh:
+
+``ssh``
+    Opens an SSH session in a cloud container.
+
+    Takes the name of the environment (e.g. ``test`` or ``live``; if not specified, defaults to
+    ``test``). Use the ``--remote-id <project id>`` option to SSH to another project.
+
 ``status``
     Shows the status of the local project, shutting down its containers.
 
@@ -286,3 +294,14 @@ directory.
 ...........
 
 Returns version information about the *divio-cli*.
+
+
+.. _aldryn-client:
+
+..  note::
+
+    When using the *divio-cli* other than in a Divio Shell or web container, you will need to
+    install the *aldryn-client* as well to allow the *divio-cli* to perform certain operations
+    related to addons. To install::
+
+        pip install aldryn-client

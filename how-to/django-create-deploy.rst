@@ -99,7 +99,7 @@ containerised application.
         volumes:
           - ".:/app:rw"
           - "./data:/data:rw"
-        # the default command to run wheneve the container is launched
+        # the default command to run whenever the container is launched
         command: python manage.py runserver 0.0.0.0:80
         # the URL 'postgres' or 'mysql' will point to the application's db service
         links:
@@ -447,7 +447,7 @@ You can push the local database with the superuser you created to the Test envir
 
     divio project push db
 
-or, use the SSH URL available in the Test environment pane to open a session in a cloud container, and execute
+or, :ref:`SSH to a cloud container <divio-project-ssh>` in the Test environment with ``divio project ssh`` and execute
 Django migrations and create a superuser there in the usual way.
 
 You can run migrations automatically on deployment by adding a :ref:`release command <release-commands>` in the Control

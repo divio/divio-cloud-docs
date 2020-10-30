@@ -22,18 +22,24 @@ migrate``). For example in a Django project It's particularly useful to be able 
 Using a cloud shell
 -------------------
 
-A cloud environment must be deployed in order to reach it via SSH. You can copy SSH connection
-details from the appropriate pane in the Control Panel:
+A cloud environment must be deployed in order to reach it via SSH.
+
+Top open an SSH session, run::
+
+    divio project ssh
+
+The default connection is to the ``test`` environment, but you can specify other environments by name. An instance of
+your web application will be spun up in a new container, and after a moment you'll be logged in to it as ``root``.
+
+SSH sessions are limited to 30 minutes, regardless of any activity.
+
+You can also copy SSH connection details from the appropriate pane in the Control Panel:
 
 .. image:: /images/control-panel-open-shell.png
    :alt: 'Control Panel SSH icon'
    :width: 430
 
-The command can be pasted into a terminal session on your own machine. An instance of your web
-application will be spun up in a new container, and after a moment you'll be logged in to it as
-``root``.
-
-SSH sessions are limited to 30 minutes, regardless of any activity.
+The command can be pasted into a terminal session on your own machine.
 
 
 The cloud shell instance
