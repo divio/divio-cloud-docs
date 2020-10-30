@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.mermaid',
     # 'sphinxcontrib.fulltoc',
+    "sphinx_click",
     ]
 
 mermaid_version='8.5.2'

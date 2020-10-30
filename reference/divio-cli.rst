@@ -11,7 +11,9 @@ via pip::
 The `divio-cli source code <https://github.com/divio/divio-cli>`_ is available
 on GitHub.
 
-
+.. click:: divio_cli.cli:cli
+   :prog: divio-cli
+   :nested: full
 
 .. _divio-cli-command-ref:
 
@@ -173,127 +175,6 @@ directory.
         * adds any dependencies
         * runs ``docker-compose build web``.
 
-
-.. _divio-project-env-vars:
-
-``env-vars``
-    Get and set :ref:`environment variables <environment-variables>`. By
-    default, these operations work on the *Test* server (e.g. ``divio project
-    env-vars --set SOMEKEY somevalue`` will be applied to the *Test* server,
-    and will appear there).
-
-    Note that this command applies only to the *Live* and *Test* servers, not the local server. See :ref:`Local
-    environment variables <local-environment-variables>`.
-
-    Usage: ``divio project env-vars [OPTIONS]``
-
-    Options:
-
-    -s, --stage TEXT
-        Get data from sever (``test`` or ``live``)
-    --all, --custom
-        Show all or only custom (the default) variables
-    --json
-        Use JSON output
-    --get
-        Get a specific environment variable (``get VARIABLE``)
-    --set
-        Set a specific custom environment variable (``set VARIABLE VALUE``)
-    --unset
-        Unset an environment variable (``unset VARIABLE``)
-    --help
-        Show a help message
-
-``export``
-    Exports the local database to ``local_db.sql``.
-
-    Usage: ``divio project export db``
-
-``import``
-    Imports a database dump file into the local database.
-
-    Usage: ``divio project import db [path]``
-
-    If the ``path`` argument is not supplied, it will expect a file
-    ``local_db.sql``.
-
-``list``
-    Lists your Divio projects.
-
-    *Not specific to a particular project.*
-
-``live``
-    Opens the project's Live site in the browser.
-
-.. _divio-project-logs:
-
-``logs``
-    Displays runtime logs from a cloud environment.
-
-    Takes the name of the environment (e.g. ``test`` or ``live``; if not specified, defaults to ``test``). Use the
-    ``--remote-id <project id>`` option to obtain the logs of another project, ``--tail`` to tail the output and
-    ``--utc`` to show times in UTC.
-
-``open``
-    Open the local project's site in the browser.
-
-.. _divio-project-pull:
-
-``pull``
-    Pulls the database or media files from the Divio cloud environment.
-
-    Takes a required argument, ``db`` or ``media``, followed optionally by
-    ``test`` or ``live`` (if not specified, defaults to ``test``), and by
-    ``--remote-id <project id>`` to pull from another project.
-
-.. _divio-project-push:
-
-``push``
-    Pushes the database or media files to the Divio cloud environment.
-
-    Takes a required argument, ``db`` or ``media``, followed optionally by
-    ``test`` or ``live`` (if not specified, defaults to ``test``), and by
-    ``--remote-id <project id>`` to push to another project.
-
-``setup``
-    Replicates and builds a Divio project locally.
-
-    Takes a single argument, the slug of the project.
-
-    *Can be run outside a project folder.*
-
-.. _divio-project-ssh:
-
-``ssh``
-    Opens an SSH session in a cloud container.
-
-    Takes the name of the environment (e.g. ``test`` or ``live``; if not specified, defaults to
-    ``test``). Use the ``--remote-id <project id>`` option to SSH to another project.
-
-``status``
-    Shows the status of the local project, shutting down its containers.
-
-``stop``
-    Stops the local project (if it is running).
-
-``test``
-    Opens the project's Test site in the browser.
-
-``up``
-    Starts up the local project.
-
-``update``
-    Updates the local project with new code changes from the Cloud, then builds it. Runs::
-
-        git pull
-        docker-compose pull
-        docker-compose build
-        docker-compose run web start migrate
-
-``version``
-...........
-
-Returns version information about the *divio-cli*.
 
 
 .. _aldryn-client:
