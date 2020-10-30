@@ -100,8 +100,9 @@ server for production - if you're not using the ``flaskr`` example, you'll need 
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one. Where indicated below, choose the
-appropriate options to install the components for Postgres/MySQL if you plan to use them, and uWSGI/Gunicorn, for example:
+The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one if required. Where indicated below, choose
+the appropriate options to install the components for Postgres/MySQL if you plan to use them, and uWSGI/Gunicorn, for
+example:
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 3-5, 7-9
@@ -116,8 +117,7 @@ appropriate options to install the components for Postgres/MySQL if you plan to 
     uwsgi==2.0.19.1
     gunicorn==20.0.4
 
-Check that the version of Flask is correct, and note that you may have Python components of your own that need to be
-added.
+Check that the version of Flask is correct, and include any other Python components required by your project.
 
 
 Local container orchestration with ``docker-compose.yml``
@@ -145,7 +145,7 @@ You will need to include/delete the highlighted sections below appropriately:
         volumes:
           - ".:/app:rw"
           - "./data:/data:rw"
-        # the default command to run wheneve the container is launched
+        # the default command to run whenever the container is launched
         command: flask run --host=0.0.0.0 --port=80
         # the URL 'postgres' or 'mysql' will point to the application's db service
         links:

@@ -75,7 +75,7 @@ up locally, and to have direct access to files inside the container while develo
         # map the host directory to app (which allows us to see and edit files inside the container)
         volumes:
           - ".:/app:rw"
-        # the default command to run wheneve the container is launched
+        # the default command to run whenever the container is launched
         command: python manage.py runserver 0.0.0.0:80
 
 This now provides a convenient way to run commands inside the Dockerised environment, and also gives us access to a
