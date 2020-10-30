@@ -28,7 +28,7 @@ You should include an ``apt-get update`` in the installation commands, and run
 ..  code-block:: dockerfile
 
     RUN apt-get update
-    RUN apt-get install -y postgres-client
+    RUN apt-get install -y postgresql-client
 
 to install the ``psql`` Postgres client.
 
