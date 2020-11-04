@@ -1,7 +1,8 @@
-sphinx
-sphinxcontrib-spelling
-pyenchant
-sphinx-autobuild
-divio-docs-theme
-sphinx-rtd-theme
-sphinxcontrib-mermaid<0.4.0
+Sphinx==3.3.0
+sphinxcontrib-spelling==7.0.1
+sphinxcontrib-mermaid
+
+pyenchant==3.1.1
+sphinx-autobuild==2020.9.1
+divio-docs-theme==0.0.22
+sphinx-rtd-theme==0.5.0
