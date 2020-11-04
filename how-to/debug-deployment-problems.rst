@@ -35,13 +35,15 @@
       left: -5px;
       width: 13px;
       height: 2px;
-      background: #b9b9b9;
+      background: #b9b9b9;a=
     }
 
     /* ----- interactive debugger ----- */
 
-    dl.question dt:before {font-family: FontAwesome; content: "\f059"; color: #FFB400; margin-right: 1em;}
-    dl.question li:after {font-family: FontAwesome; content: " \f0a9"; color: #FFB400;}
+    .rst-content dl.question dt {background: none; border: none; color: black;}
+    .rst-content dl.question dt:before {font-family: FontAwesome; content: "\f059"; color: #FFB400; margin-right: 1em;}
+    .rst-content dl.question li a:after {font-family: FontAwesome; content: " \f0a9"; color: #FFB400;}
+    .rst-content dl.question dd ul li {list-style: none;}
     .probable-fault h3::before {font-family: FontAwesome; content: "\f071"; color: #ffb400; margin-right: 1em;}
 
     div.step {
