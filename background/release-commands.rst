@@ -12,7 +12,8 @@ Release commands (Beta)
 ..  note::
 
     Release commands are currently provided as a Beta feature, and are available only to users who have signed up for
-    access to Beta-release features.
+    access to Beta-release features. `Enable Beta features in your account settings
+    <https://control.divio.com/account/contact/>`_.
 
 
 What are release commands?
