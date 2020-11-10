@@ -1,6 +1,8 @@
-..
-  project-services-info
-  Services view
+..  Do not change this document name
+    Referred to by: https://control.divio.com/admin/tutorial/message/142/change/
+    Where: in the Services view
+    As: https://docs.divio.com/en/latest/background/services
+
 
 .. raw:: html
 
