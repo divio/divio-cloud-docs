@@ -20,9 +20,9 @@ Cloud management
 .. toctree::
     :maxdepth: 1
 
+    environments
     metrics
     services
-    services-available
     release-commands
 
 
