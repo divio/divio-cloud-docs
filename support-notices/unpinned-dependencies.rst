@@ -42,7 +42,7 @@ To obtain a full list, use::
 
     pip freeze
 
-in the project (either locally, using `docker-compose run web pip freeze`, or in a :ref:`cloud shell <cloud-shell>`.)
+in the project (either locally, using ``docker-compose run web pip freeze``, or in a :ref:`cloud shell <cloud-shell>`.)
 
 The full list should be included in your project's Python requirements file.
 
