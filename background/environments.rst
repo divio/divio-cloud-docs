@@ -1,5 +1,5 @@
 ..  Do not change this document name
-    Referred to by: https://control.divio.com/admin/tutorial/message/151/change/
+    Referred to by: tutorial message 151 project-environments-info
     Where: in the Environments view
     As: https://docs.divio.com/en/latest/background/environments
 

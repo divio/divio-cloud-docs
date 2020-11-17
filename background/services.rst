@@ -1,5 +1,5 @@
 ..  Do not change this document name
-    Referred to by: https://control.divio.com/admin/tutorial/message/142/change/
+    Referred to by: tutorial message 142 project-services-info
     Where: in the Services view
     As: https://docs.divio.com/en/latest/background/services
 

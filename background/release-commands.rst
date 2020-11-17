@@ -1,5 +1,5 @@
 ..  Do not change this document name
-    Referred to by: https://control.divio.com/admin/tutorial/message/147/change/
+    Referred to by: tutorial message 147 release-commands-explanation
     Where: in the Settings view
     As: https://docs.divio.com/en/latest/background/release-commands
 
