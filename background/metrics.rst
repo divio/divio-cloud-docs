@@ -12,9 +12,9 @@ Metrics (Beta)
 
     The *Metrics* view is currently provided as a Beta feature.
 
-.. image:: /images/metrics.png
-   :alt: 'Metrics'
-   :class: 'main-visual'
+..  image:: /images/metrics.png
+    :alt: 'Metrics'
+    :class: 'main-visual'
 
 Real-time metrics provide you with an insight into the behaviour and performance of your projects.
 
@@ -25,6 +25,13 @@ represent the *total* memory and CPU consumption across all the instances. In no
 experience roughly equal resource consumption. However it is possible that processes running in one container can
 consume excessive resources in that instance alone. In such a cases, although the overall consumption may appear to be
 within limits, the affected container can cause errors in the running application.
+
+..  image:: /images/metrics-zoom.png
+    :alt: 'Drag to zoom into metrics'
+    :align: right
+    :width: 80px
+
+You can select the period of the charts, and also zoom in for more detail by dragging over a particular section.
 
 
 Memory usage
