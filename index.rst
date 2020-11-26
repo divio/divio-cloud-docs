@@ -1,61 +1,8 @@
-..  raw:: html
-
-    <style>
-        .row {clear: both}
-
-        .column img {border: 1px solid black;}
-
-        @media only screen and (min-width: 1000px),
-               only screen and (min-width: 500px) and (max-width: 768px){
-
-            .column {
-                padding-left: 5px;
-                padding-right: 5px;
-                float: left;
-            }
-
-            .column2  {
-                width: 50%;
-            }
-        }
-
-        .main-visual {
-            margin-bottom: 0 !important;
-        }
-
-        .embed-responsive {
-          position: relative;
-          width: 100%;
-        }
-          .embed-responsive:before {
-            display: block;
-            content: "";
-          }
-        .embed-responsive-item,
-        .embed-responsive iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .embed-responsive-16by9::before {
-            padding-top: 56.25%;
-        }
-        .embed-responsive-4by3::before {
-            padding-top: 75%;
-        }
-
-    </style>
-
-
 Divio developer handbook
 ==============================
 
 
-..  rst-class:: clearfix row
-
-..  rst-class:: column column2
+..  rst-class:: column
 
 
 :ref:`Get started <introduction>`
@@ -64,7 +11,8 @@ Divio developer handbook
 **Tutorials.** A hands-on introduction to Divio for developers. *Recommended for all new users.*
 
 
-..  rst-class:: column column2
+..  rst-class:: column
+
 
 :ref:`How-to guides <how-to>`
 -------------------------------------------------------
@@ -72,8 +20,7 @@ Divio developer handbook
 **Step-by-step guides.** Covers key tasks and operations and common problems.
 
 
-..  rst-class:: clearfix row
-..  rst-class:: column column2
+..  rst-class:: column clearfix
 
 :ref:`Background <background>`
 -------------------------------------------------------
@@ -81,7 +28,7 @@ Divio developer handbook
 **Explanation.** Clarification and discussion of key topics.
 
 
-..  rst-class:: column column2
+..  rst-class:: column
 
 :ref:`Reference <reference>`
 -------------------------------------------------------
@@ -89,8 +36,7 @@ Divio developer handbook
 **Technical reference.** Covers tools, components, commands and resources.
 
 
-
-..  rst-class:: clearfix row
+..  rst-class:: clearfix
 
 About the Divio cloud deployment platform
 -----------------------------------------
