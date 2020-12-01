@@ -30,97 +30,72 @@ Building your Docker application
 Platform-specific guides
 ----------------------------------------
 
-..  What follows is a terrible hack to force the behaviour we want from Sphinx. It could end badly. See hacks.rst for
-    more.
+.. tab:: Django
 
-.. raw:: html
+   .. raw:: html
 
-    <div class="tabs">
-      <div class="tabs__nav">
-         <a href="#django-tab" class="tabs__link tab__link--active">
-           <img src="../_images/django-logo-negative.svg" alt="Django" width="60">
-         </a>
-         <a href="#python-tab" class="tabs__link tab__link--active">
-           <img src="../_images/python-logo.svg" alt="Python" width="80">
-         </a>
-         <a href="#aldryn-tab" class="tabs__link tab__link--active">
-           Django with <img src="../_images/aldryn-logo.svg" alt="Aldryn" width="100">
-         </a>
-         <a href="#node.js-tab" class="tabs__link">
-           <img src="../_images/node-logo.svg" alt="Node.js" width="60">
-         </a>
-      <div>
-      <div class="tabs__content">
+      <h3>Get started with Django</h3>
 
+   For Django-based projects.
 
-..  rst-class:: tabs-pane
+   .. toctree::
+       :maxdepth: 1
 
-Django
-~~~~~~~~~~~~~~~~
+       Migrate/create and deploy a Django project <django-create-deploy>
+       Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+       Go-live checklist for Django projects <live-checklist>
 
-For Django-based projects.
+.. tab:: Python
 
-.. toctree::
-    :maxdepth: 1
+   .. raw:: html
 
-    Migrate/create and deploy a Django project <django-create-deploy>
-    Create a multi-site Django project using Mirrors <django-multisite-mirrors>
-    Go-live checklist for Django projects <live-checklist>
+      <h3>Get started with Python</h3>
 
+   For all Python-based in general, including those using Django and the Aldryn addons framework.
 
-..  rst-class:: tabs-pane
+   .. toctree::
+       :maxdepth: 1
 
-Python
-~~~~~~~~~~~~~~~~
+       Migrate/create and deploy a Flask project <flask-create-deploy>
+       Install Python dependencies <install-python-dependencies>
+       Pin all of your project's Python dependencies <resources-pin-dependencies>
 
-For all Python-based in general, including those using Django and the Aldryn addons framework.
+.. tab:: Aldryn
 
-.. toctree::
-    :maxdepth: 1
+   .. raw:: html
 
-    Migrate/create and deploy a Flask project <flask-create-deploy>
-    Install Python dependencies <install-python-dependencies>
-    Pin all of your project's Python dependencies <resources-pin-dependencies>
+      <h3>Get started with Aldryn</h3>
 
+   For Django-based projects using the Aldryn addons framework.
 
-..  rst-class:: tabs-pane
+   .. toctree::
+       :maxdepth: 1
 
-Django with Aldryn
-~~~~~~~~~~~~~~~~~~
-
-For Django-based projects using the Aldryn addons framework.
-
-.. toctree::
-    :maxdepth: 1
-
-    Add a Django application to an Aldryn project <django-add-application>
-    Configure Django settings using Aldryn <django-configure-settings>
-    Configure an existing Django project to use Aldryn <django-migrate-existing-project>
-    Configure external logging <django-configure-external-logging>
-    Configure Celery <configure-celery>
-    Manage access authentication <django-manage-authentication>
-    Manage redirects in Django projects <django-manage-redirects>
-    Log in to a local Django project <local-project-log-in>
-    Manage uWSGI configuration <uwsgi-configuration>
-    Fine-tune uWSGI server performance <uwsgi-performance>
-    Package an application as an Aldryn addon <addon-create>
-    Update an existing Aldryn addon <addon-update-existing>
+       Add a Django application to an Aldryn project <django-add-application>
+       Configure Django settings using Aldryn <django-configure-settings>
+       Configure an existing Django project to use Aldryn <django-migrate-existing-project>
+       Configure external logging <django-configure-external-logging>
+       Configure Celery <configure-celery>
+       Manage access authentication <django-manage-authentication>
+       Manage redirects in Django projects <django-manage-redirects>
+       Log in to a local Django project <local-project-log-in>
+       Manage uWSGI configuration <uwsgi-configuration>
+       Fine-tune uWSGI server performance <uwsgi-performance>
+       Package an application as an Aldryn addon <addon-create>
+       Update an existing Aldryn addon <addon-update-existing>
 
 
-..  rst-class:: tabs-pane
+.. tab:: Node.js
 
-Node.js
-~~~~~~~~~~~~~~~~
+   .. raw:: html
 
-.. toctree::
-    :maxdepth: 1
+      <h3>Get started with Node.js</h3>
 
-    Force HTTPS with Express.js <node-express-force-https>
+   .. toctree::
+       :maxdepth: 1
 
-.. raw:: html
+       Force HTTPS with Express.js <node-express-force-https>
 
-    </div><!-- .tabs__content -->
-    </div><!-- .tabs -->
 
 -------------------------
 

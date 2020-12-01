@@ -26,7 +26,13 @@ work.
 
 Next, select your path through the tutorial.
 
+|
+
 .. tab:: Django
+
+   .. raw:: html
+
+      <h2>Get started with Django</h2>
 
    This tutorial is recommended as an introduction for all Python/Django developers.
 
@@ -46,6 +52,10 @@ Next, select your path through the tutorial.
 
 .. tab:: Django with Aldryn
 
+   .. raw:: html
+
+      <h2>Get started with Django, using Aldryn</h2>
+
    Aldryn is our auto-configuration framework for Django.
 
    .. toctree::
@@ -60,6 +70,10 @@ Next, select your path through the tutorial.
    .. _wagtail:
 
 .. tab:: Wagtail
+
+   .. raw:: html
+
+      <h2>Get started with Wagtail</h2>
 
    Aldryn is our auto-configuration framework for Django. Wagtail is one of the 
    most popular Django-based content management systems.
@@ -76,6 +90,10 @@ Next, select your path through the tutorial.
 
 .. tab:: PHP/Laravel, using Flavours
 
+   .. raw:: html
+
+      <h2>Get started with PHP/Laravel, using Flavours</h2>
+
    `Flavours <https://flavours.dev>`_ is an open specification for web application configuration>.
 
    .. toctree::
@@ -88,3 +106,5 @@ Next, select your path through the tutorial.
        laravel-05-flavours
 
    .. _django:
+
+
