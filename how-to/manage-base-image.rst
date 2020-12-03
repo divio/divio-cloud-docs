@@ -66,7 +66,7 @@ Base images provided by Divio
 ---------------------------------
 
 As well as the many images, official and unofficial, that are available and suitable for a vast variety of web
-applications, we also provide a number of `Divio-otimised Docker base images for projects
+applications, we also provide a number of `Divio-optimised Docker base images for projects
 <https://hub.docker.com/r/divio/base/tags>`_.
 
 These base images provide an underlying Linux operating system layer, and other layers in the stack, upon which you can
