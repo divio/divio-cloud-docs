@@ -79,7 +79,7 @@ Commonly used commands include those to push and pull database and media, for ex
 
     divio project push media
 
-Where approriate, you can specify a particular environment (default is always Test)::
+Where appropriate, you can specify a particular environment (default is always Test)::
 
     divio project push db live
 
