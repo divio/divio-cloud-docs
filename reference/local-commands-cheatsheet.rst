@@ -14,22 +14,29 @@ Set up a project
 Deploy Cloud server
     ``divio project deploy`` (applies to ``test`` server by default; optionally, specify ``live``)
 
-Update local project code:
-    ``divio project update`` (pulls code, updates and builds local images, runs migrations)
-
 Build local ``web`` image (e.g. after updating ``requirements.in`` or the ``Dockerfile``)
     ``docker-compose build web``
 
 Push/pull code
     Use ``git`` commands as appropriate.
 
-:ref:`Pull <divio-project-pull>` or :ref:`push <divio-project-pull>`  media or database
+Pull or push media or database
     ``divio project pull media`` or ``divio project pull db``
 
     ``divio project push media`` or ``divio project push db``
 
     These commands apply to the ``test`` server by default; optionally, you can specify ``live``, e.g. ``divio project
     pull media live``).
+
+Manage environment variables
+     ``divio project env-vars`` - get custom values
+
+     ``divio project env-vars --all`` - get all values
+
+     ``divio project env-vars -s qa`` - get the values from the environment named *qa*
+
+     ``divio project env-vars --set TEST myvalue`` - set the variable ``TEST`` to ``myvalue``
+
 
 
 Running the local server

@@ -5,5 +5,8 @@ sphinx-autobuild
 divio-docs-theme
 sphinx-rtd-theme
 sphinxcontrib-mermaid<0.4.0
-divio-cli
 sphinx-click
+click==7.0
+
+/Users/daniele/Repositories/cli/
+

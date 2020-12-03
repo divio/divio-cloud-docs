@@ -447,7 +447,7 @@ You can push the local database with the superuser you created to the Test envir
 
     divio project push db
 
-or, :ref:`SSH to a cloud container <divio-project-ssh>` in the Test environment with ``divio project ssh`` and execute
+or, use the :ref:`divio project ssh command <divio-cli-command-ref>` in the Test environment with ``divio project ssh`` and execute
 Django migrations and create a superuser there in the usual way.
 
 You can run migrations automatically on deployment by adding a :ref:`release command <release-commands>` in the Control
