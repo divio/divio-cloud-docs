@@ -1,3 +1,8 @@
+..  Do not change this or document name
+    Referred to by: tutorial message 126 cronjobs-top
+    Where: in the Control Panel Cron Jobs view
+    As: https://docs.divio.com/en/latest/background/cron-jobs/
+
 .. _cron-jobs:
 
 Cron jobs
@@ -5,6 +10,10 @@ Cron jobs
 
 Cron jobs are available from the *Cron Jobs* view in the Control Panel. Note that cron jobs are not available on all
 project plans.
+
+..  image:: /images/cron-jobs.png
+    :alt: 'Cron job management'
+    :class: 'main-visual'
 
 
 Creating tasks
@@ -38,3 +47,13 @@ Cron job timeouts
 
 We apply a default timeout of ten minutes on processes started by cron jobs. Longer-running processes should be handled
 by a more appropriate task manager (such as Celery) instead.
+
+
+Logging
+-------
+
+Cron jobs emit their own logs:
+
+..  image:: /images/cron-job-logs.png
+    :alt: 'Cron job logs'
+    :class: 'main-visual'
