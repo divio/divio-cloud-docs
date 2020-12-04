@@ -16,10 +16,6 @@
 How to get started with the Divio CLI
 ================================================
 
-Although we provide `the Divio app <https://www.divio.com/app/>`_, a GUI
-application for working with your projects locally, for many developers the
-preferred tool for working with Divio projects is the Divio CLI.
-
 ..  seealso::
 
     If you are completely new to Divio, please see :ref:`our tutorial
