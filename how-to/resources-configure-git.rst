@@ -1,9 +1,13 @@
 ..  Do not change this document name!
     Referred to by: tutorial message 115 alert-can-add-repository
-    Where: ???
+    Where: Control Panel Repository view
     As: https://docs.divio.com/en/latest/how-to/resources-configure-git/
 
-.. raw:: html
+..  Referred to by: tutorial message 150 project-repository-info
+    Where: Control Panel Repository view
+    As: https://docs.divio.com/en/latest/how-to/resources-configure-git/
+
+..  raw:: html
 
     <style>
         .row {clear: both}
@@ -61,10 +65,10 @@ Git hosting provider of your choice.
 The steps in this process are:
 
 #. :ref:`git-prepare-repo`
-#. :ref:`git-repository-add-url`
-#. :ref:`git-setup-ssh`
+#. :ref:`git-repository-add-url` (so the Control Panel can find the codebase)
+#. :ref:`git-setup-ssh` (so that the Control Panel is permitted to access the repository)
 #. :ref:`git-test-access`
-#. :ref:`git-setup-webhook`
+#. :ref:`git-setup-webhook` (so that the repository can push events to the Control Panel)
 
 
 .. _git-prepare-repo:
@@ -181,7 +185,7 @@ successful, the project Dashboard will show the repository URL.
 
 .. _git-setup-webhook:
 
-Configure a webhook for the Git repository
+Configure a webhook for the Git repository (optional)
 ------------------------------------------------------------------------
 
 In order for the Control Panel to receive a signal when the repository is updated, you need to set up a webhook. This

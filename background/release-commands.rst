@@ -1,5 +1,5 @@
 ..  Do not change this document name
-    Referred to by: https://control.divio.com/admin/tutorial/message/147/change/
+    Referred to by: tutorial message 147 release-commands-explanation
     Where: in the Settings view
     As: https://docs.divio.com/en/latest/background/release-commands
 
@@ -12,7 +12,8 @@ Release commands (Beta)
 ..  note::
 
     Release commands are currently provided as a Beta feature, and are available only to users who have signed up for
-    access to Beta-release features.
+    access to Beta-release features. `Enable Beta features in your account settings
+    <https://control.divio.com/account/contact/>`_.
 
 
 What are release commands?

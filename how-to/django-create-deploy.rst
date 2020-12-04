@@ -43,7 +43,8 @@ Create a file named ``Dockerfile``, adding:
     COPY . /app
     RUN pip install -r requirements.txt
 
-(change the version of Python if required).
+Change the version of Python if required; you can also specify the underlying operating system components according
+to your requirements - see :ref:`manage-base-image-choosing`.
 
 
 ..  _django-create-deploy-requirements:

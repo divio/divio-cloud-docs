@@ -166,5 +166,6 @@ Troubleshooting
     :maxdepth: 1
 
     Debug cloud deployment problems <debug-deployment-problems>
+    Diagnose performance issues <diagnose-performance-issues>
     Identify and resolve a Python dependency conflict <debug-dependency-conflict>
     Get help when you have a problem <debug-request-help>
