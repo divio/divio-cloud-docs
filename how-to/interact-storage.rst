@@ -319,9 +319,8 @@ will be pushed too. This will however not usually present a problem.
 Pushing and pulling media files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`Divio CLI <divio-cli-ref>` includes :ref:`pull <divio-project-pull>`
-and :ref:`push <divio-project-push>` commands that target the test or live
-server as required.
+The :ref:`Divio CLI <divio-cli-command-ref>` includes ``pull`` and ``push`` commands that target the test or live server as
+required.
 
 ..  warning::
 

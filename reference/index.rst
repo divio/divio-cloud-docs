@@ -12,7 +12,6 @@ Divio software components
     divio-cli
     divio-api
     divio-components-shell
-    divio-dot-aldryn-file
     divio-environment-variables
 
 

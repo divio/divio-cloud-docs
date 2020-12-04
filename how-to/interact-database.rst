@@ -123,7 +123,7 @@ Interact with the Cloud database
 
         divio project pull db live  # or test
 
-    See the :ref:`divio project command reference <divio-cli-project-ref>` for more on using these
+    See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these
     commands.
 
 

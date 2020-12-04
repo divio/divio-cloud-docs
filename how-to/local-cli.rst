@@ -1,12 +1,15 @@
 ..  Do not change this document name!
+
     Referred to by: tutorial message 103 account-access-token
     Where: https://control.divio.com/account/desktop-app/access-token/
-    As: https://docs.divio.com/en/latest/how-to/local-cli/
 
     Referred to by: Readme of Divio CLI
     Where: https://github.com/divio/divio-cli/blob/master/README.md
-    As: https://docs.divio.com/en/latest/how-to/local-cli/
 
+    Referred to by: PyPI
+    Where: https://pypi.org/project/divio-cli/
+
+    As: https://docs.divio.com/en/latest/how-to/local-cli/
 
 .. _local-cli:
 
@@ -70,4 +73,34 @@ example, to set up a Cloud project locally::
 
   divio project setup <project slug>
 
-See the :ref:`reference guide <divio-cli-ref>`.
+Commonly used commands include those to push and pull database and media, for example::
+
+    divio project pull db
+
+    divio project push media
+
+Where appropriate, you can specify a particular environment (default is always Test)::
+
+    divio project push db live
+
+or even another project::
+
+    divio project pull db --remote-id
+
+Similarly, you can do things like view runtime logs::
+
+    divio project logs --tail live
+
+or open the project dashboard::
+
+    divio project dashboard
+
+or associate a local project with a cloud project::
+
+    divio project configure
+
+and to :ref:`manage environment variables <manage-environment-variables>`::
+
+    divio project env-vars
+
+See the :ref:`reference guide <divio-cli-ref>` for full details of commands and options.

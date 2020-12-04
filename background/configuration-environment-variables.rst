@@ -57,7 +57,7 @@ If any exist, they will be displayed thus::
     -------------------  -------
     SECURE_SSL_REDIRECT  True
 
-See the :ref:`divio project env-vars <divio-project-env-vars>` reference for
+See the :ref:`divio CLI command reference <divio-cli-command-ref>` reference for
 more.
 
 
