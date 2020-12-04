@@ -1,4 +1,5 @@
 click==7.0
+divio-cli==3.9.1
 divio-docs-theme==0.0.22
 pyenchant==3.1.1
 sphinx-autobuild==2020.9.1
