@@ -13,14 +13,18 @@
 
 .. _local-cli:
 
-How to get started with the Divio CLI
-================================================
+How to set up the Divio local development environment
+===============================================================
+
+This document guides you through the installation and basic configuration of components required to set up
+a working local evironment for Divio projects, so that you can run them on your own computer, and interact
+with the Divio Control Panel and the same projects deployed on our cloud infrastructure.
 
 ..  seealso::
 
-    If you are completely new to Divio, please see :ref:`our tutorial
-    <tutorial-installation>`, which guides you through installation and use of
-    the Divio CLI in more detail.
+    This document assumes you are a reasonably experienced software developer. If you are completely new to Divio and
+    the tools mentioned here, please see :ref:`our tutorial <tutorial-installation>`, which guides you through the
+    process in more detail.
 
 
 Pre-requisites
@@ -100,3 +104,15 @@ and to :ref:`manage environment variables <manage-environment-variables>`::
     divio project env-vars
 
 See the :ref:`reference guide <divio-cli-ref>` for full details of commands and options.
+
+
+Next steps for new users
+------------------------
+
+If you have a basic familiarity with Docker and cloud deployment, we recommend you follow the
+:ref:`django-create-deploy` guide for a concise, practical walk-through the process of configuring an application
+for local development and deployment to our cloud infrastructure.
+
+If Docker, containerisation and cloud deployment are new to you, we recommend that you work through our :ref:`detailed,
+beginner-oriented tutorial <introduction>`, which is designed to introduce all the concepts and tools you require in
+order to use our platform successfully.

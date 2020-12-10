@@ -13,7 +13,7 @@ Working in the local development environment
 .. toctree::
     :maxdepth: 1
 
-    Get started with the Divio CLI <local-cli>
+    Set up the Divio local development environment <local-cli>
     Run the local server in Live configuration <local-in-live-mode>
 
 
