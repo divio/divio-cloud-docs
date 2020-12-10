@@ -6,7 +6,7 @@ How to configure media serving on a custom domain
 By default, media files in Divio projects are served directly from our S3 cloud storage service,
 and the URL of each object will refer to that storage endpoint - for example, objects may be served
 from an S3 bucket which might have a domain like:
-``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io``.
+``example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io``.
 
 Some users may prefer or require that their media are served from their own domain, say
 ``media.example.com``.
@@ -41,7 +41,7 @@ and comfortable with their configuration. It's beyond the scope of our support t
 of how this should be done, however:
 
 * set up the Nginx configuration to proxy requests from (say) ``media.example.com`` to (say)
-  ``example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io``
+  ``example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io``
 * you *may* also need to configure header rewriting; some S3 hosts are stricter than others and
   may refuse to accept requests with the wrong heads
 

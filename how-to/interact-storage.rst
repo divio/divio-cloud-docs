@@ -7,7 +7,7 @@
         .highlight .segment {font-weight: bold;}
         .highlight .key {color: maroon}
         .highlight .secret {color: navy}
-        .highlight .bucketname {color: olive}
+        .highlight .bucketname {color: orange;}
         .highlight .region {color: green}
         .highlight .endpoint {color: brown}
         .highlight .code {font-style: italic}
@@ -69,9 +69,9 @@ parameters, for the hosts ``s3.amazonaws.com`` and ``sos.exo.io``:
 
     <div class="highlight-default notranslate">
     <div class="highlight manual">
-    <pre><span class="upperrow">s3://<span class="segment key">AKAIIEJALP7LUT6ODIJA</span>:<span class="segment secret">TZJYGCfUZheXG%2BwANMFabbotgBs6d2lxZW06OIbD</span>@<span class="segment bucketname">example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io</span>.<span class="segment endpoint">s3-<span class="segment region">eu-central-1</span>.amazonaws.com</span>/?domain=example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io</span>
-    <span class="code">              <span class="segment key">key</span>                            <span class="segment secret">secret</span>                                             <span class="segment bucketname">bucket name</span>                          <span class="segment region">region</span>       <span class="segment endpoint">endpoint</span></span>
-    <span class="lowerrow">s3://<span class="segment key">EXO52e55beb39187195ddff72219</span>:<span class="segment secret">iITF12F1t321tim9zBxITexrvL_bAghgK_z4w1hEuu00</span>@<span class="segment bucketname">example-test-765482644ac540dbb23367cf3837580b-f0596a8</span>.<span class="segment endpoint">sos-<span class="segment region">ch-dk-2</span>.exo.io</span>/?auth=s3</span></pre>
+    <pre><span class="upperrow">s3://<span class="segment key">AKAIIE7LUT6ODIJA</span>:<span class="segment secret">TZJYGCfUZheXG%2BwabbotgBs6d2lxZW06OIbD</span>@<span class="segment bucketname">example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io</span>.<span class="segment endpoint">s3-<span class="segment region">eu-central-1</span>.amazonaws.com</span>/?domain=example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io</span>
+    <span class="code">           <span class="segment key">key</span>                        <span class="segment secret">secret</span>                                       <span class="segment bucketname">bucket name</span>                          <span class="segment region">region</span>     <span class="segment endpoint">endpoint</span></span>
+    <span class="lowerrow">s3://<span class="segment key">EXO52e55b187195d</span>:<span class="segment secret">iITF12F1tim9zBxITexrvL_bAghgK_z4w1hEuu</span>@<span class="segment bucketname">example-test-765482644ac540dbb23367cf3837580b-f0596a8</span>.<span class="segment endpoint">sos-<span class="segment region">ch-dk-2</span>.exo.io</span>/?auth=s3</span></pre>
     </div>
     </div>
 
@@ -165,15 +165,15 @@ Interact with your storage
 Run ``aws s3`` followed by options, commands and parameters. For example, to list the contents of a
 bucket::
 
-    ➜ aws s3 ls example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io
+    ➜ aws s3 ls example-test-68564d3f78d0935f-8f20b19.aldryn-media.io
            PRE filer_public/
            PRE filer_public_thumbnails/
 
 
 Or, to copy (``cp``) a file from your own computer to S3::
 
-    ➜ aws s3 cp example.png s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
-    upload: ./example.png to s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io/example.png
+    ➜ aws s3 cp example.png s3://example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io/example.png
+    upload: ./example.png to s3://example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io/example.png
 
 ..  admonition:: Using AWS CLI with other providers
 
@@ -234,7 +234,7 @@ Interact with your storage
 Run ``s3cmd`` followed by options, commands and parameters. For example, to list the contents of a
 bucket::
 
-    s3cmd ls s3://example-test-68564d3f78d04cd2935f-8f20b19.aldryn-media.io
+    s3cmd ls s3://example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io
 
 Note that the scheme (``s3://``) is required in front of the bucket name.
 
