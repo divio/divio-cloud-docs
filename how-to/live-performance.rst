@@ -105,5 +105,5 @@ When the site is idling in cheaper mode, uWSGI will dismiss unneeded web workers
 recommended configuration for most projects. In some circumstances however it can be advantageous to disable this mode,
 or adjust its settings.
 
-This is generally only applicable to constant high-traffic sites. Please contact Divio support if you feel you need to
+This is generally only applicable to constant high-traffic sites. Please take care if you feel you need to
 disable cheaper mode or modify its settings, as misconfiguration can have adverse results.
