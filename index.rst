@@ -89,8 +89,35 @@ Divio developer handbook
 **Technical reference.** Covers tools, components, commands and resources.
 
 
+Additional resources
+--------------------
 
 ..  rst-class:: clearfix row
+
+..  rst-class:: column column2
+
+Divio Community Slack
+~~~~~~~~~~~~~~~~~~~~~
+
+The Divio Community Slack group is for all Divio users.
+
+..  raw:: html
+
+    <a class="btn btn-primary" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
+
+
+..  rst-class:: column column2
+
+The Divio API
+~~~~~~~~~~~~~
+
+The Divio API is a powerful tool for interacting with our infrastructure and your projects.
+
+See:
+
+* :ref:`use-divio-api` in this documentation
+* the `Divio API reference documentation <https://api.docs.divio.com>`_
+
 
 About the Divio cloud deployment platform
 -----------------------------------------
