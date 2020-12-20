@@ -107,7 +107,7 @@ For example::
       - ".:/app:rw"
       - "./data:/data:rw"
 
-will mount the entire project code (at the relative path ``.``) as the ``/app`` directory inside the container, *even
+will mount the entire project code (at the relative path ``.``) as the ``/app`` directory inside the container, even
 if there was already an ``/app`` directory there*, in *read-write* mode (i.e. the container can write as well as
 read files on the host).
 
