@@ -13,6 +13,7 @@ Our infrastructure
     Docker basics <docker-basics>
     IP addresses <ip-addresses>
     Cron jobs <cron-jobs>
+    Maintenance operations <maintenance>
 
 
 Cloud management
