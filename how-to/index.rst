@@ -17,6 +17,16 @@ Working in the local development environment
     Run the local server in Live configuration <local-in-live-mode>
 
 
+Deploy an application on Divio
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Migrate/create and deploy a Django project <django-create-deploy>
+    Migrate/create and deploy a Flask project <flask-create-deploy>
+
+
 Building your Docker application
 ----------------------------------------
 
@@ -63,7 +73,6 @@ For Django-based projects.
 .. toctree::
     :maxdepth: 1
 
-    Migrate/create and deploy a Django project <django-create-deploy>
     Create a multi-site Django project using Mirrors <django-multisite-mirrors>
     Go-live checklist for Django projects <live-checklist>
 
@@ -78,7 +87,6 @@ For all Python-based in general, including those using Django and the Aldryn add
 .. toctree::
     :maxdepth: 1
 
-    Migrate/create and deploy a Flask project <flask-create-deploy>
     Install Python dependencies <install-python-dependencies>
     Pin all of your project's Python dependencies <resources-pin-dependencies>
 
