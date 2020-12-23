@@ -5,7 +5,9 @@ sphinxcontrib-spelling==7.0.1
 sphinxcontrib-mermaid
 
 # divio-docs-theme==0.0.22
-https://github.com/FinalAngel/docs-theme/archive/new-theme.zip#egg=furo
+# https://github.com/FinalAngel/docs-theme/archive/new-theme.zip#egg=furo
+# https://gitlab.com/divio/cloud/docs-theme/-/archive/master/docs-theme-master.zip#egg=furo
+https://github.com/divio/docs-theme/archive/new-theme.zip#egg=furo
 sphinx-rtd-theme==0.5.0
 
 pyenchant==3.1.1
