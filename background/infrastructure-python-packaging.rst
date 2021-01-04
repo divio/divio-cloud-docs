@@ -170,23 +170,6 @@ installation commands; then, it would be added to the ``Dockerfile`` just before
   RUN pip install jupyter==1.0.0
 
 
-Bypassing the proxy altogether
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This is not recommended, but the default installation commands can be replaced with:
-
-..  code-block:: Dockerfile
-
-    RUN pip install --requirement requirements.in
-
-Our standard ``Dockerfile`` for Python/Django projects contains::
-
-    ENV PIP_INDEX_URL=${PIP_INDEX_URL:-https://wheels.aldryn.net/v1/aldryn-extras+pypi/${WHEELS_PLATFORM:-aldryn-baseproject-py3}/+simple/} \
-        WHEELSPROXY_URL=${WHEELSPROXY_URL:-https://wheels.aldryn.net/v1/aldryn-extras+pypi/${WHEELS_PLATFORM:-aldryn-baseproject-py3}/}
-
-Removing this will use PyPI instead of our own PyPI server.
-
-
 Caching
 -------
 
