@@ -85,8 +85,7 @@ deployment failure.
 Failures
 --------
 
-On deployment, a release command that produces an error will be shown in the deployment log under the ``docker migrate
-release`` heading, for example:
+On deployment, a release command that produces an error will be shown in the deployment log under the ``docker release commands`` heading, for example:
 
 ..  code-block:: text
 
