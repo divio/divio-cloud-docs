@@ -186,6 +186,10 @@ Our standard ``Dockerfile`` for Python/Django projects contains::
 
 Removing this will use PyPI instead of our own PyPI server.
 
+..  important::
+
+    If you plan to deploy your changes in Divio's infrastructure, you will need to remove the ``# <PYTHON>`` comments to avoid the automatic population mechanism overwriting your changes as described here :ref:`how-the-dockerfile-is-automatically-populated`
+
 
 Caching
 -------
