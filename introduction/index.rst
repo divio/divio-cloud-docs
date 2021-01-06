@@ -8,6 +8,7 @@
 
 .. _introduction:
 
+
 Get started
 ===========
 
@@ -16,95 +17,80 @@ deployment and management as a developer, from setting up a project locally to d
 cloud. It assumes you are comfortable with the command line, and understand the basics of using SSH keys, Git
 and so on.
 
+
+..  toctree::
+    :hidden:
+    :maxdepth: 2
+
+    Installation <01-installation>
+    Django <django/index>
+    Aldryn <aldryn/index>
+    Wagtail <wagtail/index>
+    Laravel <laravel/index>
+
+
 **Before you do anything else, start here.** The local development environment is where you'll be doing most of your
 work.
 
-..  toctree::
-    :maxdepth: 1
-
-    01-installation
+* :doc:`/introduction/01-installation`
 
 Next, select your path through the tutorial.
 
-|
 
-.. tab:: Django
+..  tab:: Django
 
-   .. raw:: html
+    ..  raw:: html
 
-      <h2>Get started with Django</h2>
+        <h2>Get started with Django</h2>
 
-   This tutorial is recommended as an introduction for all Python/Django developers.
+    This tutorial is recommended as an introduction for all Python/Django developers.
 
-   .. toctree::
-       :maxdepth: 1
-       :numbered: 1
-
-       django-02-create-project
-       django-03-setup-project-locally
-       django-04-deploy
-       django-05-database
-       django-06-static
-       django-07-media
-       django-08-refinements
-
-   .. _aldryn-django-chapters:
-
-.. tab:: Django with Aldryn
-
-   .. raw:: html
-
-      <h2>Get started with Django, using Aldryn</h2>
-
-   Aldryn is our auto-configuration framework for Django.
-
-   .. toctree::
-       :maxdepth: 1
-       :numbered: 1
-
-       aldryn-django-02-create-project
-       aldryn-django-03-setup-project-locally.rst
-       aldryn-django-04-add-application
-       aldryn-django-05-more-complex-configuration
-
-   .. _wagtail:
-
-.. tab:: Wagtail
-
-   .. raw:: html
-
-      <h2>Get started with Wagtail</h2>
-
-   Aldryn is our auto-configuration framework for Django. Wagtail is one of the 
-   most popular Django-based content management systems.
-
-   .. toctree::
-       :maxdepth: 1
-       :numbered: 1
-
-       wagtail-02-create-project
-       wagtail-03-setup-project-locally
-       wagtail-04-add-application
-
-   .. _php-laravel:
-
-.. tab:: PHP/Laravel, using Flavours
-
-   .. raw:: html
-
-      <h2>Get started with PHP/Laravel, using Flavours</h2>
-
-   `Flavours <https://flavours.dev>`_ is an open specification for web application configuration>.
-
-   .. toctree::
-       :maxdepth: 1
-       :numbered: 1
-
-       laravel-02-create-project
-       laravel-03-setup-project-locally
-       laravel-04-add-application
-       laravel-05-flavours
-
-   .. _django:
+    #. :doc:`/introduction/django/django-02-create-project`
+    #. :doc:`/introduction/django/django-03-setup-project-locally`
+    #. :doc:`/introduction/django/django-04-deploy`
+    #. :doc:`/introduction/django/django-05-database`
+    #. :doc:`/introduction/django/django-06-static`
+    #. :doc:`/introduction/django/django-07-media`
+    #. :doc:`/introduction/django/django-08-refinements`
 
 
+..  tab:: Django, using Aldryn
+
+    .. raw:: html
+
+       <h2>Get started with Django, using Aldryn</h2>
+
+    Aldryn is our auto-configuration framework for Django.
+
+    #. :doc:`/introduction/aldryn/aldryn-django-02-create-project`
+    #. :doc:`/introduction/aldryn/aldryn-django-03-setup-project-locally`
+    #. :doc:`/introduction/aldryn/aldryn-django-04-add-application`
+    #. :doc:`/introduction/aldryn/aldryn-django-05-more-complex-configuration`
+
+
+..  tab:: Wagtail, using Aldryn
+
+    .. raw:: html
+
+       <h2>Get started with Wagtail</h2>
+
+    Aldryn is our auto-configuration framework for Django. Wagtail is one of the
+    most popular Django-based content management systems.
+
+    #. :doc:`/introduction/wagtail/wagtail-02-create-project`
+    #. :doc:`/introduction/wagtail/wagtail-03-setup-project-locally`
+    #. :doc:`/introduction/wagtail/wagtail-04-add-application`
+
+
+..  tab:: PHP/Laravel, using Flavours
+
+    .. raw:: html
+
+       <h2>Get started with PHP/Laravel, using Flavours</h2>
+
+    `Flavours <https://flavours.dev>`_ is an open specification for web application configuration.
+
+    #. :doc:`/introduction/laravel/laravel-02-create-project`
+    #. :doc:`/introduction/laravel/laravel-03-setup-project-locally`
+    #. :doc:`/introduction/laravel/laravel-04-add-application`
+    #. :doc:`/introduction/laravel/laravel-05-flavours`

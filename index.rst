@@ -61,7 +61,6 @@ that supports Docker.
 
 
 .. toctree::
-    :maxdepth: 1
     :hidden:
 
     introduction/index
