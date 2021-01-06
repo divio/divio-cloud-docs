@@ -66,8 +66,7 @@ Use the ``--all`` flag to include automatically applied variables, for example:
 
 
 
-See the Divio CLI :ref:`divio project env-vars <divio-project-env-vars>` reference for further
-information.
+See the :ref:`divio-cli-command-ref` reference for further information.
 
 
 Using the Control Panel
@@ -111,8 +110,7 @@ or to specify an environment with the ``-s`` option:
 
     divio project env-vars -s live --set example_url https://www.example.com
 
-See the Divio CLI :ref:`divio project env-vars <divio-project-env-vars>` reference for further
-information.
+See the :ref:`divio-cli-command-ref` reference for further information.
 
 
 Using the Control Panel

@@ -66,9 +66,9 @@ version control system.
 
 ..  important::
 
-    More recent versions of `pip tools <https://pypi.org/project/pip-tools/>`_ as used in the Divio base projects
-    require you to use URLS that provide the ``egg`` fragment (as shown in the examples below), and will raise an error
-    if they encounter URLs lacking it. Older versions would allow you to omit the fragment.
+    More recent versions of `pip tools <https://pypi.org/project/pip-tools/>`_ as used in the Divio base projects require you to use
+    URLS that provide both the ``egg`` fragment and the version fragment (for example, ``#egg=package-name==1.0``), and will raise an
+    error if they encounter URLs lacking it. Older versions would allow you to omit the fragment.
 
 
 Examples from GitHub
@@ -76,23 +76,23 @@ Examples from GitHub
 
 Master branch, as tarball::
 
-    https://github.com/account/repository/archive/master.tar.gz#egg=package-name
+    https://github.com/account/repository/archive/master.tar.gz#egg=package-name==1.0
 
 or as a zipped archive::
 
-    https://github.com/account/repository/archive/master.zip#egg=package-name
+    https://github.com/account/repository/archive/master.zip#egg=package-name==1.0
 
 Specify a different branch::
 
-    https://github.com/account/repository/archive/develop.zip#egg=package-name
+    https://github.com/account/repository/archive/develop.zip#egg=package-name==1.0
 
 However, we :ref:`very strongly recommend <pinning-dependencies>` specifying either a tag::
 
-    https://github.com/account/repository/archive/1.6.0.zip#egg=package-name
+    https://github.com/account/repository/archive/1.6.0.zip#egg=package-name==1.0
 
 or a commit::
 
-    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name
+    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name==1.0
 
 .. _vcs-protocol-support:
 

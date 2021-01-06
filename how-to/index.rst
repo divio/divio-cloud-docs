@@ -13,8 +13,18 @@ Working in the local development environment
 .. toctree::
     :maxdepth: 1
 
-    Get started with the Divio CLI <local-cli>
+    Set up the Divio local development environment <local-cli>
     Run the local server in Live configuration <local-in-live-mode>
+
+
+Deploy an application on Divio
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Migrate/create and deploy a Django project <django-create-deploy>
+    Migrate/create and deploy a Flask project <flask-create-deploy>
 
 
 Building your Docker application
@@ -34,14 +44,13 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Django</h3>
+      <h3>Django</h3>
 
    For Django-based projects.
 
    .. toctree::
        :maxdepth: 1
 
-       Migrate/create and deploy a Django project <django-create-deploy>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
        Go-live checklist for Django projects <live-checklist>
 
@@ -49,14 +58,13 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Python</h3>
+      <h3>Python</h3>
 
-   For all Python-based in general, including those using Django and the Aldryn addons framework.
+   For Python-based projectsin general, including those using Django and the Aldryn addons framework.
 
    .. toctree::
        :maxdepth: 1
 
-       Migrate/create and deploy a Flask project <flask-create-deploy>
        Install Python dependencies <install-python-dependencies>
        Pin all of your project's Python dependencies <resources-pin-dependencies>
 
@@ -64,7 +72,7 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Aldryn</h3>
+      <h3>Aldryn</h3>
 
    For Django-based projects using the Aldryn addons framework.
 
@@ -89,7 +97,7 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Node.js</h3>
+      <h3>Node.js</h3>
 
    .. toctree::
        :maxdepth: 1

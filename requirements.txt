@@ -1,16 +1,12 @@
-Sphinx==3.3.0
-sphinx-autobuild==2020.9.1
-sphinx-inline-tabs
-sphinxcontrib-spelling==7.0.1
-sphinxcontrib-mermaid
-
-# divio-docs-theme==0.0.22
-# https://github.com/FinalAngel/docs-theme/archive/new-theme.zip#egg=furo
-# https://gitlab.com/divio/cloud/docs-theme/-/archive/master/docs-theme-master.zip#egg=furo
-#-e git+https://github.com/divio/docs-theme.git/@new-theme#egg=furo
-
 https://github.com/divio/docs-theme/archive/new-theme-increased-depth.zip#egg=furo
 
-sphinx-rtd-theme==0.5.0
-
+click==7.0
+divio-cli==3.9.1
 pyenchant==3.1.1
+sphinx-autobuild==2020.9.1
+sphinx-click
+sphinx-rtd-theme==0.5.0
+Sphinx==3.3.1
+sphinxcontrib-mermaid==0.5.0
+sphinxcontrib-spelling==7.0.1
+sphinx-inline-tabs
