@@ -3,15 +3,13 @@
 How to add a Django application to an Aldryn project
 =========================================================
 
+This article applies to projects using the Aldryn framework only.
+
 ..  note::
 
     This article assumes you are already familiar with the steps involved. For
     a full walk-through, see the :ref:`tutorial-add-applications` section of
     the :ref:`developer tutorial <introduction>`.
-
-The recommended way of installing Django applications is to use a Divio
-addon - an application that has already been packaged for easy installation in
-our projects.
 
 If an addon has not yet been created for the application you require, you have
 two options:
