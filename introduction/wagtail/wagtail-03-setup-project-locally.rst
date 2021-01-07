@@ -1,10 +1,6 @@
 :sequential_nav: both
 
-.. _tutorial-setup-project-locally:
-.. _replicate-project-locally:
-
-
-..  include:: includes/03-local-1-set-up.rst
+..  include:: /introduction/includes/03-local-1-set-up.rst
 
 
 Start the local project
@@ -43,8 +39,7 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 
 ``CONTROL-C`` will stop the project.
 
-
-..  include:: includes/03-local-2-useful-commands.rst
+..  include:: /introduction/includes/03-local-2-useful-commands.rst
 
 
 ..  code-block:: bash
@@ -54,4 +49,4 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 which will open a Django shell in the ``web`` container.
 
 
-..  include:: includes/03-local-3-next.rst
+..  include:: /introduction/includes/03-local-3-next.rst

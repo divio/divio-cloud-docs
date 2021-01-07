@@ -1,10 +1,14 @@
-click==7.0
-divio-cli==3.9.1
-divio-docs-theme==0.0.22
-pyenchant==3.1.1
-sphinx-autobuild==2020.9.1
-sphinx-click
-sphinx-rtd-theme==0.5.0
 Sphinx==3.3.1
-sphinxcontrib-mermaid==0.5.0
+sphinx-autobuild==2020.9.1
+sphinx-inline-tabs
 sphinxcontrib-spelling==7.0.1
+sphinxcontrib-mermaid==0.5.0
+sphinx-click
+click==7.0
+
+divio-cli==3.9.1
+# divio-docs-theme==0.0.22
+https://github.com/divio/docs-theme/archive/new-theme.zip#egg=furo
+sphinx-rtd-theme==0.5.0
+
+pyenchant==3.1.1

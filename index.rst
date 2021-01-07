@@ -1,61 +1,8 @@
-..  raw:: html
-
-    <style>
-        .row {clear: both}
-
-        .column img {border: 1px solid black;}
-
-        @media only screen and (min-width: 1000px),
-               only screen and (min-width: 500px) and (max-width: 768px){
-
-            .column {
-                padding-left: 5px;
-                padding-right: 5px;
-                float: left;
-            }
-
-            .column2  {
-                width: 50%;
-            }
-        }
-
-        .main-visual {
-            margin-bottom: 0 !important;
-        }
-
-        .embed-responsive {
-          position: relative;
-          width: 100%;
-        }
-          .embed-responsive:before {
-            display: block;
-            content: "";
-          }
-        .embed-responsive-item,
-        .embed-responsive iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .embed-responsive-16by9::before {
-            padding-top: 56.25%;
-        }
-        .embed-responsive-4by3::before {
-            padding-top: 75%;
-        }
-
-    </style>
-
-
 Divio developer handbook
 ==============================
 
 
-..  rst-class:: clearfix row
-
-..  rst-class:: column column2
+..  rst-class:: column
 
 
 :ref:`Get started <introduction>`
@@ -64,7 +11,8 @@ Divio developer handbook
 **Tutorials.** A hands-on introduction to Divio for developers. *Recommended for all new users.*
 
 
-..  rst-class:: column column2
+..  rst-class:: column
+
 
 :ref:`How-to guides <how-to>`
 -------------------------------------------------------
@@ -72,8 +20,7 @@ Divio developer handbook
 **Step-by-step guides.** Covers key tasks and operations and common problems.
 
 
-..  rst-class:: clearfix row
-..  rst-class:: column column2
+..  rst-class:: column clearfix
 
 :ref:`Background <background>`
 -------------------------------------------------------
@@ -81,7 +28,7 @@ Divio developer handbook
 **Explanation.** Clarification and discussion of key topics.
 
 
-..  rst-class:: column column2
+..  rst-class:: column
 
 :ref:`Reference <reference>`
 -------------------------------------------------------
@@ -89,12 +36,12 @@ Divio developer handbook
 **Technical reference.** Covers tools, components, commands and resources.
 
 
+..  rst-class:: clearfix row custon-headings
+
 Additional resources
 --------------------
 
-..  rst-class:: clearfix row
-
-..  rst-class:: column column2
+..  rst-class:: column
 
 Divio Community Slack
 ~~~~~~~~~~~~~~~~~~~~~
@@ -103,17 +50,14 @@ The Divio Community Slack group is for all Divio users.
 
 ..  raw:: html
 
-    <a class="btn btn-primary" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
+    <a class="btn btn-primary btn-small" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
 
-
-..  rst-class:: column column2
+..  rst-class:: column
 
 The Divio API
 ~~~~~~~~~~~~~
 
-The Divio API is a powerful tool for interacting with our infrastructure and your projects.
-
-See:
+The Divio API is a powerful tool for interacting with our infrastructure and your projects. See:
 
 * :ref:`use-divio-api` in this documentation
 * the `Divio API reference documentation <https://api.docs.divio.com>`_
@@ -142,7 +86,6 @@ that supports Docker.
 
 
 .. toctree::
-    :maxdepth: 1
     :hidden:
 
     introduction/index
