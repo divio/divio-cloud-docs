@@ -17,18 +17,18 @@ The principles covered by the tutorial will apply to any other development stack
      our guide :ref:`How to create and deploy a Django project <django-create-deploy>` is probably more appropriate.
 
 
-..  include:: includes/02-create-1-set-up.rst
+..  include:: /introduction/includes/02-create-1-set-up.rst
 
 
 * *Platform*: ``Build your own``
 * *Project type*: ``None``
 
 
-..  include:: includes/02-create-2-git-environments.rst
+..  include:: /introduction/includes/02-create-2-git-environments.rst
 
 
 This project is empty, so though you can try deploying it, that will fail (it will fail because the deployment process
 checks for a successful start up, and so far, there isn't anything to start).
 
 
-..  include:: includes/02-create-4-deployment-dashboard.rst
+..  include:: /introduction/includes/02-create-4-deployment-dashboard.rst

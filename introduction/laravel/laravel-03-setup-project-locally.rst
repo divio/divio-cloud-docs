@@ -4,7 +4,7 @@
 .. _replicate-laravel-project-locally:
 
 
-..  include:: includes/03-local-1-set-up.rst
+..  include:: /introduction/includes/03-local-1-set-up.rst
 
 
 .. _laravel-set-up-script:
@@ -50,7 +50,7 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 
 ``CONTROL-C`` will stop the project.
 
-..  include:: includes/03-local-2-useful-commands.rst
+..  include:: /introduction/includes/03-local-2-useful-commands.rst
 
 
 ..  code-block:: bash
@@ -61,4 +61,4 @@ This will run the ``composer install`` inside the container (in fact this is one
 script you ran earlier).
 
 
-..  include:: includes/03-local-3-next.rst
+..  include:: /introduction/includes/03-local-3-next.rst

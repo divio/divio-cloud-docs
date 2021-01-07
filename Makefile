@@ -42,7 +42,6 @@ html:
 	. $(VENV); $(SPHINXBUILD) -b html . _build/html
 
 open:
-
 	open $(BUILDDIR)/html/index.html
 
 test:

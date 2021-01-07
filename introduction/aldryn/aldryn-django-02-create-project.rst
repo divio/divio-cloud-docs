@@ -18,7 +18,7 @@ configuration and integration with cloud services such as database, media storag
     <tutorial-django-set-up>` instead.
 
 
-..  include:: includes/02-create-1-set-up.rst
+..  include:: /introduction/includes/02-create-1-set-up.rst
 
 
 * *Platform*: ``Python 3.x``
@@ -32,9 +32,9 @@ configuration and integration with cloud services such as database, media storag
     selected by default in Divio projects.
 
 
-..  include:: includes/02-create-2-git-environments.rst
+..  include:: /introduction/includes/02-create-2-git-environments.rst
 
-..  include:: includes/02-create-3-deploy-open.rst
+..  include:: /introduction/includes/02-create-3-deploy-open.rst
 
 
 Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
@@ -45,4 +45,4 @@ Divio**. You'll see the familiar Django admin for a new project.
    :class: 'main-visual'
 
 
-..  include:: includes/02-create-4-deployment-dashboard.rst
+..  include:: /introduction/includes/02-create-4-deployment-dashboard.rst

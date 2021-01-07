@@ -24,7 +24,7 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
     *  :ref:`using the Aldryn Django framework <tutorial-aldryn-set-up>`.
 
 
-..  include:: includes/02-create-1-set-up.rst
+..  include:: /introduction/includes/02-create-1-set-up.rst
 
 
 * *Platform*: ``Python 3.x``
@@ -36,9 +36,9 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
     available.
 
 
-..  include:: includes/02-create-2-git-environments.rst
+..  include:: /introduction/includes/02-create-2-git-environments.rst
 
-..  include:: includes/02-create-3-deploy-open.rst
+..  include:: /introduction/includes/02-create-3-deploy-open.rst
 
 
 Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
@@ -54,4 +54,4 @@ More interesting are the admin pages:
    :class: 'main-visual'
 
 
-..  include:: includes/02-create-4-deployment-dashboard.rst
+..  include:: /introduction/includes/02-create-4-deployment-dashboard.rst
