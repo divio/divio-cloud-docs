@@ -30,7 +30,7 @@ from a local project. The default connection is to the ``test`` environment, but
 name. An instance of your web application will be spun up in a new container, and after a moment you'll be logged in to
 it as ``root``.
 
-You can also :ref:`specify a remote project <divio-project-ssh>`.
+You can also specify a remote project with the ``--remote-id`` option.
 
 SSH sessions are limited to 30 minutes, regardless of any activity.
 

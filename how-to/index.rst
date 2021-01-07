@@ -13,8 +13,18 @@ Working in the local development environment
 .. toctree::
     :maxdepth: 1
 
-    Get started with the Divio CLI <local-cli>
+    Set up the Divio local development environment <local-cli>
     Run the local server in Live configuration <local-in-live-mode>
+
+
+Deploy an application on Divio
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Migrate/create and deploy a Django project <django-create-deploy>
+    Migrate/create and deploy a Flask project <flask-create-deploy>
 
 
 Building your Docker application
@@ -41,7 +51,6 @@ Platform-specific guides
    .. toctree::
        :maxdepth: 1
 
-       Migrate/create and deploy a Django project <django-create-deploy>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
        Go-live checklist for Django projects <live-checklist>
 
@@ -56,7 +65,6 @@ Platform-specific guides
    .. toctree::
        :maxdepth: 1
 
-       Migrate/create and deploy a Flask project <flask-create-deploy>
        Install Python dependencies <install-python-dependencies>
        Pin all of your project's Python dependencies <resources-pin-dependencies>
 
@@ -83,7 +91,6 @@ Platform-specific guides
        Fine-tune uWSGI server performance <uwsgi-performance>
        Package an application as an Aldryn addon <addon-create>
        Update an existing Aldryn addon <addon-update-existing>
-
 
 .. tab:: Node.js
 

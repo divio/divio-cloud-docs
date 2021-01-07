@@ -41,6 +41,10 @@ run:
 html:
 	. $(VENV); $(SPHINXBUILD) -b html . _build/html
 
+open:
+
+	open $(BUILDDIR)/html/index.html
+
 test:
 	. $(VENV); sphinx-build -b html . _build/html
 
