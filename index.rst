@@ -43,26 +43,28 @@ Additional resources
 
 ..  rst-class:: column
 
-Divio Community Slack
-~~~~~~~~~~~~~~~~~~~~~
-
-The Divio Community Slack group is for all Divio users.
-
 ..  raw:: html
 
-    <a class="btn btn-primary" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
+    <h3 class="mt-0">Divio Community Slack</h3>
+
+    <p>The Divio Community Slack group is for all Divio users.</p>
+
+    <a class="btn btn-primary btn-small" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
+
+    <p>&nbsp;</p>
 
 ..  rst-class:: column
 
-The Divio API
-~~~~~~~~~~~~~
+..  raw:: html
 
-The Divio API is a powerful tool for interacting with our infrastructure and your projects.
+    <h3 class="mt-0">The Divio API</h3>
 
-See:
+    <p>The Divio API is a powerful tool for interacting with our infrastructure and your projects. See:</p>
 
-* :ref:`use-divio-api` in this documentation
-* the `Divio API reference documentation <https://api.docs.divio.com>`_
+    <ul>
+        <li><a href="/how-to/use-api/#use-divio-api">How to use the Divio API</a> in this documentation</li>
+        <li><a href="https://api.docs.divio.com">Divio API reference documentation</a></li>
+    </ul>
 
 
 About the Divio cloud deployment platform
