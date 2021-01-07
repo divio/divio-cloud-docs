@@ -16,6 +16,9 @@ sys.path.insert(0, os.path.abspath("."))
 # -- Project information ------------------------------------------------------
 #
 
+# Add any paths that contain templates here, relative to this directory.
+# templates_path = ['_templates']
+
 project = "Developer Handbook"
 full_title = project + " Documentation"
 copyright = "2017-2020, Divio"
@@ -35,6 +38,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinxcontrib.mermaid",
     "sphinx_inline_tabs",
+    "sphinx_click",
 ]
 
 if "spelling" in sys.argv:

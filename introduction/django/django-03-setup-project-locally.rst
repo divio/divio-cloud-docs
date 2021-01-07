@@ -4,7 +4,7 @@
 .. _replicate-project-locally:
 
 
-..  include:: includes/03-local-1-set-up.rst
+..  include:: /introduction/includes/03-local-1-set-up.rst
 
 
 Install Python and Django using the ``Dockerfile``
@@ -163,7 +163,7 @@ line in the ``docker-compose.yml`` file. Note that it's not necessary to rebuild
 Restore the ``command`` line in the ``docker-compose.yml`` file before continuing.
 
 
-..  include:: includes/03-local-2-useful-commands.rst
+..  include:: /introduction/includes/03-local-2-useful-commands.rst
 
 
 ..  code-block:: bash
@@ -173,4 +173,4 @@ Restore the ``command`` line in the ``docker-compose.yml`` file before continuin
 which will open a Django shell in the ``web`` container.
 
 
-..  include:: includes/03-local-3-next.rst
+..  include:: /introduction/includes/03-local-3-next.rst

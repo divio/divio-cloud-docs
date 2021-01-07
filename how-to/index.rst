@@ -44,7 +44,7 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Django</h3>
+      <h3>Django</h3>
 
    For Django-based projects.
 
@@ -58,9 +58,9 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Python</h3>
+      <h3>Python</h3>
 
-   For all Python-based in general, including those using Django and the Aldryn addons framework.
+   For Python-based projectsin general, including those using Django and the Aldryn addons framework.
 
    .. toctree::
        :maxdepth: 1
@@ -72,7 +72,7 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Aldryn</h3>
+      <h3>Aldryn</h3>
 
    For Django-based projects using the Aldryn addons framework.
 
@@ -96,7 +96,7 @@ Platform-specific guides
 
    .. raw:: html
 
-      <h3>Get started with Node.js</h3>
+      <h3>Node.js</h3>
 
    .. toctree::
        :maxdepth: 1

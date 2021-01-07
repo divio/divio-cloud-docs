@@ -47,7 +47,7 @@ list:
     ])
 
 
-..  include:: includes/04-add-application-django-01.rst
+..  include:: /introduction/includes/04-add-application-django-01.rst
 
 
 Run migrations
@@ -103,7 +103,7 @@ that it works correctly, you can deploy the Live server too:
     divio project deploy live
 
 
-..  include:: includes/04-add-application-push-01.rst
+..  include:: /introduction/includes/04-add-application-push-01.rst
 
 
 --------------
