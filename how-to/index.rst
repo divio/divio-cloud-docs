@@ -61,8 +61,7 @@ Platform-specific guides
 
       <h3>Get started with Python</h3>
 
-      Create a multi-site Django project using Mirrors <django-multisite-mirrors>
-      Go-live checklist for Django projects <live-checklist>
+   For all Python-based in general, including those using Django and the Aldryn addons framework.
 
    .. toctree::
        :maxdepth: 1
@@ -77,8 +76,7 @@ Platform-specific guides
 
       <h3>Get started with Aldryn</h3>
 
-      Install Python dependencies <install-python-dependencies>
-      Pin all of your project's Python dependencies <resources-pin-dependencies>
+   For Django-based projects using the Aldryn addons framework.
 
    .. toctree::
        :maxdepth: 1
