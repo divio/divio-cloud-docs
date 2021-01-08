@@ -40,33 +40,21 @@ Building your Docker application
 Platform-specific guides
 ----------------------------------------
 
-.. tab:: Django
+.. tab:: Python and Django
 
    .. raw:: html
 
-      <h3>Django</h3>
+      <h3>Python and Django</h3>
 
    For Django-based projects.
 
    .. toctree::
        :maxdepth: 1
 
+       Install Python dependencies <install-python-dependencies>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
        Go-live checklist for Django projects <live-checklist>
 
-.. tab:: Python
-
-   .. raw:: html
-
-      <h3>Python</h3>
-
-   For Python-based projectsin general, including those using Django and the Aldryn addons framework.
-
-   .. toctree::
-       :maxdepth: 1
-
-       Install Python dependencies <install-python-dependencies>
-       Pin all of your project's Python dependencies <resources-pin-dependencies>
 
 .. tab:: Aldryn
 

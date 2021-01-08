@@ -5,74 +5,181 @@ How to install Python dependencies in a project
 
 ..  seealso::
 
-    * :ref:`Adding applications to a project <tutorial-add-applications>` in our tutorial
     * :ref:`How to install system packages <install-system-packages>`
 
-To install dependencies in a project, you must first :ref:`list-dependencies`, then
-:ref:`process-dependencies`. Both steps are described below.
+It's beyond the scope of this documentation to discuss all the ways in which Python dependencies can be installed in
+Divio projects. However, the options described here are sufficient to cover most needs.
 
-.. _list-dependencies:
+If you are using Aldryn Django, refer to the section :ref:`python-packages-aldryn` below.
 
-List your dependencies
-----------------------
 
-Your Divio project has a ``requirements.in`` file, processed by the ``pip-compile`` command
-from `pip-tools <https://github.com/jazzband/pip-tools>`_ when the project is built.
+``pip install`` and ``requirements.txt``
+----------------------------------------
 
-Place your dependencies in the file, making sure that they are *outside* the::
+The simplest option is to list Python requirements in a ``requirements.txt`` file, and include the command:
 
-    # <INSTALLED_ADDONS>...
+..  code-block:: Dockerfile
 
+    RUN pip install -r requirements.txt
+
+in the ``Dockerfile``. See :ref:`django-create-deploy` for an example.
+
+However this is only adequate as a quick expedient in the early stages of development and is **not recommended** beyond
+that, as it does not allow for complete pinning of all dependencies.
+
+
+.. _pinning-dependencies-good-practice:
+.. _manage-dependencies:
+
+Pin all dependencies
+--------------------
+
+..  warning::
+
+    Unpinned dependencies are the **number one cause of deployment failures**. Nothing in the
+    codebase may have changed, but a fresh build can unexpectedly pick up a newly-released
+    version of a package.
+
+All Python dependencies, including implicit sub-dependencies, should be pinned to particular versions.
+
+If any dependency is *unpinned* (that is, a particular version is not specified in the project's requirements) ``pip``
+will install the latest version it finds, even if a different version was previously installed. This can cause your
+your project to fail with an deployment error or worse, a runtime error, the next time it is built - *even if you
+didn't change anything in it yourself*.
+
+To pin all dependencies, your project's requirements should be compiled to a complete list of explicitly specified
+package versions. This list should then be committed in the project repository, and not be changed until you need to
+update dependencies.
+
+
+With ``pip``
+~~~~~~~~~~~~
+
+Once you are able to build and run your application successfully, you know have a working set of Python dependencies
+installed. Use ``pip freeze`` to write them in a new file:
+
+..  code-block:: bash
+
+    docker-compose run web pip freeze > compiled_requirements.txt
+
+And then ensure that the pip command in the Dockerfile uses that list:
+
+..  code-block:: Dockerfile
+
+    RUN pip install -r compiled_requirements.txt
+
+
+Other tools
+~~~~~~~~~~~
+
+There are multiple Python tools such as `pip-tools <https://github.com/jazzband/pip-tools/>`_ and `Poetry
+<https://python-poetry.org/docs/>`_ that are more sophisticated than ``pip``, that can also generate a complete list of
+pinned dependencies.
+
+You can use the tool of your choice. In each case, the tool itself needs to be available in the Docker build
+environment. You can expect to find ``pip`` to be installed by default, but other tools will generally need to be
+installed manually in the ``Dockerfile``.
+
+An example using ``pip-tools``:
+
+..  code-block:: Dockerfile
+
+    RUN pip install pip-tools==5.5.0
+    RUN pip-compile requirements.in
+    RUN pip-sync requirements.txt
+
+This installs ``pip-tools``, compiles ``requirements.in`` to ``requirements.txt``, then installs the components listed
+in ``requirements.txt``.
+
+Once you have a working set of dependencies, remove the ``pip-compile`` instruction so that the dependencies are pinned
+and frozen in ``requirements.txt``.
+
+.. _python-packages-aldryn:
+
+Python package installation in Aldryn Django projects
+--------------------------------------------------------
+
+By default, projects using an Aldryn Django ``Dockerfile`` use our own `pip-reqs tool
+<https://pypi.org/project/pip-reqs/>`_ to compile a list wheel URLs from :ref:`our wheels proxy server <wheels-proxy>`,
+and installs all packages as wheels.
+
+To install Python dependencies an Aldryn project, list them in the ``requirements.in`` file. They need to be *outside*
+the:
+
+..  code-block:: Dockerfile
+
+    # <INSTALLED_ADDONS>
+    ...
     # </INSTALLED_ADDONS>
 
 tags, since that part of the file is maintained automatically and is overwritten automatically with
 the requirements from the Addons system.
 
-.. _pinning-dependencies:
-
-..  admonition:: Wherever possible, **pin your dependencies**
-
-    An unpinned dependency is a hostage to fortune, and is highly likely to break something
-    without warning when a new release is made.
-
-    Unpinned dependencies are the **number one cause of deployment failures**. Nothing in the
-    codebase may have changed, but a fresh deployment can unexpectedly pick up a newly-released
-    version of a package.
-
-    When :ref:`installing from a version control repository <pip-install-from-online-package>`, it
-    is strongly recommended to pin the package by specifying a tag or commit, rather than branch.
-
-    Sometimes your dependencies may themselves have unpinned dependencies. In this case, it
-    can be worth explicitly pinning those too - you can easily :ref:`pin all dependencies in a
-    project <manage-dependencies>` automatically.
+This list is processed by the ``pip`` commands in the ``Dockerfile`` when the image is built.
 
 
-Listing packages from PyPI
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pinning dependencies in an Aldryn project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the package name, pinned with an optional (but :ref:`very strongly recommended
-<pinning-dependencies>`) version number, for example::
+Compile ``requirements.txt``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    markdown==2.6.8
+First, you need to have a working local set-up. Then run:
+
+..  code-block:: Dockerfile
+
+    docker-compose run --rm web pip-reqs compile
+
+This will create a ``requirements.txt`` file in the project, containing a list of *all* the packages in the
+environment, along with their versions.
+
+When your project is built using the new ``requirements.txt`` instead of ``requirements.in``,
+you'll have a guarantee that no unexpected changes will be permitted to find their way in to the
+project.
+
+
+Amend the ``Dockerfile``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to have your project built using ``requirements.txt`` instead of ``requirements.in``, you
+need to remove the ``pip-reqs compile`` instruction from your project's ``Dockerfile``.
+
+First, remove the Divio-specific comment tags from the ``Dockerfile``:
+
+..  code-block:: Dockerfile
+
+    # <PYTHON>
+    ...
+    # </PYTHON>
+
+otherwise the Control Panel will simply overwrite your changes.
+
+Then remove the ``pip-reqs compile`` instruction, so that ``requirements.txt`` will not be amended at the next build.
+
+The next time you need to create a fresh ``requirements.txt``, run:
+
+..  code-block:: Dockerfile
+
+    docker-compose run web pip-reqs compile
 
 
 .. _pip-install-from-online-package:
 
 Listing packages from version control systems or as archives
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------
 
 You can use the URL of a tarballed or zipped archive of the package, typically provided by a
 version control system.
 
 ..  important::
 
-    More recent versions of `pip tools <https://pypi.org/project/pip-tools/>`_ as used in the Divio base projects require you to use
-    URLS that provide both the ``egg`` fragment and the version fragment (for example, ``#egg=package-name==1.0``), and will raise an
-    error if they encounter URLs lacking it. Older versions would allow you to omit the fragment.
+    Recent versions of ``pip-tools`` require the use of URLS that provide both the ``egg`` fragment and the version
+    fragment (for example, ``#egg=package-name==1.0``), and will raise an error if they encounter URLs lacking it.
+    Older versions would allow you to omit the fragment.
 
 
 Examples from GitHub
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Master branch, as tarball::
 
@@ -86,36 +193,17 @@ Specify a different branch::
 
     https://github.com/account/repository/archive/develop.zip#egg=package-name==1.0
 
-However, we :ref:`very strongly recommend <pinning-dependencies>` specifying either a tag::
+We strongly recommend specifying either a tag::
 
     https://github.com/account/repository/archive/1.6.0.zip#egg=package-name==1.0
 
-or a commit::
+or best of all a commit::
 
     https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name==1.0
 
 .. _vcs-protocol-support:
 
-..  note::
-
-    Our ``pip`` set-up does **not** support `VCS protocols
-    <https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_ - you cannot use for
-    example URLs starting ``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``.
-
-    However, as long as the version control system host offers full package downloads, you can use
-    the tarball or zip archive URL for that to install from the VCS, as in the examples above.
-
-
-.. _process-dependencies:
-
-Process the list
-----------------
-
-The requirements file is processed when the project is build. This is taken care of in Cloud
-deployments by the :ref:`Dockerfile <dockerfile-reference-python>`, and locally by running a
-``build`` command::
-
-    docker-compose build web
-
-Make sure that you don't also have a ``requirements.txt`` of pinned dependencies, otherwise you
-will simply be re-installing the old list.
+Note that ``pip-tools`` does note support `VCS protocols
+<https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_ - you cannot use for example URLs starting
+``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``. Use the tarball or zip archive URL as
+described above.

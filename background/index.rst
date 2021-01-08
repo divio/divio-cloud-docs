@@ -14,6 +14,7 @@ Our infrastructure
     IP addresses <ip-addresses>
     Cron jobs <cron-jobs>
     Maintenance operations <maintenance>
+    Our Python wheels proxy <wheelsproxy>
 
 
 Cloud management
@@ -36,7 +37,6 @@ How it works on Divio
 
     redirects
     Caching and CDN <caching>
-    infrastructure-python-packaging
     Configuration using environment variables <configuration-environment-variables>
 
 
