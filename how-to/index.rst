@@ -69,7 +69,6 @@ Platform-specific guides
 
        Add a Django application to an Aldryn project <django-add-application>
        Configure Django settings using Aldryn <django-configure-settings>
-       Configure an existing Django project to use Aldryn <django-migrate-existing-project>
        Configure external logging <django-configure-external-logging>
        Configure Celery <configure-celery>
        Manage access authentication <django-manage-authentication>
