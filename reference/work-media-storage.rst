@@ -142,10 +142,8 @@ user-submitted material (which could include material uploaded by untrusted user
 Enable CORS headers
 ~~~~~~~~~~~~~~~~~~~
 
-The other solution is to enable `CORS ("Cross-origin resource sharing") headers
-<https://en.wikipedia.org/wiki/Cross-origin_resource_sharing>`_ on the media.
-
-This must be done by our infrastructure team, on a per-website basis. Please contact Divio support to request this.
+The other solution is to :ref:`enable CORS ("cross-origin resource sharing") headers <interact-storage-cors>` on the media bucket, allowing the bucket to serve its resources when
+requested by a page on a different domain.
 
 
 Storage speed and performance

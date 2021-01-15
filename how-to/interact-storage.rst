@@ -55,9 +55,17 @@ Obtain your storage access details
 
 Use the Divio CLI to obtain the ``DEFAULT_STORAGE_DSN`` for the environment, for example:
 
-..  code-block:: python
+..  code-block:: bash
 
-    divio project env-vars -s test --all --get "DEFAULT_STORAGE_DSN"
+    divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN
+
+or:
+
+..  code-block:: bash
+
+    divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN --remote-id <site id>
+
+if you are in a different directory.
 
 See :ref:`how to read environment variables <reading-env-vars>`.
 
@@ -114,8 +122,8 @@ The **endpoint** is the address that the client will need to connect to.
 
 .. _save-aws-parameters:
 
-Save the parameters
-~~~~~~~~~~~~~~~~~~~
+Note down the parameters
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Copy and paste each of these parameters into a text file, so you have them ready for use. Now that
 you have obtained the connection parameters, you can use them to connect with the client of your
@@ -339,13 +347,15 @@ You may encounter some file transfer size limitations when pushing and pulling m
 It can also be much faster, and allows selective changes to files in the system.
 
 
-Storage ACLs (Access Control Lists)
------------------------------------
+Configuring S3 buckets
+----------------------
 
-When uploading files to your storage, note that you may need to specify
-explicitly the ACLs - in effect, the file permissions - on the files. If you
-don't set the correct ACLs, you may find that attempts to retrieve them (for
-example in a web browser) give an "access denied" error.
+Storage ACLs (Access Control Lists)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When uploading files to your storage, you may need to specify the ACLs explicitly - in effect, the
+file permissions - on the files. If you don't set the correct ACLs, you may find that attempts to
+retrieve them (for example in a web browser) give an "access denied" error.
 
 On AWS S3, the `public-read ACL
 <https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl>`_ needs to be set
@@ -353,3 +363,73 @@ On AWS S3, the `public-read ACL
 
 For example, you can use ``--acl public-read`` as a flag for operations such as ``cp``, or ``aws
 s3api put-object-acl`` and ``aws s3api get-object-acl`` to set set and get ACLs on existing objects.
+
+
+.. _interact-storage-cors:
+
+Enable CORS
+~~~~~~~~~~~~~
+
+CORS (cross-origin resource sharing) is a mechanism that allows resources on one domain to be
+served when requested by a page on another domain.
+
+These requests are blocked by default by S3 media storage; when a request is blocked, you'll see an error reported in the browser console:
+
+..  code-block:: text
+
+    Access to XMLHttpRequest at 'https://example.divio-media.com/images/image.jpg' from origin
+    'https://example.us.aldryn.io' has been blocked by CORS policy: No
+    'Access-Control-Allow-Origin' header is present on the requested resource.
+
+In order to resolve this, the storage bucket needs to be configured to allow requests from a
+different origin.
+
+This can be done using the AWS CLI's S3 API tool.
+
+As described above, :ref:`obtain the DEFAULT_STORAGE_DSN for the environment
+<storage_access_details>` (and if required, run :ref:`aws configure <connect-aws-cli>`).
+
+Now you can check for any existing CORS configuration:
+
+..  code-block:: bash
+
+    aws s3api get-bucket-cors --bucket <bucket-name>
+
+You will receive a ``The CORS configuration does not exist`` error if one is not yet present.
+
+A CORS configuration is specified in JSON. It's beyond the scope of this documentation to outline
+how your bucket should be configured for CORS; see AWS's own `Configuring and using cross-origin
+resource sharing <https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html>`_ documentation
+for more.
+
+However an example that allows ``GET`` and ``HEAD`` requests from any origin would be:
+
+..  code-block:: JSON
+
+    {
+       "CORSRules": [
+           {
+               "AllowedHeaders": ["*"],
+               "AllowedMethods": ["GET", "HEAD"],
+               "AllowedOrigins": ["*"],
+               "MaxAgeSeconds": 3000
+           }
+       ]
+    }
+
+Save your configuration as a file (``cors.json``) and use the API to upload it to the bucket:
+
+..  code-block:: bash
+
+    aws s3api put-bucket-cors --bucket <bucket-name> --cors-configuration file://cors.json
+
+See the `AWS S3 CLI API documentation
+<https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/index.html#cli-aws-s3api>`_
+for further information about available operations.
+
+..  note::
+
+    You may receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the
+    S3 API with some older buckets. If this occurs, but operations such as ``aws s3 ls`` work as
+    expected, then your bucket will need to be updated. Please contact Divio support so that we can
+    do this for you.
