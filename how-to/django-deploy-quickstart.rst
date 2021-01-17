@@ -1,12 +1,18 @@
-Deploy a new Django project using the Divio quickstart repository
-====================================================================
+..  Do not change this document name!
+    Referred to by: https://github.com/divio/django-divio-quickstart
+    Where: in the README
+    As: https://docs.divio.com/en/latest/how-to/django-deploy-quickstart/
 
 .. meta::
    :description:
-       The quickest way to get started with Django on Divio. This guide shows you how to deploy the Django Divio
-       quickstart repository to create a Twelve-factor Django project including Postgres or MySQL, and cloud media
+       The quickest way to get started with Django on Divio. This guide shows you how to use the Django Divio
+       quickstart repository to deploy a Twelve-factor Django project including Postgres or MySQL, and cloud media
        storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
+
+
+Deploy a new Django project using the Divio quickstart repository
+====================================================================
 
 The `Django Divio quickstart <https://github.com/divio/django-divio-quickstart>`_ repository is a template that gives
 you the fastest possible way of launching a new Django project on Divio.
