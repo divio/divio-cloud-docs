@@ -76,6 +76,8 @@ the appropriate options to install the components for Postgres/MySQL, and uWSGI/
 Check that the version of Django is correct, and include any other Python components required by your project.
 
 
+..  _django-create-deploy-docker-compose:
+
 Local container orchestration with ``docker-compose.yml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -131,6 +133,8 @@ containerised application.
             timeout: 20s
             retries: 10
 
+
+..  _django-create-deploy-env-local:
 
 Local configuration using ``.env-local``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,9 +367,10 @@ Run:
 
     divio project configure
 
-and provide the slug. (This creates a new file in the project at ``.divio/config.json``.)
+and provide the slug. This creates a new file in the project at ``.divio/config.json``. ``divio project dashboard``
+will open the project in the Control Panel.
 
-If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
+The command also returns the Git remote value for the project. You'll use this in the next step.
 
 
 Configure the Git repository
@@ -403,13 +408,13 @@ A ``.gitignore`` file is needed to exclude unwanted files from the repository. A
     .Spotlight-V100
     .Trashes
 
-Add the project's Git repository as a remote, using the *slug* value in the remote address:
+Add the project's Git repository as a remote, using the value obtained from the ``divio project configure`` command above, for example:
 
 ..  code-block:: bash
 
-    git remote add origin git@git.divio.com:<slug>.git
+    git remote add origin git@git.divio.com:django-project.git
 
-(Use e.g. ``divio`` instead if you already have a remote named ``origin``.)
+(Use e.g. ``divio`` as the remote name instead if you already have a remote named ``origin``.)
 
 
 Commit your work
@@ -424,134 +429,10 @@ Commit your work
 You'll now see "1 undeployed commit" listed for the project in the Control Panel.
 
 
-Deploy the Test server
-~~~~~~~~~~~~~~~~~~~~~~
-
-Deploy with:
-
-..  code-block:: bash
-
-    divio project deploy
-
-(or use the **Deploy** button in the Control Panel).
-
-Once deployed, your project will be accessible via the Test server URL shown in the Control Panel (append ``/admin``).
+..  include:: /how-to/includes/django-deploy-test-working-database.rst
 
 
-Working with the database on the cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Additional notes
+-----------------
 
-Your cloud project does not yet have any content in the database, so you can't log in or do any other work there.
-You can push the local database with the superuser you created to the Test environment:
-
-..  code-block:: bash
-
-    divio project push db
-
-or, use the :ref:`divio project ssh command <divio-cli-command-ref>` in the Test environment with ``divio project ssh`` and execute
-Django migrations and create a superuser there in the usual way.
-
-You can run migrations automatically on deployment by adding a :ref:`release command <release-commands>` in the Control
-Panel.
-
-
-Notes on working with the project
----------------------------------
-
-Using the Twelve-factor model places all configuration in environment variables, so that the project can readily be
-moved to another host or platform, or set up locally for development. The configuration for:
-
-* security
-* database
-* media
-* static files
-
-settings is handled by a few simple code snippets in ``settings.py``. In each case, the settings will fall back to
-safe and secure defaults.
-
-
-Application container
-~~~~~~~~~~~~~~~~~~~~~
-
-In both local and cloud environments, the application will run in a ``web`` container, using the same image and
-exactly the same codebase.
-
-
-.. _django-create-deploy-startup:
-
-Django server
-~~~~~~~~~~~~~
-
-In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Django using the uWSGI/Gunicorn/Uvicorn
-application gateway server.
-
-In the local environment: the ``command`` line in ``docker-compose.yml`` starts up Django using the runserver,
-overriding the ``CMD`` in the ``Dockerfile``. If the ``command`` line is commented out, ``docker-compose up`` will use
-the application gateway server locally instead.
-
-
-Database
-~~~~~~~~
-
-In cloud environments: the application will use one of our database clusters.
-
-In the local environment: the application will use a container running the same database.
-
-During the build phase: the database falls back to in-memory SQLite, as there is no database available to connect to,
-and no configuration variables available from the environment in any case.
-
-
-Security settings
-~~~~~~~~~~~~~~~~~
-
-Debug mode
-^^^^^^^^^^
-
-In cloud environments: the application will safely fall back to ``DEBUG = False``.
-
-In the local environment: ``.env-local`` supplies a ``DJANGO_DEBUG`` variable to allow Django to run in debug mode.
-
-
-Secret key
-^^^^^^^^^^
-
-In cloud environments: a random ``SECRET_KEY`` variable is always provided and will be used.
-
-In the local environment: where no ``SECRET_KEY`` environment variable is provided, the application will fall back to a
-hard-coded key in ``settings.py``.
-
-
-Allowed hosts
-^^^^^^^^^^^^^
-
-In cloud environments: ``DOMAIN`` and ``DOMAIN_ALIASES`` variable are always provided and will be used.
-
-In the local environment: default values are provided via the ``DOMAIN_ALIASES`` environment variable in ``.env-local``.
-
-
-Static files
-~~~~~~~~~~~~
-
-In cloud environments: the application gateway server and WhiteNoise are used.
-
-In the local environment: static files are served by the Django runserver. By :ref:`running the application gateway
-server locally <django-create-deploy-startup>` and enforcing ``DEBUG = False``, it can be tested with WhiteNoise in the
-local environment.
-
-
-Media files
-~~~~~~~~~~~
-
-In cloud environments: file storage and serving is handled by the S3 instance.
-
-In the local environment: the local filesystem is used for storage, and Django's runserver is used to serve media. If a
-cloud environment's ``DEFAULT_STORAGE_DSN`` is applied in the ``.env-local`` file, the local server will use the S3
-instance instead.
-
-
-Database migrations
-~~~~~~~~~~~~~~~~~~~
-
-In its current state, database migrations are not executed automatically in cloud deployments. To run migrations
-automatically, add a :ref:`release command <release-commands>`: ``python manage.py migrate``. Alternatively you can run
-the command manually in the cloud environment using SSH.
+See :ref:`working-with-recommended-django-configuration` for further guidance.

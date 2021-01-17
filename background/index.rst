@@ -55,6 +55,16 @@ Projects
     multisite-projects
 
 
+Recommended project configurations
+------------------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    recommended-configuration-notes-django
+
+
+
 
 Aldryn Django and addons
 -------------------------
