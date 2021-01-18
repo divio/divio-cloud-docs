@@ -23,7 +23,8 @@ Deploy an application on Divio
 .. toctree::
     :maxdepth: 1
 
-    Deploy a new Django project using the Divio quickstart repository <django-deploy-quickstart>
+    Deploy a new Django project using our quickstart repository <django-deploy-quickstart>
+    Deploy a new django CMS project using our quickstart repository <django-cms-deploy-quickstart>
     Migrate/create and deploy a Django project <django-create-deploy>
     Migrate/create and deploy a Flask project <flask-create-deploy>
 

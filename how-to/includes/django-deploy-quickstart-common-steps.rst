@@ -1,43 +1,7 @@
-..  Do not change this document name!
-    Referred to by: https://github.com/divio/django-divio-quickstart
-    Where:
-      in the README
-      in the GitHub project About field
-    As: https://docs.divio.com/en/latest/how-to/django-deploy-quickstart/
+..  This include is used by:
 
-.. meta::
-   :description:
-       The quickest way to get started with Django on Divio. This guide shows you how to use the Django Divio
-       quickstart repository to deploy a Twelve-factor Django project including Postgres or MySQL, and cloud media
-       storage using S3, with Docker.
-   :keywords: Docker, Django, Postgres, MySQL, S3
-
-
-.. _django-deploy-quickstart:
-
-How to deploy a new Django project using the Divio quickstart repository
-=========================================================================
-
-The `Django Divio quickstart <https://github.com/divio/django-divio-quickstart>`_ repository is a template that gives
-you the fastest possible way of launching a new Django project on Divio.
-
-It uses a completely standard Django project as created by the Django ``startproject`` management command.
-
-The only additions are a few lines of glue code in ``settings.py`` to handle configuration using environment variables,
-plus some additional files to take care of the Docker set-up.
-
-
-Clone the repository
---------------------
-
-Run:
-
-..  code-block:: bash
-
-    git clone git@github.com:divio/django-divio-quickstart.git
-
-The project contains a module named ``quickstart``, containing ``settings.py`` and other project-level configuration.
-
+    * django-deploy-quickstart.rst
+    * django-cms-deploy-quickstart.rst
 
 Renaming the ``quickstart`` project module (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,6 +53,9 @@ Run database migrations and create a superuser
 
     docker-compose run web python manage.py migrate
 
+(Note that due to Docker behaviour, you may get an error the first time you run this - Docker can sometimes be too
+slow to start up the database in time. If this happens, simply run the command again.)
+
 then:
 
 ..  code-block:: bash
@@ -103,7 +70,10 @@ Launch the local server
 
     docker-compose up
 
-You can log in to the site at http://127.0.0.1:8000/admin.
+You can log in to the site at:
+
+* http://127.0.0.1:8000/ (this will work if a URL has been wired up to `/`)
+* http://127.0.0.1:8000/admin
 
 You now have a working, running project ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container, but preceding them with ``docker-compose run web`` as in the

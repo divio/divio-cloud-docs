@@ -6,7 +6,7 @@ Working with our recommended Django project configuration
 Our recommended Django project configuration is described in:
 
 * :ref:`django-create-deploy`
-* :ref:`Deploy a new Django project using the Divio quickstart repository`
+* :ref:`Deploy a new Django project using the Divio quickstart repository <django-deploy-quickstart>`
 
 The Twelve-factor model adopted for these places all configuration in environment variables, so that the project can
 readily be moved to another host or platform, or set up locally for development. The configuration for:
