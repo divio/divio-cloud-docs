@@ -355,22 +355,7 @@ The new project does not include any additional services; they must be added man
 Postgres or MySQL database to match your choice earlier, and an S3 object storage instance for media.
 
 
-Connect the local project to the cloud project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
-get your project's slug; you can also read the slug from the Control Panel.
-
-Run:
-
-..  code-block:: bash
-
-    divio project configure
-
-and provide the slug. This creates a new file in the project at ``.divio/config.json``. ``divio project dashboard``
-will open the project in the Control Panel.
-
-The command also returns the Git remote value for the project. You'll use this in the next step.
+..  include:: /how-to/includes/connect-local-to-cloud.rst
 
 
 Configure the Git repository

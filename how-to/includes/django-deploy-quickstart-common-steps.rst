@@ -3,30 +3,6 @@
     * django-deploy-quickstart.rst
     * django-cms-deploy-quickstart.rst
 
-Renaming the ``quickstart`` project module (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you'd like this to be named something else, now is the time to change the directory name, along with the references
-to the ``quickstart`` module wherever it appears, which is in:
-
-* ``Dockerfile``
-* ``manage.py``
-* ``asgi.py``
-* ``settings.py``
-* ``wsgi.py``
-
-
-Using MySQL or an alternative gateway server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, the project uses Postgres and uWSGI, but MySQL and other gateway server options are available.
-
-You'll need to change a few lines of configuration to achieve this across a few files. See the notes for each:
-
-* :ref:`requirements.txt <django-create-deploy-requirements>`
-* :ref:`docker-compose.yml <django-create-deploy-docker-compose>`
-* :ref:`env-local <django-create-deploy-env-local>`
-* :ref:`the Dockerfile <django-create-deploy-CMD>`
 
 
 Run the project locally
@@ -70,10 +46,9 @@ Launch the local server
 
     docker-compose up
 
-You can log in to the site at:
+Try accessing the site http://127.0.0.1:8000/ (this will only work if a URL has been wired up to `/`).
 
-* http://127.0.0.1:8000/ (this will work if a URL has been wired up to `/`)
-* http://127.0.0.1:8000/admin
+The Django admin is available at http://127.0.0.1:8000/admin.
 
 You now have a working, running project ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container, but preceding them with ``docker-compose run web`` as in the
@@ -101,22 +76,7 @@ The new project does not include any additional services; they must be added man
 Postgres or MySQL database as appropriate, and an S3 object storage instance for media.
 
 
-Connect the local project to the cloud project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
-get your project's slug; you can also read the slug from the Control Panel.
-
-Run:
-
-..  code-block:: bash
-
-    divio project configure
-
-and provide the slug. This creates a new file in the project at ``.divio/config.json``. ``divio project dashboard``
-will open the project in the Control Panel.
-
-The command also returns the Git remote value for the project. You'll use this in the next step.
+..  include:: /how-to/includes/connect-local-to-cloud.rst
 
 
 Configure the Git repository
@@ -126,7 +86,7 @@ Add the project's Git repository as a remote, using the value obtained from the 
 
 ..  code-block:: bash
 
-    git remote add divio git@git.divio.com:django-project.git
+    git remote add divio git@git.divio.com:my-divio-project.git
 
 
 Commit (if required) and push

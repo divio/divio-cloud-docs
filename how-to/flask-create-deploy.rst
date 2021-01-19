@@ -305,21 +305,7 @@ Control Panel if required. Use the *Services* menu to add a Postgres or MySQL da
 and an S3 object storage instance for media.
 
 
-Connect the local project to the cloud project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
-get your project's slug; you can also read the slug from the Control Panel.
-
-Run:
-
-..  code-block:: bash
-
-    divio project configure
-
-and provide the slug. (This creates a new file in the project at ``.divio/config.json``.)
-
-If you have done this correctly, ``divio project dashboard`` will open the project in the Control Panel.
+..  include:: /how-to/includes/connect-local-to-cloud.rst
 
 
 Configure the Git repository
@@ -353,11 +339,11 @@ A ``.gitignore`` file is needed to exclude unwanted files from the repository. A
     .Spotlight-V100
     .Trashes
 
-Add the project's Git repository as a remote, using the *slug* value in the remote address:
+Add the project's Git repository as a remote, using the value obtained from the ``divio project configure`` command above, for example:
 
 ..  code-block:: bash
 
-    git remote add origin git@git.divio.com:<slug>.git
+    git remote add origin git@git.divio.com:my-divio-project.git
 
 (Use e.g. ``divio`` instead if you already have a remote named ``origin``.)
 

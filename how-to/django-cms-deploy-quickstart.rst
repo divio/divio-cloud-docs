@@ -13,6 +13,8 @@
    :keywords: Docker, Django, django CMS, Postgres, MySQL, S3
 
 
+.. _django-cms-deploy-quickstart:
+
 How to deploy a new django CMS project using the Divio quickstart repository
 =============================================================================
 
@@ -52,5 +54,7 @@ The options include:
 * some popular basic content plugins
 * components and templates required for a Bootstrap 4 frontend
 
+
+..  include:: /how-to/includes/django-deploy-quickstart-customise-files.rst
 
 ..  include:: /how-to/includes/django-deploy-quickstart-common-steps.rst
