@@ -46,12 +46,12 @@ Launch the local server
 
     docker-compose up
 
-Try accessing the site http://127.0.0.1:8000/ (this will only work if a URL has been wired up to `/`).
+Try accessing the site at http://127.0.0.1:8000/ (this will only work if a URL has been wired up to `/`).
 
 The Django admin is available at http://127.0.0.1:8000/admin.
 
 You now have a working, running project ready for further development. All the commands you might normally execute
-in development need to be run inside the Docker container, but preceding them with ``docker-compose run web`` as in the
+in development need to be run inside the Docker container -  prefix them with ``docker-compose run web`` as in the
 examples above.
 
 You can also use ``docker-compose run web bash`` to get a bash prompt for an interactive session inside the container.
@@ -67,6 +67,7 @@ Create a new project on Divio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the `Divio Control Panel <https://control.divio.com>`_ add a new project, selecting the *Build your own* option.
+Accept all the defaults including the Git repository options.
 
 
 Add database and media services
@@ -82,7 +83,7 @@ Postgres or MySQL database as appropriate, and an S3 object storage instance for
 Configure the Git repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add the project's Git repository as a remote, using the value obtained from the ``divio project configure`` command above, for example:
+Add the project's Git repository as a remote, using the value obtained from the ``divio project configure`` command above. For example:
 
 ..  code-block:: bash
 
