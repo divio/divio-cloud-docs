@@ -119,6 +119,22 @@ occurring after the output::
 This indicates that one of those commands has failed, usually in one of the following ways:
 
 
+.. _bad-request-for-url:
+
+Bad request for URL (from from ``pip-reqs resolve``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A malformed Pip URL will raise a ``Bad Request for url`` error, for example:
+
+..  code-block:: text
+
+    Error: Bad Request for url: https://wheels.aldryn.net/v1/aldryn-extras+pypi/aldryn-baseproject-v4-py36/+resolve/
+
+This is often caused by a URL that omits the required version number in the ``egg`` fragment, or is otherwise malformed.
+
+See :ref:`pip-install-from-online-package` for more details and examples of how to use Pip URLs.
+
+
 .. _wheels-dependency-unfindable:
 
 A dependency cannot be found (from ``pip-reqs compile``)

@@ -174,8 +174,10 @@ version control system.
 ..  important::
 
     Recent versions of ``pip-tools`` require the use of URLS that provide both the ``egg`` fragment and the version
-    fragment (for example, ``#egg=package-name==1.0``), and will raise an error if they encounter URLs lacking it.
-    Older versions would allow you to omit the fragment.
+    fragment (for example, ``egg=package-name==1.0``), and will raise a ``Bad Request for url`` error if they encounter
+    URLs lacking it. Older versions would allow you to omit the fragment.
+
+    See also :ref:`bad-request-for-url`.
 
 
 Examples from GitHub
@@ -200,6 +202,8 @@ We strongly recommend specifying either a tag::
 or best of all a commit::
 
     https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name==1.0
+
+
 
 .. _vcs-protocol-support:
 
