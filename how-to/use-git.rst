@@ -17,6 +17,9 @@ You will need to :ref:`set up your public key on our Control Panel <add-public-k
 Important limitations
 ---------------------
 
+Git repository contents
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Certain conditions can cause deployment errors when the Control Panel tries to read the Git repository. These will
 typically appear in the deployment log with an exception from ``pygit2``, such as::
 
@@ -32,6 +35,25 @@ This can be caused by:
 * a `Git submodule included in the repository <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ (remove it)
 * files containing mixed line endings, if the ``.gitattributes`` configuration includes an instruction to resolve them
   (remove ``* text=auto`` if it appears in ``.gitattributes``).
+
+
+Git repository size
+---------------------------
+
+We don't impose limits on the size of your project's Git repository. However, as its size increases, both our
+infrastructure and Git itself have to work harder to manage it.
+
+Above 100MB for its Git repository, we cannot guarantee that a project will function smoothly,
+especially when our platform is under heavy load. It can cause:
+
+* slower deployments
+* deployment timeouts
+* long backup times
+
+If your project's Git repository, including its history, exceeds 800 MB you are likely to run into persistent
+deployment problems.
+
+If you need to store large amounts of data, use the project's media storage rather than Git.
 
 
 Basic Git operations
