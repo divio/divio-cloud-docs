@@ -165,7 +165,7 @@ Parse the storage DSN
     The encoded token needs to be `decoded from Base64 format <https://www.base64decode.org>`_; the decoded token will
     look something like::
 
-        2036-01-22T08%3A56%3A16Z&sp=rwdlc&sv=2018-11-09&ss=b&srt=co&sig=ahD3gmIxymeattHsQ4mePWE5DFUol%2BW6byQt5EZ0H/U%3D
+        se=2036-01-22T08%3A56%3A16Z&sp=rwdlc&sv=2018-11-09&ss=b&srt=co&sig=ahD3gmIxymeattHsQ4mePWE5DFUol%2BW6byQt5EZ0H/U%3D
 
     Your media container is always named ``public-media`` by default.
 
@@ -216,7 +216,7 @@ Using the client
 
     Use the parameters with the Azure CLI, for example::
 
-        az storage blob list --container-name public-media --account-name exampletest43b4705bdf --sas-token se="2036-01-22T08%3A56%3A16Z&sp=rwdlc&sv=2018-11-09&ss=b&srt=co&sig=ahD3gmIxymeattHsQ4mePWE5DFUol%2BW6byQt5EZ0H/U%3D"
+        az storage blob list --container-name public-media --account-name exampletest43b4705bdf --sas-token "se=2036-01-22T08%3A56%3A16Z&sp=rwdlc&sv=2018-11-09&ss=b&srt=co&sig=ahD3gmIxymeattHsQ4mePWE5DFUol%2BW6byQt5EZ0H/U%3D"
 
 
 .. _divio_tools_cloud_storage:
