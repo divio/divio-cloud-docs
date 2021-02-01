@@ -116,24 +116,14 @@ database with::
 Interact with the Cloud database
 --------------------------------
 
-..  note::
+Use the ``divio project pull db`` and ``divio project push db`` commands to copy a database between a cloud environment and
+your own local environment.
 
-    It's often more appropriate to pull down the Cloud database to a local
-    project to interact with it there::
-
-        divio project pull db live  # or test
-
-    See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these
-    commands.
+See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these commands.
 
 
 From the project's Cloud application container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-..  note::
-
-    SSH access to an application container on the Cloud is `available on Managed Cloud projects
-    only <http://support.divio.com/control-panel/projects/how-to-ssh-into-your-cloud-server>`_.
 
 Log into your Cloud project's container (Test or Live) over SSH.
 
