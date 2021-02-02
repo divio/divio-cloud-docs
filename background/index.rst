@@ -15,6 +15,7 @@ Our infrastructure
     Cron jobs <cron-jobs>
     Maintenance operations <maintenance>
     Our Python wheels proxy <wheelsproxy>
+    Elasticsearch instances <elasticsearch>
 
 
 Cloud management
