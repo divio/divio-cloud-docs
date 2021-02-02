@@ -42,8 +42,10 @@ Enables GeoDjango support. Adds ``django.contrib.gis`` to ``INSTALLED_APPS`` and
 engine to ``django.contrib.gis.db.backends.postgis``.
 
 For local development you will need to edit ``docker-compose.yml``, changing ``postgres:9.6`` to
-``mdillon/postgis:9.6``. On the Cloud, you will need to make a support request to have the new
+``mdillon/postgis:9.6``. On the cloud, you will need to make a support request to have the new
 database enabled for the project.
+
+See :ref:`manage_postgres_extensions` for more details.
 
 
 .. _PREFIX_DEFAULT_LANGUAGE:

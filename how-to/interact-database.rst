@@ -39,6 +39,9 @@ You can also make the connection manually from within the ``web`` container, for
 
     docker-compose run --rm web psql -h postgres -U postgres db
 
+The ``-h`` value (for host) needs to match the name of the database service in the ``docker-compose.yml`` file, which
+might be different (for example, ``database_default``).
+
 As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
 for a number of :ref:`common operations <common-db-operations>`, below.
 
@@ -72,7 +75,7 @@ Expose the database's port
 In order to the connect to the database from a tool running directly on your
 own machine, you will need to expose its port (5432 by default for Postgres).
 
-Add a ports section to the ``db`` service in ``docker-compose.yml`` and map the
+Add a ports section to the database service in ``docker-compose.yml`` and map the
 port to your host. For Postgres, for example:
 
 ..  code-block:: yaml
@@ -89,7 +92,7 @@ routed to port 5432 internally.
 The ports are ``<host port>:<container port>`` - you can choose another host
 port if you are already using that port on your host.
 
-Now restart the ``db`` container with: ``docker-compose up -d db``
+Now restart the database container with: ``docker-compose up -d db``
 
 
 Connect to a Postgres database
@@ -116,8 +119,8 @@ database with::
 Interact with the Cloud database
 --------------------------------
 
-Use the ``divio project pull db`` and ``divio project push db`` commands to copy a database between a cloud environment and
-your own local environment.
+Use the ``divio project pull db`` and ``divio project push db`` commands to copy a database between a cloud environment
+and your own local environment.
 
 See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these commands.
 
@@ -193,6 +196,24 @@ you.
     In the Divio architecture, the ``docker-compose.yml`` file is **not**
     used for Cloud deployments, but **only** for the local server. The changes you
     make here will not affect the Cloud database.
+
+
+Manage Postgres extensions
+--------------------------
+
+If you run a ``divio push db`` command that fails with:
+
+..  code-block:: text
+
+    ---> Processing error!
+
+the most likely cause is that your local database contains an extension that is not available on our cluster.
+
+Although you cannot create extensions yourself on our shared database clusters, we can often enable extensions for you
+on request. The most commonly-requested of these is `PostGIS <https://postgis.net>`_.
+
+Run the Postgres ``\dx`` command :ref:`in a local database shell <interact-local-db>` to list extensions that you're
+using.
 
 
 .. _common-db-operations:
