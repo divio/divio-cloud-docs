@@ -1,6 +1,8 @@
 Divio developer handbook
 ==============================
 
+Divio provides a better way to develop, deploy, scale and maintain web applications. Use workflows you're familiar with
+and open-source tools you can trust.
 
 ..  rst-class:: column
 
@@ -8,16 +10,24 @@ Divio developer handbook
 :ref:`Get started <introduction>`
 -------------------------------------------------------
 
-**Tutorials.** A hands-on introduction to Divio for developers. *Recommended for all new users.*
+**Tutorials.** A hands-on introduction to Divio for developers.
+
+..  raw:: html
+
+    <a class="btn btn-primary btn-small" href="/introduction" role="button">Tutorials</a>
 
 
 ..  rst-class:: column
 
 
-:ref:`How-to guides <how-to>`
+:ref:`How-to <how-to>`
 -------------------------------------------------------
 
 **Step-by-step guides.** Covers key tasks and operations and common problems.
+
+..  raw:: html
+
+    <a class="btn btn-primary btn-small " href="/how-to" role="button">How-to</a>
 
 
 ..  rst-class:: column clearfix
@@ -27,6 +37,10 @@ Divio developer handbook
 
 **Explanation.** Clarification and discussion of key topics.
 
+..  raw:: html
+
+    <a class="btn btn-primary btn-small" href="/background" role="button">Background</a>
+
 
 ..  rst-class:: column
 
@@ -35,6 +49,9 @@ Divio developer handbook
 
 **Technical reference.** Covers tools, components, commands and resources.
 
+..  raw:: html
+
+    <a class="btn btn-primary btn-small" href="/reference" role="button">Reference</a>
 
 ..  rst-class:: clearfix row custon-headings
 
@@ -50,7 +67,7 @@ The Divio Community Slack group is for all Divio users.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join the Divio Community Slack group</a>
+    <a class="btn btn-primary btn-small" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join Slacks</a>
 
 ..  rst-class:: column
 
