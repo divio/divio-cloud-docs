@@ -14,7 +14,7 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" href="/introduction" role="button">Tutorials</a>
+    <a class="btn btn-primary btn-small" href="introduction" role="button">Tutorials</a>
 
 
 ..  rst-class:: column
@@ -27,7 +27,7 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small " href="/how-to" role="button">How-to</a>
+    <a class="btn btn-primary btn-small " href="how-to" role="button">How-to</a>
 
 
 ..  rst-class:: column clearfix
@@ -39,7 +39,7 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" href="/background" role="button">Background</a>
+    <a class="btn btn-primary btn-small" href="background" role="button">Background</a>
 
 
 ..  rst-class:: column
@@ -51,7 +51,7 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" href="/reference" role="button">Reference</a>
+    <a class="btn btn-primary btn-small" href="reference" role="button">Reference</a>
 
 ..  rst-class:: clearfix row custon-headings
 
