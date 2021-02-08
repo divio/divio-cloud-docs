@@ -330,7 +330,7 @@ See the `AWS S3 CLI API documentation
 <https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/index.html#cli-aws-s3api>`_
 for further information about available operations.
 
-..  note::
+..  warning::
 
     You may receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the
     S3 API with some older buckets. If this occurs, but operations such as ``aws s3 ls`` work as
