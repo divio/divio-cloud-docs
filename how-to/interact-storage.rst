@@ -170,10 +170,13 @@ Parse the storage DSN
     Your media container is always named ``public-media`` by default.
 
 
+.. _using-the-client:
+
 Using the client
 ~~~~~~~~~~~~~~~~~~~~~~
 
 ..  tab:: S3
+
 
     Run::
 
@@ -213,6 +216,8 @@ Using the client
 
 
 ..  tab:: Azure blob storage
+
+    .. _configure-az-cli:
 
     Use the parameters with the Azure CLI, for example::
 
@@ -292,7 +297,18 @@ These requests are blocked by default by S3 media storage; when a request is blo
 In order to resolve this, the storage bucket needs to be configured to allow requests from a
 different origin.
 
-This can be done using the AWS CLI's S3 API tool (see above). Now you can check for any existing CORS configuration:
+This can be done using the AWS CLI's S3 API tool (:ref:`see the notes on how to use the client, above
+<using-the-client>`).
+
+..  warning::
+
+    You may receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the
+    S3 API with some older buckets. If this occurs, but other operations such as ``aws s3 ls`` work as
+    expected, then your bucket will need to be updated. Please contact Divio support so that we can
+    do this for you.
+
+
+Now you can check for any existing CORS configuration:
 
 ..  code-block:: bash
 
@@ -329,10 +345,3 @@ Save your configuration as a file (``cors.json``) and use the API to upload it t
 See the `AWS S3 CLI API documentation
 <https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/index.html#cli-aws-s3api>`_
 for further information about available operations.
-
-..  note::
-
-    You may receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the
-    S3 API with some older buckets. If this occurs, but operations such as ``aws s3 ls`` work as
-    expected, then your bucket will need to be updated. Please contact Divio support so that we can
-    do this for you.
