@@ -300,10 +300,10 @@ This can be done using the AWS CLI's S3 API tool (:ref:`see the notes on how to 
 
 ..  warning::
 
-    You may receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the
-    S3 API with some older buckets. If this occurs, but other operations such as ``aws s3 ls`` work as
-    expected, then your bucket will need to be updated. Please contact Divio support so that we can
-    do this for you.
+    You will likely receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the S3 API with
+    buckets on projects created before 10th February 2020. If this occurs, but other operations such as ``aws s3 ls``
+    work as expected, then your bucket will need to be updated. Please contact Divio support so that we can do this for
+    you.
 
 
 Now you can check for any existing CORS configuration:
