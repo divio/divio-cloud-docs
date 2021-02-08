@@ -217,8 +217,6 @@ Using the client
 
 ..  tab:: Azure blob storage
 
-    .. _configure-az-cli:
-
     Use the parameters with the Azure CLI, for example::
 
         az storage blob list --container-name public-media --account-name exampletest43b4705bdf --sas-token "se=2036-01-22T08%3A56%3A16Z&sp=rwdlc&sv=2018-11-09&ss=b&srt=co&sig=ahD3gmIxymeattHsQ4mePWE5DFUol%2BW6byQt5EZ0H/U%3D"
