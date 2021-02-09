@@ -240,7 +240,7 @@ You will see something like::
     connection error.
     Unable to connect! Endpoint verification failed.
 
-The loadbalancer was unable to connect to each of the environment's newly-launched containers and obtain a positive
+The load-balancer was unable to connect to each of the environment's newly-launched containers and obtain a positive
 HTTP response within 20 seconds of making the connection. The environment's runtime logs will contain more
 information about the problem. If the logs don't contain a traceback revealing a programming error, the most likely
 issue is that the application was too slow to start up.

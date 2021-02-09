@@ -11,11 +11,11 @@ Redirects in Divio projects will typically take place at one of two different le
 .. mermaid::
 
     flowchart LR
-      gateway <--> loadbalancers
+      gateway <--> load-balancers
       subgraph Customer application
         code(application code) <--> gateway(application gateway/server)
       end
-      loadbalancers(Divio load balancers)
+      load-balancers(Divio load-balancers)
 
 An application can blur the distinction between these two levels, but most will include distinct code and
 gateway/server layers. Gateway/server-level redirects take place before a request reaches the application code (and

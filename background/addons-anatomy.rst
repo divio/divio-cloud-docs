@@ -42,7 +42,7 @@ That's why our ``settings.py`` uses::
 
 The same goes for middleware, and other settings.
 
-``aldryn_config.py`` is loaded into the Django project at run-time, so any
+``aldryn_config.py`` is loaded into the Django project at runtime, so any
 changes are picked up when and reloaded automatically when developing.
 
 ``aldryn_config.py`` is an ideal place to check for environment variables that

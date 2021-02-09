@@ -3,16 +3,16 @@
 How to manage uWSGI configuration
 =================================
 
-In our Django projects, the uWSGI gateway to the load balancers is part of the customer application:
+In our Django projects, the uWSGI gateway to the load-balancers is part of the customer application:
 
 .. mermaid::
 
     flowchart LR
-      gateway <--> loadbalancers
+      gateway <--> load-balancers
       subgraph Customer application
         code(Django) <--> gateway(uWSGI)
       end
-      loadbalancers(Divio load balancers)
+      load-balancers(Divio load-balancers)
 
 uWSGI is already configured and optimised in these projects. Most of this configuration is managed by :ref:`Aldryn
 Django <aldryn-django>`; see also :ref:`live-performance`.

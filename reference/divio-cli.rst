@@ -21,7 +21,7 @@ The `divio-cli source code <https://github.com/divio/divio-cli>`_ is available
 on GitHub.
 
 
-..  _environment-configuration:
+..  _ironment-configuration:
 
 Divio CLI configuration
 -----------------------
@@ -65,9 +65,6 @@ Using ``skip_doctor_checks``
 The ``skip_doctor_checks`` are particularly useful, and can be used to disable certain automated
 checks run by the Divio app and the ``divio doctor`` command (for example, if you
 are working offline, or with network restrictions).
-
-A common need is to disable a check that fails for some reason, in circumstances when you know that the failure is
-not relevant in the context of your environ,
 
 The checks that ``divio doctor`` runs are classes in `check_system.py
 <https://github.com/divio/divio-cli/blob/master/divio_cli/check_system.py>`_. If a check fails that you think can be

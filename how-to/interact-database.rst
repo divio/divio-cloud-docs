@@ -198,6 +198,8 @@ you.
     make here will not affect the Cloud database.
 
 
+.. _manage_postgres_extensions:
+
 Manage Postgres extensions
 --------------------------
 

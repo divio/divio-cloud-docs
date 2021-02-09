@@ -17,7 +17,7 @@ How to set up the Divio local development environment
 ===============================================================
 
 This document guides you through the installation and basic configuration of components required to set up
-a working local evironment for Divio projects, so that you can run them on your own computer, and interact
+a working local environment for Divio projects, so that you can run them on your own computer, and interact
 with the Divio Control Panel and the same projects deployed on our cloud infrastructure.
 
 ..  seealso::

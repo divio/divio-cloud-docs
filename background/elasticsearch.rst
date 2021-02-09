@@ -22,7 +22,7 @@ need to be decoded.
 Access limitations
 ------------------
 
-Except for projects using a dedicated Elasticseach instance, applications use one of our shared Elasticsearch clusters.
+Except for projects using a dedicated Elasticsearch instance, applications use one of our shared Elasticsearch clusters.
 
 The connection URL we provide grants access *only* to a specific index, and not to other indexes. An application
 may use only URLs that start with the index prefix we provided.

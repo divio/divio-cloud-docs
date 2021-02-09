@@ -1,6 +1,6 @@
 .. _work-media-storage:
 
-Working with your project's media storage in Python applications
+Working with your project's media storage in web applications
 ====================================================================
 
 ..  seealso:::
@@ -12,28 +12,18 @@ Working with your project's media storage in Python applications
 Introduction
 ------------
 
-Default file storage on Divio projects is handled by dedicated storage systems entirely
-separate from the application.
+File storage on Divio projects is handled by dedicated storage systems entirely separate from the application. The
+available storage depends on the Divio region your project uses. Most projects use Amazon Web Services's S3 service, or
+another S3 provider. Others use Microsoft Azure blob storage.
 
-In our architecture, the same site may be running as several different instances, on several
-different application hosts (this is one reason why Divio projects can be scaled, because new
-application instances can be created to meet increasing demand).
+In our architecture, the same application may be running in multiple parallel container, each with its own local file
+storage independent of each of the others. Moreover, this storage is not persistent, and exists only for as long as the
+lifetime of the container.
 
-Although each of those instances will have its own local file storage, this will be independent of
-each of the others, and it won't persist - once that instance ceases to exist, so will the files.
-That storage will also be inaccessible to any other instances of the application.
+This means an application should not expect to save files to its local storage, and then expect to find them later.
 
-This means a project's applications, cron jobs or other process can't expect to save files to its
-local storage, and then expect to find them again.
-
-
-Our storage service providers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Instead, the applications must use our storage services. These are `Amazon Web Services's S3
-service <https://aws.amazon.com/s3/>`_, or a generic S3 hosting service via another provider.
-Currently, most projects use Amazon's own S3 service, with the exception of projects in our Swiss
-region.
+Good implementations of cloud storage backends or plugins, for both S3 and Azure blog storage, exist for most mature
+web frameworks and applications languages.
 
 
 Working with our storage backends in Django

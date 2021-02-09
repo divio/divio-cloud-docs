@@ -28,7 +28,7 @@ On Cloud sites, environment variables for a project are managed via the command
 line, or via the Control Panel. The variables for the *Live* and *Test* sites
 are wholly independent.
 
-New or changed environment variables are not available to enviroments until they are redeployed.
+New or changed environment variables are not available to environments until they are redeployed.
 
 ..  note:
 

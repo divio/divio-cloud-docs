@@ -19,6 +19,9 @@ cheatsheet
 checkbox
 Checklist
 Cloudflare
+cloudshift
+th
+Cloudshift
 codebase
 Cron
 Cyberduck
@@ -28,6 +31,7 @@ declutters
 Decrypts
 diff
 discoverable
+divio
 Divio
 diviosupport
 Django
@@ -37,6 +41,7 @@ Dockerfile
 Dockerise
 Dockerised
 doesn
+env
 eu
 Exoscale
 fallback
@@ -74,6 +79,7 @@ Postgres
 pre
 programmatically
 ProgrammingError
+quickstart
 Redis
 Redistributions
 responsecache

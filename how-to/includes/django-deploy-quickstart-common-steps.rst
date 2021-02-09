@@ -103,7 +103,7 @@ the new remote:
 
 ..  important::
 
-    Check the Git branch for the Test environment in the *Environments* view of your project, and if necesssary,
+    Check the Git branch for the Test environment in the *Environments* view of your project, and if necessary,
     change it to ``main`` to match the local repository.
 
 

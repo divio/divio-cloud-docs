@@ -83,7 +83,7 @@ The Sass Boilerplate uses the `HTML5 Boilerplate package
 
 * `Gulp <http://gulpjs.com>`_ to run the compilation
 * `npm <https://www.npmjs.com>`_ as a package manager
-* `Node <https://nodejs.org/en/>`_ as a run-time environment.
+* `Node <https://nodejs.org/en/>`_ as a runtime environment.
 
 The advantage of using a dynamic Boilerplate with compiled components is that
 it permits you to build a customised frontend, shorn of items your project does
@@ -101,7 +101,7 @@ Bootstrap framework as a fully-compiled frontend set-up. It uses:
 * `Gulp <http://gulpjs.com>`_ to run the compilation
 * `Webpack <https://webpack.js.org>`_ to bundle all the modules
 * `npm <https://www.npmjs.com>`_ as a package manager
-* `Node <https://nodejs.org/en/>`_ as a run-time environment.
+* `Node <https://nodejs.org/en/>`_ as a runtime environment.
 
 
 How Boilerplates work
