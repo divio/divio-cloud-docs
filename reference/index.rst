@@ -15,6 +15,15 @@ Divio software components
     divio-environment-variables
 
 
+Divio infrastructure
+-----------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    checks-timeouts
+
+
 Docker commands and configuration
 ---------------------------------
 
