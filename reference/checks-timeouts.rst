@@ -48,7 +48,10 @@ Traffic reaches customer applications via our load-balancers.
 If any of these time limits are exceeded, the load-balancer will report a HTTP 504 *Gateway timeout*.
 
 If the connection and send phases do not complete successfully within a total of 15 seconds, the load-balancer will
-report a HTTP 502 *Application not responding error* and will not attempt to connect any remaining containers.
+report a HTTP 502 *Application not responding error* and will not attempt to connect to any remaining containers.
+
+In almost all cases, these errors are caused by a fault in the application, and its run-time logs will provide clues
+as to its nature.
 
 
 Request sizes
@@ -72,6 +75,6 @@ Operations
 Divio CLI database and media push and pull
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* limited to 2GB - in practice, keeping transfer size below 500MB is strong recommended; for larger media transfers,
+* limited to 2GB - in practice, keeping transfer size below 500MB is strongly recommended; for larger media transfers,
   :ref:`use an S3 client<interact-storage>`
 * terminated after 30 minutes
