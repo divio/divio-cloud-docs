@@ -64,7 +64,7 @@ the basic operations you will need are described here.
 
 
 Push your changes to the Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have made some local changes and want to push (i.e. upload) them to the Cloud, the basic
 steps you need are:
@@ -79,7 +79,7 @@ steps you need are:
 
 
 Pull changes from the Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * ``git pull`` will pull fetch and merge any changes that have been made on the Cloud
 
