@@ -1,3 +1,8 @@
+..  Do not change this document name!
+    Referred to by: tutorial message 134 project-create-base-project
+    Where: when switching regions or plans
+    As: https://docs.divio.com/en/latest/background/maintenance/#cloudshift
+
 .. _maintenance:
 
 Maintenance operations
@@ -25,13 +30,20 @@ your business needs. A queued maintenance action can also be triggered manually 
 immediately, outside the window.
 
 
+..  Do not change this heading name (see above).
+
 .. _maintenance-cloudshift:
 
-Cloudshift
-----------
+Cloudshift region migration
+------------------------------
 
-A cloudshift operation moves an application from one region to another. As well as entailing a short downtime, it may
-also require amending external services such as DNS that need to identify the application.
+Moving your project from one region to another requires a *cloudshift* migration operation. As well as entailing a short
+downtime, it may also require amending external services such as DNS that need to identify the application.
+
+The region migration operation will be performed during a maintenance window.
 
 In the case of DNS changes, we advise reducing DNS TTLs well in advance of the migration, so that when DNS entries
 are changed, disruption is minimised.
+
+Note that a cloudshift operation deploys any outstanding commits on the project's environments, *even if they were not
+previously deployed*.
