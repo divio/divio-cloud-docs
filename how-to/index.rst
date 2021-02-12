@@ -25,6 +25,7 @@ Deploy an application on Divio
 
     Deploy a new Django project using our quickstart repository <django-deploy-quickstart>
     Deploy a new django CMS project using our quickstart repository <django-cms-deploy-quickstart>
+    Migrate a web application to Divio <deploy-generic>
     Migrate/create and deploy a Django project <django-create-deploy>
     Migrate/create and deploy a Flask project <flask-create-deploy>
 

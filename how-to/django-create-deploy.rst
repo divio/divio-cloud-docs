@@ -189,6 +189,8 @@ environment variables, instead of hard-coding it. Add some imports:
     from django_storage_url import dsn_configured_storage_class
 
 
+..  _django-create-deploy-security:
+
 Some security-related settings. The cloud environments will provide some of these values as environment variables where
 appropriate; in all cases they will fall back to safe values if an environment variable is not provided:
 
@@ -211,6 +213,8 @@ appropriate; in all cases they will fall back to safe values if an environment v
     # Redirect to HTTPS by default, unless explicitly disabled
     SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
 
+
+..  _django-create-deploy-database:
 
 Configure database settings:
 
@@ -236,6 +240,8 @@ Configure static and media settings. First, add the ``WhiteNoiseMiddleware`` to 
         'whitenoise.middleware.WhiteNoiseMiddleware',
         [...]
     ]
+
+..  _django-create-deploy-media:
 
 and then:
 
