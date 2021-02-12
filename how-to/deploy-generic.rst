@@ -6,7 +6,7 @@
 
 ..  _deploy-generic:
 
-How to migrate and deploy a generic web application
+How to migrate a generic web application to Divio
 ===========================================================================================
 
 This guide will take you through the steps to deploy a portable, vendor-neutral project, based on any suitable
@@ -131,7 +131,7 @@ what we'll consider here.
 ..  admonition:: ``docker-compose.yml`` is **only** used locally
 
     Cloud deployments do not use Docker Compose. Nothing that you do here will affect the way your application runs
-    in a cloud environment. See :ref:`for local development purposes <docker-docker-compose>`
+    in a cloud environment. See :ref:`docker-compose-yml-reference`.
 
 You will need a ``docker-compose.yml`` file that looks something like the one below. This one replicates the ``web``
 image used in cloud deployments, allowing you to run the application in an environment as close to that of the cloud
