@@ -204,9 +204,11 @@ on your own computer, but Docker Compose can provide a suitable database running
 storage while developing.
 
 Create a ``.env-local`` file. In this you need to provide some environment variables that are suitable for the
-local environment:
+local environment. The example below assumes that your application will be looking for environment variables to
+configure its access to a Postgres or MySQL database, and for file storage:
 
 ..  code-block:: text
+    :emphasize-lines: 2-3
 
     # Select one of the following for the database
     DATABASE_URL=postgres://postgres@database_default:5432/db
