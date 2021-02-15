@@ -27,7 +27,7 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small " href="how-to" role="button">How-to</a>
+    <a class="btn btn-primary btn-small" href="how-to" role="button">How-to</a>
 
 
 ..  rst-class:: column clearfix

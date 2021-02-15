@@ -1,6 +1,6 @@
 ..  This include is used by:
 
-    * django-create-deploy.rst
+    * deploy-django.rst
     * django-deploy-quickstart.rst
 
 Deploy the Test server

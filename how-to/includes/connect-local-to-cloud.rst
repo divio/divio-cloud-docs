@@ -1,8 +1,8 @@
 ..  This include is used by:
 
     * django-deploy-quickstart-common-steps.rst
-    * django-create-deploy.rst
-    * flask-create-deploy.rst
+    * deploy-django.rst
+    * deploy-flask.rst
 
 Connect the local project to the cloud project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

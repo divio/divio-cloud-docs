@@ -4,13 +4,13 @@
        MySQL, and cloud media storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
-..  _django-create-deploy:
+..  _deploy-django:
 
-How to migrate (or create) and deploy a Django project
+How to migrate or create a web Django application
 ===========================================================================================
 
 This guide will take you through the steps to deploy a portable, vendor-neutral `Twelve-factor
-<https://www.12factor.net/config>`_ Django project. It includes configuration for:
+<https://www.12factor.net/config>`_ Django project on Divio. It includes configuration for:
 
 * Postgres or MySQL database
 * cloud media storage using S3
@@ -47,7 +47,7 @@ Change the version of Python if required; you can also specify the underlying op
 to your requirements - see :ref:`manage-base-image-choosing`.
 
 
-..  _django-create-deploy-requirements:
+..  _deploy-django-requirements:
 
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +76,7 @@ the appropriate options to install the components for Postgres/MySQL, and uWSGI/
 Check that the version of Django is correct, and include any other Python components required by your project.
 
 
-..  _django-create-deploy-docker-compose:
+..  _deploy-django-docker-compose:
 
 Local container orchestration with ``docker-compose.yml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +134,7 @@ containerised application.
             retries: 10
 
 
-..  _django-create-deploy-env-local:
+..  _deploy-django-env-local:
 
 Local configuration using ``.env-local``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,7 +189,7 @@ environment variables, instead of hard-coding it. Add some imports:
     from django_storage_url import dsn_configured_storage_class
 
 
-..  _django-create-deploy-security:
+..  _deploy-django-security:
 
 Some security-related settings. The cloud environments will provide some of these values as environment variables where
 appropriate; in all cases they will fall back to safe values if an environment variable is not provided:
@@ -214,7 +214,7 @@ appropriate; in all cases they will fall back to safe values if an environment v
     SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
 
 
-..  _django-create-deploy-database:
+..  _deploy-django-database:
 
 Configure database settings:
 
@@ -227,7 +227,7 @@ Configure database settings:
     DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 
-..  _django-create-deploy-static:
+..  _deploy-django-static:
 
 Configure static and media settings. First, add the ``WhiteNoiseMiddleware`` to the list of ``MIDDLEWARE``, after the
 ``SecurityMiddleware``:
@@ -241,7 +241,7 @@ Configure static and media settings. First, add the ``WhiteNoiseMiddleware`` to 
         [...]
     ]
 
-..  _django-create-deploy-media:
+..  _deploy-django-media:
 
 and then:
 
@@ -289,13 +289,13 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
         urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
 
 
-..  _django-create-deploy-CMD:
+..  _deploy-django-CMD:
 
 Extend the ``Dockerfile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Append to a command to the ``Dockerfile`` that will collect static files. Finally, depending which application gateway
-server :ref:`you installed above <django-create-deploy-requirements>`, include the appropriate command to launch the
+server :ref:`you installed above <deploy-django-requirements>`, include the appropriate command to launch the
 application when a container starts:
 
 ..  code-block:: Dockerfile

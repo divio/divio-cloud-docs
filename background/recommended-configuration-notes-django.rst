@@ -5,7 +5,7 @@ Working with our recommended Django project configuration
 
 Our recommended Django project configuration is described in:
 
-* :ref:`django-create-deploy`
+* :ref:`deploy-django`
 * :ref:`django-deploy-quickstart`
 * :ref:`django-cms-deploy-quickstart`
 

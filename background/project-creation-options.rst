@@ -26,7 +26,7 @@ Stack
 Generally, you will select *Build your own* and construct your own ``Dockerfile``. We also provide some pre-built
 project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below <project-creation-pre-built>`).
 
-:ref:`django-create-deploy` for a good example of using the *Build your own* option with Django.
+:ref:`deploy-django` for a good example of using the *Build your own* option with Django.
 
 
 ..  Do not change this reference!

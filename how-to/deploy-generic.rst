@@ -18,8 +18,8 @@ This guide assumes that you are familiar with the basics of the Divio platform a
 
 It also assumes that you have a working project, containing at least a minimal web application, ready to be migrated.
 
-We have more detailed and specific guides that cover :ref:`Django <django-create-deploy>` and :ref:`Flask
-<flask-create-deploy>`.
+We have more detailed and specific guides that cover :ref:`Django <deploy-django>` and :ref:`Flask
+<deploy-flask>`.
 
 
 Create a ``Dockerfile``
@@ -98,7 +98,7 @@ An example of how we recommend making use of them in Django applications:
     DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 Media credentials are similarly provided in ``DEFAULT_STORAGE_DSN``; see :ref:`how we recommend using them in a Django
-application <django-create-deploy-media>`, and :ref:`more details of the storage DSN variable itself
+application <deploy-django-media>`, and :ref:`more details of the storage DSN variable itself
 <storage_access_details>`.
 
 
@@ -216,7 +216,7 @@ local environment:
     DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
 
 In cloud environments, we provide a number of useful variables. If your application makes use of them (see a
-:ref:`Django example <django-create-deploy-security>`) you should provide them for local use too.
+:ref:`Django example <deploy-django-security>`) you should provide them for local use too.
 For example:
 
 ..  code-block:: text

@@ -17,17 +17,17 @@ Working in the local development environment
     Run the local server in Live configuration <local-in-live-mode>
 
 
-Deploy an application on Divio
-------------------------------
+Deploy a web application on Divio
+------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    Migrate a web application to Divio <deploy-generic>
-    Deploy a new Django project using our quickstart repository <django-deploy-quickstart>
-    Deploy a new django CMS project using our quickstart repository <django-cms-deploy-quickstart>
-    Migrate/create and deploy a Django project <django-create-deploy>
-    Migrate/create and deploy a Flask project <flask-create-deploy>
+    Migrate a web application <deploy-generic>
+    Migrate or create a Django application <deploy-django>
+    Migrate or create a Flask application <deploy-flask>
+    Create a new Django application using our quickstart repository <django-deploy-quickstart>
+    Create a new django CMS application using our quickstart repository <django-cms-deploy-quickstart>
 
 
 Building your Docker application

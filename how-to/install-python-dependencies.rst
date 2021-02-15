@@ -22,7 +22,7 @@ The simplest option is to list Python requirements in a ``requirements.txt`` fil
 
     RUN pip install -r requirements.txt
 
-in the ``Dockerfile``. See :ref:`django-create-deploy` for an example.
+in the ``Dockerfile``. See :ref:`deploy-django` for an example.
 
 However this is only adequate as a quick expedient in the early stages of development and is **not recommended** beyond
 that, as it does not allow for complete pinning of all dependencies.

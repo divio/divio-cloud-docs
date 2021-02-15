@@ -110,7 +110,7 @@ Next steps for new users
 ------------------------
 
 If you have a basic familiarity with Docker and cloud deployment, we recommend you follow the
-:ref:`django-create-deploy` guide for a concise, practical walk-through the process of configuring an application
+:ref:`deploy-django` guide for a concise, practical walk-through the process of configuring an application
 for local development and deployment to our cloud infrastructure.
 
 If Docker, containerisation and cloud deployment are new to you, we recommend that you work through our :ref:`detailed,

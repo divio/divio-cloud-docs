@@ -4,7 +4,7 @@
        Twelve-factor principles.
    :keywords: Docker, Flask, Postgres, MySQL, S3
 
-..  _flask-create-deploy:
+..  _deploy-flask:
 
 How to migrate (or create) and deploy a Flask project
 ===========================================================================================
@@ -95,7 +95,7 @@ You may need to change the version of Python, and should also select the ``CMD``
 server for production - if you're not using the ``flaskr`` example, you'll need to amend the name in the command too.
 
 
-..  _flask-create-deploy-requirements:
+..  _deploy-flask-requirements:
 
 Python requirements in ``requirements.txt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -275,7 +275,7 @@ To start up the site locally to test it:
 and access it at http://127.0.0.1:8000/hello (if using the ``flaskr`` example).
 
 
-.. _flask-create-deploy-startup:
+.. _deploy-flask-startup:
 
 Test using the production gateway server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

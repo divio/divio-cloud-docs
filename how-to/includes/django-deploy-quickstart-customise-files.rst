@@ -23,7 +23,7 @@ By default, the project uses Postgres and uWSGI, but MySQL and other gateway ser
 
 You'll need to change a few lines of configuration to achieve this across a few files. See the notes for each:
 
-* :ref:`requirements.txt <django-create-deploy-requirements>`
-* :ref:`docker-compose.yml <django-create-deploy-docker-compose>`
-* :ref:`env-local <django-create-deploy-env-local>`
-* :ref:`the Dockerfile <django-create-deploy-CMD>`
+* :ref:`requirements.txt <deploy-django-requirements>`
+* :ref:`docker-compose.yml <deploy-django-docker-compose>`
+* :ref:`env-local <deploy-django-env-local>`
+* :ref:`the Dockerfile <deploy-django-CMD>`

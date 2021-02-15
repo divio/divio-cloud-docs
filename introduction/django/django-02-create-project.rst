@@ -14,7 +14,7 @@ The principles covered by the tutorial will apply to any other development stack
 ..  admonition:: This is a step-by-step introduction intended for beginners.
 
      If you're already familiar with the basics of Divio or have experience with Docker and cloud platforms in general,
-     our guide :ref:`How to create and deploy a Django project <django-create-deploy>` is probably more appropriate.
+     our guide :ref:`How to create and deploy a Django project <deploy-django>` is probably more appropriate.
 
 
 ..  include:: /introduction/includes/02-create-1-set-up.rst
