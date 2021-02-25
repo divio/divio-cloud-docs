@@ -122,6 +122,9 @@ Interact with the Cloud database
 Use the ``divio project pull db`` and ``divio project push db`` commands to copy a database between a cloud environment
 and your own local environment.
 
+Note that the ``pull`` operation downloads a binary database dump (in a tarred archive), whereas ``push`` creates and
+uploads a SQL database dump.
+
 See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these commands.
 
 
