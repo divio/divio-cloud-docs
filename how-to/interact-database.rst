@@ -206,19 +206,26 @@ you.
 Manage Postgres extensions
 --------------------------
 
-If you run a ``divio push db`` command that fails with:
+Although you cannot create extensions yourself on our shared database clusters, we can often enable extensions for you
+on request. The most commonly-requested of these is `PostGIS <https://postgis.net>`_. Please contact Divio support
+for this.
+
+You will run into errors if you perform an operation that requires or tries to create a missing extension, for example:
+
+..  code-block:: text
+
+    psycopg2.errors.InsufficientPrivilege: permission denied to create extension "unaccent"
+
+from a database migration or
 
 ..  code-block:: text
 
     ---> Processing error!
 
-the most likely cause is that your local database contains an extension that is not available on our cluster.
+from a ``divio push db`` command, when the local database uses an extension not available on the cloud.
 
-Although you cannot create extensions yourself on our shared database clusters, we can often enable extensions for you
-on request. The most commonly-requested of these is `PostGIS <https://postgis.net>`_.
-
-Run the Postgres ``\dx`` command :ref:`in a local database shell <interact-local-db>` to list extensions that you're
-using.
+Run the Postgres ``\dx`` command :ref:`in a local database shell <interact-local-db>` or in a cloud shell to list
+extensions that you're using.
 
 
 .. _common-db-operations:
