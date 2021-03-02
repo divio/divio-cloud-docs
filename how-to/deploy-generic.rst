@@ -40,15 +40,25 @@ example:
     WORKDIR /app
     COPY . /app
 
+.. _deploy-generic-cmd:
 
-Your ``Dockerfile`` should also include an entrypoint that launches a server running on port 80.
-Usually, this will be a ``CMD`` at the end of the ``Dockerfile``.
+Your ``Dockerfile`` should launch a server running on port 80, with a ``CMD`` at the end of the
+``Dockerfile``.
 
 For example, for a Python Flask project you might use something like:
 
 ..  code-block:: Dockerfile
 
     CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
+
+..  admonition:: Use ``CMD``, not ``ENTRYPOINT`` to start the server
+
+    A ``CMD`` that starts the server allows our infrastructure to override this default, for example to launch
+    containers without starting the server, when some other process needs to be executed. An ``ENTRYPOINT`` that
+    starts the server would not allow this.
+
+    It's good practice to conclude any Docker entrypoint script that you use with ``exec "$@"``, `so that any commands
+    passed to the container will be executed as expected <https://stackoverflow.com/a/39082923/2422705>`_.
 
 The ``Dockerfile`` will build the image that is used for all of the application's containers. It should for example
 contain commands to install all the components required in the application.
