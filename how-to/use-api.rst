@@ -119,19 +119,19 @@ Next, you need to retrieve a list of backups, via::
 This list may spread across several pages - you will need to loop over the entire list, until you find a backup with whose ``environment`` value matches the environment UUID you retrieved in the previous step. This backup will have a
 UUID of its own.
 
-Them you need to retrieve the list of service instance backups::
+Then you need to retrieve the list of service instance backups::
 
     https://api.divio.com/apps/v3/service-instance-backups
 
 which again may spread over several pages. Once more, loop over that list to find the instances that interest you. As
-well as having a ``backup`` value that needs to match the backup UUID from the previous step, wach one will have a
+well as having a ``backup`` value that needs to match the backup UUID from the previous step, each one will have a
 ``service-instance`` value, that can be used with::
 
     https://api.divio.com/apps/v3/service-instances/
 
 to identify what exactly was included in the service instance backup (database, media storage, etc).
 
-::
+Finally::
 
     https://api.divio.com/apps/v3/service-instance-backups/<service instance backup UUID>
 
