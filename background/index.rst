@@ -3,6 +3,18 @@
 Background information
 ======================
 
+Cloud management
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    environments
+    metrics
+    services
+    release-commands
+
+
 Our infrastructure
 ------------------
 
@@ -16,18 +28,6 @@ Our infrastructure
     Maintenance operations <maintenance>
     Our Python wheels proxy <wheelsproxy>
     Elasticsearch instances <elasticsearch>
-
-
-Cloud management
-----------------
-
-.. toctree::
-    :maxdepth: 1
-
-    environments
-    metrics
-    services
-    release-commands
 
 
 How it works on Divio

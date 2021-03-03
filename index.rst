@@ -1,11 +1,26 @@
 Divio developer handbook
 ==============================
 
-Divio provides a better way to develop, deploy, scale and maintain web applications. Use workflows you're familiar with
-and open-source tools you can trust.
+`Divio <https://divio.com>`_ is a cloud infrastructure management service, with a platform for containerised
+web application deployment.
+
+Divio aims to provide a better way to develop, deploy, scale and maintain web applications, and manage the
+infrastructure they run on, using workflows you're familiar with and open-source tools you can trust.
+
+Applications deployed on Divio can be created with any stack, platform or language.
+
+They are containerised using Docker, versioned in Git and can be deployed to any one of multiple global cloud regions.
+Each application is provided with :ref:`multiple environments <environments>` (Test, Live, etc), with its own services
+(:ref:`database, storage <services>`, backups, :ref:`metrics <metrics>`, logging and more). Services are provisioned
+automatically for each environment.
+
+For the convenience of developers, Divio includes comprehensive developer tools, and a powerful :ref:`local development
+environment <local-cli>`.
+
+
+===========================
 
 ..  rst-class:: column
-
 
 :ref:`Get started <introduction>`
 -------------------------------------------------------
@@ -14,11 +29,10 @@ and open-source tools you can trust.
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" href="introduction" role="button">Tutorials</a>
+    <a class="btn btn-primary btn-small btn-block" href="introduction" role="button">Tutorials</a>
 
 
 ..  rst-class:: column
-
 
 :ref:`How-to <how-to>`
 -------------------------------------------------------
@@ -53,53 +67,45 @@ and open-source tools you can trust.
 
     <a class="btn btn-primary btn-small" href="reference" role="button">Reference</a>
 
-..  rst-class:: clearfix row custon-headings
+
+..  rst-class:: clearfix row custom-headings
+
+===========================
 
 Additional resources
 --------------------
 
-..  rst-class:: column
-
 Divio Community Slack
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Divio Community Slack group is for all Divio users.
-
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" target="_blank" href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join Slack</a>
+    <p>The Divio Community Slack group is for all Divio users. <a class="btn btn-primary btn-small" target="_blank"
+    href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join
+    us on Slack</a></p>
 
-..  rst-class:: column
 
 The Divio API
 ~~~~~~~~~~~~~
 
-The Divio API is a powerful tool for interacting with our infrastructure and your projects. See:
+The Divio API is a powerful tool for interacting with our infrastructure and your projects. See :ref:`use-divio-api` in
+this documentation and the `Divio API reference documentation <https://api.docs.divio.com>`_.
 
-* :ref:`use-divio-api` in this documentation
-* the `Divio API reference documentation <https://api.docs.divio.com>`_
+===========================
 
-
-About the Divio cloud deployment platform
+Our promises to developers
 -----------------------------------------
 
-`Divio <https://divio.com>`_ is a platform for containerised web
-projects. Divio's cloud platform aims to offer developers:
+Divio will help you achieve the results of an entire DevOps team all by yourself - there are just three steps to
+deployment heaven:
 
-**More reliable deployment** - it's built in Python and Django, and uses Docker
-to give application developers a local development environment that is
-consistent between the Cloud live and test servers - in other words, a system
-where if it works on your machine, you can expect it to work in production.
+**Docker**: containerise your application using the world’s most popular containerisation technology.
 
-**Easier deployment and maintenance** - the Dockerised Cloud platform makes it
-possible for developers to get their projects online, and to take charge of
-deployment, maintenance and scaling, without needing the operations or system
-administrator skills this usually demands to do well.
+**Divio**: create a project with the database, storage and other services it will need - all wired up and ready to go.
 
-**Better portability** - the containerisation technology used in Divio
-projects guarantees portability and means freedom from lock-in to a single
-provider. A Divio project can be easily deployed on another platform
-that supports Docker.
+**Deploy**: go live, enjoying a fully automated build and launch.
+
+If you let us take care of the dull, repetitive jobs, you'll get to do the creative, enjoyable ones.
 
 
 .. toctree::
