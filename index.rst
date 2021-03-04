@@ -91,6 +91,21 @@ The Divio API
 The Divio API is a powerful tool for interacting with our infrastructure and your projects. See :ref:`use-divio-api` in
 this documentation and the `Divio API reference documentation <https://api.docs.divio.com>`_.
 
+
+Speak to an expert
+~~~~~~~~~~~~~~~~~~
+
+Do you need to know more about Divio and its capabilities to decide whether the platform is suited to your most complex
+requirements? Get some answers from an expert, with no obligations and no sales-pitches - just the facts.
+
+..  raw:: html
+
+    <a class="btn btn-primary btn-small" target="_blank"
+    href="https://calendly.com/daniele-procida/15min" role="button">Book a 15-minute call</a></p>
+
+
+
+
 ===========================
 
 Our promises to developers
