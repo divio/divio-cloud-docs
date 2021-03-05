@@ -72,8 +72,6 @@ html_theme_options = {
     "segment_id": "FT34iqltJg6YdIX5fcyIt5J035FmSAAq",
     "style_external_links": True,
     "navigation_depth": 2,
-}
-html_theme_options = {
     "sidebar_hide_name": True,
 }
 
