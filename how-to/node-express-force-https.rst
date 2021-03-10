@@ -20,7 +20,7 @@ whether it was made over HTTP or HTTPS. Add the following prior to your other ro
     app.use(function(request, response, next) {
 
     if (process.env.NODE_ENV != 'development' && !request.secure) {
-       return response.redirect("https://" + request.headers.host + request.url) } next()})
+       return response.redirect("https://" + request.headers.host + request.url)
     }
       next()
     })
