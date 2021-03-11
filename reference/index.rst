@@ -51,6 +51,7 @@ Coding in Divio applications
     :maxdepth: 1
 
     Working with your project’s media storage <work-media-storage>
+    Working with your project’s database <work-database>
     File compression <compression>
     Sending email <coding-sending-email>
 
