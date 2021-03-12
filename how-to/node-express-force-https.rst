@@ -15,7 +15,8 @@ We need to inform Express that its is behind a proxy. Edit your application's ``
     app.enable('trust proxy')
 
 This setting will populate the request object with extra information; we can then query the request to determine
-whether it was made over HTTP or HTTPS. Add the following prior to your other routing (you will need to modify this to suit your application)::
+whether it was made over HTTP or HTTPS. Add the following prior to your other routing (you will need to modify this to
+suit your application)::
 
     app.use(function(request, response, next) {
 
