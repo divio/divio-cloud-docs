@@ -8,6 +8,7 @@ Divio provides a number of Django addon applications for convenience.
 *Support* refers to Divio's commitment to maintain an addon, which could include bug-fixes and continued development of
 features. It does not refer to technical support for end users.
 
+
 Fully supported
 ---------------
 
@@ -33,6 +34,7 @@ Django.
 * `Aldryn SSO <https://github.com/divio/aldryn-sso>`_
 * `Aldryn Snake <https://github.com/divio/aldryn-snake>`_
 
+
 Limited support
 ---------------
 
@@ -46,6 +48,7 @@ Other key addons that can in general be expected to be up-to-date with current L
 * `django CMS Admin Style <https://github.com/django-cms/djangocms-admin-style>`_
 * `django CMS Google Map <https://github.com/django-cms/djangocms-googlemap>`_
 * `django CMS Bootstrap 4 <https://github.com/django-cms/djangocms-bootstrap4>`_
+
 
 Unsupported/deprecated
 ----------------------
