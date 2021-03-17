@@ -77,3 +77,4 @@ Aldryn Django and addons
     addons-anatomy
     addons-configuration-overview
     addons-templates
+    addons-list

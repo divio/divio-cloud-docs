@@ -62,6 +62,7 @@ though some prefer to undertake configuration manually and choose not to use it.
 
 ..  seealso::
 
+    * :ref:`django-addons-list`
     * :ref:`application-configuration`
     * :ref:`configure-with-aldryn-config`
     * :ref:`settings.py`
