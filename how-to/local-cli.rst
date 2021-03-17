@@ -65,6 +65,8 @@ Add your public key to the Control Panel
 Upload your public key at https://control.divio.com/account/ssh-keys/.
 
 
+.. _local-cli-usage:
+
 Usage
 -----
 

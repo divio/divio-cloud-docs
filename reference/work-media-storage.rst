@@ -26,6 +26,8 @@ Good implementations of cloud storage backends or plugins, for both S3 and Azure
 web frameworks and applications languages.
 
 
+.. _work-media-storage-django:
+
 Working with our storage backends in Django
 ---------------------------------------------
 
@@ -39,6 +41,8 @@ File objects directly, it doesn't need to do anything differently.
 
 Similarly, an application should not rely on knowing or manipulating a File object's file path.
 
+
+.. _work-media-storage-django-default:
 
 Use Django's defined ``DEFAULT_FILE_STORAGE``, not ``FileSystemStorage``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -23,9 +23,9 @@ Deploy a web application on Divio
 .. toctree::
     :maxdepth: 1
 
-    Migrate a web application <deploy-generic>
-    Migrate or create a Django application <deploy-django>
-    Migrate or create a Flask application <deploy-flask>
+    Deploy an application (generic guide) <deploy-generic>
+    Deploy a Django application <deploy-django>
+    Deploy a Flask application <deploy-flask>
     Create a new Django application using our quickstart repository <django-deploy-quickstart>
     Create a new django CMS application using our quickstart repository <django-cms-deploy-quickstart>
 

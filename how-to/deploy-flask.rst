@@ -6,108 +6,32 @@
 
 ..  _deploy-flask:
 
-How to migrate (or create) and deploy a Flask project
+How to deploy a Flask application on Divio
 ===========================================================================================
 
-This guide will take you through the steps to deploy a portable, vendor-neutral Flask project, either by building it
-from scratch or migrating an existing application, using Docker. The project architecture is in line
-with `Twelve-factor <https://www.12factor.net/config>`_ design principles.
+..  include:: /how-to/includes/deploy-common-intro.rst
 
-This guide assumes that you are familiar with the basics of the Divio platform and have Docker and the :ref:`Divio CLI
-<local-cli>` installed.
+The steps here should work with any Flask project, and include configuration for:
 
-
-Edit (or create) the project files
------------------------------------
-
-Start in an existing Flask project, or if necessary, create a new directory.
+* Postgres or MySQL database
+* cloud media storage using S3
+* static file handling using `WhiteNoise <http://whitenoise.evans.io>`_
+* configuring a gateway server.
 
 
-Create a minimal application if required
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
-You may already have a Flask application of your own to migrate, but if not, the example below provides a minimal one.
-The example is taken from the :doc:`Flask tutorial's own flaskr example <tutorial/factory>`. Create a ``flaskr``
-directory, containing an ``__init__.py`` file:
+..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
-..  code-block:: python
-    :emphasize-lines: 10-12
+..  include:: /how-to/includes/deploy-common-dockerfile-system-dependencies.rst
 
-    import os
+..  include:: /how-to/includes/deploy-common-dockerfile-application-dependencies.rst
 
-    from flask import Flask
-
-
-    def create_app(test_config=None):
-        # create and configure the app
-        app = Flask(__name__, instance_relative_config=True)
-        app.config.from_mapping(
-            SECRET_KEY = os.environ.get('SECRET_KEY', 'dev'),
-            DATABASE = os.environ.get('DATABASE_URL', os.path.join(app.instance_path, 'flaskr.sqlite'),
-            STORAGE = os.environ.get('DEFAULT_STORAGE_DSN')
-        )
-
-        if test_config is None:
-            # load the instance config, if it exists, when not testing
-            app.config.from_pyfile('config.py', silent=True)
-        else:
-            # load the test config if passed in
-            app.config.from_mapping(test_config)
-
-        # ensure the instance folder exists
-        try:
-            os.makedirs(app.instance_path)
-        except OSError:
-            pass
-
-        # a simple page that says hello
-        @app.route('/hello')
-        def hello():
-            return 'Hello, World!'
-
-        return app
-
-Note the highlighted sections above, in which the application obtains configuration values from its environment. If you
-are working on your own application that has database or other configuration of this kind, you should adapt it so that
-it is similarly able to obtain these values.
-
-The next step is to Dockerise the application.
-
-
-The ``Dockerfile``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a file named ``Dockerfile``, adding:
+The ``requirements.txt`` file should pin Python dependencies as firmly possible (use the output from ``pip
+freeze`` to get a full list). You will probably need to include some of the following:
 
 ..  code-block:: Dockerfile
-    :emphasize-lines: 6-8
-
-    FROM python:3.8
-    WORKDIR /app
-    COPY . /app
-    RUN pip install -r requirements.txt
-
-    # Select one of the following application gateway server commands
-    CMD uwsgi --http=0.0.0.0:80 --module="flaskr:create_app()"
-    CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
-
-You may need to change the version of Python, and should also select the ``CMD`` that will start your preferred gateway
-server for production - if you're not using the ``flaskr`` example, you'll need to amend the name in the command too.
-
-
-..  _deploy-flask-requirements:
-
-Python requirements in ``requirements.txt``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The ``Dockerfile`` expects to find a ``requirements.txt`` file, so add one if required. Where indicated below, choose
-the appropriate options to install the components for Postgres/MySQL if you plan to use them, and uWSGI/Gunicorn, for
-example:
-
-..  code-block:: Dockerfile
-    :emphasize-lines: 3-5, 7-9
-
-    flask==1.1.2
+    :emphasize-lines: 1-3, 5-7
 
     # Select one of the following for the database as required
     psycopg2==2.8.5
@@ -120,15 +44,45 @@ example:
 Check that the version of Flask is correct, and include any other Python components required by your project.
 
 
-Local container orchestration with ``docker-compose.yml``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst
 
-Create a ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate
-the ``web`` image used in cloud deployments, allowing you to run the application in an environment as close to that of
-the cloud servers as possible. Amongst other things, it will allow the project to use a Postgres or MySQL database
-running in a local container, and provides convenient access to files inside the containerised application.
+..  include:: /how-to/includes/deploy-common-dockerfile-cmd.rst
 
-You will need to include/delete the highlighted sections below appropriately:
+..  code-block:: Dockerfile
+
+    # Select one of the following application gateway server commands
+    CMD uwsgi --http=0.0.0.0:80 --module="flaskr:create_app()"
+    CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
+
+
+..  include:: /how-to/includes/deploy-common-cmd-admonition.rst
+
+..  include:: /how-to/includes/deploy-common-dockerfile-access-services.rst
+
+..  include:: /how-to/includes/deploy-common-configuration-services.rst
+
+Helper modules
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are various Python helper module libraries available that can parse environment variables to
+extract the settings so that you can apply them to the application.
+
+..  include:: /how-to/includes/deploy-common-settings-security.rst
+
+..  include:: /how-to/includes/deploy-common-settings-database.rst
+
+..  include:: /how-to/includes/deploy-common-settings-static.rst
+
+One option for Flask is to configure the webserver/gateway server to handle them; using Flask's own
+``send_from_directory()`` can also be used, or :doc:`whitenoise:index` - see :doc:`whitenoise:flask`.
+
+..  include:: /how-to/includes/deploy-common-settings-media.rst
+
+..  include:: /how-to/includes/deploy-common-settings-media-admonition.rst
+
+..  include:: /how-to/includes/deploy-common-settings-other.rst
+
+..  include:: /how-to/includes/deploy-common-compose.rst
 
 ..  code-block:: yaml
     :emphasize-lines: 15-17, 20-
@@ -177,12 +131,7 @@ You will need to include/delete the highlighted sections below appropriately:
             retries: 10
 
 
-Local configuration using ``.env-local``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-As you will see above, the ``web`` service refers to an ``env_file`` containing the environment variables that will be
-used in the local development environment. Create a ``.env-local`` file. As with the ``docker-compose.yml``, select
-the ``DATABASE_URL`` as required.
+..  include:: /how-to/includes/deploy-common-env-local.rst
 
 The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that your application can be found at ``flaskr``; amend this appropriately if required.
 
@@ -200,124 +149,15 @@ The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that
     FLASK_APP=flaskr
     FLASK_ENV=development
 
-With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production environment or run locally, using environment variables for configuration in ether case.
+With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production
+environment or run locally, using environment variables for configuration in ether case.
 
 
-Build with Docker
-~~~~~~~~~~~~~~~~~
+..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 
-Now you can build the application containers locally:
+..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
-..  code-block:: bash
-
-    docker-compose build
-
-
-Application configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-It's beyond the scope of this guide to cover configuration in detail, as that will depend to a great extent on the
-application you have or are planning to build. However the basic principle for all configuration is similar:
-exactly the same application code should run without modification whether locally or in one of the multiple cloud
-environments, and all configuration should be provided by environment variables.
-
-For example:
-
-
-Database
-^^^^^^^^
-
-In the ``flaskr`` example above, the database configuration is read from the ``DATABASE_URL`` environment variable, and
-falls back to use SQLite if not provided.
-
-Each Divio cloud environment with a database attached to it will be provided automatically with a
-``DATABASE_URL`` environment variable. In the ``.env-local`` and ``docker-compose.yml`` files above, example
-configuration is provided so that when running locally, the application can use the same database type as it does in
-production. (This is a much more satisfactory approach than using say Postgres in production and SQLite for
-development.)
-
-
-Media storage
-^^^^^^^^^^^^^
-
-If your application needs to handle media, it should parse the ``DEFAULT_STORAGE_DSN`` to configure an appropriate
-storage interface. Each Divio cloud environment with media object storage provisioned will be provided with a
-``DEFAULT_STORAGE_DSN`` variable.
-
-Use ``DEFAULT_STORAGE_DSN`` in ``.env-local`` to configure storage for local development. This can be one of the cloud
-storage instances, but it's often convenient to use local file storage rather than a cloud media store (as in the
-example given, ``file:///data/media/?url=%2Fmedia%2F``) if your Flask code can handle both kinds of storage backend.
-
-
-Serving static files
-^^^^^^^^^^^^^^^^^^^^
-
-For handling static files, various suitable options are available, including :doc:`whitenoise:index` - see
-:doc:`whitenoise:flask`.
-
-
-Other configuration
-^^^^^^^^^^^^^^^^^^^
-
-Divio cloud projects include :ref:`a number of environment variables as standard <env-var-list>`. In addition,
-:ref:`user-supplied variables <environment-variables>` may be applied per-environment.
-
-
-Check the local site
-~~~~~~~~~~~~~~~~~~~~
-
-To start up the site locally to test it:
-
-..  code-block:: bash
-
-    docker-compose up
-
-and access it at http://127.0.0.1:8000/hello (if using the ``flaskr`` example).
-
-
-.. _deploy-flask-startup:
-
-Test using the production gateway server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In cloud environments: the ``Dockerfile`` contains a ``CMD`` that starts up Flask using the uWSGI/Gunicorn or other
-application gateway server.
-
-In the local environment: the ``command`` line in ``docker-compose.yml`` starts up Flask using the ``flask run``
-command, overriding the ``CMD`` in the ``Dockerfile``. If the ``command`` line is commented out, ``docker-compose up``
-will use the application gateway server locally instead.
-
-
-Deployment and further development
------------------------------------------
-
-Create a new project on Divio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In the `Divio Control Panel <https://control.divio.com>`_ add a new project, selecting the *Build your own* option.
-
-
-Add database and media services
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The new project does not include any :ref:`additional services <services>`; they must be added manually using the Divio
-Control Panel if required. Use the *Services* menu to add a Postgres or MySQL database to match your choice earlier,
-and an S3 object storage instance for media.
-
-
-..  include:: /how-to/includes/connect-local-to-cloud.rst
-
-
-Configure the Git repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Initialise the project as a Git repository if it's not Git-enabled already:
-
-..  code-block:: bash
-
-    git init .
-
-A ``.gitignore`` file is needed to exclude unwanted files from the repository. Add:
+..  include:: /how-to/includes/deploy-common-git.rst
 
 ..  code-block:: text
 
@@ -339,36 +179,4 @@ A ``.gitignore`` file is needed to exclude unwanted files from the repository. A
     .Spotlight-V100
     .Trashes
 
-Add the project's Git repository as a remote, using the value obtained from the ``divio project configure`` command above, for example:
-
-..  code-block:: bash
-
-    git remote add origin git@git.divio.com:my-divio-project.git
-
-(Use e.g. ``divio`` instead if you already have a remote named ``origin``.)
-
-
-Commit your work
-~~~~~~~~~~~~~~~~
-
-..  code-block:: bash
-
-    git add .                                                 # add all the newly-created files
-    git commit -m "Created new project"                       # commit
-    git push --set-upstream --force origin [or divio] master  # push, overwriting any unneeded commits made by the Control Panel at creation time
-
-You'll now see "1 undeployed commit" listed for the project in the Control Panel.
-
-
-Deploy the Test server
-~~~~~~~~~~~~~~~~~~~~~~
-
-Deploy with:
-
-..  code-block:: bash
-
-    divio project deploy
-
-(or use the **Deploy** button in the Control Panel).
-
-Once deployed, your project will be accessible via the Test server URL shown in the Control Panel.
+..  include:: /how-to/includes/deploy-common-deploy.rst

@@ -1,14 +1,21 @@
 ..  This include is used by:
 
-    * django-deploy-quickstart-common-steps.rst
-    * deploy-django.rst
-    * deploy-flask.rst
+    * how-to/django-deploy-quickstart-common-steps.rst
+    * how-to/deploy-generic.rst
+    * how-to/deploy-django.rst
+    * how-to/deploy-flask.rst
 
 Connect the local project to the cloud project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your Divio project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to
-get your project's slug; you can also read the slug from the Control Panel.
+get your project's slug.
+
+You can also read the slug from the Control Panel:
+
+..  image:: /images/intro-slug.png
+    :alt: 'Project slug'
+    :width: 483
 
 Run:
 

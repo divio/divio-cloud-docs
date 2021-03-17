@@ -94,6 +94,8 @@ Install the client
     you will need installed.
 
 
+.. _interact-storage-parse-DSN:
+
 Parse the storage DSN
 ~~~~~~~~~~~~~~~~~~~~~~
 
