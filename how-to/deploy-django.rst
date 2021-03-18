@@ -269,7 +269,7 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
     DOMAIN_ALIASES=localhost, 127.0.0.1
     SECURE_SSL_REDIRECT=False
 
-..  include:: /how-to/includes/deploy-compose-summary.rst
+..  include:: /how-to/includes/deploy-common-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 

@@ -148,7 +148,7 @@ The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that
     FLASK_APP=flaskr
     FLASK_ENV=development
 
-..  include:: /how-to/includes/deploy-compose-summary.rst
+..  include:: /how-to/includes/deploy-common-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 

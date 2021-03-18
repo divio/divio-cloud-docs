@@ -142,7 +142,7 @@ In cloud environments, we provide a number of useful variables. If your applicat
     DOMAIN_ALIASES=localhost, 127.0.0.1
     SECURE_SSL_REDIRECT=False
 
-..  include:: /how-to/includes/deploy-compose-summary.rst
+..  include:: /how-to/includes/deploy-common-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 
