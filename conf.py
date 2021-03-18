@@ -120,6 +120,6 @@ man_pages = [
 # -- Options for TODOs --------------------------------------------------------
 #
 
-todo_include_todos = False
+todo_include_todos = True
 todo_link_only = True
-todo_emit_warnings = True
+todo_emit_warnings = False
