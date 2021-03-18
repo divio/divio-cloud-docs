@@ -100,7 +100,7 @@ requirements? Get some answers from an expert, with no obligations and no sales-
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" target="_blank"
+    <p><a class="btn btn-primary btn-small" target="_blank"
     href="https://calendly.com/daniele-procida/15min" role="button">Book a 15-minute call</a></p>
 
 
