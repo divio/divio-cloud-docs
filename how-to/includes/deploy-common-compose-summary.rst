@@ -1,0 +1,1 @@
+With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production environment or run locally, using environment variables for configuration in either case.

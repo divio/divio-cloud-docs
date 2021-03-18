@@ -14,9 +14,6 @@ How to deploy a web application on Divio: generic guide
 The steps outline here will work for an application based on any suitable framework and language. We also have more
 detailed and specific guides that cover :ref:`Django <deploy-django>` and :ref:`Flask <deploy-flask>`.
 
-The exact steps you need to take will depend on your application and the language/framework it's written in - use this
-as a checklist to make sure that you have covered the key steps.
-
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
@@ -31,9 +28,7 @@ language environment you're using probably has a way to do this.
 For example, in Python you can run ``pip freeze`` to get a definitive list of dependencies, or do something similar
 in Node with ``npm shrinkwrap``.
 
-
 ..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst
-
 
 ..  _deploy-generic-cmd:
 
@@ -45,7 +40,6 @@ For example, for a Python Flask application you might use something like:
 
     CMD gunicorn --bind=0.0.0.0:80 --forwarded-allow-ips="*" "flaskr:create_app()"
 
-
 ..  include:: /how-to/includes/deploy-common-cmd-admonition.rst
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-access-services.rst
@@ -53,6 +47,8 @@ For example, for a Python Flask application you might use something like:
 ..  include:: /how-to/includes/deploy-common-configuration-services.rst
 
 ..  include:: /how-to/includes/deploy-common-helper-modules.rst
+
+Your chosen framework may already have helper module libraries available that can parse environment variables to extract the settings and apply them to the application (most mature and widely-used frameworks do). If not, you will need to parse the variables yourself.
 
 ..  include:: /how-to/includes/deploy-common-settings-security.rst
 
@@ -126,7 +122,7 @@ For an example, see :ref:`how we recommend using the DEFAULT_STORAGE_DSN in a Dj
             retries: 10
 
 
-..  include:: /how-to/includes/deploy-common-env-local.rst
+..  include:: /how-to/includes/deploy-common-compose-env-local.rst
 
 ..  code-block:: text
     :emphasize-lines: 2-3
@@ -146,8 +142,7 @@ In cloud environments, we provide a number of useful variables. If your applicat
     DOMAIN_ALIASES=localhost, 127.0.0.1
     SECURE_SSL_REDIRECT=False
 
-With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production environment or run locally, using environment variables for configuration in either case.
-
+..  include:: /how-to/includes/deploy-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 

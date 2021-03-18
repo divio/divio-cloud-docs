@@ -61,8 +61,7 @@ Check that the version of Flask is correct, and include any other Python compone
 
 ..  include:: /how-to/includes/deploy-common-configuration-services.rst
 
-Helper modules
-~~~~~~~~~~~~~~~~~~~~~~~~~
+..  include:: /how-to/includes/deploy-common-helper-modules.rst
 
 There are various Python helper module libraries available that can parse environment variables to
 extract the settings so that you can apply them to the application.
@@ -131,7 +130,7 @@ One option for Flask is to configure the webserver/gateway server to handle them
             retries: 10
 
 
-..  include:: /how-to/includes/deploy-common-env-local.rst
+..  include:: /how-to/includes/deploy-common-compose-env-local.rst
 
 The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that your application can be found at ``flaskr``; amend this appropriately if required.
 
@@ -149,9 +148,7 @@ The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that
     FLASK_APP=flaskr
     FLASK_ENV=development
 
-With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production
-environment or run locally, using environment variables for configuration in ether case.
-
+..  include:: /how-to/includes/deploy-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 

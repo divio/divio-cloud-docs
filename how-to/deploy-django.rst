@@ -84,9 +84,7 @@ You'll need to change ``myapp`` appropriately.
 
 ..  include:: /how-to/includes/deploy-common-configuration-services.rst
 
-
-Helper modules
-~~~~~~~~~~~~~~~~~~~~~~~~~
+..  include:: /how-to/includes/deploy-common-helper-modules.rst
 
 In your Django settings file, import some helper modules to handle the environment variables:
 
@@ -183,9 +181,7 @@ For Django, we suggest using:
 
 ..  include:: /how-to/includes/deploy-common-settings-media-admonition.rst
 
-
 ..  include:: /how-to/includes/deploy-common-settings-other.rst
-
 
 Add a URL pattern for serving media files in local development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,7 +255,7 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
 
 ..  _deploy-django-env-local:
 
-..  include:: /how-to/includes/deploy-common-env-local.rst
+..  include:: /how-to/includes/deploy-common-compose-env-local.rst
 
 ..  code-block:: text
     :emphasize-lines: 1-3
@@ -273,9 +269,7 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
     DOMAIN_ALIASES=localhost, 127.0.0.1
     SECURE_SSL_REDIRECT=False
 
-With this, you have the basics for a Dockerised application that can equally effectively be deployed in a production
-environment or run locally, using environment variables for configuration in either case.
-
+..  include:: /how-to/includes/deploy-compose-summary.rst
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 
@@ -297,7 +291,7 @@ And create a Django superuser:
 **Or**, you can import the database content from an existing database - see :ref:`interact-database`.
 
 
-..  include:: /how-to/includes/deploy-common-buildrun-build.rst
+..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
 ..  include:: /how-to/includes/deploy-common-git.rst
 
