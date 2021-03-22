@@ -238,6 +238,8 @@ The Control Panel can save commits to it (using :ref:`the key you provided <git-
 send a signal to the Control Panel to pull in new commits when they land (using :ref:`the webhook <git-setup-webhook>`).
 
 
+.. _git-reset-to-origin:
+
 Remote Git: Reset to origin
 ----------------------------
 
