@@ -238,6 +238,18 @@ The Control Panel can save commits to it (using :ref:`the key you provided <git-
 send a signal to the Control Panel to pull in new commits when they land (using :ref:`the webhook <git-setup-webhook>`).
 
 
+.. _git-reset-to-origin:
+
+Remote Git: Reset to origin
+----------------------------
+
+For projects with external git repositories, especially if commits are force pushed, the project's repository on the
+control panel may not reflect all the commits made in its remote repository at ``origin``. 
+
+To reset to remote, go to the *repository* view of the project's control panel and select *reset to origin*
+and the repository will reflect the commit history of the remote ``origin``.
+
+
 Options and special cases
 -------------------------
 
