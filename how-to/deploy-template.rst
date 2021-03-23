@@ -58,7 +58,7 @@ How to deploy an application on Divio: template
         # install dependencies listed in the repository's requirements file
         RUN pip install -r requirements.txt
 
-    Any requirements should be pinned as firmly as possibble.
+    Any requirements should be pinned as firmly as possible.
 
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst
@@ -147,7 +147,7 @@ How to deploy an application on Divio: template
 
 ..  todo::
 
-    Add some suggested entried for .gitignore [required]
+    Add some suggested entries for ``.gitignore`` [required]
 
 ..  include:: /how-to/includes/deploy-common-deploy.rst
 

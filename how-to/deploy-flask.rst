@@ -96,7 +96,7 @@ Your own application should do something similar if it needs to use the database
 
 ..  include:: /how-to/includes/deploy-common-settings-static.rst
 
-One option for Flask is to configure the webserver/gateway server to handle them; using Flask's own
+One option for Flask is to configure the web server/gateway server to handle them; using Flask's own
 ``send_from_directory()`` can also be used, or :doc:`whitenoise:index` - see :doc:`whitenoise:flask`.
 
 ..  include:: /how-to/includes/deploy-common-settings-media.rst

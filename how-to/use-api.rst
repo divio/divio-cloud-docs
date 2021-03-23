@@ -110,7 +110,7 @@ Then, you need to get all environments for that application::
 
 This will give you a list of environments. In that list, find the one whose ``slug`` value matches the name of the
 environment (Test, Live, etc) of the environment you're interested in. Once again, you want the environment's UUID.
-(Obviously, this is the kind of operation that is much easier to perform programatically than it is for a human to do.)
+(Obviously, this is the kind of operation that is much easier to perform programmatically than it is for a human to do.)
 
 Next, you need to retrieve a list of backups, via::
 

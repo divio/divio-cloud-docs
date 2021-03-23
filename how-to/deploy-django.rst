@@ -52,7 +52,7 @@ good practice to move to a more specific base image - for example ``python:3.8.1
     # install dependencies listed in the repository's requirements file
     RUN pip install -r requirements.txt
 
-Any requirements should be pinned as firmly as possibble.
+Any requirements should be pinned as firmly as possible.
 
 Use the output from ``pip freeze`` to get a full list of dependencies. Assuming you use :ref:`the methods we recommend
 below for configuring settings and handling storage <deploy-django-settings>`, you will need to include some of the
