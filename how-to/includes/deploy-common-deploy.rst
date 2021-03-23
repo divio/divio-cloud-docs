@@ -96,9 +96,9 @@ and provide the slug. This creates a new file in the project at ``.divio/config.
 Add database and media services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The new Divio application does not include any :ref:`additional services <services>`; they must be added manually using
-the Divio Control Panel if required. Use the *Services* menu to add a Postgres or MySQL database as required, and an S3
-or MS Azure object storage instance for media.
+The new Divio application does not include any :ref:`additional services <services>`. If your application requires a
+database or media store, they must be added manually using the Divio Control Panel as required. Use the *Services* menu
+to add the services your application needs.
 
 
 Add release commands

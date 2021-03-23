@@ -23,9 +23,31 @@ The steps here should work with any Flask project, and include configuration for
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
+For a Flask application, you can use:
+
+..  code-block:: Dockerfile
+
+    FROM python:3.8
+
+Here, ``python:3.8`` is the name of the Docker *base image*. We cannot advise on what base image you should use;
+you'll need to use one that is in-line with your application's needs. However, once you have a working set-up, it's
+good practice to move to a more specific base image - for example ``python:3.8.1-slim-buster``.
+
+..  seealso::
+
+    * :ref:`manage-base-image-choosing`
+    * `Divio base images on Docker Hub <https://hub.docker.com/r/divio/base/tags?page=1&ordering=last_updated>`_
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-system-dependencies.rst
 
+..  include:: /how-to/includes/deploy-common-dockerfile-working-directory.rst
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-application-dependencies.rst
+
+..  code-block:: Dockerfile
+
+    # install dependencies listed in the repository's requirements file
+    RUN pip install -r requirements.txt
 
 The ``requirements.txt`` file should pin Python dependencies as firmly possible (use the output from ``pip
 freeze`` to get a full list). You will probably need to include some of the following:
@@ -69,6 +91,8 @@ extract the settings so that you can apply them to the application.
 ..  include:: /how-to/includes/deploy-common-settings-security.rst
 
 ..  include:: /how-to/includes/deploy-common-settings-database.rst
+
+Your own application should do something similar if it needs to use the database.
 
 ..  include:: /how-to/includes/deploy-common-settings-static.rst
 
@@ -155,6 +179,8 @@ The ``FLASK_APP`` variable is used by the ``flask run`` command. It assumes that
 ..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
 ..  include:: /how-to/includes/deploy-common-git.rst
+
+If using the suggestions above, you'll probably want:
 
 ..  code-block:: text
 

@@ -1,6 +1,8 @@
 Media
 ~~~~~~~~~~~
 
+If your application needs to handle generated or user-uploaded media, it should use a media object store.
+
 Media credentials are provided in ``DEFAULT_STORAGE_DSN``. See :ref:`how to parse the storage DNS
 <interact-storage-parse-DSN>` to obtain the credentials for the media object stores we provide. Your application needs
 to be able to use these credentials to configure its storage.

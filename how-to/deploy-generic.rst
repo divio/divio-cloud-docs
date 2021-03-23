@@ -18,9 +18,46 @@ detailed and specific guides that cover :ref:`Django <deploy-django>` and :ref:`
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
+For a Python application for example, you can use:
+
+..  code-block:: Dockerfile
+
+    FROM python:3.8
+
+Here, ``python:3.8`` is the name of the Docker *base image*. We cannot advise on what base image you should use;
+you'll need to use one that is in-line with your application's needs. However, once you have a working set-up, it's
+good practice to move to a more specific base image - for example ``python:3.8.1-slim-buster``.
+
+..  seealso::
+
+    * :ref:`manage-base-image-choosing`
+    * `Divio base images on Docker Hub <https://hub.docker.com/r/divio/base/tags?page=1&ordering=last_updated>`_
+
+We recommend setting up a working directory early on in the ``Dockerfile`` before you need to write any files, for
+example:
+
+..  code-block:: Dockerfile
+
+    # set the working directory
+    WORKDIR /app
+    # copy the repository files to it
+    COPY . /app
+
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-system-dependencies.rst
 
+..  include:: /how-to/includes/deploy-common-dockerfile-working-directory.rst
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-application-dependencies.rst
+
+For example, in a Python project, you could use:
+
+..  code-block:: Dockerfile
+
+    # install dependencies listed in the repository's requirements file
+    RUN pip install -r requirements.txt
+
+Any requirements should be pinned as firmly as possibble.
 
 As well as pinning known requirements, it's a good idea to pin all their secondary dependencies too. The
 language environment you're using probably has a way to do this.
@@ -149,6 +186,8 @@ In cloud environments, we provide a number of useful variables. If your applicat
 ..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
 ..  include:: /how-to/includes/deploy-common-git.rst
+
+If using the suggestions above, you'll probably want:
 
 ..  code-block:: text
 
