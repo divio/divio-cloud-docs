@@ -33,6 +33,8 @@ to see it running locally.
 
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
+.. _deploy-gatsby-dockerfile:
+
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
 For a Gatsby application, you can use:
@@ -104,6 +106,8 @@ and:
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-access-services.rst
 
+.. _deploy-gatsby-configuration:
+
 ..  include:: /how-to/includes/deploy-common-configuration-services.rst
 
 ..  include:: /how-to/includes/deploy-common-helper-modules.rst
@@ -124,6 +128,8 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
 ..  include:: /how-to/includes/deploy-common-settings-media-admonition.rst
 
 ..  include:: /how-to/includes/deploy-common-settings-other.rst
+
+.. _deploy-gatsby-docker-compose:
 
 ..  include:: /how-to/includes/deploy-common-compose.rst
 
@@ -146,6 +152,7 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
         # the command built into the image
         command: gatsby develop -H 0.0.0.0 -p 80
         # if required, the URL 'postgres' or 'mysql' will point to the application's db service
+        # - but remove the entire links section if not required
         links:
           - "database_default"
         env_file: .env-local
@@ -176,7 +183,22 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
             retries: 10
 
 
+.. _deploy-gatsby-env-local:
+
 ..  include:: /how-to/includes/deploy-common-compose-env-local.rst
+
+..  code-block:: text
+    :emphasize-lines: 2-3
+
+    # Select one of the following for the database
+    DATABASE_URL=postgres://postgres@database_default:5432/db
+    DATABASE_URL=mysql://root@database_default:3306/db
+
+    # Storage will use local file storage in the data directory
+    DEFAULT_STORAGE_DSN=file:///data/media/?url=%2Fmedia%2F
+
+In cloud environments, we provide a number of useful variables. If your application needs to make use of them (see a
+:ref:`Django example <deploy-django-security>`) you should provide them for local use too. For example:
 
 ..  include:: /how-to/includes/deploy-common-compose-summary.rst
 
@@ -185,5 +207,17 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
 ..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
 ..  include:: /how-to/includes/deploy-common-git.rst
+
+For a basic project you'll probably need at least:
+
+..  code-block:: text
+
+    # used by the Divio CLI
+    .divio
+    /data.tar.gz
+
+    # for local file storage
+    /data
+
 
 ..  include:: /how-to/includes/deploy-common-deploy.rst

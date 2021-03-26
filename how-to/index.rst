@@ -17,8 +17,10 @@ Working in the local development environment
     Run the local server in Live configuration <local-in-live-mode>
 
 
-Deploy a web application on Divio
+Deploy an existing web application
 ------------------------------------
+
+Deploy a portable, vendor-neutral application to Divio using Docker.
 
 .. toctree::
     :maxdepth: 1
@@ -27,8 +29,19 @@ Deploy a web application on Divio
     Deploy a Django application <deploy-django>
     Deploy a Flask application <deploy-flask>
     Deploy a Gatsby application <deploy-gatsby>
-    Create a new Django application using our quickstart repository <django-deploy-quickstart>
-    Create a new django CMS application using our quickstart repository <django-cms-deploy-quickstart>
+
+
+Create a new web application
+----------------------------------------
+
+Use one of our quickstart repositories to launch a new application from scratch in minutes.
+
+.. toctree::
+    :maxdepth: 1
+
+    Create a Django application <quickstart-django>
+    Create a django CMS application <quickstart-django-cms>
+    Create a Gatsby application <quickstart-gatsby>
 
 
 Building your Docker application

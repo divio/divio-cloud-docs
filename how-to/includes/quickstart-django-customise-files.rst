@@ -1,6 +1,6 @@
 ..  This include is used by:
 
-    * django-deploy-quickstart-common-steps.rst
+    * quickstart-django-common-steps.rst
     * django-cms-deploy-quickstart.rst
 
 Renaming the ``quickstart`` project module (optional)

@@ -15,7 +15,7 @@
 
 .. _django-cms-deploy-quickstart:
 
-How to deploy a new django CMS project using the Divio quickstart repository
+How to deploy a django CMS application with our quickstart repository
 =============================================================================
 
 The `django CMS Divio quickstart <https://github.com/divio/django-cms-divio-quickstart>`_ repository is a template that
@@ -55,6 +55,16 @@ The options include:
 * components and templates required for a Bootstrap 4 frontend
 
 
-..  include:: /how-to/includes/django-deploy-quickstart-customise-files.rst
+..  include:: /how-to/includes/quickstart-django-customise-files.rst
 
-..  include:: /how-to/includes/django-deploy-quickstart-common-steps.rst
+..  include:: /how-to/includes/quickstart-django-common-steps.rst
+
+..  include:: /how-to/includes/deploy-common-deploy.rst
+
+..  include:: /how-to/includes/quickstart-django-test-working-database.rst
+
+
+Additional notes
+-----------------
+
+See :ref:`working-with-recommended-django-configuration` for further guidance.

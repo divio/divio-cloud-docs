@@ -15,7 +15,7 @@
 
 .. _django-deploy-quickstart:
 
-How to deploy a new Django project using the Divio quickstart repository
+How to deploy a Django application with our quickstart repository
 =========================================================================
 
 The `Django Divio quickstart <https://github.com/divio/django-divio-quickstart>`_ repository is a template that gives
@@ -39,6 +39,16 @@ Run:
 The project contains a module named ``quickstart``, containing ``settings.py`` and other project-level configuration.
 
 
-..  include:: /how-to/includes/django-deploy-quickstart-customise-files.rst
+..  include:: /how-to/includes/quickstart-django-customise-files.rst
 
-..  include:: /how-to/includes/django-deploy-quickstart-common-steps.rst
+..  include:: /how-to/includes/quickstart-django-common-steps.rst
+
+..  include:: /how-to/includes/deploy-common-deploy.rst
+
+..  include:: /how-to/includes/quickstart-django-test-working-database.rst
+
+
+Additional notes
+-----------------
+
+See :ref:`working-with-recommended-django-configuration` for further guidance.

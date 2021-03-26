@@ -129,7 +129,7 @@ How to deploy an application on Divio: template
 
 ..  todo::
 
-    Provide an example .env_local, emphasising lines the user must pay attention to. See examples from other
+    Provide an example .env-local, emphasising lines the user must pay attention to. See examples from other
     guides, including the deploy-generic guide [required]
 
 ..  include:: /how-to/includes/deploy-common-compose-summary.rst
