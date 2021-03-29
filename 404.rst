@@ -8,7 +8,7 @@ Sorry, that page cannot be found.
 
 ..  raw:: html
 
-    <p><a class="btn btn-primary btn-small" target="_blank"
+    <p><a class="btn btn-primary btn-small"
     href="/" role="button">Divio developer handbook home page</a></p>
 
 Or, try a text search for the information you need.
