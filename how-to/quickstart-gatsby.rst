@@ -62,7 +62,16 @@ Launch the local server
 
     docker-compose up
 
+This starts up the container with the default ``command`` in the ``docker-compose.yml`` file:
+
+..  code-block:: bash
+
+    gatsby develop --port 80 --host 0.0.0.0
+
 Try accessing the site at http://127.0.0.1:8000/.
+
+If you comment out that line in ``docker-compose.yml``, it will start up with :ref:`the command specified in the
+Dockerfile <deploy-gatsby-dockerfile-cmd>` instead.
 
 You now have a working, running project ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web``.
@@ -78,8 +87,22 @@ you need to `Gatsby makes several database options possible
 <https://www.gatsbyjs.com/docs/how-to/sourcing-data/sourcing-from-databases/>`_. Other customisation could include
 installing additional system-level packages, Gatsby plugins and so on.
 
-You'll need to change a few lines of configuration to achieve this across a few files. See the notes for each:
+You'll need to change a few lines of configuration to achieve this across a few files. See the notes for each of:
 
 * :ref:`the Dockerfile <deploy-gatsby-dockerfile>`
 * :ref:`application configuration <deploy-gatsby-configuration>`
 * :ref:`docker-compose.yml <deploy-gatsby-docker-compose>` and :ref:`.env-local <deploy-gatsby-env-local>`
+
+
+Building on the host as an option
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you uncomment the:
+
+..  code-block:: YAML
+
+    # - ".:/app:rw"
+
+entry in the ``web:volumes`` section of ``docker-compose.yml``, the entire ``/app`` directory will be overridden by the
+project files from the host. This can be useful for development. However, you will now need to run the commands ``npm
+install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees them.
