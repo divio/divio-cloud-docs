@@ -14,9 +14,12 @@ How to deploy a Gatsby application on Divio
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 
-The steps outlined here assume that you have a working Gatsby project.
+..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
-However, if you need a basic working example, and already have a suitable version of Node installed, you can do:
+If you don't already have a working Gatsby project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`quickstart-gatsby`. Or, if you already have a suitable version of Node installed, you can do:
 
 ..  code-block:: bash
 
@@ -30,8 +33,6 @@ and then in the new directory:
     gatsby develop -H 0.0.0.0 -p 8000
 
 to see it running locally.
-
-..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
 .. _deploy-gatsby-dockerfile:
 

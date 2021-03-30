@@ -1,6 +1,6 @@
 ..  This include is used by:
 
-    * django-deploy-quickstart.rst
+    * quickstart-django.rst
     * django-cms-deploy-quickstart.rst
 
 

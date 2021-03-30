@@ -6,7 +6,7 @@ Working with our recommended Django project configuration
 Our recommended Django project configuration is described in:
 
 * :ref:`deploy-django`
-* :ref:`django-deploy-quickstart`
+* :ref:`quickstart-django`
 * :ref:`django-cms-deploy-quickstart`
 
 The Twelve-factor model adopted for these projects places all configuration in environment variables, so that the project can

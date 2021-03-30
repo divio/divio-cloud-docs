@@ -3,7 +3,7 @@
     Where:
       in the README
       in the GitHub project About field
-    As: https://docs.divio.com/en/latest/how-to/django-deploy-quickstart/
+    As: https://docs.divio.com/en/latest/how-to/quickstart-django/
 
 .. meta::
    :description:
@@ -12,7 +12,7 @@
    :keywords: Docker, Gatsby
 
 
-.. gatsby-deploy-quickstart:
+.. _quickstart-gatsby:
 
 How to deploy a Gatsby project with our quickstart repository
 =========================================================================

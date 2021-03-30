@@ -4,9 +4,11 @@
        MySQL, and cloud media storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
-..  _deploy-django:
 
-How to deploy a Django application on Divio
+.. |Product| replace:: SoftTech Analyzer
+.. _deploy-django:
+
+How to deploy a Django application on Divio |Product|
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
@@ -19,8 +21,12 @@ The steps here should work with any Django project, and include configuration fo
 * `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
   <https://www.uvicorn.org>`_
 
-
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
+
+If you don't already have a working Django project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`quickstart-django`.
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
