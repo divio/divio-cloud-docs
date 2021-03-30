@@ -36,7 +36,7 @@ SSH sessions are limited to 30 minutes, regardless of any activity.
 
 You can also copy SSH connection details from the appropriate pane in the Control Panel:
 
-.. image:: /images/control-panel-open-shell.png
+.. image:: /images/environments.png
    :alt: 'Control Panel SSH icon'
    :width: 430
 
