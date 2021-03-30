@@ -41,6 +41,7 @@ Use one of our quickstart repositories to launch a new application from scratch 
 
     Create a Django application <quickstart-django>
     Create a django CMS application <quickstart-django-cms>
+    Create a Gatsby application <quickstart-gatsby>
 
 
 Building your Docker application
