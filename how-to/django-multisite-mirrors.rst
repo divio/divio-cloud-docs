@@ -12,7 +12,7 @@ Create the mirrors
 
 Ensure that both Test and Live servers have been successfully deployed.
 
-:ref`Create one or more mirrors <user:how-to-duplicate-project-options>`.
+:ref:`Create one or more mirrors <user:how-to-duplicate-project-options>`.
 
 
 Apply environment variables to each mirror
