@@ -52,6 +52,7 @@ mermaid_version="8.5.2"
 #
 
 intersphinx_mapping = {
+    "user": ("https://support.divio.com/", None),
     "python": ("https://docs.python.org/3", None),
     "django": (
         "https://docs.djangoproject.com/en/2.2/",

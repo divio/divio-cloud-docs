@@ -12,7 +12,7 @@ Create the mirrors
 
 Ensure that both Test and Live servers have been successfully deployed.
 
-`Create one or more mirrors <https://support.divio.com/en/articles/2783888-how-to-work-with-mirrors>`_.
+:ref`Create one or more mirrors <user:how-to-duplicate-project-options>`.
 
 
 Apply environment variables to each mirror
@@ -51,8 +51,7 @@ with its ``SITE_ID`` in place, you may have unexpected results.
 Deploy your mirrors
 -------------------
 
-Mirrors can be deployed from their own Dashboards, or from the *Mirrors* view of the original (see our support
-article `Working with mirrors <https://support.divio.com/en/articles/2783888-how-to-work-with-mirrors>`_).
+Mirrors can be deployed from their own Dashboards, or from the *Mirrors* view of the original.
 
 In the Django *Sites* admin you will see each mirror now listed.
 

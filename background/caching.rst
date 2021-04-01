@@ -31,8 +31,8 @@ includes:
   -images>`_ and `Mirage
   <https://support.cloudflare.com/hc/en-us/articles/219178057-Configuring-Cloudflare-Mirage>`_
   optimisation for images
-* `cache invalidation control via the Divio project Dashboard
-  <https://support.divio.com/en/articles/3414982-how-to-clear-the-cloudflare-cdn-cache>`_
+* :ref:`cache invalidation control via the Divio project Dashboard
+  <user:how-to-manage-cloudflare-cache>`
 * custom Cloudflare page rules
 
 
