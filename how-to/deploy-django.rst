@@ -5,10 +5,9 @@
    :keywords: Docker, Django, Postgres, MySQL, S3
 
 
-.. |Product| replace:: SoftTech Analyzer
 .. _deploy-django:
 
-How to deploy a Django application on Divio |Product|
+How to deploy a Django application on Divio
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst

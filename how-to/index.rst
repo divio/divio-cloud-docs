@@ -4,8 +4,6 @@
    :alt: 'GitHub'
    :width: 28
 
-.. |Product| replace:: SoftTech Analyzer
-
 How-to guides
 =============
 
@@ -15,7 +13,7 @@ Working in the local development environment
 .. toctree::
     :maxdepth: 1
 
-    Set up the Divio local development environment |Product| <local-cli>
+    Set up the Divio local development environment <local-cli>
     Run the local server in Live configuration <local-in-live-mode>
 
 .. _how-to-existing-web-application:

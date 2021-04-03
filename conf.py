@@ -19,9 +19,9 @@ sys.path.insert(0, os.path.abspath("."))
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
 
-project = "Developer Handbook"
-full_title = project + " Documentation"
-copyright = "2017-2020, Divio"
+project = "Divio Developer Handbook"
+full_title = project
+copyright = "2017-2021, Divio"
 author = "Daniele Procida"
 version = "1.0"
 release = version
