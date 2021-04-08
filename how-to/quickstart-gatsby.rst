@@ -35,8 +35,6 @@ Run:
 
     git clone git@github.com:divio/gatsby-divio-quickstart.git
 
-The project contains a module named ``quickstart``, containing ``settings.py`` and other project-level configuration.
-
 
 Run the project locally
 -----------------------
