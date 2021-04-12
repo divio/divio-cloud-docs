@@ -63,17 +63,17 @@ In the *Environments* view, configure each environment to use the appropriate br
 Connect your local application to the cloud project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can connect a local application to a Divio project on the cloud. This is very convenient, allowing you to run
-commands such as:
+You can connect a local application to a Divio project on the cloud. This is very convenient, allowing you to interact
+with the cloud project from your command-line.
+
+Run:
 
 ..  code-block:: bash
 
-    divio project dashboard
-    divio project pull db  # also push
-    divio project pull media  # also push
-    divio project deploy
+    divio project configure
 
-and so on. See :ref:`some usage examples <local-cli-usage>`.
+and provide the slug (this creates a new file in the project at ``.divio/config.json``).
+
 
 The cloud project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to get
 your project's slug.
@@ -84,13 +84,16 @@ You can also read the slug from the Control Panel:
     :alt: 'Project slug'
     :width: 483
 
-Run:
+You can now use commands such as:
 
 ..  code-block:: bash
 
-    divio project configure
+    divio project dashboard
+    divio project pull db  # also push
+    divio project pull media  # also push
+    divio project deploy
 
-and provide the slug. This creates a new file in the project at ``.divio/config.json``.
+See :ref:`some usage examples <local-cli-usage>`.
 
 
 Add database and media services

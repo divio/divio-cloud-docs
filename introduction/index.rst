@@ -54,7 +54,7 @@ Next, select your path through the tutorial.
     #. :doc:`/introduction/django/django-08-refinements`
 
 
-..  tab:: Django, using Aldryn
+..  tab:: Aldryn Django (legacy)
 
     .. raw:: html
 
@@ -68,7 +68,7 @@ Next, select your path through the tutorial.
     #. :doc:`/introduction/aldryn/aldryn-django-05-more-complex-configuration`
 
 
-..  tab:: Wagtail, using Aldryn
+..  tab:: Aldryn Wagtail (legacy)
 
     .. raw:: html
 
