@@ -51,11 +51,11 @@ Edit your ``docker-compose.yml`` to add some new lines:
           - ".:/app:rw"
         # The default command to run when launching the container
         command: python manage.py runserver 0.0.0.0:80
-        # the URL 'postgres' will point to the application's db service
+        # a link to database_default, the application's local database service
         links:
-          - "db:postgres"
+          - "database_default"
 
-      db:
+      database_default:
         # the application's web service will use an off-the-shelf image
         image: postgres:9.6-alpine
         environment:
@@ -97,7 +97,7 @@ the environment it creates:
       web:
         [...]
         links:
-          - "db:postgres"
+          - "database_default"
         env_file: .env-local
 
 Now in every runtime environment, the application will find the correct database connection values:

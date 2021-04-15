@@ -261,7 +261,7 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
           - "./data:/data:rw"
         # the default command to run whenever the container is launched
         command: python manage.py runserver 0.0.0.0:80
-        # the URL 'postgres' or 'mysql' will point to the application's db service
+        # a link to database_default, the application's local database service
         links:
           - "database_default"
         env_file: .env-local

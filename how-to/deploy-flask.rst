@@ -124,7 +124,7 @@ One option for Flask is to configure the web server/gateway server to handle the
           - "./data:/data:rw"
         # the default command to run whenever the container is launched
         command: flask run --host=0.0.0.0 --port=80
-        # the URL 'postgres' or 'mysql' will point to the application's db service
+        # a link to database_default, the application's local database service
         links:
           - "database_default"
         env_file: .env-local

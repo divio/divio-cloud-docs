@@ -50,7 +50,7 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
     web:
      build: .
      links:
-      - "db:postgres"
+      - "database_default"
      ports:
       - "8000:80"
      volumes:
@@ -58,7 +58,8 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
       - "./data:/data:rw"
      command: python manage.py runserver 0.0.0.0:80
      env_file: .env-local
-    db:
+
+    database_default:
      image: postgres:9.6
      volumes:
       - ".:/app:rw"
@@ -78,7 +79,7 @@ The first definition in the file is for the ``web`` service. In order, the
 directives mean:
 
 * ``build``: build it from the ``Dockerfile`` in the current directory
-* ``links``: link to the database container (``db``) using the name ``postgres``
+* ``links``: a link to the database container (``database_default``)
 * ``ports``: map the *external* port 8000 to the *internal* port 80
 * ``volumes``:
 
@@ -148,13 +149,12 @@ Environment variables are loaded from a file, specified by::
   env_file: .env-local
 
 
-The ``db`` service
-~~~~~~~~~~~~~~~~~~
+The ``database_default`` service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-The second definition is for the ``db`` service. On the cloud, the project's
-database runs on an AWS server; locally, it runs on a Postgres instance in
-``db``.
+The second definition is for the ``database_default`` service. On the cloud, the project's database runs on one of our database
+clusters; locally, it runs on a Postgres instance in ``database_default``.
 
 The directives mean:
 

@@ -37,7 +37,7 @@ Connecting to a Postgres database manually
 
 You can also make the connection manually from within the ``web`` container, for example::
 
-    docker-compose run --rm web psql -h postgres -U postgres db
+    docker-compose run --rm web psql -h database_default -U postgres db
 
 The ``-h`` value (for host) needs to match the name of the database service in the ``docker-compose.yml`` file, which
 might be different (for example, ``database_default``).
@@ -81,7 +81,7 @@ port to your host. For Postgres, for example:
 ..  code-block:: yaml
     :emphasize-lines: 3,4
 
-    db:
+    database_default:
         image: postgres:9.6
         ports:
             - 5432:5432
@@ -171,13 +171,13 @@ Sometimes, you will need to change the database engine, or its version number, t
 - for example if the cloud database is updated or changed. If the two database engines are not the
 same, you may run into problems.
 
-The local database engine is specified by the ``image`` option in the ``db`` service in your
-project's ``docker-compose.yml`` file, for example:
+The local database engine is specified by the ``image`` option in the database service (usually called ``database_default`` in
+your project's ``docker-compose.yml`` file, for example:
 
 ..  code-block:: yaml
     :emphasize-lines: 2
 
-    db:
+    database_default:
         image: postgres:9.6-alpine
 
 Should you need to change this, that line should be updated - for example if the Cloud database is
@@ -186,7 +186,7 @@ now running Postgres 11:
 ..  code-block:: yaml
     :emphasize-lines: 2
 
-    db:
+    database_default:
         image: postgres:11-alpine
 
 Docker will use the new version the next time the local project is launched.
@@ -243,7 +243,7 @@ container, and will use Postgres.
 In each case, we launch the command from within the ``web`` container with ``docker-compose run
 --rm web`` and we specify:
 
-* host name: ``-h postgres``
+* host name: ``-h database_default``
 * user name: ``-U postgres``
 
 
@@ -252,11 +252,11 @@ In each case, we launch the command from within the ``web`` container with ``doc
 Dump the database
 ~~~~~~~~~~~~~~~~~
 
-Dump the database ``db`` to a file named ``database.dump``:
+Dump the ``web`` service's database ``db`` to a file named ``database.dump``:
 
 ..  code-block:: bash
 
-    docker-compose run --rm web pg_dump -h postgres -U postgres db > database.dump
+    docker-compose run --rm web pg_dump -h database_default -U postgres db > database.dump
 
 
 .. _drop-db:
@@ -268,7 +268,7 @@ Drop (delete) the database named ``db``:
 
 ..  code-block:: bash
 
-    docker-compose run --rm web dropdb -h postgres -U postgres db
+    docker-compose run --rm web dropdb -h database_default -U postgres db
 
 
 .. _create-db:
@@ -280,7 +280,7 @@ Create a database named ``db``:
 
 ..  code-block:: bash
 
-    docker-compose run --rm web createdb -h postgres -U postgres db
+    docker-compose run --rm web createdb -h database_default -U postgres db
 
 
 .. _apply-hstore-db:
@@ -293,7 +293,7 @@ Apply the ``hstore`` extension (required on a newly-created local database) to t
 
 ..  code-block:: bash
 
-    docker-compose run --rm web psql -h postgres -U postgres db -c "CREATE EXTENSION hstore"
+    docker-compose run --rm web psql -h database_default -U postgres db -c "CREATE EXTENSION hstore"
 
 
 .. _restore-db:
@@ -305,7 +305,7 @@ Restore a database named ``db`` from a file named ``database.dump``:
 
 ..  code-block:: bash
 
-    docker-compose run --rm web pg_restore -h postgres -U postgres -d db database.dump --no-owner
+    docker-compose run --rm web pg_restore -h database_default -U postgres -d db database.dump --no-owner
 
 
 .. _reset-database:

@@ -163,8 +163,8 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
         # the command built into the image
         command: gatsby develop --port 80 --host 0.0.0.0
         env_file: .env-local
-        # if required, the URL 'postgres' or 'mysql' will point to the application's db service
-        # - but remove the entire links section if not required
+        # database_default is the application's database service - but remove the entire links section
+        # if not required
         # links:
         #   - "database_default"
 

@@ -129,7 +129,7 @@ For an example, see :ref:`how we recommend using the DEFAULT_STORAGE_DSN in a Dj
         # an optional default command to run whenever the container is launched - this will override the Dockerfile's
         # CMD, allowing your application to run with a server suitable for development - this example is for Django
         command: python manage.py runserver 0.0.0.0:80
-        # for the application's local db service
+        # a link to database_default, the application's local database service
         links:
           - "database_default"
         env_file: .env-local
