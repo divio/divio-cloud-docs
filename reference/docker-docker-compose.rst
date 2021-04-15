@@ -1,3 +1,9 @@
+..  Do not change this or document name
+    Referred to by: error message in Divio CLI (forthcoming)
+    Where: error message caused by failure to find app directory of default_database container
+    As: https://docs.divio.com/en/latest/reference/docker-docker-compose/#required-database-service-configuration
+
+
 .. _docker-compose-yml-reference:
 
 The ``docker-compose.yml`` file
@@ -71,8 +77,8 @@ Let's look at the components of the file more closely.
 
 .. _docker-compose-web:
 
-The ``web`` service
-~~~~~~~~~~~~~~~~~~~
+The application container service, ``web``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 The first definition in the file is for the ``web`` service. In order, the
@@ -149,12 +155,13 @@ Environment variables are loaded from a file, specified by::
   env_file: .env-local
 
 
-The ``database_default`` service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The database container service, ``database_default``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The second definition is for the ``database_default`` service.
 
-The second definition is for the ``database_default`` service. On the cloud, the project's database runs on one of our database
-clusters; locally, it runs on a Postgres instance in ``database_default``.
+On the cloud, the project's database runs on one of our database clusters; locally, it runs on a Postgres instance in
+``database_default``.
 
 The directives mean:
 
@@ -164,6 +171,20 @@ The directives mean:
 
 See :ref:`expose-database-ports` for an example of adding configuration to
 ``docker-compose.yml``.
+
+..  Do not change this section name
+    Referred to by: error message in Divio CLI (forthcoming)
+    Where: error message caused by failure to find app directory of default_database container
+    As: https://docs.divio.com/en/latest/reference/docker-docker-compose/#required-database-service-configuration
+
+..  _database-default:
+
+..  admonition:: Required database service configuration
+
+    The Divio CLI expects that the database service will be called ``database_default`` (or, in some older projects, ``db``).
+    If the name is changed, operations such as ``divio project pull db`` will fail.
+
+    The ``volumes`` directive needs to map the container's ``/app`` directory as described above, for the same reason.
 
 
 Further reading
