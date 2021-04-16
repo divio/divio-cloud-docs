@@ -1,3 +1,8 @@
+..  Do not change this reference!
+    Referred to by: user support guides
+    Where: in essential-knowledge/mirrors.rst
+    As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
+
 ..  _multisite-mirrors:
 
 How to create a multi-site Django project using Mirrors
