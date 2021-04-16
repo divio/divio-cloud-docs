@@ -73,6 +73,11 @@ with ``pip``:
             --no-index --no-deps \              # ...disallows use of the index, prevents implicit installation of dependencies
             --requirement requirements.urls
 
+..  important::
+
+    If you wish to change this section and deploy your changes to our infrastructure, you need to remove the ``# <PYTHON>``
+    comment tags that may surround it. This will prevent the Divio Control Panel from overwriting your changes. See
+    :ref:`dockerfile-reference-automatic-population`.
 
 Summary of commands
 ~~~~~~~~~~~~~~~~~~~~

@@ -20,6 +20,8 @@ system packages <install-system-packages>`, or to configure the environment.
     (for example) must come before commands to run Node packages.
 
 
+.. _dockerfile-reference-automatic-population:
+
 How the ``Dockerfile`` is automatically populated
 -------------------------------------------------
 
