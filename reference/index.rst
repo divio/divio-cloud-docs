@@ -24,13 +24,12 @@ Divio infrastructure
     checks-timeouts
 
 
-Docker commands and configuration
+Docker configuration
 ---------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    docker-commands
     docker-dockerfile
     docker-docker-compose
 
@@ -67,8 +66,6 @@ Aldryn Django addons (legacy)
 
     configuration-aldryn-config
     configuration-settings-file
-    addons-aldryn-django
-    addons-aldryn-sso
-    addons-aldryn-addons
+    addons-key
 
 
