@@ -60,8 +60,11 @@ External links to documentation references should use the reference (as above) r
 attached (in this case https://docs.divio.com/en/latest/background/project-creation-options#platform). This allows
 changing headings without the risk of breaking links.
 
-Use of formatting
------------------
+Style guide
+------------
+
+Inline formatting
+~~~~~~~~~~~~~~~~~~
 
 * italics
 
@@ -88,3 +91,20 @@ Use of formatting
 * examples of what **not** to do with inverted commas:
 
   * put a link, italics, bold or literals in inverted commas: “`example <#>`_”, the “**Save**” button, select “*Add…*”
+
+
+Spelling
+~~~~~~~~
+
+The documentation uses British English spelling (*-ise* rather than *-ize*, *colour* rather than *color*, etc).
+
+
+Tone and language
+~~~~~~~~~~~~~~~~~
+
+Avoid language that tells the user that something is easy: "just do ...", "simply ...".
+
+In general, use the second person ("This document assumes you are a reasonably experienced software developer") when
+referring to the reader (not "The reader is assumed to be...").
+
+Tutorials and how-to guides should adopt the imperative form wherever possible ("Run xxx", "delete yyy").
