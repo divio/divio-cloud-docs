@@ -49,7 +49,6 @@ Projects
 
     project-creation-options
     project-build-process
-    project-anatomy
     project-environments
     project-version-control
     project-about-boilerplates
@@ -64,8 +63,7 @@ Recommended project configurations
 
     recommended-configuration-notes-django
 
-
-
+------------------------------
 
 Aldryn Django and addons
 -------------------------
@@ -74,7 +72,5 @@ Aldryn Django and addons
     :maxdepth: 1
 
     addons-basics
-    addons-anatomy
     addons-configuration-overview
-    addons-templates
     addons-list

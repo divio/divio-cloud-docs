@@ -6,6 +6,8 @@
 Addon configuration with ``aldryn_config.py``
 ===================================================
 
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
 A Django application may require some configuration when it is deployed in a
 project. Typically this will include settings in :ref:`settings.py
 <settings.py>`, but it can also include things like URL patterns that need to

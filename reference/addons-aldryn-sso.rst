@@ -3,6 +3,8 @@
 Aldryn SSO (authentication)
 ==============================
 
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
 Authentication to the Divio platform, and (by default) to user projects
 running on the platform, is handled by the Divio SSO (single-sign-on)
 system. This provides a convenient way to authenticate users for Divio

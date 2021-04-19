@@ -3,6 +3,8 @@
 Aldryn Addons (addon integration)
 =================================
 
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
 The Aldryn Addons framework helps integrate addons and their settings into
 a Django project.
 

@@ -61,7 +61,13 @@ Cloudflare will cache media files according to the ``Cache-Control`` header appl
 
 will set a TTL of one hour (3600 seconds).
 
-Your application can set these headers when managing the file storage. Aldryn Django does this by default, also
+Your application can set these headers when managing the file storage.
+
+
+In Aldryn Django (legacy)
+..............................
+
+Aldryn Django does this by default, also
 applying some sensible default values (see also :ref:`DISABLE_S3_MEDIA_HEADERS_UPDATE`).
 
 Our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail files
@@ -70,8 +76,6 @@ Our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail fi
 discovers to `the media storage class that configures the S3 bucket
 <https://github.com/divio/aldryn-django/blob/support/2.2.x/aldryn_django/storage.py#L29-L74>`_.
 
-Any application that needs to control the behaviour of cached media will need either to make use
-of provided functionality (for example, such as in Aldryn Django), or configure the S3 bucket directly itself.
 
 
 .. _apply-your-own-caching-cdn:
@@ -100,8 +104,8 @@ Caching in Divio Django applications will typically make use of :doc:`Django's o
 <django:topics/cache>`.
 
 
-Caching in django CMS
-^^^^^^^^^^^^^^^^^^^^^
+Caching with Aldryn django CMS (legacy)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Aldryn django CMS addon applies caching rules by default, via the
 :setting:`django-cms:CMS_CACHE_DURATIONS` setting.

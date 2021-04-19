@@ -35,15 +35,6 @@ Docker commands and configuration
     docker-docker-compose
 
 
-Python/Django application configuration
----------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    configuration-settings-file
-
-
 Coding in Divio applications
 ----------------------------
 
@@ -56,20 +47,6 @@ Coding in Divio applications
     Sending email <coding-sending-email>
 
 
-.. _key-addons:
-
-Addons
-------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    configuration-aldryn-config
-    addons-aldryn-django
-    addons-aldryn-sso
-    addons-aldryn-addons
-
-
 Quick reference
 ----------------
 
@@ -77,3 +54,21 @@ Quick reference
     :maxdepth: 1
 
     local-commands-cheatsheet
+
+------------------------------
+
+.. _key-addons:
+
+Aldryn Django addons (legacy)
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    configuration-aldryn-config
+    configuration-settings-file
+    addons-aldryn-django
+    addons-aldryn-sso
+    addons-aldryn-addons
+
+

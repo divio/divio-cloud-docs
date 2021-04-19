@@ -74,7 +74,19 @@ Platform-specific guides
        Go-live checklist for Django projects <live-checklist>
 
 
-.. tab:: Aldryn
+.. tab:: Node.js
+
+   .. raw:: html
+
+      <h3>Node.js</h3>
+
+   .. toctree::
+       :maxdepth: 1
+
+       Force HTTPS with Express.js <node-express-force-https>
+
+
+.. tab:: Aldryn (legacy)
 
    .. raw:: html
 
@@ -97,18 +109,6 @@ Platform-specific guides
        Package an application as an Aldryn addon <addon-create>
        Update an existing Aldryn addon <addon-update-existing>
 
-.. tab:: Node.js
-
-   .. raw:: html
-
-      <h3>Node.js</h3>
-
-   .. toctree::
-       :maxdepth: 1
-
-       Force HTTPS with Express.js <node-express-force-https>
-
-
 -------------------------
 
 
@@ -120,18 +120,8 @@ Managing a project's resources
 
     Interact with your project’s database <interact-database>
     Interact with your project’s cloud media storage <interact-storage>
-    Manage environment variables <environment-variables>
-
-
-Adding new functionality to a project
-----------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Set up Sass CSS compilation <configure-sass>
-    Configure Application Performance Monitoring <configure-apm>
     Configure media serving on a custom domain <configure-media-custom-domain>
+    Manage environment variables <environment-variables>
 
 
 Development workflow

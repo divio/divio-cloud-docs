@@ -65,7 +65,11 @@ File storage in third-party applications
 Ideally, third-party applications in your project should respect this for their own file handling.
 
 This is not always the case however. In some cases the application may need to be configured
-explicitly. More problematically, some applications may have hard-coded expectations for the file
+explicitly.
+
+For example, you may need to set ``THUMBNAIL_DEFAULT_STORAGE`` for Django's Easy Thumbnails library.
+
+More problematically, some applications may have hard-coded expectations for the file
 storage system, and these will need to be rewritten.
 
 
@@ -84,31 +88,6 @@ The backend can use the buckets we provide to do this, but please be aware that 
 backup, or use our tools to push files, *all the files will become public*.
 
 Alternatively, you can use a bucket of your own with this backend.
-
-
-Using Easy Thumbnails
-~~~~~~~~~~~~~~~~~~~~~
-
-Easy Thumbnails is the most widely-used image processing application in the Django ecosystem.
-
-On Divio, ``THUMBNAIL_DEFAULT_STORAGE`` for Easy Thumbnails needs to be set explicitly, even
-if ``DEFAULT_FILE_STORAGE`` has been set.
-
-In most projects on Divio, Django Filer is installed. This takes care of the
-``THUMBNAIL_DEFAULT_STORAGE`` - if Django Filer is installed, you don't need to do anything else to
-use Easy Thumbnails correctly.
-
-In the cases where it's not, it's necessary to do the same thing manually in the ``settings.py``::
-
-    # If the DEFAULT_FILE_STORAGE has been set to a value known by
-    # aldryn-django, then use that as THUMBNAIL_DEFAULT_STORAGE as well.
-
-    from aldryn_django import storage
-
-    for storage_backend in storage.SCHEMES.values():
-        if storage_backend == DEFAULT_FILE_STORAGE:
-            THUMBNAIL_DEFAULT_STORAGE = storage_backend
-            break
 
 
 Loading media files into your applications' pages

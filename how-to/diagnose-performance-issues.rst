@@ -50,8 +50,7 @@ cached as much as possible. If the query takes so long to process that the reque
 return a result, then only rewriting the query will be solution.)
 
 Well-established APM solutions suitable for web applications include New Relic and Elastic APM. Most well-known
-services offer integration packages for multiple different languages (for Aldryn Django users, we provide the
-:ref:`Django Telemetry addon for Elastic APM <configure-apm>`).
+services offer integration packages for multiple different languages.
 
 For any mission-critical application or serious effort to identify performance shortfalls, we strongly recommend
 using APM. A little investment in APM can save you great expenditure in time, effort and money.

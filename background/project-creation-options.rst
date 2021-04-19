@@ -99,5 +99,4 @@ We also provide some optional ready-to-go definitions for a quick start. For exa
 * **Additional Boilerplate**: *HTML5*
 
 It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
-get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
-to :ref:`add Sass CSS compilation using Node to a project that doesn't already include Node <configure-sass>`.
+get started with a particular stack. They don't prevent you from adding other components.

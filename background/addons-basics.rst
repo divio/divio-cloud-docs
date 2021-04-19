@@ -5,11 +5,13 @@
 
 .. _aldryn:
 
-What is Aldryn, and why use it?
+About Aldryn (legacy)
 ==================================
 
-The :ref:`Aldryn Django addons framework <aldryn-addons>` allows packages to be installed and configured very easily and
-in some cases fully automatically.
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
+The :ref:`Aldryn Django addons framework <aldryn-addons>` is an optional system that allows packages to be installed and
+configured very easily and in some cases fully automatically.
 
 
 What are Aldryn addons?
@@ -38,31 +40,3 @@ Using the Aldryn framework on Divio is completely optional.
 
 You don't *need* Aldryn Django to install or use Django. Similarly, django CMS can be installed and configured
 manually, without using Aldryn Django CMS, if you prefer, and the same goes for others.
-
-
-Why use addons?
----------------
-
-Software installed without taking advantage of the addons framework won't make use of our convenience layers, and it
-will require a developer to install and configure them, whereas software packaged as an addon can be installed and
-configured with a few clicks, without any technical knowledge.
-
-Using our addons will make your work as a developer faster and easier, allowing you to concentrate on development
-instead of configuration.
-
-The addons system exposes packages, along with their versions and configuration options, in our Control Panel - you can
-apply settings and manage upgrades with our GUI, not even needing to set the repository up locally to edit its code or
-requirements. This can save a great deal of time, especially when a new version of a package requires different
-configuration in ``settings.py``.
-
-The Control Panel will alert you when updates are available, or in the case of critical security fixes.
-
-The vast majority of Divio developers users prefer to make use of the framework and the wrapper applications,
-though some prefer to undertake configuration manually and choose not to use it.
-
-..  seealso::
-
-    * :ref:`django-addons-list`
-    * :ref:`application-configuration`
-    * :ref:`configure-with-aldryn-config`
-    * :ref:`settings.py`

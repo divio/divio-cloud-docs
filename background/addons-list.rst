@@ -3,6 +3,8 @@
 Django addons list
 ==================
 
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
 Divio provides a number of Django addon applications for convenience.
 
 *Support* refers to Divio's commitment to maintain an addon, which could include bug-fixes and continued development of
@@ -38,11 +40,11 @@ Django.
 Limited support
 ---------------
 
-Other key addons that can in general be expected to be up-to-date with current LTS versions of Django. 
+Other key addons that can in general be expected to be up-to-date with current LTS versions of Django.
 
-.. note:: 
+.. note::
 
-  These addons include or depend upon third-party components or APIs beyond our control, so no guarantees can be made. 
+  These addons include or depend upon third-party components or APIs beyond our control, so no guarantees can be made.
 
 * `django CMS Text CKEditor <https://github.com/django-cms/djangocms-text-ckeditor>`_
 * `django CMS Admin Style <https://github.com/django-cms/djangocms-admin-style>`_

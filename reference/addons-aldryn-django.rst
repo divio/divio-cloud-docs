@@ -3,6 +3,8 @@
 Aldryn Django (core Django)
 ===========================
 
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+
 Aldryn Django (``aldryn-django``) is a wrapper application that installs and provides basic
 configuration for Django.
 
