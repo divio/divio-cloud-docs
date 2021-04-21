@@ -24,6 +24,7 @@ Cloud management
     environments
     metrics
     services
+    custom-domains
     release-commands
 
 
