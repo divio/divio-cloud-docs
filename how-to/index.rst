@@ -71,6 +71,7 @@ Platform-specific guides
 
        Install Python dependencies <install-python-dependencies>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+       Configure Celery <configure-celery>
        Go-live checklist for Django projects <live-checklist>
 
 
@@ -100,7 +101,6 @@ Platform-specific guides
        Add a Django application to an Aldryn project <django-add-application>
        Configure Django settings using Aldryn <django-configure-settings>
        Configure external logging <django-configure-external-logging>
-       Configure Celery <configure-celery>
        Manage access authentication <django-manage-authentication>
        Manage redirects in Django projects <django-manage-redirects>
        Log in to a local Django project <local-project-log-in>
