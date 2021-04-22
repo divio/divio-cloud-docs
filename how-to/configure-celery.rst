@@ -86,7 +86,9 @@ For the worker and scheduling containers, your application needs an executable a
 
 ..  code-block:: bash
 
-    #!/bin/shif [ $1 = "beat" ] ; then
+    #!/bin/shif
+
+    [ $1 = "beat" ] ; then
         celery -A path.to.celery.app beat --loglevel=INFO
     else
         celery -A path.to.celery.app worker --concurrency=4 --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair
