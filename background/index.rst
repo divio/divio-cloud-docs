@@ -65,8 +65,8 @@ Recommended project configurations
 
 ------------------------------
 
-Aldryn Django and addons
--------------------------
+Aldryn Django and addons (legacy)
+-----------------------------------
 
 .. toctree::
     :maxdepth: 1
