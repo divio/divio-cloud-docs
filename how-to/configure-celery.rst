@@ -33,7 +33,7 @@ Celery will then be provisioned for your application's environments by our infra
 configuration of new :ref:`environment variables <celery-environment-variables>` it will need.
 
 Once provisioned and deployed, your cloud application will run with new Docker instances for the Celery workers. The containers
-running Celey components use the same image as the web container, but are started up with a different command.
+running Celery components use the same image as the web container, but are started up with a different command.
 
 We provide various cloud containers for Celery:
 
