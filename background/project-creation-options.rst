@@ -3,10 +3,10 @@
 Project creation options
 ==============================
 
-Each Divio project is based on a combination of *Stack*, *Additional components* and *Additional Boilerplate*.
+A Divio application is defined by the code in its Git repository.
 
-Any application that is suited to being run in Docker can be run on Divio and built up using the default *Build your
-own* option as a starting point.
+When a new application is created on the Control Panel, some pre-defined project types can also be used (based on a
+combination of *Stack*, *Additional components* and *Additional Boilerplate*).
 
 
 ..  Do not change this reference!

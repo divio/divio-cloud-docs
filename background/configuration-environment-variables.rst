@@ -25,17 +25,6 @@ line or via the Control Panel.
 
 New or changed environment variables are not available to environments until they are redeployed.
 
-..  note:
-
-    When you duplicate an application on the Control Panel, its environment
-    variables will **not** be copied to the new application. This is intentional,
-    as they could include sensitive data, such as API keys.
-
-    The best way to copy environment variables from one application to another is
-    by using ``divio project env-vars`` on the command-line to copy (with the
-    ``--json`` option for export) and then apply them.
-
-
 Via the command line
 ~~~~~~~~~~~~~~~~~~~~
 
