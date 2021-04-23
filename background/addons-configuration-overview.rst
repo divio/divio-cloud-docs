@@ -167,8 +167,7 @@ The same goes for middleware, and other settings.
 changes are picked up when and reloaded automatically when developing.
 
 ``aldryn_config.py`` is an ideal place to check for environment variables that
-should be :ref:`converted into Django settings
-<environment-variables-settings>`.
+should be converted into Django settings.
 
 See :ref:`configure-with-aldryn-config`.
 

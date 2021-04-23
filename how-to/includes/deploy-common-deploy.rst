@@ -114,8 +114,8 @@ database migrations, these should be applied as :ref:`release commands <release-
 Add additional environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your application may require additional environment variables in production. :ref:`Apply any enviroment variables
-<environment-variables-settings>` using the Divio Control Panel or CLI.
+Your application may require additional environment variables in production. Apply any enviroment variables using the
+Divio Control Panel or CLI.
 
 
 Push local database/media content
