@@ -52,7 +52,6 @@ Projects
     project-environments
     project-version-control
     project-about-boilerplates
-    multisite-projects
 
 
 Recommended project configurations
