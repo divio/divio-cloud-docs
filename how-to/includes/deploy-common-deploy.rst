@@ -46,7 +46,7 @@ You have two ways of doing this:
 
     ..  admonition:: Beta status limitations
 
-        "New project from Git respository" is currently provided as a Beta feature, and is available only to
+        "New project from Git repository" is currently provided as a Beta feature, and is available only to
         users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
         <https://control.divio.com/account/contact/>`_.
 
@@ -118,7 +118,7 @@ database migrations, these should be applied as :ref:`release commands <release-
 Add additional environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your application may require additional environment variables in production. Apply any enviroment variables using the
+Your application may require additional environment variables in production. Apply any environment variables using the
 Divio Control Panel or CLI.
 
 

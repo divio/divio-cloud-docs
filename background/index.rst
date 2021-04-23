@@ -6,11 +6,15 @@ Background information
 Cloud management
 ----------------
 
+..
+    This section corresponds approximately to views in the Control Panel interface.
+
 .. toctree::
     :maxdepth: 1
 
     environments
     metrics
+    domains
     services
     release-commands
 
@@ -36,7 +40,6 @@ How it works on Divio
 .. toctree::
     :maxdepth: 1
 
-    redirects
     Caching and CDN <caching>
     Configuration using environment variables <configuration-environment-variables>
 

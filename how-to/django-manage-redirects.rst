@@ -1,7 +1,9 @@
 .. _django-manage-redirects:
 
-How to manage redirects in Django projects
-==========================================
+How to manage redirects in Aldryn Django projects
+==================================================
+
+..  Seealso:: :ref:`domains`
 
 .. _django_protocol_redirects:
 

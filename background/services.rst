@@ -33,6 +33,8 @@ of any project.
    :alt: 'Services'
    :class: 'main-visual'
 
+--------
+
 Available services depend on the project's region. For example, S3 media storage is provided on AWS regions, and MS Blob storage on Azure regions.
 
 See :ref:`Available services <available-services>` for an outline of services currently provided.
