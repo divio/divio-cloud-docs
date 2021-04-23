@@ -46,6 +46,10 @@ You have two ways of doing this:
 
     ..  admonition:: Beta status limitations
 
+        "New project from Git respository" is currently provided as a Beta feature, and is available only to
+        users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
+        <https://control.divio.com/account/contact/>`_.
+
         Some limitations apply to the current version of this functionality. In order to import a repository, at the
         time of import:
 
