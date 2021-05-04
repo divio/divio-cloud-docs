@@ -39,7 +39,7 @@ As well as providing routing to applications, domain settings also set environme
 make use of internally. These environment variables are:
 
 * ``DOMAIN`` - the domain that is marked as *Primary* in the interface
-* ``DOMAIN_ALIASES`` - each of the other listed domains, plus ``.*``, except for those in:
+* ``DOMAIN_ALIASES`` - each of the other listed domains, except for those in:
 * ``DOMAIN_REDIRECTS`` - any domains that have the *Redirect* setting enabled, i.e. that should redirect to ``DOMAIN``
 
 Once the settings have been applied in the interface, the environment variables are also set - there is no need to
