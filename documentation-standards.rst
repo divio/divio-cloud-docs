@@ -70,7 +70,7 @@ Inline formatting
 
   * for emphasis: *Be warned*
   * names of books: *Test-driven development*
-  * in interfaces, when referring by name: the *Settings* menu, select *Add…*
+  * in interfaces, when referring by name: in the *Settings* menu, select *Add…*
 
 * bold:
 
