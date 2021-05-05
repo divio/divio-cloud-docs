@@ -67,6 +67,8 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
 
     database_default:
      image: postgres:9.6
+     environment:
+       SERVICE_MANAGER: "fsm-postgres"
      volumes:
       - ".:/app:rw"
 
@@ -168,6 +170,7 @@ The directives mean:
 * ``image``: build the container from the ``postgres:9.6`` image
 * ``volumes``: map the parent directory on the host to ``/app`` in the
   container, with read and write access
+* ``environment``: sets environment variables for the running container. The ``SERVICE_MANAGER`` defines the type of service. Currently only ``fsm-postgres`` and ``fsm-mysql`` is supported.
 
 See :ref:`expose-database-ports` for an example of adding configuration to
 ``docker-compose.yml``.
