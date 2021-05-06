@@ -12,8 +12,8 @@ Require login
 -------------------
 
 By default, the Test site is password protected while the Live site is not. This is controlled by the
-:ref:`ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN <ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN>` environment variable (``False`` for Test,
-``True`` for Live).
+:ref:`ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN <ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN>` environment variable (``True`` for Test,
+``False`` for Live).
 
 To override the behaviour, you can set the value explicitly in the *Environment variables* view in the Control Panel.
 
