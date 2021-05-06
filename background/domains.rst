@@ -25,11 +25,23 @@ The Control Panel interface shows whether DNS has been correctly configured for 
 valid SSL certificates are in place.
 
 
+DNS records
+~~~~~~~~~~~
+
+For bare domains (e.g. ``example.com``) we recommend using the ALIAS records suggested in the Control Panel interface.
+Not all DNS providers support ALIAS records, in which case, A records may be used. Note however that the IP addresses
+we use may change, so we recommend using ALIAS records over A records where possible.
+
+
 SSL certificates
 ~~~~~~~~~~~~~~~~
 
 We provide free SSL certificates automatically for all domains using our default domain backend. Other options are
 available on request, as well as the option to upload your own certificate.
+
+A certificate can only be applied if the domain passes automated DNS configuration tests. Once a domain is added, a
+check takes place. If a check fails, the domain will be checked every 15 minutes until a correct set-up is detected.
+Once a check finds it correct, subsequent checks take place every 24 hours.
 
 
 Domain settings and environment variables
