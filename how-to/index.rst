@@ -31,8 +31,9 @@ Deploy a portable, vendor-neutral application to Divio using Docker.
     Deploy a Flask application <deploy-flask>
     Deploy a Gatsby application <deploy-gatsby>
 
+.. _how-to-use-quickstart:
 
-Create a new web application
+Use a Divio quickstart repository
 ----------------------------------------
 
 Use one of our quickstart repositories to launch a new application from scratch in minutes.

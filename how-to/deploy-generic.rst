@@ -107,6 +107,8 @@ For an example, see :ref:`how we recommend using the DEFAULT_STORAGE_DSN in a Dj
 
 ..  include:: /how-to/includes/deploy-common-settings-other.rst
 
+..  _deploy-generic-docker-compose:
+
 ..  include:: /how-to/includes/deploy-common-compose.rst
 
 ..  code-block:: yaml

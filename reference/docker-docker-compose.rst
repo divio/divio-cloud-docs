@@ -25,10 +25,11 @@ Function of ``docker-compose.yml``
 In order to do something useful with containers, they have to be arranged - *orchestrated* - as
 part of a project, usually referred to as an 'application'.
 
-There are multiple ways of orchestrating a Docker application, but Docker Compose is probably the most human-friendly. It's what we use for our local development environments.
+There are multiple ways of orchestrating a Docker application, but Docker Compose is probably the most human-friendly.
+It's what we use for our local development environments.
 
 To configure the orchestration, Docker Compose uses a ``docker-compose.yml`` file. It specifies what images are
-required, what ports they need to expose, whether thy e have access to the host filesystem, what commands should be run
+required, what ports they need to expose, whether they have access to the host filesystem, what commands should be run
 when they start up, and so on.
 
 
@@ -37,13 +38,13 @@ Services defined in ``docker-compose.yml``
 
 In a ``docker-compose.yml`` file, *services* represent the *containers* that will be created in the application.
 
-When you create a new Divio project using one of our *defined project types* (e.g. Aldryn Django or PHP/Laravel using
-Flavours) it will include a ``docker-compose.yml`` file ready for local use, with the services already defined.
+When you create a new Divio project using one of our :ref:`quickstart repositories <how-to-use-quickstart>` or one of
+defined project types, it will include a ``docker-compose.yml`` file ready for local use, with the services already
+defined.
 
-If you start with a *blank project type*, you will need to assemble the ``docker-compose.yml`` file yourself. This is a
-fairly straightforward process once you know what you are doing. Our :ref:`Django tutorial <tutorial-django-set-up>`
-includes steps for creating a complete ``docker-compose.yml`` file from scratch. It's a very good way to become familiar
-with using Docker Compose, even if you aren't going to be using Django.
+If you start with a *Build your own* project type, you will need to assemble the ``docker-compose.yml`` file yourself.
+This is a fairly straightforward process once you know what you are doing. Our :ref:`How to deploy a web application
+<deploy-generic-docker-compose>` guide includes steps for creating a complete ``docker-compose.yml`` file from scratch.
 
 For a working local project, various things need to be defined in the file. In a Divio project, there will be a ``web``
 service, that's built in a container using the ``Dockerfile``. There will typically also be a ``db`` service, from a
@@ -68,6 +69,8 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
     database_default:
      image: postgres:9.6
      environment:
+       POSTGRES_DB: "db"
+       POSTGRES_HOST_AUTH_METHOD: "trust"
        SERVICE_MANAGER: "fsm-postgres"
      volumes:
       - ".:/app:rw"
@@ -170,7 +173,7 @@ The directives mean:
 * ``image``: build the container from the ``postgres:9.6`` image
 * ``volumes``: map the parent directory on the host to ``/app`` in the
   container, with read and write access
-* ``environment``: sets environment variables for the running container. The ``SERVICE_MANAGER`` defines the type of service. Currently only ``fsm-postgres`` and ``fsm-mysql`` is supported.
+* ``environment``: sets environment variables for the running container.
 
 See :ref:`expose-database-ports` for an example of adding configuration to
 ``docker-compose.yml``.
@@ -184,8 +187,8 @@ See :ref:`expose-database-ports` for an example of adding configuration to
 
 ..  admonition:: Required database service configuration
 
-    The Divio CLI expects that the database service will be called ``database_default`` (or, in some older projects, ``db``).
-    If the name is changed, operations such as ``divio project pull db`` will fail.
+    The Divio CLI expects that the database service will be called ``database_default`` (or, in some older projects,
+    ``db``). If the name is changed, operations such as ``divio project pull db`` will fail.
 
     The ``volumes`` directive needs to map the container's ``/app`` directory as described above, for the same reason.
 
