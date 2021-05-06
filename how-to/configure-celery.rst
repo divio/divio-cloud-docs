@@ -217,9 +217,12 @@ Set up local environment variables
 In ``.env-local`` add::
 
     RABBITMQ_ERLANG_COOKIE=secret_cookie_value
-    BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
+    DEFAULT_AMQP_BROKER_UR="amqp://guest:guest@rabbitmq:5672/"
 
-(Don't confuse the port ``5672`` of the RabbitMQ server with the port ``15672`` of its management interface.)
+..  note::
+
+    * DEFAULT_AMQP_BROKER_URL might be called BROKER_URL in some older projects.
+    * Port ``5672`` of the RabbitMQ server not to be confused with port ``15672`` of its management interface.
 
 
 Run the local project
@@ -300,8 +303,10 @@ Environment variables
 
 When Celery is enabled for your project, two new environment variables will be configured:
 
-* ``BROKER_URL``
+* ``DEFAULT_AMQP_BROKER_UR``
 * ``RABBITMQ_ERLANG_COOKIE``
+
+(as noted above, DEFAULT_AMQP_BROKER_URL might be called BROKER_URL in some older projects.)
 
 The Test and Live servers will have different values for both.
 
