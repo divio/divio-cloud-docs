@@ -173,7 +173,10 @@ The directives mean:
 * ``image``: build the container from the ``postgres:9.6`` image
 * ``volumes``: map the parent directory on the host to ``/app`` in the
   container, with read and write access
-* ``environment``: sets environment variables for the running container.
+* ``environment``: sets various environment variables for the running container. The ``SERVICE_MANAGER`` variable
+  provides information about the database service so that the Divio CLI can handle it correctly (``fsm-postgres`` and
+  ``fsm-mysql`` are currently supported).
+
 
 See :ref:`expose-database-ports` for an example of adding configuration to
 ``docker-compose.yml``.
