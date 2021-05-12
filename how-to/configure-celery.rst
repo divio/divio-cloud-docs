@@ -33,11 +33,11 @@ Celery will then be provisioned on your project's Test and Live servers by our i
 installation of our `Aldryn Celery <https://github.com/aldryn/aldryn-celery>`_ addon, and configuration of new
 :ref:`environment variables <celery-environment-variables>` your project will need.
 
-Once provisioned and deployed, your cloud project will run with new Docker instances for the Celery workers. The containers
-running the Celery workers are built using the same image as the web container.
+Once provisioned and deployed, your cloud project will run with new Docker instances for the Celery workers. The
+containers running the Celery workers are built using the same image as the web container.
 
-Note that a project's Test server, or projects on the free Developer plan, will pause after 15 minutes' inactivity in order to
-save resources. This will also pause the Celery workers.
+Note that a project's Test server, or projects on the free Developer plan, will pause after 15 minutes' inactivity in
+order to save resources. This will also pause the Celery workers.
 
 
 About Aldryn Celery
@@ -90,8 +90,8 @@ Locally, the four new containers will be set up as new local services using the 
 <docker-compose-yml-reference>` file.
 
 Note that in the cloud environment, the Celery-related containers are launched automatically. They, and the AMPQ message
-queue, are not accessible. All monitoring and interaction must be handled via the main application running in the ``web``
-containers. The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
+queue, are not accessible. All monitoring and interaction must be handled via the main application running in the
+``web`` containers. The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
 
 Your project will already have at least two services, ``web`` and ``db``, listed in ``docker-compose.yml``. Each of the
 new services will be need to be added in a similar way.
@@ -308,7 +308,6 @@ Other environment variables used by Aldryn Celery can be found in its `aldryn_co
 If you change environment variables locally, the containers will need to be stopped and restarted in order to pick up
 the changes.
 
-The number of Celery workers per Docker instance can be configured with the
-``CELERYD_CONCURRENCY`` environment variable. The default is 2. This can be
-increased, but in that case, you will need to monitor your own RAM consumption
+The number of Celery workers per Docker instance can be configured with the ``CELERYD_CONCURRENCY`` environment
+variable. The default is 2. This can be increased, but in that case, you will need to monitor your own RAM consumption
 via the Control Panel.
