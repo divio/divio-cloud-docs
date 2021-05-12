@@ -120,13 +120,10 @@ Set up the RabbitMQ messaging service, by adding the following lines:
           - "15672:15672"
         expose:
           - "15672"
-        environment:
-          RABBITMQ_ERLANG_COOKIE: secret_cookie_value
 
 This uses the official `Docker RabbitMQ image <https://github.com/docker-library/rabbitmq>`_ (the
 ``rabbitmq:3.5-management`` image in turn installs ``rabbitmq:3.5``). It also gives the container a hostname
-(``rabbitmq``), maps and exposes the management interface port (``15672``) and sets a ``RABBITMQ_ERLANG_COOKIE``
-environment variable (the actual ``secret_cookie_value`` here doesn't matter too much - you're only using this locally).
+(``rabbitmq``), maps and exposes the management interface port (``15672``).
 
 
 Celery worker
@@ -216,7 +213,6 @@ Set up local environment variables
 
 In ``.env-local`` add::
 
-    RABBITMQ_ERLANG_COOKIE=secret_cookie_value
     DEFAULT_AMQP_BROKER_UR="amqp://guest:guest@rabbitmq:5672/"
 
 ..  note::
@@ -301,14 +297,10 @@ See the `Celery documentation <http://www.celeryproject.org/docs-and-support/>`_
 Environment variables
 ---------------------
 
-When Celery is enabled for your project, two new environment variables will be configured:
+When Celery is enabled for your project, a new environment variable ``DEFAULT_AMQP_BROKER_URL`` (in some older projects
+might be called ``BROKER_URL``) will be configured for your project.
 
-* ``DEFAULT_AMQP_BROKER_UR``
-* ``RABBITMQ_ERLANG_COOKIE``
-
-(as noted above, DEFAULT_AMQP_BROKER_URL might be called BROKER_URL in some older projects.)
-
-The Test and Live servers will have different values for both.
+Different cloud environments will have different values for the environment variable.
 
 Other environment variables used by Aldryn Celery can be found in its `aldryn_config.py
 <https://github.com/aldryn/aldryn-celery/blob/master/aldryn_config.py>`_.
