@@ -65,8 +65,14 @@ We can use these environment variables to populate ``ALLOWED_HOSTS``. Edit the s
         for d in os.environ.get('DOMAIN_ALIASES', '').split(',')
         if d.strip()
     ]
+    DIVIO_DOMAIN_REDIRECTS = [
+        d.strip()
+        for d in os.environ.get('DOMAIN_REDIRECTS', '').split(',')
+        if d.strip()
+    ]
 
-    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
+    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
+    
 
 Now, ``ALLOWED_HOSTS`` will always contain only the domains specified by the environment variables. On the cloud, these
 are provided automatically; for the local development environment, we need to add the right ones to ``.env-local``:

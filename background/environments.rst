@@ -17,6 +17,8 @@ but each can use a different Git branch.
    :alt: 'Environments'
    :class: 'main-visual'
 
+--------
+
 The view provides options for configuring environments (for example, setting Git branches) as well as access to useful
 commands for development, controls for deployment and other actions, and links to deployment and runtime logs.
 

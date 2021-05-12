@@ -4,7 +4,8 @@
        MySQL, and cloud media storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
-..  _deploy-django:
+
+.. _deploy-django:
 
 How to deploy a Django application on Divio
 ===========================================================================================
@@ -19,8 +20,12 @@ The steps here should work with any Django project, and include configuration fo
 * `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
   <https://www.uvicorn.org>`_
 
-
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
+
+If you don't already have a working Django project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`quickstart-django`.
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
@@ -142,7 +147,13 @@ example will fall back to safe values if an environment variable is not provided
         for d in os.environ.get('DOMAIN_ALIASES', '').split(',')
         if d.strip()
     ]
-    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
+    DIVIO_DOMAIN_REDIRECTS = [
+        d.strip()
+        for d in os.environ.get('DOMAIN_REDIRECTS', '').split(',')
+        if d.strip()
+    ]
+
+    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
 
     # Redirect to HTTPS by default, unless explicitly disabled
     SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
@@ -256,7 +267,7 @@ You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
           - "./data:/data:rw"
         # the default command to run whenever the container is launched
         command: python manage.py runserver 0.0.0.0:80
-        # the URL 'postgres' or 'mysql' will point to the application's db service
+        # a link to database_default, the application's local database service
         links:
           - "database_default"
         env_file: .env-local

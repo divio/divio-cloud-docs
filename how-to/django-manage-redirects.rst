@@ -1,7 +1,9 @@
 .. _django-manage-redirects:
 
-How to manage redirects in Django projects
-==========================================
+How to manage redirects in Aldryn Django projects
+==================================================
+
+..  Seealso:: :ref:`domains`
 
 .. _django_protocol_redirects:
 
@@ -19,13 +21,13 @@ environment variable to ``True``.
 Domain name redirects
 ---------------------
 
-You can set up your site's domains using the `Domains section of the Control Panel
-<http://support.divio.com/control-panel/projects/using-your-own-domain-with-divi o-cloud>`_. This includes the ability
+You can set up your site's domains using the domains section of the Control Panel. This includes the ability
 to set a primary and secondary domains. The secondary domains can each be set to redirect to the primary domain if
 required.
 
 The domains that are to be redirected to the primary domain can also be managed
-manually, via :ref:`DOMAIN_REDIRECTS`.
+manually, via :ref:`DOMAIN_REDIRECTS`. Note that doing this overrides all settings applied in the
+Control Panel - so if you use ``DOMAIN_REDIRECTS``, you will need to list all the domains there yourself.
 
 
 .. _language_redirects:

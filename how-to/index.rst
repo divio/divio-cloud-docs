@@ -16,6 +16,7 @@ Working in the local development environment
     Set up the Divio local development environment <local-cli>
     Run the local server in Live configuration <local-in-live-mode>
 
+.. _how-to-existing-web-application:
 
 Deploy an existing web application
 ------------------------------------
@@ -30,8 +31,9 @@ Deploy a portable, vendor-neutral application to Divio using Docker.
     Deploy a Flask application <deploy-flask>
     Deploy a Gatsby application <deploy-gatsby>
 
+.. _how-to-use-quickstart:
 
-Create a new web application
+Use a Divio quickstart repository
 ----------------------------------------
 
 Use one of our quickstart repositories to launch a new application from scratch in minutes.
@@ -70,31 +72,9 @@ Platform-specific guides
 
        Install Python dependencies <install-python-dependencies>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+       Configure Celery <configure-celery>
        Go-live checklist for Django projects <live-checklist>
 
-
-.. tab:: Aldryn
-
-   .. raw:: html
-
-      <h3>Aldryn</h3>
-
-   For Django-based projects using the Aldryn addons framework.
-
-   .. toctree::
-       :maxdepth: 1
-
-       Add a Django application to an Aldryn project <django-add-application>
-       Configure Django settings using Aldryn <django-configure-settings>
-       Configure external logging <django-configure-external-logging>
-       Configure Celery <configure-celery>
-       Manage access authentication <django-manage-authentication>
-       Manage redirects in Django projects <django-manage-redirects>
-       Log in to a local Django project <local-project-log-in>
-       Manage uWSGI configuration <uwsgi-configuration>
-       Fine-tune uWSGI server performance <uwsgi-performance>
-       Package an application as an Aldryn addon <addon-create>
-       Update an existing Aldryn addon <addon-update-existing>
 
 .. tab:: Node.js
 
@@ -108,6 +88,28 @@ Platform-specific guides
        Force HTTPS with Express.js <node-express-force-https>
 
 
+.. tab:: Aldryn (legacy)
+
+   .. raw:: html
+
+      <h3>Aldryn</h3>
+
+   For Django-based projects using the Aldryn addons framework.
+
+   .. toctree::
+       :maxdepth: 1
+
+       Add a Django application to an Aldryn project <django-add-application>
+       Configure Django settings using Aldryn <django-configure-settings>
+       Configure external logging <django-configure-external-logging>
+       Manage access authentication <django-manage-authentication>
+       Manage redirects in Django projects <django-manage-redirects>
+       Log in to a local Django project <local-project-log-in>
+       Manage uWSGI configuration <uwsgi-configuration>
+       Fine-tune uWSGI server performance <uwsgi-performance>
+       Package an application as an Aldryn addon <addon-create>
+       Update an existing Aldryn addon <addon-update-existing>
+
 -------------------------
 
 
@@ -119,18 +121,8 @@ Managing a project's resources
 
     Interact with your project’s database <interact-database>
     Interact with your project’s cloud media storage <interact-storage>
-    Manage environment variables <environment-variables>
-
-
-Adding new functionality to a project
-----------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Set up Sass CSS compilation <configure-sass>
-    Configure Application Performance Monitoring <configure-apm>
     Configure media serving on a custom domain <configure-media-custom-domain>
+    Manage environment variables <environment-variables>
 
 
 Development workflow

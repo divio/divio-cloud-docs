@@ -3,10 +3,10 @@
 Project creation options
 ==============================
 
-Each Divio project is based on a combination of *Stack*, *Additional components* and *Additional Boilerplate*.
+A Divio application is defined by the code in its Git repository.
 
-Any application that is suited to being run in Docker can be run on Divio and built up using the default *Build your
-own* option as a starting point.
+When a new application is created on the Control Panel, some pre-defined project types can also be used (based on a
+combination of *Stack*, *Additional components* and *Additional Boilerplate*).
 
 
 ..  Do not change this reference!
@@ -23,10 +23,10 @@ Stack
 .. image:: /images/project-creation-stack.png
    :alt: 'project creation Stack options'
 
-Generally, you will select *Build your own* and construct your own ``Dockerfile``. We also provide some pre-built
-project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below <project-creation-pre-built>`).
+Generally, you will select *Build your own* and construct your own ``Dockerfile``. See :ref:`how-to-existing-web-application` for guidance.
 
-:ref:`deploy-django` for a good example of using the *Build your own* option with Django.
+We also provide some pre-built project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below
+<project-creation-pre-built>`).
 
 
 ..  Do not change this reference!
@@ -99,5 +99,4 @@ We also provide some optional ready-to-go definitions for a quick start. For exa
 * **Additional Boilerplate**: *HTML5*
 
 It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
-get started with a particular stack. They don't prevent you from adding other components; for example, you might decide
-to :ref:`add Sass CSS compilation using Node to a project that doesn't already include Node <configure-sass>`.
+get started with a particular stack. They don't prevent you from adding other components.

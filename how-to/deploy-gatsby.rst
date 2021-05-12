@@ -14,9 +14,12 @@ How to deploy a Gatsby application on Divio
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 
-The steps outlined here assume that you have a working Gatsby project.
+..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
-However, if you need a basic working example, and already have a suitable version of Node installed, you can do:
+If you don't already have a working Gatsby project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`quickstart-gatsby`. Or, if you already have a suitable version of Node installed, you can do:
 
 ..  code-block:: bash
 
@@ -30,8 +33,6 @@ and then in the new directory:
     gatsby develop -H 0.0.0.0 -p 8000
 
 to see it running locally.
-
-..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
 .. _deploy-gatsby-dockerfile:
 
@@ -78,6 +79,14 @@ It's important to pin dependencies as firmly as possible.
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst
 
+For Gatsby, add:
+
+..  code-block:: Dockerfile
+
+    RUN gatsby build
+
+.. _deploy-gatsby-dockerfile-cmd:
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-cmd.rst
 
 A suitable command for Gatsby would be:
@@ -96,7 +105,7 @@ of that, so for example:
       "deploy": "gatsby serve --port 80 --host 0.0.0.0"
     },
 
-and:
+and in the ``Dockerfile`` instead use:
 
 ..  code-block:: Dockerfile
 
@@ -134,7 +143,7 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
 ..  include:: /how-to/includes/deploy-common-compose.rst
 
 ..  code-block:: yaml
-    :emphasize-lines: 13-15, 16-18, 21-
+    :emphasize-lines: 13, 17, 21-22, 24-
 
     version: "2.4"
     services:
@@ -146,41 +155,44 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
           - "8000:80"
         # map the host directory to app (which allows us to see and edit files inside the container)
         volumes:
-          - ".:/app:rw"
+        # uncomment if you prefer to perform node install/gatsby build operations on the host
+        # system - see the Divio Gatsby Quickstart how-to guide for an explanation
+        #   - ".:/app:rw"
           - "./data:/data:rw"
         # the default command to run whenever the container is launched - this can be different from
         # the command built into the image
-        command: gatsby develop -H 0.0.0.0 -p 80
-        # if required, the URL 'postgres' or 'mysql' will point to the application's db service
-        # - but remove the entire links section if not required
-        links:
-          - "database_default"
+        command: gatsby develop --port 80 --host 0.0.0.0
         env_file: .env-local
+        # database_default is the application's database service - but remove the entire links section
+        # if not required
+        # links:
+        #   - "database_default"
 
-      # this entire section can be removed if you're not using a database
-      database_default:
-        # Select one of the following db configurations for the database
-        image: postgres:9.6-alpine
-        environment:
-          POSTGRES_DB: "db"
-          POSTGRES_HOST_AUTH_METHOD: "trust"
-          SERVICE_MANAGER: "fsm-postgres"
-        volumes:
-          - ".:/app:rw"
-
-        image: mysql:5.7
-        environment:
-          MYSQL_DATABASE: "db"
-          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-          SERVICE_MANAGER: "fsm-mysql"
-        volumes:
-          - ".:/app:rw"
-          - "./data/db:/var/lib/mysql"
-        healthcheck:
-            test: "/usr/bin/mysql --user=root -h 127.0.0.1 --execute \"SHOW DATABASES;\""
-            interval: 2s
-            timeout: 20s
-            retries: 10
+      # # this entire section can be removed if you're not using a database
+      #
+      # database_default:
+      #   # Select one of the following db configurations for the database
+      #   image: postgres:9.6-alpine
+      #   environment:
+      #     POSTGRES_DB: "db"
+      #     POSTGRES_HOST_AUTH_METHOD: "trust"
+      #     SERVICE_MANAGER: "fsm-postgres"
+      #   volumes:
+      #     - ".:/app:rw"
+      #
+      #   image: mysql:5.7
+      #   environment:
+      #     MYSQL_DATABASE: "db"
+      #     MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      #     SERVICE_MANAGER: "fsm-mysql"
+      #   volumes:
+      #     - ".:/app:rw"
+      #     - "./data/db:/var/lib/mysql"
+      #   healthcheck:
+      #       test: "/usr/bin/mysql --user=root -h 127.0.0.1 --execute \"SHOW DATABASES;\""
+      #       interval: 2s
+      #       timeout: 20s
+      #       retries: 10
 
 
 .. _deploy-gatsby-env-local:
@@ -204,7 +216,21 @@ In cloud environments, we provide a number of useful variables. If your applicat
 
 ..  include:: /how-to/includes/deploy-common-buildrun-build.rst
 
+Building on the host as an option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you uncomment the:
+
+..  code-block:: YAML
+
+    # - ".:/app:rw"
+
+entry in the ``web:volumes`` section of ``docker-compose.yml``, the entire ``/app`` directory will be overridden by the
+project files from the host. This can be useful for development. However, you will now need to run the commands ``npm
+install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees them.
+
 ..  include:: /how-to/includes/deploy-common-buildrun-run.rst
+
 
 ..  include:: /how-to/includes/deploy-common-git.rst
 

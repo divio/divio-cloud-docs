@@ -81,7 +81,7 @@ Divio Community Slack
 ..  raw:: html
 
     <p>The Divio Community Slack group is for all Divio users. <a class="btn btn-primary btn-small" target="_blank"
-    href="https://join.slack.com/t/divio-community/shared_invite/zt-k5h56uqa-fPxLJq5vQx2OQ9xTiSJnoQ" role="button">Join
+    href="https://slack.divio.com/" role="button">Join
     us on Slack</a></p>
 
 

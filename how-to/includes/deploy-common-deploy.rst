@@ -46,6 +46,10 @@ You have two ways of doing this:
 
     ..  admonition:: Beta status limitations
 
+        "New project from Git repository" is currently provided as a Beta feature, and is available only to
+        users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
+        <https://control.divio.com/account/contact/>`_.
+
         Some limitations apply to the current version of this functionality. In order to import a repository, at the
         time of import:
 
@@ -63,17 +67,17 @@ In the *Environments* view, configure each environment to use the appropriate br
 Connect your local application to the cloud project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can connect a local application to a Divio project on the cloud. This is very convenient, allowing you to run
-commands such as:
+You can connect a local application to a Divio project on the cloud. This is very convenient, allowing you to interact
+with the cloud project from your command-line.
+
+Run:
 
 ..  code-block:: bash
 
-    divio project dashboard
-    divio project pull db  # also push
-    divio project pull media  # also push
-    divio project deploy
+    divio project configure
 
-and so on. See :ref:`some usage examples <local-cli-usage>`.
+and provide the slug (this creates a new file in the project at ``.divio/config.json``).
+
 
 The cloud project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to get
 your project's slug.
@@ -84,13 +88,16 @@ You can also read the slug from the Control Panel:
     :alt: 'Project slug'
     :width: 483
 
-Run:
+You can now use commands such as:
 
 ..  code-block:: bash
 
-    divio project configure
+    divio project dashboard
+    divio project pull db  # also push
+    divio project pull media  # also push
+    divio project deploy
 
-and provide the slug. This creates a new file in the project at ``.divio/config.json``.
+See :ref:`some usage examples <local-cli-usage>`.
 
 
 Add database and media services
@@ -111,8 +118,8 @@ database migrations, these should be applied as :ref:`release commands <release-
 Add additional environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your application may require additional environment variables in production. :ref:`Apply any enviroment variables
-<environment-variables-settings>` using the Divio Control Panel or CLI.
+Your application may require additional environment variables in production. Apply any environment variables using the
+Divio Control Panel or CLI.
 
 
 Push local database/media content

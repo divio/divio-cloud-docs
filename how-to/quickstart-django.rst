@@ -3,7 +3,7 @@
     Where:
       in the README
       in the GitHub project About field
-    As: https://docs.divio.com/en/latest/how-to/django-deploy-quickstart/
+    As: https://docs.divio.com/en/latest/how-to/quickstart-django/
 
 .. meta::
    :description:
@@ -13,7 +13,7 @@
    :keywords: Docker, Django, Postgres, MySQL, S3
 
 
-.. _django-deploy-quickstart:
+.. _quickstart-django:
 
 How to deploy a Django application with our quickstart repository
 =========================================================================

@@ -3,8 +3,10 @@
 
 ..  _settings.py:
 
-The ``settings.py`` file
-========================
+``settings.py`` in Aldryn Django 
+==================================
+
+..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
 Divio Django projects that use our addons framework are shipped with a ``settings.py`` file that hooks into the
 framework. The framework allows addon applications to configure their own settings programmatically.

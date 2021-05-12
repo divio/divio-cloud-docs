@@ -19,9 +19,9 @@ sys.path.insert(0, os.path.abspath("."))
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
 
-project = "Developer Handbook"
-full_title = project + " Documentation"
-copyright = "2017-2020, Divio"
+project = "Divio Developer Handbook"
+full_title = project
+copyright = "2017-2021, Divio"
 author = "Daniele Procida"
 version = "1.0"
 release = version
@@ -39,6 +39,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_inline_tabs",
     "sphinx_click",
+    "notfound.extension",
 ]
 
 if "spelling" in sys.argv:
@@ -51,6 +52,7 @@ mermaid_version="8.5.2"
 #
 
 intersphinx_mapping = {
+    "user": ("https://support.divio.com/", None),
     "python": ("https://docs.python.org/3", None),
     "django": (
         "https://docs.djangoproject.com/en/2.2/",

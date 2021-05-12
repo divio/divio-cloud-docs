@@ -17,7 +17,7 @@ The Control Panel checks that required services (such as the database) are avail
 2. Git check out
 ~~~~~~~~~~~~~~~~
 
-The project's Git repository is checked out into a working directory.
+The applications's Git repository is checked out into a working directory.
 
 
 .. _deployment-build:

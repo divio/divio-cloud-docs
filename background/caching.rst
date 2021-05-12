@@ -1,7 +1,7 @@
 .. _caching:
 
-Caching and CDN in Divio projects
-===================================
+Caching and CDN in Divio applications
+=====================================
 
 Infrastructure-level caching
 ----------------------------
@@ -9,45 +9,30 @@ Infrastructure-level caching
 As well as the caching and CDN (Content Delivery Network) we provide, you can also :ref:`apply your own
 <apply-your-own-caching-cdn>`.
 
-Caching is generally provided by `Cloudflare <http://cloudflare.com>`_.
+Caching is generally provided by `Cloudflare <http://cloudflare.com>`_. Other options can be provided or managed
+on request.
 
-:ref:`Caching for media storage <media-file-caching>` is available on all projects and plans, and on Test as well as
-Live servers. It's automatic and requires no additional action or configuration. Note that this only includes files
-served from our S3 media buckets (typically, images). Resources served by the application instances (HTML, static
-files) are **not** cached.
-
-Caching is URL-based, and wholly content-unaware - caching does not detect when files have changed.
-
-
-Options
-~~~~~~~
-
-However, other options for caching are available on request (on eligible projects only). This
-includes:
-
-* caching of application content as well as media files
-* Cloudflare `Polish
-  <https://support.cloudflare.com/hc/en-us/articles/360000607372-Using-Cloudflare-Polish-to-compress
-  -images>`_ and `Mirage
-  <https://support.cloudflare.com/hc/en-us/articles/219178057-Configuring-Cloudflare-Mirage>`_
-  optimisation for images
-* `cache invalidation control via the Divio project Dashboard
-  <https://support.divio.com/en/articles/3414982-how-to-clear-the-cloudflare-cdn-cache>`_
-* custom Cloudflare page rules
+Infrastructure-level caching is *URL-based*, and content-unaware - caching does not detect when files have changed.
 
 
 .. _media-file-caching:
 
-Media file caching
-~~~~~~~~~~~~~~~~~~
+Media storage caching
+~~~~~~~~~~~~~~~~~~~~~
 
-Typically, the bulk of a page web's transfer load is accounted for by its media files, most of
-which will be images in the page.
+Caching for media storage is automatically provided available on all applications and plans, and on Test as well as Live
+servers. Note that this only includes files served from our media storage services (S3 buckets, Azure Blob storage
+instances). Resources served by the application instances (HTML, static files) are not cached.
 
-All media files are handled by our dedicated storage and hosting providers, using S3 buckets. If your application uses
-the ``aldryn-media.io`` domain for S3 buckets, then the files are *not* cached.
+On request we can also provide Cloudflare `Polish
+<https://support.cloudflare.com/hc/en-us/articles/360000607372-Using-Cloudflare-Polish-to-compress -images>`_ and
+`Mirage <https://support.cloudflare.com/hc/en-us/articles/219178057-Configuring-Cloudflare-Mirage>`_ optimisation for
+images.
 
-Delivery of these files is handled by Cloudflare's CDN, which also caches the files.
+..  note::
+
+    Some of the media storage domains we use are not cached, including: ``sos-ch-dk-2.exo.io``, ``aldryn-media.io``,
+    ``s3.amazonaws.com``.
 
 
 Controlling caching headers
@@ -61,7 +46,13 @@ Cloudflare will cache media files according to the ``Cache-Control`` header appl
 
 will set a TTL of one hour (3600 seconds).
 
-Your application can set these headers when managing the file storage. Aldryn Django does this by default, also
+Your application can set these headers when managing the file storage.
+
+
+In Aldryn Django (legacy)
+..............................
+
+Aldryn Django does this by default, also
 applying some sensible default values (see also :ref:`DISABLE_S3_MEDIA_HEADERS_UPDATE`).
 
 Our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail files
@@ -70,8 +61,15 @@ Our Aldryn Django Filer addon `applies a one-year TTL to its public thumbnail fi
 discovers to `the media storage class that configures the S3 bucket
 <https://github.com/divio/aldryn-django/blob/support/2.2.x/aldryn_django/storage.py#L29-L74>`_.
 
-Any application that needs to control the behaviour of cached media will need either to make use
-of provided functionality (for example, such as in Aldryn Django), or configure the S3 bucket directly itself.
+
+Application content caching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We can also provide managed caching of application content (including custom page rules) using Cloudflare or other
+services, on request.
+
+..  seealso:: :ref:`Cache invalidation control via the Divio project Dashboard
+  <user:how-to-manage-cloudflare-cache>`
 
 
 .. _apply-your-own-caching-cdn:
@@ -79,31 +77,63 @@ of provided functionality (for example, such as in Aldryn Django), or configure 
 Applying your own caching/CDN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is nothing to stop you applying your own caching and CDN.
+You may also provide your own caching and CDN.
 
-**For media files**, if you are using our media domain (the default), your projects will automatically use the CDN we
-provide and this cannot be changed. However, it's also possible to use your own domain (see for example
+**For media files**, if you are using our media domain (the default), your applications will automatically use the CDN
+we provide and this cannot be changed. However, it's also possible to use your own domain (see for example
 :ref:`how-to-configure-media-serving-custom-domain`) for media, in which case you are free to use what you wish.
 
-**For the rest of the project**, you can set up another CDN, for example using your own Cloudflare account. In such a
-case you should inform us so that instead of providing a certificate automatically ourselves, you can upload your own
-manually.
+**For other resources** (served by the containers) you can set up another CDN, for example using your own Cloudflare
+account. In such a case you should inform us so that instead of providing a certificate automatically ourselves, you
+can upload your own manually.
 
 
-Application-level caching
+In-application caching
 -------------------------
 
-Django applications
-~~~~~~~~~~~~~~~~~~~
-
-Caching in Divio Django applications will typically make use of :doc:`Django's own caching framework
-<django:topics/cache>`.
+Caching in your application is up to you and the stack you are using. For example, Django applications will typically
+make use of :doc:`Django's own caching framework <django:topics/cache>`.
 
 
-Caching in django CMS
-^^^^^^^^^^^^^^^^^^^^^
+Application caching options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Aldryn django CMS addon applies caching rules by default, via the
+What *not* to use in your code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Caching should rely on a shared store that persists for all containers. For example, caching that
+relies on a container's local file-system or local memory should not be used, as only that
+container (and not a container running in parallel, or one instantiated later) will be able to
+access the items it stores.
+
+In some cases, this can simply lead to inefficiency (not using cached data). In other cases, it
+could cause malfunction or even data-loss, if two instances are working with inconsistent data.
+
+
+Database caching
+~~~~~~~~~~~~~~~~
+
+Database caching is shared by all instances of an application server. It's a fast, scalable option, and is suited to
+most needs.
+
+
+Third-party caching backends
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Other backends, such as `Redis <https://redis.io>`_ (a popular open-source
+database) can be used as caching backends for Django.
+
+If it suits your needs, you can procure a Redis or other caching instance from
+a provider and use it with your Divio project.
+
+
+Caching with Aldryn Django (legacy)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Database caching is the default cache backend for Aldryn Django applications, with
+:ref:`Django's database caching <django:database-caching>` configured and ready to use.
+
+The Aldryn django CMS addon applies additional caching rules by default, via the
 :setting:`django-cms:CMS_CACHE_DURATIONS` setting.
 
 Control over caching settings is exposed in the Divio Control Panel in the configuration
@@ -125,40 +155,3 @@ It is often convenient to disable caching while developing or working intensivel
 
 to the project's ``settings.py`` will disable all caching in the CMS in the local and Test
 environments.
-
-
-Application caching options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-What *not* to use in your code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Caching should rely on a shared store that persists for all containers. For example, caching that
-relies on a container's local file-system or local memory should not be used, as only that
-container (and not a container running in parallel, or one instantiated later) will be able to
-access the items it stores.
-
-In some cases, this can simply lead to inefficiency (not using cached data). In other cases, it
-could cause malfunction or even data-loss, if two instances are working with inconsistent data.
-
-
-Database caching
-~~~~~~~~~~~~~~~~
-
-Database caching is shared by all instances of an application server, making database caching
-suitable for many use-cases.
-
-It's our default cache backend for Django projects - all Divio Django projects are set up with
-:ref:`Django's database caching <django:database-caching>` configured and ready to use.
-
-This is a fast, scalable option, and is suited to most needs.
-
-
-Third-party caching backends
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Other backends, such as `Redis <https://redis.io>`_ (a popular open-source
-database) can be used as caching backends for Django.
-
-If it suits your needs, you can procure a Redis or other caching instance from
-a provider and use it with your Divio project.

@@ -59,3 +59,52 @@ about the external resource, e.g.::
 External links to documentation references should use the reference (as above) rather than the heading to which it is
 attached (in this case https://docs.divio.com/en/latest/background/project-creation-options#platform). This allows
 changing headings without the risk of breaking links.
+
+Style guide
+------------
+
+Inline formatting
+~~~~~~~~~~~~~~~~~~
+
+* italics
+
+  * for emphasis: *Be warned*
+  * names of books: *Test-driven development*
+  * in interfaces, when referring by name: in the *Settings* menu, select *Add…*
+
+* bold:
+
+  * strong emphasis: **Never** do this!
+  * in interfaces, when referring to buttons that perform actions: Select **Save**
+
+* literals:
+
+  * names of things in code: the ``ModelAdmin`` class
+  * things you want the user to type: ``cd`` into the new directory
+
+* inverted commas:
+
+  * when quoting text: Call it “My first weblog”
+  * for names of chapters in books
+  * when there isn’t any better way to refer to something: use the “eye” icon
+
+* examples of what **not** to do with inverted commas:
+
+  * put a link, italics, bold or literals in inverted commas: “`example <#>`_”, the “**Save**” button, select “*Add…*”
+
+
+Spelling
+~~~~~~~~
+
+The documentation uses British English spelling (*-ise* rather than *-ize*, *colour* rather than *color*, etc).
+
+
+Tone and language
+~~~~~~~~~~~~~~~~~
+
+Avoid language that tells the user that something is easy: "just do ...", "simply ...".
+
+In general, use the second person ("This document assumes you are a reasonably experienced software developer") when
+referring to the reader (not "The reader is assumed to be...").
+
+Tutorials and how-to guides should adopt the imperative form wherever possible ("Run xxx", "delete yyy").

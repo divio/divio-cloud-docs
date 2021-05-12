@@ -30,9 +30,7 @@ Domains
 * If you are using existing domains, prepare them for the switch. Ensure that they have low (less than 60 seconds)
   TTLs. High TTLs can cause problems when the domains are pointed at the new site, including delays in the automatic
   provisioning of SSL certificates.
-* Check that the live domain for the server is set up for the site in the Control Panel (support article: `how to use
-  your own domain with Divio
-  <http://support.divio.com/control-panel/projects/how-to-use-your-own-domain-with-divio-cloud>`_).
+* Check that the live domain for the server is set up for the site in the Control Panel.
 * Check that any domains that should redirect to the primary domain are also set in the *Domains* setting in the
   Control Panel.
 * (For Aldryn projects) if required, enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
@@ -42,10 +40,8 @@ Domains
 Environment variables
 ---------------------
 
-* Check that any other environment variables required on Live have been set (support article: `How
-  to use environment variables with your projects
-  <http://support.divio.com/control-panel/projects/how-to-use-environment-variables-with-your-projec
-  ts>`_).
+* Check that any other environment variables required on Live have been set (see: :ref:`Environment variables
+  <environment-variables>`).
 
 
 Serving configuration
