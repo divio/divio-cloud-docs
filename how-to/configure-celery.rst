@@ -213,11 +213,11 @@ Set up local environment variables
 
 In ``.env-local`` add::
 
-    DEFAULT_AMQP_BROKER_UR="amqp://guest:guest@rabbitmq:5672/"
+    DEFAULT_AMQP_BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
 
 ..  note::
 
-    * DEFAULT_AMQP_BROKER_URL might be called BROKER_URL in some older projects.
+    * ``DEFAULT_AMQP_BROKER_URL`` might be called ``BROKER_URL`` in some older projects.
     * Port ``5672`` of the RabbitMQ server not to be confused with port ``15672`` of its management interface.
 
 
