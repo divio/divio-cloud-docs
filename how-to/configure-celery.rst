@@ -302,8 +302,8 @@ In ``.env-local`` add::
 
 ..  note::
 
-    Applications using older versions of Aldryn Celery will require the environment variable ``DEFAULT_AMQP_BROKER_URL``
-    to be called ``BROKER_URL``.
+    Applications using Aldryn Celery will require the environment variable ``DEFAULT_AMQP_BROKER_URL`` to be called
+    ``BROKER_URL``.
 
     Port ``5672`` of the RabbitMQ server should not be confused with port ``15672`` of its management interface.
 
@@ -334,7 +334,7 @@ Environment variables
 ---------------------
 
 When Celery is enabled for your application, a new environment variable ``DEFAULT_AMQP_BROKER_URL`` will be configured.
-(In older versions of Aldryn Celery it is called ``BROKER_URL``).
+(In Aldryn Celery it is called ``BROKER_URL``).
 
 The environment variable will have different values in different cloud environemnts.
 
