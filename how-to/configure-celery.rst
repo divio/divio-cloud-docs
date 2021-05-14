@@ -12,8 +12,8 @@ How to configure Celery
 =======================
 
 
-This article assumes that you are already familiar with the basics of using Celery with Django and that you have Celery
-installed in your application.
+This article assumes that you are already familiar with the basics of using Celery with Django and that you have Celery installed
+in your application.
 
 If not, please see :doc:`Celery's documentation <celery:index>`.
 
@@ -32,9 +32,8 @@ more later if required.
 Celery will then be provisioned for your application's environments by our infrastructure team. This includes
 configuration of new :ref:`environment variables <celery-environment-variables>` it will need.
 
-Once provisioned and deployed, your cloud application will run with new Docker instances for the Celery workers. The
-containers running Celery components use the same image as the web container, but are started up with a different
-command.
+Once provisioned and deployed, your cloud application will run with new Docker instances for the Celery workers. The containers
+running Celery components use the same image as the web container, but are started up with a different command.
 
 We provide various cloud containers for Celery:
 
@@ -42,8 +41,7 @@ We provide various cloud containers for Celery:
 * a :ref:`Celery beat <celery:guide-beat>` container, to handle scheduling
 * a :ref:`Celery camera <celery:monitoring-snapshots>`, to provide snapshots for monitoring
 
-Note that if your Divio application is on a plan that pauses due to inactivity, this will also pause the Celery
-containers.
+Note that if your Divio application is on a plan that pauses due to inactivity, this will also pause the Celery containers.
 
 
 Application configuration
@@ -61,15 +59,15 @@ These tasks are covered in order below.
 Using the broker environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (in Aldryn celery, simply ``BROKER_URL``). This provides
+For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (in Aldryn Celery, simply ``BROKER_URL``). This provides
 configuration details for the AMQP message queue that handles Celery tasks. It's in the form:
 
 ..  code-block:: text
 
     transport://userid:password@hostname:port/virtual_host
 
-This configuration will need to be passed to Celery for its :ref:`broker settings <celery:conf-broker-settings>`
-(``CELERY_BROKER_URL``, for Django).
+This configuration will need to be passed to Celery for its :ref:`broker settings <celery:conf-broker-settings>` (``CELERY_BROKER_URL``,
+for Django).
 
 For applications using Aldryn Celery
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,11 +80,9 @@ Aldryn Celery will take care of configuration. See :ref:`aldryn-celery` below.
 Starting the cloud containers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As noted above, these containers are all instances of the same application image, but are started up by different
-commands.
+As noted above, these containers are all instances of the same application image, but are started up by different commands.
 
-For the worker and scheduling containers, your application needs an executable at ``/usr/local/bin/aldryn-celery``,
-containing:
+For the worker and scheduling containers, your application needs an executable at ``/usr/local/bin/aldryn-celery``, containing:
 
 ..  code-block:: bash
 
@@ -95,20 +91,18 @@ containing:
     [ $1 = "beat" ] ; then
         celery -A path.to.celery.app beat --loglevel=INFO
     else
-        celery -A path.to.celery.app worker --concurrency=4 --loglevel=INFO --without-gossip --without-mingle
-        --without-heartbeat -Ofair
+        celery -A path.to.celery.app worker --concurrency=4 --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair
     fi
 
 Note the paths that you will need to specify yourself.
 
-Similarly, on deployment the infrastructure invokes (by default) a Django management command ``python manage.py
-celerycam`` to start up the monitoring container.
+Similarly, on deployment the infrastructure invokes (by default) a Django management command ``python manage.py celerycam`` to
+start up the monitoring container.
 
-* If you don’t want to use a monitoring container, please inform us, so that we can configure your application to start
-up without issuing the command (deployments will fail if the command fails)
-
-* If you do want to use a monitoring container, you will need to add a ``celerycam`` management command to your
-application. The command needs to respond to the invocation: ``python manage.py celerycam --frequency=10 --pidfile=``.
+* If you don’t want to use a monitoring container, please inform us, so that we can configure your application to start up without
+  issuing the command (deployments will fail if the command fails).
+* If you do want to use a monitoring container, you will need to add a ``celerycam`` management command to your application. The
+  command needs to respond to the invocation: ``python manage.py celerycam --frequency=10 --pidfile=``.
 
 For an example of a ``celerycam`` management command implementation, see `how Aldryn Celery does this
 <https://github.com/divio/aldryn-celery/blob/77886f934de9dd2d25b8279af8054b03c6677d03/aldryn_config.py#L57>`_ via the
@@ -163,11 +157,11 @@ the provision made on our cloud. A complete set-up would include:
 Locally, the four new containers will be set up as new services using the :ref:`docker-compose.yml
 <docker-compose-yml-reference>` file.
 
-Note that in the cloud environment, the Celery-related containers are launched automatically. They, and the AMPQ message
-queue, are not directly accessible. All monitoring and interaction must be handled via the main application running in
-the ``web`` container(s). The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
+Note that in the cloud environment, the Celery-related containers are launched automatically. They, and the AMPQ message queue, are
+not directly accessible. All monitoring and interaction must be handled via the main application running in the ``web``
+container(s). The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
 
-Your application will already have other services listed in its ``docker-compose.yml``. Each of the new services will be
+Your application will already have other services listed in its ``docker-compose.yml``. Each of the new services will
 need to be added in a similar way.
 
 
@@ -224,8 +218,7 @@ definition will therefore be very similar, with key changes noted here:
 Rather than copying the example above, use the actual ``web`` service in your ``docker-compose`` file as its basis, in
 case it contains other values that need to be present. There's no need for the ``ports`` option.
 
-You will need to provide a ``<startup command>`` based on :ref:`the one used to start up the cloud workers
-<how-to-celery-startup>`.
+You will need to provide a ``<startup command>`` based on :ref:`the one used to start up the cloud workers <how-to-celery-startup>`.
 
 For applications using Aldryn Celery, use ``command: aldryn-celery worker``.
 
@@ -274,8 +267,8 @@ And Celery cam:
       command: aldryn-celery cam
       env_file: .env-local
 
-You will need to provide a ``<startup command>`` based on based on :ref:`the one used to start up the cloud monitoring
-container <how-to-celery-startup>`., e.g. ``python manage.py celerycam --frequency=10 --pidfile=``.
+You will need to provide a ``<startup command>`` based on based on :ref:`the one used to start up the cloud monitoring container
+<how-to-celery-startup>`., e.g. ``python manage.py celerycam --frequency=10 --pidfile=``.
 
 For applications using Aldryn Celery, use ``command: aldryn-celery cam``.
 
@@ -301,12 +294,11 @@ Set up local environment variables
 In ``.env-local`` add::
 
     DEFAULT_AMQP_BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
-
+    
 ..  note::
 
-    Applications using Aldryn Celery will require the environment variable ``DEFAULT_AMQP_BROKER_URL`` to be called
-    ``BROKER_URL``.
-    
+    For legacy Aldryn Celery applications, name the environment variable ``BROKER_URL`` instead of ``DEFAULT_AMQP_BROKER_URL``.
+
     Port ``5672`` of the RabbitMQ server should not be confused with port ``15672`` of its management interface.
 
 
@@ -336,7 +328,7 @@ Environment variables
 ---------------------
 
 When Celery is enabled for your application, a new environment variable ``DEFAULT_AMQP_BROKER_URL`` will be configured.
-(In Aldryn Celery it is called ``BROKER_URL``).
+(It's also provided as ``BROKER_URL`` for legacy Aldryn Celery applications.)
 
 The environment variable will have different values in different cloud environemnts.
 
@@ -359,10 +351,10 @@ Aldryn Celery (legacy)
 -------------------------
 
 Aldryn Celery is an :ref:`Aldryn Addon <aldryn>` wrapper application that `installs
-<https://github.com/divio/aldryn-celery/blob/master/requirements.txt>`_ and configures Celery in your application,
-exposing multiple Celery settings as `environment variables
-<https://github.com/divio/aldryn-celery/blob/master/aldryn_config.py>`_ for fine-tuning its configuration.
+<https://github.com/divio/aldryn-celery/blob/master/requirements.txt>`_ and configures Celery in your application, exposing
+multiple Celery settings as `environment variables <https://github.com/divio/aldryn-celery/blob/master/aldryn_config.py>`_ for
+fine-tuning its configuration.
 
-Aldryn Celery installs components including Celery itself and Django Celery. The addon is no longer updated, and
-installs an older version of Celery. Applications currently using Aldryn Celery will eventually need to be updated to
-maintain compatibility with other dependencies of the application.
+Aldryn Celery installs components including Celery itself and Django Celery. The addon is no longer updated, and installs an older
+version of Celery. Applications currently using Aldryn Celery will eventually need to be updated to maintain compatibility with
+other dependencies of the application.
