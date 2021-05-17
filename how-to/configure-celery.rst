@@ -59,8 +59,9 @@ These tasks are covered in order below.
 Using the broker environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (in Aldryn Celery, simply ``BROKER_URL``). This provides
-configuration details for the AMQP message queue that handles Celery tasks. It's in the form:
+For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (the same value is also available as ``BROKER_URL``, provided for
+legacy Aldryn Celery applications). This provides configuration details for the AMQP message queue that handles Celery
+tasks. It's in the form:
 
 ..  code-block:: text
 
@@ -86,9 +87,8 @@ For the worker and scheduling containers, your application needs an executable a
 
 ..  code-block:: bash
 
-    #!/bin/shif
-
-    [ $1 = "beat" ] ; then
+    #!/bin/sh
+    if [ $1 = "beat" ] ; then
         celery -A path.to.celery.app beat --loglevel=INFO
     else
         celery -A path.to.celery.app worker --concurrency=4 --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair
