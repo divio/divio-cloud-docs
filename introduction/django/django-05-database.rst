@@ -84,7 +84,7 @@ First, create a new file called ``.env-local``, and add the variable to it:
 
 ..  code-block:: text
 
-    DATABASE_URL=postgres://postgres@postgres:5432/db
+    DATABASE_URL=postgres://postgres@database_default:5432/db
 
 If you're familiar with Postgres, you'll recognise its default user and port in the URL.
 
