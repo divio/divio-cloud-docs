@@ -101,7 +101,7 @@ requirements? Get some answers from an expert, with no obligations and no sales-
 ..  raw:: html
 
     <p><a class="btn btn-primary btn-small" target="_blank"
-    href="https://calendly.com/daniele-procida/15min" role="button">Book a 15-minute call</a></p>
+    href="https://calendly.com/joel-burch/discover-divio" role="button">Book a short call</a></p>
 
 
 
