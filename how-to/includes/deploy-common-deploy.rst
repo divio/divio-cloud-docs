@@ -107,6 +107,8 @@ The new Divio application does not include any :ref:`additional services <servic
 database or media store, they must be added manually using the Divio Control Panel as required. Use the *Services* menu
 to add the services your application needs.
 
+Ensure that you select services that your application actually supports.
+
 
 Add release commands
 ~~~~~~~~~~~~~~~~~~~~
