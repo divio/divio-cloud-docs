@@ -36,14 +36,15 @@ Deploy a portable, vendor-neutral application to Divio using Docker.
 Use a Divio quickstart repository
 ----------------------------------------
 
-Use one of our quickstart repositories to launch a new application from scratch in minutes.
+Use one of our quickstart repositories to create and deploy a new application from scratch in minutes.
 
 .. toctree::
     :maxdepth: 1
 
-    Create a Django application <quickstart-django>
-    Create a django CMS application <quickstart-django-cms>
-    Create a Gatsby application <quickstart-gatsby>
+    Start a Django application <quickstart-django>
+    Start a django CMS application <quickstart-django-cms>
+    Start a Gatsby application <quickstart-gatsby>
+    Start a PHP Laravel application <quickstart-php-laravel>
 
 
 Building your Docker application
