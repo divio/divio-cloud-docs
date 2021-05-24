@@ -48,10 +48,7 @@ For a Gatsby application, you can use:
 need to use one that is in-line with your application's needs. It's good practice to use a specific base image - for
 example ``node:14.15.1-alpine`` above (rather than say just ``node:14``).
 
-..  seealso::
-
-    * :ref:`manage-base-image-choosing`
-    * `Divio base images on Docker Hub <https://hub.docker.com/r/divio/base/tags?page=1&ordering=last_updated>`_
+..  include:: /how-to/includes/deploy-common-dockerfile-base-images.rst
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-system-dependencies.rst
 

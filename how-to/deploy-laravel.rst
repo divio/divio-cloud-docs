@@ -1,68 +1,70 @@
-:orphan:
-
 .. meta::
    :description:
-       This guide explains step-by-step how to deploy a application with Docker, in accordance with
+       This guide explains step-by-step how to deploy a Laravel application with Docker, in accordance with
        Twelve-factor principles.
    :keywords: Docker, Postgres, MySQL, S3
 
+..  _deploy-laravel:
 
-How to deploy an application on Divio: template
+How to deploy a Laravel web application on Divio
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 
-..  todo::
-
-    Add a note about scope and about other guides [recommended]
+The application described here is based on Laravel's own example application.
 
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
 ..  include:: /how-to/includes/deploy-common-dockerfile.rst
 
-..  todo::
+For this example we will use:
 
-    Add a note about base images [required] - example:
+..  code-block:: Dockerfile
 
-    For a Python application, use the following:
+    FROM php:7.3-fpm-stretch
 
-    ..  code-block:: Dockerfile
-
-        FROM python:3.8
-
-    Here, ``python:3.8`` is the name of the Docker *base image*. We cannot advise on what base image you should use;
-    you'll need to use one that is in-line with your application's needs. However, once you have a working set-up, it's
-    good practice to move to a more specific base image - for example ``python:3.8.1-slim-buster``.
+This image includes the `FastCGI Process Manager for PHP <https://php-fpm.org>`_ - there are other ways to deploy PHP.
+We cannot advise on what base image you should use; you'll need to use one that is in-line with your application's
+needs.
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-base-images.rst
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-system-dependencies.rst
 
+In this case, a good starting set is:
+
+..  code-block:: Dockerfile
+
+    RUN apt-get update && apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor mysql-client nginx dumb-init
+
+In addition, some convenience Docker PHP binaries are available:
+
+..  code-block:: Dockerfile
+
+    RUN docker-php-ext-install mbstring pdo pdo_mysql
+
 ..  include:: /how-to/includes/deploy-common-dockerfile-working-directory.rst
 
-..  todo::
+This example uses nginx as a server;
 
-    Add a note on working directories [recommended]
+..  code-block:: Dockerfile
+
+    COPY divio/nginx/vhost.conf /etc/nginx/sites-available/default
+
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-application-dependencies.rst
 
-..  todo::
+First, set the ``Dockerfile`` to  install Composer itself, and then run the ``composer install`` command:
 
-    Add a note about pinning dependencies; list any known required dependencies [required] - example:
+..  code-block:: Dockerfile
 
-    ..  code-block:: Dockerfile
+    RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
+    RUN composer install --no-scripts --no-autoloader
 
-        # install dependencies listed in the repository's requirements file
-        RUN pip install -r requirements.txt
-
-    Any requirements should be pinned as firmly as possible.
-
+Composer will expect to read the dependencies from ``composer.json`` or ``composer.lock`` - you will need to have
+one in the application.
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst
-
-..  todo::
-
-    Add a note and example of file-building for this framework [recommended]
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-cmd.rst
 
