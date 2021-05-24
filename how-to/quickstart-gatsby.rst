@@ -60,7 +60,7 @@ Launch the local server
 
     docker-compose up
 
-This starts up the container with the default ``command`` in the ``docker-compose.yml`` file:
+This starts up the container with the default ``command`` in the ``docker-compose.yml`` file, which is:
 
 ..  code-block:: bash
 
