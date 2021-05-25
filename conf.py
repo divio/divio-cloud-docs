@@ -61,7 +61,7 @@ intersphinx_mapping = {
     "django-cms": ("http://docs.django-cms.org/en/latest/", None),
     "celery": ("https://docs.celeryproject.org/en/stable/", None),
     "whitenoise": ("https://whitenoise.evans.io/en/stable/", None),
-    "flask": ("https://flask.palletsprojects.com/en/master/", None),
+    "flask": ("https://flask.palletsprojects.com/", None),
 }
 
 #
