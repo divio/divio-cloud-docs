@@ -59,8 +59,9 @@ These tasks are covered in order below.
 Using the broker environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (in some older applications, simply ``BROKER_URL``). This provides
-configuration details for the AMQP message queue that handles Celery tasks. It's in the form:
+For Celery, we provide a ``DEFAULT_AMQP_BROKER_URL`` (the same value is also available as ``BROKER_URL``, provided for
+legacy Aldryn Celery applications). This provides configuration details for the AMQP message queue that handles Celery
+tasks. It's in the form:
 
 ..  code-block:: text
 
@@ -86,9 +87,8 @@ For the worker and scheduling containers, your application needs an executable a
 
 ..  code-block:: bash
 
-    #!/bin/shif
-
-    [ $1 = "beat" ] ; then
+    #!/bin/sh
+    if [ $1 = "beat" ] ; then
         celery -A path.to.celery.app beat --loglevel=INFO
     else
         celery -A path.to.celery.app worker --concurrency=4 --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair
@@ -100,7 +100,7 @@ Similarly, on deployment the infrastructure invokes (by default) a Django manage
 start up the monitoring container.
 
 * If you don’t want to use a monitoring container, please inform us, so that we can configure your application to start up without
-  issuing the command (deployments will fail if the command fails)
+  issuing the command (deployments will fail if the command fails).
 * If you do want to use a monitoring container, you will need to add a ``celerycam`` management command to your application. The
   command needs to respond to the invocation: ``python manage.py celerycam --frequency=10 --pidfile=``.
 
@@ -161,8 +161,8 @@ Note that in the cloud environment, the Celery-related containers are launched a
 not directly accessible. All monitoring and interaction must be handled via the main application running in the ``web``
 container(s). The :ref:`docker-compose file is not used on the cloud <docker-compose-local>`.
 
-Your application will already have other services listed in its ``docker-compose.yml``. Each of the new services will be need to be
-added in a similar way.
+Your application will already have other services listed in its ``docker-compose.yml``. Each of the new services will
+need to be added in a similar way.
 
 
 RabbitMQ
@@ -188,13 +188,10 @@ Set up the RabbitMQ messaging service, by adding the following lines:
           - "15672:15672"
         expose:
           - "15672"
-        environment:
-          RABBITMQ_ERLANG_COOKIE: secret_cookie_value
 
 This uses the official `Docker RabbitMQ image <https://github.com/docker-library/rabbitmq>`_ (the
 ``rabbitmq:3.5-management`` image in turn installs ``rabbitmq:3.5``). It also gives the container a hostname
-(``rabbitmq``), maps and exposes the management interface port (``15672``) and sets a ``RABBITMQ_ERLANG_COOKIE``
-environment variable (the actual ``secret_cookie_value`` here doesn't matter too much - you're only using this locally).
+(``rabbitmq``), maps and exposes the management interface port (``15672``).
 
 
 Celery worker
@@ -296,10 +293,13 @@ Set up local environment variables
 
 In ``.env-local`` add::
 
-    RABBITMQ_ERLANG_COOKIE=secret_cookie_value
-    BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
+    DEFAULT_AMQP_BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
+    
+..  note::
 
-(Don't confuse the port ``5672`` of the RabbitMQ server with the port ``15672`` of its management interface.)
+    For legacy Aldryn Celery applications, name the environment variable ``BROKER_URL`` instead of ``DEFAULT_AMQP_BROKER_URL``.
+
+    Port ``5672`` of the RabbitMQ server should not be confused with port ``15672`` of its management interface.
 
 
 Run the local application
@@ -327,12 +327,10 @@ If you make any local changes to a application's configuration that need to be a
 Environment variables
 ---------------------
 
-When Celery is enabled for your application, two new environment variables will be configured:
+When Celery is enabled for your application, a new environment variable ``DEFAULT_AMQP_BROKER_URL`` will be configured.
+(It's also provided as ``BROKER_URL`` for legacy Aldryn Celery applications.)
 
-* ``BROKER_URL``
-* ``RABBITMQ_ERLANG_COOKIE``
-
-Different cloud environments will have different values for both.
+The environment variable will have different values in different cloud environemnts.
 
 The number of Celery workers per Docker instance can be configured with the
 ``CELERYD_CONCURRENCY`` environment variable. The default is 2. This can be
