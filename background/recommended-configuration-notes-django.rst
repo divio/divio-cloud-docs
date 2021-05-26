@@ -3,7 +3,7 @@
 Working with our recommended Django project configuration
 =============================================================
 
-Our recommended Django project configuration is described in:
+Our recommended Django project configuration is mentioned in:
 
 * :ref:`deploy-django`
 * :ref:`quickstart-django`
