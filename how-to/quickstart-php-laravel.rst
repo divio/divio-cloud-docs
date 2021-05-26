@@ -134,10 +134,10 @@ filesystem, run:
 after any ``docker-compose build`` operations.
 
 
-Launching the local server with nginx
+Launching the local server with Nginx
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Dockerfile`` launches the server with nginx:
+The ``Dockerfile`` launches the server with Nginx:
 
 ..  code-block:: Dockerfile
 
@@ -150,7 +150,7 @@ instead:
 
     command: bash -c "chmod a+x /app/divio/run-locally.sh && php /app/divio/run-env.php /app/divio/run-locally.sh"
 
-Comment this out to use nginx locally with Docker Compose.
+Comment this out to use Nginx locally with Docker Compose.
 
 
 ..  include:: /how-to/includes/deploy-common-deploy.rst
