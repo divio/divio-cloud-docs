@@ -3,7 +3,7 @@
 How to run a local project in live configuration
 ================================================
 
-The Local, Test and Live server environments are as identical as possible, to help guarantee
+The local and cloud server environments are as identical as possible, to help guarantee
 that your applications will run in just the same way across all of them.
 
 However, there are a few differences. See :ref:`default-project-conditions` for the default

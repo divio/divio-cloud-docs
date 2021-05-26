@@ -4,7 +4,7 @@ How to force HTTPS with Express.js
 ===================================================================
 
 In order to ensure secure communication with users of your Express.js applications, you can make all traffic to use
-HTTPS, by forcing a re-direct from HTTP.
+HTTPS, by forcing a redirect from HTTP.
 
 An Express-based application on is always accessed through a reverse proxy. When a user makes a request to your
 application, the reverse proxy interacts with your application on behalf of the client. For more on this topic, see the

@@ -56,6 +56,7 @@ Deploy an application
     :maxdepth: 1
 
     Deploy your application to the Divio cloud platform <deploy>
+    Go-live checklist <live-checklist>
 
 
 Building your Docker application
@@ -85,7 +86,6 @@ Platform-specific guides
        Install Python dependencies <install-python-dependencies>
        Create a multi-site Django project using Mirrors <django-multisite-mirrors>
        Configure Celery <configure-celery>
-       Go-live checklist for Django projects <live-checklist>
 
 
 .. tab:: Node.js

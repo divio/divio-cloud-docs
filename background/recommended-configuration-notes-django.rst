@@ -78,6 +78,13 @@ In cloud environments: ``DOMAIN`` and ``DOMAIN_ALIASES`` variable are always pro
 In the local environment: default values are provided via the ``DOMAIN_ALIASES`` environment variable in ``.env-local``.
 
 
+``SECURE_SSL_REDIRECT``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unless explicitly disabled with a ``SECURE_SSL_REDIRECT = False`` environment variable, Django's ``SECURE_SSL_REDIRECT``
+will apply.
+
+
 Static files
 ------------
 

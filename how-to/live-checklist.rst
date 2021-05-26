@@ -6,22 +6,25 @@ Go-live checklist
 Check your subscription plan
 ----------------------------
 
-* In the Control Panel, check the project's *Subscription*, and that it includes the technical and
-  support resources it will require once the site is live.
+In the Control Panel, check the project's *Subscription*, and that it includes the technical and support resources it
+will require once the site is live.
 
 
 Dependencies
 ------------
 
-* Consider :ref:`pinning all dependencies <manage-dependencies>`. This will help ensure that future
-  deployments do not introduce unexpected software updates.
+Pin all dependencies in the project, so that future deployments do not introduce unexpected software updates.
+
+* **Python applications**: see :ref:`pinning all dependencies in Python applications <manage-dependencies>`.
 
 
-``DEBUG`` mode
---------------
+Turn off developement mode
+----------------------------------------
 
-* Ensure that your Live server is configured to run with ``DEBUG = False`` (this is the default,
-  but may have been changed during development).
+Many frameworks include a development mode that exposes additional information. This should not go into production.
+
+* **Django applications**: this is handled by the ``DEBUG`` setting. When using our :ref:`recommended Django project
+  configurations <working-with-recommended-django-configuration>`, this will be handled correctly automatically.
 
 
 Domains
@@ -33,36 +36,58 @@ Domains
 * Check that the live domain for the server is set up for the site in the Control Panel.
 * Check that any domains that should redirect to the primary domain are also set in the *Domains* setting in the
   Control Panel.
-* (For Aldryn projects) if required, enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
+
+
+HTTPS
+-----
+
+Set your application to redirect to HTTPS.
+
+* **Django**: :ref:`Django projects using our recommended configuration
+  <working-with-recommended-django-configuration>`, will be apply redirects to HTTPS by default.
+* **Legacy Aldryn projects**: enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
   variable <security-middleware-settings>` to ``True``.
+* **Node**: :ref:`how-to-express-js-https`
 
 
 Environment variables
 ---------------------
 
-* Check that any other environment variables required on Live have been set (see: :ref:`Environment variables
-  <environment-variables>`).
+* Check that any other environment variables required on the Live environment have been set (see: :ref:`Environment
+  variables <environment-variables>`).
 
 
-Serving configuration
----------------------
+File serving configuration
+--------------------------
 
-* Check the Aldryn Django addon configuration. We recommend the :ref:`Hash static filenames
-  <hash-static-file-names>` option, which lets you take advantage of caching.
+Check the configuration of static file serving. Files should be appropriately collected, compressed and so on. Hasing
+static filenames lets you take advantage of caching.
+
+* **Legacy Aldryn projects**: we recommend using the :ref:`Hash static filenames <hash-static-file-names>` option.
 
 
 Other settings
 --------------
 
-* Check your project's ``settings.py`` for any settings that may have been temporarily configured
-  during development.
+Check your project's configuration for any settings that may have been temporarily configured during development.
+
+
+Local tests
+------------
+
+In the local environment, run the application in a configuration that is as close as possible to the production
+configuration. For example, our recommended Docker Compose configurations use development servers for convenience; you
+can comment out the ``command`` entry in the ``docker-compose.yml`` file and allow the application to use the
+``Dockerfile``'s ``CMD`` instead, which will use a production server.
+
+See :ref:`local-in-live-mode` for more.
 
 
 Deployment
 ----------
 
-* Run a deployment of the Live server. If you have been using the Test server to build content
-  prior to launch, us the *Copy data from Test and deploy* option.
+* If required, copy database and media content to the Live environment.
+* Run a deployment of the Live environment.
 
 
 After deployment
