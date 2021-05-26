@@ -1,13 +1,13 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to deploy a Twelve-factor Django application including Postgres or
-       MySQL, and cloud media storage using S3, with Docker.
+       This guide explains step-by-step how to set up a Twelve-factor Django application including Postgres or
+       MySQL, and cloud media storage using S3, with Docker, for deployment on Divio.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
 
 .. _deploy-django:
 
-How to deploy a Django application on Divio
+How to configure an existing Django application for deployment on Divio
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
@@ -362,10 +362,10 @@ If using the suggestions above, you'll probably want:
     .Trashes
 
 
-..  include:: /how-to/includes/deploy-common-deploy.rst
-
-
 Additional notes
 -----------------
 
 See :ref:`working-with-recommended-django-configuration` for further guidance.
+
+
+..  include:: /how-to/includes/deploy-common-deploy.rst

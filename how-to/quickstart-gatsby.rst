@@ -8,13 +8,13 @@
 .. meta::
    :description:
        The quickest way to get started with Gatsby on Divio. This guide shows you how to use the Gatsby Divio
-       quickstart repository to deploy a Twelve-factor Gatsby project including with Docker.
+       quickstart repository to create a Twelve-factor Gatsby project with Docker.
    :keywords: Docker, Gatsby
 
 
 .. _quickstart-gatsby:
 
-How to deploy a Gatsby project with our quickstart repository
+How to create a Gatsby project with our quickstart repository
 =========================================================================
 
 The `Gatsby Divio quickstart <https://github.com/divio/gatsby-divio-quickstart>`_ repository is a template that gives
@@ -74,8 +74,6 @@ Dockerfile <deploy-gatsby-dockerfile-cmd>` instead.
 You now have a working, running project ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web``.
 
-..  include:: /how-to/includes/deploy-common-deploy.rst
-
 
 Customisation and further development
 -----------------------------------------
@@ -104,3 +102,6 @@ If you uncomment the:
 entry in the ``web:volumes`` section of ``docker-compose.yml``, the entire ``/app`` directory will be overridden by the
 project files from the host. This can be useful for development. However, you will now need to run the commands ``npm
 install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees them.
+
+
+..  include:: /how-to/includes/deploy-common-deploy.rst

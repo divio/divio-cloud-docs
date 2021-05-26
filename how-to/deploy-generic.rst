@@ -1,12 +1,12 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to deploy a application with Docker, in accordance with
-       Twelve-factor principles.
+       This guide explains step-by-step how to set up an application with Docker, in accordance with
+       Twelve-factor principles, for deployment on Divio.
    :keywords: Docker, Postgres, MySQL, S3
 
 ..  _deploy-generic:
 
-How to deploy a web application on Divio: generic guide
+How to configure an existing web application for deployment on Divio: generic guide
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
@@ -196,5 +196,6 @@ If using the suggestions above, you'll probably want:
 
     # for local file storage
     /data
+
 
 ..  include:: /how-to/includes/deploy-common-deploy.rst

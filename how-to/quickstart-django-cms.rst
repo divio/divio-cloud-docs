@@ -8,14 +8,14 @@
 .. meta::
    :description:
        The quickest way to get started with django CMS on Divio. This guide shows you how to use the django CMS Divio
-       quickstart repository to deploy a Twelve-factor django CMS project including Postgres or MySQL, and cloud media
+       quickstart repository to create a Twelve-factor django CMS project including Postgres or MySQL, and cloud media
        storage using S3, with Docker.
    :keywords: Docker, Django, django CMS, Postgres, MySQL, S3
 
 
 .. _django-cms-deploy-quickstart:
 
-How to deploy a django CMS application with our quickstart repository
+How to create a django CMS application with our quickstart repository
 =============================================================================
 
 The `django CMS Divio quickstart <https://github.com/divio/django-cms-divio-quickstart>`_ repository is a template that
@@ -59,12 +59,11 @@ The options include:
 
 ..  include:: /how-to/includes/quickstart-django-common-steps.rst
 
-..  include:: /how-to/includes/deploy-common-deploy.rst
-
-..  include:: /how-to/includes/quickstart-django-test-working-database.rst
-
 
 Additional notes
 -----------------
 
 See :ref:`working-with-recommended-django-configuration` for further guidance.
+
+
+..  include:: /how-to/includes/deploy-common-deploy.rst

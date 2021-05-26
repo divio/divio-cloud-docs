@@ -8,14 +8,14 @@
 .. meta::
    :description:
        The quickest way to get started with Django on Divio. This guide shows you how to use the Django Divio
-       quickstart repository to deploy a Twelve-factor Django project including Postgres or MySQL, and cloud media
+       quickstart repository to create a Twelve-factor Django project including Postgres or MySQL, and cloud media
        storage using S3, with Docker.
    :keywords: Docker, Django, Postgres, MySQL, S3
 
 
 .. _quickstart-django:
 
-How to deploy a Django application with our quickstart repository
+How to create a Django application with our quickstart repository
 =========================================================================
 
 The `Django Divio quickstart <https://github.com/divio/django-divio-quickstart>`_ repository is a template that gives
@@ -43,12 +43,11 @@ The project contains a module named ``quickstart``, containing ``settings.py`` a
 
 ..  include:: /how-to/includes/quickstart-django-common-steps.rst
 
-..  include:: /how-to/includes/deploy-common-deploy.rst
-
-..  include:: /how-to/includes/quickstart-django-test-working-database.rst
-
 
 Additional notes
 -----------------
 
 See :ref:`working-with-recommended-django-configuration` for further guidance.
+
+
+..  include:: /how-to/includes/deploy-common-deploy.rst

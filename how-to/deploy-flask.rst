@@ -1,12 +1,12 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to deploy a Flask project with Docker, in accordance with
-       Twelve-factor principles.
+       This guide explains step-by-step how to set up a Flask project with Docker, in accordance with
+       Twelve-factor principles, for deployment on Divio.
    :keywords: Docker, Flask, Postgres, MySQL, S3
 
 ..  _deploy-flask:
 
-How to deploy a Flask application on Divio
+How to configure an existing Flask application for deployment on Divio
 ===========================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst

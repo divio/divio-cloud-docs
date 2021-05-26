@@ -1,13 +1,12 @@
-:orphan:
-
 .. meta::
    :description:
-       This guide explains step-by-step how to deploy a Gatsby application with Docker, in accordance with
-       Twelve-factor principles.
+       This guide explains step-by-step how to set up a Gatsby application with Docker, in accordance with
+       Twelve-factor principles, for deployment on Divio.
    :keywords: Docker, Gatsby
 
+.. _deploy-gatsby:
 
-How to deploy a Gatsby application on Divio
+How to configure an existing Gatsby application for deployment on Divio
 ===========================================================================================
 
 `Gatsby <https://www.gatsbyjs.com>`_ is very popular React-based open-source framework for creating websites and apps.

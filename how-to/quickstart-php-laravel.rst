@@ -9,14 +9,14 @@
 .. meta::
    :description:
        The quickest way to get started with Laravel on Divio. This guide shows you how to use the PHP Laravel Divio
-       quickstart repository to deploy a Twelve-factor Laravel project including MySQL and S3 cloud media
+       quickstart repository to create a Twelve-factor Laravel project including MySQL and S3 cloud media
        storage, with Docker.
    :keywords: Docker, PHP, Laravel, Postgres, MySQL, S3
 
 
 .. _quickstart-php-laravel:
 
-How to deploy a PHP Laravel application with our quickstart repository
+How to create a PHP Laravel application with our quickstart repository
 =========================================================================
 
 The `PHP Laravel quickstart <https://github.com/divio/php-laravel-divio-quickstart>`_ repository is a template that
@@ -105,19 +105,11 @@ If you comment out that line in ``docker-compose.yml``, it will start up with th
 You now have a working, running project ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web``.
 
-..  include:: /how-to/includes/deploy-common-deploy.rst
 
+.. _quickstart-php-laravel-mapping-to-the-host:
 
-Customisation and further development
------------------------------------------
-
-Customisation and further development are up to you, and can include both backend and frontend code.
-
-
-.. _quickstart-php-laravel-mapping-to-the-host
-
-Mapping ``/app`` to the host
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mapping ``/app`` to the local host filesystem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The host/container volume mapping directive in the ``docker-compose.yml`` file is commented out by default:
 
@@ -130,9 +122,35 @@ from the host when using Docker Compose. This can be useful for development.
 
 However you will now need to re-run any commands in the ``Dockerfile`` that change items within the ``/app`` directory
 as part of the build process, otherwise the file changes made by ``Dockerfile`` operations in the image will not be
-reflected in the container. These steps are indicated in the ``Dockerfile``'s ``# ---- commands that amend files in
-/app ----`` section. Each one will need to be run manually, for example:
+reflected in the container.
+
+For convenience, all these commands are included in the ``setup.sh`` file. If you do need to map ``/app`` to the host
+filesystem, run:
 
 ..  code-block:: bash
 
-    docker-compose run web composer install --no-scripts --no-autoloader
+    docker-compose run web sh setup.sh
+
+after any ``docker-compose build`` operations.
+
+
+Launching the local server with nginx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``Dockerfile`` launches the server with nginx:
+
+..  code-block:: Dockerfile
+
+    CMD php /app/divio/run-env.php "/usr/bin/dumb-init nginx && php-fpm -R"
+
+However when you start a local instance with ``docker-compose up``, it uses the ``command`` in ``docker-compose.yml``
+instead:
+
+..  code-block:: Dockerfile
+
+    command: bash -c "chmod a+x /app/divio/run-locally.sh && php /app/divio/run-env.php /app/divio/run-locally.sh"
+
+Comment this out to use nginx locally with Docker Compose.
+
+
+..  include:: /how-to/includes/deploy-common-deploy.rst
