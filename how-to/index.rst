@@ -7,16 +7,6 @@
 How-to guides
 =============
 
-Working in the local development environment
---------------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Set up the Divio local development environment <local-cli>
-    Run the local server in Live configuration <local-in-live-mode>
-
-
 .. _how-to-existing-web-application:
 
 Configure an existing web application for deployment
@@ -59,7 +49,21 @@ Deploy an application
     Go-live checklist <live-checklist>
 
 
-Building your Docker application
+Development workflow
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Set up the Divio local development environment <local-cli>
+    Run a local application in live configuration <local-in-live-configuration>
+    Configure external Git hosting <resources-configure-git>
+    Use Git to manage your project <use-git>
+    Set up CI/CD <configure-ci>
+    Use the Divio API <use-api>
+
+
+Building a Docker application
 ----------------------------------------
 
 .. toctree::
@@ -135,18 +139,6 @@ Managing a project's resources
     Interact with your project’s cloud media storage <interact-storage>
     Configure media serving on a custom domain <configure-media-custom-domain>
     Manage environment variables <environment-variables>
-
-
-Development workflow
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Configure external Git hosting <resources-configure-git>
-    Use Git to manage your project <use-git>
-    Set up CI/CD <configure-ci>
-    Use the Divio API <use-api>
 
 
 Troubleshooting
