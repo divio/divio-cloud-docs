@@ -108,7 +108,7 @@ the ``CMD`` in the ``Dockerfile`` that's used in the cloud.
 To start up the application using the ``CMD`` specified by the ``Dockerfile`` instead, comment out the
 ``docker-compose.yml``'s ``command``.
 
-(In legacy Aldry Django applications, change the ``command`` to ``start web``.)
+(In legacy Aldryn Django applications, change the ``command`` to ``start web``.)
 
 
 Other configuration

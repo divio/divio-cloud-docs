@@ -18,7 +18,7 @@ Pin all dependencies in the project, so that future deployments do not introduce
 * **Python applications**: see :ref:`pinning all dependencies in Python applications <manage-dependencies>`.
 
 
-Turn off developement mode
+Turn off development mode
 ----------------------------------------
 
 Many frameworks include a development mode that exposes additional information. This should not go into production.
@@ -60,7 +60,7 @@ Environment variables
 File serving configuration
 --------------------------
 
-Check the configuration of static file serving. Files should be appropriately collected, compressed and so on. Hasing
+Check the configuration of static file serving. Files should be appropriately collected, compressed and so on. Hashing
 static filenames lets you take advantage of caching.
 
 * **Legacy Aldryn projects**: we recommend using the :ref:`Hash static filenames <hash-static-file-names>` option.

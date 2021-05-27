@@ -3,18 +3,13 @@
 Deploy your application to Divio
 =================================
 
-The steps outlined here assume that you have already built a suitable application in Docker and prepared it for
-deployment. If you have, continue by :ref:`Creating a new project on Divio <deploy-create-new-project>`, below. If not,
-you will need to do prepare it first.
+The steps outlined here assume that you have already:
 
-We provide several guides to help you - you can:
+* built a suitable application in Docker and prepared it for deployment (see :ref:`Configure an existing web
+  application for deployment <how-to-existing-web-application>` or :ref:`Create a new application
+  <how-to-use-quickstart>`)
+* set up the :ref:`local development environment <local-cli>`
 
-* :ref:`Configure an existing web application for deployment <how-to-existing-web-application>`
-* :ref:`Create a new application <how-to-use-quickstart>`
-
-We provide guides for generic applications, Django, Flask, PHP and others.
-
----------------
 
 .. _deploy-create-new-project:
 
@@ -31,60 +26,58 @@ of doing this:
     :alt: 'New project options'
     :width: 327
 
-..  tab:: New project
 
-    In the Divio Control Panel, add a `New project <https://control.divio.com/control/project/create/>`_. Select the
-    *Build your own* option.
+Creating a new project
+~~~~~~~~~~~~~~~~~~~~~~
 
-    Once the project has been created, copy the project's Git URL from its *Repository* view. Add the project's Git
-    repository as a remote, for example:
-
-    ..  code-block:: bash
-
-        git remote add divio git@git.divio.com:my-divio-project.git
-
-    Commit and push your work.
-
-    ..  note::
-
-        If you're using the ``master`` branch, you will need to force push to overwrite the initial commits in a Divio
-        project with your own.
-
-    You can use ``divio project`` commands such as ``divio project dashboard`` to interact directly with the Divio
-    project.
+In the Divio Control Panel, add a `New project <https://control.divio.com/control/project/create/>`_. Select the
+*Build your own* option.
 
 
-..  tab:: New project from Git repository (Beta)
+Creating a new project from a Git repository (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    In the Divio Control Panel, add a `New project from Git repository
-    <https://control.divio.com/control/project/import/>`_. Once you have supplied the Git repository URL, you will need
-    to use the public key provided to create a Deploy Key on the repository.
+In the Divio Control Panel, add a `New project from Git repository
+<https://control.divio.com/control/project/import/>`_. Once you have supplied the Git repository URL, you will need
+to use the public key provided to create a Deploy Key on the repository.
 
-    ..  admonition:: Beta status limitations
+You should also :ref:`add a webhook <git-setup-webhook>`, so that when new commits are pushed to the repository, it
+will send a signal to update the Divio Control Panel.
 
-        "New project from Git repository" is currently provided as a Beta feature, and is available only to
-        users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
-        <https://control.divio.com/account/contact/>`_.
+..  admonition:: Beta status limitations
 
-        Some limitations apply to the current version of this functionality. In order to import a repository, at the
-        time of import:
+    Creating a new project from a Git repository is currently provided as a Beta feature, and is available only to
+    users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
+    <https://control.divio.com/account/contact/>`_.
 
-        * you will need to enable write access on the repository's deploy key
-        * the repository will need a ``master`` branch
+    Some limitations apply to the current version of this functionality. In order to import a repository, at the
+    time of import:
 
-        Once imported, you can remove the write access and can delete the ``master`` branch if you don't need it.
+    * you will need to enable write access on the repository's deploy key
+    * the repository will need a ``master`` branch
 
-    You should also :ref:`add a webhook <git-setup-webhook>`, so that when new commits are pushed to the repository, it
-    will send a signal to update the Divio Control Panel.
-
-In the *Environments* view, configure each environment to use the appropriate branch.
+    Once imported, you can remove the write access and can delete the ``master`` branch if you don't need it.
 
 
 Connect your local application to the cloud project
 ------------------------------------------------------------------
 
-You can connect a local application to a Divio project on the cloud. This is very convenient, allowing you to interact
-with the cloud project from your command-line.
+Connecting a local application to a Divio project on the cloud allows you to interact with and
+manage the cloud project from your command-line.
+
+The cloud project has a *slug*, based on the name you gave it when you created it. Run:
+
+..  code-block:: bash
+
+    divio project list -g
+
+to get your project's slug.
+
+You can also get the slug from the Control Panel:
+
+..  image:: /images/intro-slug.png
+    :alt: 'Project slug'
+    :width: 483
 
 Run:
 
@@ -92,28 +85,22 @@ Run:
 
     divio project configure
 
-and provide the slug (this creates a new file in the project at ``.divio/config.json``).
+and provide the slug. (``divio project configure`` creates a new file in the project at ``.divio/config.json``,
+containing the configuration data.)
 
 
-The cloud project has a *slug*, based on the name you gave it when you created it. Run ``divio project list -g`` to get
-your project's slug.
+Configure Git (if required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also read the slug from the Control Panel:
-
-..  image:: /images/intro-slug.png
-    :alt: 'Project slug'
-    :width: 483
-
-You can now use commands such as:
+If you are using Divio's own Git server for this project rather than an external Git provider, add the project's Git
+repository as a remote, for example:
 
 ..  code-block:: bash
 
-    divio project dashboard
-    divio project pull db  # also push
-    divio project pull media  # also push
-    divio project deploy
+    git remote add divio git@git.divio.com:my-divio-project.git
 
-See :ref:`some usage examples <local-cli-usage>`.
+The Git URL is provided by the ``divio project configure`` command above, and in the *Repository* view of the Control
+Panel.
 
 
 Add database and media services
@@ -122,8 +109,6 @@ Add database and media services
 The new Divio application does not include any :ref:`additional services <services>`. If your application requires a
 database or media store, they must be added manually using the Divio Control Panel as required. Use the *Services* menu
 to add the services your application needs.
-
-Ensure that you select services that your application actually supports.
 
 
 Add release commands
@@ -150,6 +135,16 @@ If you have local database or media content, push them to the Test environment:
     divio project push db
     divio project push media
 
+See also :ref:`Divio CLI usage examples <local-cli-usage>`.
+
+
+Push your code
+--------------
+
+Push your code to the Git repository, whether on Divio's own Git server or hosted with an external Git provider.
+
+Set the Git branch appropriately for each of your :ref:`cloud environments <environments>`.
+
 
 Deploy the Test server
 ----------------------
@@ -162,4 +157,6 @@ Deploy with:
 
 (or use the **Deploy** button in the Control Panel).
 
-Once deployed, your project will be accessible via the Test server URL shown in the Control Panel.
+Once deployed, your project will be accessible via the URLs shown in the Control Panel for each environment.
+
+See our :ref:`go-live checklist <live-checklist>` for a production deployment.

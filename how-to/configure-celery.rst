@@ -294,7 +294,7 @@ Set up local environment variables
 In ``.env-local`` add::
 
     DEFAULT_AMQP_BROKER_URL="amqp://guest:guest@rabbitmq:5672/"
-    
+
 ..  note::
 
     For legacy Aldryn Celery applications, name the environment variable ``BROKER_URL`` instead of ``DEFAULT_AMQP_BROKER_URL``.
@@ -330,7 +330,7 @@ Environment variables
 When Celery is enabled for your application, a new environment variable ``DEFAULT_AMQP_BROKER_URL`` will be configured.
 (It's also provided as ``BROKER_URL`` for legacy Aldryn Celery applications.)
 
-The environment variable will have different values in different cloud environemnts.
+The environment variable will have different values in different cloud environments.
 
 The number of Celery workers per Docker instance can be configured with the
 ``CELERYD_CONCURRENCY`` environment variable. The default is 2. This can be
