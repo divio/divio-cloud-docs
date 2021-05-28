@@ -1,9 +1,9 @@
 .. _interact-database:
 
-How to interact with your project's database
-============================================
+How to interact with your application's database
+================================================
 
-The database for your Divio project runs:
+The database for your Divio application runs:
 
 * in a Docker container for your **local** projects: :ref:`interact-local-db`
 * on a dedicated cluster for your **cloud-deployed** sites: :ref:`interact-cloud-db`
@@ -12,13 +12,19 @@ In either case, you will mostly only need to interact with the database using th
 your project's runtime stack (e.g. Django). However, if you need to interact with it directly, the
 option exists.
 
+..  admonition:: The database service name in ``docker-compose.yml``
+
+    The Divio CLI expects that the database service will be named ``database_default`` (or ``db``) in your
+    ``docker-compose.yml`` file. If not, it certain commands (such as ``divio project push/pull db``) will fail.
+
 
 .. _interact-local-db:
 
 Interact with the local database
 --------------------------------
 
-This is the recommended and most useful way to interact with the project's database.
+Generally, the most convenient way to interact with the application's database is to do it locally (with a local
+copy of your cloud data if necessary).
 
 
 From the project's local Django web container
@@ -55,9 +61,9 @@ Using ``docker exec``
 Another way of interacting with the database is via the database container itself, using ``docker
 exec``. This requires that the database container already be up and running.
 
-For example, if your database container is called ``example_db_1``::
+For example, if your database container is called ``example_database_default_1``::
 
-    docker exec -i example_db_1 psql -U postgres
+    docker exec -i example_database_default_1 psql -U postgres
 
 
 From your host environment
@@ -69,8 +75,8 @@ connect to the database from outside the application.
 
 .. _expose-database-ports:
 
-Expose the database's port
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Expose the database's port to the host
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to the connect to the database from a tool running directly on your
 own machine, you will need to expose its port (5432 by default for Postgres).
@@ -92,7 +98,7 @@ routed to port 5432 internally.
 The ports are ``<host port>:<container port>`` - you can choose another host
 port if you are already using that port on your host.
 
-Now restart the database container with: ``docker-compose up -d db``
+Now restart the database container with: ``docker-compose up -d database_default``
 
 
 Connect to a Postgres database
@@ -252,7 +258,7 @@ In each case, we launch the command from within the ``web`` container with ``doc
 Dump the database
 ~~~~~~~~~~~~~~~~~
 
-Dump the ``web`` service's database ``db`` to a file named ``database.dump``:
+From the ``web`` service, dump the database ``db`` to a file named ``database.dump``:
 
 ..  code-block:: bash
 
