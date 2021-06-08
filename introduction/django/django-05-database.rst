@@ -61,10 +61,11 @@ Edit your ``docker-compose.yml`` to add some new lines:
         environment:
           POSTGRES_DB: "db"
           POSTGRES_HOST_AUTH_METHOD: "trust"
+          SERVICE_MANAGER: "fsm-postgres" 
         volumes:
           - ".:/app:rw"
 
-The next time you launch the application locally, it will include a Postgres database running in a ``db`` container.
+The next time you launch the application locally, it will include a Postgres database running in a ``database_default`` container.
 
 
 Configure database access using an environment variable
