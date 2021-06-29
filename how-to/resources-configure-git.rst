@@ -212,7 +212,7 @@ At the Git host, add a new webhook:
 |gitlab| GitLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. In the repository, go to *Settings* > *Integrations*.
+#. In the repository, go to *Settings* > *Webhooks*.
 #. Add the Webhook URL to the *URL* field.
 #. Add the Webhook Shared Secret to the *Secret token* field.
 #. Leave the *Push events* trigger set.
