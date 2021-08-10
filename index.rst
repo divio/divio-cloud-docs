@@ -114,15 +114,20 @@ Additional resources
 
 ..  rst-class:: column
 
-Divio Community Slack
----------------------
+Community
+---------
 
-The Divio Community Slack group is for all Divio users.
+The Divio Community is there to help you as well.
 
 ..  raw:: html
 
-    <p><a class="btn btn-primary btn-small" target="_blank"
-    href="https://slack.divio.com/" role="button">Join us on Slack</a></p>
+    <p>
+        <a class="btn btn-primary btn-small" target="_blank"
+        href="https://slack.divio.com/" role="button">Join us on Slack</a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary btn-small" target="_blank"
+        href="https://stackoverflow.com/questions/tagged/divio" role="button">StackOvervlow</a>
+    </p>
 
 
 ..  rst-class:: column
