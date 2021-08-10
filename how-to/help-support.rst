@@ -30,8 +30,8 @@ Documentation
 For Divio platform users
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This handbook is a non-technical guide to using our platform, to help you manage your accounts and projects and provide
-essential knowledge.
+This documentation is a guide to using our platform, to help you manage your 
+accounts and projects and provide essential knowledge.
 
 For developers
 ^^^^^^^^^^^^^^

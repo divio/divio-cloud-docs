@@ -31,7 +31,7 @@ By default, we don't redirect HTTP users to HTTPS, because for some cases this m
 you have a good reason not to, we advise that you set this up for your site, so that when your visitors arrive on a url
 such as http://example.com/ they will be redirected to https://example.com/.
 
-.. seealso:: HTTPS redirects in our Developer Handbook:
+.. seealso:: HTTPS redirects in our documentation:
 
   * :ref:`HTTP redirects <redirects>`
   * :ref:`in Aldryn Django application <django_protocol_redirects>`

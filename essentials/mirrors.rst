@@ -47,7 +47,7 @@ the same code, responding to requests on different domains. Each mirror can have
 CPU and memory resources allocated to it according to requirements.
 
 See for example :ref:`How to create a multisite project using mirrors
-<multisite-mirrors>` in our Developer Handbook.
+<multisite-mirrors>` in our documentation.
 
 
 Development workflows

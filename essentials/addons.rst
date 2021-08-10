@@ -26,4 +26,4 @@ knowledge that would otherwise be required to do so, and allowing them to :ref:`
 <update-addon>` when they become available.
  
  
-For more details, see our Developer Handbook on :ref:`what Aldryn addons are <aldryn>`.
+For more details, see our documentation on :ref:`what Aldryn addons are <aldryn>`.
