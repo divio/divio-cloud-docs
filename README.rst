@@ -15,8 +15,8 @@ The official documentation for Divio and its products.
 Build the documentation locally
 -------------------------------
 
-You'll need the `enchant <https://www.abisource.com/projects/enchant/>`_ library,
-used by ``pyenchant`` for spelling.
+You'll need the `enchant <https://www.abisource.com/projects/enchant/>`_
+library, used by ``pyenchant`` for spelling.
 
 Install with ``brew install enchant`` (macOS) or the appropriate command for
 your system.
@@ -34,8 +34,10 @@ Notable techniques used in this documentation
 ---------------------------------------------
 
 * We serve our documentation via `Read the Docs <https://readthedocs.org>`_.
-* The documentation is written in ReStructed Text (RST) and built using `Sphinx <http://sphinx.pocoo.org>`_.
-* `Intersphinx <http://www.sphinx-doc.org/en/stable/ext/intersphinx.html>`_ to reference to other documentation.
+* The documentation is written in ReStructed Text (RST) and built using 
+  `Sphinx <http://sphinx.pocoo.org>`_.
+* `Intersphinx <http://www.sphinx-doc.org/en/stable/ext/intersphinx.html>`_
+  to reference to other documentation.
 
 
 Documentation structure and standards

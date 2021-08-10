@@ -1,0 +1,18 @@
+.tutorials {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.tutorials__item {
+  display: block;
+  text-align: center;
+}
+
+.tutorials__title {
+  display: block;
+  color: #1a406b;
+  font-weight: bold;
+}

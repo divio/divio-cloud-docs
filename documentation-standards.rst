@@ -132,7 +132,7 @@ Create responsive columns
 -------------------------
 
 See `docs.divio.com <http://docs.divio.com>`_. There, we add the styles you see 
-in the example above, and apply appropriate classes to the elements:
+in the example above, and apply appropriate classes to the elements::
 
      ..  rst-class:: clearfix row
 
@@ -140,7 +140,7 @@ in the example above, and apply appropriate classes to the elements:
 
 
      :ref:`Tutorial <introduction>`
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
      Get started with a hands-on introduction to Divio for developers.
 
@@ -148,7 +148,7 @@ in the example above, and apply appropriate classes to the elements:
 
 
      :ref:`How-to guides <how-to>`
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
      Step-by-step guides for the developer covering key operations and procedures
 

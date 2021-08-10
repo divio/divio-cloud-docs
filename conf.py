@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath("."))
 
 project = "Divio Documentation"
 full_title = project
-copyright = f"© 2021 {datetime.date.today().year} Divio Technologies AB"
+copyright = f"{datetime.date.today().year} Divio Technologies AB"
 author = "Divio"
 version = "2.0"
 release = version
@@ -46,7 +46,7 @@ extensions = [
 if "spelling" in sys.argv:
     extensions.append("sphinxcontrib.spelling")
 
-mermaid_version="8.5.2"
+mermaid_version="8.11.4"
 
 #
 # -- Options for intersphinx --------------------------------------------------
@@ -83,7 +83,11 @@ html_theme_options = {
 #
 
 html_title = full_title
-htmlhelp_basename = "DivioDocumentation"
+html_help_basename = "DivioDocumentation"
+html_static_path = ["_static"]
+html_css_files = [
+    "css/custom.css",
+]
 
 #
 # -- Options for Sphinx -------------------------------------------------------
@@ -108,7 +112,7 @@ spelling_ignore_pypi_package_names = True
 #
 
 latex_documents = [
-    (master_doc, htmlhelp_basename + ".tex", full_title, author, "manual"),
+    (master_doc, html_help_basename + ".tex", full_title, author, "manual"),
 ]
 
 #
@@ -116,7 +120,7 @@ latex_documents = [
 #
 
 man_pages = [
-    (master_doc, htmlhelp_basename, full_title, [author], 1)
+    (master_doc, html_help_basename, full_title, [author], 1)
 ]
 
 #
