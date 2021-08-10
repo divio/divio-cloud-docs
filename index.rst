@@ -111,7 +111,7 @@ Quickstart
 
 ..  raw:: html
 
-    <a class="btn btn-primary btn-small" href="essential-knowledge" role="button">Essentials</a>
+    <a class="btn btn-primary btn-small" href="essentials" role="button">Essentials</a>
 
 
 ..  rst-class:: clearfix
@@ -189,4 +189,4 @@ If you let us take care of the dull, repetitive jobs, you'll get to do the creat
     how-to/index
     reference/index
     background/index
-    essential-knowledge/index
+    essentials/index

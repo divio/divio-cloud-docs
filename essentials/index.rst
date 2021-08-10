@@ -1,7 +1,7 @@
 .. _essential:
 
-Essential knowledge
--------------------
+Essentials
+----------
 
 .. _essential-general:
 
