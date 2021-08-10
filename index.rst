@@ -101,11 +101,27 @@ Quickstart
 
     <a class="btn btn-primary btn-small" href="reference" role="button">Reference</a>
 
-..  rst-class:: clearfix row custom-headings
+
+..  rst-class:: column
+
+:ref:`Essentials <essential>`
+-----------------------------
+
+**Essential knowledge.** about the interface, pricing and policies.
+
+..  raw:: html
+
+    <a class="btn btn-primary btn-small" href="essential-knowledge" role="button">Essentials</a>
+
+
+..  rst-class:: clearfix
 
 ..  raw:: html
 
     <p>&nbsp;</p>
+
+
+..  rst-class:: clearfix
 
 
 Additional resources
@@ -173,3 +189,4 @@ If you let us take care of the dull, repetitive jobs, you'll get to do the creat
     how-to/index
     reference/index
     background/index
+    essential-knowledge/index
