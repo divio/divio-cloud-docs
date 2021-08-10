@@ -53,6 +53,7 @@ Quickstart
         </a>
     </div>
 
+
 ..  rst-class:: column
 
 :ref:`Get started <introduction>`
@@ -80,7 +81,7 @@ Quickstart
 ..  rst-class:: column clearfix
 
 :ref:`Background <background>`
--------------------------------------------------------
+------------------------------
 
 **Explanation.** Clarification and discussion of key topics.
 
@@ -92,7 +93,7 @@ Quickstart
 ..  rst-class:: column
 
 :ref:`Reference <reference>`
--------------------------------------------------------
+----------------------------
 
 **Technical reference.** Covers tools, components, commands and resources.
 
@@ -100,33 +101,43 @@ Quickstart
 
     <a class="btn btn-primary btn-small" href="reference" role="button">Reference</a>
 
-
 ..  rst-class:: clearfix row custom-headings
-
-===========================
-
-Additional resources
---------------------
-
-Divio Community Slack
-~~~~~~~~~~~~~~~~~~~~~
 
 ..  raw:: html
 
-    <p>The Divio Community Slack group is for all Divio users. <a class="btn btn-primary btn-small" target="_blank"
-    href="https://slack.divio.com/" role="button">Join
-    us on Slack</a></p>
+    <p>&nbsp;</p>
 
+
+Additional resources
+====================
+
+
+..  rst-class:: column
+
+Divio Community Slack
+---------------------
+
+The Divio Community Slack group is for all Divio users.
+
+..  raw:: html
+
+    <p><a class="btn btn-primary btn-small" target="_blank"
+    href="https://slack.divio.com/" role="button">Join us on Slack</a></p>
+
+
+..  rst-class:: column
 
 The Divio API
-~~~~~~~~~~~~~
+-------------
 
 The Divio API is a powerful tool for interacting with our infrastructure and your projects. See :ref:`use-divio-api` in
 this documentation and the `Divio API reference documentation <https://api.docs.divio.com>`_.
 
 
+..  rst-class:: clearfix
+
 Speak to an expert
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Do you need to know more about Divio and its capabilities to decide whether the platform is suited to your most complex
 requirements? Get some answers from an expert, with no obligations and no sales-pitches - just the facts.
@@ -136,20 +147,16 @@ requirements? Get some answers from an expert, with no obligations and no sales-
     <p><a class="btn btn-primary btn-small" target="_blank"
     href="https://calendly.com/joel-burch/discover-divio" role="button">Book a short call</a></p>
 
-===========================
-
 
 Our promises to developers
------------------------------------------
+--------------------------
 
 Divio will help you achieve the results of an entire DevOps team all by yourself - there are just three steps to
 deployment heaven:
 
-**Docker**: containerise your application using the world’s most popular containerisation technology.
-
-**Divio**: create a project with the database, storage and other services it will need - all wired up and ready to go.
-
-**Deploy**: go live, enjoying a fully automated build and launch.
+* **Docker**: containerise your application using the world’s most popular containerisation technology.
+* **Divio**: create a project with the database, storage and other services it will need - all wired up and ready to go.
+* **Deploy**: go live, enjoying a fully automated build and launch.
 
 If you let us take care of the dull, repetitive jobs, you'll get to do the creative, enjoyable ones.
 
