@@ -1,5 +1,5 @@
 Divio developer handbook
-==============================
+========================
 
 `Divio <https://divio.com>`_ is a cloud infrastructure management service, with a platform for containerised
 web application deployment.

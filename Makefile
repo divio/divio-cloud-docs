@@ -5,7 +5,7 @@
 
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = DivioClouddeveloperhandbook
+SPHINXPROJ    = DivioDocumentation
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENV = env/bin/activate

@@ -9,6 +9,7 @@
 
 import os
 import sys
+import datetime
 sys.path.insert(0, os.path.abspath("."))
 
 
@@ -19,11 +20,11 @@ sys.path.insert(0, os.path.abspath("."))
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
 
-project = "Divio Developer Handbook"
+project = "Divio Documentation"
 full_title = project
-copyright = "2017-2021, Divio"
-author = "Daniele Procida"
-version = "1.0"
+copyright = f"© 2021 {datetime.date.today().year} Divio Technologies AB"
+author = "Divio"
+version = "2.0"
 release = version
 
 #
@@ -82,7 +83,7 @@ html_theme_options = {
 #
 
 html_title = full_title
-htmlhelp_basename = "DivioClouddeveloperhandbookdoc"
+htmlhelp_basename = "DivioDocumentation"
 
 #
 # -- Options for Sphinx -------------------------------------------------------
@@ -91,7 +92,7 @@ htmlhelp_basename = "DivioClouddeveloperhandbookdoc"
 source_suffix = ".rst"
 master_doc = "index"
 language = None
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "env"]
+exclude_patterns = ["README.rst", "_build", "Thumbs.db", ".DS_Store", "env"]
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 #

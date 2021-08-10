@@ -1,7 +1,7 @@
 :orphan:
 
 Dreadful hacks
-=======================
+==============
 
 This page has absolutely no function except to be a place where some images are generated for builds, so that they
 can be used by raw HTML. Used in:
