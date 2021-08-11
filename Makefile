@@ -39,27 +39,27 @@ run:
 	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a $(BUILDDIR)/html --host 0.0.0.0 --port $(PORT)
 
 html:
-	. $(VENV); $(SPHINXBUILD) -b html . $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html . $(BUILDDIR)/html
 
 open:
 	open $(BUILDDIR)/html/index.html
 
 test:
-	. $(VENV); sphinx-build -b html . $(BUILDDIR)/html
+	sphinx-build -b html . $(BUILDDIR)/html
 
 spelling:
-	. $(VENV); $(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . $(BUILDDIR)/spelling
+	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . $(BUILDDIR)/spelling
 	@echo
 	@echo "Check finished. Wrong words can be found in " \
 		"$(BUILDDIR)/spelling/output.txt."
 
 changes:
-	. $(VENV); $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) . $(BUILDDIR)/changes
+	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) . $(BUILDDIR)/changes
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
 linkcheck:
-	. $(VENV); $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) . $(BUILDDIR)/linkcheck
+	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) . $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
