@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 
-SPHINXOPTS    =
+SPHINXOPTS    +=
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = DivioDocumentation
 SOURCEDIR     = .
@@ -39,27 +39,27 @@ run:
 	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a $(BUILDDIR)/html --host 0.0.0.0 --port $(PORT)
 
 html:
-	$(SPHINXBUILD) -b html . $(BUILDDIR)/html
+	. $(VENV); $(SPHINXBUILD) -b html . $(BUILDDIR)/html
 
 open:
 	open $(BUILDDIR)/html/index.html
 
 test:
-	sphinx-build -b html . $(BUILDDIR)/html
+	. $(VENV); sphinx-build -b html . $(BUILDDIR)/html
 
 spelling:
-	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . $(BUILDDIR)/spelling
+	. $(VENV); $(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) . $(BUILDDIR)/spelling
 	@echo
 	@echo "Check finished. Wrong words can be found in " \
 		"$(BUILDDIR)/spelling/output.txt."
 
 changes:
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) . $(BUILDDIR)/changes
+	. $(VENV); $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) . $(BUILDDIR)/changes
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
 linkcheck:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) . $(BUILDDIR)/linkcheck
+	. $(VENV); $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) . $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
