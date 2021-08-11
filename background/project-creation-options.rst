@@ -23,7 +23,7 @@ Stack
 .. image:: /images/project-creation-stack.png
    :alt: 'project creation Stack options'
 
-Generally, you will select *Build your own* and construct your own ``Dockerfile``. See :ref:`how-to-existing-web-application` for guidance.
+Generally, you will select *Build your own* and construct your own ``Dockerfile``. 
 
 We also provide some pre-built project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below
 <project-creation-pre-built>`).

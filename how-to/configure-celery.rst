@@ -171,7 +171,7 @@ RabbitMQ
 Set up the RabbitMQ messaging service, by adding the following lines:
 
 ..  code-block:: yaml
-    :emphasize-lines: 9-17
+    :emphasize-lines: 9-15
 
     services:
 
