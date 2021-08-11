@@ -5,9 +5,10 @@ Divio Documentation
     :target: https://docs.divio.com/en/latest/?badge=latest
     :alt: Documentation status
 
-.. image:: https://img.shields.io/github/workflow/status/divio/divio-cloud-docs/build
-    :target: https://docs.divio.com/en/latest/?badge=latest
+.. image:: https://github.com/divio/divio-cloud-docs/actions/workflows/default.yml/badge.svg
+    :target: https://github.com/divio/divio-cloud-docs/actions/workflows/default.yml
     :alt: GitHub workflow status
+
 
 The official documentation for Divio and its products.
 
