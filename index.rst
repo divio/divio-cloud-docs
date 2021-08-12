@@ -27,27 +27,27 @@ Quickstart
 ..  raw:: html
 
     <div class="tutorials">
-        <a href="/how-to/deploy-generic/" class="tutorials__item">
+        <a href="./how-to/deploy-generic/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-python.png" alt="Get started with Python" /></span>
             <span class="tutorials__title">Python</span>
         </a>
-        <a href="/introduction/django/" class="tutorials__item">
+        <a href="./introduction/django/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-django.png" alt="Get started with Django" /></span>
             <span class="tutorials__title">Django</span>
         </a>
-        <a href="/how-to/deploy-gatsby/" class="tutorials__item">
+        <a href="./how-to/deploy-gatsby/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-nodejs.png" alt="Get started with Node.js" /></span>
             <span class="tutorials__title">Node.js</span>
         </a>
-        <a href="/introduction/laravel/" class="tutorials__item">
+        <a href="./introduction/laravel/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-php.png" alt="Get started with PHP" /></span>
             <span class="tutorials__title">PHP</span>
         </a>
-        <a href="/how-to/deploy-generic/" class="tutorials__item">
+        <a href="./how-to/deploy-generic/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-java.png" alt="Get started with Java" /></span>
             <span class="tutorials__title">Java</span>
         </a>
-        <a href="/how-to/deploy-generic/" class="tutorials__item">
+        <a href="./how-to/deploy-generic/" class="tutorials__item">
             <span class="tutorials__icon"><img src="./_static/img/quickstart-other.png" alt="Or anything else really" /></span>
             <span class="tutorials__title">Other</span>
         </a>
