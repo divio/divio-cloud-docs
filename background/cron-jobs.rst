@@ -27,7 +27,7 @@ For example, if you select every 10 minutes, the task will be run every hour at 
 A cron job can execute a simple command (for example: ``/usr/local/bin/python manage.py cms fix_tree``) or a script.
 
 
-If you would like to run a task at a longer time intervals, you can set the cron job execution time to *daily* and restrict the execution using a script.
+If you would like to run a task at longer intervals, you can set the cron job execution time to *daily* and restrict the execution using a script.
 
 For example, if you would like to *<execute a command>* every Thursday (4th day of the week), the script could look like this
  
