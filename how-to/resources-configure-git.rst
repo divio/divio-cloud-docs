@@ -200,11 +200,11 @@ At the Git host, add a new webhook:
 
 
 |github| GitHub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 #. In the repository, go to *Settings* > *Webhooks* > *Add webhook*.
 #. Add the Webhook URL to the *Payload URL* field.
-#. Leave the *Content type* as ``application-x/www-form-urlencode``.
+#. Select ``application/json`` as the *Content type*.
 #. Add the Webhook Shared Secret to the *Secret* field.
 #. Set *Push events* as the trigger for the webhook.
 
