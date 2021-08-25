@@ -25,7 +25,7 @@ Divio infrastructure
 
 
 Docker configuration
----------------------------------
+--------------------
 
 .. toctree::
     :maxdepth: 1
@@ -46,6 +46,41 @@ Coding in Divio applications
     Sending email <coding-sending-email>
 
 
+Projects
+--------
+
+.. toctree::
+    :maxdepth: 1
+
+    Divio project backups <project-backups>
+    Zero-downtime deployment <zero-downtime>
+    Multi-site applications <multi-site>
+    Mirrors <mirrors>
+    Application development support <development-support>
+
+
+Policies
+---------
+
+.. toctree::
+    :maxdepth: 1
+
+    How we use terms <infrastructure>
+    Security <security-policy>
+    Resource usage <resource-usage-policies>
+    Leaving Divio <leaving-divio>
+
+
+Plans and pricing
+-----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    The Developer plan <developer-plan>
+    Invoice-based billing <invoice-based-billing>
+
+
 Quick reference
 ----------------
 
@@ -53,6 +88,7 @@ Quick reference
     :maxdepth: 1
 
     local-commands-cheatsheet
+    cp-permissions
 
 ------------------------------
 
@@ -67,5 +103,3 @@ Aldryn Django addons (legacy)
     configuration-aldryn-config
     configuration-settings-file
     addons-key
-
-
