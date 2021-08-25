@@ -42,6 +42,7 @@ How it works on Divio
 
     Caching and CDN <caching>
     Configuration using environment variables <configuration-environment-variables>
+    ssl-certificates
 
 
 Projects
@@ -73,6 +74,8 @@ Aldryn Django and addons (legacy)
 .. toctree::
     :maxdepth: 1
 
+    aldryn
+    addons
     addons-basics
     addons-configuration-overview
     addons-list
