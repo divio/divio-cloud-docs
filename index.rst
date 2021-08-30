@@ -102,18 +102,6 @@ Quickstart
     <a class="btn btn-primary btn-small" href="reference" role="button">Reference</a>
 
 
-..  rst-class:: column
-
-:ref:`Essentials <essential>`
------------------------------
-
-**Essential knowledge.** about the interface, pricing and policies.
-
-..  raw:: html
-
-    <a class="btn btn-primary btn-small" href="essentials" role="button">Essentials</a>
-
-
 ..  rst-class:: clearfix
 
 ..  raw:: html
