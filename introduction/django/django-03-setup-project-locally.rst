@@ -115,7 +115,7 @@ Start the project by running ``docker-compose up`` in the terminal::
 Open the project in your web browser by visiting http://127.0.0.1:8000, where you should see the default Django success
 page.
 
-Notice above that although the the Django runserver is running on port 80, the project is accessible on port 8000. The
+Notice above that although the Django runserver is running on port 80, the project is accessible on port 8000. The
 ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping <docker-compose-web>`.
 
 If you amend or even just save any Python file in the Django project, the runserver will reload the Python modules and
