@@ -165,8 +165,8 @@ The next time you need to create a fresh ``requirements.txt``, run:
 
 .. _pip-install-from-online-package:
 
-Specifying packages via a URL as a commit hash
------------------------------------------------
+Specifying packages via a URL
+-----------------------------
 
 Please use a commit hash when specifying packages via a URL of a tarballed or zipped archive.
 
