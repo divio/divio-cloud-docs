@@ -119,14 +119,25 @@ Using the Control Panel
 Use the *Env Variables* view of a project to view and add custom variables. Variables need to be
 configured for each environment.
 
-..  admonition:: Leading and trailing spaces
+.. _env-var-port:
 
-    The Control Panel does not strip leading or trailing spaces from values. Be careful when
-    pasting in values that you do not inadvertently include unwanted spaces.
+``PORT`` environment variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    If you get an unexpected error in your logs that includes a reference to an environment
-    variable value with a ``%20`` character in it - that's a sure sign that it probably includes an
-    undesired space.
+If the load-balancer is unable to connect to the environment's of the application within reasonable time, the runtime
+logs should contain information such as a traceback revealing a programming error, a *\[busyness\]* that the application
+was too slow to start up or a port number was not auto detected. If you suspect that, the exposed port is not correctly
+detected, you can configure a ``PORT`` environment variable, for example ``8000``, to manually set the port number.
+
+
+Leading and trailing spaces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Control Panel does not strip leading or trailing spaces from values. Be careful when pasting in values that you do
+not inadvertently include unwanted spaces.
+
+If you get an unexpected error in your logs that includes a reference to an environment variable value with a ``%20``
+character in it - that's a sure sign that it probably includes an undesired space.
 
 
 In the local environment
