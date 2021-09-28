@@ -165,11 +165,15 @@ The next time you need to create a fresh ``requirements.txt``, run:
 
 .. _pip-install-from-online-package:
 
-Listing packages from version control systems or as archives
-------------------------------------------------------------
+Specifying packages via a URL as a commit hash
+-----------------------------------------------
 
-You can use the URL of a tarballed or zipped archive of the package, typically provided by a
-version control system.
+Please use a commit hash when specifying packages via a URL of a tarballed or zipped archive or a tag.
+
+For example::
+
+    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name==1.0
+
 
 ..  important::
 
@@ -180,34 +184,8 @@ version control system.
     See also :ref:`bad-request-for-url`.
 
 
-Examples from GitHub
-~~~~~~~~~~~~~~~~~~~~
-
-Master branch, as tarball::
-
-    https://github.com/account/repository/archive/master.tar.gz#egg=package-name==1.0
-
-or as a zipped archive::
-
-    https://github.com/account/repository/archive/master.zip#egg=package-name==1.0
-
-Specify a different branch::
-
-    https://github.com/account/repository/archive/develop.zip#egg=package-name==1.0
-
-We strongly recommend specifying either a tag::
-
-    https://github.com/account/repository/archive/1.6.0.zip#egg=package-name==1.0
-
-or best of all a commit::
-
-    https://github.com/account/repository/archive/2d8197e2ec4d01d714dc68810997aeef65e81bc1.zip#egg=package-name==1.0
-
-
-
 .. _vcs-protocol-support:
 
 Note that ``pip-tools`` does note support `VCS protocols
 <https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support>`_ - you cannot use for example URLs starting
-``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``. Use the tarball or zip archive URL as
-described above.
+``git+`` or ``hg+``, such as ``git+git@github.com:divio/django-cms.git``.
