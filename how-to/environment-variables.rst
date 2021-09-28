@@ -124,10 +124,11 @@ configured for each environment.
 ``PORT`` environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the load-balancer is unable to connect to the environment's of the application within reasonable time, the runtime
-logs should contain information such as a traceback revealing a programming error, a *\[busyness\]* that the application
-was too slow to start up or a port number was not auto detected. If you suspect that, the exposed port is not correctly
-detected, you can configure a ``PORT`` environment variable, for example ``8000``, to manually set the port number.
+During deployment, if the load-balancer is unable to connect to the environment's of the application within reasonable
+time, the runtime logs should contain information such as a traceback revealing a programming error, a busyness that the
+application was too slow to start up or a port number was not auto detected. If you suspect that, the exposed port is
+not correctly detected, you can configure a ``PORT`` environment variable, for example ``8000``, to manually set the
+port number.
 
 
 Leading and trailing spaces
