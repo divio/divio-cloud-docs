@@ -30,9 +30,9 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
 * *Platform*: ``Python 3.x``
 * *Project type*: ``Wagtail``
 
-..  admonition:: Wagtail 2.9.2
+..  admonition:: Wagtail 2.14.1
 
-    At the time of writing, the latest default version Aldryn Wagtail addon uses Wagtail 2.9.2 - others are also
+    At the time of writing, the latest default version Aldryn Wagtail addon uses Wagtail 2.14.1 - others are also
     available.
 
 
