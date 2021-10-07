@@ -1,0 +1,12 @@
+click
+divio-cli
+https://github.com/divio/docs-theme/archive/master.zip#egg=furo
+Sphinx
+sphinx-autobuild
+sphinxcontrib-spelling
+sphinxcontrib-mermaid
+sphinx-notfound-page
+sphinx-click
+sphinx-inline-tabs
+sphinx-rtd-theme
+pyenchant

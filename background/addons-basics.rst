@@ -3,7 +3,7 @@
     Where: https://github.com/divio/aldryn-django-cms/readme.rst
     As: https://docs.divio.com/en/latest/background/addon-basics
 
-.. _aldryn:
+.. _aldryn_addons:
 
 About Aldryn (legacy)
 ==================================

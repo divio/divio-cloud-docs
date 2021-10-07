@@ -177,4 +177,3 @@ If you let us take care of the dull, repetitive jobs, you'll get to do the creat
     how-to/index
     reference/index
     background/index
-    essentials/index

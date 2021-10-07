@@ -53,13 +53,12 @@ mermaid_version="8.11.4"
 #
 
 intersphinx_mapping = {
-    "user": ("https://support.divio.com/", None),
     "python": ("https://docs.python.org/3", None),
     "django": (
         "https://docs.djangoproject.com/en/2.2/",
         "https://docs.djangoproject.com/en/2.2/_objects/"
     ),
-    "django-cms": ("http://docs.django-cms.org/en/latest/", None),
+    "django-cms": ("https://docs.django-cms.org/en/latest/", None),
     "celery": ("https://docs.celeryproject.org/en/stable/", None),
     "whitenoise": ("https://whitenoise.evans.io/en/stable/", None),
     "flask": ("https://flask.palletsprojects.com/", None),
@@ -87,6 +86,7 @@ html_help_basename = "DivioDocumentation"
 html_static_path = ["_static"]
 html_css_files = [
     "css/custom.css",
+    "styles/furo.css",
 ]
 
 #
