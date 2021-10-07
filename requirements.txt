@@ -1,14 +1,14 @@
-Sphinx==3.5.4
-sphinx-autobuild==2021.3.14
-sphinxcontrib-spelling==7.2.1
-sphinxcontrib-mermaid==0.7.1
-sphinx-notfound-page==0.7.1
-sphinx-click==3.0.1
+Sphinx
+sphinx-autobuild
+sphinxcontrib-spelling
+sphinxcontrib-mermaid
+sphinx-notfound-page
+sphinx-click
 sphinx-inline-tabs
 sphinx-rtd-theme
 
 divio-cli
 https://github.com/divio/docs-theme/archive/master.zip#egg=furo
 
-pyenchant==3.2.1
-click==7.1.2
+pyenchant
+click

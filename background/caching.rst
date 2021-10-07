@@ -69,7 +69,7 @@ We can also provide managed caching of application content (including custom pag
 services, on request.
 
 ..  seealso:: :ref:`Cache invalidation control via the Divio project Dashboard
-  <user:how-to-manage-cloudflare-cache>`
+  <how-to-manage-cloudflare-cache>`
 
 
 .. _apply-your-own-caching-cdn:
