@@ -42,7 +42,7 @@ Traffic reaches customer applications via our load-balancers.
   within 5 seconds, it will try to connect to another container, if one is available
 * *send*: the load-balancer sends a request to an application; if this does not complete successfully within 10
   seconds, it will try to connect to another container, if one is available
-* *read*: after delivering a request to the application, the load-balancer must receive a response within 120 seconds;
+* *read*: after delivering a request to the application, the load-balancer must receive a response within 30 seconds;
   this is also the maximum allowed time between responses in case of chunked transfers
 
 If any of these time limits are exceeded, the load-balancer will report a HTTP 504 *Gateway timeout*.
