@@ -55,6 +55,11 @@ Your application needs configuration to:
 
 These tasks are covered in order below.
 
+..  important::
+
+    We have a quickstart project with a celery setup ready to use or to be used as a references for your changes.
+    You can find it here: https://github.com/divio/django-celery-divio-quickstart
+
 
 Using the broker environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
