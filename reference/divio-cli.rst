@@ -15,7 +15,7 @@ via pip::
 
     pip install divio-cli
 
-The CLI will run in Python 2.7 or 3.6 to 3.9.
+The CLI will run in Python 3.6 to 3.9.
 
 The `divio-cli source code <https://github.com/divio/divio-cli>`_ is available
 on GitHub.
