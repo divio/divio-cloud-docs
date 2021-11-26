@@ -70,7 +70,8 @@ You can also download / upload media files or database changes using the dropdow
 
 .. note::
   
-  The Upload/download functionality is better handled with git from your local terminal to be able to pick what to commit and to which branch.
+  The Upload/download functionality is better handled with git from your local terminal to be able to pick what to
+  commit and to which branch.
 
 Update/rebuild/reset
 ~~~~~~~~~~~~~~~~~~~~
