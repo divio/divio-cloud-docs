@@ -20,12 +20,6 @@ Installation
 
 * Open the downloaded package and follow the on-screen instructions to install the application.
 
-.. _note:: 
-
-  Some anti-virus software for Windows may warn that the Divio app application is unsigned and therefore represents a
-  security risk. You can safely ignore this warning.
-
-
 Loging in
 ~~~~~~~~~
 
@@ -59,7 +53,7 @@ Launch the site locally
 Once the set up process has completed, you can start the local site by launching the local server. 
 
 * Hit **Start** to launch the project.
-* If the project has been deployed, you can now open the local site in your browser by clicking on the *eye icon*.
+* If the project has been set up correctly, you can now open the local site in your browser by clicking on the *eye icon*.
 
 
 Edit project files
@@ -72,15 +66,18 @@ Upload/download changes
 
 Use the *Download code* / *Upload code* buttons to push / pull your changes to / from the cloud.
 
-You can also download / upload media files or database changes using the downarorw icon.
+You can also download / upload media files or database changes using the dropdown icon.
 
+.. note::
+  
+  The Upload/download functionality is better handled with git from your local terminal to be able to pick what to commit and to which branch.
 
 Update/rebuild/reset
 ~~~~~~~~~~~~~~~~~~~~
 
-Open the three vertical dots to update, rebuild or reset the project.
+Open the three vertical dots menu to update, rebuild or reset the project.
 
-*  **Update**: pull down any changes from the Test Server
+*  **Update**: pull down any changes from the Test Server including media and database
 
 *  **Rebuild**: rebuilds the project from the local files
 
