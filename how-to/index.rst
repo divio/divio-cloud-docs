@@ -88,6 +88,15 @@ Deploy an application
     Go-live checklist <live-checklist>
 
 
+Install the Divio app
+----------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Set up the Divio app <divio-app>
+
+
 Development workflow
 -------------------------
 
