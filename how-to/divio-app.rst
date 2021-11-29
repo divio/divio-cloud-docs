@@ -20,6 +20,13 @@ Installation
 
 * Open the downloaded package and follow the on-screen instructions to install the application.
 
+..  admonition:: Important note for Windows users
+
+    To be able to use the Divio app correctly with Docker Desktop on Windows using WSL2, it's important to follow WSL
+    installation instructions and install a linux distribution as described in
+    https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl. 
+
+
 Loging in
 ~~~~~~~~~
 
