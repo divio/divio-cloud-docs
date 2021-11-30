@@ -171,7 +171,6 @@ If you let us take care of the dull, repetitive jobs, you'll get to do the creat
 
 
 .. toctree::
-    :hidden:
 
     introduction/index
     how-to/index

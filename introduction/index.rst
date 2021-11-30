@@ -19,7 +19,6 @@ and so on.
 
 
 ..  toctree::
-    :hidden:
     :maxdepth: 2
 
     Installation <01-installation>
