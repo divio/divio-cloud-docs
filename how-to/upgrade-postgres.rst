@@ -10,10 +10,10 @@ To upgrade your PostgreSQL service instance from one version to another, without
 should be applied to each environment where the upgrade is required. 
 
 1. Check the prefix of the current installation. This will be ``DEFAULT`` if it has not been manually changed. 
-2. Add the PostgreSQL service for the new version to your environmnet. Assign this the default prefix ``NEW``.
+2. Add the PostgreSQL service for the new version to your environment. Assign this the default prefix ``NEW``.
 3. Deploy the environment(s). 
 
-At this point, the environmnet is still running on the old version of the database, but the service for the new
+At this point, the environment is still running on the old version of the database, but the service for the new
 version is deployed and ready to receive data. The following steps will copy the data from the existing database to the new 
 version. 
 
@@ -22,9 +22,9 @@ version.
 6. Rename the prefix for the old database version from ``DEFAULT`` to ``OLD``.
 7. Detatch the ``OLD`` database service.
 8. Rename the prefix for the new database version from ``NEW`` to ``DEFAULT``.
-9. Deploy the environmnet(s).
+9. Deploy the environment(s).
 
-Your environmnet is now using the new PostgreSQL service for the upgraded version. 
+Your environment is now using the new PostgreSQL service for the upgraded version. 
 
 Risks
 -----
