@@ -178,6 +178,7 @@ Managing a project's resources
     Interact with your project’s cloud media storage <interact-storage>
     Configure media serving on a custom domain <configure-media-custom-domain>
     Manage environment variables <environment-variables>
+    Upgrade a PostgreSQL service <upgrade-postgres>
 
 
 Troubleshooting
