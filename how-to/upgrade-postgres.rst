@@ -72,6 +72,7 @@ version.
     :class: 'main-visual'
 
 13. Repeat steps 5-11 for each environment.
+14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``13.5-alpine``.
 
 Your environment is now using the new PostgreSQL service for the upgraded version. 
 
