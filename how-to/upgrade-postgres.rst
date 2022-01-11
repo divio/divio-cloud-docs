@@ -64,15 +64,15 @@ version.
 
 10. Rename the prefix for the new database version from ``NEW`` to ``DEFAULT`` (or whatever prefix your original PostgreSQL service
     had prior to the upgrade).
-11. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``13.5-alpine``.
-12. Deploy the environment.
-13. Delete the ``OLD`` PostgreSQL service.
+11. Deploy the environment.
+12. Delete the ``OLD`` PostgreSQL service.
 
 ..  image:: /images/postgres-upgrade-delete-old-service.png
     :alt: 'Delete the old PostgreSQL service'
     :class: 'main-visual'
 
-14. Repeat steps 5-11 for each environment.
+13. Repeat steps 5-11 for each environment.
+14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``13.5-alpine``.
 
 Your environment is now using the new PostgreSQL service for the upgraded version. 
 
