@@ -43,7 +43,7 @@ project*, choose the email of the collaborator and hit *add collaborators*.
 Remove collaborators
 --------------------
 
-To remove a collaborator from an organisation, in the organisation settings, select collaborators, and click on the
+An admin collaborator can remove another admin but not oneself. To remove a collaborator from an organisation, in the organisation settings, select collaborators, and click on the
 options menu for a particular collaborator and select *remove*.
 
 To revoke access of a collaborator from a project, in the project's Dashboard, select *collaborators*, and hit the
