@@ -80,7 +80,7 @@ version.
 
 Your environment is now using the new PostgreSQL service for the upgraded version. 
 
-IN order to run the project locally with the upgraded database, a few extra steps are required:
+In order to run the project locally with the upgraded database, a few extra steps are required:
 
 14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``postgres:13.5-alpine``.
 15. Run ``docker-compose down -v`` to stop the containers and remove the volumes.
