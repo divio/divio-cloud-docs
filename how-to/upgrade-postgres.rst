@@ -36,6 +36,11 @@ At this point, the environment is still running on the old version of the databa
 version is deployed and ready to receive data. The following steps will copy the data from the existing database to the new 
 version. 
 
+.. note:: When a service shows as ``Attached``, it means that it is ready to use. It does not indicate that it is being used by 
+    your environment. The new version will not be in use until you deploy the changes in step 11.
+
+    For more information on how and when services are provisioned and attached, please see the Services documentation: https://docs.divio.com/en/latest/background/services/
+
 5. Create a backup for the ``DEFAULT`` database service. 
 
 ..  image:: /images/postgres-upgrade-backup-default.png
@@ -72,9 +77,15 @@ version.
     :class: 'main-visual'
 
 13. Repeat steps 5-11 for each environment.
-14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``13.5-alpine``.
 
 Your environment is now using the new PostgreSQL service for the upgraded version. 
+
+IN order to run the project locally with the upgraded database, a few extra steps are required:
+
+14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``postgres:13.5-alpine``.
+15. Run ``docker-compose down -v`` to stop the containers and remove the volumes.
+16. Run ``divio app pull db <environment>`` to pull the updated database from the environment you want locally. 
+17. Run ``docker-compose up`` to bring everything up again. 
 
 Risks
 -----
