@@ -7,8 +7,8 @@ You can create a free Developer subscription for any Divio project. The Develope
 until you are ready to go live under a paid subscription, and exploring the platform and discovering its features and
 capabilities.
 
-To make it as useful as possible, the Developer plan includes a rich set of features. This includes serving the project
-using your own domain(s). No time-limit is applied to Developer plan subscriptions.
+To make it as useful as possible, the Developer plan includes a rich set of features. No time-limit is applied to
+Developer plan subscriptions.
 
 
 Developer plan limitations
