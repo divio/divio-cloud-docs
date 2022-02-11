@@ -168,7 +168,7 @@ See the Django guide for :ref:`a concrete example <deploy-django-media>`.
       #
       # database_default:
       #   # Select one of the following db configurations for the database
-      #   image: postgres:9.6-alpine
+      #   image: postgres:13.5-alpine
       #   environment:
       #     POSTGRES_DB: "db"
       #     POSTGRES_HOST_AUTH_METHOD: "trust"
