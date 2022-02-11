@@ -67,7 +67,7 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
      env_file: .env-local
 
     database_default:
-     image: postgres:9.6
+     image: postgres:13.5-alpine
      environment:
        POSTGRES_DB: "db"
        POSTGRES_HOST_AUTH_METHOD: "trust"
@@ -170,7 +170,7 @@ On the cloud, the project's database runs on one of our database clusters; local
 
 The directives mean:
 
-* ``image``: build the container from the ``postgres:9.6`` image
+* ``image``: build the container from the ``postgres:13.5-alpine`` image
 * ``volumes``: map the parent directory on the host to ``/app`` in the
   container, with read and write access
 * ``environment``: sets various environment variables for the running container. The ``SERVICE_MANAGER`` variable

@@ -88,7 +88,7 @@ port to your host. For Postgres, for example:
     :emphasize-lines: 3,4
 
     database_default:
-        image: postgres:9.6
+        image: postgres:13.5-alpine
         ports:
             - 5432:5432
 
@@ -184,16 +184,16 @@ your project's ``docker-compose.yml`` file, for example:
     :emphasize-lines: 2
 
     database_default:
-        image: postgres:9.6-alpine
+        image: postgres:13.5-alpine
 
 Should you need to change this, that line should be updated - for example if the Cloud database is
-now running Postgres 11:
+now running Postgres 14:
 
 ..  code-block:: yaml
     :emphasize-lines: 2
 
     database_default:
-        image: postgres:11-alpine
+        image: postgres:14-alpine
 
 Docker will use the new version the next time the local project is launched.
 

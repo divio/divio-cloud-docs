@@ -128,7 +128,7 @@ One option for Flask is to configure the web server/gateway server to handle the
 
       database_default:
         # Select one of the following db configurations for the database
-        image: postgres:9.6-alpine
+        image: postgres:13.5-alpine
         environment:
           POSTGRES_DB: "db"
           POSTGRES_HOST_AUTH_METHOD: "trust"

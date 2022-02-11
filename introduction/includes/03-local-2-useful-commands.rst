@@ -53,7 +53,7 @@ differ depending on what you actually have running):
     ➜ docker ps
     CONTAINER ID  IMAGE                COMMAND                 CREATED         STATUS        PORTS                 NAME
     d6007edbaf32  tutorialproject_web  "/tini -g -- pytho..."  17 minutes ago  Up 8 seconds  0.0.0.0:8000->80/tcp  tutorialproject_web_
-    27ff3e661027  postgres:9.6         "docker-entrypoint..."  17 minutes ago  Up 8 seconds  5432/tcp              tutorialproject_db_
+    27ff3e661027  postgres:13.5         "docker-entrypoint..."  17 minutes ago  Up 8 seconds  5432/tcp              tutorialproject_db_
 
 In this example, the first container is an instance of the image that you built (when deployed, a similar container
 will be running in a cloud environment). The second shown here is a Postgres database, running in its own Docker

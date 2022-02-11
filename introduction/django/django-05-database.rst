@@ -57,7 +57,7 @@ Edit your ``docker-compose.yml`` to add some new lines:
 
       database_default:
         # the application's web service will use an off-the-shelf image
-        image: postgres:9.6-alpine
+        image: postgres:13.5-alpine
         environment:
           POSTGRES_DB: "db"
           POSTGRES_HOST_AUTH_METHOD: "trust"
