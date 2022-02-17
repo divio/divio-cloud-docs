@@ -57,13 +57,13 @@ example:
 
 ..  code-block:: bash
 
-    divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN
+    divio app env-vars -s test --all --get DEFAULT_STORAGE_DSN
 
 or:
 
 ..  code-block:: bash
 
-    divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN --remote-id <site id>
+    divio app env-vars -s test --all --get DEFAULT_STORAGE_DSN --remote-id <site id>
 
 See :ref:`how to read environment variables <reading-env-vars>`.
 

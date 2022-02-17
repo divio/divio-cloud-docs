@@ -4,7 +4,7 @@
     * wagtail-04-add-application.rst
 
 
-Using ``divio project push/pull``
+Using ``divio app push/pull``
 ---------------------------------
 
 Your local database has new content, but your cloud database hasn't been touched by the work you did locally. One very
@@ -13,7 +13,7 @@ environments. For example, try:
 
 ..  code-block:: bash
 
-    divio project push db
+    divio app push db
 
 This will push the local database to the cloud Test environment. Once the process has completed, you can refresh the
 cloud Test site; you'll see that it now has the same content in its database as the local site.

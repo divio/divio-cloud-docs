@@ -34,19 +34,19 @@ To read custom variables from the default cloud environment:
 
 ..  code-block:: bash
 
-    divio project env-vars
+    divio app env-vars
 
 From another environment, using the ``-s`` option:
 
 ..  code-block:: bash
 
-    divio project env-vars -s live
+    divio app env-vars -s live
 
 Use the ``--all`` flag to include automatically applied variables, for example:
 
 ..  code-block:: bash
 
-    ➜ divio project env-vars -s live --all
+    ➜ divio app env-vars -s live --all
 
     Key               Value
     ----------------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,17 +98,17 @@ In cloud environments
 Using the Divio CLI
 ^^^^^^^^^^^^^^^^^^^
 
-Use ``divio project env-vars --set``, for example to target the default environment:
+Use ``divio app env-vars --set``, for example to target the default environment:
 
 ..  code-block:: bash
 
-    divio project env-vars --set example_url https://www.example.com
+    divio app env-vars --set example_url https://www.example.com
 
 or to specify an environment with the ``-s`` option:
 
 ..  code-block:: bash
 
-    divio project env-vars -s live --set example_url https://www.example.com
+    divio app env-vars -s live --set example_url https://www.example.com
 
 See the :ref:`divio-cli-command-ref` reference for further information.
 

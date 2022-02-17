@@ -15,7 +15,7 @@ option exists.
 ..  admonition:: The database service name in ``docker-compose.yml``
 
     The Divio CLI expects that the database service will be named ``database_default`` (or ``db``) in your
-    ``docker-compose.yml`` file. If not, it certain commands (such as ``divio project push/pull db``) will fail.
+    ``docker-compose.yml`` file. If not, it certain commands (such as ``divio app push/pull db``) will fail.
 
 
 .. _interact-local-db:
@@ -125,7 +125,7 @@ database with::
 Interact with the Cloud database
 --------------------------------
 
-Use the ``divio project pull db`` and ``divio project push db`` commands to copy a database between a cloud environment
+Use the ``divio app pull db`` and ``divio app push db`` commands to copy a database between a cloud environment
 and your own local environment.
 
 Note that the ``pull`` operation downloads a binary database dump (in a tarred archive), whereas ``push`` creates and

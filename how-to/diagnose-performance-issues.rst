@@ -81,7 +81,7 @@ Runtime logs
 ~~~~~~~~~~~~~~~~~~~~
 
 All Divio projects provide runtime logs, accessible from the Environments view as well as from the terminal (e.g.
-``divio project logs --tail live``). Logs show for example how long requests take to serve and reporting internal
+``divio app logs --tail live``). Logs show for example how long requests take to serve and reporting internal
 errors, but this provides only a basic insight into behaviour. However, as with metrics, referring to runtime logs can
 help eliminate suspects from your enquiries quite quickly.
 

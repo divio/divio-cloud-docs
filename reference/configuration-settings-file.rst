@@ -20,10 +20,10 @@ At first sight, this ``settings.py`` file may seem unusual, but in fact it behav
 The ``INSTALLED_ADDONS`` lists the addons installed by the addons framework. The list is populated automatically:
 
 * on the Control Panel, when addons are added or removed
-* locally, when the ``divio project develop`` command is run
+* locally, when the ``divio app develop`` command is run
 
 Items are inserted between the ``<INSTALLED_ADDONS>`` tags. If you need to add items to the list manually while
-developing, add them *outside* the tags, otherwise your changes will be overwritten the next time ``divio project
+developing, add them *outside* the tags, otherwise your changes will be overwritten the next time ``divio app
 develop`` is run.
 
 ..  code-block:: python

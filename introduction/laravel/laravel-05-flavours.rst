@@ -135,7 +135,7 @@ To deploy your changes to the Test server, push your changes, and run a deployme
     git add composer.json app.flavour .flavour
     git commit -m "Added laravel-responsecache"
     git push origin master
-    divio project deploy test
+    divio app deploy test
 
 Divio's hosting service is Flavours-aware; your changes, once pushed and deployed on the Control Panel, will
 automatically use the ``composer.json`` file to rebuild the project with the new package installed.

@@ -57,13 +57,13 @@ Placing the addon into ``addons-dev`` will override any version that has been in
 using the requirements file.
 
 
-Run ``divio project develop``
+Run ``divio app develop``
 -----------------------------
 
 If the new version is different from the previously installed version and includes changed dependencies, or
 you want to check exactly what it will do when when the project is built, you should run::
 
-     divio project develop <package name>
+     divio app develop <package name>
 
 This processes the addon, adding::
 

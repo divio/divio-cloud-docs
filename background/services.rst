@@ -50,7 +50,7 @@ the applications that need to use it. Use the Divio CLI to obtain the values, fo
 
 ..  code-block:: bash
 
-    divio project env-vars --all
+    divio app env-vars --all
 
 See :ref:`reading environment variables <reading-env-vars>` for more.
 

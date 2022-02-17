@@ -191,7 +191,7 @@ See :ref:`expose-database-ports` for an example of adding configuration to
 ..  admonition:: Required database service configuration
 
     The Divio CLI expects that the database service will be called ``database_default`` (or, in some older projects,
-    ``db``). If the name is changed, operations such as ``divio project pull db`` will fail.
+    ``db``). If the name is changed, operations such as ``divio app pull db`` will fail.
 
     The ``volumes`` directive needs to map the container's ``/app`` directory as described above, for the same reason.
 

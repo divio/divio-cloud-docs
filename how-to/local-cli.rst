@@ -73,37 +73,37 @@ Usage
 The CLI allows you to interact with projects locally and on the Cloud; for
 example, to set up a Cloud project locally::
 
-  divio project setup <project slug>
+  divio app setup <project slug>
 
 Commonly used commands include those to push and pull database and media, for example::
 
-    divio project pull db
+    divio app pull db
 
-    divio project push media
+    divio app push media
 
 Where appropriate, you can specify a particular environment (default is always Test)::
 
-    divio project push db live
+    divio app push db live
 
 or even another project::
 
-    divio project pull db --remote-id
+    divio app pull db --remote-id
 
 Similarly, you can do things like view runtime logs::
 
-    divio project logs --tail live
+    divio app logs --tail live
 
 or open the project dashboard::
 
-    divio project dashboard
+    divio app dashboard
 
 or associate a local project with a cloud project::
 
-    divio project configure
+    divio app configure
 
 and to :ref:`manage environment variables <manage-environment-variables>`::
 
-    divio project env-vars
+    divio app env-vars
 
 See the :ref:`reference guide <divio-cli-ref>` for full details of commands and options.
 

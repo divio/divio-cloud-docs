@@ -217,7 +217,7 @@ object storage instance. You can do this locally. Stop the application, and use:
 
 ..  code-block:: bash
 
-    divio project env-vars -s test --all --get DEFAULT_STORAGE_DSN
+    divio app env-vars -s test --all --get DEFAULT_STORAGE_DSN
 
 to get the value of the ``DEFAULT_STORAGE_DSN`` from the cloud test environment. (If you don't get a value, check in
 the *Services* view of the project that it has been provisioned.) In your ``.env-local``, *temporarily* apply this
@@ -234,9 +234,9 @@ Finally deploy the changes and push your local media and database to the cloud:
 
 ..  code-block:: bash
 
-    divio project deploy
-    divio project push media
-    divio project push db
+    divio app deploy
+    divio app push media
+    divio app push db
 
 You should find all your media and database content in the cloud environment now, and you should be able to use the
 admin interface to upload new files too.

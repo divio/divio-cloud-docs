@@ -69,7 +69,7 @@ The cloud project has a *slug*, based on the name you gave it when you created i
 
 ..  code-block:: bash
 
-    divio project list -g
+    divio app list -g
 
 to get your project's slug.
 
@@ -83,9 +83,9 @@ Run:
 
 ..  code-block:: bash
 
-    divio project configure
+    divio app configure
 
-and provide the slug. (``divio project configure`` creates a new file in the project at ``.divio/config.json``,
+and provide the slug. (``divio app configure`` creates a new file in the project at ``.divio/config.json``,
 containing the configuration data.)
 
 
@@ -99,7 +99,7 @@ repository as a remote, for example:
 
     git remote add divio git@git.divio.com:my-divio-project.git
 
-The Git URL is provided by the ``divio project configure`` command above, and in the *Repository* view of the Control
+The Git URL is provided by the ``divio app configure`` command above, and in the *Repository* view of the Control
 Panel.
 
 
@@ -132,8 +132,8 @@ If you have local database or media content, push them to the Test environment:
 
 ..  code-block:: bash
 
-    divio project push db
-    divio project push media
+    divio app push db
+    divio app push media
 
 See also :ref:`Divio CLI usage examples <local-cli-usage>`.
 
@@ -153,7 +153,7 @@ Deploy with:
 
 ..  code-block:: bash
 
-    divio project deploy
+    divio app deploy
 
 (or use the **Deploy** button in the Control Panel).
 

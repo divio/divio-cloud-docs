@@ -24,7 +24,7 @@ Using a cloud shell
 
 To open an SSH session, run::
 
-    divio project ssh
+    divio app ssh
 
 from a local project. The default connection is to the ``test`` environment, but you can specify other environments by
 name. An instance of your web application will be spun up in a new container, and after a moment you'll be logged in to

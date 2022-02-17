@@ -197,7 +197,7 @@ adds it to the list of addons that the project will “watch”.
 
 Run::
 
-    divio project develop <package name>
+    divio app develop <package name>
 
 You can test that the project now works as expected.
 
