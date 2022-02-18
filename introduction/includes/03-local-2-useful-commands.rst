@@ -22,12 +22,12 @@ Using ``divio``
 ^^^^^^^^^^^^^^^
 
 The ``divio`` command is used mainly to manage your local project's resources and to interact with our Control Panel.
-You have already used ``divio project setup`` and ``divio project list``; you can also use it to do things like push
+You have already used ``divio app setup`` and ``divio app list``; you can also use it to do things like push
 and pull database and media content. Try:
 
 ..  code-block:: bash
 
-    divio project dashboard
+    divio app dashboard
 
 See the :ref:`Divio CLI reference <divio-cli-ref>` for more.
 

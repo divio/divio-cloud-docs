@@ -169,7 +169,7 @@ and deploy:
 
 ..  code-block:: bash
 
-    divio project deploy
+    divio app deploy
 
 ..  sidebar:: Pushing ``.env-local``
     :subtitle: Configuration secrets should not be committed to code repositories.
@@ -192,7 +192,7 @@ So let's push the local database, which does contain the required tables, to the
 
 ..  code-block:: bash
 
-    divio project push db
+    divio app push db
 
 This will push the local database to the cloud Test environment. Once the process has completed, you can refresh the
 cloud Test site; you'll be able to log in at ``/admin`` with your admin user credentials.

@@ -36,7 +36,7 @@ You can do this locally, using:
 
 ..  code-block:: bash
 
-    divio project env-vars -s test --all   # use live to collect the values from the live server
+    divio app env-vars -s test --all   # use live to collect the values from the live server
 
 or you can SSH into the cloud servers and run the ``env`` command to list them.
 

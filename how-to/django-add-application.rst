@@ -108,4 +108,4 @@ Deploy the Test server
 
 ..  code-block:: bash
 
-    divio project deploy test
+    divio app deploy test

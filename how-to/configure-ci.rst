@@ -13,7 +13,7 @@ The basic principles
 When a build completes successfully on the CI service, it needs to send a signal to the Control Panel to start the
 deployment. Typically this would be with the command::
 
-    divio project deploy --remote-id <website id>
+    divio app deploy --remote-id <website id>
 
 where the ``<website id>`` is as shown in its Divio Control Panel dashboard URL.
 
@@ -58,7 +58,7 @@ When a build is successful, we need Travis to log in as a Divio user and execute
 
 * install the Divio CLI
 * log in
-* run a ``divio project deploy`` command, using your project's website id
+* run a ``divio app deploy`` command, using your project's website id
 
 
 Authentication
@@ -79,7 +79,7 @@ have obtained the encrypted token, you can add the following to the ``travis.yml
     after_success:
        - pip install divio-cli
        - divio login <encrypted token>
-       - divio project deploy --remote-id <website id>
+       - divio app deploy --remote-id <website id>
 
 You could also run::
 

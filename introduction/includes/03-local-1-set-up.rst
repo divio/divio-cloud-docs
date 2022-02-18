@@ -22,17 +22,17 @@ Alternatively you can use the ``divio`` command to list your cloud project, whic
 
 ..  code-block:: bash
 
-    divio project list
+    divio app list
 
 
 Build the project locally
 -------------------------
 
-Run the ``divio project setup`` command (for example if your project slug is ``tutorial-project``):
+Run the ``divio app setup`` command (for example if your project slug is ``tutorial-project``):
 
 ..  code-block:: bash
 
-    divio project setup tutorial-project
+    divio app setup tutorial-project
 
 The Divio CLI will execute a number of steps - this may take a few minutes, depending on how much needs to be
 downloaded and processed. The Divio CLI tool will build your project locally (see :ref:`build-process` for a

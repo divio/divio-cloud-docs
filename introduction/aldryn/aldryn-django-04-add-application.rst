@@ -93,14 +93,14 @@ using the Control Panel, or by running:
 
 ..  code-block:: bash
 
-    divio project deploy
+    divio app deploy
 
 When it has finished deploying, you should check the Test server to see that all is as expected. Once you're satisfied
 that it works correctly, you can deploy the Live server too:
 
 ..  code-block:: bash
 
-    divio project deploy live
+    divio app deploy live
 
 
 ..  include:: /introduction/includes/04-add-application-push-01.rst

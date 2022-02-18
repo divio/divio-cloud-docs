@@ -1,6 +1,6 @@
 .. _use-git-manage-project:
 
-How to use Git to with a Divio project
+How to use Git with a Divio project
 ======================================
 
 Your Divio project is a Git repository, offering several advantages to the developer -

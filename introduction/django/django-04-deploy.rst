@@ -55,7 +55,7 @@ You can deploy the Test environment using the Control Panel, or by running:
 
 ..  code-block:: bash
 
-    divio project deploy
+    divio app deploy
 
 Once you have successfully deployed the Test environment, the Control Panel will indicate this in the interface with a
 *Last deployment successful* message and the project URL in the Test environment pane will display as a link,

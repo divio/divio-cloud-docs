@@ -41,14 +41,14 @@ using the Control Panel, or by running:
 
 ..  code-block:: bash
 
-    divio project deploy
+    divio app deploy
 
 When it has finished deploying, you should check the Test server to see that all is as expected. Once you're satisfied
 that it works correctly, you can deploy the Live server too:
 
 ..  code-block:: bash
 
-    divio project deploy live
+    divio app deploy live
 
 
 Push the database
@@ -60,9 +60,9 @@ push and pull your database and media storage to and from the cloud environments
 
 ..  code-block:: bash
 
-    divio project push db
+    divio app push db
 
-This will push the local database to the cloud Test environment. (``divio project push db live`` will do the same for
+This will push the local database to the cloud Test environment. (``divio app push db live`` will do the same for
 the Live environment.)
 
 Similarly, you can push/pull media files, and also specify which cloud environment. See the :ref:`local commands

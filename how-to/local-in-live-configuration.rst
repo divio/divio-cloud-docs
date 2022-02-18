@@ -83,7 +83,7 @@ sometimes you might want to use the cloud storage when the application is runnin
 
 Cloud storage configuration values are provided in the ``DEFAULT_STORAGE_DSN`` environment variable.
 
-In order to use the cloud storage locally, find the value of ``DEFAULT_STORAGE_DSN`` using the :ref:`divio project
+In order to use the cloud storage locally, find the value of ``DEFAULT_STORAGE_DSN`` using the :ref:`divio app
 env-vars <reading-env-vars>` command, and add the variable to the ``.env-local`` file (this works for applications that
 are able to parse the value).
 

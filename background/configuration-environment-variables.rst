@@ -29,12 +29,12 @@ Via the command line
 ~~~~~~~~~~~~~~~~~~~~
 
 The :ref:`Divio CLI <divio-cli-ref>` allows you to set and check values from
-the command line with the ``divio project env-vars`` command. For example, to see
+the command line with the ``divio app env-vars`` command. For example, to see
 the variables of the *Live* server:
 
 ..  code-block:: bash
 
-    divio project env-vars --remote-id <numerical project id> -s live
+    divio app env-vars --remote-id <numerical project id> -s live
 
 If any exist, they will be displayed thus::
 
