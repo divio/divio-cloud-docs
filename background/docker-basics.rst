@@ -3,7 +3,7 @@
 Docker basics
 =============
 
-`Docker <http://docker.com>`_ is a **containerisation** system.
+`Docker <https://docker.com>`_ is a **containerisation** system.
 Containerisation is also known as `operating-system-level virtualisation
 <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`_. It
 allows multiple independent containers to run on a single host. The containers
@@ -40,7 +40,7 @@ This can be done in two ways:
   (Windows 10 Professional, Enterprise and Education editions).)
 
 * On **older systems**, it requires a Linux virtual machine running in `VirtualBox
-  <http://virtualbox.org>`_. This is managed by a tool called *Docker Toolbox*.
+  <https://virtualbox.org>`_. This is managed by a tool called *Docker Toolbox*.
 
 
 Key components

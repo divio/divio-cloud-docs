@@ -131,7 +131,7 @@ at the top of the page to add some styles. See the
 Create responsive columns
 -------------------------
 
-See `docs.divio.com <http://docs.divio.com>`_. There, we add the styles you see 
+See `docs.divio.com <https://docs.divio.com>`_. There, we add the styles you see 
 in the example above, and apply appropriate classes to the elements::
 
      ..  rst-class:: clearfix row
@@ -165,7 +165,7 @@ Create an interactive debugging checklist
 -----------------------------------------
 
 When a deployment fails on our Cloud, our Control Panel will direct you to the 
-`interactive debugging checklist <http://docs.divio.com/en/latest/how-to/debug-deployment-problems.html#debugging-checklist>`_.
+`interactive debugging checklist <https://docs.divio.com/en/latest/how-to/debug-deployment-problems.html#debugging-checklist>`_.
 
 It's a kind of `Choose your own adventure story <https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure>`_, but probably
 less fun.
@@ -177,7 +177,7 @@ Sphinx and intersphinx extensions
 ---------------------------------
 
 This allows us to link directly to (for example) references in other Sphinx 
-projects, such as `where we link to django CMS's caching settings <http://docs.
+projects, such as `where we link to django CMS's caching settings <https://docs.
 divio.com/en/latest/reference/caching.html#caching-in-django-cms>`_.
 
 The trick here is that unlike `:ref:` for example, `setting:` is not a natively 

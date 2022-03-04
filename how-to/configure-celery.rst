@@ -142,8 +142,8 @@ the provision made on our cloud. A complete set-up would include:
      - handled by
      - on the cloud
      - local container name
-   * - `AMPQ <http://www.amqp.org>`_ message broker service responsible for the creation of task queues
-     - `RabbitMQ <http://www.rabbitmq.com>`_
+   * - `AMPQ <https://www.amqp.org>`_ message broker service responsible for the creation of task queues
+     - `RabbitMQ <https://www.rabbitmq.com>`_
      - `CloudAMPQ <https://www.cloudamqp.com>`_
      - ``rabbitmq``
    * - task execution

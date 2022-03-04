@@ -19,7 +19,7 @@ Errors caused by performance problems are typically (but not limited to) *Applic
     automatically be recycled or restarted by our monitoring systems.
 
     In the case of *any* on-going issue affecting Divio infrastructure, we will post a notice on
-    http://status.divio.com.
+    https://status.divio.com.
 
 
 Action without information is useless

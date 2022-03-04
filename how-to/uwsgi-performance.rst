@@ -26,7 +26,7 @@ Our Control Panel's metrics will give you a basic idea of RAM usage. However, th
 sophisticated tools available that can give you much more, and more finely-grained, information.
 
 These range from Python libraries (such as `memory-profiler
-<http://pypi.python.org/pypi/memory_profiler>`_ or `line_profiler
+<https://pypi.python.org/pypi/memory_profiler>`_ or `line_profiler
 <https://pypi.org/project/line_profiler/>`_) to third-party monitoring/profiling services.
 
 
