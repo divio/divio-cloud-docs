@@ -80,7 +80,7 @@ with).
 The Sass Boilerplate uses the `HTML5 Boilerplate package
 <https://html5boilerplate.com>`_ as its basis. It uses:
 
-* `Gulp <http://gulpjs.com>`_ to run the compilation
+* `Gulp <https://gulpjs.com>`_ to run the compilation
 * `npm <https://www.npmjs.com>`_ as a package manager
 * `Node <https://nodejs.org/en/>`_ as a runtime environment.
 
@@ -97,7 +97,7 @@ The `Webpack Boilerplate
 <https://github.com/divio/djangocms-boilerplate-webpack>`_ implements the
 Bootstrap framework as a fully-compiled frontend set-up. It uses:
 
-* `Gulp <http://gulpjs.com>`_ to run the compilation
+* `Gulp <https://gulpjs.com>`_ to run the compilation
 * `Webpack <https://webpack.js.org>`_ to bundle all the modules
 * `npm <https://www.npmjs.com>`_ as a package manager
 * `Node <https://nodejs.org/en/>`_ as a runtime environment.

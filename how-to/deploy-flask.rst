@@ -15,7 +15,7 @@ The steps here should work with any Flask project, and include configuration for
 
 * Postgres or MySQL database
 * cloud media storage using S3
-* static file handling using `WhiteNoise <http://whitenoise.evans.io>`_
+* static file handling using `WhiteNoise <https://whitenoise.evans.io>`_
 * configuring a gateway server.
 
 

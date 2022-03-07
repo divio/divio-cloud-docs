@@ -26,7 +26,7 @@ warned that misconfiguration can be severely detrimental to an application's per
 uWSGI environment variables
 ---------------------------
 
-uWSGI offers `a vast number of configuration variables <http://uwsgi-docs.readthedocs.io/en/latest/Options.html>`_. Any
+uWSGI offers `a vast number of configuration variables <https://uwsgi-docs.readthedocs.io/en/latest/Options.html>`_. Any
 one of them can be set using an environment variable starting ``UWSGI_``, followed by the name of the variable in
 uppercase.
 

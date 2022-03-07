@@ -16,7 +16,7 @@ The steps here should work with any Django project, and include configuration fo
 
 * Postgres or MySQL database
 * cloud media storage using S3
-* static file handling using `WhiteNoise <http://whitenoise.evans.io>`_
+* static file handling using `WhiteNoise <https://whitenoise.evans.io>`_
 * `uWSGI <https://uwsgi-docs.readthedocs.io>`_, `Gunicorn <https://docs.gunicorn.org>`_ or `Uvicorn
   <https://www.uvicorn.org>`_
 

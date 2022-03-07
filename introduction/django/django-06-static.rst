@@ -14,7 +14,7 @@ loading the `fonts.css <http://127.0.0.1:8000/static/admin/css/fonts.css>`_ stat
 
 When running with a production server like uWSGI, you need to configure static file serving explicitly. There are
 multiple ways to do this, but one very good way to do so on the Divio infrastructure is to use the Python library
-`WhiteNoise <http://whitenoise.evans.io>`_. WhiteNoise is designed to work behind Content Delivery Networks and
+`WhiteNoise <https://whitenoise.evans.io>`_. WhiteNoise is designed to work behind Content Delivery Networks and
 integrates well with Django.
 
 Add ``whitenoise`` to the ``requirements.txt``:

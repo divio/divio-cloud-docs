@@ -9,7 +9,7 @@ Infrastructure-level caching
 As well as the caching and CDN (Content Delivery Network) we provide, you can also :ref:`apply your own
 <apply-your-own-caching-cdn>`.
 
-Caching is generally provided by `Cloudflare <http://cloudflare.com>`_. Other options can be provided or managed
+Caching is generally provided by `Cloudflare <https://cloudflare.com>`_. Other options can be provided or managed
 on request.
 
 Infrastructure-level caching is *URL-based*, and content-unaware - caching does not detect when files have changed.

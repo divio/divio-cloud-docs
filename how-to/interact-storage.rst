@@ -76,7 +76,7 @@ Install the client
 
 ..  tab:: S3
 
-    `AWS CLI documentation <http://docs.aws.amazon.com/cli/>`_ is Amazon's official S3 client.
+    `AWS CLI documentation <https://docs.aws.amazon.com/cli/>`_ is Amazon's official S3 client.
 
     There are others clients suitable for connecting to S3 storage, including:
 
@@ -143,7 +143,7 @@ Parse the storage DSN
     +--------+---------------------------------+----------------+---------------------+
 
     See `Amazon's S3 regions table
-    <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ for more information about
+    <https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ for more information about
     regions and their names.
 
     The *endpoint* is the address that the client will need to connect to.

@@ -1,4 +1,4 @@
-..  This section is referred to (as http://docs.divio.com/en/latest/reference/configuration-aldryn-config.html) from
+..  This section is referred to (as https://docs.divio.com/en/latest/reference/configuration-aldryn-config.html) from
     within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
 
 .. _configure-with-aldryn-config:
