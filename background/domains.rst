@@ -60,9 +60,8 @@ Once the settings have been applied in the interface, the environment variables 
 add them manually. The values will not be available to any running environments until they have been redeployed.
 
 Your application may need to use these variables to function correctly. For example, a Django application has an
-``ALLOWED_HOSTS`` setting, listing the hosts that the application can be served from. This needs to list all the
+``ALLOWED_HOSTS`` :ref:`setting <deploy-django-security>`, listing the hosts that the application can be served from. This needs to list all the
 domains applied in the interface, and made available via ``DOMAIN``, ``DOMAIN_ALIASES`` and ``DOMAIN_REDIRECTS``. 
-The auto-generated environment variables are comma-separated.
 
 
 ..  important::
