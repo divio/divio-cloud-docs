@@ -23,9 +23,13 @@ Domain name redirects
 
 You can set up your site's domains using the `domains` section of the Control Panel. This includes the ability
 to set a primary and secondary domains. The secondary domains can each be set to redirect to the primary domain if
-required. You can enable / disable redirects from the three dots menu which will automatically populate ``DOMAIN``, ``DOMAIN_REDIRECTS`` and ``DOMAIN_ALIASES``.
+required. You can enable / disable redirects from the three dots menu which will automatically populate ``DOMAIN``, 
+``DOMAIN_REDIRECTS`` and ``DOMAIN_ALIASES``.
 
-Domain redirects/aliases can also be managed manually, via :ref:`DOMAIN_REDIRECTS` / ``DOMAIN_ALIASES`` in the `env variables` section of the Control Panel. The list of domains is comma-separated. Note that doing this overrides all settings applied in the Control Panel - so if you use ``DOMAIN_REDIRECTS``, you will need to list **all** the domains there yourself.
+Domain redirects/aliases can also be managed manually, via :ref:`DOMAIN_REDIRECTS` / ``DOMAIN_ALIASES`` in the 
+`env variables` section of the Control Panel. The list of domains is comma-separated. Note that doing this overrides 
+all settings applied in the Control Panel - so if you use ``DOMAIN_REDIRECTS``, you will need to list **all** the 
+domains there yourself.
 Refer to :ref:`domain settings and environment variables <domain-settings-and-env-vars>` for more information.
 
 
