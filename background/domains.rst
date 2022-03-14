@@ -44,6 +44,8 @@ check takes place. If a check fails, the domain will be checked every 15 minutes
 Once a check finds it correct, subsequent checks take place every 24 hours.
 
 
+.. _domain-settings-and-env-vars:
+
 Domain settings and environment variables
 ------------------------------------------
 
@@ -57,9 +59,11 @@ make use of internally. These environment variables are:
 Once the settings have been applied in the interface, the environment variables are also set - there is no need to
 add them manually. The values will not be available to any running environments until they have been redeployed.
 
-Your application may need to use these variables to function correctly. For example, a Django application has an
-``ALLOWED_HOSTS`` setting, listing the hosts that the application can be served from. This needs to list all the
-domains applied in the interface, and made available via ``DOMAIN``, ``DOMAIN_ALIASES`` and ``DOMAIN_REDIRECTS``.
+Your application may need to use these variables to function correctly. For example, a Django application has an 
+:ref:`ALLOWED_HOSTS <deploy-django-security>` setting, listing the hosts that the application can be served from. 
+This needs to list all the domains applied in the interface which are made available via ``DOMAIN``, ``DOMAIN_ALIASES`` 
+and ``DOMAIN_REDIRECTS``. 
+
 
 ..  important::
 
