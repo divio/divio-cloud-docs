@@ -187,7 +187,7 @@ Set up the RabbitMQ messaging service, by adding the following lines:
         [...]
 
       rabbitmq:
-        image: rabbitmq:3.5-management
+        image: rabbitmq:3.9-management
         hostname: rabbitmq
         ports:
           - "15672:15672"
@@ -195,7 +195,7 @@ Set up the RabbitMQ messaging service, by adding the following lines:
           - "15672"
 
 This uses the official `Docker RabbitMQ image <https://github.com/docker-library/rabbitmq>`_ (the
-``rabbitmq:3.5-management`` image in turn installs ``rabbitmq:3.5``). It also gives the container a hostname
+``rabbitmq:3.9-management`` image in turn installs ``rabbitmq:3.9``). It also gives the container a hostname
 (``rabbitmq``), maps and exposes the management interface port (``15672``).
 
 
