@@ -61,7 +61,7 @@ add them manually. The values will not be available to any running environments 
 
 Your application may need to use these variables to function correctly. For example, a Django application has an
 ``ALLOWED_HOSTS`` :ref:`setting <deploy-django-security>`, listing the hosts that the application can be served from. This needs to list all the
-domains applied in the interface, and made available via ``DOMAIN``, ``DOMAIN_ALIASES`` and ``DOMAIN_REDIRECTS``. 
+domains applied in the interface which are made available via ``DOMAIN``, ``DOMAIN_ALIASES`` and ``DOMAIN_REDIRECTS``. 
 
 
 ..  important::
