@@ -150,7 +150,7 @@ example will fall back to safe values if an environment variable is not provided
         if d.strip()
     ]
 
-    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
+    ALLOWED_HOSTS = ALLOWED_HOSTS + [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
 
     # Redirect to HTTPS by default, unless explicitly disabled
     SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"

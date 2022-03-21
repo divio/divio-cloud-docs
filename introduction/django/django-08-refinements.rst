@@ -71,7 +71,7 @@ We can use these environment variables to populate ``ALLOWED_HOSTS``. Edit the s
         if d.strip()
     ]
 
-    ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
+    ALLOWED_HOSTS = ALLOWED_HOSTS + [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
     
 
 Now, ``ALLOWED_HOSTS`` will always contain only the domains specified by the environment variables. On the cloud, these
