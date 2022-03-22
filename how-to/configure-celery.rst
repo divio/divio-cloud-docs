@@ -22,7 +22,9 @@ Add a Celery service to your application
 ----------------------------------------
 
 In the application's subscription, add the number of Celery workers you require. You can start with just one and add
-more later if required.
+more later if required. 
+
+Note that aside from Test and Live environments, Celery has to be requested for each additional environment separately.
 
 ..  important::
 
