@@ -130,7 +130,7 @@ The Divio Community is there to help you as well.
         href="https://slack.divio.com/" role="button">Join us on Slack</a>
         &nbsp;&nbsp;&nbsp;
         <a class="btn btn-primary btn-small" target="_blank"
-        href="https://stackoverflow.com/questions/tagged/divio" role="button">StackOvervlow</a>
+        href="https://stackoverflow.com/questions/tagged/divio" role="button">StackOverflow</a>
     </p>
 
 
