@@ -83,11 +83,34 @@ available, and will contain lines such as:
 ..  code-block:: Dockerfile
 
     # <DOCKER_FROM>
-    FROM divio/base:4.18-py3.6-slim-stretch
+    FROM divio/base:2.2-py3.9-slim-buster
     # </DOCKER_FROM>
 
 When new base images will be released with updates (for example, for newer Python releases) and other improvements or
 changes, the Control Panel will indicate that updates are available in *Settings* > *Base Project*.
 
-Note however that because the base image can also be specified in the repository via the ``Dockerfile``, the manual
-setting will override what's indicated in the Dashboard.
+
+Manually upgrading Divio base projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Divio base projects can also be upgraded manually, for example if the Control Panel does not indicate the necessary 
+updates. 
+
+Manually upgrading in the repository requires replacing the base image in the Dockerfile. Remove any existing wrapping 
+tags,  ``# <DOCKER_FROM>`` (if any) from the Dockerfile to make sure the Control Panel does not overwrite the 
+changes.  For example, if the existing base image section of the Dockerfile contains 
+
+..  code-block:: Dockerfile
+
+    # <DOCKER_FROM>
+    FROM divio/base:4.18-py3.6-slim-stretch
+    # </DOCKER_FROM>
+
+and it has to be upgraded with one of the `Divio-optimised Docker base images for projects
+<https://hub.docker.com/r/divio/base/tags>`_, say ``divio/base:2.2-py3.9-slim-buster`` then the upgraded base image 
+section of the Dockerfile should contain only
+
+..  code-block:: Dockerfile
+
+    FROM divio/base:2.2-py3.9-slim-buster
+  

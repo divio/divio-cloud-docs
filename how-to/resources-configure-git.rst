@@ -185,7 +185,7 @@ successful, the project Dashboard will show the repository URL.
 
 .. _git-setup-webhook:
 
-Configure a webhook for the Git repository (optional)
+Configure a webhook for the Git repository (recommended)
 ------------------------------------------------------------------------
 
 In order for the Control Panel to receive a signal when the repository is updated, you need to set up a webhook. This
