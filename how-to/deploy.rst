@@ -37,7 +37,7 @@ In the Divio Control Panel, add a `New project <https://control.divio.com/contro
 Importing a project from a Git repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Divio Control Panel, add a `Import proejct
+In the Divio Control Panel, `Import a project
 <https://control.divio.com/control/project/import/>`_. Once you have supplied the Git repository URL, you will need
 to use the public key provided to create a Deploy Key on the repository.
 
@@ -46,8 +46,7 @@ will send a signal to update the Divio Control Panel.
 
 ..  admonition:: Limitations
 
-    Some limitations apply to the current version of this functionality. In order to import a repository, at the
-    time of import:
+    Some limitations apply to the current version of this functionality. At the time of import:
 
     * you will need to enable write access on the repository's deploy key
 
