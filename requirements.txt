@@ -10,7 +10,7 @@ attrs==21.2.0
     # via divio-cli
 babel==2.9.1
     # via sphinx
-backports.zoneinfo==0.2.1
+backports-zoneinfo==0.2.1
     # via
     #   divio-cli
     #   tzlocal
@@ -41,7 +41,7 @@ docutils==0.17.1
     #   sphinx
     #   sphinx-click
     #   sphinx-rtd-theme
-https://github.com/divio/docs-theme/archive/master.zip#egg=furo
+furo @ https://github.com/divio/docs-theme/archive/master.zip
     # via -r requirements.in
 idna==3.2
     # via
@@ -103,6 +103,7 @@ sphinx==4.2.0
     #   sphinx-autobuild
     #   sphinx-click
     #   sphinx-inline-tabs
+    #   sphinx-reredirects
     #   sphinx-rtd-theme
     #   sphinxcontrib-spelling
 sphinx-autobuild==2021.3.14
@@ -112,6 +113,8 @@ sphinx-click==3.0.1
 sphinx-inline-tabs==2021.8.17b10
     # via -r requirements.in
 sphinx-notfound-page==0.7.1
+    # via -r requirements.in
+sphinx-reredirects==0.0.1
     # via -r requirements.in
 sphinx-rtd-theme==1.0.0
     # via -r requirements.in
