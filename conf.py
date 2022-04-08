@@ -41,6 +41,7 @@ extensions = [
     "sphinx_inline_tabs",
     "sphinx_click",
     "notfound.extension",
+    "sphinx_reredirects",
 ]
 
 if "spelling" in sys.argv:
@@ -130,3 +131,18 @@ man_pages = [
 todo_include_todos = True
 todo_link_only = True
 todo_emit_warnings = False
+
+#
+# -- Redirects for broken links -----------------------------------------------
+#
+
+# The following represents a valid redirect pattern example for renaming/deleting a file
+# inside the how-to folder called configure-settings.rst to django-configure-settings.rst
+# that must be included inside redirects dictionary below.
+
+# Redirect pattern:
+# "how-to/configure-settings/index.html": "../django-configure-settings",
+
+redirects = {
+     "how-to/configure-settings/index.html": "../django-configure-settings",
+}
