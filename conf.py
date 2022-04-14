@@ -97,7 +97,7 @@ html_css_files = [
 source_suffix = ".rst"
 master_doc = "index"
 language = None
-exclude_patterns = ["README.rst", "_build", "Thumbs.db", ".DS_Store", "env", "**/includes"]
+exclude_patterns = ["README.rst", "_build", "Thumbs.db", ".DS_Store", "env"]
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 #
