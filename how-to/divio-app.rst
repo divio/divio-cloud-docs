@@ -27,10 +27,10 @@ Installation
     https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl. 
 
 
-Loging in
+Logging in
 ~~~~~~~~~
 
-Once the application is installed and running you can login using your email address and password, or if you singed up
+Once the application is installed and running you can login using your email address and password, or if you signed up
 with Google or GitHub, simply copy `the access token <https://control.divio.com/account/desktop-app/access-token/>`_
 from the Divio control panel and paste it into the provided field.
 
