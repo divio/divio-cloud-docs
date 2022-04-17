@@ -8,7 +8,7 @@ Manual upgrade steps
 
 To upgrade your PostgreSQL service instance from one version to another, without any downtime, the following steps 
 should be applied to each environment where the upgrade is required. Note that for these instructions to be valid there
-will be more than one PostgreSQL service availabe. Ensure you select the correct versions when provisioning and deprovisioning
+will be more than one PostgreSQL service available. Ensure you select the correct versions when provisioning and deprovisioning
 the "old" and "new" versions of your PostgreSQL service.
 
 1. Check the prefix of the current installation. This will be ``DEFAULT`` if it has not been manually changed, but can be anything. 
@@ -57,7 +57,7 @@ version.
 7. Once the backup has completed, restore it to the ``NEW`` service.
 
 ..  image:: /images/postgres-upgrade-restore-backup-to-new.png
-    :alt: 'Restore the old backup to the new PostgrSQL service'
+    :alt: 'Restore the old backup to the new PostgreSQL service'
     :class: 'main-visual'
 
 8. Rename the prefix for the old database version from ``DEFAULT`` to ``OLD``.
@@ -82,7 +82,7 @@ Your environment is now using the new PostgreSQL service for the upgraded versio
 
 In order to run the project locally with the upgraded database, a few extra steps are required:
 
-14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``postgres:13.5-alpine``.
+14. Update ``docker-compose.yml`` for the project to use the PostgreSQL image ``postgres:13.5-alpine``.
 15. Run ``docker-compose down -v`` to stop the containers and remove the volumes.
 16. Run ``divio app pull db <environment>`` to pull the updated database from the environment you want locally. 
 17. Run ``docker-compose up`` to bring everything up again. 
