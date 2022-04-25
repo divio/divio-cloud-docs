@@ -120,6 +120,8 @@ This will open your browser at
 https://control.divio.com/account/desktop-app/access-token/, where you can copy
 an access token to paste into the prompt.
 
+⚠️ Your terminal might not have copying and pasting shortcuts such as Ctrl+C/Ctrl+V enabled by default. Make sure that
+you can use those shortcuts before you provide your access token as the input will be hidden for security reasons.
 
 .. _add-public-key:
 
