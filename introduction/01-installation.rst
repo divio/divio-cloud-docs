@@ -120,8 +120,11 @@ This will open your browser at
 https://control.divio.com/account/desktop-app/access-token/, where you can copy
 an access token to paste into the prompt.
 
-⚠️ **For Windows users**: Your terminal might not have copying and pasting shortcuts such as Ctrl+C/Ctrl+V enabled by default. Make sure that
-you can use those shortcuts before you provide your access token as the input will be hidden for security reasons.
+..  note::
+    For Windows users:
+
+    If your divio login fails with an invalid token, enable the Ctrl+Shift+C/V as Copy/Paste (Check the box in the 
+    “Command Prompt”/ “Windows Powershell” Properties window) and use Ctrl + Shift + V to paste your access token.
 
 .. _add-public-key:
 
