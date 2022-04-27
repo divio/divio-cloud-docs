@@ -59,14 +59,9 @@ This will open your browser at
 https://control.divio.com/account/desktop-app/access-token/, where you can copy
 an access token to paste into the prompt. The access token is hidden for security reasons.
 
-.. _login-windows-users:
-
-..  note:: For Windows users:
-
-    If your divio login fails with an invalid token, it could be that the pasting is not working properly and you 
-    either *right click* once and press *enter* or enable the Ctrl+Shift+C/V as Copy/Paste (Check the box in the 
-    “Command Prompt”/ “Windows Powershell” Properties window) and use Ctrl + Shift + V to paste your access token.
-
+(Windows users: if your divio login fails with an invalid token, check the 
+:ref:`note for Windows users <login-windows-users>`.)
+ 
 
 Add your public key to the Control Panel
 ----------------------------------------

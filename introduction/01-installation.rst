@@ -122,10 +122,10 @@ an access token to paste into the prompt. The access token is hidden for securit
 
 .. _login-windows-users:
 
-..  note:: For Windows users:
+..  admonition:: Note for Windows users
 
     If your divio login fails with an invalid token, it could be that the pasting is not working properly and you 
-    either *right click* once and press *enter* or enable the Ctrl+Shift+C/V as Copy/Paste (Check the box in the 
+    either *right click* **once** and press *enter* or enable the Ctrl+Shift+C/V as Copy/Paste (Check the box in the 
     “Command Prompt”/ “Windows Powershell” Properties window) and use Ctrl + Shift + V to paste your access token.
 
 
