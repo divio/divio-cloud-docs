@@ -20,11 +20,11 @@ The first step is to create a project on the Divio Control Panel, with your appl
 of doing this:
 
 * *New project*, in which you will push your local Git code to Divio's Git server
-* *New project from Git repository* (Beta), in which your Divio project will fetch the code from a Git host
+* *Import project*, in which your new Divio project will be created from existing Git repository
 
 ..  image:: /images/new-project.png
     :alt: 'New project options'
-    :width: 327
+    :width: 222
 
 
 Creating a new project
@@ -34,29 +34,23 @@ In the Divio Control Panel, add a `New project <https://control.divio.com/contro
 *Build your own* option.
 
 
-Creating a new project from a Git repository (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Importing a project from a Git repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Divio Control Panel, add a `New project from Git repository
+In the Divio Control Panel, `Import a project
 <https://control.divio.com/control/project/import/>`_. Once you have supplied the Git repository URL, you will need
 to use the public key provided to create a Deploy Key on the repository.
 
 You should also :ref:`add a webhook <git-setup-webhook>`, so that when new commits are pushed to the repository, it
 will send a signal to update the Divio Control Panel.
 
-..  admonition:: Beta status limitations
+..  admonition:: Limitations
 
-    Creating a new project from a Git repository is currently provided as a Beta feature, and is available only to
-    users who have signed up for access to Beta-release features. `Enable Beta features in your account settings
-    <https://control.divio.com/account/contact/>`_.
-
-    Some limitations apply to the current version of this functionality. In order to import a repository, at the
-    time of import:
+    Some limitations apply to the current version of this functionality. At the time of import:
 
     * you will need to enable write access on the repository's deploy key
-    * the repository will need a ``master`` branch
 
-    Once imported, you can remove the write access and can delete the ``master`` branch if you don't need it.
+    Once imported, you can remove the write access.
 
 
 Connect your local application to the cloud project

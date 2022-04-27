@@ -46,7 +46,7 @@ Start a project
     ``divio app up``, ``docker-compose up`` or ``docker-compose run --rm --service-ports web``
 
 Stop a project
-    ``divio app stop``, or exit the command with Control-C.
+    ``divio app down``, or exit the command with Control-C.
 
 
 Working inside the containerised environment
