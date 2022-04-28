@@ -124,9 +124,9 @@ an access token to paste into the prompt. The access token is hidden for securit
 
 ..  admonition:: Note for Windows users
 
-    If your divio login fails with an invalid token, it could be that the pasting is not working properly and you 
+    If your divio login fails with an invalid token, it could be that the pasting is not working properly and you can
     either *right click* **once** and press *enter* or enable the Ctrl+Shift+C/V as Copy/Paste (Check the box in the 
-    “Command Prompt”/ “Windows Powershell” Properties window) and use Ctrl + Shift + V to paste your access token.
+    “Command Prompt”/ “Windows Powershell” Properties window) and use Ctrl+Shift+V to paste your access token.
 
 
 .. _add-public-key:
