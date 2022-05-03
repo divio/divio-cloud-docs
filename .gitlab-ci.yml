@@ -1,0 +1,7 @@
+test:
+  image: python:3.7-alpine
+  stage: qa
+  before_script:
+    - pip install --upgrade -r requirements.txt
+  script:
+    - sphinx-build -b html . public
