@@ -4,9 +4,9 @@ include:
     file: base/.gitlab-ci.yml
 
 build:
-  image: python:3.7-alpine
+  image: python:3.8
   stage: build
   before_script:
-    - pip install -r requirements.txt
+    - pip install --upgrade -r requirements.txt
   script:
     - sphinx-build -b html . public

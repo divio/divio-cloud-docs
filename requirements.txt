@@ -95,7 +95,7 @@ sphinx-autobuild==2021.3.14
     # via -r requirements.in
 sphinx-click==3.1.0
     # via -r requirements.in
-sphinx-inline-tabs==2021.8.17b10
+sphinx-inline-tabs==2022.1.2b11
     # via -r requirements.in
 sphinx-notfound-page==0.8
     # via -r requirements.in
