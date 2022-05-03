@@ -1,4 +1,4 @@
-test:
+linting:
   image: python:3.7-alpine
   stage: qa
   before_script:
