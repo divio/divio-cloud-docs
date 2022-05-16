@@ -5,8 +5,8 @@
 Make changes and deploy them
 ===================================
 
-Next, we're going to install a new package, `Django Axes <https://github.com/jazzband/django-axes>`_, into the project
-(Django Axes keeps track of log-in attempts). Then we'll test it and deploy it to the cloud.
+Next, we're going to install a new package, `Django Axes <https://github.com/jazzband/django-axes>`_, into the 
+application (Django Axes keeps track of log-in attempts). Then we'll test it and deploy it to the cloud.
 
 
 .. _tutorial-add-requirements:
@@ -16,8 +16,8 @@ Install a package
 
 To be used in a containerised system, packages must be built into the image, otherwise the next time a container is
 launched, the package will not be there. The image is built by the ``Dockerfile``, and in our ``Dockerfile`` for Django
-projects, this includes an instruction to process the project's ``requirements.in`` file with Pip. This is where the
-package needs to be added. Open ``requirements.in`` and at the end of it add a new line:
+applications, this includes an instruction to process the application's ``requirements.in`` file with Pip. This is 
+where the package needs to be added. Open ``requirements.in`` and at the end of it add a new line:
 
 ..  code-block:: bash
 
@@ -26,7 +26,7 @@ package needs to be added. Open ``requirements.in`` and at the end of it add a n
 It's important to pin dependencies to a particular version this way; it helps ensure that we don't run into unwanted
 surprises if the package is updated, and the new version introduces an incompatibility.
 
-Now you can build the project again by running::
+Now you can build the application again by running::
 
     docker-compose build
 
@@ -34,7 +34,7 @@ Now you can build the project again by running::
 Configure the Django settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Django Axes requires that it be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Add ``axes`` to the
+Django Axes requires that it be listed in the application's ``INSTALLED_APPS``, in ``settings.py``. Add ``axes`` to the
 list:
 
 ..  code-block:: python
@@ -63,10 +63,10 @@ Django Axes introduces new database tables, so we need to run migrations:
 inside the containerised environment, we precede each one with ``docker-compose run web``.)
 
 
-Check the project
---------------------
+Check the application
+---------------------
 
-If you launch the project again with ``docker-compose up`` you'll find Django Axes in the admin:
+If you launch the application again with ``docker-compose up`` you'll find Django Axes in the admin:
 
 .. image:: /images/axes.png
    :alt: 'Django Axes in the admin'
@@ -88,7 +88,7 @@ We made changes to two files (``requirements.in``, ``settings.py``). So:
     git commit -m "Added Django Axes"
     git push
 
-On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
+On the application Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
 using the Control Panel, or by running:
 
 ..  code-block:: bash

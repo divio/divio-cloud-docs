@@ -7,10 +7,10 @@
 A brief explanation of Aldryn Addons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This project uses the optional Aldryn Addons system, which makes it possible for projects to configure themselves. For
-example, you can can find all the configuration that Aldryn Django does for Django settings in
+This application uses the optional Aldryn Addons system, which makes it possible for applications to configure 
+themselves. For example, you can can find all the configuration that Aldryn Django does for Django settings in
 ``addons/aldryn-django/aldryn_config.py``. (Aldryn Django is simply a convenience wrapper for Django - the Django used
-by your project is a wholly standard Django installation obtained from PyPI.)
+by your application is a wholly standard Django installation obtained from PyPI.)
 
 *You don't have to use Aldryn Addons* on Divio; if you prefer to manage settings manually, that will work just as well.
 However it makes development much faster, as it takes care of all the settings that would otherwise need to be managed

@@ -26,7 +26,7 @@ Load-balancer IP addresses
 
 A partial exception to this is the IP addresses of our load-balancers, which can be regarded as semi-static.
 
-Customers' projects may be attached to domains for which CNAMES cannot used (that is, bare domains such as
+Customers' applications may be attached to domains for which CNAMES cannot used (that is, bare domains such as
 ``example.com``, rather than sub-domains such as ``www.example.com``). In this case we recommend using ALIAS records.
 Not all DNS providers support ALIAS, and in those cases it is necessary to use A records, which require IP addresses.
 
@@ -35,12 +35,12 @@ rely on them. All the same, even these occasionally must be amended. In that eve
 advance to minimise disruption.
 
 
-Implications for customer projects
-----------------------------------
+Implications for customer applications
+--------------------------------------
 
-Occasionally a fixed IP address for a customer's project might be desired for:
+Occasionally a fixed IP address for a customer's application might be desired for:
 
-* incoming connections, such as a client connection to an API running in the project
+* incoming connections, such as a client connection to an API running in the application
 * outgoing connections, such as a connection to an external API, where the IP address is required for whitelisting
   purposes
 
@@ -63,7 +63,7 @@ Other options
 In some cases, it may be strictly necessary for an application running on Divio to present an unvarying IP address or
 range of addresses to an external service.
 
-In such cases, for projects running in private regions only, a number of solutions can be implemented:
+In such cases, for applications running in private regions only, a number of solutions can be implemented:
 
 * a dedicated proxy to redirect traffic from a fixed IP address to the application
 * a NAT gateway with a fixed external IP address

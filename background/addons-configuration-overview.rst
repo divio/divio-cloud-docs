@@ -5,7 +5,7 @@ Working with Django addons (legacy)
 
 ..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
-In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the
+In Django applications, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the
 ``settings.py`` file).
 
 In Aldryn addons - those that include an ``aldryn_config.py`` file - many of these settings will be automatically
@@ -20,7 +20,7 @@ be configured. They are then applied to the settings module via the lines::
 From this point in the settings module, those settings that were automatically configured by the addon will be available
 in the ``settings.py`` file.
 
-For example, in a Django project, you will find a file::
+For example, in a Django application, you will find a file::
 
   addons/aldryn-django/aldryn_config.py
 
@@ -33,9 +33,9 @@ Via addon settings in the Control Panel
 ---------------------------------------
 
 An addon can expose options for configuration in the Control Panel interface. For example, Aldryn Django has a
-:ref:`PREFIX_DEFAULT_LANGUAGE` option. This will apply to all environments of the project.
+:ref:`PREFIX_DEFAULT_LANGUAGE` option. This will apply to all environments of the application.
 
-The value is stored in JSON. You can find the JSON file in the project locally, for example
+The value is stored in JSON. You can find the JSON file in the application locally, for example
 ``addons/aldryn-django/settings.json``.
 
 
@@ -58,7 +58,7 @@ Via automatically applied environment variables
 
 Some environment variables are provided automatically, and you don't need to do anything about them at all.
 
-Each project environment has its own variables provided for services such as the database (:ref:`DEFAULT_DATABASE_DSN
+Each application environment has its own variables provided for services such as the database (:ref:`DEFAULT_DATABASE_DSN
 <env-var-database-dsn>`), media storage (:ref:`DEFAULT_STORAGE_DSN <env-var-storage-dsn>`) and so on. Locally, the
 variables are saved in the ``.env-local`` file and :ref:`loaded into the environment via docker compose
 <docker-compose-env>`.
@@ -149,21 +149,21 @@ For an addon "Susan Example Application"::
 All addons have an ``aldryn_config.py`` file that takes care of settings, which
 are then loaded into :ref:`settings.py <settings.py>`.
 
-This means that any settings you need to apply in a project can't simply be
+This means that any settings you need to apply in an application can't simply be
 applied in your ``settings.py`` if an addon also needs access to them.
 
 For example, nearly every addon will add a package, or sometimes several, to
 ``INSTALLED_APPS``. If you were to assign do ``INSTALLED_APPS = [...]`` in the
-usual way, you would overwrite the existing assignments and break the project.
+usual way, you would overwrite the existing assignments and break the application.
 That's why our ``settings.py`` uses::
 
     INSTALLED_APPS.extend([
-        # add your project specific apps here
+        # add your application specific apps here
     ])
 
 The same goes for middleware, and other settings.
 
-``aldryn_config.py`` is loaded into the Django project at runtime, so any
+``aldryn_config.py`` is loaded into the Django application at runtime, so any
 changes are picked up when and reloaded automatically when developing.
 
 ``aldryn_config.py`` is an ideal place to check for environment variables that
@@ -223,38 +223,38 @@ below are those that will be specific to your addon:
 Django addons and templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Templates at the project level will override templates at the
+Templates at the application level will override templates at the
 application level if they are on similar paths. This is standard Django behaviour,
 allowing application developers to provide templates that can easily be
 customised.
 
 
-On initial project creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+On initial application creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For your convenience, when you first create a project, any templates in addons
-are copied to the project level so you have them right at hand (*if* the addon's
+For your convenience, when you first create an application, any templates in addons
+are copied to the application level so you have them right at hand (*if* the addon's
 :ref:`package name and inner application name match <addon_application_naming>`.)
 
 For example, templates from Aldryn News & Blog will be copied to
-``templates/aldryn_newsblog/`` in your project.
+``templates/aldryn_newsblog/`` in your application.
 
-If a template does not exist in the project's ``templates`` directory, Django
+If a template does not exist in the application's ``templates`` directory, Django
 will simply fall back to the one in the addon itself.
 
 
 Subsequent addon updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After templates have been copied to the project's ``templates`` directory, they
-will not be copied again, so as not to overwrite any changes the project
+After templates have been copied to the application's ``templates`` directory, they
+will not be copied again, so as not to overwrite any changes the application
 developer may have made. However, this does mean that if an addon is
 subsequently updated and its templates change, those changes will not appear in
-your project.
+your application.
 
 In this case:
 
-* if you have made changes to the templates in your project, you will need to
+* if you have made changes to the templates in your application, you will need to
   obtain any updated templates and merge them with your own versions
 * if you have not made any changes, you can simply delete your local versions
   and Django will use the updated application templates.

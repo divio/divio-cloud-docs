@@ -5,10 +5,10 @@ Local commands cheatsheet
 
 .. _cheatsheet-project-resource-management:
 
-Project resource management
----------------------------
+Application resource management
+-------------------------------
 
-Set up a project
+Set up an application
     ``divio app setup <slug>``
 
 Deploy Cloud server
@@ -42,10 +42,10 @@ Manage environment variables
 Running the local server
 ------------------------
 
-Start a project
+Start an application
     ``divio app up``, ``docker-compose up`` or ``docker-compose run --rm --service-ports web``
 
-Stop a project
+Stop an application
     ``divio app down``, or exit the command with Control-C.
 
 

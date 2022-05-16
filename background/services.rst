@@ -24,9 +24,9 @@ Service management (Beta)
 
     The Services view is currently provided as a Beta feature.
 
-As well as its application code, a Divio project can include various services that are provided independently, such as
-a database, media storage, a message queue and so on. These can be added, removed and configured in the *Services* view
-of any project.
+As well as its application code, a Divio application can include various services that are provided independently, such 
+as a database, media storage, a message queue and so on. These can be added, removed and configured in the *Services* 
+view of any application.
 
 
 .. image:: /images/services.png
@@ -35,7 +35,7 @@ of any project.
 
 --------
 
-Available services depend on the project's region. For example, S3 media storage is provided on AWS regions, and MS Blob storage on Azure regions.
+Available services depend on the application's region. For example, S3 media storage is provided on AWS regions, and MS Blob storage on Azure regions.
 
 See :ref:`Available services <available-services>` for an outline of services currently provided.
 
@@ -124,7 +124,7 @@ Database
 
 We provide Postgres and MySQL databases by default; other database systems can be provided on request.
 
-Postgres is our database of choice, and configured by default with all projects.
+Postgres is our database of choice, and configured by default with all applications.
 
 Databases can use public (shared) or private clusters in the same region as the web application.
 
@@ -134,9 +134,9 @@ Databases can use public (shared) or private clusters in the same region as the 
 Media object storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Default file storage in Divio projects is handled by dedicated storage and hosting providers.
+Default file storage in Divio applications is handled by dedicated storage and hosting providers.
 
-Depending on the project's region, these can be S3 providers such as `Amazon Web Services's S3 service
+Depending on the application's region, these can be S3 providers such as `Amazon Web Services's S3 service
 <https://aws.amazon.com/s3/>`_ or a generic S3 hosting service via another provider, or `MS Azure Blob storage <https://azure.microsoft.com/en-us/services/storage/blobs/>`_.
 
 By default, media files are served by a Content Delivery Network in order to provide better performance.

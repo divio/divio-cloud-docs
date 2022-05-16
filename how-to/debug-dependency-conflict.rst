@@ -3,7 +3,7 @@
 How to identify and resolve a dependency conflict
 =================================================
 
-Occasionally when running a deployment on the Cloud or building a project locally, the process will fail, with a message like:
+Occasionally when running a deployment on the Cloud or building an application locally, the process will fail, with a message like:
 
 ..  code-block:: text
 
@@ -11,7 +11,7 @@ Occasionally when running a deployment on the Cloud or building a project locall
     && pip-reqs resolve && pip install --no-index --no-deps --requirement
     requirements.urls' returned a non-zero code: 1
 
-This tells us that pip ran into problems while processing the project's requirements. Resolving this
+This tells us that pip ran into problems while processing the application's requirements. Resolving this
 requires a little detective work. The good news is that the information you require is provided,
 and the process for working through it to find the answer is set out below.
 
@@ -35,7 +35,7 @@ The highlighted line tells us what the problem is: pip could not find a version 
 matched **all** the listed constraints - naturally, because it's impossible to have a version of
 Django that **equals** 1.8.18, **is less than** 1.11, and **is also greater than or equal to** 1.11.
 
-So, between them, the packages being installed in the project have some mutually incompatible
+So, between them, the packages being installed in the application have some mutually incompatible
 requirements. This can often be caused by *unpinned dependencies*, when a package is listed as a
 requirement without specifying a version.
 
@@ -45,10 +45,10 @@ hand, and ``>=1.11`` on the other.
 In your case, the packages and version numbers affected will be different, but the principle is the
 same.
 
-..  admonition:: But I didn't change anything in my project!
+..  admonition:: But I didn't change anything in my application!
 
-    Because of the way pip works, even if you don't change anything at all in your project, simply
-    rebuilding it can pull in new packages, if they were unpinned. Whenever the project is built,
+    Because of the way pip works, even if you don't change anything at all in your application, simply
+    rebuilding it can pull in new packages, if they were unpinned. Whenever the application is built,
     it will select the latest versions of unpinned packages, and those versions may introduce new,
     incompatible, requirements of their own.
 
@@ -119,8 +119,8 @@ meaning that all those packages have specified a version of djangocms-attributes
 
     djangocms-attributes-field<0.4.0
 
-to the project's ``requirements.in`` file (*outside* the section that will be overwritten) and
-test it, by rebuilding the project with::
+to the application's ``requirements.in`` file (*outside* the section that will be overwritten) and
+test it, by rebuilding the application with::
 
     docker-compose build web
 
@@ -142,7 +142,7 @@ How to prevent this from happening again
 
 In general, the answer is to pin packages firmly, in each place that requirements are given.
 
-A project's requirements can be specified:
+An application's requirements can be specified:
 
 * by the addons system in the Control Panel
 * in its ``requirements.in`` (addons are automatically listed here too)

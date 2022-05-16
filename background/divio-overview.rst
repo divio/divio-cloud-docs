@@ -33,8 +33,8 @@ Docker containers. More information about our infrastructure can be provided on 
 Local development environment
 --------------------------------
 
-Thanks to Docker containerisation, we are able to provide :ref:`multiple environments for each project
-<divio-project-environments>`, including a local development environment the replicates the project's cloud
+Thanks to Docker containerisation, we are able to provide :ref:`multiple environments for each application
+<divio-project-environments>`, including a local development environment the replicates the application's cloud
 environments.
 
 Our toolchain helps set up the local environment, transfer data and media files to and from the cloud, and manage

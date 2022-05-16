@@ -45,7 +45,7 @@ How it works on Divio
     ssl-certificates
 
 
-Projects
+Applications
 ------------------
 
 .. toctree::
@@ -58,7 +58,7 @@ Projects
     project-about-boilerplates
 
 
-Recommended project configurations
+Recommended application configurations
 ------------------------------------------------
 
 .. toctree::

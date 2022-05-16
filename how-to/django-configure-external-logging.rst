@@ -3,14 +3,14 @@
 How to configure an external logging service
 ============================================
 
-Your Test and Live servers have their own runtime logs, available from the project's dashboard in the Control Panel.
+Your Test and Live servers have their own runtime logs, available from the application's dashboard in the Control Panel.
 
 These logs are provided as a convenience. However they are limited to only the last 1000 lines of output and are not
 intended to be a comprehensive logging system for production purposes.
 
 For that we recommend subscribing to a dedicated logging service, of which there are several, and configuring your
-project to route different kinds of logs (access, errors and so on) to different destinations, so you can use them more
-effectively.
+application to route different kinds of logs (access, errors and so on) to different destinations, so you can use them 
+more effectively.
 
 Example using LogDNA
 --------------------
@@ -21,14 +21,14 @@ will be the same, with only some minor differences.
 If you don't already have a LogDNA account, visit https://logdna.com and register for a free account. LogDNA will
 provide you with an *ingestion key*.
 
-Set your project up locally. We'll assume that you are using a standard Divio project using Aldryn Django.
+Set your application up locally. We'll assume that you are using a standard Divio application using Aldryn Django.
 
 
 Install the ``logdna`` Python library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will need to add ``logdna`` to its requirements (strongly recommended: :ref:`pin it to a particular version
-<pinning-dependencies-good-practice>`) and rebuild the project (``docker-compose build``).
+<pinning-dependencies-good-practice>`) and rebuild the application (``docker-compose build``).
 
 This package provides a new logging handler (``logdna.LogDNAHandler``) that will forward log messages to LogDNA.
 

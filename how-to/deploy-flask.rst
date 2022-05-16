@@ -1,6 +1,6 @@
 .. meta::
    :description:
-       This guide explains step-by-step how to set up a Flask project with Docker, in accordance with
+       This guide explains step-by-step how to set up a Flask application with Docker, in accordance with
        Twelve-factor principles, for deployment on Divio.
    :keywords: Docker, Flask, Postgres, MySQL, S3
 
@@ -11,7 +11,7 @@ How to configure an existing Flask application for deployment on Divio
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 
-The steps here should work with any Flask project, and include configuration for:
+The steps here should work with any Flask application, and include configuration for:
 
 * Postgres or MySQL database
 * cloud media storage using S3
@@ -60,7 +60,7 @@ freeze`` to get a full list). You will probably need to include some of the foll
     uwsgi==2.0.19.1
     gunicorn==20.0.4
 
-Check that the version of Flask is correct, and include any other Python components required by your project.
+Check that the version of Flask is correct, and include any other Python components required by your application.
 
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-file-building.rst

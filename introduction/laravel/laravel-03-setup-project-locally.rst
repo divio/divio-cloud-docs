@@ -12,23 +12,23 @@
 Run the set-up script
 ---------------------
 
-This step is required as part of the beta implementation of the PHP/Laravel project type, and will be
+This step is required as part of the beta implementation of the PHP/Laravel application type, and will be
 refined in later releases.
 
-You'll find a script in ``divio/setup.php`` that helps set up the project for local development purposes, and performs
-database migrations. Run it with:
+You'll find a script in ``divio/setup.php`` that helps set up the application for local development purposes, and 
+performs database migrations. Run it with:
 
 ..  code-block:: bash
 
     docker-compose run web php /app/divio/setup.php
 
-This takes a few minutes. Once complete, you can run your project.
+This takes a few minutes. Once complete, you can run your application.
 
 
-Start the local project
--------------------------
+Start the local application
+---------------------------
 
-Start the project by running ``docker-compose up`` in the terminal::
+Start the application by running ``docker-compose up`` in the terminal::
 
     ➜ docker-compose up
     tutorial-project_database_default_1 is up-to-date
@@ -42,13 +42,13 @@ Start the project by running ``docker-compose up`` in the terminal::
     web_1               | Laravel development server started: http://0.0.0.0:80
 
 
-Open the project in your web browser by visiting http://127.0.0.1:8000.
+Open the application in your web browser by visiting http://127.0.0.1:8000.
 
 (You may notice above that Laravel claims to be running on port 80, not port 8000. It is - but that's only *inside* the
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping
 <docker-compose-web>`.)
 
-``CONTROL-C`` will stop the project.
+``CONTROL-C`` will stop the application.
 
 ..  include:: /introduction/includes/03-local-2-useful-commands.rst
 

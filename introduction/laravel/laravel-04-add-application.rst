@@ -8,7 +8,8 @@ Make changes and deploy them
 Make a change
 -------------
 
-We'll make a simple change to the project code. Find the file ``resources/views/welcome.blade.php``, which is responsible for the Laravel welcome page, and adjust the line controlling the background colour, for example:
+We'll make a simple change to the application code. Find the file ``resources/views/welcome.blade.php``, which is 
+responsible for the Laravel welcome page, and adjust the line controlling the background colour, for example:
 
 ..  code-block:: php
     :emphasize-lines: 4
@@ -36,7 +37,7 @@ To deploy your changes to the Test server, push your changes, and run a deployme
     git commit -m "Change background colour of welcome page"
     git push origin master
 
-On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
+On the application Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
 using the Control Panel, or by running:
 
 ..  code-block:: bash

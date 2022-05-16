@@ -14,16 +14,16 @@ The ``docker-compose.yml`` file
 Function of ``docker-compose.yml``
 ------------------------------------------------------------
 
-..  admonition:: ``docker-compose.yml`` is used exclusively for local project set-up
+..  admonition:: ``docker-compose.yml`` is used exclusively for local application set-up
 
-    In the Divio project architecture, the ``docker-compose.yml`` file is **not** used for cloud deployments, but
+    In the Divio application architecture, the ``docker-compose.yml`` file is **not** used for cloud deployments, but
     **only** for configuration of the local environment. On the cloud, the deployment is taken care of by dedicated
     systems on our servers.
 
     This means that entries in or changes to ``docker-compose.yml`` will not affect cloud deployments in any way.
 
 In order to do something useful with containers, they have to be arranged - *orchestrated* - as
-part of a project, usually referred to as an 'application'.
+part of an application, usually referred to as an 'application'.
 
 There are multiple ways of orchestrating a Docker application, but Docker Compose is probably the most human-friendly.
 It's what we use for our local development environments.
@@ -38,19 +38,20 @@ Services defined in ``docker-compose.yml``
 
 In a ``docker-compose.yml`` file, *services* represent the *containers* that will be created in the application.
 
-When you create a new Divio project using one of our :ref:`quickstart repositories <how-to-use-quickstart>` or one of
-defined project types, it will include a ``docker-compose.yml`` file ready for local use, with the services already
-defined.
+When you create a new Divio application using one of our :ref:`quickstart repositories <how-to-use-quickstart>` or one 
+of defined application types, it will include a ``docker-compose.yml`` file ready for local use, with the services 
+already defined.
 
-If you start with a *Build your own* project type, you will need to assemble the ``docker-compose.yml`` file yourself.
-This is a fairly straightforward process once you know what you are doing. Our :ref:`How to deploy a web application
-<deploy-generic-docker-compose>` guide includes steps for creating a complete ``docker-compose.yml`` file from scratch.
+If you start with a *Build your own* application type, you will need to assemble the ``docker-compose.yml`` file 
+yourself. This is a fairly straightforward process once you know what you are doing. Our :ref:`How to deploy a web 
+application <deploy-generic-docker-compose>` guide includes steps for creating a complete ``docker-compose.yml`` file 
+from scratch.
 
-For a working local project, various things need to be defined in the file. In a Divio project, there will be a ``web``
-service, that's built in a container using the ``Dockerfile``. There will typically also be a ``db`` service, from a
-standard ``postgres`` or other database image.
+For a working local application, various things need to be defined in the file. In a Divio application, there will be a 
+``web`` service, that's built in a container using the ``Dockerfile``. There will typically also be a ``db`` service, 
+from a standard ``postgres`` or other database image.
 
-Most Divio projects will use a ``docker-compose.yml`` that contains entries along these lines.
+Most Divio applications will use a ``docker-compose.yml`` that contains entries along these lines.
 
 ..  code-block:: yaml
 
@@ -75,7 +76,7 @@ Most Divio projects will use a ``docker-compose.yml`` that contains entries alon
      volumes:
       - ".:/app:rw"
 
-Some projects will have additional services (such as Celery for example) defined.
+Some applications will have additional services (such as Celery for example) defined.
 
 Let's look at the components of the file more closely.
 
@@ -119,22 +120,22 @@ For example::
       - ".:/app:rw"
       - "./data:/data:rw"
 
-will mount the entire project code (at the relative path ``.``) as the ``/app`` directory inside the container, even
+will mount the entire application code (at the relative path ``.``) as the ``/app`` directory inside the container, even
 if there was already an ``/app`` directory there*, in *read-write* mode (i.e. the container can write as well as
 read files on the host).
 
-This allows you to make changes to the project from your computer during the local development process, that will be
-picked up by project inside Docker. These changes will be available to the project only as long as the host directory
-is mounted inside the container. In order to be made permanent, they need to be committed into the repository so that
-they will be picked up when the image and container are rebuilt.
+This allows you to make changes to the application from your computer during the local development process, that will be
+picked up by the application inside Docker. These changes will be available to the application only as long as the host 
+directory is mounted inside the container. In order to be made permanent, they need to be committed into the repository 
+so that they will be picked up when the image and container are rebuilt.
 
 ..  admonition:: Implications for local testing
 
-    Nearly everything in ``/app`` in the container is also present in the project repository and thus on the host
+    Nearly everything in ``/app`` in the container is also present in the application repository and thus on the host
     machine. This means that it is safe to replace the container's ``/app`` files with those from the host.
 
     However, any files in ``/app`` that are placed there during the build process, i.e. the execution of the
-    ``Dockerfile``, **will not be available in the local environment**. For a standard Django project, these will
+    ``Dockerfile``, **will not be available in the local environment**. For a standard Django application, these will
     include:
 
     * the compiled pip requirements, in ``requirements.txt``
@@ -165,8 +166,8 @@ The database container service, ``database_default``
 
 The second definition is for the ``database_default`` service.
 
-On the cloud, the project's database runs on one of our database clusters; locally, it runs on a Postgres instance in
-``database_default``.
+On the cloud, the application's database runs on one of our database clusters; locally, it runs on a Postgres instance 
+in ``database_default``.
 
 The directives mean:
 
@@ -190,7 +191,7 @@ See :ref:`expose-database-ports` for an example of adding configuration to
 
 ..  admonition:: Required database service configuration
 
-    The Divio CLI expects that the database service will be called ``database_default`` (or, in some older projects,
+    The Divio CLI expects that the database service will be called ``database_default`` (or, in some older applications,
     ``db``). If the name is changed, operations such as ``divio app pull db`` will fail.
 
     The ``volumes`` directive needs to map the container's ``/app`` directory as described above, for the same reason.

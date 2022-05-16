@@ -15,7 +15,7 @@ more productive. This is what we'll consider here.
 
 Create a ``docker-compose.yml`` file, :ref:`for local development purposes <docker-compose-local>`. This will replicate
 the ``web`` image used in cloud deployments, allowing you to run the application in an environment as close to that of
-the cloud servers as possible. Amongst other things, it will allow the project to use a Postgres or MySQL database
+the cloud servers as possible. Amongst other things, it will allow the application to use a Postgres or MySQL database
 (choose the appropriate lines below) running in a local container, and provides convenient access to files inside the
 containerised application.
 

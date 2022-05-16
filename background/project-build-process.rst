@@ -39,7 +39,7 @@ build process, :ref:`use the ENV command to supply them via the Dockerfile <sett
 
 A container is launched from the image, and any :ref:`release commands <release-commands>` applied will be executed.
 
-(In the case of an Aldryn Django project, the ``MIGRATION_COMMANDS`` setting also applies release commands. This
+(In the case of an Aldryn Django application, the ``MIGRATION_COMMANDS`` setting also applies release commands. This
 setting can be populated automatically by Aldryn Addons.)
 
 
@@ -48,7 +48,7 @@ setting can be populated automatically by Aldryn Addons.)
 5. Scaling
 ~~~~~~~~~~
 
-New containers are launched in parallel, according to the number specified in the project's subscription.
+New containers are launched in parallel, according to the number specified in the application's subscription.
 
 The application controller tests each container for an HTTP response, for up to 300 attempts.
 
@@ -79,7 +79,7 @@ Differences between cloud deployment and local builds
   provided in a separate Docker container, the media storage will be handled via local file storage, and so on.
   docker-compose will configure this local functionality.
 * **Docker layer caching** :ref:`on the cloud we don't cache, locally <docker-layer-caching>` is used.
-* **Release commands**: locally, these need to be executed manually (in Aldryn Django projects, :ref:`docker-compose
+* **Release commands**: locally, these need to be executed manually (in Aldryn Django applications, :ref:`docker-compose
   run --rm web start migrate <run-migration-commands>` can be used to do this)
 
 
@@ -112,12 +112,12 @@ unexpected results:
   builds use different versions, depending on what is in each host's cache.
 
 When an image is built, even if nothing in the repository has changed, the image may be different from
-the previously-built image. Typically, this can affect project dependencies. If a project's build instructions
+the previously-built image. Typically, this can affect application dependencies. If an application's build instructions
 specify a component, the installer (which could be ``apt``, ``pip`` or ``npm``) will typically try to install the
 latest version of the component, unless a particular version is selected.
 
 This means that if a new version has been released, the next deployment will use that - without warning, and with
-possibly unexpected results. It is therefore strongly recommended to pin package versions in your project's
+possibly unexpected results. It is therefore strongly recommended to pin package versions in your application's
 installation lists wherever possible to prevent this. (See also :ref:`manage-dependencies`.)
 
 
@@ -128,7 +128,7 @@ In some circumstances, the build process will *not* build a new image:
 
 * If there are no new commits in the repository, and an image has been built already for the *Test*
   server, that image will be re-used for the *Live* server.
-* When deploying a mirror project, the image already created for the original will be re-used.
+* When deploying a mirror application, the image already created for the original will be re-used.
 
 
 Local builds

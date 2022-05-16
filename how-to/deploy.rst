@@ -13,31 +13,30 @@ The steps outlined here assume that you have already:
 
 .. _deploy-create-new-project:
 
-Create a new project on Divio
+Create a new application on Divio
 --------------------------------------------
 
-The first step is to create a project on the Divio Control Panel, with your application repository. There are two ways
-of doing this:
+The first step is to create an application on the Divio Control Panel, with your application repository. There are two ways of doing this:
 
-* *New project*, in which you will push your local Git code to Divio's Git server
-* *Import project*, in which your new Divio project will be created from existing Git repository
+* *New application*, in which you will push your local Git code to Divio's Git server
+* *Import application*, in which your new Divio application will be created from existing Git repository
 
 ..  image:: /images/new-project.png
-    :alt: 'New project options'
+    :alt: 'New application options'
     :width: 222
 
 
-Creating a new project
-~~~~~~~~~~~~~~~~~~~~~~
+Creating a new application
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Divio Control Panel, add a `New project <https://control.divio.com/control/project/create/>`_. Select the
+In the Divio Control Panel, add a `New application <https://control.divio.com/control/project/create/>`_. Select the
 *Build your own* option.
 
 
-Importing a project from a Git repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Importing an application from a Git repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Divio Control Panel, `Import a project
+In the Divio Control Panel, `Import an application
 <https://control.divio.com/control/project/import/>`_. Once you have supplied the Git repository URL, you will need
 to use the public key provided to create a Deploy Key on the repository.
 
@@ -53,24 +52,24 @@ will send a signal to update the Divio Control Panel.
     Once imported, you can remove the write access.
 
 
-Connect your local application to the cloud project
+Connect your local application to the cloud application
 ------------------------------------------------------------------
 
-Connecting a local application to a Divio project on the cloud allows you to interact with and
-manage the cloud project from your command-line.
+Connecting a local application to a Divio application on the cloud allows you to interact with and
+manage the cloud application from your command-line.
 
-The cloud project has a *slug*, based on the name you gave it when you created it. Run:
+The cloud application has a *slug*, based on the name you gave it when you created it. Run:
 
 ..  code-block:: bash
 
     divio app list -g
 
-to get your project's slug.
+to get your application's slug.
 
 You can also get the slug from the Control Panel:
 
 ..  image:: /images/intro-slug.png
-    :alt: 'Project slug'
+    :alt: 'Application slug'
     :width: 483
 
 Run:
@@ -79,19 +78,19 @@ Run:
 
     divio app configure
 
-and provide the slug. (``divio app configure`` creates a new file in the project at ``.divio/config.json``,
+and provide the slug. (``divio app configure`` creates a new file in the application at ``.divio/config.json``,
 containing the configuration data.)
 
 
 Configure Git (if required)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using Divio's own Git server for this project rather than an external Git provider, add the project's Git
-repository as a remote, for example:
+If you are using Divio's own Git server for this application rather than an external Git provider, add the 
+application's Git repository as a remote, for example:
 
 ..  code-block:: bash
 
-    git remote add divio git@git.divio.com:my-divio-project.git
+    git remote add divio git@git.divio.com:my-divio-application.git
 
 The Git URL is provided by the ``divio app configure`` command above, and in the *Repository* view of the Control
 Panel.
@@ -151,6 +150,6 @@ Deploy with:
 
 (or use the **Deploy** button in the Control Panel).
 
-Once deployed, your project will be accessible via the URLs shown in the Control Panel for each environment.
+Once deployed, your application will be accessible via the URLs shown in the Control Panel for each environment.
 
 See our :ref:`go-live checklist <live-checklist>` for a production deployment.

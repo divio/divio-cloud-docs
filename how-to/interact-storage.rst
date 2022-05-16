@@ -16,18 +16,18 @@
 
 .. _interact-storage:
 
-How to interact with your project's cloud media storage
-=======================================================
+How to interact with your application's cloud media storage
+===========================================================
 
 ..  seealso::
 
     :ref:`work-media-storage`.
 
-Your cloud project's media file storage is provided as a service. The available storage depends on the Divio region
-your project uses. Most projects use Amazon Web Services's S3 service, or another S3 provider. Others use Microsoft
-Azure blob storage.
+Your cloud application's media file storage is provided as a service. The available storage depends on the Divio region
+your application uses. Most applications use Amazon Web Services's S3 service, or another S3 provider. Others use 
+Microsoft Azure blob storage.
 
-Locally, your projects store their media in the ``/data/media`` directory, which you can interact with directly. You
+Locally, your applications store their media in the ``/data/media`` directory, which you can interact with directly. You
 can :ref:`use the Divio CLI to push and pull media to the cloud <divio_tools_cloud_storage>` if required.
 
 You can also interact directly with the cloud storage service using a suitable client if required, though this is
@@ -229,10 +229,10 @@ Using the client
 Use the Divio CLI for local access to Cloud storage
 -----------------------------------------------------
 
-The project's media files can be found in the ``/data/media`` directory, and
+The application's media files can be found in the ``/data/media`` directory, and
 can be managed and manipulated in the normal way on your own computer.
 
-Be aware that if you edit project files locally, your operating system may save
+Be aware that if you edit application files locally, your operating system may save
 some hidden files. When you push your media to the cloud, these hidden files
 will be pushed too. This will however not usually present a problem.
 
@@ -303,9 +303,9 @@ This can be done using the AWS CLI's S3 API tool (:ref:`see the notes on how to 
 ..  warning::
 
     You will likely receive a ``GetBucketCors operation: Access Denied`` error when attempting to use the S3 API with
-    buckets on projects created before 10th February 2020. If this occurs, but other operations such as ``aws s3 ls``
-    work as expected, then your bucket will need to be updated. Please contact Divio support so that we can do this for
-    you.
+    buckets on applications created before 10th February 2020. If this occurs, but other operations such as ``aws s3 
+    ls`` work as expected, then your bucket will need to be updated. Please contact Divio support so that we can do 
+    this for you.
 
 
 Now you can check for any existing CORS configuration:

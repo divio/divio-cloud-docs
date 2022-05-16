@@ -47,7 +47,7 @@ example:
 
 ..  include:: /how-to/includes/deploy-common-dockerfile-application-dependencies.rst
 
-For example, in a Python project, you could use:
+For example, in a Python application, you could use:
 
 ..  code-block:: Dockerfile
 

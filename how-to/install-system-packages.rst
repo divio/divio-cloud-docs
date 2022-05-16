@@ -1,15 +1,15 @@
 .. _install-system-packages:
 
-How to install system packages in a project
-===========================================
+How to install system packages in an application
+================================================
 
 ..  seealso::
 
     * :ref:`install-python-dependencies`
 
-All Divio projects are based on a ``Dockerfile`` that starts with base image that includes Linux.
+All Divio applications are based on a ``Dockerfile`` that starts with base image that includes Linux.
 
-If your project requires particular system packages, you can include them in
+If your application requires particular system packages, you can include them in
 the Docker image, by listing the commands required to install them - typically,
 using ``RUN apt-get`` - in the ``Dockerfile``.
 

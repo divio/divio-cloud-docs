@@ -3,7 +3,7 @@
 How to manage your application's environment variables
 ========================================================
 
-Your project relies on environment variables to configure application settings and access to
+Your application relies on environment variables to configure application settings and access to
 storage, database and other services.
 
 Environment variables can be set independently for each environment, whether on the cloud or
@@ -72,7 +72,7 @@ See the :ref:`divio-cli-command-ref` reference for further information.
 Using the Control Panel
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the *Env Variables* view of a project to view (and add) custom variables.
+Use the *Env Variables* view of an application to view (and add) custom variables.
 
 
 In a terminal session to a cloud container
@@ -116,7 +116,7 @@ See the :ref:`divio-cli-command-ref` reference for further information.
 Using the Control Panel
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the *Env Variables* view of a project to view and add custom variables. Variables need to be
+Use the *Env Variables* view of an application to view and add custom variables. Variables need to be
 configured for each environment.
 
 .. _env-var-port:

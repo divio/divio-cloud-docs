@@ -14,9 +14,9 @@ However, there are a number of refinements we can make.
 Set ``DEBUG`` using an environment variable
 --------------------------------------------
 
-``DEBUG`` is hard-coded into the project code. This is not a good idea. We want to be sure that we don't inadvertently
-go into production with ``DEBUG = True``. So, let's make it default to ``False``, and overwrite it only where we need
-it to be True. First, in ``.env-local``:
+``DEBUG`` is hard-coded into the application code. This is not a good idea. We want to be sure that we don't 
+inadvertently go into production with ``DEBUG = True``. So, let's make it default to ``False``, and overwrite it only 
+where we need it to be True. First, in ``.env-local``:
 
 ..  code-block:: text
 
@@ -45,12 +45,11 @@ Divio's cloud hosting environments, it's a bad idea to bake in configuration to 
 others. It's better if we can restrict ``ALLOWED_HOSTS`` to the right domains.
 
 Each Divio cloud environment is provided with a :ref:`DOMAIN <env-var-domain>` environment variable, and (if the
-project uses multiple domains) a :ref:`DOMAIN_ALIASES <env-var-domain-aliases>` environment variable. These can be used
-to configure ``ALLOWED_HOSTS``. You can see what environment variables have been set by using:
+application uses multiple domains) a :ref:`DOMAIN_ALIASES <env-var-domain-aliases>` environment variable. These can be used to configure ``ALLOWED_HOSTS``. You can see what environment variables have been set by using:
 
 ..  code-block:: bash
 
-    divio project env-vars --all
+    divio app env-vars --all
 
 (Use the ``-s live`` option to see the variables for the Live environment.)
 
@@ -175,7 +174,7 @@ on deployment.
 -------------------
 
 
-This completes the basic cycle of project creation, development and deployment, and how to integrate multiple cloud
+This completes the basic cycle of application creation, development and deployment, and how to integrate multiple cloud
 services into an application. You should now be familiar with the fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon these topics. The :ref:`how-to guides <how-to>` in particular cover

@@ -1,6 +1,6 @@
 .. _work-media-storage:
 
-Working with your project's media storage in web applications
+Working with your application's media storage in web applications
 ====================================================================
 
 ..  seealso:::
@@ -12,9 +12,9 @@ Working with your project's media storage in web applications
 Introduction
 ------------
 
-File storage on Divio projects is handled by dedicated storage systems entirely separate from the application. The
-available storage depends on the Divio region your project uses. Most projects use Amazon Web Services's S3 service, or
-another S3 provider. Others use Microsoft Azure blob storage.
+File storage on Divio applications is handled by dedicated storage systems entirely separate from the application. The
+available storage depends on the Divio region your application uses. Most applications use Amazon Web Services's S3 
+service, or another S3 provider. Others use Microsoft Azure blob storage.
 
 In our architecture, the same application may be running in multiple parallel container, each with its own local file
 storage independent of each of the others. Moreover, this storage is not persistent, and exists only for as long as the
@@ -62,7 +62,7 @@ See also :ref:`Django's discussion <django:file storage systems>` of the subject
 File storage in third-party applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ideally, third-party applications in your project should respect this for their own file handling.
+Ideally, third-party applications in your application should respect this for their own file handling.
 
 This is not always the case however. In some cases the application may need to be configured
 explicitly.
@@ -79,7 +79,7 @@ Private file storage
 Our storage backend does not support private file storage (i.e. requiring authentication) on S3
 objects.
 
-If you need private storage, you can define an additional Django storage backend in your project,
+If you need private storage, you can define an additional Django storage backend in your application,
 which sets S3 objects to be private as required.
 
 Whenever you need to manage private files, you will need to invoke this custom backend.
@@ -93,7 +93,7 @@ Alternatively, you can use a bucket of your own with this backend.
 Loading media files into your applications' pages
 -------------------------------------------------
 
-Sometimes an application in your project will need to load media files using JavaScript.
+Sometimes an application in your application will need to load media files using JavaScript.
 
 Since your media files are held on a server under a different domain from the application,
 browsers may refuse to allow this cross-domain loading for security reasons.

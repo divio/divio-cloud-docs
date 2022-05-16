@@ -67,5 +67,5 @@ there too.
 
 ------------
 
-The project can now handle static files, and will do so in an appropriate way for whichever environment the code is
+The application can now handle static files, and will do so in an appropriate way for whichever environment the code is
 running in. The next step is to configure storage and serving of media (i.e. user-uploaded) files.

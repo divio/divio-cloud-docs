@@ -10,5 +10,5 @@
 
 --------------
 
-You have now set up a project in the local environment, and launched it. The next step is to do some further
-development work in the project, test it, and deploy it to the cloud.
+You have now set up an application in the local environment, and launched it. The next step is to do some further
+development work in the application, test it, and deploy it to the cloud.

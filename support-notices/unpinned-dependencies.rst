@@ -17,7 +17,7 @@ Unpinned Python dependencies
 What is an unpinned dependency?
 ========================================
 
-An unpinned dependency is any Python component installed in a project whose version is not exactly specified, for
+An unpinned dependency is any Python component installed in an application whose version is not exactly specified, for
 example::
 
     django
@@ -42,16 +42,17 @@ To obtain a full list, use::
 
     pip freeze
 
-in the project (either locally, using ``docker-compose run web pip freeze``, or in a :ref:`cloud shell <cloud-shell>`.)
+in the application (either locally, using ``docker-compose run web pip freeze``, or in a 
+:ref:`cloud shell <cloud-shell>`.)
 
-The full list should be included in your project's Python requirements file.
+The full list should be included in your application's Python requirements file.
 
-If you are using Aldryn Django in your project, see :ref:`manage-dependencies`.
+If you are using Aldryn Django in your application, see :ref:`manage-dependencies`.
 
 ..  note:
 
     In cloud deployments, Docker layers are not cached, and pip will always find the latest version of a component.
     Locally, Docker Compose caches layers when building an image, and this means that pip will not always include the
     latest version. Therefore problems with unpinned dependencies may become apparent in cloud environments but not
-    locally. Use the ``--no-cache`` option with ``docker-compose build`` to ensure that your local project builds
+    locally. Use the ``--no-cache`` option with ``docker-compose build`` to ensure that your local application builds
     using the same Python dependencies as on the cloud.

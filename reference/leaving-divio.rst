@@ -1,7 +1,7 @@
 Leaving Divio 
 ================
 
-As much as we want to host your projects, we want you to stay with us because you want to, not because you can't leave.
+As much as we want to host your applications, we want you to stay with us because you want to, not because you can't leave.
 
 You're free to leave any time, and you'll find it very easy to take everything with you.
 
@@ -23,5 +23,5 @@ Redeployment elsewhere
 Divio's architecture makes it even easier to redeploy elsewhere. Your entire Divio site is available as a Docker
 container, that can be deployed anywhere that Docker is available.
 
-If you don't want to use Docker, you'll still have a very standard project that you can put into production on another
-platform or server.
+If you don't want to use Docker, you'll still have a very standard application that you can put into production on 
+another platform or server.

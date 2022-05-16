@@ -28,7 +28,7 @@ When you hit **Create addon**, the addon will be registered on the system.
 Add the packaging files
 -----------------------
 
-We need to work in the project's ``addons-dev`` directory. Create a new
+We need to work in the application's ``addons-dev`` directory. Create a new
 directory there with the same name as the *Package Name*.
 
 Select *Package Information* from your addon's menu. Download the packaging
@@ -77,9 +77,9 @@ simply add it as the inner application directory.
     name that matches the *package name* (``susan-example-application``), with underscores
     substituted for the dashes.
 
-    This will allow the Control Panel to copy the application's templates into the project's
-    Git repository when the addon is first installed in a project. If the names don't match,
-    the project will still work, but the templates will not be made available for easy editing.
+    This will allow the Control Panel to copy the application's templates into the application's
+    Git repository when the addon is first installed in an application. If the names don't match,
+    the application will still work, but the templates will not be made available for easy editing.
 
 
 The addon will then contain some additional files:
@@ -180,8 +180,8 @@ for more information.
 Provide URL configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Not all addons will have their own URL configurations that need to be included
-in a project, but if they do, you can add them. See :ref:`how to include an addon's URL configuration <how-to-manage-url-configuration>` for more details.
+Not all addons will have their own URL configurations that need to be included in an application, but if they do, you 
+can add them. See :ref:`how to include an addon's URL configuration <how-to-manage-url-configuration>` for more details.
 
 
 Check the addon
@@ -193,13 +193,13 @@ Test it
 Your addon is now ready to be tested.
 
 Add the package name to the ``INSTALLED_ADDONS`` in ``settings.py``. This
-adds it to the list of addons that the project will “watch”.
+adds it to the list of addons that the application will “watch”.
 
 Run::
 
     divio app develop <package name>
 
-You can test that the project now works as expected.
+You can test that the application now works as expected.
 
 
 Validate it
@@ -228,7 +228,7 @@ Upload with ``divio addon upload``.
 This version of the addon will be placed into the *Alpha* release channel. If
 you visit the its *Versions* page, you'll be able to change the release channel.
 
-Your addon is now available for installation into projects via the control
+Your addon is now available for installation into applications via the control
 panel. If you make it public, other users will be able to install it too.
 
 You can continue uploading new versions of it, as long as each has its own

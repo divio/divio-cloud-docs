@@ -8,7 +8,7 @@
 Maintenance operations
 ==================================
 
-Most operations that take place on Divio projects can be considered routine operations, and will not under normal
+Most operations that take place on Divio applications can be considered routine operations, and will not under normal
 circumstances interrupt the function of web applications.
 
 Some however by their nature are more complex and can require a brief downtime. The most notable example is deployments
@@ -37,13 +37,13 @@ immediately, outside the window.
 Cloudshift region migration
 ------------------------------
 
-Moving your project from one region to another requires a *cloudshift* migration operation. As well as entailing a short
-downtime, it may also require amending external services such as DNS that need to identify the application.
+Moving your application from one region to another requires a *cloudshift* migration operation. As well as entailing a 
+short downtime, it may also require amending external services such as DNS that need to identify the application.
 
 The region migration operation will be performed during a maintenance window.
 
 In the case of DNS changes, we advise reducing DNS TTLs well in advance of the migration, so that when DNS entries
 are changed, disruption is minimised.
 
-Note that a cloudshift operation deploys any outstanding commits on the project's environments, *even if they were not
-previously deployed*.
+Note that a cloudshift operation deploys any outstanding commits on the application's environments, *even if they were 
+not previously deployed*.

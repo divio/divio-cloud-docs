@@ -3,7 +3,7 @@
 How to retrieve invoices
 ========================
 
-To retrieve your invoices, go to the organisation settings of your project and select *invoices*.
+To retrieve your invoices, go to the organisation settings of your application and select *invoices*.
 
 .. image:: /images/guides/organisation-settings.png
    :alt: 'organisation settings'

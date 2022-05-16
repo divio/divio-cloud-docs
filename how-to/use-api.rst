@@ -41,7 +41,7 @@ token from https://control.divio.com/account/desktop-app/access-token/.
 
 ..  warning::
 
-    The access token grants extensive access to you projects on our platform. Never share your access token with any
+    The access token grants extensive access to you applications on our platform. Never share your access token with any
     other user. If you need to use it in an application or script, it is your responsibility to ensure that it is
     transmitted and stored safely.
 

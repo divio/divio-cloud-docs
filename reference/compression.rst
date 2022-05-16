@@ -3,8 +3,8 @@
 File compression in Divio Django applications
 ===============================================
 
-Default behaviour in our projects
----------------------------------
+Default behaviour in our applications
+-------------------------------------
 
 By default, we apply gzip compression to:
 

@@ -53,7 +53,7 @@ about the external resource, e.g.::
 
   ..  Do not change this reference! [or document name]
       Referred to by: tutorial message 51 project-create-base-project
-      Where: in the project creation dialog e.g. https://control.divio.com/control/project/create/#step-1
+      Where: in the application creation dialog e.g. https://control.divio.com/control/project/create/#step-1
       As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
 
   .. _project-creation-platform:
@@ -177,12 +177,12 @@ Sphinx and intersphinx extensions
 ---------------------------------
 
 This allows us to link directly to (for example) references in other Sphinx 
-projects, such as `where we link to django CMS's caching settings <https://docs.
+applications, such as `where we link to django CMS's caching settings <https://docs.
 divio.com/en/latest/reference/caching.html#caching-in-django-cms>`_.
 
 The trick here is that unlike `:ref:` for example, `setting:` is not a natively 
 understood by Sphinx - meaning that there isn't *by default* a way to refer to 
-those in another project. However, we can *extend* Sphinx's capacities.
+those in another application. However, we can *extend* Sphinx's capacities.
 
 See our `extensions.py <https://github.com/divio/divio-cloud-docs/blob/master
 /extensions.py>`_ for how we do this.
@@ -200,7 +200,7 @@ about the external resource, e.g.::
 
   ..  Do not change this reference! [or document name]
       Referred to by: tutorial message 51 project-create-base-project
-      Where: in the project creation dialog e.g. https://control.divio.com/control/project/create/#step-1
+      Where: in the application creation dialog e.g. https://control.divio.com/control/project/create/#step-1
       As: https://docs.divio.com/en/latest/background/project-creation-options#project-creation-platform
 
   .. _project-creation-platform:

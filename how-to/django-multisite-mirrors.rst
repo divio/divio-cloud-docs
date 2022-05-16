@@ -5,10 +5,10 @@
 
 ..  _multisite-mirrors:
 
-How to create a multi-site Django project using Mirrors
-=======================================================
+How to create a multi-site Django application using Mirrors
+===========================================================
 
-Start with the *original*, the project from which the mirrors will be created. The mirrors will share the codebase,
+Start with the *original*, the application from which the mirrors will be created. The mirrors will share the codebase,
 database and media storage of the original, but will run as wholly independent Docker instances.
 
 
@@ -62,7 +62,7 @@ In the Django *Sites* admin you will see each mirror now listed.
 
 If you're using a Django application that makes use of the Sites framework, such as django CMS, you will see that
 it now has access to multiple independent sites. In django CMS for example this means that pages can be one site of
-the project or another.
+the application or another.
 
 
 Managing database migrations

@@ -2,15 +2,15 @@
 
 ..  _wagtail-tutorial-set-up:
 
-Create a new Wagtail Django project
-===================================
+Create a new Wagtail Django application
+=======================================
 
-In this section we will create and deploy a new project in the Control Panel using `Wagtail <https://wagtail.io/>`_, a
-very popular Django-based content management system framework. The principles covered by the tutorial will apply to any
-other development stack.
+In this section we will create and deploy a new application in the Control Panel using 
+`Wagtail <https://wagtail.io/>`_, a very popular Django-based content management system framework. The principles 
+covered by the tutorial will apply to any other development stack.
 
-You could equally well create a plain Django project, and install Wagtail in that. However, the Wagtail project type
-saves some time by setting up a ready-to-go project, with Wagtail automatically installed and configured.
+You could equally well create a plain Django application, and install Wagtail in that. However, the Wagtail application 
+type saves some time by setting up a ready-to-go application, with Wagtail automatically installed and configured.
 
 ..  note::
 
@@ -28,7 +28,7 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
 
 
 * *Platform*: ``Python 3.x``
-* *Project type*: ``Wagtail``
+* *Application type*: ``Wagtail``
 
 ..  admonition:: Wagtail 2.14.1
 
@@ -41,8 +41,8 @@ saves some time by setting up a ready-to-go project, with Wagtail automatically 
 ..  include:: /introduction/includes/02-create-3-deploy-open.rst
 
 
-Since this is your own project, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in with
-Divio**. You'll see the "Welcome to Wagtail" page.
+Since this is your own application, you can use our :ref:`single-sign-on <aldryn-sso>` to log in by selecting **Log in 
+with Divio**. You'll see the "Welcome to Wagtail" page.
 
 More interesting are the admin pages:
 

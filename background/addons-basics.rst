@@ -21,7 +21,7 @@ Addons can be thought of as wrappers for Python packages such as Django or djang
 of our addons framework. You'll see for example addons such as Aldryn Django (a wrapper/installer for Django) and
 Aldryn Django CMS (a wrapper/installer for django CMS).
 
-Aldryn Addons are provided as a convenience. If you'd like Django in your project, with all its settings configured for our
+Aldryn Addons are provided as a convenience. If you'd like Django in your application, with all its settings configured for our
 infrastructure (uWSGI gateway, database, media storage etc), and in such a way that they will work correctly in the
 Live, Test and local environments, then Aldryn Django will take care of that for you; if it's installed, all that
 configuration and wiring will be done automatically.
@@ -30,12 +30,12 @@ In the case of Aldryn Django CMS, it will configure settings such as ``MIDDLEWAR
 
 Packages as installed by Divio addons (such as Django or django CMS) are **completely standard and unmodified**.
 
-Installation and basic configuration of addons is managed via the project's dashboard in the Control Panel. More advanced configuration can be managed via :ref:`settings <how-to-settings>` and :ref:`environment variables <environment-variables>`.
+Installation and basic configuration of addons is managed via the application's dashboard in the Control Panel. More advanced configuration can be managed via :ref:`settings <how-to-settings>` and :ref:`environment variables <environment-variables>`.
 
 
 .. _dockerfile-reference-automatic-population:
 
-The Dockerfile in Aldryn Django projects
+The Dockerfile in Aldryn Django applications
 -------------------------------------------------
 
 Hashes (``#``) in the ``Dockerfile`` indicate a comment. Sections within angle brackets are
@@ -45,10 +45,10 @@ warning.
 Removing these wrapping tags will prevent a section being populated or changed.
 
 
-The empty ``Dockerfile`` at project creation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The empty ``Dockerfile`` at application creation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Dockerfile`` starts life at project creation thus:
+The ``Dockerfile`` starts life at application creation thus:
 
 ..  code-block:: Dockerfile
 
@@ -77,7 +77,7 @@ The ``Dockerfile`` starts life at project creation thus:
     # </STATIC>
 
 These sections are in effect placeholders for Docker commands and configuration that will be used
-to define the project later.
+to define the application later.
 
 
 The ``<WARNING>`` section
@@ -99,10 +99,10 @@ The ``<WARNING>`` is always populated.
 The ``<DOCKER_FROM>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is determined by the project's base project version. If you update the base project in the
-project's *General Settings* in the Control Panel, this will be updated on the next deployment.
+This is determined by the application's base project version. If you update the base project in the
+application's *General Settings* in the Control Panel, this will be updated on the next deployment.
 
-For a project built on the ``aldryn/base-project:py3-3.23`` image, corresponding to the *Base
+For an application built on the ``aldryn/base-project:py3-3.23`` image, corresponding to the *Base
 Project:* ``Python 3 v3.23``:
 
 ..  code-block:: Dockerfile
@@ -143,7 +143,7 @@ The ``<NPM>`` section
 ~~~~~~~~~~~~~~~~~~~~~
 
 If ``package.json`` (specifying Node packages that should be installed) is present in the root of
-the project, then instructions will be inserted to copy it to the root of the image and install the
+the application, then instructions will be inserted to copy it to the root of the image and install the
 packages.
 
 ..  code-block:: Dockerfile
@@ -161,7 +161,7 @@ packages.
 The ``<BOWER>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-If both ``bower.json`` and ``.bowerrc`` are present in the root of the project, then the
+If both ``bower.json`` and ``.bowerrc`` are present in the root of the application, then the
 deployment process will insert:
 
 ..  code-block:: Dockerfile
@@ -181,9 +181,9 @@ deployment process will insert:
 The ``<PYTHON>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If ``requirements.in`` is present in the project, then at deployment time the Control Panel will
+If ``requirements.in`` is present in the application, then at deployment time the Control Panel will
 ensure that this section contains appropriate instructions to handle installation of Divio
-Cloud addons and other packages. The exact contents of this section will depend on the project,
+Cloud addons and other packages. The exact contents of this section will depend on the application,
 for example:
 
 ..  code-block:: Dockerfile
@@ -201,8 +201,8 @@ for example:
             --requirement requirements.urls
     # </PYTHON>
 
-If ``requirements.txt`` is present in the project, then the ``pip-reqs compile`` instruction will
-be removed. See :ref:`How to pin all of your project's Python dependencies <manage-dependencies>`
+If ``requirements.txt`` is present in the application, then the ``pip-reqs compile`` instruction will
+be removed. See :ref:`How to pin all of your application's Python dependencies <manage-dependencies>`
 for why you might want to do this.
 
 
@@ -211,7 +211,7 @@ for why you might want to do this.
 The ``<SOURCE>`` section
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``SOURCE`` section copies the project files to the ``/app`` directory of the container.
+The ``SOURCE`` section copies the application files to the ``/app`` directory of the container.
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 2
@@ -232,7 +232,7 @@ should be explicitly specified as required.
 The ``<GULP>`` section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If ``gulpfile.js`` is present in the root of the project, then instructions will be inserted to run
+If ``gulpfile.js`` is present in the root of the application, then instructions will be inserted to run
 the ``gulp build`` process:
 
 ..  code-block:: Dockerfile

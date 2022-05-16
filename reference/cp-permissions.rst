@@ -151,8 +151,8 @@ Addons
     - Manage addon settings
     - Manage addon collaborators
     - Upload new addon version
-    - Install/ upgrade to a project [#f1]_ 
-    - Manage settings on a project [#f1]_ 
+    - Install/ upgrade to an application [#f1]_ 
+    - Manage settings on an application [#f1]_ 
 
   * - Anyone
     - |KHgr|
@@ -209,7 +209,7 @@ Boilerplates
     - Manage boilerplate settings
     - Manage boilerplate collaborators
     - Upload new boilerplate version
-    - Create a project with boilerplate
+    - Create an application with boilerplate
 
   * - Anyone
     - |KHgr|
@@ -282,5 +282,5 @@ Applications
     - |check|
 
 
-.. [#f1] Access to a project is a prerequisite for this action.
+.. [#f1] Access to an application is a prerequisite for this action.
 

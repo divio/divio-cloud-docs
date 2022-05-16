@@ -1,5 +1,5 @@
 ..  Do not change this document name
-    Referred to by: tutorial message 149 project-envvars-info
+    Referred to by: tutorial message 149 application-envvars-info
     Where: in the Environment variables view
     As: https://docs.divio.com/en/latest/background/configuration-environment-variables
 
@@ -34,7 +34,7 @@ the variables of the *Live* server:
 
 ..  code-block:: bash
 
-    divio app env-vars --remote-id <numerical project id> -s live
+    divio app env-vars --remote-id <numerical application id> -s live
 
 If any exist, they will be displayed thus::
 

@@ -1,14 +1,15 @@
 ..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html) from
-    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+    within the settings.py file provided by standard Aldryn Django applications. Do not change this reference.
 
 ..  _how-to-settings:
 
-How to configure Django settings in Aldryn projects
-===================================================
+How to configure Django settings in Aldryn applications
+=======================================================
 
-In Django projects, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the ``settings.py`` file).
+In Django applications, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the 
+``settings.py`` file).
 
-Settings can be added to this file in the usual way, but in Divio projects, some settings need to be inspected and
+Settings can be added to this file in the usual way, but in Divio applications, some settings need to be inspected and
 manipulated programmatically, to allow the addons system to handle configuration automatically. See
 :ref:`application-configuration` for more on how this works.
 
@@ -23,7 +24,7 @@ For example, in the default ``settings.py`` you will find::
     aldryn_addons.settings.load(locals())
 
     INSTALLED_APPS.extend([
-        # add your project specific apps here
+        # add your application specific apps here
     ])
 
 This allows you to add items to ``INSTALLED_APPS`` without overwriting existing items, by
@@ -42,7 +43,8 @@ Inserting an item at a particular position
 ------------------------------------------
 
 Sometimes it's not enough just to *add* an application or class to a list. It may need to be
-added before another item. Say you need to add your application ``security`` just before ``cms``. In this case you can target ``cms`` in the list like this::
+added before another item. Say you need to add your application ``security`` just before ``cms``. In this case you can 
+target ``cms`` in the list like this::
 
     INSTALLED_APPS.insert(
         INSTALLED_APPS.index("cms") + 0,
@@ -65,7 +67,7 @@ them to target the right list in the right dictionary, for example::
 
 
 ..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html#list) from
-    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+    within the settings.py file provided by standard Aldryn Django applications. Do not change this reference.
 
 .. _list:
 
@@ -78,7 +80,7 @@ example with::
 
     docker-compose run web python manage.py diffsettings
 
-In some projects (with addons that manipulate settings late in the start-up
+In some applications (with addons that manipulate settings late in the start-up
 process), you may get an error: ``RuntimeError: dictionary changed size during
 iteration``.
 

@@ -1,9 +1,9 @@
 .. _add-application:
 
-How to add a Django application to an Aldryn project
+How to add a Django application to an Aldryn application
 =========================================================
 
-This article applies to projects using the Aldryn framework only.
+This article applies to applications using the Aldryn framework only.
 
 ..  note::
 
@@ -14,12 +14,12 @@ This article applies to projects using the Aldryn framework only.
 If an addon has not yet been created for the application you require, you have
 two options:
 
-* Add the application to the project manually (described in this article).
+* Add the application to the application manually (described in this article).
 * Create an addon (described in :ref:`create-addon`).
 
 
-Make the package available to the project
------------------------------------------
+Make the package available to the application
+---------------------------------------------
 
 You can do this in one of two ways:
 
@@ -29,8 +29,8 @@ You can do this in one of two ways:
   details on how to do this.
 
 
-Configure the project
----------------------
+Configure the application
+-------------------------
 
 Configure settings
 ^^^^^^^^^^^^^^^^^^
@@ -64,7 +64,7 @@ If for example your ``DebugToolbarMiddleware`` should be directly after the ``GZ
 Configure URLs
 ^^^^^^^^^^^^^^
 
-Edit the ``urls.py`` of the project in the usual way, to include the ``urls.py`` of your application, for example:
+Edit the ``urls.py`` of the application in the usual way, to include the ``urls.py`` of your application, for example:
 
 ..  code-block:: python
     :emphasize-lines: 2
@@ -77,7 +77,7 @@ Edit the ``urls.py`` of the project in the usual way, to include the ``urls.py``
     )
 
 Alternatively, add the URL configuration to be included via one of the
-:ref:`addon URLs settings <addon-urls>`, in your project's ``settings.py``.
+:ref:`addon URLs settings <addon-urls>`, in your application's ``settings.py``.
 
 
 Migrate the database
@@ -90,8 +90,8 @@ If the application has migrations, you should test them locally. Run:
     docker-compose run web python manage.py migrate
 
 
-Deploy the project
-------------------
+Deploy the application
+----------------------
 
 Push your changes
 ^^^^^^^^^^^^^^^^^

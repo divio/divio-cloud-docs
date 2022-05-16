@@ -1,9 +1,9 @@
 .. _use-git-manage-project:
 
-How to use Git with a Divio project
-======================================
+How to use Git with a Divio application
+=======================================
 
-Your Divio project is a Git repository, offering several advantages to the developer -
+Your Divio application is a Git repository, offering several advantages to the developer -
 fine-grained revision control, excellent collaboration options, easy export and replication.
 
 We provide Git hosting by default. Our server is ``git.divio.com``. You can also :ref:`use an external Git provider
@@ -40,20 +40,20 @@ This can be caused by:
 Git repository size
 ---------------------------
 
-We don't impose limits on the size of your project's Git repository. However, as its size increases, both our
+We don't impose limits on the size of your application's Git repository. However, as its size increases, both our
 infrastructure and Git itself have to work harder to manage it.
 
-Above 100MB for its Git repository, we cannot guarantee that a project will function smoothly,
+Above 100MB for its Git repository, we cannot guarantee that an application will function smoothly,
 especially when our platform is under heavy load. It can cause:
 
 * slower deployments
 * deployment timeouts
 * long backup times
 
-If your project's Git repository, including its history, exceeds 800 MB you are likely to run into persistent
+If your application's Git repository, including its history, exceeds 800 MB you are likely to run into persistent
 deployment problems.
 
-If you need to store large amounts of data, use the project's media storage rather than Git.
+If you need to store large amounts of data, use the application's media storage rather than Git.
 
 
 Basic Git operations

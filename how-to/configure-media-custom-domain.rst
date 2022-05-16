@@ -3,7 +3,7 @@
 How to configure media serving on a custom domain
 =================================================
 
-By default, media files in Divio projects are served directly from our S3 cloud storage service,
+By default, media files in Divio applications are served directly from our S3 cloud storage service,
 and the URL of each object will refer to that storage endpoint - for example, objects may be served
 from an S3 bucket which might have a domain like:
 ``example-test-68564d3f78d04c5f-8f20b19.aldryn-media.io``.
@@ -14,23 +14,23 @@ Some users may prefer or require that their media are served from their own doma
 This is not an option available by default, but it can be configured by setting up a reverse proxy.
 
 
-Set up the reverse proxy project
-----------------------------------
+Set up the reverse proxy application
+------------------------------------
 
-Create a new Divio project, using the options:
+Create a new Divio application, using the options:
 
 * *Platform*: ``Build your own``
-* *Project type*: ``Nginx``
+* *application type*: ``Nginx``
 
-This project will contain the reverse proxy, that will refer all requests made to the custom domain
+This application will contain the reverse proxy, that will refer all requests made to the custom domain
 to the actual domain that the application serves its media from. The only function of this reverse
-proxy project is to refer requests to the actual application project.
+proxy application is to refer requests to the actual application application.
 
 
 Set up a domain for media files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Using the Control Panel, add the domain to the reverse proxy project.
+Using the Control Panel, add the domain to the reverse proxy application.
 
 
 Configure Nginx as a reverse proxy
@@ -45,11 +45,11 @@ of how this should be done, however:
 * you *may* also need to configure header rewriting; some S3 hosts are stricter than others and
   may refuse to accept requests with the wrong heads
 
-Deploy the project and check that requests for media objects on the custom domain are correctly
+Deploy the application and check that requests for media objects on the custom domain are correctly
 referred to the actual storage, and that they are served as expected.
 
 
-Configure media storage URLs in the application project
+Configure media storage URLs in the application application
 --------------------------------------------------------------------
 
 Your application has an automatically-configured :ref:`DEFAULT_STORAGE_DSN
@@ -58,8 +58,8 @@ Django Storages, for Django templates and views) when it needs to refer to the U
 object.
 
 You will need to adapt this value, substituting the custom domain you wish to use, and
-apply it manually in the *Environment Variables* section of the project's dashboard. Then the
-application project will need to be redeployed.
+apply it manually in the *Environment Variables* section of the application's dashboard. Then the
+application application will need to be redeployed.
 
 ..  note::
 
@@ -75,5 +75,5 @@ When using our automatically-configured ``DEFAULT_STORAGE_DSN``, you don't need 
 about keeping this up-to-date - it's managed for you.
 
 When using your own custom domain, you will need to manage the configuration. For example, if your
-project is redeployed to a different region, the URL for its storage could change, and both the
+application is redeployed to a different region, the URL for its storage could change, and both the
 Nginx configuration and the ``DEFAULT_STORAGE_DSN`` will need to be changed too.

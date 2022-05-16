@@ -5,7 +5,7 @@ Zero-downtime deployment system
 
 Divio allows you to deploy a new version of your site without interrupting service.
 
-When a project environment is deployed with new code, the site will switch from the old deployed version to the new
+When an application environment is deployed with new code, the site will switch from the old deployed version to the new
 one without skipping a beat. There is no downtime required while a build takes place. As soon as the newly deployed
 containers are available to serve the site, they will take over the application-serving duties.
 

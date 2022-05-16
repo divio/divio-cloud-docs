@@ -49,7 +49,7 @@ engine to ``django.contrib.gis.db.backends.postgis``.
 
 For local development you will need to edit ``docker-compose.yml``, changing ``postgres:13.5-alpine`` to
 ``mdillon/postgis:13.5-alpine``. On the cloud, you will need to make a support request to have the new
-database enabled for the project.
+database enabled for the application.
 
 See :ref:`manage_postgres_extensions` for more details.
 
@@ -66,7 +66,7 @@ language. For example, by default, ``/about`` will redirect to ``/en/about`` if 
 default language; with this option selected, it will not (and will instead redirect in the other
 direction).
 
-Note that prior to Django version 1.10, this will not work with projects in which
+Note that prior to Django version 1.10, this will not work with applications in which
 multiple languages are defined.
 
 This is a ``302 Temporary Redirect``, as determined in Django's core. It is not
@@ -166,9 +166,9 @@ Storage settings
 Cache control for static files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Static files in our Django projects are collected by Django at build time, and served by uWSGI.
+Static files in our Django applications are collected by Django at build time, and served by uWSGI.
 Aldryn Django configures the command it issues to uWSGI to start static file serving on the basis
-of project settings. By default, files are served with no ``Cache-Control`` header applied.
+of application settings. By default, files are served with no ``Cache-Control`` header applied.
 
 
 .. _STATICFILES_DEFAULT_MAX_AGE:
@@ -215,7 +215,7 @@ Miscellaneous settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
 * ``DISABLE_GZIP`` determines whether Django's :mod:`GZipMiddleware
-  <django:django.middleware.gzip>` will be added to the project's middleware (default: ``False``)
+  <django:django.middleware.gzip>` will be added to the application's middleware (default: ``False``)
 * :setting:`django:TIME_ZONE` (default: the appropriate time zone for your server region)
 * ``SENTRY_DSN`` - if provided, logging to `Sentry <https://sentry.io>`_ will be configured
   automatically
@@ -228,18 +228,18 @@ Aldryn SSO (authentication)
 
 ..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
-Authentication to the Divio platform, and (by default) to user projects
+Authentication to the Divio platform, and (by default) to user applications
 running on the platform, is handled by the Divio SSO (single-sign-on)
 system. This provides a convenient way to authenticate users for Divio
-projects (whether locally, or on the *Test* or *Live* servers) without needing
+applications (whether locally, or on the *Test* or *Live* servers) without needing
 to log in again, as long as they have logged into the Divio Control Panel.
 
-This includes making it possible for users working on projects locally to
+This includes making it possible for users working on applications locally to
 log in locally with a single click, as they have already been authenticated.
 
 Divio SSO is managed by the `open-source Aldryn SSO
 <https://github.com/aldryn/aldryn-sso>`_ addon. The system is optional, but is
-installed by default in all Divio Django projects.
+installed by default in all Divio Django applications.
 
 If the addon is uninstalled, then Django's standard authentication behaviour
 will apply.
@@ -250,15 +250,15 @@ will apply.
 Login methods
 -------------
 
-The Aldryn SSO addon provides three different login methods to Divio projects:
+The Aldryn SSO addon provides three different login methods to Divio applications:
 
 ..  image:: /images/login-options.png
-    :alt: 'Illustration of Divio project login options'
+    :alt: 'Illustration of Divio application login options'
     :width: 552
 
-Depending on how the project is configured, and which environment
+Depending on how the application is configured, and which environment
 (local/test/live) it's running in, different combinations of these options will
-be shown (you'll never see all three at once in a real project).
+be shown (you'll never see all three at once in a real application).
 
 The illustrated options are:
 
@@ -267,8 +267,8 @@ The illustrated options are:
 1. Local development login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to appear on locally-running projects only. The *Add user*
-option is a convenient way to add new users to a project.
+This is intended to appear on locally-running applications only. The *Add user*
+option is a convenient way to add new users to an application.
 
 See :ref:`ALDRYN_SSO_ENABLE_LOCALDEV`.
 
@@ -288,8 +288,8 @@ See :ref:`ALDRYN_SSO_ENABLE_LOGIN_FORM`.
 3. Divio single-sign-on
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to appear on projects running in Cloud environments only. It
-allows users to sign in to their own projects with a single click, once they
+This is intended to appear on applications running in Cloud environments only. It
+allows users to sign in to their own applications with a single click, once they
 have authenticated with the Divio control panel.
 
 See :ref:`ALDRYN_SSO_ENABLE_SSO_LOGIN`.
@@ -299,7 +299,7 @@ Test site protection
 --------------------
 
 By default the *Test* site is protected so that it's not publicly discoverable
-or viewable. Only the owner or an authorised user of the project can view its contents.
+or viewable. Only the owner or an authorised user of the application can view its contents.
 
 This is controlled with the :ref:`ALDRYN_SSO_ALWAYS_REQUIRE_LOGIN` environment variable, which is `True` by default and
 can be overridden by setting it manually.
@@ -459,8 +459,8 @@ in ``settings.py``, the latter is not good practice.
 
 The Data Source Name for single-sign-on.
 
-This is set as an environment variable automatically in Cloud Projects,
-adding the SSO authority to the URL configuration for the project.
+This is set as an environment variable automatically in Cloud applications,
+adding the SSO authority to the URL configuration for the application.
 
 If you are providing your own single-sign-on, ``SSO_DSN`` can also be specified
 as an environment variable or in ``settings.py``.
@@ -514,11 +514,11 @@ Aldryn Addons (addon integration)
 ..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
 The Aldryn Addons framework helps integrate addons and their settings into
-a Django project.
+a Django application.
 
 It's an `open-source package <https://github.com/aldryn/aldryn-addons/>`_, and
 is itself an addon. The addons framework is installed by default in all Divio
-Cloud Django projects.
+Cloud Django applications.
 
 
 Aldryn Addons configuration options
@@ -529,14 +529,14 @@ Aldryn Addons configuration options
 Addon URLs
 ~~~~~~~~~~
 
-A project, or an addon in it, may need to specify some URL patterns.
+An application, or an addon in it, may need to specify some URL patterns.
 
-They could simply be added to the project's ``urls.py`` manually. However, it's
+They could simply be added to the application's ``urls.py`` manually. However, it's
 also convenient for addons to be able to configure URLs programmatically, so
 that when an addon is installed, it will also take care of setting up the
 relevant URL configurations.
 
-Aldryn Addons provides a way to do this. A Divio project's ``urls.py``
+Aldryn Addons provides a way to do this. A Divio application's ``urls.py``
 contains::
 
     urlpatterns = [
@@ -569,9 +569,9 @@ For example, in `Aldryn django CMS
 ``ADDON_URLS_LAST`` and ``ADDON_URLS_I18N_LAST``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are not lists, and only one of each can be set in any project - it's not
+These are not lists, and only one of each can be set in any application - it's not
 possible for two applications both to specify an ``ADDON_URLS_I18N_LAST`` for
 example.
 
 django CMS sets ``settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'`` - so in
-a project using django CMS, no other application can use ``ADDON_URLS_I18N_LAST``.
+an application using django CMS, no other application can use ``ADDON_URLS_I18N_LAST``.

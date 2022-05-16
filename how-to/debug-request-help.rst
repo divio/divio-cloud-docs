@@ -24,18 +24,18 @@ The access you grant will be used exclusively for support purposes within Divio.
 Provide key information
 ------------------------
 
-* The dashboard URL of each project - for each project you are referring to, we need its dashboard URL, in the form ``https://control.divio.com/control/...``.
+* The dashboard URL of each application - for each application you are referring to, we need its dashboard URL, in the form ``https://control.divio.com/control/...``.
 * The precise steps to replicate your issue - we may need to be able to replicate your issue - what action(s) must we
   take to see it for ourselves? If there are multiple steps involved, please list them.
 * What you expect to happen - we need to understand what you expected to happen. If you expected some output or result,
-  describe it, bearing in mind that we may not be familiar with your project.
+  describe it, bearing in mind that we may not be familiar with your application.
 * What actually does happen - describe the unexpected output or result. Include logs, error messages from the server
   and browser and so on.
 * Tell us what troubleshooting steps you have taken so far - please check:
 
-  * Have you set up the project locally?
+  * Have you set up the application locally?
   * Does the issue present itself there?
-  * If appropriate, test with your :ref:`local project in live configuration <local-in-live-mode>`.
+  * If appropriate, test with your :ref:`local application in live configuration <local-in-live-mode>`.
   * Are you using logging to help understand the behaviour of the program?
 
   Include any relevant information from troubleshooting in your report.
@@ -67,7 +67,7 @@ You may find it helpful to copy and paste this template into your support reques
 
     **Troubleshooting information**
 
-    The issue [does/does not] occur when running the project locally in live configuration.
+    The issue [does/does not] occur when running the application locally in live configuration.
 
     **Additional information**
 
@@ -81,7 +81,7 @@ Example report
 
 A good report might look something like this:
 
-    We are having problems with a form in our DynaCorp Global project
+    We are having problems with a form in our DynaCorp Global application
     https://control.divio.com/control/3097/edit/50704/. To see this:
 
     * log in at https://example.com/clientarea with the username "diviosupport" and password "T3mpP4sswd" that we have
@@ -100,10 +100,10 @@ A good report might look something like this:
 As well as giving us enough information to continue investigating further, the inclusion of information about where it
 has been tested provides some valuable clues as to the nature of the problem.
 
-Ensure that we have access to your project
-------------------------------------------
+Ensure that we have access to your application
+----------------------------------------------
 
-If your project uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
+If your application uses the Divio Git server, we'll be able to set it up locally for testing if we need to. However if you
 :ref:`use a private remote Git repository <configure-version-control>`, this won't be possible unless you can provide
 us with access to the repository. Usually we will provide you with :ref:`a public key to add to the repository
 <git-setup-ssh>`.
@@ -118,8 +118,8 @@ Our technical support is limited in scope to our platform and infrastructure:
 
 * general questions about the use of the platform and its tools
 * use and configuration of the local development environment
-* best practices for project configuration on Divio
-* best practices for project migration to Divio
+* best practices for application configuration on Divio
+* best practices for application migration to Divio
 * deployment issues related to our infrastructure
 
 We are unable to provide support for:
@@ -128,6 +128,6 @@ We are unable to provide support for:
 * debugging of user applications or third-party software
 * users’ local hardware/software set-up
 
-Please note that we are able to provide more in-depth technical support for Business-class projects than those on
+Please note that we are able to provide more in-depth technical support for Business-class applications than those on
 Economy plans. For more information please see our `full support policy
 <https://www.divio.com/terms-and-policies/support-policy/>`_.

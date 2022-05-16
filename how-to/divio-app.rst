@@ -3,9 +3,9 @@
 How to install and use the Divio app
 ====================================
 
-The Divio app helps you run your Divio projects locally in our Docker environment, upload and download media, database
-and configuration changes as well as set up a shell environment ready for interaction with the project running in the
-Docker container.
+The Divio app helps you run your Divio applications locally in our Docker environment, upload and download media, 
+atabase and configuration changes as well as set up a shell environment ready for interaction with the application 
+running in the Docker container.
 
 
 Set up the Divio app
@@ -34,24 +34,24 @@ Once the application is installed and running you can login using your email add
 with Google or GitHub, simply copy `the access token <https://control.divio.com/account/desktop-app/access-token/>`_
 from the Divio control panel and paste it into the provided field.
 
-Select a workspace folder on your computer where you’d keep all the Divio cloud project files.
+Select a workspace folder on your computer where you’d keep all the Divio cloud application files.
 
 
 Use the Divio app
 -----------------
 
-Select a project to work with from the list. By default, the list shows all projects, but you can narrow down the
-selection by choosing a particular organisation from the dropdown menu.
+Select a application to work with from the list. By default, the list shows all applications, but you can narrow down 
+the selection by choosing a particular organisation from the dropdown menu.
 
 
-Set up your local project
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Set up your local application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Select a project from the list.
-* Hit *set up project* to get started.
+* Select an application from the list.
+* Hit *set up application* to get started.
 
-The Divio app will run through a number of processes to set up the local project. It all happens automatically and takes
-just a few minutes.
+The Divio app will run through a number of processes to set up the local application. It all happens automatically and 
+takes just a few minutes.
 
 
 Launch the site locally
@@ -59,13 +59,14 @@ Launch the site locally
 
 Once the set up process has completed, you can start the local site by launching the local server. 
 
-* Hit **Start** to launch the project.
-* If the project has been set up correctly, you can now open the local site in your browser by clicking on the *eye icon*.
+* Hit **Start** to launch the application.
+* If the application has been set up correctly, you can now open the local site in your browser by clicking on the *eye 
+  icon*.
 
 
-Edit project files
-~~~~~~~~~~~~~~~~~~
-Hit the *folder icon* to open the project folder, use your favorite editor to edit the project files.
+Edit application files
+~~~~~~~~~~~~~~~~~~~~~~
+Hit the *folder icon* to open the application folder, use your favorite editor to edit the application files.
 
 
 Upload/download changes
@@ -83,25 +84,25 @@ You can also download / upload media files or database changes using the dropdow
 Update/rebuild/reset
 ~~~~~~~~~~~~~~~~~~~~
 
-Open the three vertical dots menu to update, rebuild or reset the project.
+Open the three vertical dots menu to update, rebuild or reset the application.
 
 *  **Update**: pull down any changes from the Test Server including media and database
 
-*  **Rebuild**: rebuilds the project from the local files
+*  **Rebuild**: rebuilds the application from the local files
 
-*  **Reset**: tear down the project and start again
+*  **Reset**: tear down the application and start again
 
 
-Interact with the project
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Interact with the application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open the project's bash shell by clicking the shell icon ``>_``, to interact with your project directly in its
+Open the application's bash shell by clicking the shell icon ``>_``, to interact with your application directly in its
 container.
 
 Launch the Divio Shell
 ~~~~~~~~~~~~~~~~~~~~~~
 
-As well as a bash shell specific to each project, the Divio app can set up a general shell that is configured to
+As well as a bash shell specific to each application, the Divio app can set up a general shell that is configured to
 interact with the cloud. 
 
 To use the Divio shell, hit *OPEN SHELL* in the Divio app and in a few moments you'll be in a terminal shell session.
@@ -112,7 +113,7 @@ The Divio shell runs in a Docker container of its own. In this Divio shell, you 
 
     divio app list
 
-You cannot interact directly with project containers in the Divio shell. Instead, you should cd into the project
+You cannot interact directly with application containers in the Divio shell. Instead, you should cd into the application
 directory locally, and precede your commands with docker-compose run web , for example:
 
 ..  code-block:: bash
@@ -121,8 +122,8 @@ directory locally, and precede your commands with docker-compose run web , for e
 
 Distinction between the Divio shell and the local container bash shell:
 
-*  the Divio shell is for managing local projects and interacting with the Divio cloud
-*  the local container bash shell is for operations inside local projects 
+*  the Divio shell is for managing local applications and interacting with the Divio cloud
+*  the local container bash shell is for operations inside local applications 
 
 
 ..  Further resources

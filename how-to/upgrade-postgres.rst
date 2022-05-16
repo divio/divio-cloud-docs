@@ -80,9 +80,9 @@ version.
 
 Your environment is now using the new PostgreSQL service for the upgraded version. 
 
-In order to run the project locally with the upgraded database, a few extra steps are required:
+In order to run the application locally with the upgraded database, a few extra steps are required:
 
-14. Update ``docker-compose.yml`` for the project to use the PostgrSQL image ``postgres:13.5-alpine``.
+14. Update ``docker-compose.yml`` for the application to use the PostgrSQL image ``postgres:13.5-alpine``.
 15. Run ``docker-compose down -v`` to stop the containers and remove the volumes.
 16. Run ``divio app pull db <environment>`` to pull the updated database from the environment you want locally. 
 17. Run ``docker-compose up`` to bring everything up again. 

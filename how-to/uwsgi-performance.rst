@@ -3,12 +3,12 @@
 How to fine-tune your server's performance
 ==========================================
 
-In the Divio Control Panel for your project, you can easily change the resources (instances,
-RAM, storage, transfer) allocated to your project to adjust for its needs.
+In the Divio Control Panel for your application, you can easily change the resources (instances,
+RAM, storage, transfer) allocated to your application to adjust for its needs.
 
 In most cases, having chosen suitable values for these, you won't need to make further changes.
 
-If however your project has unusual demands or sees unusual traffic, you can also fine-tune some
+If however your application has unusual demands or sees unusual traffic, you can also fine-tune some
 settings to match its needs even better.
 
 Optimising the settings for a high-traffic site isn't just a case of allocating more resources
@@ -99,11 +99,11 @@ huge admin list) then you will need to adjust it upwards appropriately.
 Disable or reconfigure ``UWSGI_CHEAPER`` (uWSGI cheaper mode)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, projects use `uWSGI's cheaper mode <https://uwsgi-docs-additions.readthedocs.io/en/latest/Cheaper.html>`_.
+By default, applications use `uWSGI's cheaper mode <https://uwsgi-docs-additions.readthedocs.io/en/latest/Cheaper.html>`_.
 
 When the site is idling in cheaper mode, uWSGI will dismiss unneeded web workers. This saves RAM, and is the
-recommended configuration for most projects. In some circumstances however it can be advantageous to disable this mode,
-or adjust its settings.
+recommended configuration for most applications. In some circumstances however it can be advantageous to disable this 
+mode, or adjust its settings.
 
 This is generally only applicable to constant high-traffic sites. Please take care if you feel you need to
 disable cheaper mode or modify its settings, as misconfiguration can have adverse results.

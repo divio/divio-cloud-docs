@@ -1,7 +1,7 @@
 .. _django-manage-redirects:
 
-How to manage redirects in Aldryn Django projects
-==================================================
+How to manage redirects in Aldryn Django applications
+=====================================================
 
 ..  Seealso:: :ref:`domains`
 
@@ -10,7 +10,7 @@ How to manage redirects in Aldryn Django projects
 Protocol redirects
 ------------------
 
-Divio projects are HTTPS-ready by default, and we provide free SSL certificates on all projects.
+Divio applications are HTTPS-ready by default, and we provide free SSL certificates on all applications.
 
 To force redirect from HTTP to HTTPS in Django, set the :ref:`SECURE_SSL_REDIRECT <security-middleware-settings>`
 environment variable to ``True``.

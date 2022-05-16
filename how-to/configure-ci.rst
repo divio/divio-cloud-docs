@@ -28,13 +28,13 @@ In this example we will use `Travis CI <https://travis-ci.org>`_ as an example, 
 other services will work just as well, and the principles are the same.
 
 
-Connect your project to the CI service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Connect your application to the CI service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Travis, this means activating the project in your Travis account settings
+For Travis, this means activating the application in your Travis account settings
 (https://travis-ci.org/account/repositories).
 
-Your project needs a ``.travis.yml`` file, which depending on the project might look something like::
+Your application needs a ``.travis.yml`` file, which depending on the application might look something like::
 
     language: python
 
@@ -58,7 +58,7 @@ When a build is successful, we need Travis to log in as a Divio user and execute
 
 * install the Divio CLI
 * log in
-* run a ``divio app deploy`` command, using your project's website id
+* run a ``divio app deploy`` command, using your application's website id
 
 
 Authentication

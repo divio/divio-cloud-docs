@@ -17,8 +17,8 @@ How to set up the Divio local development environment
 ===============================================================
 
 This document guides you through the installation and basic configuration of components required to set up
-a working local environment for Divio projects, so that you can run them on your own computer, and interact
-with the Divio Control Panel and the same projects deployed on our cloud infrastructure.
+a working local environment for Divio applications, so that you can run them on your own computer, and interact
+with the Divio Control Panel and the same applications deployed on our cloud infrastructure.
 
 ..  seealso::
 
@@ -74,10 +74,10 @@ Upload your public key at https://control.divio.com/account/ssh-keys/.
 Usage
 -----
 
-The CLI allows you to interact with projects locally and on the Cloud; for
-example, to set up a Cloud project locally::
+The CLI allows you to interact with applications locally and on the Cloud; for
+example, to set up a Cloud application locally::
 
-  divio app setup <project slug>
+  divio app setup <application slug>
 
 Commonly used commands include those to push and pull database and media, for example::
 
@@ -89,7 +89,7 @@ Where appropriate, you can specify a particular environment (default is always T
 
     divio app push db live
 
-or even another project::
+or even another application::
 
     divio app pull db --remote-id
 
@@ -97,11 +97,11 @@ Similarly, you can do things like view runtime logs::
 
     divio app logs --tail live
 
-or open the project dashboard::
+or open the application dashboard::
 
     divio app dashboard
 
-or associate a local project with a cloud project::
+or associate a local application with a cloud application::
 
     divio app configure
 

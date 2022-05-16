@@ -5,18 +5,18 @@ Version control
 
 ..  seealso::
 
-    * :ref:`How to configure a Git remote for your project
+    * :ref:`How to configure a Git remote for your application
       <configure-version-control>`
     * :ref:`use-git-manage-project`
 
 
-Divio projects use Git for version control.
+Divio applications use Git for version control.
 
-By default, projects use our own Git server.
+By default, applications use our own Git server.
 
-We also offer the option to manage your project's codebase on remote Git providers. Currently, we
+We also offer the option to manage your application's codebase on remote Git providers. Currently, we
 support GitHub, GitLab and BitBucket (other options may also work or can be available on request,
-including private Git servers, for suitable projects).
+including private Git servers, for suitable applications).
 
 Our Control Panel interacts with different Git providers via an abstraction layer that makes it
 possible to present common user and application interfaces.
@@ -31,10 +31,10 @@ in the Control Panel displays (and only affects) the configuration of the Test e
 explicitly target its branch.
 
 
-Project repository branches
+Application repository branches
 ---------------------------------
 
-By default, each project's code is in its Git ``master`` branch, and can be deployed directly from
+By default, each application's code is in its Git ``master`` branch, and can be deployed directly from
 the Git server to the *Test* or *Live* servers (our strongly-recommended workflow is always to
 deploy to *Test* first).
 

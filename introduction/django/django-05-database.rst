@@ -15,9 +15,9 @@ Create the database
 For the cloud environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the project's :ref:`Services <services>` view, add a PostgreSQL database. When you next deploy, or if you manually
-select *Provision* from the services options menu, it will be provisioned for the project. Do one of these two things
-now.
+In the application's :ref:`Services <services>` view, add a PostgreSQL database. When you next deploy, or if you 
+manually select *Provision* from the services options menu, it will be provisioned for the application. Do one of these 
+two things now.
 
 .. image:: /images/intro-services.png
    :alt: 'The Services view'
@@ -28,7 +28,7 @@ Locally
 ~~~~~~~
 
 For development purposes when working locally, we should also have a database. It's not so easy to set up the right
-version of Postgres locally, especially when working with multiple projects, and as a result many Django developers
+version of Postgres locally, especially when working with multiple applications, and as a result many Django developers
 content themselves with using SQLite locally, simply because it's an easy-to-use default. However, it's much better to
 use the same database in development as you do in deployment, and Docker Compose can take care of this for you too.
 Edit your ``docker-compose.yml`` to add some new lines:
@@ -175,7 +175,7 @@ and deploy:
     :subtitle: Configuration secrets should not be committed to code repositories.
 
     In this case, there is nothing in ``.env-local`` that can't be safely committed, and having the
-    ``DATABASE_URL`` in there means that if a colleague needs to set up your Divio project, they will that in
+    ``DATABASE_URL`` in there means that if a colleague needs to set up your Divio application, they will that in
     there too, ready to use in their own local environment. However if you were testing functionality that required you
     add a secret key, for example to use some external service, you should take care not to commit that.
 
@@ -202,7 +202,7 @@ commands cheatsheet <cheatsheet-project-resource-management>`. A common use-case
 development environment, so that you can test new development with real data.
 
 You can also execute commands like ``python manage.py migrate`` directly in the cloud environment. Try it - use ``divio
-project ssh`` (or copy the SSH URL from the Test environment pane) in the Control Panel, and use it to open a session
+app ssh`` (or copy the SSH URL from the Test environment pane) in the Control Panel, and use it to open a session
 directly to a cloud container. Then try, for example:
 
 ..  code-block:: bash
