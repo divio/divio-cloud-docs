@@ -6,7 +6,7 @@
 .. _environments:
 
 Environments
-=========================
+============
 
 Each Divio application can have multiple application environments. All applications include a *Test* and *Live* 
 environment by default. Each environment of an application is completely distinct and independent, and has its own 
@@ -24,7 +24,7 @@ commands for development, controls for deployment and other actions, and links t
 
 
 The *Live* environment
----------------------------------
+----------------------
 
 The *Live* environment, unlike the other environments:
 
@@ -34,7 +34,7 @@ The *Live* environment, unlike the other environments:
 
 
 Adding and removing environments (Beta)
-------------------------------------------
+---------------------------------------
 
 ..  note::
 
