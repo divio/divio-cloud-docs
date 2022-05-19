@@ -65,7 +65,7 @@ no longer offered by Divio.
 Addons Maintained by the Django CMS Association
 -----------------------------------------------
 
-The following addons are maintained by the Django CMS Association and more can be found in their `GitHub <https://github.com/django-cms>`_.
+The following addons are maintained by the Django CMS Association. More can be found in their `GitHub <https://github.com/django-cms>`_.
 
 * `Django Classy Tags <https://github.com/django-cms/django-classy-tags>`_
 * `django CMS <https://github.com/django-cms>`_
