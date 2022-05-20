@@ -18,7 +18,7 @@ Obtain the application's slug (its unique ID) from the Dashboard:
     :alt: 'Application slug'
     :width: 483
 
-Alternatively you can use the ``divio`` command to list your cloud application, which will show their slugs:
+Alternatively you can use the ``divio`` command to list your cloud applications, which will show their slugs:
 
 ..  code-block:: bash
 

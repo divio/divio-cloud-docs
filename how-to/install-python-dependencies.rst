@@ -44,8 +44,8 @@ All Python dependencies, including implicit sub-dependencies, should be pinned t
 
 If any dependency is *unpinned* (that is, a particular version is not specified in the application's requirements) 
 ``pip`` will install the latest version it finds, even if a different version was previously installed. This can cause 
-your your application to fail with an deployment error or worse, a runtime error, the next time it is built - *even if 
-you didn't change anything in it yourself*.
+your application to fail with an deployment error or worse, a runtime error, the next time it is built - *even if you 
+didn't change anything in it yourself*.
 
 To pin all dependencies, your application's requirements should be compiled to a complete list of explicitly specified
 package versions. This list should then be committed in the application repository, and not be changed until you need to

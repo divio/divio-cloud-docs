@@ -134,8 +134,8 @@ uploads a SQL database dump.
 See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these commands.
 
 
-From the application's Cloud application container
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the Cloud application's container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Log into your Cloud application's container (Test or Live) over SSH.
 

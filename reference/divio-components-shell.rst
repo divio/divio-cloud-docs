@@ -3,14 +3,14 @@
 The cloud and local shells
 ==========================
 
-To interact with the environment in your application, for example to run commands using its codebase,
-you can make use of a shell.
+To interact with the environment in your application, for example to run commands using its codebase, you can make use 
+of a shell.
 
 On the cloud you can :ref:`SSH into a shell instance <cloud-shell>`, provided by each running environment. Locally, you
 can use the :ref:`shell <local-shell>` of the local Docker instance.
 
-Once inside the shell, you can inspect the environment, run commands (such as ``python manage.py
-migrate``). For example in a Django application It's particularly useful to be able to drop into a:
+Once inside the shell, you can inspect the environment, run commands (such as ``python manage.py migrate``). For 
+example in a Django application It's particularly useful to be able to drop into a:
 
 * Python console: ``python``
 * Django shell: ``python manage.py shell``

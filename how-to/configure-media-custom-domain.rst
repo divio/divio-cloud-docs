@@ -59,7 +59,7 @@ object.
 
 You will need to adapt this value, substituting the custom domain you wish to use, and
 apply it manually in the *Environment Variables* section of the application's dashboard. Then the
-application application will need to be redeployed.
+application will need to be redeployed.
 
 ..  note::
 

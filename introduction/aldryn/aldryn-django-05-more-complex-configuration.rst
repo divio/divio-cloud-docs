@@ -9,7 +9,7 @@ In the :ref:`previous section of the tutorial <tutorial-add-applications>`, we
 added an application and deployed it. However, the installation process was extremely simple and
 required very minimal configuration.
 
-In practice, adding a Django application to an application will generally require more complex configuration.
+In practice, adding a Django application will generally require more complex configuration.
 
 We'll explore this by adding `Django Debug Toolbar
 <https://django-debug-toolbar.readthedocs.io/en/stable/>`_ to the application.

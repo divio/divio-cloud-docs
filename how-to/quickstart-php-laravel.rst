@@ -2,7 +2,7 @@
     Referred to by: https://github.com/divio/php-laravel-divio-quickstart
     Where:
       in the README
-      in the GitHub application About field
+      in the GitHub project About field
       in the Dockerfile
     As: https://docs.divio.com/en/latest/how-to/quickstart-php-laravel/
 

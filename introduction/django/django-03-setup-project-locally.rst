@@ -103,7 +103,7 @@ environment yourself.
 
 
 Start the local application
--------------------------
+---------------------------
 
 Start the application by running ``docker-compose up`` in the terminal::
 

@@ -2,7 +2,7 @@
     Referred to by: https://github.com/divio/django-divio-quickstart
     Where:
       in the README
-      in the GitHub application About field
+      in the GitHub project About field
     As: https://docs.divio.com/en/latest/how-to/quickstart-django/
 
 .. meta::

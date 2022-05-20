@@ -22,8 +22,8 @@ What’s backed up?
 Our backup system takes care of your applications’s:
 
 * database - the database that Django uses for persistent storage, made available for download as a binary database dump
-* media files - files uploaded/processed/stored by the application’s applications, made available for download as a 
-  tarred archive, and including a manifest file of contents
+* media files - files uploaded/processed/stored by the application, made available for download as a tarred archive, 
+  and including a manifest file of contents
 
 Your backups are made to encrypted storage.
 

@@ -7,14 +7,11 @@ This article applies to applications using the Aldryn framework only.
 
 ..  note::
 
-    This article assumes you are already familiar with the steps involved. For
-    a full walk-through, see the :ref:`tutorial-add-applications` section of
-    the :ref:`developer tutorial <introduction>`.
+    This article assumes you are already familiar with the steps involved. For a full walk-through, see the :ref:`tutorial-add-applications` section of the :ref:`developer tutorial <introduction>`.
 
-If an addon has not yet been created for the application you require, you have
-two options:
+If an addon has not yet been created for the application you require, you have two options:
 
-* Add the application to the application manually (described in this article).
+* Add the application manually (described in this article).
 * Create an addon (described in :ref:`create-addon`).
 
 
@@ -23,10 +20,8 @@ Make the package available to the application
 
 You can do this in one of two ways:
 
-* Copy the application to the root of the Python directory, so it's on the
-  Python path.
-* Add it to ``requirements.in``. See :ref:`install-python-dependencies` for
-  details on how to do this.
+* Copy the application to the root of the Python directory, so it's on the Python path.
+* Add it to ``requirements.in``. See :ref:`install-python-dependencies` for details on how to do this.
 
 
 Configure the application
@@ -35,12 +30,10 @@ Configure the application
 Configure settings
 ^^^^^^^^^^^^^^^^^^
 
-Add the names of any required applications to the ``INSTALLED_APPS.extend()``
-method in ``settings.py``.
+Add the names of any required applications to the ``INSTALLED_APPS.extend()`` method in ``settings.py``.
 
-Other key settings (such as ``MIDDLEWARE_CLASSES``) will already be defined in
-settings, so **don't simply declare them** (e.g. ``MIDDLEWARE_CLASSES =
-[...]``). If you do this, you will overwrite existing settings. Instead, use
+Other key settings (such as ``MIDDLEWARE_CLASSES``) will already be defined in settings, so **don't simply declare 
+them** (e.g. ``MIDDLEWARE_CLASSES =[...]``). If you do this, you will overwrite existing settings. Instead, use
 for example ``MIDDLEWARE_CLASSES.extend([...])``.
 
 

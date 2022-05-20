@@ -4,7 +4,7 @@ How to install and use the Divio app
 ====================================
 
 The Divio app helps you run your Divio applications locally in our Docker environment, upload and download media, 
-atabase and configuration changes as well as set up a shell environment ready for interaction with the application 
+database and configuration changes as well as set up a shell environment ready for interaction with the application 
 running in the Docker container.
 
 
