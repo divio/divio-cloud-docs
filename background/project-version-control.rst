@@ -34,7 +34,7 @@ explicitly target its branch.
 Application repository branches
 ---------------------------------
 
-By default, each application's code is in its Git ``master`` branch, and can be deployed directly from
+By default, each project's code is in its Git ``main`` branch, and can be deployed directly from
 the Git server to the *Test* or *Live* servers (our strongly-recommended workflow is always to
 deploy to *Test* first).
 
@@ -48,4 +48,4 @@ Each environment can be configured to track a different Git branch, by editing t
 view. If the branch specified cannot be found, an *Unable to get commit count from repository* message will be shown.
 
 Using custom branches allows (for example) a workflow in which you work on ``develop`` before manually merging into
-``master``, and then deploying *Live*.
+``main``, and then deploying *Live*.

@@ -57,7 +57,7 @@ Use the ``--all`` flag to include automatically applied variables, for example:
     DEFAULT_STORAGE_DSN   s3://A5JHDYDTYZ3PLOF:t62LdAvROXgFR14%2BOwidSI6N9WQL454G0ipJY@example-live-b328dddd68536e314797994491-c967f23.divio-media.org.s3.amazonaws.com/?auth=s3v4&domain=example-live-b32868536e314797994491-c967f23.divio-media.org
     DOMAIN                example.us.aldryn.io
     DOMAIN_ALIASES        .*
-    GIT_BRANCH            master
+    GIT_BRANCH            main
     SECRET_KEY            AX1Rxxxxxxwdm1klEQOPukngZFO58vbbpeqp5l0ogdRspdKZTuutJ5V2ov
     SITE_NAME             example.
     STAGE                 live
