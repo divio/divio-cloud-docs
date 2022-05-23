@@ -34,7 +34,7 @@ To deploy your changes to the Test server, push your changes, and run a deployme
 
     git add .
     git commit -m "Change background colour of welcome page"
-    git push origin master
+    git push origin <branch-name>
 
 On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
 using the Control Panel, or by running:

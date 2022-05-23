@@ -86,12 +86,12 @@ Go to your Git hosting service. The next step depends on whether you are *creati
 Creating a new Divio project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order for our Control Panel to be able to check out the Git repository, it must be able to check out the ``master``
-branch, with no conflicts.
+In order for our Control Panel to be able to check out the Git repository, it must be able to check out the branch, 
+with no conflicts.
 
 #. Create a new repository at the Git provider.
-#. Ensure the new repository has a ``master`` branch. The branch must not contain anything other than ``.git``,
-   ``LICENSE``, ``README``, ``README.md`` or ``README.rst``.
+#. Ensure the new repository has a branch (by default named ``main``). The branch must not contain anything other than 
+   ``.git``, ``LICENSE``, ``README``, ``README.md`` or ``README.rst``.
 
 If these conditions are not met, the Control Panel will not accept the repository URL.
 
@@ -293,10 +293,10 @@ do not permit HTTPS as an authentication method for these platforms.
 Errors and what they mean
 -------------------------
 
-The remote repository requires a ``master`` branch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The remote repository requires a branch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Control Panel expected to find a branch (by default named ``master``) at the remote.
+The Control Panel expected to find a branch (by default named ``main``) at the remote.
 
 If the Divio project uses the *Custom tracking branches* feature, then whatever branch is used for the *Test*
 environment should be present at the remote.
@@ -310,17 +310,18 @@ Authentication error
 The most likely problem is that one or more of:
 
 * the :ref:`URL of the Git repository <git-repository-add-url>` entered into the Control Panel
-* (for SSH) the :ref:`Control Panel public key <git-setup-ssh>` that you added to the deploy keys of the Git repository, and the deploy keys must have correct read/write access
+* (for SSH) the :ref:`Control Panel public key <git-setup-ssh>` that you added to the deploy keys of the Git 
+  repository, and the deploy keys must have correct read/write access
 * (for HTTPS) the :ref:`Git repository username/personal access token <git-setup-https>` that you added to the Control
   Panel
 
 are not correct. Check these values.
 
 
-The ``master`` branch must exist and only include a single readme file in order to create a new project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Control Panel not being able to accept the repository URL (the branch)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``master`` branch at the remote repository contained other files.
+The branch (by default named ``main``) at the remote repository must exist and only include a single readme file.
 
 Check that no other files are in the branch.
 
