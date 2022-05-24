@@ -8,7 +8,7 @@ need to specify a particular version for your application.
 Access credentials
 ------------------------
 
-When an Elasticsearch instance is added to a project, each environments will be provided with a
+When an Elasticsearch instance is added to an application, each environments will be provided with a
 ``DEFAULT_HAYSTACK_URL`` variable.
 
 This variable contains the details required to access the instance, in the form::
@@ -22,7 +22,8 @@ need to be decoded.
 Access limitations
 ------------------
 
-Except for projects using a dedicated Elasticsearch instance, applications use one of our shared Elasticsearch clusters.
+Except for applications using a dedicated Elasticsearch instance, applications use one of our shared Elasticsearch 
+clusters.
 
 The connection URL we provide grants access *only* to a specific index, and not to other indexes. An application
 may use only URLs that start with the index prefix we provided.

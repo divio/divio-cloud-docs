@@ -15,15 +15,15 @@ subscription, your service won't be interrupted.
 * RAM: we build in headroom above the advertised container allocation
 * transfer, media and database storage: we do not enforce hard limits
 
-If your project consistently consumes more than your plan, we'll get in touch to ask you to upgrade your plan
+If your application consistently consumes more than your plan, we'll get in touch to ask you to upgrade your plan
 appropriately.
 
 
 CDN and transfer volume calculations
 ------------------------------------
 
-Divio projects automatically use CDN (content delivery networks) to optimise delivery of files from our site to your
+Divio applications automatically use CDN (content delivery networks) to optimise delivery of files from our site to your
 users.
 
-Your project's transfer volume will be calculated only on the traffic that we serve to the CDN - not the traffic that
-the CDN serves to your users.
+Your application's transfer volume will be calculated only on the traffic that we serve to the CDN - not the traffic 
+that the CDN serves to your users.

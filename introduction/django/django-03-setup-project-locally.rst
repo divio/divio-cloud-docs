@@ -10,9 +10,9 @@
 Install Python and Django using the ``Dockerfile``
 --------------------------------------------------
 
-This project requires that we have Python installed in the container. By using an official Docker base image that
+This application requires that we have Python installed in the container. By using an official Docker base image that
 includes Python, we can speed up build times and rely on a lightweight and expertly-constructed foundation. The
-``Dockerfile`` that defines the project is currently empty. We will use Python 3.8, so add:
+``Dockerfile`` that defines the application is currently empty. We will use Python 3.8, so add:
 
 ..  code-block:: Dockerfile
 
@@ -26,17 +26,17 @@ Let's check that Docker can build an image from our newly-created Dockerfile, by
 
     docker build .
 
-This project will use Django 3.1.x. We can install Django and its Python dependencies by using ``pip`` to process a
-list of requirements. Create a new file ``requirements.txt`` in the project and list Django:
+This application will use Django 3.1.x. We can install Django and its Python dependencies by using ``pip`` to process a
+list of requirements. Create a new file ``requirements.txt`` in the application and list Django:
 
 ..  code-block:: text
 
     django>=3.1,<3.2
 
 The requirements file needs to be made accessible *inside* the Docker application. So, we will copy it (and everything
-else in the root of this project) into the image's filesystem at ``/app`` (it doesn't need to be there in particular,
-but ``/app`` is a useful convention), and for convenience, we can set Docker to use ``/app`` as its base directory.
-Finally, we will run the ``pip`` command.
+else in the root of this application) into the image's filesystem at ``/app`` (it doesn't need to be there in 
+particular, but ``/app`` is a useful convention), and for convenience, we can set Docker to use ``/app`` as its base 
+directory. Finally, we will run the ``pip`` command.
 
 ..  code-block:: Dockerfile
     :emphasize-lines: 2-
@@ -46,7 +46,7 @@ Finally, we will run the ``pip`` command.
     COPY . /app
     RUN pip install -r requirements.txt
 
-Check again that the project builds as expected with ``docker build .``.
+Check again that the application builds as expected with ``docker build .``.
 
 
 Create a ``docker-compose.yml`` file for convenience
@@ -58,7 +58,7 @@ all these various parts need to be orchestrated to function as an application. D
 convenient way to manage and interact with Docker applications. For example, it's convenient to have port-mapping set
 up locally, and to have direct access to files inside the container while developing.
 
-``docker-compose.yml`` configures Docker Compose. Create a new ``docker-compose.yml`` file in the project:
+``docker-compose.yml`` configures Docker Compose. Create a new ``docker-compose.yml`` file in the application:
 
 ..  code-block:: YAML
 
@@ -83,8 +83,8 @@ number of useful ``docker-compose`` commands. For example, now you can use ``doc
 application, not just one image, and to run commands inside the application. Try ``docker-compose build`` now.
 
 
-Create a new Django project in the application
------------------------------------------------
+Create a new Django application in the application
+--------------------------------------------------
 
 Next we need to create a new Django project in the application (with ``django-admin startproject``), so run:
 
@@ -102,20 +102,20 @@ maps ``/app`` to the host filesystem, so you can see them and edit them without 
 environment yourself.
 
 
-Start the local project
--------------------------
+Start the local application
+---------------------------
 
-Start the project by running ``docker-compose up`` in the terminal::
+Start the application by running ``docker-compose up`` in the terminal::
 
     ➜  docker-compose up
     Starting tutorial-project_web_1 ... done
     Attaching to tutorial-project_web_1
     web_1  | Watching for file changes with StatReloader
 
-Open the project in your web browser by visiting http://127.0.0.1:8000, where you should see the default Django success
-page.
+Open the application in your web browser by visiting http://127.0.0.1:8000, where you should see the default Django 
+success page.
 
-Notice above that although the Django runserver is running on port 80, the project is accessible on port 8000. The
+Notice above that although the Django runserver is running on port 80, the application is accessible on port 8000. The
 ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping <docker-compose-web>`.
 
 If you amend or even just save any Python file in the Django project, the runserver will reload the Python modules and
@@ -138,7 +138,8 @@ Add:
 to ``requirements.txt``. These dependencies are baked into the image, so every time you amend the requirements, you
 will need to rebuild with the new dependency list (we'll do that in a moment).
 
-The Django project can be started with uWSGI. This should be baked into the ``Dockerfile`` itself, as a start-up command. To the end of the file, add:
+The Django application can be started with uWSGI. This should be baked into the ``Dockerfile`` itself, as a start-up 
+command. To the end of the file, add:
 
 ..  code-block:: Dockerfile
 
@@ -156,7 +157,7 @@ example - a cloud deployment.
 However, when we start it locally with ``docker-compose up``, the ``command`` line in the ``docker-compose.yml`` file
 overrides that, and uses ``python manage.py runserver 0.0.0.0:80`` instead.
 
-Try running the project locally using uWSGI rather than the runserver, by temporarily commenting out the ``command``
+Try running the application locally using uWSGI rather than the runserver, by temporarily commenting out the ``command``
 line in the ``docker-compose.yml`` file. Note that it's not necessary to rebuild after making changes to
 ``docker-compose.yml`` - Docker Compose uses images, but doesn't affect what's in them.
 

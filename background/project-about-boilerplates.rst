@@ -8,16 +8,16 @@ Boilerplates
 Boilerplates
 ------------
 
-A **Boilerplate** is a convenient way to define components to be used by a project, so that new
-projects can be created quickly with the same tooling set up as soon as the project is created.
+A **Boilerplate** is a convenient way to define components to be used by an application, so that new
+applications can be created quickly with the same tooling set up as soon as the application is created.
 
-A Boilerplate can be used to define any project-level components and processes that are to be
+A Boilerplate can be used to define any application-level components and processes that are to be
 re-used.
 
 For example, a Boilerplate can define how the Django templates are structured and make opinionated
 choices about what JavaScript frameworks and CSS tools are used.
 
-When a project is created, it will always specify a Boilerplate - even if it's a pre-defined
+When an application is created, it will always specify a Boilerplate - even if it's a pre-defined
 :ref:`blank-boilerplate` that leaves all these choices up to you.
 
 Various Boilerplates are provided as defaults. Some provide only basic HTML and CSS,
@@ -53,7 +53,7 @@ includes a generic HTML template, CSS to normalise and set some standard
 classes, and some JavaScript including jQuery.
 
 Our implementation of it is very standard, and simply adapts it for use in
-django CMS projects.
+django CMS applications.
 
 
 Bootstrap and Foundation Boilerplates
@@ -85,7 +85,7 @@ The Sass Boilerplate uses the `HTML5 Boilerplate package
 * `Node <https://nodejs.org/en/>`_ as a runtime environment.
 
 The advantage of using a dynamic Boilerplate with compiled components is that
-it permits you to build a customised frontend, shorn of items your project does
+it permits you to build a customised frontend, shorn of items your application does
 not require. Compiled components can also be heavily compressed and optimised,
 while the source files you work on can remain readable and comprehensive.
 

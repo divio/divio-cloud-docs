@@ -6,12 +6,12 @@ S3 media headers update causes problems during deployment
 **Support notice 17th November 2020**
 
 
-This notice applies to projects using :ref:`Aldryn Django <aldryn>` **only**.
+This notice applies to applications using :ref:`Aldryn Django <aldryn>` **only**.
 
 S3 media headers update
 ========================================
 
-During the deployment process of Aldryn Django projects, Aldryn Django applies a :ref:`release command
+During the deployment process of Aldryn Django application, Aldryn Django applies a :ref:`release command
 <release-commands>` to update S3 media headers with the appropriate caching settings. These headers are used by
 Cloudflare when serving media.
 

@@ -8,14 +8,14 @@ typically you would extend to include your own fields.
 
 This process is described in the `Wagtail tutorial
 <https://docs.wagtail.io/en/stable/getting_started/tutorial.html#extend-the-homepage-model>`_, and adds a ``home``
-application to the Django project that adds a new page type. We'll run through the steps here.
+application to the Django application that adds a new page type. We'll run through the steps here.
 
 
 Add a new ``home`` application
 ------------------------------
 
 You'll notice that we use ``docker-compose run web`` a lot here, to execute familiar Django commands inside the
-project's Docker environment.
+application's Docker environment.
 
 Create the application
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ Edit its ``models.py`` to add a new HomePage model with a ``body`` field:
 Configure the Django settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``home`` needs to be listed in the project's ``INSTALLED_APPS``, in ``settings.py``. Add ``home`` to the
+``home`` needs to be listed in the application's ``INSTALLED_APPS``, in ``settings.py``. Add ``home`` to the
 list:
 
 ..  code-block:: python
@@ -71,11 +71,11 @@ Create migrations and migrate the database
     docker-compose run web python manage.py migrate home
 
 
-Add templates to the project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add templates to the application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Project-level ``base.html`` template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Application-level ``base.html`` template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In ``templates``, add a ``base.html``:
 
@@ -132,7 +132,7 @@ We made changes ``settings.py``, added the ``home`` application and some ``templ
     git commit -m "Added Home application"
     git push
 
-On the project Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
+On the application Dashboard, you will see that your new commit is listed as *1 Undeployed commit*. You can deploy this
 using the Control Panel, or by running:
 
 ..  code-block:: bash
@@ -153,20 +153,20 @@ that it works correctly, you can deploy the Live server too:
 Install a package from pip
 ---------------------------
 
-Next, we're going to install a new package, `Django Axes <https://github.com/jazzband/django-axes>`_, into the project
-(Django Axes keeps track of log-in attempts). Then we'll test it and deploy it to the cloud.
+Next, we're going to install a new package, `Django Axes <https://github.com/jazzband/django-axes>`_, into the 
+application (Django Axes keeps track of log-in attempts). Then we'll test it and deploy it to the cloud.
 
 To be used in a containerised system, packages must be built onto the image, otherwise the next time a container is
 launched, the package will not be there. The image is built by the ``Dockerfile``, and in our ``Dockerfile`` for Django
-projects, this includes an instruction to process the project's ``requirements.in`` file with Pip. This is where the
-package needs to be added. Open ``requirements.in`` and at the end of it add a new line::
+application , this includes an instruction to process the application s ``requirements.in`` file with Pip. This is 
+where the package needs to be added. Open ``requirements.in`` and at the end of it add a new line::
 
     django-axes==3.0.3
 
 It's important to pin dependencies to a particular version this way; it helps ensure that we don't run into unwanted
 surprises if the package is updated, and the new version introduces an incompatibility.
 
-Now you can build the project again by running::
+Now you can build the application again by running::
 
     docker-compose build
 
@@ -195,10 +195,11 @@ Run migrations
     docker-compose run web python manage.py migrate axes
 
 
-Check the project
-~~~~~~~~~~~~~~~~~
+Check the application
+~~~~~~~~~~~~~~~~~~~~~
 
-If you launch the project again with ``docker-compose up`` you'll find Django Axes in the admin at ``/django-admin``:
+If you launch the application again with ``docker-compose up`` you'll find Django Axes in the admin at 
+``/django-admin``:
 
 .. image:: /images/axes.png
   :alt: 'Django Axes in the admin'
@@ -227,7 +228,7 @@ configuration examples that it is good to know about.
 Where to go next?
 ------------------
 
-This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+This completes the basic cycle of application creation, development and deployment; you should now be familiar with the
 fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many

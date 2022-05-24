@@ -11,19 +11,19 @@ How to update an existing Aldryn addon
 
 Addons will need to be updated now and then. The basic process for updating an addon is to:
 
-* :ref:`set it up in a project as if you were creating one <create-addon>`, in the ``addons-dev``
+* :ref:`set it up in an application as if you were creating one <create-addon>`, in the ``addons-dev``
   directory
 * make and test your changes
 * upload the new version.
 
 
-Choose a local project to work with
------------------------------------
+Choose a local application to work with
+---------------------------------------
 
-Ideally, select a project that already works with an existing version of the addon. This way, you can check
+Ideally, select an application that already works with an existing version of the addon. This way, you can check
 that the new version continues to work as expected, and that migrations for example run correctly.
 
-If you don't have such a project, the next best thing is to create a new project on the Control Panel
+If you don't have such an application, the next best thing is to create a new application on the Control Panel
 containing the addon, and then set that up locally.
 
 
@@ -53,7 +53,7 @@ In ``addons-dev``, clone the addon from its VCS repository. It should look somet
 
 Check that you have the appropriate version cloned.
 
-Placing the addon into ``addons-dev`` will override any version that has been installed into the project
+Placing the addon into ``addons-dev`` will override any version that has been installed into the application
 using the requirements file.
 
 
@@ -61,7 +61,7 @@ Run ``divio app develop``
 -----------------------------
 
 If the new version is different from the previously installed version and includes changed dependencies, or
-you want to check exactly what it will do when when the project is built, you should run::
+you want to check exactly what it will do when when the application is built, you should run::
 
      divio app develop <package name>
 
@@ -117,8 +117,8 @@ to push it to the addons system.
 Test it on the Control Panel
 ----------------------------
 
-For completeness, check that the new version of your addon can be installed and deployed in a
-project.
+For completeness, check that the new version of your addon can be installed and deployed in an
+application.
 
 
 Place the new version in the appropriate channel

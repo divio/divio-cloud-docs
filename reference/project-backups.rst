@@ -1,19 +1,19 @@
 .. _knowledge-project-backups:
 
-Divio project backups
-=====================
+Divio application backups
+=========================
 
 ..  seealso::
 
-    :ref:`How to backup your projects <how-to-backup-project>`.
+    :ref:`How to backup your applications <how-to-backup-project>`.
 
 Our backup system is designed with pragmatic, real-world needs and concerns in mind.
 
 Backups on Divio are in accordance with two key principles.
 
 * Data integrity - the integrity of your data and content is paramount, and they must be kept safe.
-* Portability - your project belongs to you. Your data and content must be as portable as possible, so that you can sign
-  up to our services confident that you will never find yourself locked in to them.
+* Portability - your application belongs to you. Your data and content must be as portable as possible, so that you can 
+  sign up to our services confident that you will never find yourself locked in to them.
 
 
 What’s backed up?
@@ -22,8 +22,8 @@ What’s backed up?
 Our backup system takes care of your applications’s:
 
 * database - the database that Django uses for persistent storage, made available for download as a binary database dump
-* media files - files uploaded/processed/stored by the project’s applications, made available for download as a tarred
-  archive, and including a manifest file of contents
+* media files - files uploaded/processed/stored by the application, made available for download as a tarred archive, 
+  and including a manifest file of contents
 
 Your backups are made to encrypted storage.
 
@@ -50,7 +50,7 @@ Scheduled and on-demand backups
 Backups are initiated in two different ways:
 
 * on-demand - when the user requests it
-* scheduled - according to a schedule determined by the project's subscription
+* scheduled - according to a schedule determined by the application's subscription
 
 
 Retention policies

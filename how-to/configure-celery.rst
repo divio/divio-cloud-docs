@@ -59,7 +59,7 @@ These tasks are covered in order below.
 
 ..  important::
 
-    We have a quickstart project with a Celery setup ready to use or to be used as a reference for your changes.
+    We have a quickstart application with a Celery setup ready to use or to be used as a reference for your changes.
     You can find it here: https://github.com/divio/django-celery-divio-quickstart
 
 

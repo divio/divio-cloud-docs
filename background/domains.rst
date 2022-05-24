@@ -72,7 +72,7 @@ and ``DOMAIN_REDIRECTS``.
     environment variables and apply the appropriate configuration.
 
     (This doesn't apply to legacy Aldryn Django applications, which will configure themselves automatically using
-    these variables. See :ref:`redirects in Aldryn Django projects <django-manage-redirects>`.)
+    these variables. See :ref:`redirects in Aldryn Django applications <django-manage-redirects>`.)
 
 
 Redirects

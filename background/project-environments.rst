@@ -1,9 +1,9 @@
 .. _divio-project-environments:
 
-Project environments
-====================
+Application environments
+========================
 
-Each Divio project includes three environments for the application by default.
+Each Divio application includes three environments for the application by default.
 
 The three environments are created in Docker containers from the same images.
 
@@ -14,14 +14,14 @@ The three environments are created in Docker containers from the same images.
 In our recommended workflow, development is done locally, before being deployed to *Test*
 and finally to *Live*.
 
-It is also possible to set up multiple cloud environments for a project. For example, a common scheme is to use four:
-*Development*, *Testing*, *QA*, *Production*.
+It is also possible to set up multiple cloud environments for an application. For example, a common scheme is to use 
+four: *Development*, *Testing*, *QA*, *Production*.
 
 
 .. _default-project-conditions:
 
-Default project conditions
---------------------------
+Default application conditions
+------------------------------
 
 Some of these conditions may be readily altered according your needs, for example the ``DEBUG``
 setting. See also :ref:`local-in-live-mode`.

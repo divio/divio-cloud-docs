@@ -5,8 +5,8 @@
 
 
 
-Run the project locally
------------------------
+Run the application locally
+---------------------------
 
 This section assumes that you have Docker and the Divio CLI installed. You also need an account on Divio, and your
 account needs your SSH public key. See :ref:`local-cli` if required.
@@ -50,7 +50,7 @@ Try accessing the site at http://127.0.0.1:8000/ (this will only work if a URL h
 
 The Django admin is available at http://127.0.0.1:8000/admin.
 
-You now have a working, running project ready for further development. All the commands you might normally execute
+You now have a working, running application ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web`` as in the
 examples above.
 

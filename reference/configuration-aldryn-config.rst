@@ -1,5 +1,5 @@
 ..  This section is referred to (as https://docs.divio.com/en/latest/reference/configuration-aldryn-config.html) from
-    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+    within the settings.py file provided by standard Aldryn Django applications. Do not change this reference.
 
 .. _configure-with-aldryn-config:
 
@@ -8,8 +8,8 @@ Addon configuration with ``aldryn_config.py``
 
 ..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
-A Django application may require some configuration when it is deployed in a
-project. Typically this will include settings in :ref:`settings.py
+A Django application may require some configuration when it is deployed in an
+application. Typically this will include settings in :ref:`settings.py
 <settings.py>`, but it can also include things like URL patterns that need to
 be set up.
 
@@ -21,7 +21,7 @@ Through this mechanism you can also allow the user to provide configuration in
 a simple web form that will be available in the Control Panel.
 
 When the user saves the web form, the data will be stored in the addon's ``settings.json`` file in
-the project repository.
+the application repository.
 
 An example from a django CMS addon instance::
 
@@ -79,7 +79,7 @@ configurations via settings.
 We can define them in the ``to_settings()`` method of an application to do this.
 
 Here’s an example of ``aldryn_config.py`` that inserts URL configurations into
-a project:
+an application:
 
 ..  code-block:: python
     :emphasize-lines: 6

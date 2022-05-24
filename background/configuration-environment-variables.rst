@@ -34,7 +34,7 @@ the variables of the *Live* server:
 
 ..  code-block:: bash
 
-    divio app env-vars --remote-id <numerical project id> -s live
+    divio app env-vars --remote-id <numerical application id> -s live
 
 If any exist, they will be displayed thus::
 

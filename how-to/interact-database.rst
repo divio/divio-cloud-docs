@@ -5,11 +5,11 @@ How to interact with your application's database
 
 The database for your Divio application runs:
 
-* in a Docker container for your **local** projects: :ref:`interact-local-db`
+* in a Docker container for your **local** applications: :ref:`interact-local-db`
 * on a dedicated cluster for your **cloud-deployed** sites: :ref:`interact-cloud-db`
 
 In either case, you will mostly only need to interact with the database using the tools provided by
-your project's runtime stack (e.g. Django). However, if you need to interact with it directly, the
+your application's runtime stack (e.g. Django). However, if you need to interact with it directly, the
 option exists.
 
 ..  admonition:: The database service name in ``docker-compose.yml``
@@ -27,8 +27,8 @@ Generally, the most convenient way to interact with the application's database i
 copy of your cloud data if necessary).
 
 
-From the project's local Django web container
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the application's local Django web container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using ``dbshell``
 ^^^^^^^^^^^^^^^^^
@@ -51,8 +51,8 @@ might be different (for example, ``database_default``).
 As well as ``psql`` you can run commands such as ``pg_dump`` and ``pg_restore``. This is useful
 for a number of :ref:`common operations <common-db-operations>`, below.
 
-Your project may not have the ``psql`` client installed already, in which case you will need to install it first. See
-:ref:`install-system-packages`.
+Your application may not have the ``psql`` client installed already, in which case you will need to install it first. 
+See :ref:`install-system-packages`.
 
 
 Using ``docker exec``
@@ -114,7 +114,7 @@ You will need to use the following details:
 Access the database using your Postgres tool of choice. Note that you must
 specify the host address, ``127.0.0.1``.
 
-For example, if you're using the ``psql`` command line tool, you can connect to the project
+For example, if you're using the ``psql`` command line tool, you can connect to the application
 database with::
 
     psql -h 127.0.0.1 -U postgres db
@@ -134,14 +134,14 @@ uploads a SQL database dump.
 See the :ref:`divio CLI command reference <divio-cli-command-ref>` for more on using these commands.
 
 
-From the project's Cloud application container
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the Cloud application's container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log into your Cloud project's container (Test or Live) over SSH.
+Log into your Cloud application's container (Test or Live) over SSH.
 
 
-Using ``dbshell`` in a Django project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using ``dbshell`` in a Django application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run::
 
@@ -173,12 +173,12 @@ it is restricted, for security reasons, to containers running on our own infrast
 Change the local database engine version
 ----------------------------------------
 
-Sometimes, you will need to change the database engine, or its version number, that your local project uses
+Sometimes, you will need to change the database engine, or its version number, that your local application uses
 - for example if the cloud database is updated or changed. If the two database engines are not the
 same, you may run into problems.
 
-The local database engine is specified by the ``image`` option in the database service (usually called ``database_default`` in
-your project's ``docker-compose.yml`` file, for example:
+The local database engine is specified by the ``image`` option in the database service (usually called 
+``database_default`` in your application's ``docker-compose.yml`` file, for example:
 
 ..  code-block:: yaml
     :emphasize-lines: 2
@@ -195,7 +195,7 @@ now running Postgres 14:
     database_default:
         image: postgres:14-alpine
 
-Docker will use the new version the next time the local project is launched.
+Docker will use the new version the next time the local application is launched.
 
 If you are not sure what image to use for the local database, Divio support will be able to advise
 you.
@@ -330,6 +330,6 @@ Restore from a downloaded Cloud backup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Untar the downloaded ``backup.tar`` file. It contains a ``database.dump`` file. Copy the file to
-your local project directory, then run the commands above to :ref:`drop <drop-db>` and :ref:`create
+your local application directory, then run the commands above to :ref:`drop <drop-db>` and :ref:`create
 <create-db>` the database, :ref:`create the the hstore extension <apply-hstore-db>`, and then
 :ref:`restore from a file <restore-db>`.

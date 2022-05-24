@@ -45,7 +45,7 @@ If a release command fails or raises an error, the deployment will fail.
 Applying release commands
 -------------------------
 
-Release commands can be added in a project's *Settings* view, along with a human-readable label.
+Release commands can be added in an application's *Settings* view, along with a human-readable label.
 
 .. image:: /images/release-commands.png
    :alt: 'Release commands'

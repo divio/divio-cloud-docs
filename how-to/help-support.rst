@@ -31,7 +31,7 @@ For Divio platform users
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This documentation is a guide to using our platform, to help you manage your 
-accounts and projects and provide essential knowledge.
+accounts and applications and provide essential knowledge.
 
 For developers
 ^^^^^^^^^^^^^^

@@ -1,5 +1,5 @@
 ..  This section is referred to (as https://docs.divio.com/en/latest/how-to/configure-settings.html) from
-    within the settings.py file provided by standard Aldryn Django projects. Do not change this reference.
+    within the settings.py file provided by standard Aldryn Django applications. Do not change this reference.
 
 ..  _settings.py:
 
@@ -8,7 +8,7 @@
 
 ..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
 
-Divio Django projects that use our addons framework are shipped with a ``settings.py`` file that hooks into the
+Divio Django applications that use our addons framework are shipped with a ``settings.py`` file that hooks into the
 framework. The framework allows addon applications to configure their own settings programmatically.
 
 At first sight, this ``settings.py`` file may seem unusual, but in fact it behaves as a standard Django settings module.
@@ -34,7 +34,7 @@ develop`` is run.
         # </INSTALLED_ADDONS>
     ]
 
-Settings in Divio projects can either be :ref:`configured automatically via the addons framework
+Settings in Divio applications can either be :ref:`configured automatically via the addons framework
 <application-configuration>`, or set manually.
 
 

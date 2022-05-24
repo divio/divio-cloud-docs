@@ -40,19 +40,19 @@ Coding in Divio applications
 .. toctree::
     :maxdepth: 1
 
-    Working with your project’s media storage <work-media-storage>
-    Working with your project’s database <work-database>
+    Working with your application’s media storage <work-media-storage>
+    Working with your application’s database <work-database>
     File compression <compression>
     Sending email <coding-sending-email>
 
 
-Projects
---------
+Applications
+------------
 
 .. toctree::
     :maxdepth: 1
 
-    Divio project backups <project-backups>
+    Divio application backups <project-backups>
     Zero-downtime deployment <zero-downtime>
     Multi-site applications <multi-site>
     Mirrors <mirrors>

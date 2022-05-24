@@ -7,7 +7,7 @@ How to use our backup system
 
     :ref:`Divio backup system <knowledge-project-backups>`
 
-The *Backups* view of your project shows the Scheduled and On-demand backups that have been created.
+The *Backups* view of your application shows the Scheduled and On-demand backups that have been created.
 
 The list of backups shows what was backed up and when, with additional information and options to restore or download
 the backup, or create new backups on-demand.
@@ -16,12 +16,13 @@ the backup, or create new backups on-demand.
 How to create backups
 ---------------------
 
-* **Scheduled backups** are made according to the project's backup schedule, and require no intervention from the user.
+* **Scheduled backups** are made according to the application's backup schedule, and require no intervention from the 
+  user.
 
 * **On-demand backups** can be made whenever you require.
 
 
-To create a backup, from the *Backups* view of your project,
+To create a backup, from the *Backups* view of your application,
 
 * select *Create backup* for the server you want to backup
 * choose what to backup: *database*, *media* or both
@@ -41,7 +42,7 @@ The Restore option
 ~~~~~~~~~~~~~~~~~~
 
 The Restore functionality gives you flexibility. You can choose what to restore (database or media) and its destination
-(project and environment).
+(application and environment).
 
 ..  warning::
 

@@ -6,16 +6,15 @@ Go-live checklist
 Check your subscription plan
 ----------------------------
 
-In the Control Panel, check the project's *Subscription*, and that it includes the technical and support resources it
-will require once the site is live.
+In the Control Panel, check the application's *Subscription*, and that it includes the technical and support resources 
+it will require once the site is live.
 
 
 Dependencies
 ------------
 
-Pin all dependencies in the project, so that future deployments do not introduce unexpected software updates.
-
-* **Python applications**: see :ref:`pinning all dependencies in Python applications <manage-dependencies>`.
+Pin all dependencies in the application, so that future deployments do not introduce unexpected software updates.
+ * **Python applications**: see :ref:`pinning all dependencies in Python applications <manage-dependencies>`.
 
 
 Turn off development mode
@@ -23,9 +22,8 @@ Turn off development mode
 
 Many frameworks include a development mode that exposes additional information. This should not go into production.
 
-* **Django applications**: this is handled by the ``DEBUG`` setting. When using our :ref:`recommended Django project
-  configurations <working-with-recommended-django-configuration>`, this will be handled correctly automatically.
-
+* **Django applications**: this is handled by the ``DEBUG`` setting. When using our :ref:`recommended Django application
+  configurations <working-with-recommended-django-configuration>`, this will be handled correctly automatically. 
 
 Domains
 -------
@@ -43,9 +41,9 @@ HTTPS
 
 Set your application to redirect to HTTPS.
 
-* **Django**: :ref:`Django projects using our recommended configuration
+* **Django**: :ref:`Django applications using our recommended configuration
   <working-with-recommended-django-configuration>`, will be apply redirects to HTTPS by default.
-* **Legacy Aldryn projects**: enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
+* **Legacy Aldryn applications**: enable redirects to HTTPS by setting the :ref:`SECURE_SSL_REDIRECT environment
   variable <security-middleware-settings>` to ``True``.
 * **Node**: :ref:`how-to-express-js-https`
 
@@ -63,13 +61,13 @@ File serving configuration
 Check the configuration of static file serving. Files should be appropriately collected, compressed and so on. Hashing
 static filenames lets you take advantage of caching.
 
-* **Legacy Aldryn projects**: we recommend using the :ref:`Hash static filenames <hash-static-file-names>` option.
+* **Legacy Aldryn applications**: we recommend using the :ref:`Hash static filenames <hash-static-file-names>` option.
 
 
 Other settings
 --------------
 
-Check your project's configuration for any settings that may have been temporarily configured during development.
+Check your application's configuration for any settings that may have been temporarily configured during development.
 
 
 Local tests
@@ -99,5 +97,5 @@ After deployment
 * Check your site as a logged-in user, an anonymous user and in your browser's private/incognito
   mode to verify expected behaviour.
 * Check response times with a tool such `Pingdom <https://tools.pingdom.com>`_.
-* If necessary, allocate more resources to the project via its *Subscription* and consult the
+* If necessary, allocate more resources to the application via its *Subscription* and consult the
   :ref:`live-performance` guide.

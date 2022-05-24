@@ -15,8 +15,8 @@ How to configure an existing Gatsby application for deployment on Divio
 
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
-If you don't already have a working Gatsby project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you don't already have a working Gatsby application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`quickstart-gatsby`. Or, if you already have a suitable version of Node installed, you can do:
 
@@ -222,15 +222,16 @@ If you uncomment the:
     # - ".:/app:rw"
 
 entry in the ``web:volumes`` section of ``docker-compose.yml``, the entire ``/app`` directory will be overridden by the
-project files from the host. This can be useful for development. However, you will now need to run the commands ``npm
-install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees them.
+application files from the host. This can be useful for development. However, you will now need to run the commands 
+``npm install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees 
+them.
 
 ..  include:: /how-to/includes/deploy-common-buildrun-run.rst
 
 
 ..  include:: /how-to/includes/deploy-common-git.rst
 
-For a basic project you'll probably need at least:
+For a basic application you'll probably need at least:
 
 ..  code-block:: text
 

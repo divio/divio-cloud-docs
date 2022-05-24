@@ -54,13 +54,13 @@
 How to configure external Git hosting
 =======================================================
 
-All Divio projects can use the Git private server we provide. This article describes how you can instead use the
+All Divio applications can use the Git private server we provide. This article describes how you can instead use the
 Git hosting provider of your choice.
 
 ..  important::
 
-    Once you have set up an external Git provider on a project, **you will no longer be able to revert to Divio's own
-    Git server**. Please ensure that this is what you want to do before using this feature.
+    Once you have set up an external Git provider on an application, **you will no longer be able to revert to Divio's 
+    own Git server**. Please ensure that this is what you want to do before using this feature.
 
 The steps in this process are:
 
@@ -76,15 +76,15 @@ The steps in this process are:
 Prepare the external Git repository
 ------------------------------------
 
-Go to your Git hosting service. The next step depends on whether you are *creating a new Divio project*, or
-*migrating an existing Divio project*:
+Go to your Git hosting service. The next step depends on whether you are *creating a new Divio application*, or
+*migrating an existing Divio application*:
 
 ..  rst-class:: clearfix row
 
 ..  rst-class:: column column2
 
-Creating a new Divio project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a new Divio application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order for our Control Panel to be able to check out the Git repository, it must be able to check out the branch, 
 with no conflicts.
@@ -98,10 +98,11 @@ If these conditions are not met, the Control Panel will not accept the repositor
 
 ..  rst-class:: column column2
 
-Migrating an existing Divio project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrating an existing Divio application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Add the Git repository to the local version of your project as a remote: ``git remote add external <repository URL>``.
+#. Add the Git repository to the local version of your application as a remote: 
+   ``git remote add external <repository URL>``.
 #. Ensure that all the branches you wish to keep are present and up to date with the Divio server: ``git pull <branch>``
 #. Push the branches you require to the new remote: ``git push external <branch>``
 
@@ -114,25 +115,25 @@ Add the Git repository URL to the Control Panel
 ------------------------------------------------------------------------
 
 You will need to supply the URL (SSH URLs are recommended, but :ref:`you can also use HTTPS URLs <git-setup-HTTPS>`) of
-your new repository to the Control Panel. The next step depends on whether this is a new or existing Divio project:
+your new repository to the Control Panel. The next step depends on whether this is a new or existing Divio application:
 
 
 ..  rst-class:: clearfix row
 
 ..  rst-class:: column column2
 
-Creating a new Divio project
+Creating a new Divio application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Select *Repository* > *Custom* in the project creation page.
+* Select *Repository* > *Custom* in the application creation page.
 
 
 ..  rst-class:: column column2
 
-Migrating an existing Divio project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrating an existing Divio application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Select *Repository* from your project's menu in the Dashboard.
+#. Select *Repository* from your application's menu in the Dashboard.
 #. Select **Migrate to external repository**.
 
 
@@ -140,7 +141,7 @@ Migrating an existing Divio project
 
 .. _git-setup-ssh:
 
-Add your project's public key to the Git host
+Add your application's public key to the Git host
 ------------------------------------------------------------------------
 
 The Divio Control Panel will provide you with a public key to add to the Git host, allowing our infrastructure to
@@ -168,8 +169,8 @@ Copy the key, and add it to the Git repository:
 |bitbucket| BitBucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Optionally, create a Bitbucket account specifically for Divio projects - otherwise the key will grant
-   access to all your Bitbucket projects.
+#. Optionally, create a Bitbucket account specifically for Divio applications - otherwise the key will grant
+   access to all your Bitbucket applications.
 #. Go to *Bitbucket settings* > *SSH keys* > *Add key*.
 #. Paste the key.
 
@@ -180,7 +181,7 @@ Test access
 ------------------------------------------------------------------------
 
 When you hit **Continue** in the Control Panel, it tests its access by performing a ``git pull`` action. If
-successful, the project Dashboard will show the repository URL.
+successful, the application Dashboard will show the repository URL.
 
 
 .. _git-setup-webhook:
@@ -243,10 +244,10 @@ send a signal to the Control Panel to pull in new commits when they land (using 
 Remote Git: Reset to origin
 ----------------------------
 
-For projects with external git repositories, especially if commits are force pushed, the project's repository on the
-control panel may not reflect all the commits made in its remote repository at ``origin``. 
+For applications with external git repositories, especially if commits are force pushed, the application's repository 
+on the control panel may not reflect all the commits made in its remote repository at ``origin``. 
 
-To reset to remote, go to the *repository* view of the project's control panel and select *reset to origin*
+To reset to remote, go to the *repository* view of the application's control panel and select *reset to origin*
 and the repository will reflect the commit history of the remote ``origin``.
 
 
@@ -262,8 +263,8 @@ In most cases, you will want to allow write access to the repository. This is th
 full access to the benefits of the Divio addon system, in which the Control Panel records interface actions and
 addon configuration as Git commits.
 
-It's also possible to maintain stricter control over the repository, allowing only read access. In this case, project
-configuration that would normally be maintained via the Control Panel must be undertaken manually.
+It's also possible to maintain stricter control over the repository, allowing only read access. In this case, 
+application configuration that would normally be maintained via the Control Panel must be undertaken manually.
 
 *Write access is required to set up the external Git configuration*, but may be disabled subsequently.
 
@@ -279,7 +280,7 @@ preferred.
 However, HTTPS can be useful in environments where SSH is not permitted, and is available if you explicitly provide an
 HTTPS URL.
 
-You can give the Divio Project access to the Git repository over HTTPS by providing the Git hosting username and a
+You can give the Divio application access to the Git repository over HTTPS by providing the Git hosting username and a
 personal access token.
 
 This is *disabled* for those providers that would allow us to connect using your *password*. In accordance with our
@@ -298,7 +299,7 @@ The remote repository requires a branch
 
 The Control Panel expected to find a branch (by default named ``main``) at the remote.
 
-If the Divio project uses the *Custom tracking branches* feature, then whatever branch is used for the *Test*
+If the Divio application uses the *Custom tracking branches* feature, then whatever branch is used for the *Test*
 environment should be present at the remote.
 
 Check the repository for the expected branch.
@@ -332,8 +333,8 @@ You have no webhook set up
 Although the Control Panel has been able to connect to the repository and authenticate, a webhook has not yet been set
 up.
 
-This is not necessarily an error, but it does mean that your Divio project will not automatically receive signals
+This is not necessarily an error, but it does mean that your Divio application will not automatically receive signals
 from the remote when new commits are made to it, and so you will need to use the manual **Update** button to pull new
-changes to your project.
+changes to your application.
 
 Using webhooks is recommended.

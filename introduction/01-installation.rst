@@ -12,18 +12,18 @@ If you do run into any difficulties, please don't hesitate to contact Divio supp
 Why is the local development environment so important?
 -------------------------------------------------------
 
-**Docker** makes it possible to run and work on a project locally in the same environment as it runs on in the cloud.
-This side-steps some of the most troublesome problems faced by development teams, in which something works well in
-development, but then runs into trouble as a result of different environment conditions in production, or when another
-team member tries to set it up on their own machine.
+**Docker** makes it possible to run and work on an application locally in the same environment as it runs on in the 
+cloud. This side-steps some of the most troublesome problems faced by development teams, in which something works well 
+in development, but then runs into trouble as a result of different environment conditions in production, or when 
+another team member tries to set it up on their own machine.
 
 Using Docker means that not only does every member of the development team work *in the same environment* - which
 includes versions of installed packages, environment variables, database and other services - but they're all in the
 same environment that the application will have in production.
 
-The **local development environment** includes the tools and software that allow you to work on your project, testing
-it as you go on your own computer. This uses Docker, just like our cloud deployment architecture. The local environment
-is also integrated with the cloud infrastructure - *it's like having a hotline to the cloud*.
+The **local development environment** includes the tools and software that allow you to work on your application, 
+testing it as you go on your own computer. This uses Docker, just like our cloud deployment architecture. The local 
+environment is also integrated with the cloud infrastructure - *it's like having a hotline to the cloud*.
 
 In this section we will:
 
@@ -81,7 +81,7 @@ Additional checklist for Docker installation on Windows
 * When you launch Docker, make sure that you do so as a Windows administrator.
 
 
-You're now ready to set up the project you created in the previously step in your local environment for development
+You're now ready to set up the application you created in the previously step in your local environment for development
 work.
 
 

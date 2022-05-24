@@ -42,7 +42,7 @@ things the secure way.
 Pre-public Django security patches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As a trusted, large-scale host of Django projects, we receive advance notification from the Django Project about
+As a trusted, large-scale host of Django applications, we receive advance notification from the Django Project about
 security releases, which means that we are able to have security patches in place before vulnerabilities are made
 public.
 
@@ -50,7 +50,7 @@ public.
 Divio architecture
 ~~~~~~~~~~~~~~~~~~
 
-A project's web application containers and database are not directly accessible outside our network.
+An application's web application containers and database are not directly accessible outside our network.
 
 All traffic to our sites are directed through our Load Balancers, before reaching the application runners that
 orchestrate users' containerised applications.
@@ -81,7 +81,7 @@ Details of other providers can be supplied on application, under the terms of a 
 Security options for Divio users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We’re able to add further protection for our users for their projects. For example, we offer:
+We’re able to add further protection for our users for their applications. For example, we offer:
 
 * free SSL certificates to all customers and HTTPS by default
 * offer security patches and layers, proactively, in response to significant CVEs
@@ -102,7 +102,7 @@ isolated to that particular instance.
 Our containerised architecture makes it very easy to apply important software patches and updates. Fresh containers can
 be deployed to replace ones running outdated software without missing a beat, and we can apply updates - even major
 updates - to parts of the infrastructure without disrupting services. Similarly, updates can be applied to users'
-projects without any disruption to service.
+applications without any disruption to service.
 
 Finally, the portability of Docker containers means that users’ websites, already safely isolated from the machines and
 systems that host them, can be moved away very quickly should the hosting system suffer an attack or a breach. Users
@@ -121,7 +121,7 @@ Policies
 General code security and integrity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We adopt industry best-practices for security both in our own infrastructure and the projects we host for our users.
+We adopt industry best-practices for security both in our own infrastructure and the applications we host for our users.
 
 We use well-tested security libraries and do not create our own. We never bypass built-in protections offered by our
 technology stack, and make full use of them.

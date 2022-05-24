@@ -46,7 +46,7 @@ database and other services. This makes it possible to have independent applicat
 the same code, responding to requests on different domains. Each mirror can have different
 CPU and memory resources allocated to it according to requirements.
 
-See for example :ref:`How to create a multisite project using mirrors
+See for example :ref:`How to create a multisite application using mirrors
 <multisite-mirrors>` in our documentation.
 
 

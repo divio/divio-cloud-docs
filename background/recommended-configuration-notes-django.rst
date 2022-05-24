@@ -1,16 +1,16 @@
 .. _working-with-recommended-django-configuration:
 
-Working with our recommended Django project configuration
+Working with our recommended Django application configuration
 =============================================================
 
-Our recommended Django project configuration is mentioned in:
+Our recommended Django application configuration is mentioned in:
 
 * :ref:`deploy-django`
 * :ref:`quickstart-django`
 * :ref:`django-cms-deploy-quickstart`
 
-The Twelve-factor model adopted for these projects places all configuration in environment variables, so that the project can
-readily be moved to another host or platform, or set up locally for development. The configuration for:
+The Twelve-factor model adopted for these applications places all configuration in environment variables, so that the 
+application can readily be moved to another host or platform, or set up locally for development. The configuration for:
 
 * security
 * database

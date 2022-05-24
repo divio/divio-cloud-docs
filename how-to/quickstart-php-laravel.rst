@@ -9,7 +9,7 @@
 .. meta::
    :description:
        The quickest way to get started with Laravel on Divio. This guide shows you how to use the PHP Laravel Divio
-       quickstart repository to create a Twelve-factor Laravel project including MySQL and S3 cloud media
+       quickstart repository to create a Twelve-factor Laravel application including MySQL and S3 cloud media
        storage, with Docker.
    :keywords: Docker, PHP, Laravel, Postgres, MySQL, S3
 
@@ -20,9 +20,9 @@ How to create a PHP Laravel application with our quickstart repository
 =========================================================================
 
 The `PHP Laravel quickstart <https://github.com/divio/php-laravel-divio-quickstart>`_ repository is a template that
-gives you the fastest possible way of launching a new Laravel project on Divio.
+gives you the fastest possible way of launching a new Laravel application on Divio.
 
-It's based on Laravel's own example project. The only additions are some glue code to handle configuration using
+It's based on Laravel's own example application. The only additions are some glue code to handle configuration using
 environment variables, plus some additional files to take care of the Docker set-up.
 
 
@@ -39,8 +39,8 @@ You'll find a directory named ``divio`` containing some helper modules scripts a
 example) to read the environment variables we provide to configure database and media storage.
 
 
-Run the project locally
------------------------
+Run the application locally
+---------------------------
 
 This section assumes that you have Docker and the Divio CLI installed. You also need an account on Divio, and your
 account needs your SSH public key. See :ref:`local-cli` if required.
@@ -102,7 +102,7 @@ Try accessing the site at http://127.0.0.1:8000/.
 If you comment out that line in ``docker-compose.yml``, it will start up with the command specified in the
 ``Dockerfile`` instead.
 
-You now have a working, running project ready for further development. All the commands you might normally execute
+You now have a working, running application ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web``.
 
 
@@ -117,8 +117,8 @@ The host/container volume mapping directive in the ``docker-compose.yml`` file i
 
     # - ".:/app:rw"
 
-If you uncomment this entry, the entire ``/app`` directory inside the container will be overridden by the project files
-from the host when using Docker Compose. This can be useful for development.
+If you uncomment this entry, the entire ``/app`` directory inside the container will be overridden by the application 
+files from the host when using Docker Compose. This can be useful for development.
 
 However you will now need to re-run any commands in the ``Dockerfile`` that change items within the ``/app`` directory
 as part of the build process, otherwise the file changes made by ``Dockerfile`` operations in the image will not be

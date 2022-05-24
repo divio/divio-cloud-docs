@@ -18,16 +18,16 @@ Create the media storage
 For the cloud environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the same way that you did for the database earlier, in the project's :ref:`Services <services>` view, add an *Object
-storage* instance. This will provide S3 storage for the project. Deploy the environment, or manually select *Provision*
-from the services options menu. The service will be provisioned for the project and the environment variable will be
-applied.
+In the same way that you did for the database earlier, in the application's :ref:`Services <services>` view, add an 
+*Object storage* instance. This will provide S3 storage for the application. Deploy the environment, or manually select 
+*Provision* from the services options menu. The service will be provisioned for the application and the environment 
+variable will be applied.
 
 Locally
 ~~~~~~~
 
 Locally, the most convenient way to work with media files is using local storage. You could use any directory in your
-local project, but since the Divio CLI will expect to find media files in ``/data``, we will use that. We will
+local application, but since the Divio CLI will expect to find media files in ``/data``, we will use that. We will
 configure the local set-up so that media files can be:
 
 * stored in ``/data/media``
@@ -69,7 +69,8 @@ Use the environment variable in our settings
 
 The next task is to configure Django's ``DEFAULT_FILE_STORAGE`` setting. We need Django to parse the
 ``DEFAULT_STORAGE_DSN`` variable that contains the connection details and select the appropriate backend accordingly.
-For this, we'll use the ``django-storage-url`` library, which needs to be added to ``requirements.txt``. We also need to install ``boto3``, the Python storage backend that will handle files in the project's S3 cloud storage:
+For this, we'll use the ``django-storage-url`` library, which needs to be added to ``requirements.txt``. We also need 
+to install ``boto3``, the Python storage backend that will handle files in the application's S3 cloud storage:
 
 ..  code-block:: YAML
 
@@ -152,9 +153,9 @@ Test file storage and serving configuration
 --------------------------------------------
 
 This is a good point at which to test that your local and cloud file storage both work correctly. We'll create a very
-simple Django application in the project that saves uploaded files to storage.
+simple Django application in the application that saves uploaded files to storage.
 
-Create the new application in the project:
+Create the new application in the application:
 
 ..  code-block:: bash
 
@@ -202,7 +203,7 @@ And create and run migrations:
 Test local media storage
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now when you start the project again with ``docker-compose up``, you can go to the admin and try uploading a file .
+Now when you start the application again with ``docker-compose up``, you can go to the admin and try uploading a file .
 
 Once you have saved it in the admin, you should be able to verify that it has been saved in the filesystem at
 ``/data/media``, that Django shows its URL path in ``/media/`` in the admin interface, and finally, that by selecting
@@ -220,7 +221,7 @@ object storage instance. You can do this locally. Stop the application, and use:
     divio app env-vars -s test --all --get DEFAULT_STORAGE_DSN
 
 to get the value of the ``DEFAULT_STORAGE_DSN`` from the cloud test environment. (If you don't get a value, check in
-the *Services* view of the project that it has been provisioned.) In your ``.env-local``, *temporarily* apply this
+the *Services* view of the application that it has been provisioned.) In your ``.env-local``, *temporarily* apply this
 value as the ``DEFAULT_STORAGE_DSN``, replacing the existing one. Launch the application once more, and run the test
 above again, uploading and saving a file. This time, you should find that the saved file is now served from the
 external media server.

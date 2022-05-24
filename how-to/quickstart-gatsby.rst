@@ -8,19 +8,19 @@
 .. meta::
    :description:
        The quickest way to get started with Gatsby on Divio. This guide shows you how to use the Gatsby Divio
-       quickstart repository to create a Twelve-factor Gatsby project with Docker.
+       quickstart repository to create a Twelve-factor Gatsby application with Docker.
    :keywords: Docker, Gatsby
 
 
 .. _quickstart-gatsby:
 
-How to create a Gatsby project with our quickstart repository
+How to create a Gatsby application with our quickstart repository
 =========================================================================
 
 The `Gatsby Divio quickstart <https://github.com/divio/gatsby-divio-quickstart>`_ repository is a template that gives
-you the fastest possible way of launching a new Gatsby project on Divio.
+you the fastest possible way of launching a new Gatsby application on Divio.
 
-It uses a completely standard Gatsby project as used in the `Gatsby Hello World boilerplate
+It uses a completely standard Gatsby application as used in the `Gatsby Hello World boilerplate
 <https://github.com/gatsbyjs/gatsby-starter-hello-world/blob/master/README.md>`_.
 
 The repository contains some additional files to take care of the Docker set-up.
@@ -36,8 +36,8 @@ Run:
     git clone git@github.com:divio/gatsby-divio-quickstart.git
 
 
-Run the project locally
------------------------
+Run the application locally
+---------------------------
 
 This section assumes that you have Docker and the Divio CLI installed. You also need an account on Divio, and your
 account needs your SSH public key. See :ref:`local-cli` if required.
@@ -71,7 +71,7 @@ Try accessing the site at http://127.0.0.1:8000/.
 If you comment out that line in ``docker-compose.yml``, it will start up with :ref:`the command specified in the
 Dockerfile <deploy-gatsby-dockerfile-cmd>` instead.
 
-You now have a working, running project ready for further development. All the commands you might normally execute
+You now have a working, running application ready for further development. All the commands you might normally execute
 in development need to be run inside the Docker container -  prefix them with ``docker-compose run web``.
 
 
@@ -100,8 +100,9 @@ If you uncomment the:
     # - ".:/app:rw"
 
 entry in the ``web:volumes`` section of ``docker-compose.yml``, the entire ``/app`` directory will be overridden by the
-project files from the host. This can be useful for development. However, you will now need to run the commands ``npm
-install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees them.
+application files from the host. This can be useful for development. However, you will now need to run the commands 
+``npm install`` and ``gatsby build`` on the host as well in order to regenerate the files so that the container sees 
+them.
 
 
 ..  include:: /how-to/includes/deploy-common-deploy.rst

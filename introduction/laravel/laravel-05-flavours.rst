@@ -16,7 +16,7 @@
 Install an application using Flavours
 =====================================
 
-There are various ways to add packages to PHP projects. You are probably used to using Composer, and adding
+There are various ways to add packages to PHP applications. You are probably used to using Composer, and adding
 dependencies to the ``composer.json`` file. You can try that now with a dependency you're already familiar with.
 
 First, add the dependency. Then, test that it is installed as expected by running:
@@ -25,17 +25,17 @@ First, add the dependency. Then, test that it is installed as expected by runnin
 
     docker-compose build
 
-If you commit and push your changes once again as you did in the previous section, the project will be rebuilt with
+If you commit and push your changes once again as you did in the previous section, the application will be rebuilt with
 the new dependency when the cloud environment is redeployed.
 
 
 Introducing Flavours
 --------------------
 
-However, this project is managed using `Flavours <https://www.flavours.dev>`_, which gives us an additional way of
-working. Flavours is a platform-independent specification for building containerised web projects; the Flavours *addon
-manager* for PHP Laravel - `flavour/fam-php-laravel <https://hub.docker.com/r/flavour/fam-php-laravel>`_ - knows how to
-add a package to a Laravel project.
+However, this application is managed using `Flavours <https://www.flavours.dev>`_, which gives us an additional way of
+working. Flavours is a platform-independent specification for building containerised web applications; the Flavours 
+*addon manager* for PHP Laravel - `flavour/fam-php-laravel <https://hub.docker.com/r/flavour/fam-php-laravel>`_ - knows 
+how to add a package to a Laravel application.
 
 We will add the `laravel-responsecache <https://www.laravelplay.com/packages/spatie::laravel-responsecache>`_ package.
 It's an open-source addon, released by the Belgian agency `Spatie <https://spatie.be/opensource>`_, and can improve
@@ -68,7 +68,7 @@ Run the ``flavour add`` command, as follows:
         ✔ Adding requirement
       ✔ Installed composer/spatie/laravel-responsecache:6.1.1
 
-``laravel-responsecache`` is now installed in the project.
+``laravel-responsecache`` is now installed in the application.
 
 
 About the command
@@ -95,33 +95,33 @@ The CLI uses the information provided about the addon to identify the appropriat
 the YAML and performs the steps required by the *add* action.
 
 
-Check what the command has done to the project
+Check what the command has done to the application
 ---------------------------------------------------
 
-In this case, the addon manager will apply some changes to the project. You can see what they are by running ``git
+In this case, the addon manager will apply some changes to the application. You can see what they are by running ``git
 diff``:
 
-In its ``app.flavour``, which includes Flavours description of the project, you'll find in the ``addons`` section::
+In its ``app.flavour``, which includes Flavours description of the application, you'll find in the ``addons`` section::
 
     'composer/spatie/laravel-responsecache:6.1.1':
         manager: 'flavour/fam-php-laravel:0.1.1'
         hash: 9c5f4b2311089d4c5b0def4a0ded5bd927ddd8936d7db18da4cb84283e3413d1
 
-``app.flavour`` is in essence what makes a project Flavours-aware.
+``app.flavour`` is in essence what makes a application Flavours-aware.
 
-And on the project's ``composer.json`` ``require`` section, the addon is listed as a component of the project, so that
-when the project is built, the addon will be installed::
+And on the application's ``composer.json`` ``require`` section, the addon is listed as a component of the application, 
+so that when the application is built, the addon will be installed::
 
     "spatie/laravel-responsecache": "6.1.1"
 
 Finally, if it wasn't there already, you will find a ``.flavour`` directory, which contains information about the addon
 and some configuration for it.
 
-Rebuild the project::
+Rebuild the application::
 
     docker-compose build web
 
-When you start the project again with ``docker-compose up`` it will now be running with ``laravel-responsecache``
+When you start the application again with ``docker-compose up`` it will now be running with ``laravel-responsecache``
 installed and activated.
 
 
@@ -138,13 +138,13 @@ To deploy your changes to the Test server, push your changes, and run a deployme
     divio app deploy test
 
 Divio's hosting service is Flavours-aware; your changes, once pushed and deployed on the Control Panel, will
-automatically use the ``composer.json`` file to rebuild the project with the new package installed.
+automatically use the ``composer.json`` file to rebuild the application with the new package installed.
 
 
 Explore configuration
 ---------------------
 
-As a Flavours-aware host, the Divio Control Panel recognises the newly installed package. In the project's *Addons*
+As a Flavours-aware host, the Divio Control Panel recognises the newly installed package. In the application's *Addons*
 view in the Dashboard, you will see it listed along with its version number and configuration options:
 
 .. image:: /images/flavours-installed-addon.png
@@ -160,7 +160,7 @@ When next deployed, those variables will be applied.
 Where to go next?
 ------------------
 
-This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+This completes the basic cycle of application creation, development and deployment; you should now be familiar with the
 fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many

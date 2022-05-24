@@ -4,7 +4,7 @@ Local configuration using ``.env-local``
 As you will see above, the ``web`` service refers to an ``env_file`` containing the environment variables that will be
 used in the local development environment.
 
-Divio cloud projects include :ref:`a number of environment variables as standard <env-var-list>`. In addition,
+Divio cloud applications include :ref:`a number of environment variables as standard <env-var-list>`. In addition,
 :ref:`user-supplied variables <environment-variables>` may be applied per-environment.
 
 If the application refers to its environment for variables to configure database, storage or other services, it will

@@ -1,11 +1,11 @@
 .. _project-creation-options:
 
-Project creation options
+Application creation options
 ==============================
 
 A Divio application is defined by the code in its Git repository.
 
-When a new application is created on the Control Panel, some pre-defined project types can also be used (based on a
+When a new application is created on the Control Panel, some pre-defined application types can also be used (based on a
 combination of *Stack*, *Additional components* and *Additional Boilerplate*).
 
 
@@ -21,11 +21,11 @@ Stack
 ---------
 
 .. image:: /images/project-creation-stack.png
-   :alt: 'project creation Stack options'
+   :alt: 'application creation Stack options'
 
 Generally, you will select *Build your own* and construct your own ``Dockerfile``. 
 
-We also provide some pre-built project templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below
+We also provide some pre-built application templates for Aldryn Python, Node, PHP, Java and others (see :ref:`below
 <project-creation-pre-built>`).
 
 
@@ -40,7 +40,7 @@ Additional components
 ----------------------
 
 .. image:: /images/project-creation-components.png
-   :alt: 'project creation Additional component options'
+   :alt: 'application creation Additional component options'
 
 Additional components *may* be available, depending on the selected Stack.
 
@@ -59,12 +59,12 @@ Additional Boilerplate
 -----------------------
 
 .. image:: /images/project-creation-boilerplate.png
-   :alt: 'project creation Additional boilerplate options'
+   :alt: 'application creation Additional boilerplate options'
 
 Additional Boilerplates *may* be available, depending on the selected Additional components.
 
-Boilerplates provide additional functionality baked into the project. For example, an Aldryn Python/django CMS project
-can be launched with Boilerplates for Bootstrap, Foundation and other technologies.
+Boilerplates provide additional functionality baked into the application. For example, an Aldryn Python/django CMS 
+application can be launched with Boilerplates for Bootstrap, Foundation and other technologies.
 
 
 ..  Do not change this reference!
@@ -78,10 +78,10 @@ Git repository manager
 ----------------------
 
 .. image:: /images/project-creation-git.png
-   :alt: 'project creation Git options'
+   :alt: 'application creation Git options'
 
-By default, your project will use Divio's own private Git server. Alternatively you can select a Git provider of your
-choice. You can :ref:`migrate a project from our Git server to an external provider at any time
+By default, your application will use Divio's own private Git server. Alternatively you can select a Git provider of 
+your choice. You can :ref:`migrate an application from our Git server to an external provider at any time
 <configure-version-control>`.
 
 For a quick start, use Divio's Git server.
@@ -89,8 +89,8 @@ For a quick start, use Divio's Git server.
 
 .. _project-creation-pre-built:
 
-About pre-built project templates
----------------------------------
+About pre-built application templates
+-------------------------------------
 
 We also provide some optional ready-to-go definitions for a quick start. For example:
 
@@ -98,5 +98,5 @@ We also provide some optional ready-to-go definitions for a quick start. For exa
 * **Additional components**: *django CMS*
 * **Additional Boilerplate**: *HTML5*
 
-It's important to understand that these pre-built project templates are simply there to provide you with a quick way to
-get started with a particular stack. They don't prevent you from adding other components.
+It's important to understand that these pre-built application templates are simply there to provide you with a quick 
+way to get started with a particular stack. They don't prevent you from adding other components.

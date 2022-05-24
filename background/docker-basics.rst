@@ -52,7 +52,7 @@ The two key components in Docker are:
   also confusingly sometimes referred to simply as *Docker* (to make things
   worse, there is also a command-line tool named ``docker``).
 * *Docker Compose* (invoked as ``docker-compose``) is a tool for defining and
-  managing multi-container applications; Divio projects use Docker Compose only
+  managing multi-container applications; Divio applications use Docker Compose only
   in the local environment.
 
 

@@ -139,8 +139,8 @@ The Divio Community is there to help you as well.
 The Divio API
 -------------
 
-The Divio API is a powerful tool for interacting with our infrastructure and your projects. See :ref:`use-divio-api` in
-this documentation and the `Divio API reference documentation <https://api.docs.divio.com>`_.
+The Divio API is a powerful tool for interacting with our infrastructure and your applications. See
+:ref:`use-divio-api` in this documentation and the `Divio API reference documentation <https://api.docs.divio.com>`_.
 
 
 ..  rst-class:: clearfix
@@ -164,7 +164,8 @@ Divio will help you achieve the results of an entire DevOps team all by yourself
 deployment heaven:
 
 * **Docker**: containerise your application using the world’s most popular containerisation technology.
-* **Divio**: create a project with the database, storage and other services it will need - all wired up and ready to go.
+* **Divio**: create an application with the database, storage and other services it will need - all wired up and 
+  ready to go.
 * **Deploy**: go live, enjoying a fully automated build and launch.
 
 If you let us take care of the dull, repetitive jobs, you'll get to do the creative, enjoyable ones.

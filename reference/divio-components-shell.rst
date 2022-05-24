@@ -3,14 +3,14 @@
 The cloud and local shells
 ==========================
 
-To interact with the environment in your project, for example to run commands using its codebase,
-you can make use of a shell.
+To interact with the environment in your application, for example to run commands using its codebase, you can make use 
+of a shell.
 
 On the cloud you can :ref:`SSH into a shell instance <cloud-shell>`, provided by each running environment. Locally, you
 can use the :ref:`shell <local-shell>` of the local Docker instance.
 
-Once inside the shell, you can inspect the environment, run commands (such as ``python manage.py
-migrate``). For example in a Django project It's particularly useful to be able to drop into a:
+Once inside the shell, you can inspect the environment, run commands (such as ``python manage.py migrate``). For 
+example in a Django application It's particularly useful to be able to drop into a:
 
 * Python console: ``python``
 * Django shell: ``python manage.py shell``
@@ -26,11 +26,11 @@ To open an SSH session, run::
 
     divio app ssh
 
-from a local project. The default connection is to the ``test`` environment, but you can specify other environments by
-name. An instance of your web application will be spun up in a new container, and after a moment you'll be logged in to
-it as ``root``.
+from a local application. The default connection is to the ``test`` environment, but you can specify other environments 
+by name. An instance of your web application will be spun up in a new container, and after a moment you'll be logged in 
+to it as ``root``.
 
-You can also specify a remote project with the ``--remote-id`` option.
+You can also specify a remote application with the ``--remote-id`` option.
 
 SSH sessions are limited to 30 minutes, regardless of any activity.
 
@@ -57,7 +57,7 @@ containers.
 **Processes** - each session is isolated from any other extant processes (web processes, workers,
 other shell sessions).
 
-**Caches** - if your site's cache relies on the database (the default in Divio projects) then
+**Caches** - if your site's cache relies on the database (the default in Divio applications) then
 your container will be able to make use of it, clear it and so on. However, if you're using for
 example a ``locmem`` cache, it will not be available to your container.
 
@@ -70,7 +70,7 @@ The local shell
 Open the shell
 ~~~~~~~~~~~~~~~~~~~
 
-In the project directory, run::
+In the application directory, run::
 
     docker-compose run --rm web bash
 

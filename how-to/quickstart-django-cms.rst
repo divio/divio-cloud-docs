@@ -8,7 +8,7 @@
 .. meta::
    :description:
        The quickest way to get started with django CMS on Divio. This guide shows you how to use the django CMS Divio
-       quickstart repository to create a Twelve-factor django CMS project including Postgres or MySQL, and cloud media
+       quickstart repository to create a Twelve-factor django CMS application including Postgres or MySQL, and cloud media
        storage using S3, with Docker.
    :keywords: Docker, Django, django CMS, Postgres, MySQL, S3
 
@@ -19,15 +19,15 @@ How to create a django CMS application with our quickstart repository
 =============================================================================
 
 The `django CMS Divio quickstart <https://github.com/divio/django-cms-divio-quickstart>`_ repository is a template that
-gives you the fastest possible way of launching a new django CMS project on Divio.
+gives you the fastest possible way of launching a new django CMS application on Divio.
 
-It uses a standard, minimal django CMS project as modelled on that created by the django CMS installer.
+It uses a standard, minimal django CMS application as modelled on that created by the django CMS installer.
 
 The only additions are a few lines of glue code in ``settings.py`` to handle configuration using environment variables,
 plus some additional files to take care of the Docker set-up.
 
-The project includes some (clearly-indicated) options for popular components (such as Django Filer) and also a
-Bootstrap 4 frontend. These can quickly be removed if you prefer a more minimal project to work with.
+The application includes some (clearly-indicated) options for popular components (such as Django Filer) and also a
+Bootstrap 4 frontend. These can quickly be removed if you prefer a more minimal application to work with.
 
 Clone the repository
 --------------------
@@ -38,7 +38,8 @@ Run:
 
     git clone git@github.com:divio/django-cms-divio-quickstart.git
 
-The project contains a module named ``quickstart``, containing ``settings.py`` and other project-level configuration.
+The application contains a module named ``quickstart``, containing ``settings.py`` and other application-level 
+configuration.
 
 
 Removing optional components

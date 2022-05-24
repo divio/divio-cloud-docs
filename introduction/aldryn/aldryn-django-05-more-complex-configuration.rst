@@ -9,10 +9,10 @@ In the :ref:`previous section of the tutorial <tutorial-add-applications>`, we
 added an application and deployed it. However, the installation process was extremely simple and
 required very minimal configuration.
 
-In practice, adding a Django application to a project will generally require more complex configuration.
+In practice, adding a Django application will generally require more complex configuration.
 
 We'll explore this by adding `Django Debug Toolbar
-<https://django-debug-toolbar.readthedocs.io/en/stable/>`_ to the project.
+<https://django-debug-toolbar.readthedocs.io/en/stable/>`_ to the application.
 
 
 Add django-debug-toolbar to ``requirements.in``
@@ -28,7 +28,7 @@ django-debug-toolbar``. The latest stable version at the time of writing is 2.2,
 
 to ``requirements.in``.
 
-:ref:`As before <tutorial-add-requirements>`, run ``docker-compose build web`` to rebuild the project with the new
+:ref:`As before <tutorial-add-requirements>`, run ``docker-compose build web`` to rebuild the application with the new
 requirement.
 
 
@@ -50,7 +50,7 @@ be present in ``INSTALLED_APPS``. Is ``django.contrib.staticfiles`` already ther
 
 The Django :djadmin:`diffsettings <django:diffsettings>` management command shows the differences between your settings
 and Django's defaults. In this case it should reassure us that ``django.contrib.staticfiles`` is already there as it's
-included in Divio Django projects by default, so we just need to add ``debug_toolbar`` to ``INSTALLED_APPS``:
+included in Divio Django applications by default, so we just need to add ``debug_toolbar`` to ``INSTALLED_APPS``:
 
 ..  code-block:: python
     :emphasize-lines: 2
@@ -89,7 +89,7 @@ The toolbar should only be triggered if certain conditions are met. By default, 
 server IP address is `listed in INTERNAL_IPS
 <https://django-debug-toolbar.readthedocs.io/en/stable/installation.html#configuring-internal-ips>`_.
 
-With Docker, we don't have a way to know what internal IP address a project will have, so we can't rely on that.
+With Docker, we don't have a way to know what internal IP address an application will have, so we can't rely on that.
 However, relying on ``DEBUG`` will be enough, so we define a function that will serve as a ``SHOW_TOOLBAR_CALLBACK``
 callback to replace the default.
 
@@ -106,8 +106,8 @@ At the end of the ``settings.py`` file, add:
 Configure ``urls.py``
 ---------------------
 
-We need to include the ``debug_toolbar.urls`` in the project's URL configuration. Our approach here is similar: we only
-want it active in ``DEBUG`` mode, so add this to the end of your project's ``urls.py``:
+We need to include the ``debug_toolbar.urls`` in the application's URL configuration. Our approach here is similar: we 
+only want it active in ``DEBUG`` mode, so add this to the end of your application's ``urls.py``:
 
 ..  code-block:: python
 
@@ -136,7 +136,7 @@ Visit the admin to see the Debug Toolbar in action.
 Where to go next?
 ------------------
 
-This completes the basic cycle of project creation, development and deployment; you should now be familiar with the
+This completes the basic cycle of application creation, development and deployment; you should now be familiar with the
 fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many

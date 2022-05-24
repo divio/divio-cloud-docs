@@ -16,13 +16,13 @@ Metrics (Beta)
     :alt: 'Metrics'
     :class: 'main-visual'
 
-Real-time metrics provide you with an insight into the behaviour and performance of your projects.
+Real-time metrics provide you with an insight into the behaviour and performance of your applications.
 
-Metrics are shown for each environment of your project.
+Metrics are shown for each environment of your application.
 
-*For the Live environment only*, more than one container instance may be serving the project. In this case the metrics
-represent the *total* memory and CPU consumption across all the instances. In normal operation, each instance will
-experience roughly equal resource consumption. However it is possible that processes running in one container can
+*For the Live environment only*, more than one container instance may be serving the application. In this case the 
+metrics represent the *total* memory and CPU consumption across all the instances. In normal operation, each instance 
+will experience roughly equal resource consumption. However it is possible that processes running in one container can
 consume excessive resources in that instance alone. In such a cases, although the overall consumption may appear to be
 within limits, the affected container can cause errors in the running application.
 
@@ -38,14 +38,14 @@ Memory usage
 ------------
 
 Figures for RAM represent the total usage across the instances in each environment. RAM and the number of instances
-(deployed Docker containers running in parallel) are determined by the project's subscription.
+(deployed Docker containers running in parallel) are determined by the application's subscription.
 
-A project with 2 instances of 2GB each has a total of 4GB RAM allocated to it. A bar in the memory usage chart that
-reaches 1.8GB for such a project would typically indicate that each instance is using around 900MB.
+An application with 2 instances of 2GB each has a total of 4GB RAM allocated to it. A bar in the memory usage chart that
+reaches 1.8GB for such an application would typically indicate that each instance is using around 900MB.
 
-Above 2GB per instance the project would have exceeded its RAM allocation. However, we include very generous head-room
-of 100% and operate soft limits, so that a project can exceed these limits for short periods without running into
-problems.
+Above 2GB per instance the application would have exceeded its RAM allocation. However, we include very generous 
+head-room of 100% and operate soft limits, so that an application can exceed these limits for short periods without 
+running into problems.
 
 When an individual instance reaches 200% of its nominal RAM allocation, errors *will* occur.
 

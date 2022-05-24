@@ -3,8 +3,8 @@
 How to update credit card and/or billing information
 =====================================================
 
-To update your credit card and/or your billing information, go to the *organisation settings* of your project and select
-billing. 
+To update your credit card and/or your billing information, go to the *organisation settings* of your application and 
+select billing. 
 
 .. image:: /images/guides/organisation-settings.png
    :alt: 'organisation settings'

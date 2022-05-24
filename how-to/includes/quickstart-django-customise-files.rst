@@ -3,8 +3,8 @@
     * quickstart-django-common-steps.rst
     * django-cms-deploy-quickstart.rst
 
-Renaming the ``quickstart`` project module (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Renaming the ``quickstart`` application module (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you'd like this to be named something else, now is the time to change the directory name, along with the references
 to the ``quickstart`` module wherever it appears, which is in:
@@ -19,7 +19,7 @@ to the ``quickstart`` module wherever it appears, which is in:
 Using MySQL or an alternative gateway server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the project uses Postgres and uWSGI, but MySQL and other gateway server options are available.
+By default, the application uses Postgres and uWSGI, but MySQL and other gateway server options are available.
 
 You'll need to change a few lines of configuration to achieve this across a few files. See the notes for each:
 

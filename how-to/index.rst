@@ -31,17 +31,17 @@ Manage your account
 
 .. _manage-your-projects:
 
-Manage your projects
---------------------
+Manage your applications
+------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    Duplicate a project <duplicate-project>
-    Delete a project <delete-project>
+    Duplicate an application <duplicate-project>
+    Delete an application <delete-project>
     Add a collaborator <add-collaborator>
-    Rename a project <rename-project>
-    Transfer a project to another organisation <transfer-organisation>
+    Rename an application <rename-project>
+    Transfer an application to another organisation <transfer-organisation>
     Use our backup system <backup-project>
     Clear the Cloudflare cache <manage-cloudflare>
 
@@ -106,7 +106,7 @@ Development workflow
     Set up the Divio local development environment <local-cli>
     Run a local application in live configuration <local-in-live-configuration>
     Configure external Git hosting <resources-configure-git>
-    Use Git to manage your project <use-git>
+    Use Git to manage your application <use-git>
     Set up CI/CD <configure-ci>
     Use the Divio API <use-api>
 
@@ -117,7 +117,7 @@ Building a Docker application
 .. toctree::
     :maxdepth: 1
 
-    Manage a project's base image <manage-base-image>
+    Manage an application's base image <manage-base-image>
     Install system packages <install-system-packages>
 
 
@@ -130,13 +130,13 @@ Platform-specific guides
 
       <h3>Python and Django</h3>
 
-   For Django-based projects.
+   For Django-based applications.
 
    .. toctree::
        :maxdepth: 1
 
        Install Python dependencies <install-python-dependencies>
-       Create a multi-site Django project using Mirrors <django-multisite-mirrors>
+       Create a multi-site Django application using Mirrors <django-multisite-mirrors>
        Configure Celery <configure-celery>
 
 
@@ -158,17 +158,17 @@ Platform-specific guides
 
       <h3>Aldryn</h3>
 
-   For Django-based projects using the Aldryn addons framework.
+   For Django-based applications using the Aldryn addons framework.
 
    .. toctree::
        :maxdepth: 1
 
-       Add a Django application to an Aldryn project <django-add-application>
+       Add a Django application to an Aldryn application <django-add-application>
        Configure Django settings using Aldryn <django-configure-settings>
        Configure external logging <django-configure-external-logging>
        Manage access authentication <django-manage-authentication>
-       Manage redirects in Django projects <django-manage-redirects>
-       Log in to a local Django project <local-project-log-in>
+       Manage redirects in Django applications <django-manage-redirects>
+       Log in to a local Django application <local-project-log-in>
        Manage uWSGI configuration <uwsgi-configuration>
        Fine-tune uWSGI server performance <uwsgi-performance>
        Package an application as an Aldryn addon <addon-create>
@@ -177,14 +177,14 @@ Platform-specific guides
 -------------------------
 
 
-Managing a project's resources
-------------------------------
+Managing an application's resources
+-----------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    Interact with your project’s database <interact-database>
-    Interact with your project’s cloud media storage <interact-storage>
+    Interact with your application’s database <interact-database>
+    Interact with your application’s cloud media storage <interact-storage>
     Configure media serving on a custom domain <configure-media-custom-domain>
     Manage environment variables <environment-variables>
     Upgrade a PostgreSQL service <upgrade-postgres>

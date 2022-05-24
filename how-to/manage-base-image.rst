@@ -1,12 +1,12 @@
 .. _manage-base-image:
 
-How to manage a project's base image
+How to manage an application's base image
 =========================================================
 
-The base image of your project is determined by its ``Dockerfile``.
+The base image of your application is determined by its ``Dockerfile``.
 
-Whatever base image is used in a project should include the runtime environment(s) you need for your application, such
-as an appropriate version of Python.
+Whatever base image is used in an application should include the runtime environment(s) you need for your application, 
+such as an appropriate version of Python.
 
 
 Specify the base image in the ``Dockerfile``
@@ -66,7 +66,7 @@ Base images provided by Divio
 ---------------------------------
 
 As well as the many images, official and unofficial, that are available and suitable for a vast variety of web
-applications, we also provide a number of `Divio-optimised Docker base images for projects
+applications, we also provide a number of `Divio-optimised Docker base images for applications
 <https://hub.docker.com/r/divio/base/tags>`_.
 
 These base images provide an underlying Linux operating system layer, and other layers in the stack, upon which you can
@@ -77,7 +77,7 @@ system-level components required to run it.
 Divio-managed base image updates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some projects include a ``Dockerfile`` that can be updated by the Divio Control Panel when updates are
+Some applications include a ``Dockerfile`` that can be updated by the Divio Control Panel when updates are
 available, and will contain lines such as:
 
 ..  code-block:: Dockerfile
@@ -90,10 +90,10 @@ When new base images will be released with updates (for example, for newer Pytho
 changes, the Control Panel will indicate that updates are available in *Settings* > *Base Project*.
 
 
-Manually upgrading Divio base projects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manually upgrading Divio base applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Divio base projects can also be upgraded manually, for example if the Control Panel does not indicate the necessary 
+Divio base applications can also be upgraded manually, for example if the Control Panel does not indicate the necessary 
 updates. 
 
 Manually upgrading in the repository requires replacing the base image in the Dockerfile. Remove any existing wrapping 
@@ -106,7 +106,7 @@ changes.  For example, if the existing base image section of the Dockerfile cont
     FROM divio/base:4.18-py3.6-slim-stretch
     # </DOCKER_FROM>
 
-and it has to be upgraded with one of the `Divio-optimised Docker base images for projects
+and it has to be upgraded with one of the `Divio-optimised Docker base images for applications
 <https://hub.docker.com/r/divio/base/tags>`_, say ``divio/base:2.2-py3.9-slim-buster`` then the upgraded base image 
 section of the Dockerfile should contain only
 

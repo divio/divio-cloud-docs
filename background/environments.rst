@@ -6,12 +6,12 @@
 .. _environments:
 
 Environments
-=========================
+============
 
-Each Divio project can have multiple application environments. All projects include a *Test* and *Live* environment by
-default. Each environment of a project is completely distinct and independent, and has its own environment variables,
-containers, database, media storage and other services. All environments in a project use the same Git repository,
-but each can use a different Git branch.
+Each Divio application can have multiple application environments. All applications include a *Test* and *Live* 
+environment by default. Each environment of an application is completely distinct and independent, and has its own 
+environment variables, containers, database, media storage and other services. All environments in an application use 
+the same Git repository, but each can use a different Git branch.
 
 .. image:: /images/environments.png
    :alt: 'Environments'
@@ -24,17 +24,17 @@ commands for development, controls for deployment and other actions, and links t
 
 
 The *Live* environment
----------------------------------
+----------------------
 
 The *Live* environment, unlike the other environments:
 
 * never sleeps (the others will shut down their containers after an idle period, to save resources)
-* can use multiple containers if specified in the project subscription (the others use only one container)
+* can use multiple containers if specified in the application subscription (the others use only one container)
 * can be wired up to the user's own domains
 
 
 Adding and removing environments (Beta)
-------------------------------------------
+---------------------------------------
 
 ..  note::
 

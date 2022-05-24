@@ -34,23 +34,23 @@ If a package is available as a wheel, pip and other installers will make use of 
 Not all packages are compiled as wheels however, and not all are compiled for the Python version and host architecture
 that a particular application uses. In these cases, the installer will attempt to install from source.
 
-Our wheels proxy server ensures that Python projects always have wheels available for their dependencies. It mirrors
+Our wheels proxy server ensures that Python applications always have wheels available for their dependencies. It mirrors
 `PyPI <https://pypi.org/>`_ and automatically builds wheels for every single package, targeting our server architecture
 and several supported versions of Python for each.
 
 Using our wheels proxy is optional, but allows packages to be installed - and Docker images to be built - much faster
 (it also reduces the load on our build servers).
 
-Aldryn projects :ref:`use our wheels proxy by default <wheels-proxy-aldryn>`. Currently we only support the use
-of the wheels proxy in Aldryn projects.
+Aldryn applications :ref:`use our wheels proxy by default <wheels-proxy-aldryn>`. Currently we only support the use
+of the wheels proxy in Aldryn applications.
 
 
 .. _wheels-proxy-aldryn:
 
-The wheels proxy in Aldryn Django projects
+The wheels proxy in Aldryn Django applications
 ------------------------------------------------------
 
-Our ``Dockerfile`` for Aldryn projects contains:
+Our ``Dockerfile`` for Aldryn applications contains:
 
 ..  code-block:: Dockerfile
 
@@ -152,9 +152,9 @@ exists:
 
     Could not find a version that matches django==1.11.29,>2.0
 
-Most commonly, it's because different packages in the same project either explicitly or implicitly specify conflicting
-versions of a dependency (for example, ``django==1.11.29`` and ``django>2.0`` as above) at the same time. See
-:ref:`debug-dependency-conflict` for more on this.
+Most commonly, it's because different packages in the same application either explicitly or implicitly specify 
+conflicting versions of a dependency (for example, ``django==1.11.29`` and ``django>2.0`` as above) at the same time. 
+See :ref:`debug-dependency-conflict` for more on this.
 
 
 .. _wheels-dependency-unbuildable:

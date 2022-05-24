@@ -7,10 +7,10 @@
 ..  include:: /introduction/includes/03-local-1-set-up.rst
 
 
-Start the local project
--------------------------
+Start the local application
+---------------------------
 
-Start the project by running ``docker-compose up`` in the terminal::
+Start the application by running ``docker-compose up`` in the terminal::
 
     ➜  docker-compose up
     Starting tutorial-project_db_1
@@ -22,7 +22,7 @@ Start the project by running ``docker-compose up`` in the terminal::
     Starting development server at http://0.0.0.0:80/
     Quit the server with CONTROL-C.
 
-Open the project in your web browser by visiting http://127.0.0.1:8000.
+Open the application in your web browser by visiting http://127.0.0.1:8000.
 
 (You may notice above that Django claims to be running on port 80, not port 8000. It is - but that's only *inside* the
 container. The ``docker-compose.yml`` configuration file is responsible for :ref:`this port-mapping
@@ -31,7 +31,7 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 ..  note::
 
     If you didn't previously log in to the cloud site before setting up the
-    project locally, you'll need to add a user to the database before you can
+    application locally, you'll need to add a user to the database before you can
     log in. The :ref:`Divio SSO system <divio-cloud-sso>` allows you to
     do this from the Django login page with the **Add user** option.
 
@@ -41,7 +41,7 @@ container. The ``docker-compose.yml`` configuration file is responsible for :ref
 
     See below for more on the use of ``docker-compose``.
 
-``CONTROL-C`` will stop the project.
+``CONTROL-C`` will stop the application.
 
 
 ..  include:: /introduction/includes/03-local-2-useful-commands.rst

@@ -256,10 +256,10 @@ issue is that the application was too slow to start up.
 ``Could not find a version that matches [...]``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Python project, indicates that a specified dependency cannot be found - typically because two or more of the components
-in your system have specified incompatible Python dependencies.
+Python application, indicates that a specified dependency cannot be found - typically because two or more of the 
+components in your system have specified incompatible Python dependencies.
 
-    For Aldryn Django projects, see :ref:`debug-dependency-conflict`.
+    For Aldryn Django applications, see :ref:`debug-dependency-conflict`.
 
 ..  rst-class:: restart-link
 

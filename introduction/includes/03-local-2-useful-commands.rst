@@ -21,7 +21,7 @@ commands will help you when this happens.
 Using ``divio``
 ^^^^^^^^^^^^^^^
 
-The ``divio`` command is used mainly to manage your local project's resources and to interact with our Control Panel.
+The ``divio`` command is used mainly to manage your local application's resources and to interact with our Control Panel.
 You have already used ``divio app setup`` and ``divio app list``; you can also use it to do things like push
 and pull database and media content. Try:
 
@@ -39,7 +39,7 @@ The ``docker`` command is mostly used to manage Docker processes, images and con
 whole) and Docker itself. You will rarely need to use it, but it can be useful when you need to understand what Docker
 is doing on your machine, or for certain operations.
 
-For example, if you have your project running locally (with ``docker-compose up``) open a new terminal window to run:
+For example, if you have your application running locally (with ``docker-compose up``) open a new terminal window to run:
 
 ..  code-block:: bash
 
@@ -69,8 +69,8 @@ You have already used ``docker ps``. Try:
 Using ``docker-compose``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``docker-compose`` command is used mainly to control and interact with your local project. You will mostly use it
-to start the local project and open a shell in the local web container. You have already used ``docker-compose build``
-and ``docker-compose up``.
+The ``docker-compose`` command is used mainly to control and interact with your local application. You will mostly use 
+it to start the local application and open a shell in the local web container. You have already used ``docker-compose 
+build`` and ``docker-compose up``.
 
 Just for example, try:

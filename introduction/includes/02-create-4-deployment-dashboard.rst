@@ -8,7 +8,7 @@
 About deployment
 -------------------------
 
-Any time new changes to the project code are committed to its repository, the Control Panel will indicate this with a
+Any time new changes to the application code are committed to its repository, the Control Panel will indicate this with a
 message showing the number of undeployed commits for each of its server environments.
 
 .. image:: /images/intro-dashboard-commits.png
@@ -25,8 +25,8 @@ continue running, and the failing changes will not be deployed.
 Explore the Dashboard
 ---------------------
 
-The Divio project Dashboard provides you with access to useful controls and information for the project. They are
-fairly self-explanatory and at this stage you don't need to interact with any of them, but it's worth familiarising
+The Divio application Dashboard provides you with access to useful controls and information for the application. They 
+are fairly self-explanatory and at this stage you don't need to interact with any of them, but it's worth familiarising
 yourself with what's available.
 
 Enable Beta options

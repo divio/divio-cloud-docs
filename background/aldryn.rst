@@ -9,7 +9,7 @@ honour of Buzz Aldrin, the astronaut. So whenever you encounter *Aldryn*, just r
 You'll still see some references to it in our addons, code, domain names and documentation.
 
 The name lives on internally, including in code and the names of various addons. For example, you'll find a number of
-Addons called things like *Aldryn Django*. One particularly visible example is in the URLs of your Divio projects, for
+Addons called things like *Aldryn Django*. One particularly visible example is in the URLs of your Divio applications, for
 example: *https://django-cms-stage.us.aldryn.io*. 
 
 Changing such names now would cause a degree of inconvenience that would outweigh any benefits, so for the time being at

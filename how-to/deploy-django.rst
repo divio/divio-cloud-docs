@@ -12,7 +12,7 @@ How to configure an existing Django application for deployment on Divio
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 
-The steps here should work with any Django project, and include configuration for:
+The steps here should work with any Django application, and include configuration for:
 
 * Postgres or MySQL database
 * cloud media storage using S3
@@ -22,8 +22,8 @@ The steps here should work with any Django project, and include configuration fo
 
 ..  include:: /how-to/includes/deploy-common-prerequisites.rst
 
-If you don't already have a working Django project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you don't already have a working Django application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`quickstart-django`.
 
@@ -218,7 +218,7 @@ For Django, we suggest using:
     MEDIA_URL = 'media/'
     MEDIA_ROOT = os.path.join('/data/media/')
 
-(Note that the ``DEFAULT_FILE_STORAGE`` assumes your Django project was named ``myapp``.)
+(Note that the ``DEFAULT_FILE_STORAGE`` assumes your Django application was named ``myapp``.)
 
 ..  include:: /how-to/includes/deploy-common-settings-media-admonition.rst
 
@@ -227,7 +227,7 @@ For Django, we suggest using:
 Add a URL pattern for serving media files in local development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will need to edit the project's ``urls.py`` (e.g. ``myapp/urls.py``):
+You will need to edit the application's ``urls.py`` (e.g. ``myapp/urls.py``):
 
 ..  code-block:: python
     :emphasize-lines: 1-2, 8-

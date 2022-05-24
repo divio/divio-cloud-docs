@@ -3,7 +3,7 @@
 How to manage access authentication
 ===================================
 
-In Aldryn Django projects, access via password can be managed by the :ref:`Aldryn SSO addon <aldryn-sso>`.
+In Aldryn Django applications, access via password can be managed by the :ref:`Aldryn SSO addon <aldryn-sso>`.
 
 
 .. _manage-access-login:
@@ -41,6 +41,6 @@ using environment variables. Set them as follows::
     ALDRYN_SSO_BASICAUTH_PASSWORD=<password>
 
 Those values can be set independently for test/live servers in the Environment
-Variables settings for each project.
+Variables settings for each application.
 
 See :ref:`basic-auth` for more.

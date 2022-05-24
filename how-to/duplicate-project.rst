@@ -1,17 +1,17 @@
 .. _how-to-duplicate-project:
 
-How to duplicate a project
-==========================
+How to duplicate an application
+===============================
 
-To help you re-use work and speed up your workflow, Divio offers two options for project duplication - Fork
+To help you re-use work and speed up your workflow, Divio offers two options for application duplication - Fork
 and Mirror.
 
-You might want to duplicate a project for a number of reasons, for example:
+You might want to duplicate an application for a number of reasons, for example:
 
 * to explore radical changes or development that you don't want to do on the original
 * to prepare the launch of site-wide development or content changes, without disturbing the original
-* to punch out a completely new project, based on an original
-* to provide team members or clients with an exact copy of a project for training purposes
+* to punch out a completely new application, based on an original
+* to provide team members or clients with an exact copy of an application for training purposes
 
 
 .. _how-to-duplicate-project-options:
@@ -19,19 +19,19 @@ You might want to duplicate a project for a number of reasons, for example:
 Select your duplication option
 ------------------------------
 
-To duplicate a project, select *Duplicate* from the project's options menu, in the organisation view:
+To duplicate an application, select *Duplicate* from the application's options menu, in the organisation view:
 
 .. image:: /images/guides/options-menu-organisations-view.png
    :alt: 'options menu'
    :width: 685
 
-or in the project view:
+or in the application view:
 
 .. image:: /images/guides/options-menu-project-view.png
    :alt: 'options menu'
    :width: 690
 
-You need to give the duplicate a name, and decide whether to duplicate the project to the same organisation or a
+You need to give the duplicate a name, and decide whether to duplicate the application to the same organisation or a
 different organisation.
 
 Select the appropriate duplication action: *Fork* or *Mirror*.
@@ -45,9 +45,9 @@ Duplication types
 Fork
 ^^^^
 
-A fork is a form of duplication in which the new project will be an exact but independent copy of the original. A fork
-will include the original’s code, database content, media, environment variables and all branches,  and retains the Git
-history in its codebase. 
+A fork is a form of duplication in which the new application will be an exact but independent copy of the original. A 
+fork will include the original’s code, database content, media, environment variables and all branches,  and retains 
+the Git history in its codebase. 
 
 A fork is therefore useful when you want to undertake substantial new development, as it allows you to merge back
 changes from the duplicate into the original using Git.

@@ -68,7 +68,7 @@ Application content caching
 We can also provide managed caching of application content (including custom page rules) using Cloudflare or other
 services, on request.
 
-..  seealso:: :ref:`Cache invalidation control via the Divio project Dashboard
+..  seealso:: :ref:`Cache invalidation control via the Divio application Dashboard
   <how-to-manage-cloudflare-cache>`
 
 
@@ -124,7 +124,7 @@ Other backends, such as `Redis <https://redis.io>`_ (a popular open-source
 database) can be used as caching backends for Django.
 
 If it suits your needs, you can procure a Redis or other caching instance from
-a provider and use it with your Divio project.
+a provider and use it with your Divio application.
 
 
 Caching with Aldryn Django (legacy)
@@ -153,5 +153,5 @@ It is often convenient to disable caching while developing or working intensivel
             'permissions': 0,
         }
 
-to the project's ``settings.py`` will disable all caching in the CMS in the local and Test
+to the application's ``settings.py`` will disable all caching in the CMS in the local and Test
 environments.

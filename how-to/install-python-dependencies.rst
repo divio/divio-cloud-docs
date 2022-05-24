@@ -1,14 +1,14 @@
 .. _install-python-dependencies:
 
-How to install Python dependencies in a project
-===============================================
+How to install Python dependencies in an application
+====================================================
 
 ..  seealso::
 
     * :ref:`How to install system packages <install-system-packages>`
 
 It's beyond the scope of this documentation to discuss all the ways in which Python dependencies can be installed in
-Divio projects. However, the options described here are sufficient to cover most needs.
+Divio applications. However, the options described here are sufficient to cover most needs.
 
 If you are using Aldryn Django, refer to the section :ref:`python-packages-aldryn` below.
 
@@ -42,13 +42,13 @@ Pin all dependencies
 
 All Python dependencies, including implicit sub-dependencies, should be pinned to particular versions.
 
-If any dependency is *unpinned* (that is, a particular version is not specified in the project's requirements) ``pip``
-will install the latest version it finds, even if a different version was previously installed. This can cause your
-your project to fail with an deployment error or worse, a runtime error, the next time it is built - *even if you
+If any dependency is *unpinned* (that is, a particular version is not specified in the application's requirements) 
+``pip`` will install the latest version it finds, even if a different version was previously installed. This can cause 
+your application to fail with an deployment error or worse, a runtime error, the next time it is built - *even if you 
 didn't change anything in it yourself*.
 
-To pin all dependencies, your project's requirements should be compiled to a complete list of explicitly specified
-package versions. This list should then be committed in the project repository, and not be changed until you need to
+To pin all dependencies, your application's requirements should be compiled to a complete list of explicitly specified
+package versions. This list should then be committed in the application repository, and not be changed until you need to
 update dependencies.
 
 
@@ -96,15 +96,15 @@ and frozen in ``requirements.txt``.
 
 .. _python-packages-aldryn:
 
-Python package installation in Aldryn Django projects
---------------------------------------------------------
+Python package installation in Aldryn Django applications
+---------------------------------------------------------
 
-By default, projects using an Aldryn Django ``Dockerfile`` use our own `pip-reqs tool
+By default, applications using an Aldryn Django ``Dockerfile`` use our own `pip-reqs tool
 <https://pypi.org/project/pip-reqs/>`_ to compile a list wheel URLs from :ref:`our wheels proxy server <wheels-proxy>`,
 and installs all packages as wheels.
 
-To install Python dependencies an Aldryn project, list them in the ``requirements.in`` file. They need to be *outside*
-the:
+To install Python dependencies an Aldryn application, list them in the ``requirements.in`` file. They need to be 
+*outside* the:
 
 ..  code-block:: Dockerfile
 
@@ -118,8 +118,8 @@ the requirements from the Addons system.
 This list is processed by the ``pip`` commands in the ``Dockerfile`` when the image is built.
 
 
-Pinning dependencies in an Aldryn project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pinning dependencies in an Aldryn application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Compile ``requirements.txt``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,19 +130,19 @@ First, you need to have a working local set-up. Then run:
 
     docker-compose run --rm web pip-reqs compile
 
-This will create a ``requirements.txt`` file in the project, containing a list of *all* the packages in the
+This will create a ``requirements.txt`` file in the application, containing a list of *all* the packages in the
 environment, along with their versions.
 
-When your project is built using the new ``requirements.txt`` instead of ``requirements.in``,
+When your application is built using the new ``requirements.txt`` instead of ``requirements.in``,
 you'll have a guarantee that no unexpected changes will be permitted to find their way in to the
-project.
+application.
 
 
 Amend the ``Dockerfile``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to have your project built using ``requirements.txt`` instead of ``requirements.in``, you
-need to remove the ``pip-reqs compile`` instruction from your project's ``Dockerfile``.
+In order to have your application built using ``requirements.txt`` instead of ``requirements.in``, you
+need to remove the ``pip-reqs compile`` instruction from your application's ``Dockerfile``.
 
 First, remove the Divio-specific comment tags from the ``Dockerfile``:
 

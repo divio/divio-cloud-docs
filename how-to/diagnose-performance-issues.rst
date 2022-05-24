@@ -65,8 +65,9 @@ that help provide some level of insight all the same.
 Metrics
 ~~~~~~~~~~~
 
-All Divio projects include :ref:`metrics <metrics>`. As well as showing whether an application is consuming excessive
-resources, metrics can also show when changes in consumption occurred (for example, following deployment of new code).
+All Divio applications include :ref:`metrics <metrics>`. As well as showing whether an application is consuming 
+excessive resources, metrics can also show when changes in consumption occurred (for example, following deployment of 
+new code).
 
 In most cases, users will find that their under-performing application is not in fact running out of RAM or CPU - a
 clear indication that adding resources by upgrading a subscription will not be a solution.
@@ -80,7 +81,7 @@ example will not be solved by adding more RAM).
 Runtime logs
 ~~~~~~~~~~~~~~~~~~~~
 
-All Divio projects provide runtime logs, accessible from the Environments view as well as from the terminal (e.g.
+All Divio applications provide runtime logs, accessible from the Environments view as well as from the terminal (e.g.
 ``divio app logs --tail live``). Logs show for example how long requests take to serve and reporting internal
 errors, but this provides only a basic insight into behaviour. However, as with metrics, referring to runtime logs can
 help eliminate suspects from your enquiries quite quickly.

@@ -26,7 +26,7 @@ therefore overwrites directories inside the container with directories from your
 ..  code-block:: yaml
 
     volumes:
-      - ".:/app:rw"         # overwrites /app with the entire project directory
+      - ".:/app:rw"         # overwrites /app with the entire application directory
 
 This is useful because it allows you to make changes on your filesystem such as code changes and have them immediately
 reflected inside the container.
@@ -68,7 +68,7 @@ Legacy Aldryn Django applications can have their release commands executed with:
 
     docker-compose run web start migrate
 
-(In an Aldryn Django project, you can see these commands listed in the ``MIGRATION_COMMANDS`` setting, populated by
+(In an Aldryn Django application, you can see these commands listed in the ``MIGRATION_COMMANDS`` setting, populated by
 applications using the addons framework).
 
 
@@ -77,7 +77,7 @@ applications using the addons framework).
 Use the cloud media storage rather than local file storage
 ----------------------------------------------------------
 
-Your local project will use local file storage rather than the cloud storage. Usually this is most
+Your local application will use local file storage rather than the cloud storage. Usually this is most
 appropriate for development, and also faster and more convenient than using the remote cloud storage. However,
 sometimes you might want to use the cloud storage when the application is running locally.
 
@@ -93,7 +93,7 @@ are able to parse the value).
 Using the cloud database rather than a local instance
 ----------------------------------------------------------
 
-Your project uses our database cluster on the cloud. Locally, it sets up the same database in its own container.
+Your application uses our database cluster on the cloud. Locally, it sets up the same database in its own container.
 
 The databases for our public regions are not accessible except from containers running on our own infrastructure, for
 security reasons. Access can be made possible for databases on private clusters only.
