@@ -49,4 +49,4 @@ Our documentation structure is key to its usability. See our
 system for an explanation of why it's important and how it works.
 
 See also our `additional documentation standards 
-<https://docs.divio.com/documentation-standards>`_.
+<https://docs.divio.com/en/latest/documentation-standards>`_.
