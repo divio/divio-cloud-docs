@@ -6,7 +6,7 @@ How to get help and support
 We offer support across the range of our products and services with numerous different ways of contacting us. We can
 provide:
 
-* help with using Divio's platform
+* help with using `Divio's platform <https://www.divio.com>`_
 * information about the platform, accounts or services
 * advice on whether our platform is suitable for your needs
 

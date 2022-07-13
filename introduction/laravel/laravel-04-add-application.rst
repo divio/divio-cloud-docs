@@ -23,8 +23,8 @@ responsible for the Laravel welcome page, and adjust the line controlling the ba
 and reload the page to check that it has taken effect.
 
 
-Deploy to the Cloud
--------------------
+Deploy to the `Divio <https://www.divio.com>`_ Cloud
+----------------------------------------------------
 
 Push your code
 ~~~~~~~~~~~~~~~~~

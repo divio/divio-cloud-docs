@@ -3,8 +3,9 @@
 How to add and manage collaborators
 ====================================
 
-Divio allows you to manage applications and collaborators using organisations. An organisation is free to create, and 
-you may add and manage developers and even customers with varying access levels, as collaborators as many as you need.
+`Divio <https://www.divio.com>`_ allows you to manage applications and collaborators using organisations. An 
+organisation is free to create, and you may add and manage developers and even customers with varying access levels, as 
+collaborators as many as you need.
 
 Collaborator types
 ------------------

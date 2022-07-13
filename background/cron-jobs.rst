@@ -9,7 +9,7 @@ Cron jobs
 ===============================
 
 Cron jobs are available from the *Cron Jobs* view in the Control Panel. Note that cron jobs are not available on all
-application plans.
+`Divio <https://www.divio.com>`_ application plans.
 
 ..  image:: /images/cron-jobs.png
     :alt: 'Cron job management'

@@ -96,8 +96,8 @@
 
 .. _debug-deployment-problems:
 
-How to debug Cloud deployment problems
-==============================================================
+How to debug `Divio Cloud <https://www.divio.com>`_ deployment problems
+=======================================================================
 
 Start with the :ref:`debugging checklist <debug-checklist>`. Work through the checklist by selecting the most
 appropriate answer for each question until you arrive at a probable fault for the symptoms you're seeing.

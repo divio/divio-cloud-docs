@@ -1,7 +1,7 @@
 Divio Documentation
 ===================
 
-`Divio <https://divio.com>`_ is a multi cloud infrastructure management 
+`Divio <https://www.divio.com>`_ is a multi cloud infrastructure management 
 service, with a platform for containerised web application deployment.
 
 Divio aims to provide a better way to develop, deploy, scale and maintain web 

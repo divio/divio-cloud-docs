@@ -178,5 +178,6 @@ This completes the basic cycle of application creation, development and deployme
 services into an application. You should now be familiar with the fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon these topics. The :ref:`how-to guides <how-to>` in particular cover
-many common operations. And if there's something you're looking for but can't find, please contact Divio support.
+many common operations. And if there's something you're looking for but can't find, please contact 
+`Divio <https://www.divio.com>`_ `support <https://www.divio.com/support/>`_.
 

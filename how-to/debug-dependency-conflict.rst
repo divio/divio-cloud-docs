@@ -3,7 +3,8 @@
 How to identify and resolve a dependency conflict
 =================================================
 
-Occasionally when running a deployment on the Cloud or building an application locally, the process will fail, with a message like:
+Occasionally when running a deployment on the `Divio Cloud <https://www.divio.com>`_ or building an application 
+locally, the process will fail, with a message like:
 
 ..  code-block:: text
 

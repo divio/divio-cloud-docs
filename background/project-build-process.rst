@@ -11,7 +11,7 @@ Deployment steps
 1. Services check
 ~~~~~~~~~~~~~~~~~
 
-The Control Panel checks that required services (such as the database) are available.
+The `Divio <https://www.divio.com>`_ Control Panel checks that required services (such as the database) are available.
 
 
 2. Git check out

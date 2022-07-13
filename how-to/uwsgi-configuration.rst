@@ -3,7 +3,7 @@
 How to manage uWSGI configuration
 =================================
 
-In our Django applications, the uWSGI gateway to the load-balancers is part of the customer application:
+In our `Django applications <https://www.divio.com>`_, the uWSGI gateway to the load-balancers is part of the customer application:
 
 .. mermaid::
 

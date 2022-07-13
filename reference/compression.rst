@@ -1,7 +1,7 @@
 .. _compression:
 
-File compression in Divio Django applications
-===============================================
+File compression in Divio `Django applications <https://www.divio.com>`_
+========================================================================
 
 Default behaviour in our applications
 -------------------------------------

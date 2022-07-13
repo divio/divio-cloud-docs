@@ -9,7 +9,8 @@
 Domains
 ===========================
 
-An application's domains are managed in the *Domains* view (or via the :ref:`Divio API <use-divio-api>`).
+A `Divio application <https://www.divio.com>`_'s domains are managed in the *Domains* view (or via the 
+:ref:`Divio API <use-divio-api>`).
 
 .. image:: /images/domains.png
    :alt: 'Domains'
@@ -18,8 +19,8 @@ An application's domains are managed in the *Domains* view (or via the :ref:`Div
 --------
 
 As well as the user-managed domains, which apply only to the Live environment, each environment of each application
-also has a fixed Divio-provided domain, for example ``example.aldryn.io`` or ``example-stage.stage.aldryn.io``. The
-ingress controller uses this information to route requests to particular applications.
+also has a fixed `Divio <https://www.divio.com>`_-provided domain, for example ``example.aldryn.io`` or ``example-stage.
+stage.aldryn.io``. The ingress controller uses this information to route requests to particular applications.
 
 The Control Panel interface shows whether DNS has been correctly configured for each domain, and whether
 valid SSL certificates are in place.

@@ -5,7 +5,7 @@
 Create a new Wagtail Django application
 =======================================
 
-In this section we will create and deploy a new application in the Control Panel using 
+In this section we will create and deploy a new application in the `Divio <https://www.divio.com>`_ Control Panel using 
 `Wagtail <https://wagtail.io/>`_, a very popular Django-based content management system framework. The principles 
 covered by the tutorial will apply to any other development stack.
 

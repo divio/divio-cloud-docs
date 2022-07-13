@@ -193,4 +193,5 @@ Sometimes, a wheel can be found and downloaded, but fails to install. Example ou
     ERROR: No matching distribution found for setuptools
 
 In this case, the wheel was found and downloaded, but could not be installed because it contained a "hidden" dependency
-(``setuptools``). One option is to contact Divio support; we can ensure that the wheel is built with this requirement.
+(``setuptools``). One option is to contact `Divio <https://www.divio.com>`_ 
+`support <https://www.divio.com/support/>`_; we can ensure that the wheel is built with this requirement.

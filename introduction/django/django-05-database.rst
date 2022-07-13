@@ -5,8 +5,8 @@
 Add and configure a Postgres database
 =====================================
 
-In this section, we'll configure the application to use a Postgres database, both locally for development, and on the
-cloud for deployment.
+In this section, we'll configure the application to use a Postgres database, both locally for development, and `on the
+cloud <https://www.divio.com>`_ for deployment.
 
 
 Create the database

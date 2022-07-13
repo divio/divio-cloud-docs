@@ -21,7 +21,7 @@ will be the same, with only some minor differences.
 If you don't already have a LogDNA account, visit https://logdna.com and register for a free account. LogDNA will
 provide you with an *ingestion key*.
 
-Set your application up locally. We'll assume that you are using a standard Divio application using Aldryn Django.
+Set your application up locally. We'll assume that you are using a standard `Divio application <https://www.divio.com>`_ using Aldryn Django.
 
 
 Install the ``logdna`` Python library

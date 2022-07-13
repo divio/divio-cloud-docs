@@ -1,7 +1,7 @@
 .. _deploy:
 
-Deploy your application to Divio
-=================================
+Deploy your application to `Divio <https://www.divio.com>`_
+===========================================================
 
 The steps outlined here assume that you have already:
 

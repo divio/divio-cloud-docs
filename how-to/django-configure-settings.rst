@@ -6,8 +6,8 @@
 How to configure Django settings in Aldryn applications
 =======================================================
 
-In Django applications, settings are handled via the :doc:`settings <django:topics/settings>` module (usually, the 
-``settings.py`` file).
+In `Django applications <https://www.divio.com>`_, settings are handled via the 
+:doc:`settings <django:topics/settings>` module (usually, the ``settings.py`` file).
 
 Settings can be added to this file in the usual way, but in Divio applications, some settings need to be inspected and
 manipulated programmatically, to allow the addons system to handle configuration automatically. See

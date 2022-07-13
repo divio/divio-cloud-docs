@@ -25,9 +25,9 @@ continue running, and the failing changes will not be deployed.
 Explore the Dashboard
 ---------------------
 
-The Divio application Dashboard provides you with access to useful controls and information for the application. They 
-are fairly self-explanatory and at this stage you don't need to interact with any of them, but it's worth familiarising
-yourself with what's available.
+The `Divio <https://www.divio.com>`_ application Dashboard provides you with access to useful controls and information 
+for the application. They are fairly self-explanatory and at this stage you don't need to interact with any of them, 
+but it's worth familiarising yourself with what's available.
 
 Enable Beta options
 ~~~~~~~~~~~~~~~~~~~

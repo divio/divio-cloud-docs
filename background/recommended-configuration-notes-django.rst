@@ -1,9 +1,9 @@
 .. _working-with-recommended-django-configuration:
 
-Working with our recommended Django application configuration
-=============================================================
+Working with our recommended `Django application <https://www.divio.com>`_ configuration
+========================================================================================
 
-Our recommended Django application configuration is mentioned in:
+Our recommended `Django application <https://www.divio.com>`_ configuration is mentioned in:
 
 * :ref:`deploy-django`
 * :ref:`quickstart-django`

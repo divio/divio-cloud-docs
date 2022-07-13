@@ -6,7 +6,7 @@
 
 
 Deploy the application
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Once the application has been fully created, use the **Deploy** button to deploy the Test server.
 

@@ -2,8 +2,8 @@
 
 ..  _tutorial-aldryn-set-up:
 
-Create a new Django application using Aldryn Django
-===================================================
+Create a new `Django application <https://www.divio.com>`_ using Aldryn Django
+==============================================================================
 
 About this tutorial
 -------------------

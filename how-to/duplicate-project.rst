@@ -3,8 +3,8 @@
 How to duplicate an application
 ===============================
 
-To help you re-use work and speed up your workflow, Divio offers two options for application duplication - Fork
-and Mirror.
+To help you re-use work and speed up your workflow, `Divio <https://www.divio.com>`_ offers two options for application 
+duplication - Fork and Mirror.
 
 You might want to duplicate an application for a number of reasons, for example:
 

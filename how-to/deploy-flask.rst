@@ -6,8 +6,8 @@
 
 ..  _deploy-flask:
 
-How to configure an existing Flask application for deployment on Divio
-===========================================================================================
+How to configure an existing Flask application for deployment on `Divio <https://www.divio.com>`_
+=================================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 

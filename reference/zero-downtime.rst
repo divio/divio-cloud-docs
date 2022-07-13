@@ -3,7 +3,7 @@
 Zero-downtime deployment system
 ===============================
 
-Divio allows you to deploy a new version of your site without interrupting service.
+`Divio <https://www.divio.com>`_ allows you to deploy a new version of your site without interrupting service.
 
 When an application environment is deployed with new code, the site will switch from the old deployed version to the new
 one without skipping a beat. There is no downtime required while a build takes place. As soon as the newly deployed

@@ -15,8 +15,8 @@ This document provides an outline of the security policies and standards we adhe
 Technology
 ----------
 
-Divio is built using `Django <https://www.djangoproject.com/>`_, the `Python <https://www.python.org/>`_-based web
-application framework.
+`Divio <https://www.divio.com>`_ is built using `Django <https://www.djangoproject.com/>`_, the 
+`Python <https://www.python.org/>`_-based web application framework.
 
 Python
 ~~~~~~
@@ -47,10 +47,10 @@ security releases, which means that we are able to have security patches in plac
 public.
 
 
-Divio architecture
-~~~~~~~~~~~~~~~~~~
+`Divio <https://www.divio.com>`_ architecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An application's web application containers and database are not directly accessible outside our network.
+Web application containers and database are not directly accessible outside our network.
 
 All traffic to our sites are directed through our Load Balancers, before reaching the application runners that
 orchestrate users' containerised applications.
@@ -60,8 +60,8 @@ All levels are redundant, including PostgreSQL clusters and cloud media storage 
 All connections are encrypted, even within our architecture.
 
 
-Divio security monitoring
-~~~~~~~~~~~~~~~~~~~~~~~~~
+`Divio <https://www.divio.com>`_ security monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We monitor and log activity within and into our systems, and use automated systems to alert our infrastructure team to
 unusual traffic or behaviour.
@@ -72,14 +72,14 @@ Details of these systems are not disclosed to other parties.
 Third-party services
 ~~~~~~~~~~~~~~~~~~~~
 
-Divio makes use of known services, such as the well-protected AWS and MS Azure stacks, that enjoy an international
-reputation for robustness.
+`Divio <https://www.divio.com>`_ makes use of known services, such as the well-protected AWS and MS Azure stacks, that 
+enjoy an international reputation for robustness.
 
 Details of other providers can be supplied on application, under the terms of a non-disclosure agreement.
 
 
-Security options for Divio users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Security options for `Divio <https://www.divio.com>`_ users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We’re able to add further protection for our users for their applications. For example, we offer:
 
@@ -93,8 +93,8 @@ amongst other benefits.
 Containerisation
 ~~~~~~~~~~~~~~~~
 
-Divio uses Docker-based containerisation for deployment, which contributes extra layers of security to our
-infrastructure.
+`Divio <https://www.divio.com>`_ uses Docker-based containerisation for deployment, which contributes extra layers of 
+security to our infrastructure.
 
 Containerisation isolates running instances from each other. A vulnerability or even a breach affecting one site remains
 isolated to that particular instance.
@@ -129,8 +129,9 @@ technology stack, and make full use of them.
 Staff security policy
 ~~~~~~~~~~~~~~~~~~~~~
 
-Divio maintains a formal internal security policy, with which all staff are familiar. This covers such fundamental
-topics as multi-factor authorisation, reporting, recording, online accounts, handling of physical devices and so on.
+`Divio <https://www.divio.com>`_ maintains a formal internal security policy, with which all staff are familiar. This 
+covers such fundamental topics as multi-factor authorisation, reporting, recording, online accounts, handling of 
+physical devices and so on.
 
 Some details of our staff security policy can be supplied on application, under the terms of a non-disclosure agreement.
 
@@ -138,8 +139,8 @@ Some details of our staff security policy can be supplied on application, under 
 Incident response plan
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Divio maintains a formal Incident response plan, governing incidents are recorded, escalated, dealt with and
-followed-up.
+`Divio <https://www.divio.com>`_ maintains a formal Incident response plan, governing incidents are recorded, 
+escalated, dealt with and followed-up.
 
 
 Security report handling

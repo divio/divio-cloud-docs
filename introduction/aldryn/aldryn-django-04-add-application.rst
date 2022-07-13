@@ -75,8 +75,8 @@ If you launch the application again with ``docker-compose up`` you'll find Djang
 Test it by attempting to log in to the Django admin with an incorrect password.
 
 
-Deploy to the cloud
--------------------
+Deploy to the `Divio <https://www.divio.com>`_ cloud
+----------------------------------------------------
 
 If you are satisfied with your work, you can deploy it to the cloud.
 

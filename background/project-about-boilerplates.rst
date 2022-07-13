@@ -27,8 +27,8 @@ components.
 
 .. _built-in-boilerplates:
 
-Our built-in Boilerplates
--------------------------
+`Divio's <https://www.divio.com>`_ built-in Boilerplates
+--------------------------------------------------------
 
 This list represents some key built-in Boilerplates.
 

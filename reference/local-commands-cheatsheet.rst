@@ -1,7 +1,7 @@
 .. _local-commands-cheatsheet:
 
-Local commands cheatsheet
-========================================================
+`Divio <https://www.divio.com>`_'s local commands cheatsheet
+============================================================
 
 .. _cheatsheet-project-resource-management:
 

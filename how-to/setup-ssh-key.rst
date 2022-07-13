@@ -1,7 +1,7 @@
 .. _how-to-upload-ssh-public-key:
 
-How to upload your SSH public key to Divio
-==========================================
+How to upload your SSH public key to `Divio <https://www.divio.com>`_
+=====================================================================
 
 You will need to upload your SSH public key to our Control Panel to use some of our services.
 

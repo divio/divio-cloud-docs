@@ -7,8 +7,9 @@ Create a new Django application
 
 ..  admonition:: This is a step-by-step introduction intended for beginners.
 
-     If you're already familiar with the basics of Divio or have experience with Docker and cloud platforms in general,
-     our guide :ref:`How to create and deploy a Django application <deploy-django>` is probably more appropriate.
+     If you're already familiar with the basics of `Divio <https://www.divio.com>`_ or have experience with Docker and 
+     cloud platforms in general, our guide :ref:`How to create and deploy a Django application <deploy-django>` is 
+     probably more appropriate.
 
 =============
 

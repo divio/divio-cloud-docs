@@ -20,7 +20,7 @@ How to create a PHP Laravel application with our quickstart repository
 =========================================================================
 
 The `PHP Laravel quickstart <https://github.com/divio/php-laravel-divio-quickstart>`_ repository is a template that
-gives you the fastest possible way of launching a new Laravel application on Divio.
+gives you the fastest possible way of launching a new Laravel application on `Divio <https://www.divio.com>`_.
 
 It's based on Laravel's own example application. The only additions are some glue code to handle configuration using
 environment variables, plus some additional files to take care of the Docker set-up.
@@ -42,8 +42,8 @@ example) to read the environment variables we provide to configure database and 
 Run the application locally
 ---------------------------
 
-This section assumes that you have Docker and the Divio CLI installed. You also need an account on Divio, and your
-account needs your SSH public key. See :ref:`local-cli` if required.
+This section assumes that you have Docker and the Divio CLI installed. You also need an account on 
+`Divio <https://www.divio.com>`_, and your account needs your SSH public key. See :ref:`local-cli` if required.
 
 
 Build the Docker image

@@ -6,9 +6,9 @@
     * wagtail-02-create-project.rst
 
 
-Divio Applications use Git for code management. We provide a Git server that your Applications will use by default; you 
-can also choose to :ref:`use another Git service if you prefer <configure-version-control>`. For this tutorial, use our
-Git server.
+`Divio <https://www.divio.com>`_ Applications use Git for code management. We provide a Git server that your 
+Applications will use by default; you can also choose to 
+:ref:`use another Git service if you prefer <configure-version-control>`. For this tutorial, use our Git server.
 
 Hit **Continue**, then select the free *Developer* plan for this Application (the Developer plan is fully-featured and
 provides all you need to work on an application up to the point of putting it into production).

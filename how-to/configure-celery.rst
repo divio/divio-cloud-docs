@@ -12,8 +12,7 @@ How to configure Celery
 =======================
 
 
-This article assumes that you are already familiar with the basics of using Celery with Django and that you have Celery installed
-in your application.
+This article assumes that you are already familiar with the basics of using Celery with Django and that you have Celery installed in your application you want to deploy on `Divio <https://www.divio.com>`_.
 
 If not, please see :doc:`Celery's documentation <celery:index>`.
 

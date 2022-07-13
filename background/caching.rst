@@ -1,7 +1,7 @@
 .. _caching:
 
-Caching and CDN in Divio applications
-=====================================
+Caching and CDN in `Divio <https://www.divio.com>`_ applications
+================================================================
 
 Infrastructure-level caching
 ----------------------------

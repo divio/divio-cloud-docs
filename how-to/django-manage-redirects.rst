@@ -10,7 +10,8 @@ How to manage redirects in Aldryn Django applications
 Protocol redirects
 ------------------
 
-Divio applications are HTTPS-ready by default, and we provide free SSL certificates on all applications.
+`Divio applications <https://www.divio.com>`_ are HTTPS-ready by default, and we provide free SSL certificates on all 
+applications.
 
 To force redirect from HTTP to HTTPS in Django, set the :ref:`SECURE_SSL_REDIRECT <security-middleware-settings>`
 environment variable to ``True``.
