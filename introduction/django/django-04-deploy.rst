@@ -2,7 +2,7 @@
 
 .. _tutorial-django-deploy:
 
-Deploy your application to the `Divio <https://www.divio.com>`_ cloud
+Deploy your application to the `Divio Cloud <https://www.divio.com>`_
 =====================================================================
 
 One further step is required before the application can be deployed to the cloud. Django's :setting:`ALLOWED_HOSTS

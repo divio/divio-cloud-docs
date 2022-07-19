@@ -206,5 +206,5 @@ Our :ref:`Django tutorial <tutorial-django-set-up>` is strongly recommended as a
 The :ref:`configure-celery` section describes adding additional services in Docker Compose for a more complex local
 set-up.
 
-If you are new and would like to familiarize yourself with `Divio <https://www.divio.com>`_, you can watch our 
+If you are new and would like to familiarise yourself with `Divio <https://www.divio.com>`_, you can watch our 
 `technical demos <https://www.divio.com/demo/>`_. 

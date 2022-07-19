@@ -83,10 +83,10 @@ number of useful ``docker-compose`` commands. For example, now you can use ``doc
 application, not just one image, and to run commands inside the application. Try ``docker-compose build`` now.
 
 
-Create a new Django project in the application
-----------------------------------------------
+Create a new Django application in the application
+--------------------------------------------------
 
-Next we need to create a new Django project in the application (with ``django-admin startproject``), so run:
+Next we need to create a new Django application in the application (with ``django-admin startproject``), so run:
 
 ..  code-block:: bash
 

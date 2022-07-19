@@ -10,7 +10,7 @@ added an application and deployed it. However, the installation process was extr
 required very minimal configuration.
 
 In practice, adding a `Django application <https://www.divio.com/demo/>`_ will generally require more complex 
-aconfiguration.
+configuration.
 
 We'll explore this by adding `Django Debug Toolbar
 <https://django-debug-toolbar.readthedocs.io/en/stable/>`_ to the application.
