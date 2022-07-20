@@ -3,7 +3,7 @@ Deployment
 
 Your application is ready for deployment on our cloud platform. The basic steps are:
 
-* create an application on the Divio Control Panel, with any required services
+* create an application on the `Divio <https://www.divio.com>`_ Control Panel, with any required services
 * push your code/connect your Git repository
 * deploy one or more cloud environments
 

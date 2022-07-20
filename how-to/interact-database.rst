@@ -3,7 +3,7 @@
 How to interact with your application's database
 ================================================
 
-The database for your Divio application runs:
+The database for your `Divio application <https://www.divio.com>`_ runs:
 
 * in a Docker container for your **local** applications: :ref:`interact-local-db`
 * on a dedicated cluster for your **cloud-deployed** sites: :ref:`interact-cloud-db`

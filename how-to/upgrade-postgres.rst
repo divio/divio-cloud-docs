@@ -6,10 +6,10 @@ How to manually upgrade PostgreSQL
 Manual upgrade steps
 --------------------
 
-To upgrade your PostgreSQL service instance from one version to another, without any downtime, the following steps 
-should be applied to each environment where the upgrade is required. Note that for these instructions to be valid there
-will be more than one PostgreSQL service availabe. Ensure you select the correct versions when provisioning and deprovisioning
-the "old" and "new" versions of your PostgreSQL service.
+In `Divio <https://www.divio.com>`_, to upgrade your PostgreSQL service instance from one version to another, without 
+any downtime, the following steps should be applied to each environment where the upgrade is required. Note that for 
+these instructions to be valid there will be more than one PostgreSQL service availabe. Ensure you select the correct 
+versions when provisioning and deprovisioning the "old" and "new" versions of your PostgreSQL service.
 
 1. Check the prefix of the current installation. This will be ``DEFAULT`` if it has not been manually changed, but can be anything. 
    For the purposes of these instructions we will refer to it as ``DEFAULT``.

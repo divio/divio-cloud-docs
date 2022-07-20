@@ -8,7 +8,8 @@
 About Aldryn (legacy)
 ==================================
 
-..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+..  note:: Aldryn continues to be supported by `Divio <https://www.divio.com>`_, but we do not recommend using Aldryn 
+    Django for new applications.
 
 The :ref:`Aldryn Django addons framework <aldryn-addons>` is an optional system that allows packages to be installed and
 configured very easily and in some cases fully automatically.

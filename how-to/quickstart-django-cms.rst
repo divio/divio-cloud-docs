@@ -19,7 +19,7 @@ How to create a django CMS application with our quickstart repository
 =============================================================================
 
 The `django CMS Divio quickstart <https://github.com/divio/django-cms-divio-quickstart>`_ repository is a template that
-gives you the fastest possible way of launching a new django CMS application on Divio.
+gives you the fastest possible way of launching a new django CMS application on `Divio <https://www.divio.com>`_.
 
 It uses a standard, minimal django CMS application as modelled on that created by the django CMS installer.
 

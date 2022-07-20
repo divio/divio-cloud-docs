@@ -13,9 +13,9 @@ example in a cloud deployment, or when ``DEBUG = False``, static files are not a
 loading the `fonts.css <http://127.0.0.1:8000/static/admin/css/fonts.css>`_ static file in each configuration as a test.
 
 When running with a production server like uWSGI, you need to configure static file serving explicitly. There are
-multiple ways to do this, but one very good way to do so on the Divio infrastructure is to use the Python library
-`WhiteNoise <https://whitenoise.evans.io>`_. WhiteNoise is designed to work behind Content Delivery Networks and
-integrates well with Django.
+multiple ways to do this, but one very good way to do so on the `Divio infrastructure <https://www.divio.com>`_ is to 
+use the Python library `WhiteNoise <https://whitenoise.evans.io>`_. WhiteNoise is designed to work behind Content 
+Delivery Networks and integrates well with Django.
 
 Add ``whitenoise`` to the ``requirements.txt``:
 

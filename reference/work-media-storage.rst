@@ -12,9 +12,9 @@ Working with your application's media storage in web applications
 Introduction
 ------------
 
-File storage on Divio applications is handled by dedicated storage systems entirely separate from the application. The
-available storage depends on the Divio region your application uses. Most applications use Amazon Web Services's S3 
-service, or another S3 provider. Others use Microsoft Azure blob storage.
+File storage on `Divio applications <https://www.divio.com>`_ is handled by dedicated storage systems entirely separate 
+from the application. The available storage depends on the Divio region your application uses. Most applications use 
+Amazon Web Services's S3 service, or another S3 provider. Others use Microsoft Azure blob storage.
 
 In our architecture, the same application may be running in multiple parallel container, each with its own local file
 storage independent of each of the others. Moreover, this storage is not persistent, and exists only for as long as the

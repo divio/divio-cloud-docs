@@ -7,8 +7,8 @@
    :keywords: Docker, Postgres, MySQL, S3
 
 
-How to deploy an application on Divio: template
-===========================================================================================
+How to deploy an application on `Divio <https://www.divio.com>`_: template
+==========================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 

@@ -10,7 +10,7 @@ If your application uses Cloudflare CDN, you can clear it as required via our co
     This is only available if:
 
     * your application uses Cloudflare's CDN
-    * the Cloudflare CDN was set up by Divio, and not independently
+    * the Cloudflare CDN was set up by `Divio <https://www.divio.com>`_, and not independently
 
 To clear the cache for a domain on your application, go to its *Domains* view and select the domain for which you need 
 to clear the cache.

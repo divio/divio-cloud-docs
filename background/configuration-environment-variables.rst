@@ -9,7 +9,7 @@
 Environment variables
 =====================
 
-Divio applications allow you to maintain separate configuration for each of
+`Divio <https://www.divio.com>`_ applications allow you to maintain separate configuration for each of
 the cloud environments as well as the local environment.
 
 Environment variables are a good place for storing instance-specific
@@ -20,7 +20,7 @@ your application.
 Cloud environments
 --------------------------------------
 
-In cloud applications, environment variables can be managed via the command
+In `Divio <https://www.divio.com>`_ cloud applications, environment variables can be managed via the command
 line or via the Control Panel.
 
 New or changed environment variables are not available to environments until they are redeployed.

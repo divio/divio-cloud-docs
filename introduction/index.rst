@@ -12,10 +12,10 @@
 Get started
 ===========
 
-The tutorial will introduce you to the Divio toolchain, and the complete cycle of application creation, development,
-deployment and management as a developer, from setting up an application locally to deploying your own application on 
-the cloud. It assumes you are comfortable with the command line, and understand the basics of using SSH keys, Git
-and so on.
+The tutorial will introduce you to the `Divio <https://www.divio.com>`_ toolchain, and the complete cycle of `application creation, development,
+deployment and management <https://www.divio.com>`_ as a developer, from setting up an application locally to deploying 
+your own application on the cloud. It assumes you are comfortable with the command line, and understand the basics of 
+using SSH keys, Git and so on.
 
 
 ..  toctree::

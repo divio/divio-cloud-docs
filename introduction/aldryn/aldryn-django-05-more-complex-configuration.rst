@@ -9,7 +9,8 @@ In the :ref:`previous section of the tutorial <tutorial-add-applications>`, we
 added an application and deployed it. However, the installation process was extremely simple and
 required very minimal configuration.
 
-In practice, adding a Django application will generally require more complex configuration.
+In practice, adding a `Django application <https://www.divio.com/demo/>`_ will generally require more complex 
+configuration.
 
 We'll explore this by adding `Django Debug Toolbar
 <https://django-debug-toolbar.readthedocs.io/en/stable/>`_ to the application.
@@ -140,4 +141,5 @@ This completes the basic cycle of application creation, development and deployme
 fundamental concepts and tools involved.
 
 Other sections of the documentation expand upon them. The :ref:`how-to guides <how-to>` in particular cover many
-common operations. And if there's something you're looking for but can't find, please contact Divio support.
+common operations. And if there's something you're looking for but can't find, please contact 
+`Divio <https://www.divio.com>`_ `support <https://www.divio.com/support>`_.

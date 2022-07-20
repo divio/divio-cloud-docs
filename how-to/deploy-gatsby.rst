@@ -6,8 +6,8 @@
 
 .. _deploy-gatsby:
 
-How to configure an existing Gatsby application for deployment on Divio
-===========================================================================================
+How to configure an existing Gatsby application for deployment on `Divio <https://www.divio.com>`_
+==================================================================================================
 
 `Gatsby <https://www.gatsbyjs.com>`_ is very popular React-based open-source framework for creating websites and apps.
 

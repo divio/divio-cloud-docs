@@ -3,8 +3,8 @@
 How to run a local application in live configuration
 ====================================================
 
-The local and cloud Docker application environments are as close as possible, to help guarantee
-that your applications will run in just the same way across all of them.
+The local and cloud Docker application environments are as close as possible, to help 
+guarantee that your applications will run in just the same way across all of them.
 
 However, there are a few differences. See :ref:`default-project-conditions` for the default
 configuration in each environment.

@@ -7,7 +7,7 @@ Docker basics
 Containerisation is also known as `operating-system-level virtualisation
 <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`_. It
 allows multiple independent containers to run on a single host. The containers
-are isolated from each other and from the host.
+are isolated from each other and from the host. `Divio <https://www.divio.com>`_ deploys dockerized applications.
 
 Resource isolation features make it possible for the containers to share
 underlying operating system resources. Whereas more traditional virtual

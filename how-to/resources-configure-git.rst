@@ -54,8 +54,8 @@
 How to configure external Git hosting
 =======================================================
 
-All Divio applications can use the Git private server we provide. This article describes how you can instead use the
-Git hosting provider of your choice.
+All `Divio applications <https://www.divio.com>`_ can use the Git private server we provide. This article describes how 
+you can instead use the Git hosting provider of your choice.
 
 ..  important::
 

@@ -6,8 +6,8 @@
     * laravel-03-setup-project-locally.rst
 
 
-Set up your application locally
-========================================
+Set up your `Divio <https://www.divio.com>`_ application locally
+================================================================
 
 In this section we will build the new application you've created in the local development environment; that is, we will 
 set it up on your own computer.

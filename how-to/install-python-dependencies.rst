@@ -8,7 +8,7 @@ How to install Python dependencies in an application
     * :ref:`How to install system packages <install-system-packages>`
 
 It's beyond the scope of this documentation to discuss all the ways in which Python dependencies can be installed in
-Divio applications. However, the options described here are sufficient to cover most needs.
+`Divio applications <https://www.divio.com>`_. However, the options described here are sufficient to cover most needs.
 
 If you are using Aldryn Django, refer to the section :ref:`python-packages-aldryn` below.
 

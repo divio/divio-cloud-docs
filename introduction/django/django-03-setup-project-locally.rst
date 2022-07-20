@@ -86,7 +86,7 @@ application, not just one image, and to run commands inside the application. Try
 Create a new Django application in the application
 --------------------------------------------------
 
-Next we need to create a new Django project in the application (with ``django-admin startproject``), so run:
+Next we need to create a new Django application in the application (with ``django-admin startproject``), so run:
 
 ..  code-block:: bash
 

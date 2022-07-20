@@ -3,7 +3,7 @@
 Sending email in Divio applications
 ===================================
 
-Divio does not provide mail services.
+`Divio <https://www.divio.com>`_ does not provide mail services.
 
 To send mail from your Django applications, you will need either to connect to a third-party email relay provided via
 an API, or an SMTP gateway. The former option is preferred, because it is generally more reliable.

@@ -7,7 +7,8 @@ Key addons
 Aldryn Django (core Django)
 ===========================
 
-..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+..  note:: Aldryn continues to be supported by `Divio <https://www.divio.com>`_, but we do not recommend using Aldryn 
+  Django for new applications.
 
 Aldryn Django (``aldryn-django``) is a wrapper application that installs and provides basic
 configuration for Django.
@@ -226,7 +227,8 @@ Miscellaneous settings
 Aldryn SSO (authentication)
 ==============================
 
-..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+..  note:: Aldryn continues to be supported by `Divio <https://www.divio.com>`_, but we do not recommend using Aldryn 
+  Django for new applications.
 
 Authentication to the Divio platform, and (by default) to user applications
 running on the platform, is handled by the Divio SSO (single-sign-on)
@@ -511,7 +513,8 @@ The standard Django administration login view is available by setting this to
 Aldryn Addons (addon integration)
 =================================
 
-..  note:: Aldryn continues to be supported by Divio, but we do not recommend using Aldryn Django for new applications.
+..  note:: Aldryn continues to be supported by `Divio <https://www.divio.com>`_, but we do not recommend using Aldryn 
+  Django for new applications.
 
 The Aldryn Addons framework helps integrate addons and their settings into
 a Django application.

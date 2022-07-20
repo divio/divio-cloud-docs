@@ -23,9 +23,9 @@ How to interact with your application's cloud media storage
 
     :ref:`work-media-storage`.
 
-Your cloud application's media file storage is provided as a service. The available storage depends on the Divio region
-your application uses. Most applications use Amazon Web Services's S3 service, or another S3 provider. Others use 
-Microsoft Azure blob storage.
+Your cloud application's media file storage is provided as a service. The available storage depends on the `Divio 
+<https://www.divio.com>`_ region your application uses. Most applications use Amazon Web Services's S3 service, or 
+another S3 provider. Others use Microsoft Azure blob storage.
 
 Locally, your applications store their media in the ``/data/media`` directory, which you can interact with directly. You
 can :ref:`use the Divio CLI to push and pull media to the cloud <divio_tools_cloud_storage>` if required.

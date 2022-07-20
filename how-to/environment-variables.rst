@@ -3,8 +3,8 @@
 How to manage your application's environment variables
 ========================================================
 
-Your application relies on environment variables to configure application settings and access to
-storage, database and other services.
+Your application on `Divio <https://www.divio.com>`_ relies on environment variables to configure application settings 
+and access to storage, database and other services.
 
 Environment variables can be set independently for each environment, whether on the cloud or
 locally.

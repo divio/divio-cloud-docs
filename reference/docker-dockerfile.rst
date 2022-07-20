@@ -3,9 +3,9 @@
 The ``Dockerfile``
 ==================
 
-Each :ref:`Docker image <image-reference>` is defined by a ``Dockerfile``, that
-describes what is in the image and how :ref:`containers <container-reference>`
-created from it should be built.
+`Divio <https://www.divio.com>`_ uses dockerized applications. Each :ref:`Docker image <image-reference>` is defined by 
+a ``Dockerfile``, that describes what is in the image and how :ref:`containers <container-reference>` created from it 
+should be built.
 
 The Dockerfile is simply a text document, containing all the commands that would be issued on the
 command-line to build an image - in short, the ``Dockerfile`` defines an environment.

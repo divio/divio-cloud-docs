@@ -51,7 +51,7 @@ Manage your applications
 Configure an existing web application for deployment
 ----------------------------------------------------
 
-Prepare your web application for deployment on Divio with Docker.
+Prepare your web application for `deployment on Divio <https://www.divio.com>`_ with Docker.
 
 .. toctree::
     :maxdepth: 1

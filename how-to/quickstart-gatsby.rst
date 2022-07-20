@@ -39,8 +39,8 @@ Run:
 Run the application locally
 ---------------------------
 
-This section assumes that you have Docker and the Divio CLI installed. You also need an account on Divio, and your
-account needs your SSH public key. See :ref:`local-cli` if required.
+This section assumes that you have Docker and the Divio CLI installed. You also need an account on 
+`Divio <https://www.divio.com>`_, and your account needs your SSH public key. See :ref:`local-cli` if required.
 
 
 Build the Docker image

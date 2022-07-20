@@ -53,8 +53,8 @@ Your application needs a ``.travis.yml`` file, which depending on the applicatio
 Triggering the deployment on success
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a build is successful, we need Travis to log in as a Divio user and execute some steps in the
-``after_success`` section of the file:
+When a build is successful, we need Travis to log in as a `Divio <https://www.divio.com>`_ user and execute some steps 
+in the ``after_success`` section of the file:
 
 * install the Divio CLI
 * log in

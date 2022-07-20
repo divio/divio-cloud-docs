@@ -6,8 +6,8 @@
 
 ..  _deploy-generic:
 
-How to configure an existing web application for deployment on Divio: generic guide
-===========================================================================================
+How to configure an existing web application for deployment on `Divio <https://www.divio.com>`_: generic guide
+==============================================================================================================
 
 ..  include:: /how-to/includes/deploy-common-intro.rst
 

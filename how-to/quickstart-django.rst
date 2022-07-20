@@ -19,7 +19,7 @@ How to create a Django application with our quickstart repository
 =========================================================================
 
 The `Django Divio quickstart <https://github.com/divio/django-divio-quickstart>`_ repository is a template that gives
-you the fastest possible way of launching a new Django application on Divio.
+you the fastest possible way of launching a new Django application on `Divio <https://www.divio.com>`_.
 
 It uses a completely standard Django project as created by the Django ``startproject`` management command.
 

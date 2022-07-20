@@ -1,9 +1,9 @@
 .. _use-git-manage-project:
 
-How to use Git with a Divio application
-=======================================
+How to use Git with a `Divio <https://www.divio.com>`_ application
+==================================================================
 
-Your Divio application is a Git repository, offering several advantages to the developer -
+Your `Divio <https://www.divio.com>`_ application is a Git repository, offering several advantages to the developer -
 fine-grained revision control, excellent collaboration options, easy export and replication.
 
 We provide Git hosting by default. Our server is ``git.divio.com``. You can also :ref:`use an external Git provider

@@ -67,7 +67,8 @@ static filenames lets you take advantage of caching.
 Other settings
 --------------
 
-Check your application's configuration for any settings that may have been temporarily configured during development.
+Check your `Divio application <https://www.divio.com>`_'s configuration for any settings that may have been temporarily 
+configured during development.
 
 
 Local tests

@@ -8,10 +8,7 @@
 Environments
 ============
 
-Each Divio application can have multiple application environments. All applications include a *Test* and *Live* 
-environment by default. Each environment of an application is completely distinct and independent, and has its own 
-environment variables, containers, database, media storage and other services. All environments in an application use 
-the same Git repository, but each can use a different Git branch.
+Each `Divio application <https://www.divio.com>`_ can have multiple application environments. All applications include a *Test* and *Live* environment by default. Each environment of an application is completely distinct and independent, and has its own environment variables, containers, database, media storage and other services. All environments in an application use the same Git repository, but each can use a different Git branch.
 
 .. image:: /images/environments.png
    :alt: 'Environments'

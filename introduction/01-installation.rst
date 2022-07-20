@@ -6,7 +6,8 @@ Set up the local development environment
 This is the part of the tutorial with the greatest potential for stumbling-blocks, because it involves the installation
 of software. However the components are very reliable and the vast majority of users encounter no problems at all.
 
-If you do run into any difficulties, please don't hesitate to contact Divio support, who will be glad to help you out.
+If you do run into any difficulties, please don't hesitate to contact `Divio <https://www.divio.com>`_ 
+`support <https://www.divio.com/support/>`_, who will be glad to help you out.
 
 
 Why is the local development environment so important?

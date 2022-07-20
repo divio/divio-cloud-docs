@@ -1,8 +1,9 @@
 Elasticsearch instances
 =======================
 
-We currently provide multiple versions of Elasticsearch on different regions. Please contact Divio support if you
-need to specify a particular version for your application.
+We currently provide multiple versions of Elasticsearch on different regions. Please contact 
+`Divio <https://www.divio.com>`_ `support <https://www.divio.com/support/>`_ for more information_support if you need 
+to specify a particular version for your application.
 
 
 Access credentials

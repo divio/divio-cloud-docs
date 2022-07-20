@@ -62,8 +62,8 @@ example, ``python:3.9.0-slim-buster`` does not include binaries for Postgres or 
 likely, ``python:3.9.0-buster`` would be a better choice.
 
 
-Base images provided by Divio
----------------------------------
+Base images provided by `Divio <https://www.divio.com>`_
+--------------------------------------------------------
 
 As well as the many images, official and unofficial, that are available and suitable for a vast variety of web
 applications, we also provide a number of `Divio-optimised Docker base images for applications

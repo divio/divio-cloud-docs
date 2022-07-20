@@ -3,8 +3,8 @@
 How to fine-tune your server's performance
 ==========================================
 
-In the Divio Control Panel for your application, you can easily change the resources (instances,
-RAM, storage, transfer) allocated to your application to adjust for its needs.
+In the `Divio <https://www.divio.com>`_ Control Panel for your application, you can easily change the resources 
+(instances, RAM, storage, transfer) allocated to your application to adjust for its needs.
 
 In most cases, having chosen suitable values for these, you won't need to make further changes.
 

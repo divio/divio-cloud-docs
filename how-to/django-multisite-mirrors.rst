@@ -5,8 +5,8 @@
 
 ..  _multisite-mirrors:
 
-How to create a multi-site Django application using Mirrors
-===========================================================
+How to create a multi-site `Django application <https://www.divio.com>`_ using Mirrors
+======================================================================================
 
 Start with the *original*, the application from which the mirrors will be created. The mirrors will share the codebase,
 database and media storage of the original, but will run as wholly independent Docker instances.
